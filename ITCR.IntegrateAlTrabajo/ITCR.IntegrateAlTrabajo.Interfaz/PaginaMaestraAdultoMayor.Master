@@ -1,0 +1,84 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PaginaMaestraAdultoMayor.master.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.PaginaMaestraAdultoMayor" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 98%;
+            height: 156px;
+        }
+        .style2
+        {
+        }
+    </style>
+</head>
+<body>
+    <form id="Form1" runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="loginDisplay">
+                <table class="style1">
+                    <tr>
+                        <td class="style2">
+                            <asp:Image ID="imgLogo" runat="server" Height="137px" ImageAlign="Left" 
+                                ImageUrl="~/Multimedia/Logo.PNG" Width="122px" />
+                        </td>
+                        <td>
+                            <asp:Image ID="imgBanner" runat="server" Height="147px" ImageAlign="AbsMiddle" 
+                                ImageUrl="~/Multimedia/banner_adultos_mayores.jpg" />
+                        </td>
+                    </tr>
+                    </table>
+            </div>
+        </div>
+
+        <div id="BarraAzul2"> 
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem Text="Mi perfil" Value="Mi perfil" 
+                            NavigateUrl="~/AdultoMayor/frmConsultarPerfilAdultoMayor.aspx" 
+                            Selected="True"/>
+                        <asp:MenuItem Text="Ofrecer servicios" Value="Ofrecer servicios" 
+                            NavigateUrl="~/AdultoMayor/frmOfrecerServicios.aspx"/>
+                        <asp:MenuItem Text="Mis servicios" Value="Mis servicios" 
+                            NavigateUrl="~/AdultoMayor/frmConsultarServiciosOfrecidos.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Ofertas de trabajo" Value="Ofertas de trabajo" 
+                            NavigateUrl="~/AdultoMayor/frmFiltrarOfertasTrabajo.aspx">
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Noticias y artículos" Value="Noticias y artículos">
+                        </asp:MenuItem>
+                        <asp:MenuItem Text="Opinar" Value="Opinar" 
+                            NavigateUrl="~/AdultoMayor/frmOpinarSobreBolsaTrabajo.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Acerca de" Value="Acerca de"></asp:MenuItem>
+                        <asp:MenuItem Text="Cerrar sesión" Value="Cerrar sesión" 
+                            NavigateUrl="~/Autenticacion/frmAutenticacion.aspx"></asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+
+        <div id="Div2">
+
+            <asp:Panel ID="PanelBarra2" runat="server" BackColor="#005190" Height="30px">
+            </asp:Panel>
+
+        </div>
+
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>

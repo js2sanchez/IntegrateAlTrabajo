@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C346DB3D-F541-4830-9693-E2B2FF059D87}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ITCR.IntegrateAlTrabajo.Negocios</RootNamespace>
+    <AssemblyName>ITCR.IntegrateAlTrabajo.Negocios</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ClasesNegocios\cIATAplicantesOfertaNegocios.cs" />
+    <Compile Include="ClasesNegocios\cIATArticuloNegocios.cs" />
+    <Compile Include="ClasesNegocios\cIATCalificacionEmpresaNegocios.cs" />
+    <Compile Include="ClasesNegocios\cIATCantonNegocios.cs" />
+    <Compile Include="ClasesNegocios\cIATCategoriaTrabajoNegocios.cs" />
+    <Compile Include="ClasesNegocios\cIATContactoNegocios.cs" />
+    <Compile Include="ClasesNegocios\cIATDiaServicioNegocios.cs" />
+    <Compile Include="ClasesNegocios\cIATDistritoNegocios.cs" />
+    <Compile Include="ClasesNegocios\cIATEmpresaNegocios.cs" />
+    <Compile Include="ClasesNegocios\cIATEstudioNegocios.cs" />
+    <Compile Include="ClasesNegocios\cIATExperienciaLaboralNegocios.cs" />
+    <Compile Include="ClasesNegocios\cIATGuiaUsoNegocios.cs" />
+    <Compile Include="ClasesNegocios\cIATIdiomaNegocios.cs" />
+    <Compile Include="ClasesNegocios\cIATIdiomaXPersonaNegocios.cs" />
+    <Compile Include="ClasesNegocios\cIATNoticiaNegocios.cs" />
+    <Compile Include="ClasesNegocios\cIATOfertaTrabajoNegocios.cs" />
+    <Compile Include="ClasesNegocios\cIATOpinionNegocios.cs" />
+    <Compile Include="ClasesNegocios\cIATPersonaNegocios.cs" />
+    <Compile Include="ClasesNegocios\cIATProvinciaNegocios.cs" />
+    <Compile Include="ClasesNegocios\cIATServicioNegocios.cs" />
+    <Compile Include="ClasesNegocios\cIATTipoContactoNegocios.cs" />
+    <Compile Include="ClasesNegocios\cIATTipoGuiaUsoNegocios.cs" />
+    <Compile Include="ClasesNegocios\cIATTipoTrabajoNegocios.cs" />
+    <Compile Include="ClasesNegocios\cIATTipoUsuarioNegocios.cs" />
+    <Compile Include="ClasesNegocios\cIATUsuarioNegocios.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ITCR.IntegrateAlTrabajo.Datos\ITCR.IntegrateAlTrabajo.Datos.csproj">
+      <Project>{DA720104-C96D-46A0-854C-526FF3DEBDB7}</Project>
+      <Name>ITCR.IntegrateAlTrabajo.Datos</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

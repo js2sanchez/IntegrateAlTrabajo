@@ -1,0 +1,77 @@
+C:\Users\Jon\Documents\GitHub\IntegrateAlTrabajo\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
+C:\Users\Jon\Documents\GitHub\IntegrateAlTrabajo\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb
+C:\Users\Jon\Documents\GitHub\IntegrateAlTrabajo\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.dll
+C:\Users\Jon\Documents\GitHub\IntegrateAlTrabajo\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.pdb
+C:\Users\Jon\Documents\GitHub\IntegrateAlTrabajo\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.csprojResolveAssemblyReference.cache
+C:\Users\Jon\Documents\GitHub\IntegrateAlTrabajo\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
+C:\Users\Jon\Documents\GitHub\IntegrateAlTrabajo\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb
+D:\ProyectoIntegrateAlTrabajo\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
+D:\ProyectoIntegrateAlTrabajo\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb
+D:\ProyectoIntegrateAlTrabajo\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.dll
+D:\ProyectoIntegrateAlTrabajo\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.pdb
+D:\ProyectoIntegrateAlTrabajo\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.csprojResolveAssemblyReference.cache
+D:\ProyectoIntegrateAlTrabajo\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
+D:\ProyectoIntegrateAlTrabajo\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb
+C:\Users\morales\Desktop\Trabajos Fernanda\VIII Semestre 2013\Proyecto\IntégrateAlTrabajo\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
+C:\Users\morales\Desktop\Trabajos Fernanda\VIII Semestre 2013\Proyecto\IntégrateAlTrabajo\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb
+C:\Users\morales\Desktop\Trabajos Fernanda\VIII Semestre 2013\Proyecto\IntégrateAlTrabajo\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.dll
+C:\Users\morales\Desktop\Trabajos Fernanda\VIII Semestre 2013\Proyecto\IntégrateAlTrabajo\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.pdb
+C:\Users\morales\Desktop\Trabajos Fernanda\VIII Semestre 2013\Proyecto\IntégrateAlTrabajo\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.csprojResolveAssemblyReference.cache
+C:\Users\morales\Desktop\Trabajos Fernanda\VIII Semestre 2013\Proyecto\IntégrateAlTrabajo\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
+C:\Users\morales\Desktop\Trabajos Fernanda\VIII Semestre 2013\Proyecto\IntégrateAlTrabajo\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb
+C:\Users\Jon\Documents\IATBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
+C:\Users\Jon\Documents\IATBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb
+C:\Users\Jon\Documents\IATBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.dll
+C:\Users\Jon\Documents\IATBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.pdb
+C:\Users\Jon\Documents\IATBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.csprojResolveAssemblyReference.cache
+C:\Users\Jon\Documents\IATBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
+C:\Users\Jon\Documents\IATBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb
+D:\IATBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
+D:\IATBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb
+D:\IATBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.dll
+D:\IATBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.pdb
+D:\IATBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.csprojResolveAssemblyReference.cache
+D:\IATBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
+D:\IATBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb
+E:\Satcha\Desktop\Proyecto\IAT-IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
+E:\Satcha\Desktop\Proyecto\IAT-IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb
+E:\Satcha\Desktop\Proyecto\IAT-IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.dll
+E:\Satcha\Desktop\Proyecto\IAT-IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.pdb
+E:\Satcha\Desktop\Proyecto\IAT-IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.csprojResolveAssemblyReference.cache
+E:\Satcha\Desktop\Proyecto\IAT-IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
+E:\Satcha\Desktop\Proyecto\IAT-IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb
+E:\Satcha\Desktop\Integrate al trabajo - Proyecto\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
+E:\Satcha\Desktop\Integrate al trabajo - Proyecto\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb
+E:\Satcha\Desktop\Integrate al trabajo - Proyecto\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.dll
+E:\Satcha\Desktop\Integrate al trabajo - Proyecto\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.pdb
+E:\Satcha\Desktop\Integrate al trabajo - Proyecto\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.csprojResolveAssemblyReference.cache
+E:\Satcha\Desktop\Integrate al trabajo - Proyecto\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
+E:\Satcha\Desktop\Integrate al trabajo - Proyecto\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb
+C:\Users\Jon\Documents\IATProyectoTEC\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
+C:\Users\Jon\Documents\IATProyectoTEC\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb
+C:\Users\Jon\Documents\IATProyectoTEC\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.dll
+C:\Users\Jon\Documents\IATProyectoTEC\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.pdb
+C:\Users\Jon\Documents\IATProyectoTEC\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.csprojResolveAssemblyReference.cache
+C:\Users\Jon\Documents\IATProyectoTEC\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
+C:\Users\Jon\Documents\IATProyectoTEC\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb
+D:\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
+D:\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb
+D:\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.dll
+D:\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.pdb
+D:\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.csprojResolveAssemblyReference.cache
+D:\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
+D:\ProyectoBolsaTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb
+C:\Users\Jon\Documents\Proyecto - Intégrate al trabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
+C:\Users\Jon\Documents\Proyecto - Intégrate al trabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb
+C:\Users\Jon\Documents\Proyecto - Intégrate al trabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.dll
+C:\Users\Jon\Documents\Proyecto - Intégrate al trabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.pdb
+C:\Users\Jon\Documents\Proyecto - Intégrate al trabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.csprojResolveAssemblyReference.cache
+C:\Users\Jon\Documents\Proyecto - Intégrate al trabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
+C:\Users\Jon\Documents\Proyecto - Intégrate al trabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb
+D:\Respaldos Intégrate al Trabajo\Proyecto - Intégrate al trabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
+D:\Respaldos Intégrate al Trabajo\Proyecto - Intégrate al trabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb
+D:\Respaldos Intégrate al Trabajo\Proyecto - Intégrate al trabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.dll
+D:\Respaldos Intégrate al Trabajo\Proyecto - Intégrate al trabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.pdb
+D:\Respaldos Intégrate al Trabajo\Proyecto - Intégrate al trabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.csprojResolveAssemblyReference.cache
+D:\Respaldos Intégrate al Trabajo\Proyecto - Intégrate al trabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
+D:\Respaldos Intégrate al Trabajo\Proyecto - Intégrate al trabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb

@@ -1,0 +1,27 @@
+CREATE PROCEDURE [dbo].[pr_IATFiltrarOfertasTrabajo]
+@iId_Provincia int,
+@iId_TipoTrabajo int,
+@iId_CategoriaTrabajo int,
+@iCod_Error int OUTPUT
+AS
+DECLARE @primeratabla table(Id_Empresa int,Nom_Empresa varchar(60),Num_CedulaJuridica varchar(50),Dsc_Empresa varchar(300),FK_IdUsuario int, PuntajePromedio float, FK_IdDistrito int, Id_OfertaTrabajo int, Nom_Puesto varchar(50), Dsc_OfertaTrabajo varchar(200), Txt_Requisitos varchar(500), InformacionAdicional varchar(200), Ind_Activa int, FK_IdCategoriaOfertaTrabajo int,FK_IdEmpresa int, Id_Contacto int, Detalle varchar(80),FK_IdUsuario2 int)
+SELECT *
+	FROM IATEmpresa AS empresa
+	INNER JOIN IATOfertaTrabajo AS oferta
+	ON empresa.Id_Empresa = oferta.FK_IdEmpresa
+	INNER JOIN IATContacto AS contacto
+	ON (empresa.FK_IdUsuario = contacto.FK_IdUsuario) AND (contacto.FK_IdTipoContacto = 1)
+	WHERE (@iId_TipoTrabajo IS NULL OR [oferta].FK_IdTipoOfertaTrabajo = @iId_TipoTrabajo) AND (@iId_CategoriaTrabajo IS NULL OR [oferta].FK_IdCategoriaOfertaTrabajo = @iId_CategoriaTrabajo)
+	
+DECLARE @segundatabla table(Id_Canton int,Nom_Canton varchar(30),FK_IdProvincia int,Id_Distrito int, Nom_Distrito varchar(30),FK_IdCanton int); 
+INSERT INTO @segundatabla
+	SELECT * 
+		FROM  IATCanton AS canton
+		INNER JOIN IATDistrito AS distrito
+		ON canton.Id_Canton = distrito.FK_IdCanton
+		WHERE @iId_Provincia IS NULL OR [canton].FK_IdProvincia = @iId_Provincia
+SELECT * 
+	FROM @primeratabla as SXP
+	  INNER JOIN @segundatabla as PXP
+	  ON SXP.FK_IdDistrito =  PXP.Id_Distrito
+SELECT @iCod_Error=@@ERROR

@@ -1,0 +1,4 @@
+1 Activo
+2 Inactivo administrador
+3 Inactivo eliminar cuenta
+

@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 98%;
+            height: 156px;
+        }
+        .style2
+        {
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="loginDisplay">
+                <table class="style1">
+                    <tr>
+                        <td class="style2">
+                            <asp:Image ID="imgLogo" runat="server" Height="137px" ImageAlign="Left" 
+                                ImageUrl="~/Multimedia/Logo.PNG" Width="122px" />
+                        </td>
+                        <td>
+                            <asp:Image ID="imgBanner" runat="server" Height="147px" ImageAlign="AbsMiddle" 
+                                ImageUrl="~/Multimedia/banner_adultos_mayores.PNG" />
+                        </td>
+                    </tr>
+                    </table>
+            </div>
+        </div>
+
+                <div id="BarraAzul1"> 
+            <asp:Panel ID="PanelBarraAzul1" runat="server" BackColor="#0079AD" 
+                Height="25px">
+            </asp:Panel>
+        </div>
+        <div id="BarraAzul2"> 
+            <asp:Panel ID="PanelBarraColorAzul2" runat="server" BackColor="#004A99" 
+                Height="25px">
+            </asp:Panel>
+        </div>
+
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>
