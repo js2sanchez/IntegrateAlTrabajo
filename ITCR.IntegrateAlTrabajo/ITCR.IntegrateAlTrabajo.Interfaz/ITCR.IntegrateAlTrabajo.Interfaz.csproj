@@ -65,6 +65,7 @@
     <Content Include="AdultoMayor\frmEditarEstudiosAdultoMayor.aspx" />
     <Content Include="AdultoMayor\frmEditarExperienciasLaboralesAdultoMayor.aspx" />
     <Content Include="AdultoMayor\frmFiltrarOfertasTrabajo.aspx" />
+    <Content Include="AdultoMayor\frmNoticiaArticulo.aspx" />
     <Content Include="AdultoMayor\frmOfrecerServicios.aspx" />
     <Content Include="AdultoMayor\frmOpinarSobreBolsaTrabajo.aspx" />
     <Content Include="AdultoMayor\frmRegistroAdultoMayor.aspx" />
@@ -204,6 +205,13 @@
     </Compile>
     <Compile Include="AdultoMayor\frmFiltrarOfertasTrabajo.aspx.designer.cs">
       <DependentUpon>frmFiltrarOfertasTrabajo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdultoMayor\frmNoticiaArticulo.aspx.cs">
+      <DependentUpon>frmNoticiaArticulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdultoMayor\frmNoticiaArticulo.aspx.designer.cs">
+      <DependentUpon>frmNoticiaArticulo.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdultoMayor\frmOfrecerServicios.aspx.cs">
       <DependentUpon>frmOfrecerServicios.aspx</DependentUpon>

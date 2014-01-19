@@ -40,22 +40,22 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador {
         protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
         
         /// <summary>
-        /// Control rfvcontenidonoticia1.
+        /// Control rfvcnoticia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary rfvcontenidonoticia1;
+        protected global::System.Web.UI.WebControls.ValidationSummary rfvcnoticia;
         
         /// <summary>
-        /// Control rfvtitulonoticia1.
+        /// Control rfvarticulo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ValidationSummary rfvtitulonoticia1;
+        protected global::System.Web.UI.WebControls.ValidationSummary rfvarticulo;
         
         /// <summary>
         /// Control mv_articulo_o_noticia.
