@@ -246,7 +246,8 @@
                         ForeColor="Black" Height="19px" 
                                             Width="99%" 
                         onitemcommand="dgOfertaTrabajo_ItemCommand" 
-                        onitemdatabound="dgOfertaTrabajo_ItemDataBound">
+                        onitemdatabound="dgOfertaTrabajo_ItemDataBound" 
+                        onselectedindexchanged="dgOfertaTrabajo_SelectedIndexChanged">
                         <AlternatingItemStyle BackColor="Gainsboro" />
                         <HeaderStyle BackColor="Navy" Font-Bold="True" Font-Names="Verdana" 
                                                 Font-Size="Larger" ForeColor="White" 

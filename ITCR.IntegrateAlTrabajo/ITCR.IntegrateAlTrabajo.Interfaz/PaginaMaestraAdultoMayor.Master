@@ -53,7 +53,8 @@
                         <asp:MenuItem Text="Ofertas de trabajo" Value="Ofertas de trabajo" 
                             NavigateUrl="~/AdultoMayor/frmFiltrarOfertasTrabajo.aspx">
                         </asp:MenuItem>
-                        <asp:MenuItem Text="Noticias y artículos" Value="Noticias y artículos">
+                        <asp:MenuItem Text="Noticias y artículos" Value="Noticias y artículos" 
+                            NavigateUrl="~/AdultoMayor/frmNoticiaArticulo.aspx">
                         </asp:MenuItem>
                         <asp:MenuItem Text="Opinar" Value="Opinar" 
                             NavigateUrl="~/AdultoMayor/frmOpinarSobreBolsaTrabajo.aspx"></asp:MenuItem>

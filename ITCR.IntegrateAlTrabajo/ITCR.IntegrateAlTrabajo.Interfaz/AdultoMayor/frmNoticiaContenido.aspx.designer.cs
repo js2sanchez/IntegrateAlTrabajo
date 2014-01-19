@@ -10,15 +10,6 @@
 namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
     
     
-    public partial class frmNoticiaArticulo {
-        
-        /// <summary>
-        /// Control dgNoticia.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DataGrid dgNoticia;
+    public partial class frmNoticiaContenido {
     }
 }
