@@ -137,8 +137,8 @@
         </tr>
         <tr>
             <td class="style4">
-                &nbsp;</td>
-            <td class="style8">
+                </td>
+            <td class="style5">
                 <asp:DropDownList ID="drpTipo" runat="server" Enabled="False">
                 </asp:DropDownList>
             </td>
@@ -147,15 +147,15 @@
                 </asp:DropDownList>
             </td>
             <td class="style7">
-                &nbsp;</td>
+                </td>
             <td class="style5">
                 <asp:DropDownList ID="drpprovincia" runat="server" Enabled="False">
                 </asp:DropDownList>
             </td>
             <td class="style6">
-                &nbsp;</td>
+                </td>
             <td class="style4">
-                &nbsp;</td>
+                </td>
         </tr>
         <tr>
             <td class="style4">

@@ -58,11 +58,13 @@
     <Content Include="Administrador\frmCambiarEstadoPerfil.aspx" />
     <Content Include="Administrador\frmOpinionesSobreBolsaTrabajo.aspx" />
     <Content Include="AdultoMayor\frmAplicarOfertaTrabajo.aspx" />
+    <Content Include="AdultoMayor\frmCalificarEmpresa.aspx" />
     <Content Include="AdultoMayor\frmConsultarPerfilAdultoMayor.aspx" />
     <Content Include="AdultoMayor\frmConsultarServiciosOfrecidos.aspx" />
     <Content Include="AdultoMayor\frmEditarDatosPersonalesAdultoMayor.aspx" />
     <Content Include="AdultoMayor\frmEditarEstudiosAdultoMayor.aspx" />
     <Content Include="AdultoMayor\frmEditarExperienciasLaboralesAdultoMayor.aspx" />
+    <Content Include="AdultoMayor\frmFiltrarEmpresa.aspx" />
     <Content Include="AdultoMayor\frmFiltrarOfertasTrabajo.aspx" />
     <Content Include="AdultoMayor\frmOfrecerServicios.aspx" />
     <Content Include="AdultoMayor\frmOpinarSobreBolsaTrabajo.aspx" />
@@ -155,6 +157,13 @@
     <Compile Include="AdultoMayor\frmAplicarOfertaTrabajo.aspx.designer.cs">
       <DependentUpon>frmAplicarOfertaTrabajo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdultoMayor\frmCalificarEmpresa.aspx.cs">
+      <DependentUpon>frmCalificarEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdultoMayor\frmCalificarEmpresa.aspx.designer.cs">
+      <DependentUpon>frmCalificarEmpresa.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdultoMayor\frmConsultarPerfilAdultoMayor.aspx.cs">
       <DependentUpon>frmConsultarPerfilAdultoMayor.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -189,6 +198,13 @@
     </Compile>
     <Compile Include="AdultoMayor\frmEditarExperienciasLaboralesAdultoMayor.aspx.designer.cs">
       <DependentUpon>frmEditarExperienciasLaboralesAdultoMayor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdultoMayor\frmFiltrarEmpresa.aspx.cs">
+      <DependentUpon>frmFiltrarEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdultoMayor\frmFiltrarEmpresa.aspx.designer.cs">
+      <DependentUpon>frmFiltrarEmpresa.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdultoMayor\frmFiltrarOfertasTrabajo.aspx.cs">
       <DependentUpon>frmFiltrarOfertasTrabajo.aspx</DependentUpon>
