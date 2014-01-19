@@ -57,6 +57,7 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="Administrador\frmCambiarEstadoPerfil.aspx" />
     <Content Include="Administrador\frmOpinionesSobreBolsaTrabajo.aspx" />
+    <Content Include="Administrador\frmPublicarNoticiaArticulo.aspx" />
     <Content Include="AdultoMayor\frmAplicarOfertaTrabajo.aspx" />
     <Content Include="AdultoMayor\frmConsultarPerfilAdultoMayor.aspx" />
     <Content Include="AdultoMayor\frmConsultarServiciosOfrecidos.aspx" />
@@ -147,6 +148,13 @@
     </Compile>
     <Compile Include="Administrador\frmOpinionesSobreBolsaTrabajo.aspx.designer.cs">
       <DependentUpon>frmOpinionesSobreBolsaTrabajo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\frmPublicarNoticiaArticulo.aspx.cs">
+      <DependentUpon>frmPublicarNoticiaArticulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador\frmPublicarNoticiaArticulo.aspx.designer.cs">
+      <DependentUpon>frmPublicarNoticiaArticulo.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdultoMayor\frmAplicarOfertaTrabajo.aspx.cs">
       <DependentUpon>frmAplicarOfertaTrabajo.aspx</DependentUpon>

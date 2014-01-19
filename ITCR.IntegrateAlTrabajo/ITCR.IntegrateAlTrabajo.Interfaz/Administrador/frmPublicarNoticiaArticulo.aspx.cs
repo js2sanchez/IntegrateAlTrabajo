@@ -13,5 +13,17 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador
         {
 
         }
+
+        protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (RadioButtonList1.SelectedValue.CompareTo("1") == 0)
+            {
+                mv_articulo_o_noticia.ActiveViewIndex = 0;
+            }
+            else
+            {
+                mv_articulo_o_noticia.ActiveViewIndex = 1;
+            }
+        }
     }
 }

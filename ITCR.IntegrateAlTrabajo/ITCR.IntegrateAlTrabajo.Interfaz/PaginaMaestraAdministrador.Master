@@ -45,7 +45,8 @@
                     <Items>
                         <asp:MenuItem Text="Mi perfil" Value="Mi perfil" 
                             Selected="True"/>
-                        <asp:MenuItem Text="Publicar noticias y artículos" Value="Ofrecer servicios"/>
+                        <asp:MenuItem Text="Publicar noticias y artículos" Value="Ofrecer servicios" 
+                            NavigateUrl="~/Administrador/frmPublicarNoticiaArticulo.aspx"/>
                         <asp:MenuItem Text="Activar/Desactivar perfil" Value="Mis servicios" 
                             NavigateUrl="~/Administrador/frmCambiarEstadoPerfil.aspx"></asp:MenuItem>
                         <asp:MenuItem Text="Publicar guía" Value="Ofertas de trabajo">

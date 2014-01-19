@@ -42,3 +42,7 @@ D:\Respaldos Intégrate al Trabajo\Proyecto - Intégrate al trabajo\ITCR.Integra
 D:\Respaldos Intégrate al Trabajo\Proyecto - Intégrate al trabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Datos\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.pdb
 D:\Respaldos Intégrate al Trabajo\Proyecto - Intégrate al trabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Datos\obj\Debug\ITCR.IntegrateAlTrabajo.Datos.dll
 D:\Respaldos Intégrate al Trabajo\Proyecto - Intégrate al trabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Datos\obj\Debug\ITCR.IntegrateAlTrabajo.Datos.pdb
+D:\BolsaTrabajo2014\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Datos\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.dll
+D:\BolsaTrabajo2014\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Datos\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.pdb
+D:\BolsaTrabajo2014\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Datos\obj\Debug\ITCR.IntegrateAlTrabajo.Datos.dll
+D:\BolsaTrabajo2014\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Datos\obj\Debug\ITCR.IntegrateAlTrabajo.Datos.pdb
