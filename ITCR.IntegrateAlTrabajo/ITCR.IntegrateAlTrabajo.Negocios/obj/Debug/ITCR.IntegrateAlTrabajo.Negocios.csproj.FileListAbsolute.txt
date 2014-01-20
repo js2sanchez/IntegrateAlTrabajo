@@ -75,3 +75,10 @@ D:\Respaldos Intégrate al Trabajo\Proyecto - Intégrate al trabajo\ITCR.Integra
 D:\Respaldos Intégrate al Trabajo\Proyecto - Intégrate al trabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.csprojResolveAssemblyReference.cache
 D:\Respaldos Intégrate al Trabajo\Proyecto - Intégrate al trabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
 D:\Respaldos Intégrate al Trabajo\Proyecto - Intégrate al trabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb
+C:\Users\Satcha\Desktop\Bolsa de Trabajo 2014\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
+C:\Users\Satcha\Desktop\Bolsa de Trabajo 2014\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb
+C:\Users\Satcha\Desktop\Bolsa de Trabajo 2014\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.dll
+C:\Users\Satcha\Desktop\Bolsa de Trabajo 2014\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.pdb
+C:\Users\Satcha\Desktop\Bolsa de Trabajo 2014\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.csprojResolveAssemblyReference.cache
+C:\Users\Satcha\Desktop\Bolsa de Trabajo 2014\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
+C:\Users\Satcha\Desktop\Bolsa de Trabajo 2014\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb

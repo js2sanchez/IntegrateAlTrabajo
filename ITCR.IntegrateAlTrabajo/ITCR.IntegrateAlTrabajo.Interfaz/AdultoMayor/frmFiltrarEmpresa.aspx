@@ -1,24 +1,24 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMaestraAdultoMayor.Master" AutoEventWireup="true" CodeBehind="frmFiltrarEmpresa.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor.frmFiltrarEmpresa" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
-        .style3
-        {
-            width: 100%;
-        }
-        .style4
-        {
-            width: 15px;
-        }
-        .style6
-        {}
-        .style7
-        {
-            width: 250px;
-        }
-        .style8
-        {
-            width: 20px;
-        }
+    .style3
+    {
+        width: 100%;
+    }
+    .style4
+    {
+        width: 15px;
+    }
+    .style6
+    {}
+    .style7
+    {
+        width: 250px;
+    }
+    .style8
+    {
+        width: 20px;
+    }
         .style13
         {
             height: 25px;
@@ -91,93 +91,92 @@
             height: 24px;
         }
         .style23
-        {
-            width: 116px;
-        }
-    </style>
+    {
+        width: 116px;
+    }
+</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <table class="style3">
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style6" colspan="2">
-                Seleccionar la empresa a calificar:</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style23">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style6" colspan="2">
+    <tr>
+        <td class="style4">
+            &nbsp;</td>
+        <td class="style6" colspan="2">
+            Seleccionar la empresa a calificar:</td>
+        <td class="style8">
+            &nbsp;</td>
+        <td class="style23">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style4">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="style4">
+            &nbsp;</td>
+        <td class="style6" colspan="2">
                 <asp:DropDownList ID="drpEmpresa" runat="server" Enabled="False">
                 </asp:DropDownList>
             </td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style23">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style23">
-                &nbsp;</td>
-            <td class="style7">
+        <td class="style8">
+            &nbsp;</td>
+        <td class="style23">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style4">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="style4">
+            &nbsp;</td>
+        <td class="style6">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style8">
+            &nbsp;</td>
+        <td class="style23">
+            &nbsp;</td>
+        <td class="style7">
                 <asp:Panel ID="PanelBotonBuscar" runat="server" HorizontalAlign="Right">
-                    <asp:Button ID="btn_buscar" runat="server" Text="Buscar" CssClass="Boton" 
-                        onclick="btn_buscar_Click" />
+                    <asp:Button ID="btn_buscar" runat="server" Text="Buscar" CssClass="Boton" />
                 </asp:Panel>
             </td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style23">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style6" colspan="5">
+        <td class="style4">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="style4">
+            &nbsp;</td>
+        <td class="style6">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style8">
+            &nbsp;</td>
+        <td class="style23">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style4">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="style4">
+            &nbsp;</td>
+        <td class="style6" colspan="5">
                 <asp:Panel ID="pnl_resultados" runat="server">
                 </asp:Panel>
                 </td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style6" colspan="5">
+        <td class="style4">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="style4">
+            &nbsp;</td>
+        <td class="style6" colspan="5">
                 <asp:Panel ID="pnl_resultado" runat="server" Height="414px">
                     <table class="style3">
                         <tr>
@@ -211,7 +210,6 @@
                                 <asp:DataGrid ID="dgResultados" runat="server" AutoGenerateColumns="False" 
                                     BackColor="WhiteSmoke" BorderStyle="Solid" CssClass="GridMantenimiento" 
                                     Font-Names="Century Gothic" Font-Size="Small" ForeColor="Black" Height="19px" 
-                                    onitemcommand="dgResultados_ItemCommand" 
                                      Width="99%" Font-Overline="False">
                                     <AlternatingItemStyle BackColor="Gainsboro" />
                                     <HeaderStyle BackColor="Navy" Font-Bold="True" Font-Names="Century Gothic" 
@@ -245,328 +243,328 @@
                     </table>
                 </asp:Panel>
             </td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style23">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style23">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style23">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style23">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style23">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style23">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style23">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style23">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style23">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style23">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style23">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style23">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style23">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style23">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style23">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style23">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style23">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style23">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style23">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style23">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-    </table>
+        <td class="style4">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="style4">
+            &nbsp;</td>
+        <td class="style6">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style8">
+            &nbsp;</td>
+        <td class="style23">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style4">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="style4">
+            &nbsp;</td>
+        <td class="style6">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style8">
+            &nbsp;</td>
+        <td class="style23">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style4">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="style4">
+            &nbsp;</td>
+        <td class="style6">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style8">
+            &nbsp;</td>
+        <td class="style23">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style4">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="style4">
+            &nbsp;</td>
+        <td class="style6">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style8">
+            &nbsp;</td>
+        <td class="style23">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style4">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="style4">
+            &nbsp;</td>
+        <td class="style6">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style8">
+            &nbsp;</td>
+        <td class="style23">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style4">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="style4">
+            &nbsp;</td>
+        <td class="style6">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style8">
+            &nbsp;</td>
+        <td class="style23">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style4">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="style4">
+            &nbsp;</td>
+        <td class="style6">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style8">
+            &nbsp;</td>
+        <td class="style23">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style4">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="style4">
+            &nbsp;</td>
+        <td class="style6">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style8">
+            &nbsp;</td>
+        <td class="style23">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style4">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="style4">
+            &nbsp;</td>
+        <td class="style6">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style8">
+            &nbsp;</td>
+        <td class="style23">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style4">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="style4">
+            &nbsp;</td>
+        <td class="style6">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style8">
+            &nbsp;</td>
+        <td class="style23">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style4">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="style4">
+            &nbsp;</td>
+        <td class="style6">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style8">
+            &nbsp;</td>
+        <td class="style23">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style4">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="style4">
+            &nbsp;</td>
+        <td class="style6">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style8">
+            &nbsp;</td>
+        <td class="style23">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style4">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="style4">
+            &nbsp;</td>
+        <td class="style6">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style8">
+            &nbsp;</td>
+        <td class="style23">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style4">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="style4">
+            &nbsp;</td>
+        <td class="style6">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style8">
+            &nbsp;</td>
+        <td class="style23">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style4">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="style4">
+            &nbsp;</td>
+        <td class="style6">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style8">
+            &nbsp;</td>
+        <td class="style23">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style4">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="style4">
+            &nbsp;</td>
+        <td class="style6">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style8">
+            &nbsp;</td>
+        <td class="style23">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style4">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="style4">
+            &nbsp;</td>
+        <td class="style6">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style8">
+            &nbsp;</td>
+        <td class="style23">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style4">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="style4">
+            &nbsp;</td>
+        <td class="style6">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style8">
+            &nbsp;</td>
+        <td class="style23">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style4">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="style4">
+            &nbsp;</td>
+        <td class="style6">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style8">
+            &nbsp;</td>
+        <td class="style23">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style4">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="style4">
+            &nbsp;</td>
+        <td class="style6">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style8">
+            &nbsp;</td>
+        <td class="style23">
+            &nbsp;</td>
+        <td class="style7">
+            &nbsp;</td>
+        <td class="style4">
+            &nbsp;</td>
+    </tr>
+</table>
 </asp:Content>
