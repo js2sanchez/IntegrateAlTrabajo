@@ -30,7 +30,7 @@
                             <asp:Image ID="imgLogo" runat="server" Height="137px" ImageAlign="Left" 
                                 ImageUrl="~/Multimedia/Logo.PNG" Width="122px" />
                         </td>
-                        <td>
+                        <td align="right">
                             <asp:Image ID="imgBanner" runat="server" Height="147px" ImageAlign="AbsMiddle" 
                                 ImageUrl="~/Multimedia/banner_adultos_mayores.jpg" />
                         </td>
