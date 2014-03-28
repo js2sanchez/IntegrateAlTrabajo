@@ -1,10 +1,10 @@
 #region Acerca de...
 ///////////////////////////////////////////////////////////////////////////
 // Cliente:  Tecnológico de Costa Rica
-// Proyecto: Intégrate al trabajo
+// Proyecto: Prueba Telerik ORM
 // Descripción: Clase de acceso a datos para tabla 'IATExperienciaLaboral'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: martes 27 de agosto de 2013, 09:45:38 p.m.
+// Fecha: domingo 23 de marzo de 2014, 09:28:05 p.m.
 // Dado que esta clase implementa IDispose, las clases derivadas no deben hacerlo.
 ///////////////////////////////////////////////////////////////////////////
 #endregion
@@ -41,8 +41,6 @@ namespace ITCR.IntegrateAlTrabajo.Datos
 		/// <remarks>
 		/// Propiedades necesarias para este método: 
 		/// <UL>
-		///		 <LI>AnnoInicial</LI>
-		///		 <LI>AnnoFinal</LI>
 		///		 <LI>Empresa</LI>
 		///		 <LI>Puesto</LI>
 		///		 <LI>FK_IdPersona</LI>
@@ -67,8 +65,6 @@ namespace ITCR.IntegrateAlTrabajo.Datos
 		/// Propiedades necesarias para este método: 
 		/// <UL>
 		///		 <LI>Id_ExperienciaLaboral</LI>
-		///		 <LI>AnnoInicial</LI>
-		///		 <LI>AnnoFinal</LI>
 		///		 <LI>Empresa</LI>
 		///		 <LI>Puesto</LI>
 		///		 <LI>FK_IdPersona</LI>
@@ -117,8 +113,6 @@ namespace ITCR.IntegrateAlTrabajo.Datos
 		/// <UL>
 		///		 <LI>CodError</LI>
 		///		 <LI>Id_ExperienciaLaboral</LI>
-		///		 <LI>AnnoInicial</LI>
-		///		 <LI>AnnoFinal</LI>
 		///		 <LI>Empresa</LI>
 		///		 <LI>Puesto</LI>
 		///		 <LI>FK_IdPersona</LI>
@@ -155,8 +149,6 @@ namespace ITCR.IntegrateAlTrabajo.Datos
 		/// Propiedades necesarias para este método: 
 		/// <UL>
 		///		 <LI>Id_ExperienciaLaboral</LI>
-		///		 <LI>AnnoInicial</LI>
-		///		 <LI>AnnoFinal</LI>
 		///		 <LI>Empresa</LI>
 		///		 <LI>Puesto</LI>
 		///		 <LI>FK_IdPersona</LI>

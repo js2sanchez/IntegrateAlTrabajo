@@ -106,3 +106,12 @@ D:\Respaldos Intégrate al Trabajo\Proyecto - Intégrate al trabajo\ITCR.Integra
 D:\Respaldos Intégrate al Trabajo\Proyecto - Intégrate al trabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Interfaz\obj\Debug\ITCR.IntegrateAlTrabajo.Interfaz.csprojResolveAssemblyReference.cache
 D:\Respaldos Intégrate al Trabajo\Proyecto - Intégrate al trabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Interfaz\obj\Debug\ITCR.IntegrateAlTrabajo.Interfaz.dll
 D:\Respaldos Intégrate al Trabajo\Proyecto - Intégrate al trabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Interfaz\obj\Debug\ITCR.IntegrateAlTrabajo.Interfaz.pdb
+C:\Users\Michael\Documents\IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Interfaz\bin\ITCR.IntegrateAlTrabajo.Interfaz.dll
+C:\Users\Michael\Documents\IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Interfaz\bin\ITCR.IntegrateAlTrabajo.Interfaz.pdb
+C:\Users\Michael\Documents\IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Interfaz\bin\ITCR.IntegrateAlTrabajo.Datos.dll
+C:\Users\Michael\Documents\IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Interfaz\bin\ITCR.IntegrateAlTrabajo.Negocios.dll
+C:\Users\Michael\Documents\IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Interfaz\bin\ITCR.IntegrateAlTrabajo.Datos.pdb
+C:\Users\Michael\Documents\IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Interfaz\bin\ITCR.IntegrateAlTrabajo.Negocios.pdb
+C:\Users\Michael\Documents\IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Interfaz\obj\Debug\ITCR.IntegrateAlTrabajo.Interfaz.csprojResolveAssemblyReference.cache
+C:\Users\Michael\Documents\IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Interfaz\obj\Debug\ITCR.IntegrateAlTrabajo.Interfaz.dll
+C:\Users\Michael\Documents\IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Interfaz\obj\Debug\ITCR.IntegrateAlTrabajo.Interfaz.pdb

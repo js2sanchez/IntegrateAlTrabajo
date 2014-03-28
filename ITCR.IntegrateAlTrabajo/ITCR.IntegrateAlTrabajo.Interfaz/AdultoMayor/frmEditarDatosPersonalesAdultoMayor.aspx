@@ -99,7 +99,7 @@
                                 <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
                             </td>
                             <td class="style27">
-                                <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtNombre" runat="server" Enabled="False"></asp:TextBox>
                             </td>
                             <td class="style31">
                                 &nbsp;</td>
@@ -115,7 +115,7 @@
                                 <asp:Label ID="lblApellido1" runat="server" Text="Primer apellido"></asp:Label>
                             </td>
                             <td class="style27">
-                                <asp:TextBox ID="txtApellido1" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtApellido1" runat="server" Enabled="False"></asp:TextBox>
                             </td>
                             <td class="style31">
                                 &nbsp;</td>
@@ -131,7 +131,7 @@
                                 <asp:Label ID="lblApellido2" runat="server" Text="Segundo apellido"></asp:Label>
                             </td>
                             <td class="style27">
-                                <asp:TextBox ID="txtApellido2" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtApellido2" runat="server" Enabled="False"></asp:TextBox>
                             </td>
                             <td class="style31">
                                 &nbsp;</td>
@@ -149,7 +149,7 @@
                                 <asp:Label ID="lblSexo" runat="server" Text="Sexo"></asp:Label>
                             </td>
                             <td class="style27">
-                                <asp:DropDownList ID="drpSexo" runat="server">
+                                <asp:DropDownList ID="drpSexo" runat="server" Enabled="False">
                                 </asp:DropDownList>
                             </td>
                             <td class="style31">
@@ -168,7 +168,7 @@
                                 <asp:Label ID="lblCedula" runat="server" Text="Cédula"></asp:Label>
                             </td>
                             <td class="style27">
-                                <asp:TextBox ID="txtCedula" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtCedula" runat="server" Enabled="False"></asp:TextBox>
                             </td>
                             <td class="style31">
                                 &nbsp;</td>
@@ -185,7 +185,7 @@
                                 <asp:Label ID="lblFechaNacimiento" runat="server" Text="Fecha de nacimiento"></asp:Label>
                             </td>
                             <td class="style27">
-                                <asp:TextBox ID="txtFechaNacimiento" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtFechaNacimiento" runat="server" Enabled="False"></asp:TextBox>
                             </td>
                             <td class="style31">
                                 &nbsp;</td>

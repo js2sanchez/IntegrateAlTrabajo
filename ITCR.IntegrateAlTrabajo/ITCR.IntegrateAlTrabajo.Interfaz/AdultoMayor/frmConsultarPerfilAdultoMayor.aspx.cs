@@ -144,7 +144,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         private void cargarDataGridEstudios()
         {
             dgEstudios.DataSource = " ";
-            PanelEstudios.Visible = false;
+            PanelEstudios.Visible = true;
 
             cIATEstudioNegocios Estudio = new cIATEstudioNegocios(1, "A", 2, "B");
 
@@ -180,14 +180,13 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             {
                 dgEstudios.DataSource = TablaEstudio;
                 dgEstudios.DataBind();
-                PanelEstudios.Visible = true;
             }
         }
 
         private void cargarDataGridExperienciasLaborales()
         {
             dgExperienciasLaborales.DataSource = " ";
-            PanelExperienciasLaborales.Visible = false;
+            PanelExperienciasLaborales.Visible = true;
 
             cIATExperienciaLaboralNegocios ExperienciaLaboral = new cIATExperienciaLaboralNegocios(1, "A", 2, "B");
 
@@ -222,7 +221,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             {
                 dgExperienciasLaborales.DataSource = TablaExperienciaLaboral;
                 dgExperienciasLaborales.DataBind();
-                PanelExperienciasLaborales.Visible = true;
             }
         }
 

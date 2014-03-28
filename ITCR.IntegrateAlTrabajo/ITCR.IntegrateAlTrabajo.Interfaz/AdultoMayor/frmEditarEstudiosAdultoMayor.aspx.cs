@@ -70,8 +70,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             if (e.CommandName == "Editar")
             {
                 Session["Id_Estudio"] = e.Item.Cells[0].Text;
-                txtAñoInicialEstudio.Text = e.Item.Cells[1].Text;
-                txtAñoFinalEstudio.Text = e.Item.Cells[2].Text;
                 txtInstitucionEstudio.Text = e.Item.Cells[3].Text;
                 txtTituloEstudio.Text = e.Item.Cells[4].Text;
 
@@ -92,19 +90,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         {
             cIATEstudioNegocios Estudio = new cIATEstudioNegocios(1, "A", 2, "B");
             Estudio.Id_Estudio = Int16.Parse(Session["Id_Estudio"].ToString());
-            Estudio.AnnoInicial = Int16.Parse(txtAñoInicialEstudio.Text);
-            Estudio.AnnoFinal = Int16.Parse(txtAñoFinalEstudio.Text);
             Estudio.Institucion = txtInstitucionEstudio.Text;
             Estudio.Titulo = txtTituloEstudio.Text;
             Estudio.FK_IdPersona = Int16.Parse(Session["Id_Persona"].ToString());
 
             Estudio.Actualizar();
 
-            txtAñoInicialEstudio.Text = "";
-            txtAñoFinalEstudio.Text = "";
             txtInstitucionEstudio.Text = "";
             txtTituloEstudio.Text = "";
-            txtAñoInicialEstudio.Focus();
+            txtInstitucionEstudio.Focus();
 
             btnAgregar.Visible = true;
             btnActualizar.Visible = false;
@@ -114,7 +108,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
         protected void dgEstudios_ItemDataBound(object sender, DataGridItemEventArgs e)
         {
-            e.Item.Cells[6].Attributes.Add("onClick", "return confirmarBorradoEstudio();");
+            e.Item.Cells[4].Attributes.Add("onClick", "return confirmarBorradoEstudio();");
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
@@ -125,19 +119,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             {
                 cIATEstudioNegocios Estudio = new cIATEstudioNegocios(1, "A", 2, "B");
 
-                Estudio.AnnoInicial = Int16.Parse(txtAñoInicialEstudio.Text);
-                Estudio.AnnoFinal = Int16.Parse(txtAñoFinalEstudio.Text);
                 Estudio.Institucion = txtInstitucionEstudio.Text;
                 Estudio.Titulo = txtTituloEstudio.Text;
                 Estudio.FK_IdPersona = Int16.Parse(Session["Id_Persona"].ToString());
 
                 Estudio.Insertar();
 
-                txtAñoInicialEstudio.Text = "";
-                txtAñoFinalEstudio.Text = "";
                 txtInstitucionEstudio.Text = "";
                 txtTituloEstudio.Text = "";
-                txtAñoInicialEstudio.Focus();
+                txtInstitucionEstudio.Focus();
 
                 cargarDataGridEstudios();
             }

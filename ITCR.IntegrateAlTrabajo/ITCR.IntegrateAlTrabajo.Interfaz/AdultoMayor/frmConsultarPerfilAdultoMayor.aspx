@@ -349,9 +349,6 @@
                                     <Columns>
                                         <asp:BoundColumn DataField="Id_Estudio" HeaderText="Id_Estudio" Visible="False">
                                         </asp:BoundColumn>
-                                        <asp:BoundColumn DataField="AnnoInicial" HeaderText="Año inicial">
-                                        </asp:BoundColumn>
-                                        <asp:BoundColumn DataField="AnnoFinal" HeaderText="Año final"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="Institucion" HeaderText="Institución">
                                         </asp:BoundColumn>
                                         <asp:BoundColumn DataField="Titulo" HeaderText="Título"></asp:BoundColumn>
@@ -420,9 +417,6 @@
                                     <Columns>
                                         <asp:BoundColumn DataField="Id_ExperienciaLaboral" 
                                             HeaderText="Id_ExperienciaLaboral" Visible="False"></asp:BoundColumn>
-                                        <asp:BoundColumn DataField="AnnoInicial" HeaderText="Año inicial">
-                                        </asp:BoundColumn>
-                                        <asp:BoundColumn DataField="AnnoFinal" HeaderText="Año final"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="Empresa" HeaderText="Empresa"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="Puesto" HeaderText="Puesto"></asp:BoundColumn>
                                     </Columns>

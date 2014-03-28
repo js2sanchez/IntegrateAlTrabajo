@@ -33,6 +33,14 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
         private static ArrayList ListaIdiomas = new ArrayList();
 
+        #region Constantes
+
+        protected readonly static string[] MESES_ESPANIOL = {"Enero","Febrero","Marzo","Abril","Mayo",
+                                                            "Junio","Julio","Agosto","Setiembre","Octubre",
+                                                            "Noviembre","Diciembre"};
+        protected const int CARACTERES_MINIMOS = 5, CARACTERES_MAXIMOS = 50;
+        #endregion
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -41,8 +49,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 ListaExperienciasLaborales.Clear();
                 ListaIdiomas.Clear();
                 mvRegistroAdultoMayor.ActiveViewIndex = 0;
-                btnFinalizar.Enabled = false;
                 cargarTodosDropDownList();
+                
             }
         }
 
@@ -100,15 +108,72 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             }
         }
 
+        private void cargarDropDownListFechas()
+        {
+            DdlMesNacimiento.Items.Clear();
+            for(int mes = 0;mes<12;mes++)
+            {
+                ListItem mesItem =new ListItem(MESES_ESPANIOL[mes]);
+                DdlMesNacimiento.Items.Add(mesItem);
+            }
+            cargarDropDownListDias(1,int.Parse(DdlAnioNacimiento.SelectedItem.Text));
+            
+        }
+
+        private void cargarDropDownListDias(int pMes,int pYear)
+        {
+            int seleccion = 0;
+            if (DdlDiaNacimiento.Items.Count > 0)
+            {
+                seleccion = DdlDiaNacimiento.SelectedIndex;
+            }
+            DdlDiaNacimiento.Items.Clear();
+            int dias = DateTime.DaysInMonth(pYear, pMes);
+            for (int dia = 1; dia<=dias; dia++)
+            {
+                ListItem diaItem = new ListItem(dia + "");
+                DdlDiaNacimiento.Items.Add(diaItem);
+            }
+            if((dias-1)>=seleccion)
+            {
+                DdlDiaNacimiento.SelectedIndex = seleccion;
+            }
+        }
+
+        private void cargarDropDownListAnios()
+        {
+            DdlAnioNacimiento.Items.Clear();
+            int anioMaximo = int.Parse(DateTime.Now.Year.ToString()) - 65;
+            int anioMinimo = anioMaximo - 50;
+            for (; anioMaximo > anioMinimo;anioMaximo--)
+            {
+                ListItem anio = new ListItem(anioMaximo+"");
+                DdlAnioNacimiento.Items.Add(anio);
+            }
+        }
+
         private void cargarTodosDropDownList()
         {
             cargarDropDownListSexo();
             cargarDropDownListProvincias();
             cargarDropDownListCantones();
             cargarDropDownListDistritos();
+            cargarDropDownListAnios();
+            cargarDropDownListFechas();
         }
 
         #endregion
+
+        protected void validarTelefonosServer(object sender, ServerValidateEventArgs e)
+        {
+            e.IsValid = txtTelefonoHabitacion.Text != "" || txtCelular.Text != "";
+        }
+
+        protected  void validarUsuarioServer(object sender, ServerValidateEventArgs e)
+        {
+            e.IsValid = CARACTERES_MINIMOS <= txtNombreUsuario.Text.Length 
+                && txtNombreUsuario.Text.Length <= CARACTERES_MAXIMOS;
+        }
 
         protected void btnSiguiente1_Click(object sender, EventArgs e)
         {
@@ -120,7 +185,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 Persona.Apellido1 = txtApellido1.Text;
                 Persona.Apellido2 = txtApellido2.Text;
                 Persona.Num_Cedula = txtCedula.Text;
-                Persona.Fec_Nacimiento = DateTime.Parse(txtFechaNacimiento.Text);
+                Persona.Fec_Nacimiento = DateTime.Parse(DdlDiaNacimiento.Text+"/"+(DdlMesNacimiento.SelectedIndex+1)
+                    +"/"+DdlAnioNacimiento.Text);
                 Persona.Sexo = drpSexo.SelectedValue;
                 Persona.FK_IdDistrito = Int16.Parse(drpDistrito.SelectedValue);
 
@@ -208,13 +274,9 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
             if (Page.IsValid)
             {
-                TablaEstudios.Columns.Add("AnnoInicial", typeof(int));
-                TablaEstudios.Columns.Add("AnnoFinal", typeof(int));
                 TablaEstudios.Columns.Add("Institucion", typeof(string));
                 TablaEstudios.Columns.Add("Titulo", typeof(string));
 
-                Estudio.AnnoInicial = Int16.Parse(txtAñoInicialEstudio.Text);
-                Estudio.AnnoFinal = Int16.Parse(txtAñoFinalEstudio.Text);
                 Estudio.Institucion = txtInstitucionEstudio.Text;
                 Estudio.Titulo = txtTituloEstudio.Text;
                 ListaEstudios.Add(Estudio);
@@ -222,8 +284,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 foreach (cIATEstudioNegocios ItemEstudio in ListaEstudios)
                 {
                     DataRow FilaEstudio = TablaEstudios.NewRow();
-                    FilaEstudio["AnnoInicial"] = ItemEstudio.AnnoInicial.ToString();
-                    FilaEstudio["AnnoFinal"] = ItemEstudio.AnnoFinal.ToString();
                     FilaEstudio["Institucion"] = ItemEstudio.Institucion.ToString();
                     FilaEstudio["Titulo"] = ItemEstudio.Titulo.ToString();
 
@@ -233,11 +293,9 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 dgEstudios.DataSource = TablaEstudios;
                 dgEstudios.DataBind();
 
-                txtAñoInicialEstudio.Text = "";
-                txtAñoFinalEstudio.Text = "";
                 txtInstitucionEstudio.Text = "";
                 txtTituloEstudio.Text = "";
-                txtAñoInicialEstudio.Focus();
+                txtInstitucionEstudio.Focus();
             }
         }
 
@@ -247,13 +305,9 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
             if (Page.IsValid)
             {
-                TablaExperienciasLaborales.Columns.Add("AnnoInicial", typeof(int));
-                TablaExperienciasLaborales.Columns.Add("AnnoFinal", typeof(int));
                 TablaExperienciasLaborales.Columns.Add("Empresa", typeof(string));
                 TablaExperienciasLaborales.Columns.Add("Puesto", typeof(string));
 
-                ExperienciaLaboral.AnnoInicial = Int16.Parse(txtAñoInicialExperienciaLaboral.Text);
-                ExperienciaLaboral.AnnoFinal = Int16.Parse(txtAñoFinalExperienciaLaboral.Text);
                 ExperienciaLaboral.Empresa = txtEmpresa.Text;
                 ExperienciaLaboral.Puesto = txtPuesto.Text;
                 ListaExperienciasLaborales.Add(ExperienciaLaboral);
@@ -261,8 +315,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 foreach (cIATExperienciaLaboralNegocios ItemExperienciaLaboral in ListaExperienciasLaborales)
                 {
                     DataRow FilaExperienciaLaboral = TablaExperienciasLaborales.NewRow();
-                    FilaExperienciaLaboral["AnnoInicial"] = ItemExperienciaLaboral.AnnoInicial.ToString();
-                    FilaExperienciaLaboral["AnnoFinal"] = ItemExperienciaLaboral.AnnoFinal.ToString();
                     FilaExperienciaLaboral["Empresa"] = ItemExperienciaLaboral.Empresa.ToString();
                     FilaExperienciaLaboral["Puesto"] = ItemExperienciaLaboral.Puesto.ToString();
 
@@ -272,24 +324,26 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 dgExperienciasLaborales.DataSource = TablaExperienciasLaborales;
                 dgExperienciasLaborales.DataBind();
 
-                txtAñoInicialExperienciaLaboral.Text = "";
-                txtAñoFinalExperienciaLaboral.Text = "";
                 txtEmpresa.Text = "";
                 txtPuesto.Text = "";
-                txtAñoInicialExperienciaLaboral.Focus();
+                txtEmpresa.Focus();
             }
         }
 
         protected void chkAceptarTerminos_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkAceptarTerminos.Checked)
+            bool _checked = chkAceptarTerminos.Checked;
+            if (_checked)
             {
-                btnFinalizar.Enabled = true;
+                //btnFinalizar.Attributes["disabled"] = "false";
+                btnFinalizar.Attributes.Remove("disabled");
+                btnFinalizar.Attributes["onclick"] = "btnFinalizar_Click";
             }
             else
             {
-                btnFinalizar.Enabled = false;
+                btnFinalizar.Attributes["disabled"] = "true";
             }
+            
         }
 
         protected void btnFinalizar_Click(object sender, EventArgs e)
@@ -319,8 +373,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
             foreach (cIATEstudioNegocios ItemEstudio in ListaEstudios)
             {
-                Estudio.AnnoInicial = Int16.Parse(ItemEstudio.AnnoInicial.ToString());
-                Estudio.AnnoFinal = Int16.Parse(ItemEstudio.AnnoFinal.ToString());
                 Estudio.Institucion = ItemEstudio.Institucion.ToString();
                 Estudio.Titulo = ItemEstudio.Titulo.ToString();
                 Estudio.FK_IdPersona = IdPersona;
@@ -329,8 +381,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
             foreach (cIATExperienciaLaboralNegocios ItemExperienciaLaboral in ListaExperienciasLaborales)
             {
-                ExperienciaLaboral.AnnoInicial = Int16.Parse(ItemExperienciaLaboral.AnnoInicial.ToString());
-                ExperienciaLaboral.AnnoFinal = Int16.Parse(ItemExperienciaLaboral.AnnoFinal.ToString());
                 ExperienciaLaboral.Empresa = ItemExperienciaLaboral.Empresa.ToString();
                 ExperienciaLaboral.Puesto = ItemExperienciaLaboral.Puesto.ToString();
                 ExperienciaLaboral.FK_IdPersona = IdPersona;
@@ -408,5 +458,11 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         {
             mvRegistroAdultoMayor.ActiveViewIndex = 3;
         }
+
+        protected void DdlDiaNacimiento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cargarDropDownListDias(DdlMesNacimiento.SelectedIndex+1,int.Parse(DdlAnioNacimiento.SelectedItem.Text));
+        }
+
     }
 }

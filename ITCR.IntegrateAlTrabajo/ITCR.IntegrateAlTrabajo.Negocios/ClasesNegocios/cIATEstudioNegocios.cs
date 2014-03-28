@@ -1,10 +1,10 @@
 #region Acerca de...
 ///////////////////////////////////////////////////////////////////////////
 // Cliente:  Tecnológico de Costa Rica
-// Proyecto: Intégrate al trabajo
+// Proyecto: Prueba Telerik ORM
 // Descripción: Clase de LOGICA DE NEGOCIOS para tabla 'IATEstudio'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: martes 27 de agosto de 2013, 09:45:38 p.m.
+// Fecha: domingo 23 de marzo de 2014, 09:28:03 p.m.
 ///////////////////////////////////////////////////////////////////////////
 #endregion
 
@@ -50,8 +50,6 @@ namespace ITCR.IntegrateAlTrabajo.Negocios
 		/// <remarks>
 		/// Propiedades necesarias para este método: 
 		/// <UL>
-		///		 <LI>AnnoInicial</LI>
-		///		 <LI>AnnoFinal</LI>
 		///		 <LI>Institucion</LI>
 		///		 <LI>Titulo</LI>
 		///		 <LI>FK_IdPersona</LI>
@@ -70,8 +68,6 @@ namespace ITCR.IntegrateAlTrabajo.Negocios
 			{
 				//Construir aqui el string a guardar en la bitacora.
 				operacion = "Insertar cIATEstudio;"
-					+"AnnoInicial:"+AnnoInicial.ToString()+";"
-					+"AnnoFinal:"+AnnoFinal.ToString()+";"
 					+"Institucion:"+Institucion.ToString()+";"
 					+"Titulo:"+Titulo.ToString()+";"
 					+"FK_IdPersona:"+FK_IdPersona.ToString()+";";
@@ -96,8 +92,6 @@ namespace ITCR.IntegrateAlTrabajo.Negocios
 		/// Propiedades necesarias para este método: 
 		/// <UL>
 		///		 <LI>Id_Estudio</LI>
-		///		 <LI>AnnoInicial</LI>
-		///		 <LI>AnnoFinal</LI>
 		///		 <LI>Institucion</LI>
 		///		 <LI>Titulo</LI>
 		///		 <LI>FK_IdPersona</LI>
@@ -116,8 +110,6 @@ namespace ITCR.IntegrateAlTrabajo.Negocios
 				//Construir aqui el string a guardar en la bitacora.
 				operacion = "Actualizar cIATEstudio;"
 					+"Id_Estudio:"+Id_Estudio.ToString()+";"
-					+"AnnoInicial:"+AnnoInicial.ToString()+";"
-					+"AnnoFinal:"+AnnoFinal.ToString()+";"
 					+"Institucion:"+Institucion.ToString()+";"
 					+"Titulo:"+Titulo.ToString()+";"
 					+"FK_IdPersona:"+FK_IdPersona.ToString()+";";
@@ -183,8 +175,6 @@ namespace ITCR.IntegrateAlTrabajo.Negocios
 		/// <UL>
 		///		 <LI>CodError</LI>
 		///		 <LI>Id_Estudio</LI>
-		///		 <LI>AnnoInicial</LI>
-		///		 <LI>AnnoFinal</LI>
 		///		 <LI>Institucion</LI>
 		///		 <LI>Titulo</LI>
 		///		 <LI>FK_IdPersona</LI>
@@ -235,8 +225,6 @@ namespace ITCR.IntegrateAlTrabajo.Negocios
 		/// Propiedades necesarias para este método: 
 		/// <UL>
 		///		 <LI>Id_Estudio</LI>
-		///		 <LI>AnnoInicial</LI>
-		///		 <LI>AnnoFinal</LI>
 		///		 <LI>Institucion</LI>
 		///		 <LI>Titulo</LI>
 		///		 <LI>FK_IdPersona</LI>

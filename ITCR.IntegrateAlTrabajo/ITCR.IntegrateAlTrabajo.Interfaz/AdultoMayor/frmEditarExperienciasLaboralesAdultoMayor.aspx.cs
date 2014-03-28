@@ -69,19 +69,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         {
             cIATExperienciaLaboralNegocios ExperienciaLaboral = new cIATExperienciaLaboralNegocios(1, "A", 2, "B");
             ExperienciaLaboral.Id_ExperienciaLaboral = Int16.Parse(Session["Id_ExperienciaLaboral"].ToString());
-            ExperienciaLaboral.AnnoInicial = Int16.Parse(txtAñoInicialExperienciaLaboral.Text);
-            ExperienciaLaboral.AnnoFinal = Int16.Parse(txtAñoFinalExperienciaLaboral.Text);
             ExperienciaLaboral.Empresa = txtEmpresa.Text;
             ExperienciaLaboral.Puesto = txtPuesto.Text;
             ExperienciaLaboral.FK_IdPersona = Int16.Parse(Session["Id_Persona"].ToString());
 
             ExperienciaLaboral.Actualizar();
 
-            txtAñoInicialExperienciaLaboral.Text = "";
-            txtAñoFinalExperienciaLaboral.Text = "";
             txtEmpresa.Text = "";
             txtPuesto.Text = "";
-            txtAñoInicialExperienciaLaboral.Focus();
+            txtEmpresa.Focus();
 
             btnAgregar.Visible = true;
             btnActualizar.Visible = false;
@@ -97,20 +93,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             {
                 cIATExperienciaLaboralNegocios ExperienciaLaboral = new cIATExperienciaLaboralNegocios(1, "A", 2, "B");
 
-                ExperienciaLaboral.AnnoInicial = Int16.Parse(txtAñoInicialExperienciaLaboral.Text);
-                ExperienciaLaboral.AnnoFinal = Int16.Parse(txtAñoFinalExperienciaLaboral.Text);
                 ExperienciaLaboral.Empresa = txtEmpresa.Text;
                 ExperienciaLaboral.Puesto = txtPuesto.Text;
                 ExperienciaLaboral.FK_IdPersona = Int16.Parse(Session["Id_Persona"].ToString());
 
                 ExperienciaLaboral.Insertar();
 
-                txtAñoInicialExperienciaLaboral.Text = "";
-                txtAñoFinalExperienciaLaboral.Text = "";
                 txtEmpresa.Text = "";
                 txtPuesto.Text = "";
-                txtAñoInicialExperienciaLaboral.Focus();
-
+                txtEmpresa.Focus();
                 cargarDataGridExperienciasLaborales();
             }
         }
@@ -120,10 +111,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             if (e.CommandName == "Editar")
             {
                 Session["Id_ExperienciaLaboral"] = e.Item.Cells[0].Text;
-                txtAñoInicialExperienciaLaboral.Text = e.Item.Cells[1].Text;
-                txtAñoFinalExperienciaLaboral.Text = e.Item.Cells[2].Text;
-                txtEmpresa.Text = e.Item.Cells[3].Text;
-                txtPuesto.Text = e.Item.Cells[4].Text;
+                txtEmpresa.Text = e.Item.Cells[1].Text;
+                txtPuesto.Text = e.Item.Cells[2].Text;
 
                 btnActualizar.Visible = true;
                 btnAgregar.Visible = false;
@@ -140,7 +129,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
         protected void dgExperienciasLaborales_ItemDataBound(object sender, DataGridItemEventArgs e)
         {
-            e.Item.Cells[6].Attributes.Add("onClick", "return confirmarBorradoExperienciaLaboral();");
+            e.Item.Cells[4].Attributes.Add("onClick", "return confirmarBorradoExperienciaLaboral();");
         }
     }
 }

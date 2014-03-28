@@ -136,54 +136,24 @@
                                     <table class="style14">
                                         <tr>
                                             <td class="style26">
-                                                <asp:Label ID="lblAñoInicial2" runat="server" Text="Año inicial"></asp:Label>
-                                            </td>
-                                            <td class="style27">
-                                                <asp:TextBox ID="txtAñoInicialExperienciaLaboral" runat="server"></asp:TextBox>
-                                                <asp:RegularExpressionValidator ID="revAñoInicialExperienciaLaboral" 
-                                                        runat="server" ControlToValidate="txtAñoInicialExperienciaLaboral"
-                                                    ErrorMessage="El año inicial introducido es inválido." ForeColor="Red" ValidationExpression="([0-9]{4})"
-                                                    ValidationGroup="gvExperienciasLaborales">*</asp:RegularExpressionValidator>
-                                                <asp:RequiredFieldValidator ID="rfvAñoInicialExperienciaLaboral" runat="server" ControlToValidate="txtAñoInicialExperienciaLaboral"
-                                                    ErrorMessage="El año inicial es un dato requerido." ForeColor="Red" 
-                                                        ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
-                                            </td>
-                                            <td class="style28">
-                                            </td>
-                                            <td class="style29">
-                                                <asp:Label ID="lblAñoFinal2" runat="server" Text="Año final"></asp:Label>
-                                            </td>
-                                            <td class="style11">
-                                                <asp:TextBox ID="txtAñoFinalExperienciaLaboral" runat="server"></asp:TextBox>
-                                                <asp:RegularExpressionValidator ID="revAñoFinalExperienciaLaboral" 
-                                                        runat="server" ControlToValidate="txtAñoFinalExperienciaLaboral"
-                                                    ErrorMessage="El año final introducido es inválido." ForeColor="Red" ValidationExpression="([0-9]{4})"
-                                                    ValidationGroup="gvExperienciasLaborales">*</asp:RegularExpressionValidator>
-                                                <asp:RequiredFieldValidator ID="rfvAñoFinalExperienciaLaboral" runat="server" ControlToValidate="txtAñoFinalExperienciaLaboral"
-                                                    ErrorMessage="El año final es un dato requerido." ForeColor="Red" 
-                                                        ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="style26">
                                                 <asp:Label ID="lblEmpresa" runat="server" Text="Empresa"></asp:Label>
                                             </td>
                                             <td class="style27">
-                                                <asp:TextBox ID="txtEmpresa" runat="server"></asp:TextBox>
-                                                <asp:RequiredFieldValidator ID="rfvEmpresa" runat="server" ControlToValidate="txtEmpresa"
-                                                    ErrorMessage="La empresa es un dato requerido." ForeColor="Red" 
-                                                        ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
+                                                <asp:TextBox ID="txtEmpresa" runat="server" Width="413px"></asp:TextBox>
                                             </td>
                                             <td class="style28">
-                                                &nbsp;</td>
+                                                <asp:RequiredFieldValidator ID="rfvEmpresa" runat="server" ControlToValidate="txtEmpresa" ErrorMessage="La empresa es un dato requerido." ForeColor="Red" ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
+                                            </td>
+                                        </tr>
+                                        <tr>
                                             <td class="style29">
                                                 <asp:Label ID="lblPuesto" runat="server" Text="Puesto"></asp:Label>
                                             </td>
-                                            <td class="style11">
-                                                <asp:TextBox ID="txtPuesto" runat="server"></asp:TextBox>
-                                                <asp:RequiredFieldValidator ID="rfvPuesto" runat="server" ControlToValidate="txtPuesto"
-                                                    ErrorMessage="El puesto es un dato requerido." ForeColor="Red" 
-                                                        ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
+                                            <td class="style27">
+                                                <asp:TextBox ID="txtPuesto" runat="server" Height="26px" Width="414px"></asp:TextBox>
+                                            </td>
+                                            <td class="style28">
+                                                <asp:RequiredFieldValidator ID="rfvPuesto" runat="server" ControlToValidate="txtPuesto" ErrorMessage="El puesto es un dato requerido." ForeColor="Red" ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
                                             </td>
                                         </tr>
                                         <tr>
@@ -192,8 +162,6 @@
                                             <td class="style27">
                                                 &nbsp;</td>
                                             <td class="style28">
-                                                &nbsp;</td>
-                                            <td class="style29">
                                                 &nbsp;</td>
                                             <td class="style11">
                                                 <asp:Panel ID="PanelBotonActualizar" runat="server" HorizontalAlign="Right">
@@ -236,9 +204,6 @@
                                         <Columns>
                                             <asp:BoundColumn DataField="Id_ExperienciaLaboral" 
                                                 HeaderText="Id_ExperienciaLaboral" Visible="False"></asp:BoundColumn>
-                                            <asp:BoundColumn DataField="AnnoInicial" HeaderText="Año inicial">
-                                            </asp:BoundColumn>
-                                            <asp:BoundColumn DataField="AnnoFinal" HeaderText="Año final"></asp:BoundColumn>
                                             <asp:BoundColumn DataField="Empresa" HeaderText="Empresa"></asp:BoundColumn>
                                             <asp:BoundColumn DataField="Puesto" HeaderText="Puesto"></asp:BoundColumn>
                                             <asp:TemplateColumn>

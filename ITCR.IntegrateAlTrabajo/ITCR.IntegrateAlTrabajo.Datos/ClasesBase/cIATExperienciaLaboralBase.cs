@@ -1,10 +1,10 @@
 #region Acerca de...
 ///////////////////////////////////////////////////////////////////////////
 // Empresa:  Tecnológico de Costa Rica
-// Proyecto: Intégrate al trabajo
+// Proyecto: Prueba Telerik ORM
 // Descripción: Clase de acceso a datos para tabla 'IATExperienciaLaboral'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: martes 27 de agosto de 2013, 09:45:38 p.m.
+// Fecha: domingo 23 de marzo de 2014, 09:28:05 p.m.
 // Dado que esta clase implementa IDispose, las clases derivadas no deben hacerlo.
 ///////////////////////////////////////////////////////////////////////////
 #endregion
@@ -24,7 +24,7 @@ namespace ITCR.IntegrateAlTrabajo.Base
 	public class cIATExperienciaLaboralBase : cBDInteraccionBase
 	{
 		#region Declaraciones de miembros de la clase
-			private SqlInt32		_annoFinal, _fK_IdPersona, _fK_IdPersonaOld, _id_ExperienciaLaboral, _annoInicial;
+			private SqlInt32		_fK_IdPersona, _fK_IdPersonaOld, _id_ExperienciaLaboral;
 			private SqlString		_empresa, _puesto;
 		#endregion
 
@@ -45,8 +45,6 @@ namespace ITCR.IntegrateAlTrabajo.Base
 		/// <remarks>
 		/// Propiedades necesarias para este método: 
 		/// <UL>
-		///		 <LI>AnnoInicial</LI>
-		///		 <LI>AnnoFinal</LI>
 		///		 <LI>Empresa</LI>
 		///		 <LI>Puesto</LI>
 		///		 <LI>FK_IdPersona</LI>
@@ -68,8 +66,6 @@ namespace ITCR.IntegrateAlTrabajo.Base
 
 			try
 			{
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@iAnnoInicial", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _annoInicial));
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@iAnnoFinal", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _annoFinal));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sEmpresa", SqlDbType.VarChar, 60, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _empresa));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sPuesto", SqlDbType.VarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _puesto));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iFK_IdPersona", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fK_IdPersona));
@@ -127,8 +123,6 @@ namespace ITCR.IntegrateAlTrabajo.Base
 		/// Propiedades necesarias para este método: 
 		/// <UL>
 		///		 <LI>Id_ExperienciaLaboral</LI>
-		///		 <LI>AnnoInicial</LI>
-		///		 <LI>AnnoFinal</LI>
 		///		 <LI>Empresa</LI>
 		///		 <LI>Puesto</LI>
 		///		 <LI>FK_IdPersona</LI>
@@ -150,8 +144,6 @@ namespace ITCR.IntegrateAlTrabajo.Base
 			try
 			{
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iId_ExperienciaLaboral", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _id_ExperienciaLaboral));
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@iAnnoInicial", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _annoInicial));
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@iAnnoFinal", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _annoFinal));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sEmpresa", SqlDbType.VarChar, 60, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _empresa));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sPuesto", SqlDbType.VarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _puesto));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iFK_IdPersona", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fK_IdPersona));
@@ -427,8 +419,6 @@ namespace ITCR.IntegrateAlTrabajo.Base
 		/// <UL>
 		///		 <LI>CodError</LI>
 		///		 <LI>Id_ExperienciaLaboral</LI>
-		///		 <LI>AnnoInicial</LI>
-		///		 <LI>AnnoFinal</LI>
 		///		 <LI>Empresa</LI>
 		///		 <LI>Puesto</LI>
 		///		 <LI>FK_IdPersona</LI>
@@ -477,8 +467,6 @@ namespace ITCR.IntegrateAlTrabajo.Base
 				if(toReturn.Rows.Count > 0)
 				{
 					_id_ExperienciaLaboral = (Int32)toReturn.Rows[0]["Id_ExperienciaLaboral"];
-					_annoInicial = (Int32)toReturn.Rows[0]["AnnoInicial"];
-					_annoFinal = (Int32)toReturn.Rows[0]["AnnoFinal"];
 					_empresa = (string)toReturn.Rows[0]["Empresa"];
 					_puesto = (string)toReturn.Rows[0]["Puesto"];
 					_fK_IdPersona = (Int32)toReturn.Rows[0]["FK_IdPersona"];
@@ -652,8 +640,6 @@ namespace ITCR.IntegrateAlTrabajo.Base
 		/// Propiedades necesarias para este método: 
 		/// <UL>
 		///		 <LI>Id_ExperienciaLaboral</LI>
-		///		 <LI>AnnoInicial</LI>
-		///		 <LI>AnnoFinal</LI>
 		///		 <LI>Empresa</LI>
 		///		 <LI>Puesto</LI>
 		///		 <LI>FK_IdPersona</LI>
@@ -677,8 +663,6 @@ namespace ITCR.IntegrateAlTrabajo.Base
 			try
 			{
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iId_ExperienciaLaboral", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _id_ExperienciaLaboral));
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@iAnnoInicial", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _annoInicial));
-				cmdAEjecutar.Parameters.Add(new SqlParameter("@iAnnoFinal", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _annoFinal));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sEmpresa", SqlDbType.VarChar, 60, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _empresa));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sPuesto", SqlDbType.VarChar, 50, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _puesto));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iFK_IdPersona", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fK_IdPersona));
@@ -742,42 +726,6 @@ namespace ITCR.IntegrateAlTrabajo.Base
 					throw new ArgumentOutOfRangeException("Id_ExperienciaLaboral", "Id_ExperienciaLaboral can't be NULL");
 				}
 				_id_ExperienciaLaboral = value;
-			}
-		}
-
-
-		public SqlInt32 AnnoInicial
-		{
-			get
-			{
-				return _annoInicial;
-			}
-			set
-			{
-				SqlInt32 annoInicialTmp = (SqlInt32)value;
-				if(annoInicialTmp.IsNull)
-				{
-					throw new ArgumentOutOfRangeException("AnnoInicial", "AnnoInicial can't be NULL");
-				}
-				_annoInicial = value;
-			}
-		}
-
-
-		public SqlInt32 AnnoFinal
-		{
-			get
-			{
-				return _annoFinal;
-			}
-			set
-			{
-				SqlInt32 annoFinalTmp = (SqlInt32)value;
-				if(annoFinalTmp.IsNull)
-				{
-					throw new ArgumentOutOfRangeException("AnnoFinal", "AnnoFinal can't be NULL");
-				}
-				_annoFinal = value;
 			}
 		}
 
