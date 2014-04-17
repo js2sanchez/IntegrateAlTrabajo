@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITCR.IntegrateAlTrabajo.Datos", "ITCR.IntegrateAlTrabajo.Datos\ITCR.IntegrateAlTrabajo.Datos.csproj", "{DA720104-C96D-46A0-854C-526FF3DEBDB7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITCR.IntegrateAlTrabajo.Negocios", "ITCR.IntegrateAlTrabajo.Negocios\ITCR.IntegrateAlTrabajo.Negocios.csproj", "{C346DB3D-F541-4830-9693-E2B2FF059D87}"
