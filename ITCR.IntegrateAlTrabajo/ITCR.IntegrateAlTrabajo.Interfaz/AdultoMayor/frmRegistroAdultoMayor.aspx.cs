@@ -108,19 +108,25 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             }
         }
 
-        private void cargarDropDownListFechas()
+        private void cargarDropDownListFechas(bool pPrimerAnnio)
         {
             DdlMesNacimiento.Items.Clear();
-            for(int mes = 0;mes<12;mes++)
+            int meses = 12;
+            if(pPrimerAnnio)
+            {
+                meses = DateTime.Now.Month;
+            }
+            for(int mes = 0;mes<meses;mes++)
             {
                 ListItem mesItem =new ListItem(MESES_ESPANIOL[mes]);
                 DdlMesNacimiento.Items.Add(mesItem);
             }
-            cargarDropDownListDias(1,int.Parse(DdlAnioNacimiento.SelectedItem.Text));
+            bool ultimoMes = meses == 1;
+            cargarDropDownListDias(1,int.Parse(DdlAnioNacimiento.SelectedItem.Text),pPrimerAnnio&&ultimoMes);
             
         }
 
-        private void cargarDropDownListDias(int pMes,int pYear)
+        private void cargarDropDownListDias(int pMes,int pYear,bool pPrimerAnioUltimoMes)
         {
             int seleccion = 0;
             if (DdlDiaNacimiento.Items.Count > 0)
@@ -129,6 +135,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             }
             DdlDiaNacimiento.Items.Clear();
             int dias = DateTime.DaysInMonth(pYear, pMes);
+            if(pPrimerAnioUltimoMes)
+            {
+                dias = DateTime.Now.Day;
+            }
             for (int dia = 1; dia<=dias; dia++)
             {
                 ListItem diaItem = new ListItem(dia + "");
@@ -159,7 +169,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             cargarDropDownListCantones();
             cargarDropDownListDistritos();
             cargarDropDownListAnios();
-            cargarDropDownListFechas();
+            cargarDropDownListFechas(true);
         }
 
         #endregion
@@ -459,9 +469,18 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             mvRegistroAdultoMayor.ActiveViewIndex = 3;
         }
 
-        protected void DdlDiaNacimiento_SelectedIndexChanged(object sender, EventArgs e)
+        protected void DdlAnnoNacimiento_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cargarDropDownListDias(DdlMesNacimiento.SelectedIndex+1,int.Parse(DdlAnioNacimiento.SelectedItem.Text));
+            bool primerAnnio = DdlAnioNacimiento.SelectedIndex == 0;
+            cargarDropDownListFechas(primerAnnio);
+        }
+
+        protected void DdlMesNacimiento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bool primerAnnio = DdlAnioNacimiento.SelectedIndex == 0;
+            bool ultimoMes = DdlMesNacimiento.SelectedIndex == DdlMesNacimiento.Items.Count - 1;
+            cargarDropDownListDias(DdlMesNacimiento.SelectedIndex + 1,
+                                       int.Parse(DdlAnioNacimiento.SelectedItem.Text), primerAnnio&&ultimoMes);
         }
 
     }

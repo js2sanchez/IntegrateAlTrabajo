@@ -112,7 +112,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Autenticacion
             else
             {
                 string script = @"<script type='text/javascript'>
-                            alert('Nombres de usuario y contraseña requeridos para autenticación.');
+                            alert('Nombre de usuario y contraseña requeridos para autenticación.');
                             </script>";
 
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "Autenticación", script, false);

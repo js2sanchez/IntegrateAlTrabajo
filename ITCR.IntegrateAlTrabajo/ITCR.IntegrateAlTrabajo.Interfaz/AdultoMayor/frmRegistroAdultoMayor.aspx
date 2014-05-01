@@ -294,9 +294,9 @@
                                     <asp:Label ID="lblFechaNacimiento" runat="server" Text="Mes, día y año de nacimiento"></asp:Label>
                                 </td>
                                 <td class="auto-style5">
-                                    <asp:DropDownList ID="DdlMesNacimiento" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DdlDiaNacimiento_SelectedIndexChanged" ></asp:DropDownList>
+                                    <asp:DropDownList ID="DdlMesNacimiento" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DdlMesNacimiento_SelectedIndexChanged" ></asp:DropDownList>
                                     <asp:DropDownList ID="DdlDiaNacimiento" runat="server" AutoPostBack="True" ></asp:DropDownList>
-                                    <asp:DropDownList ID="DdlAnioNacimiento" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DdlDiaNacimiento_SelectedIndexChanged" ></asp:DropDownList>
+                                    <asp:DropDownList ID="DdlAnioNacimiento" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DdlAnnoNacimiento_SelectedIndexChanged" ></asp:DropDownList>
                                 </td>
                                 <td class="style17">
                                     &nbsp;</td>
