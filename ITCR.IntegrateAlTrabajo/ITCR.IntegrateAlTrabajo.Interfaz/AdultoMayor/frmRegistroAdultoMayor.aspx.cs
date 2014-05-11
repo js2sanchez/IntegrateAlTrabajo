@@ -39,6 +39,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                                                             "Junio","Julio","Agosto","Setiembre","Octubre",
                                                             "Noviembre","Diciembre"};
         protected const int CARACTERES_MINIMOS = 5, CARACTERES_MAXIMOS = 50;
+        protected const int LARGO_TELEFONO_CR = 8;
         #endregion
 
         protected void Page_Load(object sender, EventArgs e)
@@ -63,6 +64,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             ListItem ItemSexo2 = new ListItem("F");
             drpSexo.Items.Add(ItemSexo1);
             drpSexo.Items.Add(ItemSexo2);
+        }
+
+        private void cargarDropDownListNacionalidad()
+        {
+            ddlNacionalidad.Items.Clear();
+            ListItem ItemNacionalidad1 = new ListItem("Costarricense");
+            ListItem ItemNacionalidad2 = new ListItem("Extranjero");
+            ddlNacionalidad.Items.Add(ItemNacionalidad1);
+            ddlNacionalidad.Items.Add(ItemNacionalidad2);
         }
 
         private void cargarDropDownListProvincias()
@@ -165,6 +175,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         private void cargarTodosDropDownList()
         {
             cargarDropDownListSexo();
+            cargarDropDownListNacionalidad();
             cargarDropDownListProvincias();
             cargarDropDownListCantones();
             cargarDropDownListDistritos();
@@ -248,18 +259,25 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         //Idiomas y pasatiempos
         protected void btnSiguiente5_Click(object sender, EventArgs e)
         {
-            for (int ContadorIdiomas = 0; ContadorIdiomas < chkIdiomas.Items.Count; ContadorIdiomas++)
+            Validate("gvPasatiempos");
+
+            if(Page.IsValid)
             {
-                if (chkIdiomas.Items[ContadorIdiomas].Selected)
+            
+                for (int ContadorIdiomas = 0; ContadorIdiomas < chkIdiomas.Items.Count; ContadorIdiomas++)
                 {
-                    ListaIdiomas.Add(chkIdiomas.Items[ContadorIdiomas].Text);
+                    if (chkIdiomas.Items[ContadorIdiomas].Selected)
+                    {
+                        ListaIdiomas.Add(chkIdiomas.Items[ContadorIdiomas].Text);
+                    }
                 }
+
+                Persona.Pasatiempos = txtPasatiempos.Text;
+
+                mvRegistroAdultoMayor.ActiveViewIndex = 5;
+                chkAceptarTerminos_CheckedChanged(sender, e);
             }
-
-            Persona.Pasatiempos = txtPasatiempos.Text;
-
-            mvRegistroAdultoMayor.ActiveViewIndex = 5;
-        }
+    }
 
         protected void drpProvincia_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -284,29 +302,33 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
             if (Page.IsValid)
             {
-                TablaEstudios.Columns.Add("Institucion", typeof(string));
-                TablaEstudios.Columns.Add("Titulo", typeof(string));
-
                 Estudio.Institucion = txtInstitucionEstudio.Text;
                 Estudio.Titulo = txtTituloEstudio.Text;
                 ListaEstudios.Add(Estudio);
-
-                foreach (cIATEstudioNegocios ItemEstudio in ListaEstudios)
-                {
-                    DataRow FilaEstudio = TablaEstudios.NewRow();
-                    FilaEstudio["Institucion"] = ItemEstudio.Institucion.ToString();
-                    FilaEstudio["Titulo"] = ItemEstudio.Titulo.ToString();
-
-                    TablaEstudios.Rows.Add(FilaEstudio);
-                }
-
-                dgEstudios.DataSource = TablaEstudios;
-                dgEstudios.DataBind();
-
-                txtInstitucionEstudio.Text = "";
-                txtTituloEstudio.Text = "";
-                txtInstitucionEstudio.Focus();
+                actualizarDgEstudios();
             }
+        }
+
+        protected void actualizarDgEstudios()
+        {
+            TablaEstudios.Columns.Add("Institucion", typeof(string));
+            TablaEstudios.Columns.Add("Titulo", typeof(string));
+
+            foreach (cIATEstudioNegocios ItemEstudio in ListaEstudios)
+            {
+                DataRow FilaEstudio = TablaEstudios.NewRow();
+                FilaEstudio["Institucion"] = ItemEstudio.Institucion.ToString();
+                FilaEstudio["Titulo"] = ItemEstudio.Titulo.ToString();
+                TablaEstudios.Rows.Add(FilaEstudio);
+            }
+
+            dgEstudios.DataSource = TablaEstudios;
+            dgEstudios.DataBind();
+
+            txtInstitucionEstudio.Text = "";
+            txtTituloEstudio.Text = "";
+            txtInstitucionEstudio.Focus();
+
         }
 
         protected void btnAgregarExperienciaLaboral_Click(object sender, EventArgs e)
@@ -315,37 +337,42 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
             if (Page.IsValid)
             {
-                TablaExperienciasLaborales.Columns.Add("Empresa", typeof(string));
-                TablaExperienciasLaborales.Columns.Add("Puesto", typeof(string));
-
                 ExperienciaLaboral.Empresa = txtEmpresa.Text;
                 ExperienciaLaboral.Puesto = txtPuesto.Text;
                 ListaExperienciasLaborales.Add(ExperienciaLaboral);
-
-                foreach (cIATExperienciaLaboralNegocios ItemExperienciaLaboral in ListaExperienciasLaborales)
-                {
-                    DataRow FilaExperienciaLaboral = TablaExperienciasLaborales.NewRow();
-                    FilaExperienciaLaboral["Empresa"] = ItemExperienciaLaboral.Empresa.ToString();
-                    FilaExperienciaLaboral["Puesto"] = ItemExperienciaLaboral.Puesto.ToString();
-
-                    TablaExperienciasLaborales.Rows.Add(FilaExperienciaLaboral);
-                }
-
-                dgExperienciasLaborales.DataSource = TablaExperienciasLaborales;
-                dgExperienciasLaborales.DataBind();
-
-                txtEmpresa.Text = "";
-                txtPuesto.Text = "";
-                txtEmpresa.Focus();
+                actualizarDgExperienciasLaborales();
             }
         }
+
+        protected void actualizarDgExperienciasLaborales()
+        {
+            TablaExperienciasLaborales.Columns.Add("Empresa", typeof(string));
+            TablaExperienciasLaborales.Columns.Add("Puesto", typeof(string));
+
+            foreach (cIATExperienciaLaboralNegocios ItemExperienciaLaboral in ListaExperienciasLaborales)
+            {
+                DataRow FilaExperienciaLaboral = TablaExperienciasLaborales.NewRow();
+                FilaExperienciaLaboral["Empresa"] = ItemExperienciaLaboral.Empresa.ToString();
+                FilaExperienciaLaboral["Puesto"] = ItemExperienciaLaboral.Puesto.ToString();
+
+                TablaExperienciasLaborales.Rows.Add(FilaExperienciaLaboral);
+            }
+
+            dgExperienciasLaborales.DataSource = TablaExperienciasLaborales;
+            dgExperienciasLaborales.DataBind();
+
+            txtEmpresa.Text = "";
+            txtPuesto.Text = "";
+            txtEmpresa.Focus();
+            
+        }
+        
 
         protected void chkAceptarTerminos_CheckedChanged(object sender, EventArgs e)
         {
             bool _checked = chkAceptarTerminos.Checked;
             if (_checked)
             {
-                //btnFinalizar.Attributes["disabled"] = "false";
                 btnFinalizar.Attributes.Remove("disabled");
                 btnFinalizar.Attributes["onclick"] = "btnFinalizar_Click";
             }
@@ -426,6 +453,12 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             CorreoElectronico.FK_IdUsuario = IdUsuario;
             CorreoElectronico.Insertar();
 
+            string script = @"<script type='text/javascript'>
+                            alert('Usted se ha registrado exitosamente.');
+                            </script>";
+
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "Registro", script, false);
+
             Response.Redirect("/Autenticacion/frmAutenticacion.aspx");
         }
 
@@ -483,5 +516,104 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                                        int.Parse(DdlAnioNacimiento.SelectedItem.Text), primerAnnio&&ultimoMes);
         }
 
+        protected void validarLargoHabitacionServer(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = txtTelefonoHabitacion.Text.Length == LARGO_TELEFONO_CR 
+                || txtTelefonoHabitacion.Text.Length == 0;
+        }
+
+        protected void validarLargoMovilServer(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = txtCelular.Text.Length == LARGO_TELEFONO_CR
+                || txtCelular.Text.Length == 0;
+        }
+
+        private static int EstudioEnModificacion;
+
+        protected void dgEstudios_ItemCommand(object source, DataGridCommandEventArgs e)
+        {
+            if (e.CommandName == "Editar")
+            {
+                txtInstitucionEstudio.Text = e.Item.Cells[0].Text;
+                txtTituloEstudio.Text = e.Item.Cells[1].Text;
+                EstudioEnModificacion = e.Item.ItemIndex;
+                btnActualizarEstudio.Visible = true;
+                btnAgregarEstudio.Visible = false;
+            }
+            else if (e.CommandName == "Eliminar")
+            {
+                ListaEstudios.RemoveAt(e.Item.ItemIndex);
+                actualizarDgEstudios();
+            }
+        }
+        
+        protected void btnActualizarEstudio_Click(object sender, EventArgs e)
+        {
+            Validate("gvEstudios");
+
+            if (Page.IsValid)
+            {
+                ((cIATEstudioNegocios)ListaEstudios[EstudioEnModificacion]).Institucion = txtInstitucionEstudio.Text;
+                ((cIATEstudioNegocios)ListaEstudios[EstudioEnModificacion]).Titulo = txtTituloEstudio.Text;
+            }
+            actualizarDgEstudios();
+            btnAgregarEstudio.Visible = true;
+            btnActualizarEstudio.Visible = false;
+        }
+
+        protected void validarLargoCedulaServer(object source, ServerValidateEventArgs args)
+        {
+            if (ddlNacionalidad.SelectedIndex == 0)
+            {
+                args.IsValid = txtCedula.Text.Length == 9;
+            }
+            else
+            {
+                args.IsValid = true;
+            }
+        }
+
+        private static int ExperienciaEnModificacion;
+
+        protected void dgExperienciasLaborales_ItemCommand(object source, DataGridCommandEventArgs e)
+        {
+            if (e.CommandName == "Editar")
+            {
+                txtEmpresa.Text = e.Item.Cells[0].Text;
+                txtPuesto.Text = e.Item.Cells[1].Text;
+                ExperienciaEnModificacion = e.Item.ItemIndex;
+                btnActualizarExperienciaLaboral.Visible = true;
+                btnAgregarExperienciaLaboral.Visible = false;
+            }
+            else if (e.CommandName == "Eliminar")
+            {
+                ListaExperienciasLaborales.RemoveAt(e.Item.ItemIndex);
+                actualizarDgExperienciasLaborales();
+            }
+        }
+
+        protected void btnActualizarExperienciaLaboral_Click(object sender, EventArgs e)
+        {
+            Validate("gvExperienciasLaborales");
+
+            if (Page.IsValid)
+            {
+                ((cIATExperienciaLaboralNegocios)ListaExperienciasLaborales[ExperienciaEnModificacion]).Empresa = txtEmpresa.Text;
+                ((cIATExperienciaLaboralNegocios)ListaExperienciasLaborales[ExperienciaEnModificacion]).Puesto = txtPuesto.Text;
+            }
+            actualizarDgExperienciasLaborales();
+            btnAgregarExperienciaLaboral.Visible = true;
+            btnActualizarExperienciaLaboral.Visible = false;
+        }
+
+        protected void btnAtras6_Click(object sender, EventArgs e)
+        {
+            mvRegistroAdultoMayor.ActiveViewIndex = 4;
+        }
+
+        protected void validarContrasennaServer(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = txtContraseña.Text.Length >= 8;
+        }
     }
 }

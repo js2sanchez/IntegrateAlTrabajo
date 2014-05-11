@@ -12,7 +12,9 @@
         }
         .style8
         {
-            width: 98%;
+            overflow: auto;
+            width:100%;
+            overflow-y: hidden;
         }
         .style9
         {
@@ -112,23 +114,71 @@
             width: 168px;
             height: 25px;
         }
-        .auto-style5 {
+        .auto-style8 {
+            width: 172px;
             height: 25px;
-            width: 321px;
         }
-        .auto-style6 {
-            width: 321px;
+        .auto-style9 {
+            height: 25px;
+            width: 530px;
+        }
+        .auto-style13 {
+            width: 351px;
+        }
+        .auto-style14 {
+            width: 358px;
+        }
+        .auto-style16 {
+            width: 384px;
+        }
+        .auto-style20 {
+            width: 472px;
+        }
+        .auto-style21 {
+            width: 530px;
+        }
+        .auto-style23 {
+            width: 1065px;
+        }
+        .auto-style24 {
+            width: 1080px;
+        }
+        .auto-style25 {
+            width: 1089px;
+        }
+        .auto-style29 {
+            width: 1905px;
+        }
+        .auto-style30 {
+            width: 294px;
+        }
+        .auto-style32 {
+            height: 25px;
+            width: 114px;
+        }
+        .auto-style33 {
+            height: 25px;
+            width: 339px;
+        }
+        .auto-style34 {
+            width: 22px;
+            height: 25px;
+        }
+        .auto-style35 {
+            width: 6px;
+            height: 25px;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <div id="Div1" style="width:100%; overflow:auto;">
     <table class="style8">
         <tr>
             <td class="style10">
             </td>
             <td class="style22">
             </td>
-            <td class="style12">
+            <td class="auto-style33">
             </td>
             <td class="style13">
             </td>
@@ -183,16 +233,16 @@
                     <asp:View ID="vPaso1" runat="server">
                         <table class="style14">
                             <tr>
-                                <td class="style24">
+                                <td class="auto-style9">
                                     <asp:Label ID="lblPaso1" runat="server" Text="Paso 1 de 6" CssClass="Titulo2"></asp:Label>
                                 </td>
-                                <td class="auto-style5">
+                                <td class="auto-style16">
                                     &nbsp;</td>
                                 <td class="style17">
                                 </td>
                                 <td class="style20">
                                 </td>
-                                <td class="style11">
+                                <td class="auto-style13">
                                 </td>
                             </tr>
                             <tr>
@@ -204,62 +254,68 @@
                                     &nbsp;</td>
                                 <td class="style20">
                                     &nbsp;</td>
-                                <td class="style11">
+                                <td class="auto-style13">
                                     &nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="style24">
+                                <td class="auto-style21">
                                     <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
                                 </td>
-                                <td class="auto-style5">
-                                    <asp:TextBox ID="txtNombrePersona" runat="server" ToolTip="Laura"></asp:TextBox>
+                                <td class="auto-style16">
+                                    <asp:TextBox ID="txtNombrePersona" runat="server" ToolTip="Laura" Placeholder="Escriba su nombre aqui" Width="248px"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvNombrePersona" runat="server" ControlToValidate="txtNombrePersona"
                                     ErrorMessage="El nombre de la persona es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="RegEx_Nombre" runat="server" ControlToValidate="txtNombrePersona" ValidationExpression="([a-zA-ZÀ-ÿ])*"
+                                    ErrorMessage="Nombre inválido (Simbolos inválidos)" ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                 </td>
                                 <td class="style17">
                                     &nbsp;</td>
                                 <td class="style20">
                                     &nbsp;</td>
-                                <td class="style11">
+                                <td class="auto-style13">
                                     &nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="style24">
+                                <td class="auto-style21">
                                     <asp:Label ID="lblApellido1" runat="server" Text="Primer apellido"></asp:Label>
                                 </td>
-                                <td class="auto-style5">
-                                    <asp:TextBox ID="txtApellido1" runat="server" ToolTip="Brenes"></asp:TextBox>
+                                <td class="auto-style16">
+                                    <asp:TextBox ID="txtApellido1" runat="server" ToolTip="Brenes" Width="248px" placeholder="Escriba su primer apellido aquí"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvApellido1Persona" runat="server" ControlToValidate="txtApellido1"
                                     ErrorMessage="El primer apellido es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="RegEx_Apellido1" runat="server" ControlToValidate="txtApellido1" ValidationExpression="([a-zA-ZÀ-ÿ])*"
+                                    ErrorMessage="Primer apellido inválido (Simbolos inválidos)" ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                 </td>
                                 <td class="style17">
                                     &nbsp;</td>
                                 <td class="style20">
                                     &nbsp;</td>
-                                <td class="style11">
+                                <td class="auto-style13">
                                     &nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="style24">
+                                <td class="auto-style21">
                                     <asp:Label ID="lblApellido2" runat="server" Text="Segundo apellido"></asp:Label>
                                 </td>
-                                <td class="auto-style5">
-                                    <asp:TextBox ID="txtApellido2" runat="server" ToolTip="Fernández"></asp:TextBox>
+                                <td class="auto-style16">
+                                    <asp:TextBox ID="txtApellido2" runat="server" ToolTip="Fernández" Width="248px" placeholder="Escriba su segundo apellido aquí"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvApellido2Persona" runat="server" ControlToValidate="txtApellido2"
                                     ErrorMessage="El segundo apellido es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="RegEx_Apellido2" runat="server" ControlToValidate="txtApellido2" ValidationExpression="([a-zA-ZÀ-ÿ])*"
+                                    ErrorMessage="Segundo apellido inválido (Simbolos inválidos)" ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                 </td>
                                 <td class="style17">
                                     &nbsp;</td>
                                 <td class="style20">
                                     &nbsp;</td>
-                                <td class="style11">
+                                <td class="auto-style13">
                                     &nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="style24">
+                                <td class="auto-style21">
                                     <asp:Label ID="lblSexo" runat="server" Text="Sexo"></asp:Label>
                                 </td>
-                                <td class="auto-style5">
+                                <td class="auto-style16">
                                     <asp:DropDownList ID="drpSexo" runat="server">
                                     </asp:DropDownList>
                                 </td>
@@ -267,33 +323,50 @@
                                     &nbsp;</td>
                                 <td class="style20">
                                     &nbsp;</td>
-                                <td class="style11">
+                                <td class="auto-style13">
                                     &nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="style24">
-                                    <asp:Label ID="lblCedula" runat="server" Text="Cédula"></asp:Label>
-                                </td>
-                                <td class="auto-style5">
-                                    <asp:TextBox ID="txtCedula" runat="server"></asp:TextBox>
-                                    <asp:RegularExpressionValidator ID="revCedula" runat="server" ControlToValidate="txtCedula"
-                                    ErrorMessage="El número de cédula introducido es inválido." ForeColor="Red" ValidationExpression="([0-9]*)"
-                                    ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
-                                    <asp:RequiredFieldValidator ID="rfvCedula" runat="server" ControlToValidate="txtCedula"
-                                    ErrorMessage="El número de cédula es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
+                                <td class="auto-style21">
+                                    <asp:Label ID="lblNacionalidad" runat="server" Text="Nacionalidad"></asp:Label>
+                                    &nbsp;</td>
+                                <td class="auto-style16">
+                                    <asp:DropDownList ID="ddlNacionalidad" runat="server"></asp:DropDownList>
                                 </td>
                                 <td class="style17">
                                     &nbsp;</td>
                                 <td class="style20">
                                     &nbsp;</td>
-                                <td class="style11">
+                                <td class="auto-style13">
                                     &nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="style24">
+                                <td class="auto-style21">
+                                    <asp:Label ID="lblCedula" runat="server" Text="Cédula"></asp:Label>
+                                    &nbsp;</td>
+                                <td class="auto-style16">
+                                    <asp:TextBox ID="txtCedula" runat="server" Width="248px" placeholder="Sin guiones y 9 dígitos(Costarricense)"></asp:TextBox>
+                                    <asp:RegularExpressionValidator ID="revCedula" runat="server" ControlToValidate="txtCedula"
+                                    ErrorMessage="El número de cédula introducido es inválido." ForeColor="Red" ValidationExpression="([0-9]*)"
+                                    ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
+                                    <asp:RequiredFieldValidator ID="rfvCedula" runat="server" ControlToValidate="txtCedula"
+                                    ErrorMessage="El número de cédula es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
+                                    <asp:CustomValidator ID="CvLongCedula" runat="server" OnServerValidate="validarLargoCedulaServer" 
+                                        ForeColor="red" ErrorMessage="El número cédula es inválido (longitud invalida)" 
+                                        ValidationGroup="gvDatosPersonales">*</asp:CustomValidator>
+                                </td>
+                                <td class="style17">
+                                    &nbsp;</td>
+                                <td class="style20">
+                                    &nbsp;</td>
+                                <td class="auto-style13">
+                                    &nbsp;</td>
+                            </tr>                            
+                            <tr>
+                                <td class="auto-style21">
                                     <asp:Label ID="lblFechaNacimiento" runat="server" Text="Mes, día y año de nacimiento"></asp:Label>
                                 </td>
-                                <td class="auto-style5">
+                                <td class="auto-style16">
                                     <asp:DropDownList ID="DdlMesNacimiento" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DdlMesNacimiento_SelectedIndexChanged" ></asp:DropDownList>
                                     <asp:DropDownList ID="DdlDiaNacimiento" runat="server" AutoPostBack="True" ></asp:DropDownList>
                                     <asp:DropDownList ID="DdlAnioNacimiento" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DdlAnnoNacimiento_SelectedIndexChanged" ></asp:DropDownList>
@@ -302,7 +375,7 @@
                                     &nbsp;</td>
                                 <td class="style20">
                                     &nbsp;</td>
-                                <td class="style11">
+                                <td class="auto-style13">
                                     &nbsp;</td>
                             </tr>
                             <script type="text/javascript">
@@ -311,64 +384,72 @@
                                 }
                             </script>
                             <tr>
-                                <td class="style24">
+                                <td class="auto-style21">
                                     <asp:Label ID="lblTelefonoHabitacion" runat="server" 
                                         Text="Teléfono de habitación"></asp:Label>
-                                </td>
-                                <td class="auto-style5">
-                                    <asp:TextBox ID="txtTelefonoHabitacion" runat="server" TextMode="Phone"></asp:TextBox>
+                                    &nbsp;</td>
+                                <td class="auto-style16">
+                                    <asp:TextBox ID="txtTelefonoHabitacion" runat="server" TextMode="Phone" Width="248px" placeholder="Sin guiones"></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="revTelefonoHabitacion" runat="server" ControlToValidate="txtTelefonoHabitacion"
-                                    ErrorMessage="El número de teléfono de habitación introducido es inválido." ForeColor="Red" ValidationExpression="([0-9]*)"
+                                    ErrorMessage="El número de teléfono de habitación introducido es inválido." ForeColor="Red" ValidationExpression="(2[0-9]*)"
                                     ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                     <asp:CustomValidator id="cvTelefonoHabitacion" runat="server" 
                                     OnServerValidate="validarTelefonosServer" ClientValidationFunction="validarTelefonosClient"
                                     ErrorMessage = "Debe haber al menos un número de contacto." ValidationGroup="gvDatosPersonales" ForeColor="red">*</asp:CustomValidator>
+                                    <asp:CustomValidator ID="largoHabitacion" runat="server" OnServerValidate="validarLargoHabitacionServer" 
+                                        ForeColor="red" ErrorMessage="El teléfono de habitación es inválido (longitud invalida)" 
+                                        ValidationGroup="gvDatosPersonales">*</asp:CustomValidator>
                                 </td>
                                 <td class="style17">
                                     &nbsp;</td>
                                 <td class="style20">
                                     &nbsp;</td>
-                                <td class="style11">
+                                <td class="auto-style13">
                                     &nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="style24">
+                                <td class="auto-style21">
                                     <asp:Label ID="lblTelefonoCelular" runat="server" Text="Teléfono celular"></asp:Label>
-                                </td>
-                                <td class="auto-style5">
-                                    <asp:TextBox ID="txtCelular" runat="server" TextMode="Phone"></asp:TextBox>
+                                    </td>
+                                <td class="auto-style16">
+                                    <asp:TextBox ID="txtCelular" runat="server" TextMode="Phone" Width="248px" Placeholder="Sin guiones"></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="revCelular" runat="server" ControlToValidate="txtCelular"
-                                    ErrorMessage="El número de celular introducido es inválido." ForeColor="Red" ValidationExpression="([0-9]*)"
+                                    ErrorMessage="El número de celular introducido es inválido." ForeColor="Red" ValidationExpression="([6789][0-9]*)"
                                     ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
+                                    <asp:CustomValidator id="validarLargoCelular" runat="server" 
+                                    OnServerValidate="validarLargoMovilServer" ErrorMessage = "El número de teléfono  móvil introducido es inválido (longitud invalida)." 
+                                    ValidationGroup="gvDatosPersonales" ForeColor="red">*</asp:CustomValidator>
                                 </td>
                                 <td class="style17">
                                     &nbsp;</td>
                                 <td class="style20">
                                     &nbsp;</td>
-                                <td class="style11">
+                                <td class="auto-style13">
                                     &nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="style24">
+                                <td class="auto-style21">
                                     <asp:Label ID="lblCorreoElectronico" runat="server" Text="Correo electrónico"></asp:Label>
                                 </td>
-                                <td class="auto-style5">
-                                    <asp:TextBox ID="txtCorreoElectronico" runat="server" TextMode="Email"></asp:TextBox>
+                                <td class="auto-style16">
+                                    <asp:TextBox ID="txtCorreoElectronico" runat="server" TextMode="Email" Width="248px" Placeholder="micorreo@mail.com"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvCorreoElectronico" runat="server" ControlToValidate="txtCorreoElectronico"
                                     ErrorMessage="El correo electrónico es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtCorreoElectronico" ValidationExpression=".+@.+\..+"
+                                    ErrorMessage="Correo electrónico inválido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                 </td>
                                 <td class="style17">
                                     &nbsp;</td>
                                 <td class="style20">
                                     &nbsp;</td>
-                                <td class="style11">
+                                <td class="auto-style13">
                                     &nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="style24">
+                                <td class="auto-style21">
                                     <asp:Label ID="lblProvincia" runat="server" Text="Provincia"></asp:Label>
                                 </td>
-                                <td class="auto-style5">
+                                <td class="auto-style16">
                                     <asp:DropDownList ID="drpProvincia" runat="server" AutoPostBack="True" 
                                         onselectedindexchanged="drpProvincia_SelectedIndexChanged">
                                     </asp:DropDownList>
@@ -377,14 +458,14 @@
                                     &nbsp;</td>
                                 <td class="style20">
                                     &nbsp;</td>
-                                <td class="style11">
+                                <td class="auto-style13">
                                     &nbsp;</td>
                             </tr>
                             <tr>
-                                <td>
+                                <td class="auto-style21">
                                     <asp:Label ID="lblCanton" runat="server" Text="Cantón"></asp:Label>
                                 </td>
-                                <td class="auto-style6">
+                                <td class="auto-style16">
                                     <asp:DropDownList ID="drpCanton" runat="server" AutoPostBack="True" 
                                         onselectedindexchanged="drpCanton_SelectedIndexChanged">
                                     </asp:DropDownList>
@@ -393,14 +474,14 @@
                                     </td>
                                 <td class="style33">
                                     </td>
-                                <td>
+                                <td class="auto-style14">
                                     </td>
                             </tr>
                             <tr>
-                                <td class="style24">
+                                <td class="auto-style21">
                                     <asp:Label ID="lblDistrito" runat="server" Text="Distrito"></asp:Label>
                                 </td>
-                                <td class="auto-style5">
+                                <td class="auto-style16">
                                     <asp:DropDownList ID="drpDistrito" runat="server">
                                     </asp:DropDownList>
                                 </td>
@@ -408,19 +489,19 @@
                                     &nbsp;</td>
                                 <td class="style20">
                                     &nbsp;</td>
-                                <td class="style11">
+                                <td class="auto-style13">
                                     &nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="style24">
+                                <td class="auto-style21">
                                     &nbsp;</td>
                                 <td class="style25" colspan="4">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Panel ID="Panel1" runat="server" HorizontalAlign="Right">
                                         <asp:Button ID="btnCancelar1" runat="server" CssClass="Boton" 
-                                            onclick="btnCancelar1_Click" Text="Cancelar" />
+                                            onclick="btnCancelar1_Click" Text="Cancelar" UseSubmitBehavior="False" />
                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                         <asp:Button ID="btnSiguiente1" runat="server" CssClass="Boton" 
-                                            onclick="btnSiguiente1_Click" Text="Siguiente" />
+                                            onclick="btnSiguiente1_Click" Text="Siguiente" UseSubmitBehavior="False" />
                                     </asp:Panel>
                                 </td>
                             </tr>
@@ -430,10 +511,10 @@
                     <asp:View ID="vPaso2" runat="server">
                         <table class="style14">
                             <tr>
-                                <td class="style24">
+                                <td class="auto-style29">
                                     <asp:Label ID="lblPaso2" runat="server" Text="Paso 2 de 6" CssClass="Titulo2"></asp:Label>
                                 </td>
-                                <td class="style35">
+                                <td class="auto-style20">
                                     &nbsp;</td>
                                 <td class="style17">
                                 </td>
@@ -455,8 +536,8 @@
                                     &nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="style24">
-                                    <asp:Label ID="lblNombreUsuario" runat="server" Text="Nombre de usuario"></asp:Label>
+                                <td class="auto-style29">
+                                    <asp:Label ID="lblNombreUsuario" runat="server" Text="Nombre de usuario (Letras,números o guiones(-,_) permitidos)"></asp:Label>
                                 </td>
                                 <script type="text/javascript">
                                     function validarUsuarioClient(oSrc, args) {
@@ -464,11 +545,14 @@
                                             && args.Value.Length <= window.CARACTERES_MAXIMOS;
                                     }
                             </script>
-                                <td class="style35">
-                                    <asp:TextBox ID="txtNombreUsuario" runat="server"></asp:TextBox>
+                                <td class="auto-style20">
+                                    <asp:TextBox ID="txtNombreUsuario" runat="server" Width="213px" Placeholder="Más de 5 caracteres"></asp:TextBox>
                                     <asp:CustomValidator ID="cvValidarUsuario" runat="server" OnServerValidate="validarUsuarioServer" 
                                         ForeColor="red" ErrorMessage="El usuario debe contener entre 5 a 50 caracteres." 
                                         ValidationGroup="gvDatosAutenticacion" ClientValidationFunction="validarUsuarioClient">*</asp:CustomValidator>
+                                    <asp:RegularExpressionValidator ID="RegEx_Usuario" runat="server" ControlToValidate="txtNombreUsuario"
+                                    ErrorMessage="Nombre de usuario inválido (Símbolos inválidos)." ForeColor="Red" ValidationExpression="(([0-9A-Za-z]|-|_)*)"
+                                    ValidationGroup="gvDatosAutenticacion">*</asp:RegularExpressionValidator>
                                     <asp:RequiredFieldValidator ID="rfvNombreUsuario" runat="server" ControlToValidate="txtNombreUsuario"
                                     ErrorMessage="El nombre de usuario es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosAutenticacion">*</asp:RequiredFieldValidator>
                                 </td>
@@ -480,13 +564,19 @@
                                     &nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="style24">
-                                    <asp:Label ID="lblContraseña" runat="server" Text="Contraseña"></asp:Label>
+                                <td class="auto-style29">
+                                    <asp:Label ID="lblContraseña" runat="server" Text="Contraseña (Letras y números permitidos)"></asp:Label>
                                 </td>
-                                <td class="style35">
-                                    <asp:TextBox ID="txtContraseña" runat="server" TextMode="Password"></asp:TextBox>
+                                <td class="auto-style20">
+                                    <asp:TextBox ID="txtContraseña" runat="server" TextMode="Password" Width="213px" Placeholder="Más de 8 caracteres"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvContraseña" runat="server" ControlToValidate="txtContraseña"
                                     ErrorMessage="La contraseña es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosAutenticacion">*</asp:RequiredFieldValidator>
+                                    <asp:RegularExpressionValidator ID="RegEx_Contrasenna" runat="server" ControlToValidate="txtContraseña"
+                                    ErrorMessage="Contraseña inválida (Símbolos inválidos)." ForeColor="Red" ValidationExpression="([0-9A-Za-z]*)"
+                                    ValidationGroup="gvDatosAutenticacion">*</asp:RegularExpressionValidator>
+                                    <asp:CustomValidator ID="CustomValidator1" runat="server" OnServerValidate="validarContrasennaServer" 
+                                        ForeColor="red" ErrorMessage="La contraseña debe contener al menos 8 caracteres." 
+                                        ValidationGroup="gvDatosAutenticacion">*</asp:CustomValidator>
                                 </td>
                                 <td class="style17">
                                     &nbsp;</td>
@@ -496,12 +586,12 @@
                                     &nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="style24">
+                                <td class="auto-style29">
                                     <asp:Label ID="lblConfirmacionContraseña" runat="server" 
                                         Text="Confirmación de contraseña"></asp:Label>
                                 </td>
-                                <td class="style35">
-                                    <asp:TextBox ID="txtConfirmacionContraseña" runat="server" TextMode="Password"></asp:TextBox>
+                                <td class="auto-style20">
+                                    <asp:TextBox ID="txtConfirmacionContraseña" runat="server" TextMode="Password" Width="213px"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvConfirmacionContraseña" runat="server" ControlToValidate="txtConfirmacionContraseña"
                                     ErrorMessage="Es necesario confirmar la contraseña." ForeColor="Red" ValidationGroup="gvDatosAutenticacion">*</asp:RequiredFieldValidator>
                                     <asp:CompareValidator ID="cvContrasenia" runat="server" ControlToValidate="txtConfirmacionContraseña" 
@@ -516,12 +606,12 @@
                                     &nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="style24">
+                                <td class="auto-style29">
                                     <asp:Label ID="lblIndicioContraseña" runat="server" 
                                         Text="Indicio de contraseña"></asp:Label>
                                 </td>
-                                <td class="style35">
-                                    <asp:TextBox ID="txtIndicioContraseña" runat="server"></asp:TextBox>
+                                <td class="auto-style20">
+                                    <asp:TextBox ID="txtIndicioContraseña" runat="server" Width="213px"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvIndicioContraseña" runat="server" ControlToValidate="txtIndicioContraseña"
                                     ErrorMessage="El indicio de contraseña es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosAutenticacion">*</asp:RequiredFieldValidator>
                                 </td>
@@ -536,11 +626,11 @@
                                 <td class="style24" colspan="5">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Panel ID="Panel3" runat="server" HorizontalAlign="Right">
                                         <asp:Button ID="btnAtras" runat="server" CssClass="Boton" 
-                                            onclick="btnAtras_Click" Text="Atrás" />
+                                            onclick="btnAtras_Click" Text="Atrás" UseSubmitBehavior="False" />
                                         &nbsp;
-                                        <asp:Button ID="btnCancelar2" runat="server" CssClass="Boton" Text="Cancelar" />
+                                        <asp:Button ID="btnCancelar2" runat="server" CssClass="Boton" Text="Cancelar" UseSubmitBehavior="False" />
                                         &nbsp;&nbsp;&nbsp;<asp:Button ID="btnSiguiente2" runat="server" CssClass="Boton" 
-                                            onclick="btnSiguiente2_Click" Text="Siguiente" />
+                                            onclick="btnSiguiente2_Click" Text="Siguiente" UseSubmitBehavior="False" />
                                         &nbsp;</asp:Panel>
                                     &nbsp;&nbsp;&nbsp;&nbsp;</td>
                             </tr>
@@ -599,6 +689,9 @@
                                                 </td>
                                                 <td class="style28">
                                                     <asp:RequiredFieldValidator ID="rfvInstitucionEstudio" runat="server" ControlToValidate="txtInstitucionEstudio" ErrorMessage="La institución es un dato requerido." ForeColor="Red" ValidationGroup="gvEstudios">*</asp:RequiredFieldValidator>
+                                                    <asp:RegularExpressionValidator ID="RegEx_Institucion" runat="server" ControlToValidate="txtInstitucionEstudio"
+                                                    ErrorMessage="Institución inválido (Símbolos inválidos)." ForeColor="Red" ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)"
+                                                    ValidationGroup="gvEstudios">*</asp:RegularExpressionValidator>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -611,6 +704,9 @@
                                                 <td class="style28">
                                                     <asp:RequiredFieldValidator ID="rfvTituloEstudio" runat="server" ControlToValidate="txtTituloEstudio"
                                                     ErrorMessage="El título es un dato requerido." ForeColor="Red" ValidationGroup="gvEstudios">*</asp:RequiredFieldValidator>
+                                                    <asp:RegularExpressionValidator ID="RegEx_EstTitulo" runat="server" ControlToValidate="txtTituloEstudio"
+                                                    ErrorMessage="Título inválido (Símbolos inválidos)." ForeColor="Red" ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)"
+                                                    ValidationGroup="gvEstudios">*</asp:RegularExpressionValidator>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -625,7 +721,9 @@
                                                 <td class="style11">
                                                     <asp:Panel ID="PanelAgregar1" runat="server" HorizontalAlign="Right">
                                                         <asp:Button ID="btnAgregarEstudio" runat="server" CssClass="Boton" 
-                                                            onclick="btnAgregarEstudio_Click" Text="Agregar" />
+                                                            onclick="btnAgregarEstudio_Click" Text="Agregar" UseSubmitBehavior="False" />
+                                                        <asp:Button ID="btnActualizarEstudio" runat="server" CssClass="Boton" 
+                                                            onclick="btnActualizarEstudio_Click" Text="Actualizar" Visible="False" UseSubmitBehavior="False" />
                                                     </asp:Panel>
                                                 </td>
                                             </tr>
@@ -652,6 +750,7 @@
                                         <asp:DataGrid ID="dgEstudios" runat="server" AutoGenerateColumns="False" 
                                             BackColor="WhiteSmoke" BorderStyle="Solid" CssClass="GridMantenimiento" 
                                             Font-Names="Century Gothic" Font-Size="Small" ForeColor="Black" Height="19px" 
+                                            OnItemCommand="dgEstudios_ItemCommand"
                                             Width="99%">
                                             <AlternatingItemStyle BackColor="Gainsboro" />
                                             <HeaderStyle BackColor="Navy" Font-Bold="True" Font-Names="Century Gothic" 
@@ -659,6 +758,20 @@
                                             <Columns>
                                                 <asp:BoundColumn HeaderText="Institución" DataField="Institucion"></asp:BoundColumn>
                                                 <asp:BoundColumn HeaderText="Título" DataField="Titulo"></asp:BoundColumn>
+                                                <asp:TemplateColumn>
+                                                <ItemTemplate>
+                                                    <asp:ImageButton ID="ibtnEditar" runat="server" CommandName="Editar" 
+                                                        Height="30px" ImageAlign="Right" ImageUrl="~/Multimedia/icono-editar.jpg" 
+                                                        Width="30px" />
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
+                                            <asp:TemplateColumn>
+                                                <ItemTemplate>
+                                                    <asp:ImageButton ID="ibtnEliminar" runat="server" CommandName="Eliminar" 
+                                                        Height="30px" ImageAlign="Right" ImageUrl="~/Multimedia/icono-eliminar.jpg" 
+                                                        Width="30px" />
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
                                             </Columns>
                                         </asp:DataGrid>
                                     </asp:Panel>
@@ -674,13 +787,13 @@
                                 <td class="style20" colspan="2">
                                     <asp:Panel ID="Panel4" runat="server" HorizontalAlign="Right">
                                         <asp:Button ID="btnAtras1" runat="server" CssClass="Boton" 
-                                            onclick="btnAtras1_Click" Text="Atrás" />
+                                            onclick="btnAtras1_Click" Text="Atrás" UseSubmitBehavior="False" />
                                         &nbsp;&nbsp;
                                         <asp:Button ID="btnCancelar3" runat="server" CssClass="Boton" 
-                                            onclick="btnCancelar3_Click" Text="Cancelar" />
+                                            onclick="btnCancelar3_Click" Text="Cancelar" UseSubmitBehavior="False" />
                                         &nbsp;&nbsp;
                                         <asp:Button ID="btnSiguiente3" runat="server" CssClass="Boton" 
-                                            onclick="btnSiguiente3_Click" Text="Siguiente" />
+                                            onclick="btnSiguiente3_Click" Text="Siguiente" UseSubmitBehavior="False" />
                                     </asp:Panel>
                                 </td>
                             </tr>
@@ -699,7 +812,7 @@
                                 </td>
                                 <td class="style20">
                                 </td>
-                                <td class="style11">
+                                <td class="auto-style23">
                                 </td>
                             </tr>
                             <tr>
@@ -711,7 +824,7 @@
                                     &nbsp;</td>
                                 <td class="style20">
                                     &nbsp;</td>
-                                <td class="style11">
+                                <td class="auto-style23">
                                     &nbsp;</td>
                             </tr>
                             <tr>
@@ -723,7 +836,7 @@
                                     &nbsp;</td>
                                 <td class="style20">
                                     &nbsp;</td>
-                                <td class="style11">
+                                <td class="auto-style23">
                                     &nbsp;</td>
                             </tr>
                             <tr>
@@ -740,6 +853,9 @@
                                                 </td>
                                                 <td class="style28">
                                                     <asp:RequiredFieldValidator ID="rfvEmpresa" runat="server" ControlToValidate="txtEmpresa" ErrorMessage="La empresa es un dato requerido." ForeColor="Red" ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
+                                                    <asp:RegularExpressionValidator ID="RegEx_Empresa" runat="server" ControlToValidate="txtEmpresa"
+                                                    ErrorMessage="Empresa inválida (Símbolos inválidos)." ForeColor="Red" ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)"
+                                                    ValidationGroup="gvExperienciasLaborales">*</asp:RegularExpressionValidator>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -751,6 +867,9 @@
                                                 </td>
                                                 <td class="style28">
                                                     <asp:RequiredFieldValidator ID="rfvPuesto" runat="server" ControlToValidate="txtPuesto" ErrorMessage="El puesto es un dato requerido." ForeColor="Red" ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
+                                                    <asp:RegularExpressionValidator ID="RegEx_Puesto" runat="server" ControlToValidate="txtPuesto"
+                                                    ErrorMessage="Puesto inválido (Símbolos inválidos)." ForeColor="Red" ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)"
+                                                    ValidationGroup="gvExperienciasLaborales">*</asp:RegularExpressionValidator>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -765,7 +884,9 @@
                                                 <td class="style11">
                                                     <asp:Panel ID="PanelAgregar2" runat="server" HorizontalAlign="Right">
                                                         <asp:Button ID="btnAgregarExperienciaLaboral" runat="server" CssClass="Boton" 
-                                                            onclick="btnAgregarExperienciaLaboral_Click" Text="Agregar" />
+                                                            onclick="btnAgregarExperienciaLaboral_Click" Text="Agregar" UseSubmitBehavior="False" />
+                                                        <asp:Button ID="btnActualizarExperienciaLaboral" runat="server" CssClass="Boton" 
+                                                            onclick="btnActualizarExperienciaLaboral_Click" Text="Actualizar" Visible="False" UseSubmitBehavior="False" />
                                                     </asp:Panel>
                                                 </td>
                                             </tr>
@@ -782,7 +903,7 @@
                                     &nbsp;</td>
                                 <td class="style20">
                                     &nbsp;</td>
-                                <td class="style11">
+                                <td class="auto-style23">
                                     &nbsp;</td>
                             </tr>
                             <tr>
@@ -792,6 +913,7 @@
                                         <asp:DataGrid ID="dgExperienciasLaborales" runat="server" 
                                             AutoGenerateColumns="False" BackColor="WhiteSmoke" BorderStyle="Solid" 
                                             CssClass="GridMantenimiento" Font-Names="Century Gothic" Font-Size="Small" 
+                                            OnItemCommand="dgExperienciasLaborales_ItemCommand"
                                             ForeColor="Black" Height="19px" Width="99%">
                                             <AlternatingItemStyle BackColor="Gainsboro" />
                                             <FooterStyle Font-Names="Century Gothic" />
@@ -800,6 +922,20 @@
                                             <Columns>
                                                 <asp:BoundColumn HeaderText="Empresa" DataField="Empresa"></asp:BoundColumn>
                                                 <asp:BoundColumn HeaderText="Puesto" DataField="Puesto"></asp:BoundColumn>
+                                                <asp:TemplateColumn>
+                                                <ItemTemplate>
+                                                    <asp:ImageButton ID="ibtnEditar" runat="server" CommandName="Editar" 
+                                                        Height="30px" ImageAlign="Right" ImageUrl="~/Multimedia/icono-editar.jpg" 
+                                                        Width="30px" />
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
+                                            <asp:TemplateColumn>
+                                                <ItemTemplate>
+                                                    <asp:ImageButton ID="ibtnEliminar" runat="server" CommandName="Eliminar" 
+                                                        Height="30px" ImageAlign="Right" ImageUrl="~/Multimedia/icono-eliminar.jpg" 
+                                                        Width="30px" />
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
                                             </Columns>
                                         </asp:DataGrid>
                                     </asp:Panel>
@@ -814,16 +950,16 @@
                                     &nbsp;</td>
                                 <td class="style20">
                                     &nbsp;</td>
-                                <td class="style11">
+                                <td class="auto-style23">
                                     <asp:Panel ID="Panel5" runat="server" HorizontalAlign="Right">
                                         <asp:Button ID="btnAtras2" runat="server" CssClass="Boton" 
-                                            onclick="btnAtras2_Click" Text="Atrás" />
+                                            onclick="btnAtras2_Click" Text="Atrás" UseSubmitBehavior="False" />
                                         &nbsp;&nbsp;
                                         <asp:Button ID="btnCancelar4" runat="server" CssClass="Boton" 
-                                            onclick="btnCancelar4_Click" Text="Cancelar" />
+                                            onclick="btnCancelar4_Click" Text="Cancelar" UseSubmitBehavior="False" />
                                         &nbsp;&nbsp;
                                         <asp:Button ID="btnSiguiente4" runat="server" CssClass="Boton" 
-                                            onclick="btnSiguiente4_Click" Text="Siguiente" />
+                                            onclick="btnSiguiente4_Click" Text="Siguiente" UseSubmitBehavior="False" />
                                     </asp:Panel>
                                 </td>
                             </tr>
@@ -840,7 +976,7 @@
                                     &nbsp;</td>
                                 <td class="style17">
                                 </td>
-                                <td class="style20">
+                                <td class="auto-style32">
                                 </td>
                                 <td class="style11">
                                 </td>
@@ -852,7 +988,7 @@
                                 </td>
                                 <td class="style17">
                                     &nbsp;</td>
-                                <td class="style20">
+                                <td class="auto-style32">
                                     &nbsp;</td>
                                 <td class="style11">
                                     &nbsp;</td>
@@ -864,7 +1000,7 @@
                                     &nbsp;</td>
                                 <td class="style17">
                                     &nbsp;</td>
-                                <td class="style20">
+                                <td class="auto-style32">
                                     &nbsp;</td>
                                 <td class="style11">
                                     &nbsp;</td>
@@ -900,7 +1036,7 @@
                                     &nbsp;</td>
                                 <td class="style17">
                                     &nbsp;</td>
-                                <td class="style20">
+                                <td class="auto-style32">
                                     &nbsp;</td>
                                 <td class="style11">
                                     &nbsp;</td>
@@ -911,12 +1047,14 @@
                                         BorderWidth="2px">
                                         <table class="style14">
                                             <tr>
-                                                <td class="style26">
-                                                    <asp:Label ID="lblPasatiempos" runat="server" Text="Pasatiempos"></asp:Label>
+                                                <td class="auto-style8">
+                                                    <asp:Label ID="lblPasatiempos" runat="server" Text="Pasatiempo"></asp:Label>
                                                 </td>
-                                                <td class="style30">
-                                                    <asp:TextBox ID="txtPasatiempos" runat="server" Height="80px" 
-                                                        TextMode="MultiLine" Width="740px"></asp:TextBox>
+                                                <td class="auto-style24">
+                                                    <asp:TextBox ID="txtPasatiempos" runat="server" Width="740px" placeholder="Escriba aquí pasatiempo principal"></asp:TextBox>
+                                                    <asp:RegularExpressionValidator ID="RegEx_Pasatiempo" runat="server" ControlToValidate="txtPasatiempos"
+                                                    ErrorMessage="Pasatiempo inválido (Símbolos inválidos)." ForeColor="Red" ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)"
+                                                    ValidationGroup="gvPasatiempos">*</asp:RegularExpressionValidator>
                                                 </td>
                                             </tr>
                                         </table>
@@ -930,18 +1068,18 @@
                                     &nbsp;</td>
                                 <td class="style17">
                                     &nbsp;</td>
-                                <td class="style20">
+                                <td class="auto-style32">
                                     &nbsp;</td>
                                 <td class="style11">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Panel ID="Panel2" runat="server" HorizontalAlign="Right">
                                         <asp:Button ID="btnAtras3" runat="server" CssClass="Boton" 
-                                            onclick="btnAtras3_Click" Text="Atrás" />
+                                            onclick="btnAtras3_Click" Text="Atrás" UseSubmitBehavior="False" />
                                         &nbsp;&nbsp;&nbsp;&nbsp;
                                         <asp:Button ID="btnCancelar5" runat="server" CssClass="Boton" 
-                                            onclick="btnCancelar5_Click" Text="Cancelar" />
+                                            onclick="btnCancelar5_Click" Text="Cancelar" UseSubmitBehavior="False" />
                                         &nbsp;&nbsp;&nbsp;&nbsp;
                                         <asp:Button ID="btnSiguiente5" runat="server" CssClass="Boton" 
-                                            onclick="btnSiguiente5_Click" Text="Siguiente" />
+                                            onclick="btnSiguiente5_Click" Text="Siguiente" UseSubmitBehavior="False" />
                                     </asp:Panel>
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                 </td>
@@ -952,14 +1090,14 @@
                     <asp:View ID="vPaso6" runat="server">
                         <table class="style14">
                             <tr>
-                                <td class="style24">
+                                <td class="auto-style30">
                                     <asp:Label ID="lblPaso6" runat="server" Text="Paso 6 de 6" CssClass="Titulo2"></asp:Label>
                                 </td>
                                 <td class="style25">
                                     &nbsp;</td>
                                 <td class="style17">
                                 </td>
-                                <td class="style20">
+                                <td class="auto-style35">
                                 </td>
                                 <td class="style11">
                                 </td>
@@ -971,7 +1109,7 @@
                                 </td>
                                 <td class="style17">
                                     &nbsp;</td>
-                                <td class="style20">
+                                <td class="auto-style35">
                                     &nbsp;</td>
                                 <td class="style11">
                                     &nbsp;</td>
@@ -999,40 +1137,44 @@
                                             </tr>
                                             <tr>
                                                 <td>
-                                                    <asp:CheckBox ID="chkAceptarTerminos" runat="server" 
-                                                        Text="Acepto los términos y condiciones anteriores" AutoPostBack="True" 
-                                                        oncheckedchanged="chkAceptarTerminos_CheckedChanged"/>
-                                                </td>
+                                                    &nbsp;</td>
                                             </tr>
                                         </table>
                                     </asp:Panel>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="style24">
+                                <td class="auto-style30">
                                     &nbsp;</td>
                                 <td class="style25">
                                     &nbsp;</td>
                                 <td class="style17">
                                     &nbsp;</td>
-                                <td class="style20">
+                                <td class="auto-style35">
                                     &nbsp;</td>
                                 <td class="style11">
                                     &nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="style24">
-                                    &nbsp;</td>
+                                <td class="auto-style30">
+                                    <asp:CheckBox ID="chkAceptarTerminos" runat="server" 
+                                                        Text="Acepto los términos y condiciones anteriores (Necesario para finalizar)" AutoPostBack="True" 
+                                                        oncheckedchanged="chkAceptarTerminos_CheckedChanged" Checked="False"/>
+                                    &nbsp;
+                                </td>
                                 <td class="style25">
                                     &nbsp;</td>
                                 <td class="style17">
                                     &nbsp;</td>
-                                <td class="style20">
+                                <td class="auto-style35">
                                     &nbsp;</td>
                                 <td class="style11">
                                     <asp:Panel ID="Panel6" runat="server" HorizontalAlign="Right">
+                                        <asp:Button ID="btnAtras6" runat="server" CssClass="Boton" 
+                                            onclick="btnAtras6_Click" Text="Atrás" UseSubmitBehavior="False" />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
                                         <asp:Button ID="btnCancelar6" runat="server" CssClass="Boton" 
-                                            onclick="btnCancelar6_Click" Text="Cancelar" />
+                                            onclick="btnCancelar6_Click" Text="Cancelar" UseSubmitBehavior="False" />
                                         &nbsp;&nbsp;&nbsp;
                                         <asp:Button ID="btnFinalizar" runat="server" CssClass="Boton"
                                             onClick="btnFinalizar_Click" Text="Finalizar" disabled="true"/>
@@ -1053,13 +1195,13 @@
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style33">
                 &nbsp;</td>
             <td class="style13">
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style25">
                 &nbsp;</td>
             <td class="style9">
                 &nbsp;</td>
@@ -1069,13 +1211,13 @@
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style33">
                 &nbsp;</td>
             <td class="style13">
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style25">
                 &nbsp;</td>
             <td class="style9">
                 &nbsp;</td>
@@ -1085,13 +1227,13 @@
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style33">
                 &nbsp;</td>
             <td class="style13">
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style25">
                 &nbsp;</td>
             <td class="style9">
                 &nbsp;</td>
@@ -1101,13 +1243,13 @@
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style33">
                 &nbsp;</td>
             <td class="style13">
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style25">
                 &nbsp;</td>
             <td class="style9">
                 &nbsp;</td>
@@ -1117,13 +1259,13 @@
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style33">
                 &nbsp;</td>
             <td class="style13">
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style25">
                 &nbsp;</td>
             <td class="style9">
                 &nbsp;</td>
@@ -1133,13 +1275,13 @@
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style33">
                 &nbsp;</td>
             <td class="style13">
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style25">
                 &nbsp;</td>
             <td class="style9">
                 &nbsp;</td>
@@ -1149,13 +1291,13 @@
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style33">
                 &nbsp;</td>
             <td class="style13">
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style25">
                 &nbsp;</td>
             <td class="style9">
                 &nbsp;</td>
@@ -1165,13 +1307,13 @@
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style33">
                 &nbsp;</td>
             <td class="style13">
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style25">
                 &nbsp;</td>
             <td class="style9">
                 &nbsp;</td>
@@ -1181,13 +1323,13 @@
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style33">
                 &nbsp;</td>
             <td class="style13">
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style25">
                 &nbsp;</td>
             <td class="style9">
                 &nbsp;</td>
@@ -1197,13 +1339,13 @@
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style33">
                 &nbsp;</td>
             <td class="style13">
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style25">
                 &nbsp;</td>
             <td class="style9">
                 &nbsp;</td>
@@ -1213,13 +1355,13 @@
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style33">
                 &nbsp;</td>
             <td class="style13">
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style25">
                 &nbsp;</td>
             <td class="style9">
                 &nbsp;</td>
@@ -1229,13 +1371,13 @@
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style33">
                 &nbsp;</td>
             <td class="style13">
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style25">
                 &nbsp;</td>
             <td class="style9">
                 &nbsp;</td>
@@ -1245,13 +1387,13 @@
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style33">
                 &nbsp;</td>
             <td class="style13">
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style25">
                 &nbsp;</td>
             <td class="style9">
                 &nbsp;</td>
@@ -1261,13 +1403,13 @@
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style33">
                 &nbsp;</td>
             <td class="style13">
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style25">
                 &nbsp;</td>
             <td class="style9">
                 &nbsp;</td>
@@ -1277,13 +1419,13 @@
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style33">
                 &nbsp;</td>
             <td class="style13">
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style25">
                 &nbsp;</td>
             <td class="style9">
                 &nbsp;</td>
@@ -1293,13 +1435,13 @@
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style33">
                 &nbsp;</td>
             <td class="style13">
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style25">
                 &nbsp;</td>
             <td class="style9">
                 &nbsp;</td>
@@ -1309,16 +1451,17 @@
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style33">
                 &nbsp;</td>
             <td class="style13">
                 &nbsp;</td>
             <td class="style22">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style25">
                 &nbsp;</td>
             <td class="style9">
                 &nbsp;</td>
         </tr>
     </table>
+    </div>
 </asp:Content>

@@ -88,8 +88,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
             if (Page.IsValid)
             {
                 Empresa.Nom_Empresa = txtNombreEmpresa.Text;
-                DataTable TablaNomEmpresa = Empresa.Buscar();
                 Empresa.Num_CedulaJuridica = txtCedulaJuridica.Text;
+                DataTable TablaNomEmpresa = Empresa.Buscar();
                 Empresa.Dsc_Empresa = txtDescripcion.Text;
                 CorreoElectronico.Detalle = txtEmail.Text;
                 CorreoElectronico.FK_IdTipoContacto = 3;
@@ -103,7 +103,21 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                 }
                 else 
                 {
-                    Response.Write(@"<SCRIPT LANGUAGE=""JavaScript"">alert('El nombre de empresa ya existe')</SCRIPT>");
+                    String datos = "";
+                    foreach (DataRow _row in TablaNomEmpresa.Rows)
+                    {
+                        if (txtNombreEmpresa.Text.CompareTo(_row["Nom_Empresa"].ToString()) == 0)
+                        {
+                            datos += "\\n-Nombre de la empresa";
+                        }
+                        if (txtCedulaJuridica.Text.CompareTo(_row["Num_CedulaJuridica"].ToString()) == 0)
+                        {
+                            datos += "\\n-Cédula Jurídica";
+                        }
+                    }
+                    string script = @"<script type='text/javascript'>
+                            alert('Los siguientes datos ya estan registrados:" +datos+ "');</script>";
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "Datos de empresa", script, false);
                 }
             }
         }
@@ -121,19 +135,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                 Usuario.Estado = 1;
                 if (TablaNomUsuario.Rows.Count.Equals(0))
                 {
-                    if (txtContraseña.Text.CompareTo(txtConfirmarContraseña.Text) == 0)
-                    {
-                        mvRegistroEmpresa.ActiveViewIndex = 2;
-                    }
-                    else
-                    {
-                        Response.Write(@"<SCRIPT LANGUAGE=""JavaScript"">alert('Las contraseñas no coinciden')</SCRIPT>");
-                       //ClientScript.RegisterStartupScript(this.GetType(), "popup", "<script type='text/javascript'>alert('You have Sucess fully Registered');</script>");
-                    }
+                    mvRegistroEmpresa.ActiveViewIndex = 2;
                 }
                 else
                 {
-                    Response.Write(@"<SCRIPT LANGUAGE=""JavaScript"">alert('El nombre de usuario ya existe')</SCRIPT>");
+                    string script = @"<script type='text/javascript'>
+                            alert('El nombre de usuario ya existe. Escriba otro por favor.');
+                            </script>";
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "Datos de cuenta", script, false);
+                    txtNombreUsuario.Focus();
                 }
             }
         }
@@ -151,7 +161,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
 
         protected void btnFinalizar_Click(object sender, EventArgs e)
         {
-            //mvRegistroEmpresa.ActiveViewIndex = 0;
             Usuario.Insertar();
             DataTable TablaUsuario = Usuario.Buscar();
 
@@ -168,20 +177,25 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
             CorreoElectronico.Insertar();
             Telefono.FK_IdUsuario = IdUsuario;
             Telefono.Insertar();
+            string script = @"<script type='text/javascript'>
+                            alert('La empresa se ha registrado con éxito.');
+                            </script>";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "Registro", script, false);
             Response.Redirect("/Autenticacion/frmAutenticacion.aspx");
-            
 
         }
 
         protected void chkAceptarTerminos_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkAceptarTerminos.Checked)
+            bool _checked = chkAceptarTerminos.Checked;
+            if (_checked)
             {
-                btnFinalizar.Enabled = true;
+                btnFinalizar.Attributes.Remove("disabled");
+                btnFinalizar.Attributes["onclick"] = "btnFinalizar_Click";
             }
             else
             {
-                btnFinalizar.Enabled = false;
+                btnFinalizar.Attributes["disabled"] = "true";
             }
         }
 
@@ -198,6 +212,33 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
         protected void btnCancelarPaso3_Click(object sender, EventArgs e)
         {
             Response.Redirect("/Autenticacion/frmAutenticacion.aspx");
+        }
+
+        protected void btnAtras_Click(object sender, EventArgs e)
+        {
+            mvRegistroEmpresa.ActiveViewIndex = 0;
+        }
+
+        protected void btnAtras1_Click(object sender, EventArgs e)
+        {
+            mvRegistroEmpresa.ActiveViewIndex = 1;
+        }
+
+        protected void validarUsuarioServer(object sender, ServerValidateEventArgs e)
+        {
+            e.IsValid = 5 <= txtNombreUsuario.Text.Length
+                && txtNombreUsuario.Text.Length <= 50;
+        }
+
+        protected void validarContrasennaServer(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = txtContraseña.Text.Length >= 8;
+        }
+
+        protected void validarTelefonoServer(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = txtTelefono.Text.Length == 8
+                || txtTelefono.Text.Length == 0;
         }
     }
 }

@@ -33,11 +33,12 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Autenticacion
                 if (TablaUsuario.Rows.Count > 0)
                 {
                     String NombreUsuario = TablaUsuario.Rows[0]["Nom_Usuario"].ToString();
-                    String Contraseña = TablaUsuario.Rows[0]["Contrasenna"].ToString();
                     Int16 TipoUsuario = Int16.Parse(TablaUsuario.Rows[0]["FK_IdTipoUsuario"].ToString());
                     Int16 Estado = Int16.Parse(TablaUsuario.Rows[0]["Estado"].ToString());
 
-                    if (NombreUsuario.CompareTo(txtNombreUsuario.Text) != 0 && Contraseña.CompareTo(txtContraseña.Text) != 0)
+                    int Validacion = Usuario.Validar(txtContraseña.Text);
+
+                    if (Validacion==0)
                     {
                         string script = @"<script type='text/javascript'>
                             alert('Nombre de usuario y contraseña inválidos.');
@@ -46,16 +47,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Autenticacion
                         ScriptManager.RegisterStartupScript(this, typeof(Page), "Autenticación", script, false);
                         txtNombreUsuario.Focus();
                     }
-                    else if (NombreUsuario.CompareTo(txtNombreUsuario.Text) != 0)
-                    {
-                        string script = @"<script type='text/javascript'>
-                            alert('Nombre de usuario inválido.');
-                            </script>";
-
-                        ScriptManager.RegisterStartupScript(this, typeof(Page), "Autenticación", script, false);
-                        txtNombreUsuario.Focus();
-                    }
-                    else if (Contraseña.CompareTo(txtContraseña.Text) != 0)
+                    else if (Validacion==1)
                     {
                         string script = @"<script type='text/javascript'>
                             alert('Contraseña inválida.');

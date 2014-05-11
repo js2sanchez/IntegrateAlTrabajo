@@ -146,6 +146,26 @@ namespace ITCR.IntegrateAlTrabajo.Datos
 			return base.SeleccionarTodos();
 		}
 
+        /// <summary>
+        /// Propósito: Valida la contrasenna del usuario.
+        /// </summary>
+        /// <returns>Un entero en representacion al resultado</returns>
+        /// <remarks>
+        /// Propiedades necesarias para este método: 
+        /// <UL>
+        ///		 <LI>Nom_Usuario</LI>
+        ///		 <LI>Contrasenna</LI>
+        /// </UL>
+        /// Propiedades actualizadas luego de una llamada exitosa a este método: 
+        /// <UL>
+        ///		 <LI>CodError</LI>
+        /// </UL>
+        /// </remarks>
+        public int Validar(String pEntradaDeUsuario)
+        {
+            return base.Validar(pEntradaDeUsuario);
+        }
+
 
 		/// <summary>
 		/// Propósito: Método Buscar. Este método va a Hacer un SELECT de tabla.
