@@ -389,7 +389,7 @@
                                         Text="Teléfono de habitación"></asp:Label>
                                     &nbsp;</td>
                                 <td class="auto-style16">
-                                    <asp:TextBox ID="txtTelefonoHabitacion" runat="server" TextMode="Phone" Width="248px" placeholder="Sin guiones"></asp:TextBox>
+                                    <asp:TextBox ID="txtTelefonoHabitacion" runat="server" Width="248px" placeholder="Sin guiones"></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="revTelefonoHabitacion" runat="server" ControlToValidate="txtTelefonoHabitacion"
                                     ErrorMessage="El número de teléfono de habitación introducido es inválido." ForeColor="Red" ValidationExpression="(2[0-9]*)"
                                     ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
@@ -412,7 +412,7 @@
                                     <asp:Label ID="lblTelefonoCelular" runat="server" Text="Teléfono celular"></asp:Label>
                                     </td>
                                 <td class="auto-style16">
-                                    <asp:TextBox ID="txtCelular" runat="server" TextMode="Phone" Width="248px" Placeholder="Sin guiones"></asp:TextBox>
+                                    <asp:TextBox ID="txtCelular" runat="server" Width="248px" Placeholder="Sin guiones"></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="revCelular" runat="server" ControlToValidate="txtCelular"
                                     ErrorMessage="El número de celular introducido es inválido." ForeColor="Red" ValidationExpression="([6789][0-9]*)"
                                     ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
@@ -432,7 +432,7 @@
                                     <asp:Label ID="lblCorreoElectronico" runat="server" Text="Correo electrónico"></asp:Label>
                                 </td>
                                 <td class="auto-style16">
-                                    <asp:TextBox ID="txtCorreoElectronico" runat="server" TextMode="Email" Width="248px" Placeholder="micorreo@mail.com"></asp:TextBox>
+                                    <asp:TextBox ID="txtCorreoElectronico" runat="server" Width="248px" Placeholder="micorreo@mail.com"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvCorreoElectronico" runat="server" ControlToValidate="txtCorreoElectronico"
                                     ErrorMessage="El correo electrónico es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtCorreoElectronico" ValidationExpression=".+@.+\..+"

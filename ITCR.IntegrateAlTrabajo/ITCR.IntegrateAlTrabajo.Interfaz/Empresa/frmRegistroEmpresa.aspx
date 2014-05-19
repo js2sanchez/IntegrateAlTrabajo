@@ -220,7 +220,7 @@
                                 </td>
                                 <td class="auto-style16">
                                     <asp:TextBox ID="txtCedulaJuridica" runat="server" Width="290px" 
-                                        ToolTip= "10005888" TextMode="Number" Placeholder="Escriba la cédula aquí (Sin guiones)"></asp:TextBox>
+                                        ToolTip= "10005888" Placeholder="Escriba la cédula aquí (Sin guiones)"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvCedulaJuridica" runat="server" ControlToValidate="txtCedulaJuridica"
                                     ErrorMessage="La cédula jurídica es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosGenerales">*</asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="RegEx_Cedula" runat="server" ControlToValidate="txtCedulaJuridica" ValidationExpression="[0-9]*"
@@ -255,7 +255,7 @@
                                     <asp:Label ID="lblTelefono" runat="server" Text="Teléfono"></asp:Label>
                                 </td>
                                 <td class="auto-style16">
-                                    <asp:TextBox ID="txtTelefono" runat="server" Width="290px" TextMode="Phone" Placeholder="Escriba el teléfono aquí (Sin guiones)"></asp:TextBox>
+                                    <asp:TextBox ID="txtTelefono" runat="server" Width="290px" Placeholder="Escriba el teléfono aquí (Sin guiones)"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvTelefono" runat="server" ControlToValidate="txtTelefono"
                                     ErrorMessage="El teléfono de la empresa es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosGenerales">*</asp:RequiredFieldValidator>
                                     <asp:CustomValidator ID="cvLen_Telefono" ControlToValidate="txtTelefono" ForeColor="Red" OnServerValidate="validarTelefonoServer"
