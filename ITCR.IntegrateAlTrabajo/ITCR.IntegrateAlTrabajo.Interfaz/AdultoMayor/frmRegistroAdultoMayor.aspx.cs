@@ -60,8 +60,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         private void cargarDropDownListSexo()
         {
             drpSexo.Items.Clear();
-            ListItem ItemSexo1 = new ListItem("M");
-            ListItem ItemSexo2 = new ListItem("F");
+            ListItem ItemSexo1 = new ListItem("Masculino");
+            ListItem ItemSexo2 = new ListItem("Femenino");
             drpSexo.Items.Add(ItemSexo1);
             drpSexo.Items.Add(ItemSexo2);
         }
@@ -565,7 +565,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         {
             if (ddlNacionalidad.SelectedIndex == 0)
             {
-                args.IsValid = txtCedula.Text.Length == 9;
+                args.IsValid = txtCedula.Text.Length == 11;
             }
             else
             {
@@ -614,6 +614,25 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         protected void validarContrasennaServer(object source, ServerValidateEventArgs args)
         {
             args.IsValid = txtContraseña.Text.Length >= 8;
+        }
+
+        protected void btnCancelar2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Autenticacion/frmAutenticacion.aspx");
+        }
+
+        protected void ddlNacionalidad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ddlNacionalidad.SelectedIndex == 0)
+            {
+                txtCedula.Attributes["visible"] = "true";
+                txtCedInter.Attributes["visible"] = "false";
+            }
+            else
+            {
+                txtCedula.Attributes["visible"] = "false";
+                txtCedInter.Attributes["visible"] = "true";
+            }
         }
     }
 }
