@@ -47,3 +47,8 @@ C:\Users\Michael\Documents\IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo\ITCR.Integ
 C:\Users\Michael\Documents\IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Datos\obj\Debug\ITCR.IntegrateAlTrabajo.Datos.csprojResolveAssemblyReference.cache
 C:\Users\Michael\Documents\IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Datos\obj\Debug\ITCR.IntegrateAlTrabajo.Datos.dll
 C:\Users\Michael\Documents\IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Datos\obj\Debug\ITCR.IntegrateAlTrabajo.Datos.pdb
+C:\Users\Desarrollador\Desktop\IntegrateAlTrabajo\IntegrateAlTrabajo-master\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Datos\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.dll
+C:\Users\Desarrollador\Desktop\IntegrateAlTrabajo\IntegrateAlTrabajo-master\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Datos\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.pdb
+C:\Users\Desarrollador\Desktop\IntegrateAlTrabajo\IntegrateAlTrabajo-master\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Datos\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Desarrollador\Desktop\IntegrateAlTrabajo\IntegrateAlTrabajo-master\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Datos\obj\Debug\ITCR.IntegrateAlTrabajo.Datos.dll
+C:\Users\Desarrollador\Desktop\IntegrateAlTrabajo\IntegrateAlTrabajo-master\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Datos\obj\Debug\ITCR.IntegrateAlTrabajo.Datos.pdb

@@ -87,6 +87,8 @@
     <Content Include="Empresa\frmPerfilEmpresa.aspx" />
     <Content Include="Empresa\frmPublicarOfertaTrabajo.aspx" />
     <Content Include="Empresa\frmRegistroEmpresa.aspx" />
+    <Content Include="js\jquery.js" />
+    <Content Include="js\jquery.maskedinput.min.js" />
     <Content Include="Multimedia\banner_adultos_mayores.jpg" />
     <Content Include="Multimedia\banner_autenticacion.jpg" />
     <Content Include="Multimedia\icono-buscar.jpg" />

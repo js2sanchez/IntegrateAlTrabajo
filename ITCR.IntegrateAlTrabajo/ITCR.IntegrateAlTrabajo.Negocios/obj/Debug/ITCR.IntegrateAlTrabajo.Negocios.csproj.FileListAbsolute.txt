@@ -82,3 +82,10 @@ C:\Users\Michael\Documents\IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo\ITCR.Integ
 C:\Users\Michael\Documents\IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.csprojResolveAssemblyReference.cache
 C:\Users\Michael\Documents\IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
 C:\Users\Michael\Documents\IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb
+C:\Users\Desarrollador\Desktop\IntegrateAlTrabajo\IntegrateAlTrabajo-master\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
+C:\Users\Desarrollador\Desktop\IntegrateAlTrabajo\IntegrateAlTrabajo-master\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb
+C:\Users\Desarrollador\Desktop\IntegrateAlTrabajo\IntegrateAlTrabajo-master\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.dll
+C:\Users\Desarrollador\Desktop\IntegrateAlTrabajo\IntegrateAlTrabajo-master\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.pdb
+C:\Users\Desarrollador\Desktop\IntegrateAlTrabajo\IntegrateAlTrabajo-master\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Desarrollador\Desktop\IntegrateAlTrabajo\IntegrateAlTrabajo-master\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.dll
+C:\Users\Desarrollador\Desktop\IntegrateAlTrabajo\IntegrateAlTrabajo-master\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Negocios\obj\Debug\ITCR.IntegrateAlTrabajo.Negocios.pdb

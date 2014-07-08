@@ -194,7 +194,6 @@
     <script type="text/javascript" src="../js/jquery.maskedinput.min.js"></script>
     <script type="text/javascript">
         function maskId(id) {
-            alert("holis");
             $(document).ready(function () {
                 var mask = "9-9999-9999";
                 if (id == 0) {
