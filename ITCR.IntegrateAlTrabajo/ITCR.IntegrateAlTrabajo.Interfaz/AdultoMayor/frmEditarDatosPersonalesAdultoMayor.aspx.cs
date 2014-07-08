@@ -266,5 +266,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
             Response.Redirect("frmConsultarPerfilAdultoMayor.aspx");
         }
+
+        protected void btnSalir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmConsultarPerfilAdultoMayor.aspx");
+        }
     }
 }

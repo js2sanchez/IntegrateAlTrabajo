@@ -12,17 +12,50 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 {
     public partial class frmConsultarPerfilAdultoMayor : System.Web.UI.Page
     {
+        cIATPersonaNegocios Persona = new cIATPersonaNegocios(1, "A", 2, "B");
+        cIATUsuarioNegocios Usuario = new cIATUsuarioNegocios(1, "A", 2, "B");
+        List<string> ListaIdiomas = new List<string>();
+
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {            
             if (!IsPostBack)
             {
-                cargarDatosPersonales();
+                //Edicion
+                txtPasatiempo.Visible = false;                
+                btnActualizarIdiomas.Visible = false;
+                btnActualizarPasatiempo.Visible = false;
+                //Comprobar sesion
+                if (Session["Nombre_Usuario"] == null)
+                {
+                    Response.Redirect("/Autenticacion/frmAutenticacion.aspx");
+                }
+                //Cargas
+                cargarUsuario();
+                cargarDatosPersonales();                
                 cargarDataGridEstudios();
                 cargarDataGridExperienciasLaborales();
                 cargarIdiomas();
+                chkIdiomas.Enabled = false;
             }
         }
 
+        private void cargarUsuario()
+        {
+            Usuario.Nom_Usuario = Session["Nombre_Usuario"].ToString();
+            DataTable TablaUsuario = Usuario.Buscar();
+
+            Int16 IdUsuario = 0;
+
+            if (TablaUsuario.Rows.Count > 0)
+            {
+                IdUsuario = Int16.Parse(TablaUsuario.Rows[0]["Id_Usuario"].ToString());
+                Usuario.Id_Usuario = IdUsuario;
+            }
+
+            Session["Id_Usuario"] = IdUsuario;
+
+            Persona.FK_IdUsuario = IdUsuario;
+        }
         private void cargarDireccion(Int16 IdDistrito)
         {
             cIATDistritoNegocios Distrito = new cIATDistritoNegocios(1, "A", 2, "B");
@@ -80,24 +113,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         }
 
         private void cargarDatosPersonales()
-        {
-            cIATPersonaNegocios Persona = new cIATPersonaNegocios(1, "A", 2, "B");
-
-            cIATUsuarioNegocios Usuario = new cIATUsuarioNegocios(1, "A", 2, "B");
-
-            Usuario.Nom_Usuario = Session["Nombre_Usuario"].ToString();
-            DataTable TablaUsuario = Usuario.Buscar();
-
-            Int16 IdUsuario = 0;
-
-            if (TablaUsuario.Rows.Count > 0)
-            {
-                IdUsuario = Int16.Parse(TablaUsuario.Rows[0]["Id_Usuario"].ToString());
-            }
-
-            Session["Id_Usuario"] = IdUsuario;
-
-            Persona.FK_IdUsuario = IdUsuario;
+        {                     
             DataTable TablaPersona = Persona.Buscar();
 
             if (TablaPersona.Rows.Count > 0)
@@ -114,7 +130,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
             cIATContactoNegocios Contacto = new cIATContactoNegocios(1, "A", 2, "B");
 
-            Contacto.FK_IdUsuario = IdUsuario;
+            Contacto.FK_IdUsuario = Usuario.Id_Usuario;
 
             DataTable TablaContactos = Contacto.Buscar();
 
@@ -148,21 +164,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
             cIATEstudioNegocios Estudio = new cIATEstudioNegocios(1, "A", 2, "B");
 
-            cIATUsuarioNegocios Usuario = new cIATUsuarioNegocios(1, "A", 2, "B");
-
-            Usuario.Nom_Usuario = Session["Nombre_Usuario"].ToString();
-            DataTable TablaUsuario = Usuario.Buscar();
-
-            Int16 IdUsuario = 0;
-
-            if (TablaUsuario.Rows.Count > 0)
-            {
-                IdUsuario = Int16.Parse(TablaUsuario.Rows[0]["Id_Usuario"].ToString());
-            }
-
-            cIATPersonaNegocios Persona = new cIATPersonaNegocios(1, "A", 2, "B");
-
-            Persona.FK_IdUsuario = IdUsuario;
             DataTable TablaPersona = Persona.Buscar();
 
             Int16 IdPersona = 0;
@@ -190,21 +191,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
             cIATExperienciaLaboralNegocios ExperienciaLaboral = new cIATExperienciaLaboralNegocios(1, "A", 2, "B");
 
-            cIATUsuarioNegocios Usuario = new cIATUsuarioNegocios(1, "A", 2, "B");
-
-            Usuario.Nom_Usuario = Session["Nombre_Usuario"].ToString();
-            DataTable TablaUsuario = Usuario.Buscar();
-
-            Int16 IdUsuario = 0;
-
-            if (TablaUsuario.Rows.Count > 0)
-            {
-                IdUsuario = Int16.Parse(TablaUsuario.Rows[0]["Id_Usuario"].ToString());
-            }
-
-            cIATPersonaNegocios Persona = new cIATPersonaNegocios(1, "A", 2, "B");
-
-            Persona.FK_IdUsuario = IdUsuario;
             DataTable TablaPersona = Persona.Buscar();
 
             Int16 IdPersona = 0;
@@ -228,27 +214,12 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         {
             cIATIdiomaXPersonaNegocios IdiomaXPersona = new cIATIdiomaXPersonaNegocios(1, "A", 2, "B");
 
-            cIATUsuarioNegocios Usuario = new cIATUsuarioNegocios(1, "A", 2, "B");
-
-            Usuario.Nom_Usuario = Session["Nombre_Usuario"].ToString();
-            DataTable TablaUsuario = Usuario.Buscar();
-
-            Int16 IdUsuario = 0;
-
-            if (TablaUsuario.Rows.Count > 0)
-            {
-                IdUsuario = Int16.Parse(TablaUsuario.Rows[0]["Id_Usuario"].ToString());
-            }
-
-            cIATPersonaNegocios Persona = new cIATPersonaNegocios(1, "A", 2, "B");
-
-            Persona.FK_IdUsuario = IdUsuario;
             DataTable TablaPersona = Persona.Buscar();
 
             Int16 IdPersona = 0;
 
             if (TablaPersona.Rows.Count > 0)
-            {
+            {                
                 IdPersona = Int16.Parse(TablaPersona.Rows[0]["Id_Persona"].ToString());
             }
 
@@ -257,8 +228,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
             if (TablaIdiomaXPersona.Rows.Count > 0)
             {
-                String ResultadoIdiomas = "";
-
                 for (int i = 0; i < TablaIdiomaXPersona.Rows.Count; i++)
                 {
                     cIATIdiomaNegocios Idioma = new cIATIdiomaNegocios(1, "A", 2, "B");
@@ -267,11 +236,16 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
                     if (TablaIdioma.Rows.Count > 0)
                     {
-                        ResultadoIdiomas = ResultadoIdiomas + TablaIdioma.Rows[0]["Nom_Idioma"].ToString() + "   ";
+                        foreach (ListItem idioma in chkIdiomas.Items)
+                        {
+                            if (idioma.Text.CompareTo(TablaIdioma.Rows[0]["Nom_Idioma"].ToString()) == 0)
+                            {
+                                idioma.Selected = true;
+                                ListaIdiomas.Add(TablaIdioma.Rows[0]["Nom_Idioma"].ToString());
+                            }
+                        }
                     }
                 }
-
-                lblIdiomasDato.Text = ResultadoIdiomas;
             }
         }
 
@@ -288,6 +262,91 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         protected void ibtnEditarExperienciasLaborales_Click(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("frmEditarExperienciasLaboralesAdultoMayor.aspx");
+        }
+
+        protected void btnEditarIdiomas_Click(object sender, EventArgs e)
+        {
+            btnActualizarIdiomas.Visible = true;
+            btnEditarIdiomas.Visible = false;
+            chkIdiomas.Enabled = true;
+        }
+
+        protected void btnActualizarIdiomas_Click(object sender, EventArgs e)
+        {
+            btnActualizarIdiomas.Visible = false;
+            btnEditarIdiomas.Visible = true;
+            //Base de datos
+            cIATIdiomaXPersonaNegocios IdiomaXPersona = new cIATIdiomaXPersonaNegocios(1, "A", 2, "B");
+            cargarUsuario();
+            DataTable TablaPersona = Persona.Buscar();
+
+            Int16 IdPersona = 0;
+
+            if (TablaPersona.Rows.Count > 0)
+            {
+                IdPersona = Int16.Parse(TablaPersona.Rows[0]["Id_Persona"].ToString());
+            }
+
+            cIATIdiomaNegocios Idioma = new cIATIdiomaNegocios(1, "A", 2, "B");
+            foreach (ListItem idiomat in chkIdiomas.Items)
+            {
+                if (!ListaIdiomas.Contains(idiomat.Text) && idiomat.Selected)
+                {
+                    Idioma.Nom_Idioma = idiomat.Text;
+                    DataTable TablaIdioma = Idioma.Buscar();
+
+                    Int16 IdIdioma = 0;
+
+                    if (TablaIdioma.Rows.Count > 0)
+                    {
+                        IdIdioma = Int16.Parse(TablaIdioma.Rows[0]["Id_Idioma"].ToString());
+                        IdiomaXPersona.FK_IdPersona = IdPersona;
+                        IdiomaXPersona.FK_IdIdioma = IdIdioma;
+                        IdiomaXPersona.Insertar();
+                        ListaIdiomas.Add(idiomat.Text);
+                    }                   
+                }
+            }
+            cargarIdiomas();
+            chkIdiomas.Enabled = false;
+            //           
+        }
+
+        protected void btnEditarPasatiempo_Click(object sender, EventArgs e)
+        {
+            txtPasatiempo.Text = lblPasatiemposDato.Text;
+            txtPasatiempo.Visible = true;
+            btnEditarPasatiempo.Visible = false;
+            btnActualizarPasatiempo.Visible = true;
+            lblPasatiemposDato.Visible = false;
+        }
+
+        protected void btnActualizarPasatiempo_Click(object sender, EventArgs e)
+        {
+            lblPasatiemposDato.Text = txtPasatiempo.Text;
+            txtPasatiempo.Visible = false;
+            btnEditarPasatiempo.Visible = true;
+            btnActualizarPasatiempo.Visible = false;
+            lblPasatiemposDato.Visible = true;
+            cargarUsuario();
+            DataTable TablaPersona = Persona.Buscar();
+
+            if (TablaPersona.Rows.Count > 0)
+            {
+                Persona.Id_Persona = Int16.Parse(TablaPersona.Rows[0]["Id_Persona"].ToString());                
+            }
+
+            Persona.Nom_Persona = TablaPersona.Rows[0]["Nom_Persona"].ToString(); ;
+            Persona.Apellido1 = TablaPersona.Rows[0]["Apellido1"].ToString();
+            Persona.Apellido2 = TablaPersona.Rows[0]["Apellido2"].ToString();
+            Persona.Sexo = TablaPersona.Rows[0]["Sexo"].ToString();
+            Persona.Num_Cedula = TablaPersona.Rows[0]["Num_Cedula"].ToString();
+            Persona.Fec_Nacimiento = DateTime.Parse(TablaPersona.Rows[0]["Fec_Nacimiento"].ToString());
+            Persona.FK_IdDistrito = Int16.Parse(TablaPersona.Rows[0]["Fk_IdDistrito"].ToString());
+            Persona.Pasatiempos = txtPasatiempo.Text;
+
+            Persona.Actualizar();
+
         }
     }
 }

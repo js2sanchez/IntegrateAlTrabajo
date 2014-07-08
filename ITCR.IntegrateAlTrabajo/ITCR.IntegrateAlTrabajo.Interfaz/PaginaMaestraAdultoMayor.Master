@@ -41,9 +41,11 @@
 
         <div id="BarraAzul2"> 
             <div class="clear hideSkiplink">
-                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
+                    EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" 
+                    onmenuitemclick="NavigationMenu_MenuItemClick">
                     <Items>
-                        <asp:MenuItem Text="Mi perfil" Value="Mi perfil" 
+                        <asp:MenuItem Text="Mi perfil" Value="Mi perfil"
                             NavigateUrl="~/AdultoMayor/frmConsultarPerfilAdultoMayor.aspx" 
                             Selected="True"/>
                         <asp:MenuItem Text="Ofrecer servicios" Value="Ofrecer servicios" 
@@ -58,8 +60,7 @@
                         <asp:MenuItem Text="Opinar" Value="Opinar" 
                             NavigateUrl="~/AdultoMayor/frmOpinarSobreBolsaTrabajo.aspx"></asp:MenuItem>
                         <asp:MenuItem Text="Acerca de" Value="Acerca de"></asp:MenuItem>
-                        <asp:MenuItem Text="Cerrar sesión" Value="Cerrar sesión" 
-                            NavigateUrl="~/Autenticacion/frmAutenticacion.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Cerrar sesión" Value="logout"></asp:MenuItem>
                     </Items>
                 </asp:Menu>
             </div>

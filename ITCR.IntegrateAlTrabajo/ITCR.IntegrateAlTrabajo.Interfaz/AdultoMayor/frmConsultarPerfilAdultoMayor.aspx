@@ -84,16 +84,6 @@
             width: 115px;
             height: 25px;
         }
-        .style31
-        {
-            height: 25px;
-            width: 289px;
-        }
-        .style32
-        {
-            width: 117px;
-            height: 25px;
-        }
         .style34
         {
             height: 22px;
@@ -121,6 +111,21 @@
         .style40
         {
             width: 121px;
+            height: 25px;
+        }
+        .style44
+        {
+            width: 298px;
+            height: 25px;
+        }
+        .style45
+        {
+            width: 335px;
+            height: 25px;
+        }
+        .style46
+        {
+            width: 375px;
             height: 25px;
         }
     </style>
@@ -457,38 +462,58 @@
                             </td>
                             <td class="style20">
                             </td>
-                            <td class="style32">
+                            <td class="style46">
                             </td>
-                            <td class="style6">
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <td class="style6" width="165px">
                             </td>
                         </tr>
                         <tr>
                             <td class="style30">
                                 &nbsp;</td>
-                            <td class="style31">
+                            <td class="style44">
                                 &nbsp;</td>
                             <td class="style20">
                                 &nbsp;</td>
-                            <td class="style32">
+                            <td class="style46">
                                 &nbsp;</td>
                             <td class="style6">
                                 &nbsp;</td>
                         </tr>
                         <tr>
                             <td class="style30">
-                                <asp:Label ID="lblIdiomas" runat="server" Text="Idiomas"></asp:Label>
+                                <asp:Label ID="lblIdiomas" runat="server" Text="Idiomas"></asp:Label>                                
                             </td>
-                            <td class="style19" colspan="4">
-                                <asp:Label ID="lblIdiomasDato" runat="server"></asp:Label>
+                            <td class="style19" colspan="3">
+                                <asp:CheckBoxList ID="chkIdiomas" runat="server" CellPadding="0" 
+                                                        CellSpacing="0" Height="16px" RepeatDirection="Horizontal" Width="100%">
+                                                        <asp:ListItem>Inglés</asp:ListItem>
+                                                        <asp:ListItem>Francés</asp:ListItem>
+                                                        <asp:ListItem>Portugués</asp:ListItem>
+                                                        <asp:ListItem>Mandarín</asp:ListItem>
+                                                        <asp:ListItem>Otro</asp:ListItem>
+                                                    </asp:CheckBoxList>
+                            </td>
+                            <td>
+                                <asp:Button ID="btnEditarIdiomas" runat="server" Text="Editar idiomas" 
+                                    CssClass="Boton" Width="160px" onclick="btnEditarIdiomas_Click"/>
+                                <asp:Button ID="btnActualizarIdiomas" runat="server" Text="Actualizar Idiomas" CssClass="Boton" Width="160px" 
+                                    onclick="btnActualizarIdiomas_Click"/>
                             </td>
                         </tr>
                         <tr>
                             <td class="style30">
-                                <asp:Label ID="lblPasatiempos" runat="server" Text="Pasatiempos"></asp:Label>
+                                <asp:Label ID="lblPasatiempos" runat="server" Text="Pasatiempo"></asp:Label>
                             </td>
-                            <td class="style19" colspan="4">
+                            <td class="style19" colspan="3">
                                 <asp:Label ID="lblPasatiemposDato" runat="server"></asp:Label>
+                                <asp:TextBox ID="txtPasatiempo" runat="server" Width="100%" />
+                            </td>
+                            <td>
+                                <asp:Button ID="btnEditarPasatiempo" runat="server" Text="Editar pasatiempo" 
+                                    CssClass="Boton" Width="160px" onclick="btnEditarPasatiempo_Click"/>
+                                <asp:Button ID="btnActualizarPasatiempo" runat="server" 
+                                    Text="Actualizar pasatiempo" CssClass="Boton" Width="160px" 
+                                    onclick="btnActualizarPasatiempo_Click"/>
                             </td>
                         </tr>
                     </table>

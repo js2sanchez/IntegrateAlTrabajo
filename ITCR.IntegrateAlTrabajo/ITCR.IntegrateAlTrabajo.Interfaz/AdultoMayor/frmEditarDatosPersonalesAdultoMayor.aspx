@@ -107,7 +107,7 @@
                                 <asp:Label ID="lblTelefonoCelular" runat="server" Text="Teléfono celular"></asp:Label>
                             </td>
                             <td class="style6">
-                                <asp:TextBox ID="txtTelefonoCelular" runat="server" TextMode="Phone"></asp:TextBox>
+                                <asp:TextBox ID="txtTelefonoCelular" runat="server"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -200,7 +200,7 @@
                                     Text="Teléfono de habitación"></asp:Label>
                             </td>
                             <td class="style27">
-                                <asp:TextBox ID="txtTelefonoHabitacion" runat="server" TextMode="Phone"></asp:TextBox>
+                                <asp:TextBox ID="txtTelefonoHabitacion" runat="server"></asp:TextBox>
                             </td>
                             <td class="style31">
                                 &nbsp;</td>
@@ -211,6 +211,8 @@
                                     HorizontalAlign="Right" Width="255px">
                                     <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" 
                                         onclick="btnActualizar_Click" CssClass="Boton" />
+                                        <asp:Button ID="btnSalir" runat="server" Text="Salir sin guardar" 
+                                        CssClass="Boton" onclick="btnSalir_Click" />
                                 </asp:Panel>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             </td>

@@ -184,10 +184,6 @@
                                                     &nbsp;del servicio</td>
                                                 <td class="style27">
                                                     <asp:TextBox ID="txtNombreServicios" runat="server" Enabled="False"></asp:TextBox>
-                                                    <asp:RequiredFieldValidator ID="rfvNombreServicio" runat="server" 
-                                                        ControlToValidate="txtNombreServicios" 
-                                                        ErrorMessage="El nombre del servicio es un dato requerido." 
-                                                        ForeColor="Red" ValidationGroup="gvServicios">*</asp:RequiredFieldValidator>
                                                 </td>
                                                 <td class="style28">
                                                 </td>

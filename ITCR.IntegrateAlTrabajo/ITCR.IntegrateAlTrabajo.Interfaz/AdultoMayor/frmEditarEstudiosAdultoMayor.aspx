@@ -72,16 +72,6 @@
             width: 109px;
             height: 25px;
         }
-        .style27
-        {
-            width: 298px;
-            height: 25px;
-        }
-        .style28
-        {
-            width: 27px;
-            height: 25px;
-        }
         .style29
         {
             width: 117px;
@@ -89,6 +79,26 @@
         }
         .GridMantenimiento
         {}
+        .style30
+        {
+            width: 40px;
+            height: 25px;
+        }
+        .style31
+        {
+            width: 364px;
+            height: 25px;
+        }
+        .style32
+        {
+            width: 203px;
+            height: 25px;
+        }
+        .style33
+        {
+            width: 380px;
+            height: 25px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -137,36 +147,37 @@
                                         BorderWidth="2px">
                                     <table class="style14">
                                         <tr>
-                                            <td class="style26">
+                                            <td class="style32">
                                                 <asp:Label ID="lblInstitucion" runat="server" Text="Institución"></asp:Label>
                                             </td>
-                                            <td class="style27">
+                                            <td class="style33">
                                                 <asp:TextBox ID="txtInstitucionEstudio" runat="server" Width="403px"></asp:TextBox>
                                             </td>
-                                            <td class="style28">
+                                            <td class="style30">
                                                 <asp:RequiredFieldValidator ID="rfvInstitucionEstudio" runat="server" ControlToValidate="txtInstitucionEstudio" ErrorMessage="La institución es un dato requerido." ForeColor="Red" ValidationGroup="gvEstudios">*</asp:RequiredFieldValidator>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="style29">
+                                            <td class="style32">
                                                 <asp:Label ID="lblTitulo" runat="server" Text="Título"></asp:Label>
                                             </td>
-                                            <td class="style11">
+                                            <td class="style33">
                                                 <asp:TextBox ID="txtTituloEstudio" runat="server" Width="402px"></asp:TextBox>
                                             </td>
-                                            <td class="style28">
+                                            <td class="style30">
                                                 <asp:RequiredFieldValidator ID="rfvTituloEstudio" runat="server" ControlToValidate="txtTituloEstudio" ErrorMessage="El título es un dato requerido." ForeColor="Red" ValidationGroup="gvEstudios">*</asp:RequiredFieldValidator>
-                                            </td>
+                                            </td>                                            
                                         </tr>
                                         <tr>
-                                            <td class="style26">
+                                            <td class="style32">
                                                 &nbsp;</td>
-                                            <td class="style27">
+                                            <td class="style33">
                                                 &nbsp;</td>
-                                            <td class="style28">
+                                            <td class="style30">
                                                 &nbsp;</td>
                                             <td class="style11">
-                                                <asp:Panel ID="PanelBotonActualizar" runat="server" HorizontalAlign="Right">
+                                                <asp:Panel ID="PanelBotonActualizar" runat="server" HorizontalAlign="Right" 
+                                                    style="margin-left: 19px">
                                                     <asp:Button ID="btnAgregar" runat="server" onclick="btnAgregar_Click" 
                                                         Text="Agregar" CssClass="Boton" />
                                                     <asp:Button ID="btnActualizar" runat="server" Text="Actualizar" 
@@ -227,6 +238,9 @@
                                 </asp:Panel>
                             </td>
                         </tr>
+                        <tr>
+                        <td><asp:Button ID="btnSalir" runat="server" Text="Salir" CssClass="Boton" 
+                                onclick="btnSalir_Click" /></td></tr>
                         <tr>
                             <td class="style24">
                                 &nbsp;</td>

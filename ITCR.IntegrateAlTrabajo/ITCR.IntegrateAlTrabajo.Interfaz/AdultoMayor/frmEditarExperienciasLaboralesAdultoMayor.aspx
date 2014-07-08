@@ -226,6 +226,9 @@
                             </td>
                         </tr>
                         <tr>
+                        <td><asp:Button ID="btnSalir" runat="server" Text="Salir" CssClass="Boton" 
+                                onclick="btnSalir_Click" /></td></tr>
+                        <tr>
                             <td class="style24">
                                 &nbsp;</td>
                             <td class="style25">
@@ -237,7 +240,6 @@
                             <td class="style11">
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
                             </td>
-                        </tr>
                     </table>
                 </asp:Panel>
             </td>

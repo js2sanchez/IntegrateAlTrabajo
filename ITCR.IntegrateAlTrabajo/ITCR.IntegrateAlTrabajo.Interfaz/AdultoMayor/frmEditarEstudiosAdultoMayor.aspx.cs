@@ -70,8 +70,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             if (e.CommandName == "Editar")
             {
                 Session["Id_Estudio"] = e.Item.Cells[0].Text;
-                txtInstitucionEstudio.Text = e.Item.Cells[3].Text;
-                txtTituloEstudio.Text = e.Item.Cells[4].Text;
+                txtInstitucionEstudio.Text = e.Item.Cells[1].Text;
+                txtTituloEstudio.Text = e.Item.Cells[2].Text;
 
                 btnActualizar.Visible = true;
                 btnAgregar.Visible = false;
@@ -131,6 +131,11 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
                 cargarDataGridEstudios();
             }
+        }
+
+        protected void btnSalir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmConsultarPerfilAdultoMayor.aspx");
         }
 
     }

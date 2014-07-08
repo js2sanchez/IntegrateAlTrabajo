@@ -623,16 +623,9 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
         protected void ddlNacionalidad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ddlNacionalidad.SelectedIndex == 0)
-            {
-                txtCedula.Attributes["visible"] = "true";
-                txtCedInter.Attributes["visible"] = "false";
-            }
-            else
-            {
-                txtCedula.Attributes["visible"] = "false";
-                txtCedInter.Attributes["visible"] = "true";
-            }
+            txtCedula.Text = "";
+            string code = @"<script type='text/javascript'>maskId("+ddlNacionalidad.SelectedIndex+");</script>";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "Mask", code, false);
         }
     }
 }

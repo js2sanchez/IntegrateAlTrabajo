@@ -193,10 +193,19 @@
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/jquery.maskedinput.min.js"></script>
     <script type="text/javascript">
-        $(document).ready(function () {
+        function maskId(id) {
+            alert("holis");
+            $(document).ready(function () {
+                var mask = "9-9999-9999";
+                if (id == 0) {
+                    $("#txtCedula").mask(mask);
+                }
+                else {
+                    $("#txtCedula").unmask(mask);
+                }
 
-            $("#txtCedula").mask("9-9999-9999");
-        });
+            });
+        }
     </script>
     <div id="Div1" style="width:100%; overflow:auto;">
     <table class="style8">
@@ -306,7 +315,7 @@
                                     <asp:TextBox ID="txtNombrePersona" runat="server" placeholder="Laura" tooltip="Escriba su nombre aqui" Width="248px"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvNombrePersona" runat="server" ControlToValidate="txtNombrePersona"
                                     ErrorMessage="El nombre de la persona es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
-                                    <asp:RegularExpressionValidator ID="RegEx_Nombre" runat="server" ControlToValidate="txtNombrePersona" ValidationExpression="([a-zA-ZÀ-ÿ])*"
+                                    <asp:RegularExpressionValidator ID="RegEx_Nombre" runat="server" ControlToValidate="txtNombrePersona" ValidationExpression="([a-zA-ZÀ-ÿ ])*"
                                     ErrorMessage="Nombre inválido (Simbolos inválidos)" ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                 </td>
                                 <td class="style43">
@@ -408,7 +417,7 @@
                                     &nbsp;</td>
                                 <td class="style40">
                                     <asp:RadioButtonList ID="ddlNacionalidad" runat="server" 
-                                        onselectedindexchanged="ddlNacionalidad_SelectedIndexChanged"></asp:RadioButtonList>
+                                        onselectedindexchanged="ddlNacionalidad_SelectedIndexChanged" AutoPostBack="true"></asp:RadioButtonList>
                                 </td>
                                 <td class="style43">
                                     &nbsp;</td>
@@ -428,13 +437,16 @@
                                 <td class="style40">
                                     <asp:TextBox id="txtCedula" runat="server" Width="248px" ClientIdMode="Static"
                                         tooltip="Sin guiones y 9 dígitos(Costarricense)"></asp:TextBox>
-                                    <asp:TextBox id="txtCedInter" runat="server" Width="248px" visible="false"></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="revCedula" runat="server" ControlToValidate="txtCedula"
                                     ErrorMessage="El número de cédula introducido es inválido." ForeColor="Red" ValidationExpression="([0-9\-]*)"
                                     ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                    <asp:CustomValidator ID="CvLongCedula" runat="server" OnServerValidate="validarLargoCedulaServer" 
                                         ForeColor="red" ErrorMessage="El número cédula es inválido (longitud invalida)" 
                                         ValidationGroup="gvDatosPersonales">*</asp:CustomValidator>
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                                        ControlToValidate="txtCedula" 
+                                        ErrorMessage="La cédula es un dato requerido." ForeColor="Red" 
+                                        ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
                                 </td>
                                 <td class="style43">
                                     &nbsp;</td>
@@ -748,14 +760,14 @@
                                                 <ItemTemplate>
                                                     <asp:ImageButton ID="ibtnEditar" runat="server" CommandName="Editar" 
                                                         Height="30px" ImageAlign="Right" ImageUrl="~/Multimedia/icono-editar.jpg" 
-                                                        Width="30px" />
+                                                        Width="30px" /><asp:label ID="Label1" runat="server" Text="Editar" ToolTip="Presione el botón (Lápiz)"/>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
                                             <asp:TemplateColumn>
                                                 <ItemTemplate>
                                                     <asp:ImageButton ID="ibtnEliminar" runat="server" CommandName="Eliminar" 
                                                         Height="30px" ImageAlign="Right" ImageUrl="~/Multimedia/icono-eliminar.jpg" 
-                                                        Width="30px" />
+                                                        Width="30px" /><asp:label runat="server" Text="Eliminar" ToolTip="Presione el botón (X)"/>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
                                             </Columns>
@@ -915,14 +927,14 @@
                                                 <ItemTemplate>
                                                     <asp:ImageButton ID="ibtnEditar" runat="server" CommandName="Editar" 
                                                         Height="30px" ImageAlign="Right" ImageUrl="~/Multimedia/icono-editar.jpg" 
-                                                        Width="30px" />
+                                                        Width="30px" /><asp:label ID="Label1" runat="server" Text="Editar" ToolTip="Presione el botón (Lápiz)"/>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
                                             <asp:TemplateColumn>
                                                 <ItemTemplate>
                                                     <asp:ImageButton ID="ibtnEliminar" runat="server" CommandName="Eliminar" 
                                                         Height="30px" ImageAlign="Right" ImageUrl="~/Multimedia/icono-eliminar.jpg" 
-                                                        Width="30px" />
+                                                        Width="30px" /><asp:label ID="Label1" runat="server" Text="Eliminar" ToolTip="Presione el botón (X)"/>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
                                             </Columns>

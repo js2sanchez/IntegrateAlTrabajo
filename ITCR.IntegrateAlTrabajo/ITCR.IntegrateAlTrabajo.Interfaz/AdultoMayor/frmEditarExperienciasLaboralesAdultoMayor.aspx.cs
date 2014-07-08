@@ -131,5 +131,11 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         {
             e.Item.Cells[4].Attributes.Add("onClick", "return confirmarBorradoExperienciaLaboral();");
         }
+
+        protected void btnSalir_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("frmConsultarPerfilAdultoMayor.aspx");
+        }
+
     }
 }

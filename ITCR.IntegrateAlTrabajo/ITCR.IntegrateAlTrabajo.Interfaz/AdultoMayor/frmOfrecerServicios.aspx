@@ -105,7 +105,7 @@
                 &nbsp;</td>
             <td class="style6" colspan="2">
                 <asp:Label ID="lblAgregarServicio" runat="server" 
-                    Text="Agregar Servicios" CssClass="Titulo1"></asp:Label>
+                    Text="Ofrecer Servicios" CssClass="Titulo1"></asp:Label>
             </td>
             <td class="style8">
                 &nbsp;</td>
@@ -148,8 +148,7 @@
                                         <table class="style14">
                                             <tr>
                                                 <td class="style26">
-                                                    <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
-                                                    &nbsp;del servicio</td>
+                                                    <asp:Label ID="lblNombre" runat="server" Text="El servicio que ofrezco es:"></asp:Label></td>
                                                 <td class="style27">
                                                     <asp:TextBox ID="txtNombreServicios" runat="server"></asp:TextBox>
                                                     <asp:RequiredFieldValidator ID="rfvNombreServicio" runat="server" 
