@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="frmRegistroAdultoMayor.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor.frmRegistroAdultoMayor" %>
 <asp:Content ID="Content1" ContentPlaceholderID="HeadContent" runat="server">
+    <link rel="stylesheet" href="../Styles/alertify.bootstrap.css" />
+    <link rel="stylesheet" href="../Styles/alertify.core.css" />
+    <link rel="stylesheet" href="../Styles/alertify.default.css" />
     <style type="text/css">
         .DisabledButton
         input[disabled="true"][type="button"]
@@ -89,14 +92,6 @@
         {
             height: 25px;
         }
-        .style32
-        {
-            width: 8px;
-        }
-        .style33
-        {
-            width: 295px;
-        }
         .auto-style3 {
             width: 377px;
             height: 25px;
@@ -159,23 +154,14 @@
             width: 6px;
             height: 25px;
         }
-        .style38
-        {
-            width: 206px;
-        }
         .style39
         {
             height: 25px;
-            width: 206px;
+            width: 201px;
         }
         .style40
         {
             width: 309px;
-        }
-        .style42
-        {
-            width: 225px;
-            height: 25px;
         }
         .style43
         {
@@ -187,25 +173,69 @@
             height: 25px;
             width: 295px;
         }
+        .style45
+        {
+            width: 201px;
+        }
+        .style46
+        {
+            height: 25px;
+            width: 1722px;
+        }
+        .style47
+        {
+            width: 1722px;
+        }
+        .style49
+        {
+            width: 157px;
+            height: 25px;
+        }
+        .style50
+        {
+            width: 200px;
+            height: 25px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceholderID="MainContent" runat="server">
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript" src="../js/alertify.min.js"></script>   
     <script type="text/javascript">
-        function maskId(id) {
-            $(document).ready(function () {
-                var mask = "9-9999-9999";
-                if (id == 0) {
-                    $("#txtCedula").mask(mask);
-                }
-                else {
-                    $("#txtCedula").unmask(mask);
-                }
+        function alertBoxCustom(acceptText, cancelText, message) {
+            // custom OK and Cancel label
+            // default: OK, Cancel
+            alertify.set({ labels: {
+                ok: acceptText,
+                cancel: cancelText
+            }
+            });
+            // button labels will be "Accept" and "Deny"
+            alertify.confirm(message)
+        }
 
+        function finalizar() {
+            alert('Usted se ha registrado exitosamente.');
+            location.href = "/Autenticacion/frmAutenticacion.aspx";
+        }
+
+        function endConfirmation() {
+            // custom OK and Cancel label
+            // default: OK, Cancel
+            alertify.set({ labels: {
+                ok: "Si, estoy seguro",
+                cancel: "No, deseo continuar el formulario"
+            }
+            });
+            // button labels will be "Accept" and "Deny"
+            alertify.confirm("¿Esta seguro que desea salir sin guardar?", function (e) {
+                if (e) {
+                    location.href = "/Autenticacion/frmAutenticacion.aspx";
+                }
             });
         }
-    </script>
+    </script> 
     <div id="Div1" style="width:100%; overflow:auto;">
     <table class="style8">
         <tr>
@@ -227,14 +257,10 @@
         <tr>
             <td class="style10">
                 &nbsp;</td>
-            <td class="style11" colspan="2">
+            <td class="style11" colspan="4">
                 <asp:Label ID="lblRegistroAdultoMayor" runat="server" 
                     Text="Registro de Adulto Mayor" CssClass="Titulo1"></asp:Label>
             </td>
-            <td class="style13">
-                &nbsp;</td>
-            <td class="style22">
-                &nbsp;</td>
             <td class="style12">
                 &nbsp;</td>
             <td class="style9">
@@ -268,16 +294,20 @@
                     <asp:View ID="vPaso1" runat="server">
                         <table class="style14">
                             <tr>
-                                <td class="style39">
+                                <td class="style39" colspan="2">
                                     <asp:Label ID="lblPaso1" runat="server" Text="Paso 1 de 6" CssClass="Titulo2"></asp:Label>
                                 </td>
                                 <td class="style40">
                                     &nbsp;</td>
-                                <td class="style43">
-                                </td>
-                                <td class="style44">
-                                </td>
-                                <td class="auto-style13">
+                                <td class="style25" colspan="3">
+                                    <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Right">
+                                        <asp:Button ID="btnCancelar1" runat="server" CssClass="Boton" 
+                                            onclick="btnCancelar1_Click" Text="Salir sin guardar" 
+                                            UseSubmitBehavior="False" />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <asp:Button ID="btnSiguiente1" runat="server" CssClass="Boton" 
+                                            onclick="btnSiguiente1_Click" Text="Siguiente" UseSubmitBehavior="False" />
+                                    </asp:Panel>
                                 </td>
                             </tr>
                             <tr>
@@ -293,21 +323,7 @@
                                     &nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="style38">
-                                    &nbsp;</td>
-                                <td class="style25" colspan="4">
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Panel ID="Panel1" runat="server" HorizontalAlign="Right">
-                                        <asp:Button ID="btnCancelar1" runat="server" CssClass="Boton" 
-                                            onclick="btnCancelar1_Click" Text="Salir sin guardar" 
-                                            UseSubmitBehavior="False" />
-                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <asp:Button ID="btnSiguiente1" runat="server" CssClass="Boton" 
-                                            onclick="btnSiguiente1_Click" Text="Siguiente" UseSubmitBehavior="False" />
-                                    </asp:Panel>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="style38">
+                                <td class="style45">
                                     <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
                                 </td>
                                 <td class="style40">
@@ -321,7 +337,7 @@
                                     &nbsp;</td>
                                 <td class="style44">
                                     <asp:Label ID="lblTelefonoHabitacion" runat="server" 
-                                        Text="Teléfono de habitación"></asp:Label>
+                                        Text="Teléfono principal"></asp:Label>
                                 </td>
                                 <td class="auto-style13">
                                     <asp:TextBox ID="txtTelefonoHabitacion" runat="server" Width="248px" tooltip="Sin guiones"></asp:TextBox>
@@ -337,7 +353,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="style38">
+                                <td class="style45">
                                     <asp:Label ID="lblApellido1" runat="server" Text="Primer apellido"></asp:Label>
                                 </td>
                                 <td class="style40">
@@ -350,7 +366,7 @@
                                 <td class="style43">
                                     &nbsp;</td>
                                 <td class="style44">
-                                    <asp:Label ID="lblTelefonoCelular" runat="server" Text="Teléfono celular"></asp:Label>
+                                    <asp:Label ID="lblTelefonoCelular" runat="server" Text="Teléfono secundario"></asp:Label>
                                 </td>
                                 <td class="auto-style13">
                                     <asp:TextBox ID="txtCelular" runat="server" Width="248px" tooltip="Sin guiones"></asp:TextBox>
@@ -363,7 +379,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="style38">
+                                <td class="style45">
                                     <asp:Label ID="lblApellido2" runat="server" Text="Segundo apellido"></asp:Label>
                                 </td>
                                 <td class="style40">
@@ -392,7 +408,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="style38">
+                                <td class="style45">
                                     <asp:Label ID="lblSexo" runat="server" Text="Sexo"></asp:Label>
                                 </td>
                                 <td class="style40">
@@ -411,7 +427,7 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="style38">
+                                <td class="style45">
                                     <asp:Label ID="lblNacionalidad" runat="server" Text="Nacionalidad"></asp:Label>
                                     &nbsp;</td>
                                 <td class="style40">
@@ -430,22 +446,32 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="style38">
+                                <td class="style45">
                                     <asp:Label ID="lblCedula" runat="server" Text="Cédula"></asp:Label>
                                     &nbsp;</td>
                                 <td class="style40">
-                                    <asp:TextBox id="txtCedula" runat="server" Width="248px" ClientIdMode="Static"
-                                        tooltip="Sin guiones y 9 dígitos(Costarricense)"></asp:TextBox>
-                                    <asp:RegularExpressionValidator ID="revCedula" runat="server" ControlToValidate="txtCedula"
-                                    ErrorMessage="El número de cédula introducido es inválido." ForeColor="Red" ValidationExpression="([0-9\-]*)"
-                                    ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
-                                   <asp:CustomValidator ID="CvLongCedula" runat="server" OnServerValidate="validarLargoCedulaServer" 
-                                        ForeColor="red" ErrorMessage="El número cédula es inválido (longitud invalida)" 
+                                    <asp:TextBox ID="txtCedula" runat="server" Width="50px" ClientIdMode="Static"></asp:TextBox>
+                                    <asp:TextBox ID="txtCedula2" runat="server" Width="90px" ClientIdMode="Static" 
+                                        ontextchanged="txtCedula2_TextChanged" AutoPostBack="true"></asp:TextBox>
+                                    <asp:TextBox ID="txtCedula3" runat="server" Width="90px" ClientIdMode="Static" 
+                                        ontextchanged="txtCedula3_TextChanged" AutoPostBack="true"></asp:TextBox>
+                                    <asp:TextBox id="txtCedulaExt" runat="server" Width="248px" ClientIdMode="Static"></asp:TextBox>
+                                   <asp:CustomValidator ID="cvCedula" runat="server" OnServerValidate="validarCedulaServer" 
+                                        ForeColor="red" ErrorMessage="La cédula es un espacio requerido." 
                                         ValidationGroup="gvDatosPersonales">*</asp:CustomValidator>
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
+                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
                                         ControlToValidate="txtCedula" 
-                                        ErrorMessage="La cédula es un dato requerido." ForeColor="Red" 
-                                        ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
+                                        ErrorMessage="La cédula solo debe tener números." ForeColor="Red" 
+                                        ValidationExpression="[0-9]*" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
+                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" 
+                                        ControlToValidate="txtCedula2" 
+                                        ErrorMessage="La cédula solo debe tener números." ForeColor="Red" 
+                                        ValidationExpression="[0-9]*" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
+                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" 
+                                        ControlToValidate="txtCedula3" 
+                                        ErrorMessage="La cédula solo debe tener números." ForeColor="Red" 
+                                        ValidationExpression="[0-9]*" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
+
                                 </td>
                                 <td class="style43">
                                     &nbsp;</td>
@@ -458,7 +484,7 @@
                                 </td>
                             </tr>                            
                             <tr>
-                                <td class="style38">
+                                <td class="style45">
                                     <asp:Label ID="lblFechaNacimiento" runat="server" 
                                         Text="Dìa, mes y año de nacimiento"></asp:Label>
                                 </td>
@@ -485,20 +511,26 @@
                     <asp:View ID="vPaso2" runat="server">
                         <table class="style14">
                             <tr>
-                                <td class="auto-style29">
+                                <td>
                                     <asp:Label ID="lblPaso2" runat="server" Text="Paso 2 de 6" CssClass="Titulo2"></asp:Label>
+                                    
                                 </td>
-                                <td class="auto-style20">
-                                    &nbsp;</td>
-                                <td class="style17">
-                                </td>
-                                <td class="style20">
-                                </td>
-                                <td class="style11">
+                                <td>
+                                <asp:Panel ID="Panel3" runat="server" 
+                                        HorizontalAlign="Right" Width="450px">
+                                        <asp:Button ID="btnAtras" runat="server" CssClass="Boton" 
+                                            onclick="btnAtras_Click" Text="Atrás" UseSubmitBehavior="False" />
+                                        &nbsp;
+                                        <asp:Button ID="btnCancelar2" runat="server" CssClass="Boton" 
+                                            Text="Salir sin guardar" UseSubmitBehavior="False" 
+                                            onclick="btnCancelar2_Click" />
+                                        &nbsp;&nbsp;&nbsp;<asp:Button ID="btnSiguiente2" runat="server" CssClass="Boton" 
+                                            onclick="btnSiguiente2_Click" Text="Siguiente" UseSubmitBehavior="False" />
+                                        &nbsp;</asp:Panel>
                                 </td>
                             </tr>
                             <tr>
-                                <td class="style24" colspan="2">
+                                <td class="style46">
                                     <asp:Label ID="lblDatosAutenticacion" runat="server" 
                                         Text="Datos de autenticación" CssClass="Titulo3"></asp:Label>
                                 </td>
@@ -510,21 +542,7 @@
                                     &nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="style24" colspan="5">
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Panel ID="Panel3" runat="server" HorizontalAlign="Right">
-                                        <asp:Button ID="btnAtras" runat="server" CssClass="Boton" 
-                                            onclick="btnAtras_Click" Text="Atrás" UseSubmitBehavior="False" />
-                                        &nbsp;
-                                        <asp:Button ID="btnCancelar2" runat="server" CssClass="Boton" 
-                                            Text="Salir sin guardar" UseSubmitBehavior="False" 
-                                            onclick="btnCancelar2_Click" />
-                                        &nbsp;&nbsp;&nbsp;<asp:Button ID="btnSiguiente2" runat="server" CssClass="Boton" 
-                                            onclick="btnSiguiente2_Click" Text="Siguiente" UseSubmitBehavior="False" />
-                                        &nbsp;</asp:Panel>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td class="auto-style29">
+                                <td class="style47">
                                     <asp:Label ID="lblNombreUsuario" runat="server" Text="Nombre de usuario (Letras,números o guiones(-,_) permitidos)"></asp:Label>
                                 </td>
                                 <script type="text/javascript">
@@ -552,7 +570,7 @@
                                     &nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="auto-style29">
+                                <td class="style47">
                                     <asp:Label ID="lblContraseña" runat="server" Text="Contraseña (Letras y números permitidos)"></asp:Label>
                                 </td>
                                 <td class="auto-style20">
@@ -574,9 +592,9 @@
                                     &nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="auto-style29">
+                                <td class="style47">
                                     <asp:Label ID="lblConfirmacionContraseña" runat="server" 
-                                        Text="Confirmación de contraseña"></asp:Label>
+                                        Text="Vuelva escribir la contraseña"></asp:Label>
                                 </td>
                                 <td class="auto-style20">
                                     <asp:TextBox ID="txtConfirmacionContraseña" runat="server" TextMode="Password" Width="213px"></asp:TextBox>
@@ -594,9 +612,9 @@
                                     &nbsp;</td>
                             </tr>
                             <tr>
-                                <td class="auto-style29">
+                                <td class="style47">
                                     <asp:Label ID="lblIndicioContraseña" runat="server" 
-                                        Text="Indicio de contraseña"></asp:Label>
+                                        Text="Frase para recordar la contraseña"></asp:Label>
                                 </td>
                                 <td class="auto-style20">
                                     <asp:TextBox ID="txtIndicioContraseña" runat="server" Width="213px"></asp:TextBox>
@@ -623,31 +641,8 @@
                                     &nbsp;</td>
                                 <td class="style17">
                                 </td>
-                                <td class="style20">
-                                </td>
-                                <td class="style11">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="style24" colspan="2">
-                                    <asp:Label ID="lblEstudios" runat="server" Text="Estudios" CssClass="Titulo3"></asp:Label>
-                                </td>
-                                <td class="style17">
-                                    &nbsp;</td>
-                                <td class="style20">
-                                    &nbsp;</td>
-                                <td class="style11">
-                                    &nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td class="style24">
-                                    &nbsp;</td>
-                                <td class="style25">
-                                    &nbsp;</td>
-                                <td class="style17">
-                                    &nbsp;</td>
                                 <td class="style20" colspan="2">
-                                    <asp:Panel ID="Panel4" runat="server" HorizontalAlign="Right">
+                                <asp:Panel ID="Panel4" runat="server" HorizontalAlign="Right">
                                         <asp:Button ID="btnAtras1" runat="server" CssClass="Boton" 
                                             onclick="btnAtras1_Click" Text="Atrás" UseSubmitBehavior="False" />
                                         &nbsp;&nbsp;
@@ -661,17 +656,16 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="style24">
-                                    &nbsp;</td>
-                                <td class="style25">
-                                    &nbsp;</td>
+                                <td class="style24" colspan="4">
+                                    <asp:Label ID="lblEstudios" runat="server" Text="Formación académica" CssClass="Titulo3"></asp:Label>
+                                </td>
                                 <td class="style17">
                                     &nbsp;</td>
                                 <td class="style20">
                                     &nbsp;</td>
                                 <td class="style11">
                                     &nbsp;</td>
-                            </tr>
+                            </tr>                            
                             <tr>
                                 <td class="style24" colspan="5">
                                     <asp:Panel ID="PanelIngresoDatos" runat="server" BorderStyle="Solid" 
@@ -755,18 +749,18 @@
                                             <Columns>
                                                 <asp:BoundColumn HeaderText="Institución" DataField="Institucion"></asp:BoundColumn>
                                                 <asp:BoundColumn HeaderText="Título" DataField="Titulo"></asp:BoundColumn>
-                                                <asp:TemplateColumn>
+                                                <asp:TemplateColumn HeaderText="Editar">
                                                 <ItemTemplate>
                                                     <asp:ImageButton ID="ibtnEditar" runat="server" CommandName="Editar" 
-                                                        Height="30px" ImageAlign="Right" ImageUrl="~/Multimedia/icono-editar.jpg" 
-                                                        Width="30px" /><asp:label ID="Label1" runat="server" Text="Editar" ToolTip="Presione el botón (Lápiz)"/>
+                                                        Height="30px" ImageUrl="~/Multimedia/icono-editar.jpg" 
+                                                        Width="30px" style="display:block; margin:0 auto"/>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
-                                            <asp:TemplateColumn>
+                                            <asp:TemplateColumn HeaderText="Eliminar">
                                                 <ItemTemplate>
                                                     <asp:ImageButton ID="ibtnEliminar" runat="server" CommandName="Eliminar" 
-                                                        Height="30px" ImageAlign="Right" ImageUrl="~/Multimedia/icono-eliminar.jpg" 
-                                                        Width="30px" /><asp:label runat="server" Text="Eliminar" ToolTip="Presione el botón (X)"/>
+                                                        Height="30px" ImageUrl="~/Multimedia/icono-eliminar.jpg" 
+                                                        Width="30px" style="display:block; margin:0 auto" />
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
                                             </Columns>
@@ -780,41 +774,12 @@
                     <asp:View ID="vPaso4" runat="server">
                         <table class="style14">
                             <tr>
-                                <td class="style24">
+                                <td class="style24" colspan="4">
                                     <asp:Label ID="lblPaso4" runat="server" Text="Paso 4 de 6" CssClass="Titulo2"></asp:Label>
-                                </td>
-                                <td class="style25">
-                                    &nbsp;</td>
-                                <td class="style17">
-                                </td>
-                                <td class="style20">
-                                </td>
+                                </td>                                
                                 <td class="auto-style23">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="style24" colspan="2">
-                                    <asp:Label ID="lblExperienciasLaborales" runat="server" 
-                                        Text="Experiencias laborales" CssClass="Titulo3"></asp:Label>
-                                </td>
-                                <td class="style17">
-                                    &nbsp;</td>
-                                <td class="style20">
-                                    &nbsp;</td>
-                                <td class="auto-style23">
-                                    &nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td class="style24">
-                                    &nbsp;</td>
-                                <td class="style25">
-                                    &nbsp;</td>
-                                <td class="style17">
-                                    &nbsp;</td>
-                                <td class="style20">
-                                    &nbsp;</td>
-                                <td class="auto-style23">
-                                    <asp:Panel ID="Panel5" runat="server" HorizontalAlign="Right">
+                                <asp:Panel ID="Panel5" runat="server" HorizontalAlign="Right" 
+                                        style="margin-left: 74px">
                                         <asp:Button ID="btnAtras2" runat="server" CssClass="Boton" 
                                             onclick="btnAtras2_Click" Text="Atrás" UseSubmitBehavior="False" />
                                         &nbsp;&nbsp;
@@ -828,16 +793,10 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td class="style24">
-                                    &nbsp;</td>
-                                <td class="style25">
-                                    &nbsp;</td>
-                                <td class="style17">
-                                    &nbsp;</td>
-                                <td class="style20">
-                                    &nbsp;</td>
-                                <td class="auto-style23">
-                                    &nbsp;</td>
+                                <td class="style24" colspan="5">
+                                    <asp:Label ID="lblExperienciasLaborales" runat="server" 
+                                        Text="Experiencias laborales" CssClass="Titulo3"></asp:Label>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="style24" colspan="5">
@@ -901,7 +860,7 @@
                                     &nbsp;</td>
                                 <td class="style17">
                                     &nbsp;</td>
-                                <td class="style20">
+                                <td class="style50">
                                     &nbsp;</td>
                                 <td class="auto-style23">
                                     &nbsp;</td>
@@ -922,18 +881,18 @@
                                             <Columns>
                                                 <asp:BoundColumn HeaderText="Empresa" DataField="Empresa"></asp:BoundColumn>
                                                 <asp:BoundColumn HeaderText="Puesto" DataField="Puesto"></asp:BoundColumn>
-                                                <asp:TemplateColumn>
+                                                <asp:TemplateColumn HeaderText="Editar">
                                                 <ItemTemplate>
                                                     <asp:ImageButton ID="ibtnEditar" runat="server" CommandName="Editar" 
-                                                        Height="30px" ImageAlign="Right" ImageUrl="~/Multimedia/icono-editar.jpg" 
-                                                        Width="30px" /><asp:label ID="Label1" runat="server" Text="Editar" ToolTip="Presione el botón (Lápiz)"/>
+                                                        Height="30px" style="display:block; margin:0 auto" ImageUrl="~/Multimedia/icono-editar.jpg" 
+                                                        Width="30px" />
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
-                                            <asp:TemplateColumn>
+                                            <asp:TemplateColumn HeaderText="Eliminar">
                                                 <ItemTemplate>
                                                     <asp:ImageButton ID="ibtnEliminar" runat="server" CommandName="Eliminar" 
-                                                        Height="30px" ImageAlign="Right" ImageUrl="~/Multimedia/icono-eliminar.jpg" 
-                                                        Width="30px" /><asp:label ID="Label1" runat="server" Text="Eliminar" ToolTip="Presione el botón (X)"/>
+                                                        Height="30px" style="display:block; margin:0 auto" ImageUrl="~/Multimedia/icono-eliminar.jpg" 
+                                                        Width="30px"/>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
                                             </Columns>
@@ -957,6 +916,17 @@
                                 <td class="auto-style32">
                                 </td>
                                 <td class="style11">
+                                <asp:Panel ID="Panel2" runat="server" HorizontalAlign="Right">
+                                        <asp:Button ID="btnAtras3" runat="server" CssClass="Boton" 
+                                            onclick="btnAtras3_Click" Text="Atrás" UseSubmitBehavior="False" />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <asp:Button ID="btnCancelar5" runat="server" CssClass="Boton" 
+                                            onclick="btnCancelar5_Click" Text="Salir sin guardar" 
+                                            UseSubmitBehavior="False" />
+                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                        <asp:Button ID="btnSiguiente5" runat="server" CssClass="Boton" 
+                                            onclick="btnSiguiente5_Click" Text="Siguiente" UseSubmitBehavior="False" />
+                                    </asp:Panel>
                                 </td>
                             </tr>
                             <tr>
@@ -970,30 +940,6 @@
                                     &nbsp;</td>
                                 <td class="style11">
                                     &nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td class="style24">
-                                    &nbsp;</td>
-                                <td class="style25">
-                                    &nbsp;</td>
-                                <td class="style17">
-                                    &nbsp;</td>
-                                <td class="auto-style32">
-                                    &nbsp;</td>
-                                <td class="style11">
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Panel ID="Panel2" runat="server" HorizontalAlign="Right">
-                                        <asp:Button ID="btnAtras3" runat="server" CssClass="Boton" 
-                                            onclick="btnAtras3_Click" Text="Atrás" UseSubmitBehavior="False" />
-                                        &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <asp:Button ID="btnCancelar5" runat="server" CssClass="Boton" 
-                                            onclick="btnCancelar5_Click" Text="Salir sin guardar" 
-                                            UseSubmitBehavior="False" />
-                                        &nbsp;&nbsp;&nbsp;&nbsp;
-                                        <asp:Button ID="btnSiguiente5" runat="server" CssClass="Boton" 
-                                            onclick="btnSiguiente5_Click" Text="Siguiente" UseSubmitBehavior="False" />
-                                    </asp:Panel>
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                </td>
                             </tr>
                             <tr>
                                 <td class="style24" colspan="5">

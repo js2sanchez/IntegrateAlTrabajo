@@ -87,6 +87,7 @@
     <Content Include="Empresa\frmPerfilEmpresa.aspx" />
     <Content Include="Empresa\frmPublicarOfertaTrabajo.aspx" />
     <Content Include="Empresa\frmRegistroEmpresa.aspx" />
+    <Content Include="js\alertify.min.js" />
     <Content Include="js\jquery.js" />
     <Content Include="js\jquery.maskedinput.min.js" />
     <Content Include="Multimedia\banner_adultos_mayores.jpg" />
@@ -96,6 +97,9 @@
     <Content Include="Multimedia\icono-eliminar.jpg" />
     <Content Include="Multimedia\Logo.PNG" />
     <Content Include="Multimedia\RayaAutenticacion.PNG" />
+    <Content Include="Styles\alertify.bootstrap.css" />
+    <Content Include="Styles\alertify.core.css" />
+    <Content Include="Styles\alertify.default.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />

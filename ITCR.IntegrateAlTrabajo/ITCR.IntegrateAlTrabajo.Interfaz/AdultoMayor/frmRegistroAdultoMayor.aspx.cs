@@ -50,6 +50,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 ListaExperienciasLaborales.Clear();
                 ListaIdiomas.Clear();
                 mvRegistroAdultoMayor.ActiveViewIndex = 0;
+                txtCedulaExt.Visible = false;
                 cargarTodosDropDownList();
                 
             }
@@ -205,7 +206,16 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 Persona.Nom_Persona = txtNombrePersona.Text;
                 Persona.Apellido1 = txtApellido1.Text;
                 Persona.Apellido2 = txtApellido2.Text;
-                Persona.Num_Cedula = txtCedula.Text;
+                string ced;
+                if (ddlNacionalidad.SelectedIndex == 0)
+                {
+                    ced =txtCedula.Text + txtCedula2.Text + txtCedula3.Text;
+                }
+                else
+                {
+                    ced = txtCedulaExt.Text;
+                }
+                Persona.Num_Cedula = ced;
                 Persona.Fec_Nacimiento = DateTime.Parse(DdlDiaNacimiento.Text+"/"+(DdlMesNacimiento.SelectedIndex+1)
                     +"/"+DdlAnioNacimiento.Text);
                 Persona.Sexo = drpSexo.SelectedValue;
@@ -237,7 +247,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 else
                 {
                     string script = @"<script type='text/javascript'>
-                            alert('La contraseña y confirmación de contraseña no coinciden.');
+                            alertify.alert('La contraseña y confirmación de contraseña no coinciden.');
                             </script>";
 
                     ScriptManager.RegisterStartupScript(this, typeof(Page), "Datos de autenticación", script, false);
@@ -293,7 +303,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
         protected void btnCancelar1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Autenticacion/frmAutenticacion.aspx");
+            salirSinGuardar();
         }
 
         protected void btnAgregarEstudio_Click(object sender, EventArgs e)
@@ -454,32 +464,30 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             CorreoElectronico.Insertar();
 
             string script = @"<script type='text/javascript'>
-                            alert('Usted se ha registrado exitosamente.');
+                            finalizar();
                             </script>";
 
             ScriptManager.RegisterStartupScript(this, typeof(Page), "Registro", script, false);
-
-            Response.Redirect("/Autenticacion/frmAutenticacion.aspx");
         }
 
         protected void btnCancelar3_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Autenticacion/frmAutenticacion.aspx");
+            salirSinGuardar();
         }
 
         protected void btnCancelar4_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Autenticacion/frmAutenticacion.aspx");
+            salirSinGuardar();
         }
 
         protected void btnCancelar5_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Autenticacion/frmAutenticacion.aspx");
+            salirSinGuardar();
         }
 
         protected void btnCancelar6_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Autenticacion/frmAutenticacion.aspx");
+            salirSinGuardar();
         }
 
         protected void btnAtras_Click(object sender, EventArgs e)
@@ -561,15 +569,16 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             btnActualizarEstudio.Visible = false;
         }
 
-        protected void validarLargoCedulaServer(object source, ServerValidateEventArgs args)
+        protected void validarCedulaServer(object source, ServerValidateEventArgs args)
         {
             if (ddlNacionalidad.SelectedIndex == 0)
             {
-                args.IsValid = txtCedula.Text.Length == 11;
+                args.IsValid = txtCedula.Text.Length > 0 && txtCedula2.Text.Length > 0 && txtCedula3.Text.Length > 0 &&
+                    txtCedula.Text.Length + txtCedula2.Text.Length + txtCedula3.Text.Length == 9;
             }
             else
             {
-                args.IsValid = true;
+                args.IsValid = txtCedulaExt.Text.Length > 0;
             }
         }
 
@@ -618,14 +627,52 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
         protected void btnCancelar2_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Autenticacion/frmAutenticacion.aspx");
+            salirSinGuardar();
         }
 
         protected void ddlNacionalidad_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtCedula.Text = "";
-            string code = @"<script type='text/javascript'>maskId("+ddlNacionalidad.SelectedIndex+");</script>";
-            ScriptManager.RegisterStartupScript(this, typeof(Page), "Mask", code, false);
+            if (ddlNacionalidad.SelectedIndex == 0)
+            {
+                txtCedulaExt.Visible = false;
+                txtCedula.Visible = txtCedula2.Visible = txtCedula3.Visible = true;
+            }
+            else
+            {
+                txtCedulaExt.Visible = true;
+                txtCedula.Visible = txtCedula2.Visible = txtCedula3.Visible = false;
+            }
         }
+
+        private string setId(String id)
+        {
+            for (int cero = id.Length; cero < 4; cero++)
+            {
+                id = '0' + id;
+            }
+            return id;
+        }
+
+        protected void txtCedula2_TextChanged(object sender, EventArgs e)
+        {
+            txtCedula2.Text = setId(txtCedula2.Text);
+        }
+
+        protected void txtCedula3_TextChanged(object sender, EventArgs e)
+        {
+            txtCedula3.Text = setId(txtCedula3.Text);
+        }
+
+        private void mensajeConfirmacion(string acceptText, string cancelText, string message){
+            string code = @"<script type='text/javascript'>alertBoxCustom("+ acceptText+','+ cancelText+','+ message+");</script>";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);                
+        }
+
+        private void salirSinGuardar()
+        {
+            string code = @"<script type='text/javascript'>endConfirmation();</script>";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);  
+        }
+
     }
 }
