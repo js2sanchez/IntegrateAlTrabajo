@@ -242,6 +242,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                     Usuario.Indicio_Contrasenna = txtIndicioContraseña.Text;
                     Usuario.Estado = 1; //CAMBIAR
                     Usuario.FK_IdTipoUsuario = 1;
+                    btnCancelarActualizarEstudio.Visible = false;
                     mvRegistroAdultoMayor.ActiveViewIndex = 2;
                 }
                 else
@@ -257,6 +258,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
         protected void btnSiguiente3_Click(object sender, EventArgs e)
         {
+            btnCancelarActualizarExperiencia.Visible = false;
             mvRegistroAdultoMayor.ActiveViewIndex = 3;
         }
 
@@ -547,6 +549,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 EstudioEnModificacion = e.Item.ItemIndex;
                 btnActualizarEstudio.Visible = true;
                 btnAgregarEstudio.Visible = false;
+                btnCancelarAgregarEstudio.Visible = false;
+                btnCancelarActualizarEstudio.Visible = true;
             }
             else if (e.CommandName == "Eliminar")
             {
@@ -563,10 +567,12 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             {
                 ((cIATEstudioNegocios)ListaEstudios[EstudioEnModificacion]).Institucion = txtInstitucionEstudio.Text;
                 ((cIATEstudioNegocios)ListaEstudios[EstudioEnModificacion]).Titulo = txtTituloEstudio.Text;
+                actualizarDgEstudios();
+                btnAgregarEstudio.Visible = true;
+                btnActualizarEstudio.Visible = false;
+                btnCancelarAgregarEstudio.Visible = true;
+                btnCancelarActualizarEstudio.Visible = false;
             }
-            actualizarDgEstudios();
-            btnAgregarEstudio.Visible = true;
-            btnActualizarEstudio.Visible = false;
         }
 
         protected void validarCedulaServer(object source, ServerValidateEventArgs args)
@@ -593,6 +599,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 ExperienciaEnModificacion = e.Item.ItemIndex;
                 btnActualizarExperienciaLaboral.Visible = true;
                 btnAgregarExperienciaLaboral.Visible = false;
+                btnCancelarActualizarExperiencia.Visible = true;
+                btnCancelarAgregarExperiencia.Visible = false;
             }
             else if (e.CommandName == "Eliminar")
             {
@@ -613,6 +621,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             actualizarDgExperienciasLaborales();
             btnAgregarExperienciaLaboral.Visible = true;
             btnActualizarExperienciaLaboral.Visible = false;
+            btnCancelarAgregarExperiencia.Visible = true;
+            btnCancelarActualizarExperiencia.Visible = false;
         }
 
         protected void btnAtras6_Click(object sender, EventArgs e)
@@ -672,6 +682,34 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         {
             string code = @"<script type='text/javascript'>endConfirmation();</script>";
             ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);  
+        }
+
+        protected void btnCancelarActualizarEstudio_Click(object sender, EventArgs e)
+        {
+            txtInstitucionEstudio.Text = "";
+            txtTituloEstudio.Text = "";
+            btnActualizarEstudio.Visible = false;
+            btnAgregarEstudio.Visible = true;
+        }
+
+        protected void btnCancelarAgregarEstudio_Click(object sender, EventArgs e)
+        {
+            txtInstitucionEstudio.Text = "";
+            txtTituloEstudio.Text = "";
+        }
+
+        protected void btnCancelarActualizarExperiencia_Click(object sender, EventArgs e)
+        {
+            txtEmpresa.Text = "";
+            txtPuesto.Text = "";
+            btnActualizarExperienciaLaboral.Visible = false;
+            btnAgregarExperienciaLaboral.Visible = true;
+        }
+
+        protected void btnCancelarAgregarExperiencia_Click(object sender, EventArgs e)
+        {
+            txtEmpresa.Text = "";
+            txtPuesto.Text = "";
         }
 
     }
