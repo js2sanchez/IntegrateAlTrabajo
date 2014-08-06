@@ -71,6 +71,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
         public void cargar_datos_usuario() 
         {
             Usuario.Nom_Usuario = Convert.ToString(Session["Nombre_Usuario"]);
+            lblContenidoNombreUsuario.Text = Usuario.Nom_Usuario.ToString();
             DataTable tablaUsuario = Usuario.Buscar();
             Int16 IdUsuario = 0;
 
@@ -104,7 +105,12 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
             cargarDireccion(Int16.Parse(lblContenidoDistrito.Text));
         }
 
-        protected void btnEliminar_Click(object sender, EventArgs e)
+        protected void ibtnEditarPerfilEmpresa_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("./frmEditarDatosGeneralesEmpresa.aspx");
+        }
+
+        protected void ibtnEliminarPerfilEmpresa_Click(object sender, ImageClickEventArgs e)
         {
             Usuario.Nom_Usuario = Convert.ToString(Session["Nombre_Usuario"]);
             DataTable tablaUsuario = Usuario.Buscar();
@@ -120,12 +126,11 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
             Usuario.Estado = 3;
             Usuario.Actualizar();
             Response.Redirect("/Autenticacion/frmAutenticacion.aspx");
-
         }
 
-        protected void btnEditar_Click(object sender, EventArgs e)
+        protected void ibtnEditarDatosAutenticacion_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("./frmEditarPerfilEmpresa.aspx");
+            Response.Redirect("./frmEditarDatosAutenticacionEmpresa.aspx");
         }
     }
 }

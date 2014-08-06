@@ -23,6 +23,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
             {
                 mvRegistroEmpresa.ActiveViewIndex = 0;
                 cargarTodosDropDownList();
+                txtNombreEmpresa.Focus();
             }
         }
 
@@ -100,6 +101,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                 if (TablaNomEmpresa.Rows.Count == 0)
                 {
                     mvRegistroEmpresa.ActiveViewIndex = 1;
+                    txtNombreUsuario.Focus();
                 }
                 else 
                 {

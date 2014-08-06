@@ -17,7 +17,6 @@
         }
         .style13
         {
-            width: 100px;
             height: 25px;
         }
         .style14
@@ -34,27 +33,6 @@
         {
             width: 100%;
         }
-        .style17
-        {
-            width: 116px;
-        }
-        .style19
-        {
-            width: 298px;
-        }
-        .style20
-        {
-            width: 31px;
-        }
-        .style21
-        {
-            width: 120px;
-        }
-        .style22
-        {
-            width: 116px;
-            height: 25px;
-        }
         .style23
         {
             width: 298px;
@@ -67,12 +45,11 @@
         }
         .style25
         {
-            width: 120px;
             height: 25px;
         }
         .style26
         {
-            width: 116px;
+            width: 210px;
             height: 24px;
         }
         .style27
@@ -94,6 +71,10 @@
         {
             height: 24px;
         }
+        .style31
+        {
+            height: 25px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -101,11 +82,9 @@
         <tr>
             <td class="style12">
                 </td>
-            <td class="style13">
-                <asp:Label ID="lblPerfil" runat="server" Text="Perfil" CssClass="Titulo1"></asp:Label>
+            <td class="style13" colspan="2">
+                <asp:Label ID="lblPerfil" runat="server" Text="Mi perfil" CssClass="Titulo1"></asp:Label>
             </td>
-            <td class="style14">
-                </td>
             <td class="style15">
                 </td>
             <td class="style13">
@@ -117,13 +96,38 @@
         </tr>
         <tr>
             <td class="style12">
+                &nbsp;</td>
+            <td class="style9" colspan="5">
+                &nbsp;</td>
+            <td class="style12">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style12">
             </td>
             <td class="style9" colspan="5">
-                <asp:Panel ID="pnlPerfil" runat="server" BorderColor="#666666" 
-                    BorderStyle="Solid">
+                <asp:Panel ID="pnlPerfil" runat="server" 
+                    BorderStyle="Solid" BorderWidth="2px">
                     <table class="style16">
                         <tr>
-                            <td class="style22">
+                            <td class="style31" colspan="2">
+                                <asp:Label ID="lblDatosGenerales" runat="server" CssClass="Titulo2" 
+                                    Text="Datos generales"></asp:Label>
+                            </td>
+                            <td class="style24">
+                                &nbsp;</td>
+                            <td class="style25" colspan="2">
+                                <asp:Panel ID="PanelEditarDatosPersonales" runat="server" 
+                                    HorizontalAlign="Right">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <asp:ImageButton ID="ibtnEditarPerfilEmpresa" runat="server" Height="50px" 
+                                        ImageUrl="~/Multimedia/icono-editar.jpg" 
+                                        onclick="ibtnEditarPerfilEmpresa_Click" Width="50px" />
+                                </asp:Panel>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style31">
                                 <asp:Label ID="lblNombreEmpresa" runat="server" Text="Nombre"></asp:Label>
                             </td>
                             <td class="style23">
@@ -131,13 +135,11 @@
                             </td>
                             <td class="style24">
                             </td>
-                            <td class="style25">
-                            </td>
-                            <td class="style9">
+                            <td class="style9" colspan="2">
                             </td>
                         </tr>
                         <tr>
-                            <td class="style22">
+                            <td class="style31">
                                 <asp:Label ID="lblCedulaJuridica" runat="server" Text="Cédula Jurídica"></asp:Label>
                             </td>
                             <td class="style23">
@@ -151,7 +153,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="style22">
+                            <td class="style31">
                                 <asp:Label ID="lblDescripcion" runat="server" Text="Descripción"></asp:Label>
                             </td>
                             <td class="style23">
@@ -165,7 +167,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="style22">
+                            <td class="style31">
                                 <asp:Label ID="lblTelefono" runat="server" Text="Teléfono"></asp:Label>
                             </td>
                             <td class="style23">
@@ -179,7 +181,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="style22">
+                            <td class="style31">
                                 <asp:Label ID="lblEmail" runat="server" Text="Correo electrónico"></asp:Label>
                             </td>
                             <td class="style23">
@@ -193,7 +195,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="style22">
+                            <td class="style31">
                                 <asp:Label ID="lblProvincia" runat="server" Text="Provincia"></asp:Label>
                             </td>
                             <td class="style23">
@@ -208,7 +210,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="style22">
+                            <td class="style31">
                                 <asp:Label ID="lblContenidoCanton" runat="server" Text="Cantón"></asp:Label>
                             </td>
                             <td class="style23">
@@ -222,7 +224,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="style22">
+                            <td class="style31">
                                 <asp:Label ID="lblDistrito" runat="server" Text="Distrito"></asp:Label>
                             </td>
                             <td class="style23">
@@ -247,23 +249,6 @@
                             <td class="style30">
                             </td>
                         </tr>
-                        <tr>
-                            <td class="style17">
-                                &nbsp;</td>
-                            <td class="style19">
-                                &nbsp;</td>
-                            <td class="style20">
-                                &nbsp;</td>
-                            <td class="style21">
-                                &nbsp;</td>
-                            <td>
-                                <asp:Button ID="btnEditar" runat="server" Text="Editar Perfil" Width="101px" 
-                                    onclick="btnEditar_Click" CssClass="Boton" />
-                                &nbsp;
-                                <asp:Button ID="btnEliminar" runat="server" onclick="btnEliminar_Click" 
-                                    Text="Eliminar Cuenta" CssClass="Boton" />
-                            </td>
-                        </tr>
                     </table>
                 </asp:Panel>
             </td>
@@ -285,6 +270,138 @@
                 </td>
             <td class="style12">
                 </td>
+        </tr>
+        <tr>
+            <td class="style12">
+                &nbsp;</td>
+            <td class="style13" colspan="5">
+                <asp:Panel ID="PanelDatosAutenticacion" runat="server" 
+                    BorderStyle="Solid" BorderWidth="2px">
+                    <table class="style16">
+                        <tr>
+                            <td class="style31" colspan="2">
+                                <asp:Label ID="lblDatosAutenticacion" runat="server" CssClass="Titulo2" 
+                                    Text="Datos de autenticación"></asp:Label>
+                            </td>
+                            <td class="style24">
+                                &nbsp;</td>
+                            <td class="style25" colspan="2">
+                                <asp:Panel ID="PanelEditarDatosAutenticacion" runat="server" 
+                                    HorizontalAlign="Right">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <asp:ImageButton ID="ibtnEditarDatosAutenticacion" runat="server" Height="50px" 
+                                        ImageUrl="~/Multimedia/icono-editar.jpg" 
+                                        onclick="ibtnEditarDatosAutenticacion_Click" Width="50px" />
+                                </asp:Panel>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style31">
+                                <asp:Label ID="lblNombreUsuario" runat="server" Text="Nombre de usuario"></asp:Label>
+                            </td>
+                            <td class="style23">
+                                <asp:Label ID="lblContenidoNombreUsuario" runat="server"></asp:Label>
+                            </td>
+                            <td class="style24">
+                            </td>
+                            <td class="style9" colspan="2">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style31">
+                                <asp:Label ID="lblContraseña" runat="server" Text="Contraseña"></asp:Label>
+                            </td>
+                            <td class="style23">
+                                <asp:Label ID="lblContenidoContraseña" runat="server">XXXXXXXXXX</asp:Label>
+                            </td>
+                            <td class="style24">
+                            </td>
+                            <td class="style25">
+                            </td>
+                            <td class="style9">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style26">
+                            </td>
+                            <td class="style27">
+                                &nbsp;</td>
+                            <td class="style28">
+                            </td>
+                            <td class="style29">
+                            </td>
+                            <td class="style30">
+                            </td>
+                        </tr>
+                    </table>
+                </asp:Panel>
+                </td>
+            <td class="style12">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style12">
+                &nbsp;</td>
+            <td class="style13">
+                &nbsp;</td>
+            <td class="style14">
+                &nbsp;</td>
+            <td class="style15">
+                &nbsp;</td>
+            <td class="style13">
+                &nbsp;</td>
+            <td class="style14">
+                &nbsp;</td>
+            <td class="style12">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style12">
+                &nbsp;</td>
+            <td class="style13" colspan="5">
+                <asp:Panel ID="PanelEliminarPerfilEmpresa" runat="server" BorderWidth="2px">
+                    <table class="style16">
+                        <tr>
+                            <td>
+                                <asp:Label ID="lblEliminarPerfilTitulo" runat="server" CssClass="Titulo2" 
+                                    Text="Eliminar perfil"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:Label ID="lblEliminarPerfil" runat="server" 
+                                    Text="Presione el siguiente botón si desea eliminar por completo el perfil de esta empresa en la bolsa de trabajo."></asp:Label>
+                                &nbsp;&nbsp;&nbsp;
+                                <asp:ImageButton ID="ibtnEliminarPerfilEmpresa1" runat="server" Height="50px" 
+                                    ImageUrl="~/Multimedia/icono-eliminar.jpg" 
+                                    onclick="ibtnEliminarPerfilEmpresa_Click" Width="50px" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                &nbsp;</td>
+                        </tr>
+                    </table>
+                </asp:Panel>
+                </td>
+            <td class="style12">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style12">
+                &nbsp;</td>
+            <td class="style13">
+                &nbsp;</td>
+            <td class="style14">
+                &nbsp;</td>
+            <td class="style15">
+                &nbsp;</td>
+            <td class="style13">
+                &nbsp;</td>
+            <td class="style14">
+                &nbsp;</td>
+            <td class="style12">
+                &nbsp;</td>
         </tr>
     </table>
 </asp:Content>

@@ -52,7 +52,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 mvRegistroAdultoMayor.ActiveViewIndex = 0;
                 txtCedulaExt.Visible = false;
                 cargarTodosDropDownList();
-                
             }
         }
 
