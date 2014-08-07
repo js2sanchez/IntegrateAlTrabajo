@@ -204,67 +204,71 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
-            cIATPersonaNegocios Persona = new cIATPersonaNegocios(1, "A", 2, "B");
-
-            Persona.FK_IdUsuario = Int16.Parse(Session["Id_Usuario"].ToString());
-            DataTable TablaPersona = Persona.Buscar();
-
-            if (TablaPersona.Rows.Count > 0)
+            Validate("gvDatosPersonales");
+            if (Page.IsValid)
             {
-                Persona.Id_Persona = Int16.Parse(TablaPersona.Rows[0]["Id_Persona"].ToString());
-                Persona.Pasatiempos = TablaPersona.Rows[0]["Pasatiempos"].ToString();
+                cIATPersonaNegocios Persona = new cIATPersonaNegocios(1, "A", 2, "B");
+
+                Persona.FK_IdUsuario = Int16.Parse(Session["Id_Usuario"].ToString());
+                DataTable TablaPersona = Persona.Buscar();
+
+                if (TablaPersona.Rows.Count > 0)
+                {
+                    Persona.Id_Persona = Int16.Parse(TablaPersona.Rows[0]["Id_Persona"].ToString());
+                    Persona.Pasatiempos = TablaPersona.Rows[0]["Pasatiempos"].ToString();
+                }
+
+                Persona.Nom_Persona = txtNombre.Text;
+                Persona.Apellido1 = txtApellido1.Text;
+                Persona.Apellido2 = txtApellido2.Text;
+                Persona.Num_Cedula = txtCedula.Text;
+                Persona.Fec_Nacimiento = DateTime.Parse(txtFechaNacimiento.Text);
+                Persona.Sexo = drpSexo.SelectedValue;
+                Persona.FK_IdDistrito = Int16.Parse(drpDistrito.SelectedValue);
+
+                Persona.Actualizar();
+
+                //Teléfono de habitación
+                cIATContactoNegocios ContactoTelefonoHabitacion = new cIATContactoNegocios(1, "A", 2, "B");
+                ContactoTelefonoHabitacion.FK_IdTipoContacto = 1;
+                ContactoTelefonoHabitacion.FK_IdUsuario = Persona.FK_IdUsuario;
+                DataTable TablaTelefonoHabitacion = ContactoTelefonoHabitacion.Buscar();
+
+                if (TablaTelefonoHabitacion.Rows.Count > 0)
+                {
+                    ContactoTelefonoHabitacion.Id_Contacto = Int16.Parse(TablaTelefonoHabitacion.Rows[0]["Id_Contacto"].ToString());
+                    ContactoTelefonoHabitacion.Detalle = txtTelefonoHabitacion.Text;
+                    ContactoTelefonoHabitacion.Actualizar();
+                }
+
+                //Teléfono celular
+                cIATContactoNegocios ContactoTelefonoCelular = new cIATContactoNegocios(1, "A", 2, "B");
+                ContactoTelefonoCelular.FK_IdTipoContacto = 2;
+                ContactoTelefonoCelular.FK_IdUsuario = Persona.FK_IdUsuario;
+                DataTable TablaTelefonoCelular = ContactoTelefonoCelular.Buscar();
+
+                if (TablaTelefonoCelular.Rows.Count > 0)
+                {
+                    ContactoTelefonoCelular.Id_Contacto = Int16.Parse(TablaTelefonoCelular.Rows[0]["Id_Contacto"].ToString());
+                    ContactoTelefonoCelular.Detalle = txtTelefonoCelular.Text;
+                    ContactoTelefonoCelular.Actualizar();
+                }
+
+                //Correo electrónico
+                cIATContactoNegocios ContactoCorreoElectronico = new cIATContactoNegocios(1, "A", 2, "B");
+                ContactoCorreoElectronico.FK_IdTipoContacto = 3;
+                ContactoCorreoElectronico.FK_IdUsuario = Persona.FK_IdUsuario;
+                DataTable TablaCorreoElectronico = ContactoCorreoElectronico.Buscar();
+
+                if (TablaCorreoElectronico.Rows.Count > 0)
+                {
+                    ContactoCorreoElectronico.Id_Contacto = Int16.Parse(TablaCorreoElectronico.Rows[0]["Id_Contacto"].ToString());
+                    ContactoCorreoElectronico.Detalle = txtCorreoElectronico.Text;
+                    ContactoCorreoElectronico.Actualizar();
+                }
+
+                Response.Redirect("frmConsultarPerfilAdultoMayor.aspx");
             }
-
-            Persona.Nom_Persona = txtNombre.Text;
-            Persona.Apellido1 = txtApellido1.Text;
-            Persona.Apellido2 = txtApellido2.Text;
-            Persona.Num_Cedula = txtCedula.Text;
-            Persona.Fec_Nacimiento = DateTime.Parse(txtFechaNacimiento.Text);
-            Persona.Sexo = drpSexo.SelectedValue;
-            Persona.FK_IdDistrito = Int16.Parse(drpDistrito.SelectedValue);
-
-            Persona.Actualizar();
-
-            //Teléfono de habitación
-            cIATContactoNegocios ContactoTelefonoHabitacion = new cIATContactoNegocios(1, "A", 2, "B");
-            ContactoTelefonoHabitacion.FK_IdTipoContacto = 1;
-            ContactoTelefonoHabitacion.FK_IdUsuario = Persona.FK_IdUsuario;
-            DataTable TablaTelefonoHabitacion = ContactoTelefonoHabitacion.Buscar();
-
-            if (TablaTelefonoHabitacion.Rows.Count > 0)
-            {
-                ContactoTelefonoHabitacion.Id_Contacto = Int16.Parse(TablaTelefonoHabitacion.Rows[0]["Id_Contacto"].ToString());
-                ContactoTelefonoHabitacion.Detalle = txtTelefonoHabitacion.Text;
-                ContactoTelefonoHabitacion.Actualizar();
-            }
-
-            //Teléfono celular
-            cIATContactoNegocios ContactoTelefonoCelular = new cIATContactoNegocios(1, "A", 2, "B");
-            ContactoTelefonoCelular.FK_IdTipoContacto = 2;
-            ContactoTelefonoCelular.FK_IdUsuario = Persona.FK_IdUsuario;
-            DataTable TablaTelefonoCelular = ContactoTelefonoCelular.Buscar();
-
-            if (TablaTelefonoCelular.Rows.Count > 0)
-            {
-                ContactoTelefonoCelular.Id_Contacto = Int16.Parse(TablaTelefonoCelular.Rows[0]["Id_Contacto"].ToString());
-                ContactoTelefonoCelular.Detalle = txtTelefonoCelular.Text;
-                ContactoTelefonoCelular.Actualizar();
-            }
-
-            //Correo electrónico
-            cIATContactoNegocios ContactoCorreoElectronico = new cIATContactoNegocios(1, "A", 2, "B");
-            ContactoCorreoElectronico.FK_IdTipoContacto = 3;
-            ContactoCorreoElectronico.FK_IdUsuario = Persona.FK_IdUsuario;
-            DataTable TablaCorreoElectronico = ContactoCorreoElectronico.Buscar();
-
-            if (TablaCorreoElectronico.Rows.Count > 0)
-            {
-                ContactoCorreoElectronico.Id_Contacto = Int16.Parse(TablaCorreoElectronico.Rows[0]["Id_Contacto"].ToString());
-                ContactoCorreoElectronico.Detalle = txtCorreoElectronico.Text;
-                ContactoCorreoElectronico.Actualizar();
-            }
-
-            Response.Redirect("frmConsultarPerfilAdultoMayor.aspx");
         }
 
         protected void btnSalir_Click(object sender, EventArgs e)

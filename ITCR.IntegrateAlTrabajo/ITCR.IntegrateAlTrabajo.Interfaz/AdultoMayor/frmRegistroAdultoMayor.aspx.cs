@@ -9,6 +9,7 @@ using ITCR.IntegrateAlTrabajo.Negocios;
 using ITCR.IntegrateAlTrabajo.Datos;
 using System.Security.Cryptography;
 using System.Collections;
+using System.Web.Services;
 
 namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 {
@@ -52,7 +53,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 mvRegistroAdultoMayor.ActiveViewIndex = 0;
                 txtCedulaExt.Visible = false;
                 cargarTodosDropDownList();
+                ViewState["MesValido"] = ViewState["DiaValido"] = true;                
             }
+            //HttpContext.Current.Session["dataGridEstudios"] = dgEstudios;
+            //HttpContext.Current.Session["dataGridExperiencias"] = dgExperienciasLaborales;
         }
 
         #region DatosIniciales
@@ -316,12 +320,16 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 Estudio.Institucion = txtInstitucionEstudio.Text;
                 Estudio.Titulo = txtTituloEstudio.Text;
                 ListaEstudios.Add(Estudio);
-                actualizarDgEstudios();
+                actualizarDgEstudios();               
+                
+                txtInstitucionEstudio.Text = "";
+                txtTituloEstudio.Text = "";
+                txtInstitucionEstudio.Focus();
             }
         }
 
         protected void actualizarDgEstudios()
-        {
+        {            
             TablaEstudios.Columns.Add("Institucion", typeof(string));
             TablaEstudios.Columns.Add("Titulo", typeof(string));
 
@@ -331,14 +339,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 FilaEstudio["Institucion"] = ItemEstudio.Institucion.ToString();
                 FilaEstudio["Titulo"] = ItemEstudio.Titulo.ToString();
                 TablaEstudios.Rows.Add(FilaEstudio);
-            }
-
+            }            
+            //DataGrid sdgEstudios = HttpContext.Current.Session["dataGridEstudios"] as DataGrid;
             dgEstudios.DataSource = TablaEstudios;
             dgEstudios.DataBind();
-
-            txtInstitucionEstudio.Text = "";
-            txtTituloEstudio.Text = "";
-            txtInstitucionEstudio.Focus();
 
         }
 
@@ -351,7 +355,11 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 ExperienciaLaboral.Empresa = txtEmpresa.Text;
                 ExperienciaLaboral.Puesto = txtPuesto.Text;
                 ListaExperienciasLaborales.Add(ExperienciaLaboral);
-                actualizarDgExperienciasLaborales();
+                actualizarDgExperienciasLaborales();              
+
+                txtEmpresa.Text = "";
+                txtPuesto.Text = "";
+                txtEmpresa.Focus();
             }
         }
 
@@ -368,15 +376,11 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
                 TablaExperienciasLaborales.Rows.Add(FilaExperienciaLaboral);
             }
-
+            //DataGrid sdgExperienciasLaborales = HttpContext.Current.Session["dataGridExperiencias"] as DataGrid;
             dgExperienciasLaborales.DataSource = TablaExperienciasLaborales;
             dgExperienciasLaborales.DataBind();
-
-            txtEmpresa.Text = "";
-            txtPuesto.Text = "";
-            txtEmpresa.Focus();
             
-        }
+        }      
         
 
         protected void chkAceptarTerminos_CheckedChanged(object sender, EventArgs e)
@@ -511,19 +515,46 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             mvRegistroAdultoMayor.ActiveViewIndex = 3;
         }
 
+
         protected void DdlAnnoNacimiento_SelectedIndexChanged(object sender, EventArgs e)
         {
             bool primerAnnio = DdlAnioNacimiento.SelectedIndex == 0;
+            int dia = DdlDiaNacimiento.SelectedIndex;
+            int mes = DdlMesNacimiento.SelectedIndex;
             cargarDropDownListFechas(primerAnnio);
+            if (DdlDiaNacimiento.Items.Count - 1 >= dia)
+            {
+                DdlDiaNacimiento.SelectedIndex = dia;
+                ViewState["DiaValido"] = true;
+            }
+            else { ViewState["DiaValido"] = false; }
+            if (DdlMesNacimiento.Items.Count - 1 >= mes)
+            {
+                DdlMesNacimiento.SelectedIndex = mes;
+                ViewState["MesValido"] = true;
+            }
+            else { ViewState["MesValido"] = false; }
         }
 
         protected void DdlMesNacimiento_SelectedIndexChanged(object sender, EventArgs e)
         {
             bool primerAnnio = DdlAnioNacimiento.SelectedIndex == 0;
             bool ultimoMes = DdlMesNacimiento.SelectedIndex == DdlMesNacimiento.Items.Count - 1;
+            int dia = DdlDiaNacimiento.SelectedIndex;
             cargarDropDownListDias(DdlMesNacimiento.SelectedIndex + 1,
                                        int.Parse(DdlAnioNacimiento.SelectedItem.Text), primerAnnio&&ultimoMes);
+            ViewState["MesValido"] = true;
+            if (DdlDiaNacimiento.Items.Count - 1 >= dia)
+            {
+                DdlDiaNacimiento.SelectedIndex = dia;
+                ViewState["DiaValido"] = true;
+            }
+            else
+            {
+                ViewState["DiaValido"] = false;
+            }
         }
+
 
         protected void validarLargoHabitacionServer(object source, ServerValidateEventArgs args)
         {
@@ -553,9 +584,25 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             }
             else if (e.CommandName == "Eliminar")
             {
+                /*string code = @"<script type='text/javascript'>eliminarEstudio(" + e.Item.ItemIndex + ");</script>";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);*/
                 ListaEstudios.RemoveAt(e.Item.ItemIndex);
                 actualizarDgEstudios();
             }
+        }
+
+        [WebMethod]
+        public static void eliminarEstudio(int index)
+        {
+            ListaEstudios.RemoveAt(index);
+            //actualizarDgEstudios();
+        }
+
+        [WebMethod]
+        public static void eliminarExperiencia(int index)
+        {
+            ListaExperienciasLaborales.RemoveAt(index);
+            //actualizarDgExperienciasLaborales();
         }
         
         protected void btnActualizarEstudio_Click(object sender, EventArgs e)
@@ -571,6 +618,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 btnActualizarEstudio.Visible = false;
                 btnCancelarAgregarEstudio.Visible = true;
                 btnCancelarActualizarEstudio.Visible = false;
+                txtInstitucionEstudio.Text = "";
+                txtTituloEstudio.Text = "";
             }
         }
 
@@ -603,6 +652,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             }
             else if (e.CommandName == "Eliminar")
             {
+                /*string code = @"<script type='text/javascript'>eliminarExperiencia(" + e.Item.ItemIndex + ";</script>";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);*/                
                 ListaExperienciasLaborales.RemoveAt(e.Item.ItemIndex);
                 actualizarDgExperienciasLaborales();
             }
@@ -622,6 +673,9 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             btnActualizarExperienciaLaboral.Visible = false;
             btnCancelarAgregarExperiencia.Visible = true;
             btnCancelarActualizarExperiencia.Visible = false;
+            txtEmpresa.Text = "";
+            txtPuesto.Text = "";
+
         }
 
         protected void btnAtras6_Click(object sender, EventArgs e)
@@ -709,6 +763,11 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         {
             txtEmpresa.Text = "";
             txtPuesto.Text = "";
+        }        
+
+        protected void validarNacimientoServer(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = (bool)(ViewState["DiaValido"]) && (bool)(ViewState["MesValido"]);
         }
 
     }

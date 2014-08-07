@@ -75,18 +75,11 @@
         <tr>
             <td class="style4">
                 &nbsp;</td>
-            <td class="style30">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style30">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
+            <td class="style11" colspan="5">
+                <asp:ValidationSummary ID="vsEdicionAdultoMayor" runat="server" 
+                    ForeColor="#CC0000" ValidationGroup="gvDatosPersonales" />
+                    </td>
+            <td></td>
         </tr>
         <tr>
             <td class="style4">
@@ -104,7 +97,7 @@
                             <td class="style31">
                                 &nbsp;</td>
                             <td class="style29">
-                                <asp:Label ID="lblTelefonoCelular" runat="server" Text="Teléfono celular"></asp:Label>
+                                <asp:Label ID="lblTelefonoCelular" runat="server" Text="Teléfono secundario"></asp:Label>
                             </td>
                             <td class="style6">
                                 <asp:TextBox ID="txtTelefonoCelular" runat="server"></asp:TextBox>
@@ -197,10 +190,13 @@
                         <tr>
                             <td class="style26">
                                 <asp:Label ID="lblTelefonoHabitacion" runat="server" 
-                                    Text="Teléfono de habitación"></asp:Label>
+                                    Text="Teléfono principal"></asp:Label>
                             </td>
                             <td class="style27">
                                 <asp:TextBox ID="txtTelefonoHabitacion" runat="server"></asp:TextBox>
+                                <asp:RegularExpressionValidator ID="revTelefonoHabitacion" runat="server" ControlToValidate="txtTelefonoHabitacion"
+                                    ErrorMessage="El número de teléfono de habitación introducido es inválido." ForeColor="Red" ValidationExpression="([0-9]*)"
+                                    ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                             </td>
                             <td class="style31">
                                 &nbsp;</td>

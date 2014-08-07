@@ -102,7 +102,9 @@
             </td>
             <td class="style5">
             </td>
-            <td class="style6">
+            <td class="style6" align="right">
+                            <asp:Button ID="btnSalir" runat="server" Text="Salir" CssClass="Boton" 
+                                onclick="btnSalir_Click" />
             </td>
             <td class="style8">
             </td>
@@ -206,17 +208,17 @@
                                                 HeaderText="Id_ExperienciaLaboral" Visible="False"></asp:BoundColumn>
                                             <asp:BoundColumn DataField="Empresa" HeaderText="Empresa"></asp:BoundColumn>
                                             <asp:BoundColumn DataField="Puesto" HeaderText="Puesto"></asp:BoundColumn>
-                                            <asp:TemplateColumn>
+                                            <asp:TemplateColumn HeaderText="Editar">
                                                 <ItemTemplate>
                                                     <asp:ImageButton ID="ibtnEditar" runat="server" CommandName="Editar" 
-                                                        Height="30px" ImageAlign="Right" ImageUrl="~/Multimedia/icono-editar.jpg" 
-                                                        Width="30px" />
+                                                        Height="30px" ImageUrl="~/Multimedia/icono-editar.jpg" 
+                                                        Width="30px" style="display:block; margin:0 auto"/>
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
-                                            <asp:TemplateColumn>
+                                            <asp:TemplateColumn HeaderText="Eliminar">
                                                 <ItemTemplate>
                                                     <asp:ImageButton ID="ibtnEliminar" runat="server" CommandName="Eliminar" 
-                                                        Height="30px" ImageAlign="Right" ImageUrl="~/Multimedia/icono-eliminar.jpg" 
+                                                        Height="30px" style="display:block; margin:0 auto" ImageUrl="~/Multimedia/icono-eliminar.jpg" 
                                                         Width="30px" />
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
@@ -226,8 +228,7 @@
                             </td>
                         </tr>
                         <tr>
-                        <td><asp:Button ID="btnSalir" runat="server" Text="Salir" CssClass="Boton" 
-                                onclick="btnSalir_Click" /></td></tr>
+                        <td>&nbsp;</td></tr>
                         <tr>
                             <td class="style24">
                                 &nbsp;</td>

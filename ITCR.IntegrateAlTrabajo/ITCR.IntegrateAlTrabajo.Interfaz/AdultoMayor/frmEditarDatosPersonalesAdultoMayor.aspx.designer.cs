@@ -22,6 +22,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
         protected global::System.Web.UI.WebControls.Label lblActualizarDatosPersonales;
         
         /// <summary>
+        /// Control vsEdicionAdultoMayor.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ValidationSummary vsEdicionAdultoMayor;
+        
+        /// <summary>
         /// Control PanelDatos.
         /// </summary>
         /// <remarks>
@@ -245,6 +254,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtTelefonoHabitacion;
+        
+        /// <summary>
+        /// Control revTelefonoHabitacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator revTelefonoHabitacion;
         
         /// <summary>
         /// Control PanelBotonActualizar.

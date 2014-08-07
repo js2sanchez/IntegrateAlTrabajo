@@ -193,6 +193,12 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceholderID="MainContent" runat="server">
+    <asp:ScriptManager ID="ScriptManagerMain"
+            runat="server"
+            EnablePageMethods="true" 
+            ScriptMode="Release" 
+            LoadScriptsBeforeUI="true">
+    </asp:ScriptManager>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/jquery.maskedinput.min.js"></script>
     <script type="text/javascript" src="../js/alertify.min.js"></script>   
@@ -228,6 +234,46 @@
                     location.href = "/Autenticacion/frmAutenticacion.aspx";
                 }
             });
+        }
+
+        function eliminarEstudio(index) {
+            // custom OK and Cancel label
+            // default: OK, Cancel
+            alertify.set({ labels: {
+                ok: "Si, estoy seguro",
+                cancel: "No, quiero mantenerlo"
+            }
+            });
+            // button labels will be "Accept" and "Deny"
+            alertify.confirm("¿Esta seguro que desea eliminar esta fila de estudios?", function (e) {
+                if (e) {
+                    PageMethods.eliminarEstudio(index,OnSuccess, OnError);
+                }
+            });
+        }
+
+        function eliminarExperiencia(index) {
+            // custom OK and Cancel label
+            // default: OK, Cancel
+            alertify.set({ labels: {
+                ok: "Si, estoy seguro",
+                cancel: "No, quiero mantenerlo"
+            }
+            });
+            // button labels will be "Accept" and "Deny"
+            alertify.confirm("¿Esta seguro que desea eliminar esta fila de experiencia laboral?", function (e) {
+                if (e) {
+                    PageMethods.eliminarExperiencia(index, OnSuccess, OnError);
+                }
+            });
+        }
+
+        function OnSuccess(response) {
+            alertify.alert("Se ha eliminado la fila.");
+            Form.Submit;
+        }
+        function OnError(error) {
+            alert(error);
         }
     </script> 
     <div id="Div1" style="width:100%; overflow:auto;">
@@ -318,7 +364,7 @@
                                     <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
                                 </td>
                                 <td class="style40">
-                                    <asp:TextBox ID="txtNombrePersona" runat="server" placeholder="Laura" tooltip="Escriba su nombre aqui" Width="248px"></asp:TextBox>
+                                    <asp:TextBox ID="txtNombrePersona" runat="server" onblur="this.placeholder = 'Laura'" onfocus="this.placeholder = ''" placeholder="Laura" tooltip="Escriba su nombre aqui" Width="248px"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvNombrePersona" runat="server" ControlToValidate="txtNombrePersona"
                                     ErrorMessage="El nombre de la persona es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="RegEx_Nombre" runat="server" ControlToValidate="txtNombrePersona" ValidationExpression="([a-zA-ZÀ-ÿ ])*"
@@ -334,7 +380,7 @@
                                     <asp:TextBox ID="txtTelefonoHabitacion" runat="server" Width="248px" 
                                         tooltip="Sin guiones" TabIndex="12" MaxLength="8"></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="revTelefonoHabitacion" runat="server" ControlToValidate="txtTelefonoHabitacion"
-                                    ErrorMessage="El número de teléfono de habitación introducido es inválido." ForeColor="Red" ValidationExpression="([26789][0-9]*)"
+                                    ErrorMessage="El número de teléfono de habitación introducido es inválido." ForeColor="Red" ValidationExpression="([0-9]*)"
                                     ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                     <asp:CustomValidator id="cvTelefonoHabitacion" runat="server" 
                                     OnServerValidate="validarTelefonosServer" ClientValidationFunction="validarTelefonosClient"
@@ -349,7 +395,7 @@
                                     <asp:Label ID="lblApellido1" runat="server" Text="Primer apellido"></asp:Label>
                                 </td>
                                 <td class="style40">
-                                    <asp:TextBox ID="txtApellido1" runat="server" placeholder="Brenes" 
+                                    <asp:TextBox ID="txtApellido1" runat="server" onblur="this.placeholder = 'Brenes'" onfocus="this.placeholder = ''" placeholder="Brenes" 
                                         Width="248px" tooltip="Escriba su primer apellido aquí" TabIndex="1"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvApellido1Persona" runat="server" ControlToValidate="txtApellido1"
                                     ErrorMessage="El primer apellido es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
@@ -365,7 +411,7 @@
                                     <asp:TextBox ID="txtCelular" runat="server" Width="248px" tooltip="Sin guiones" 
                                         TabIndex="13" MaxLength="8"></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="revCelular" runat="server" ControlToValidate="txtCelular"
-                                    ErrorMessage="El número de celular introducido es inválido." ForeColor="Red" ValidationExpression="([26789][0-9]*)"
+                                    ErrorMessage="El número de celular introducido es inválido." ForeColor="Red" ValidationExpression="([0-9]*)"
                                     ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                     <asp:CustomValidator id="validarLargoCelular" runat="server" 
                                     OnServerValidate="validarLargoMovilServer" ErrorMessage = "El número de teléfono  móvil introducido es inválido (longitud invalida)." 
@@ -377,7 +423,7 @@
                                     <asp:Label ID="lblApellido2" runat="server" Text="Segundo apellido"></asp:Label>
                                 </td>
                                 <td class="style40">
-                                    <asp:TextBox ID="txtApellido2" runat="server" placeholder="Fernández" 
+                                    <asp:TextBox ID="txtApellido2" runat="server" onblur="this.placeholder = 'Fernández'" onfocus="this.placeholder = ''" placeholder="Fernández" 
                                         Width="248px" tooltip="Escriba su segundo apellido aquí" TabIndex="2"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvApellido2Persona" runat="server" ControlToValidate="txtApellido2"
                                     ErrorMessage="El segundo apellido es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
@@ -462,7 +508,7 @@
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
                                         ControlToValidate="txtCedula" 
                                         ErrorMessage="La cédula solo debe tener números." ForeColor="Red" 
-                                        ValidationExpression="[0-9]*" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
+                                        ValidationExpression="[1-9]*" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" 
                                         ControlToValidate="txtCedula2" 
                                         ErrorMessage="La cédula solo debe tener números." ForeColor="Red" 
@@ -495,6 +541,10 @@
                                         OnSelectedIndexChanged="DdlMesNacimiento_SelectedIndexChanged" TabIndex="10" ></asp:DropDownList>                                    
                                     <asp:DropDownList ID="DdlAnioNacimiento" runat="server" AutoPostBack="True" 
                                         OnSelectedIndexChanged="DdlAnnoNacimiento_SelectedIndexChanged" TabIndex="11" ></asp:DropDownList>
+                                        <asp:CustomValidator ID="CustomValidator2" runat="server" 
+                                        ErrorMessage="La fecha de nacimiento es incorrecta, por favor, reintroduzca el dato nuevamente." 
+                                        ForeColor="red" OnServerValidate="validarNacimientoServer" 
+                                        ValidationGroup="gvDatosPersonales">*</asp:CustomValidator>
                                 </td>
                                 <td class="style43">
                                     &nbsp;</td>
