@@ -55,8 +55,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 cargarTodosDropDownList();
                 ViewState["MesValido"] = ViewState["DiaValido"] = true;                
             }
-            //HttpContext.Current.Session["dataGridEstudios"] = dgEstudios;
-            //HttpContext.Current.Session["dataGridExperiencias"] = dgExperienciasLaborales;
         }
 
         #region DatosIniciales
@@ -340,7 +338,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 FilaEstudio["Titulo"] = ItemEstudio.Titulo.ToString();
                 TablaEstudios.Rows.Add(FilaEstudio);
             }            
-            //DataGrid sdgEstudios = HttpContext.Current.Session["dataGridEstudios"] as DataGrid;
             dgEstudios.DataSource = TablaEstudios;
             dgEstudios.DataBind();
 
@@ -376,7 +373,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
                 TablaExperienciasLaborales.Rows.Add(FilaExperienciaLaboral);
             }
-            //DataGrid sdgExperienciasLaborales = HttpContext.Current.Session["dataGridExperiencias"] as DataGrid;
             dgExperienciasLaborales.DataSource = TablaExperienciasLaborales;
             dgExperienciasLaborales.DataBind();
             
@@ -584,10 +580,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             }
             else if (e.CommandName == "Eliminar")
             {
-                /*string code = @"<script type='text/javascript'>eliminarEstudio(" + e.Item.ItemIndex + ");</script>";
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);*/
-                ListaEstudios.RemoveAt(e.Item.ItemIndex);
-                actualizarDgEstudios();
+                string code = @"<script type='text/javascript'>eliminarEstudio(" + e.Item.ItemIndex + ");</script>";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
             }
         }
 
@@ -595,14 +589,12 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         public static void eliminarEstudio(int index)
         {
             ListaEstudios.RemoveAt(index);
-            //actualizarDgEstudios();
         }
 
         [WebMethod]
         public static void eliminarExperiencia(int index)
         {
             ListaExperienciasLaborales.RemoveAt(index);
-            //actualizarDgExperienciasLaborales();
         }
         
         protected void btnActualizarEstudio_Click(object sender, EventArgs e)
@@ -652,10 +644,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             }
             else if (e.CommandName == "Eliminar")
             {
-                /*string code = @"<script type='text/javascript'>eliminarExperiencia(" + e.Item.ItemIndex + ";</script>";
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);*/                
-                ListaExperienciasLaborales.RemoveAt(e.Item.ItemIndex);
-                actualizarDgExperienciasLaborales();
+                string code = @"<script type='text/javascript'>eliminarExperiencia(" + e.Item.ItemIndex + ";</script>";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);  
             }
         }
 

@@ -202,80 +202,7 @@
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/jquery.maskedinput.min.js"></script>
     <script type="text/javascript" src="../js/alertify.min.js"></script>   
-    <script type="text/javascript">
-        function alertBoxCustom(acceptText, cancelText, message) {
-            // custom OK and Cancel label
-            // default: OK, Cancel
-            alertify.set({ labels: {
-                ok: acceptText,
-                cancel: cancelText
-            }
-            });
-            // button labels will be "Accept" and "Deny"
-            alertify.confirm(message)
-        }
-
-        function finalizar() {
-            alert('Usted se ha registrado exitosamente.');
-            location.href = "/Autenticacion/frmAutenticacion.aspx";
-        }
-
-        function endConfirmation() {
-            // custom OK and Cancel label
-            // default: OK, Cancel
-            alertify.set({ labels: {
-                ok: "Si, estoy seguro",
-                cancel: "No, deseo continuar el formulario"
-            }
-            });
-            // button labels will be "Accept" and "Deny"
-            alertify.confirm("¿Esta seguro que desea salir sin guardar?", function (e) {
-                if (e) {
-                    location.href = "/Autenticacion/frmAutenticacion.aspx";
-                }
-            });
-        }
-
-        function eliminarEstudio(index) {
-            // custom OK and Cancel label
-            // default: OK, Cancel
-            alertify.set({ labels: {
-                ok: "Si, estoy seguro",
-                cancel: "No, quiero mantenerlo"
-            }
-            });
-            // button labels will be "Accept" and "Deny"
-            alertify.confirm("¿Esta seguro que desea eliminar esta fila de estudios?", function (e) {
-                if (e) {
-                    PageMethods.eliminarEstudio(index,OnSuccess, OnError);
-                }
-            });
-        }
-
-        function eliminarExperiencia(index) {
-            // custom OK and Cancel label
-            // default: OK, Cancel
-            alertify.set({ labels: {
-                ok: "Si, estoy seguro",
-                cancel: "No, quiero mantenerlo"
-            }
-            });
-            // button labels will be "Accept" and "Deny"
-            alertify.confirm("¿Esta seguro que desea eliminar esta fila de experiencia laboral?", function (e) {
-                if (e) {
-                    PageMethods.eliminarExperiencia(index, OnSuccess, OnError);
-                }
-            });
-        }
-
-        function OnSuccess(response) {
-            alertify.alert("Se ha eliminado la fila.");
-            Form.Submit;
-        }
-        function OnError(error) {
-            alert(error);
-        }
-    </script> 
+    <script type="text/javascript" src="../js/registropam.js"></script> 
     <div id="Div1" style="width:100%; overflow:auto;">
     <table class="style8">
         <tr>
@@ -532,19 +459,19 @@
                             <tr>
                                 <td class="style45">
                                     <asp:Label ID="lblFechaNacimiento" runat="server" 
-                                        Text="Dìa, mes y año de nacimiento"></asp:Label>
+                                        Text="Año, mes y día de nacimiento"></asp:Label>
                                 </td>
                                 <td class="style40">
-                                    <asp:DropDownList ID="DdlDiaNacimiento" runat="server" AutoPostBack="True" 
-                                        TabIndex="9" ></asp:DropDownList>
-                                    <asp:DropDownList ID="DdlMesNacimiento" runat="server" AutoPostBack="True" 
-                                        OnSelectedIndexChanged="DdlMesNacimiento_SelectedIndexChanged" TabIndex="10" ></asp:DropDownList>                                    
                                     <asp:DropDownList ID="DdlAnioNacimiento" runat="server" AutoPostBack="True" 
                                         OnSelectedIndexChanged="DdlAnnoNacimiento_SelectedIndexChanged" TabIndex="11" ></asp:DropDownList>
                                         <asp:CustomValidator ID="CustomValidator2" runat="server" 
                                         ErrorMessage="La fecha de nacimiento es incorrecta, por favor, reintroduzca el dato nuevamente." 
                                         ForeColor="red" OnServerValidate="validarNacimientoServer" 
                                         ValidationGroup="gvDatosPersonales">*</asp:CustomValidator>
+                                    <asp:DropDownList ID="DdlMesNacimiento" runat="server" AutoPostBack="True" 
+                                        OnSelectedIndexChanged="DdlMesNacimiento_SelectedIndexChanged" TabIndex="10" ></asp:DropDownList> 
+                                    <asp:DropDownList ID="DdlDiaNacimiento" runat="server" AutoPostBack="True" 
+                                    TabIndex="9" ></asp:DropDownList>
                                 </td>
                                 <td class="style43">
                                     &nbsp;</td>
@@ -552,12 +479,7 @@
                                     &nbsp;</td>
                                 <td class="auto-style13">
                                     &nbsp;</td>
-                            </tr>
-                            <script type="text/javascript">
-                                function validarTelefonosClient(oSrc, args) {
-                                    args.IsValid = (window.txtTelefonoHabitacion.Text != "" || window.txtCelular.Text != "");
-                                }
-                            </script>                            
+                            </tr>                           
                         </table>
                     </asp:View>
                     <br />
@@ -596,12 +518,6 @@
                                 <td class="style54">
                                     <asp:Label ID="lblNombreUsuario" runat="server" Text="Nombre de usuario (Letras,números o guiones(-,_) permitidos)"></asp:Label>
                                 </td>
-                                <script type="text/javascript">
-                                    function validarUsuarioClient(oSrc, args) {
-                                        args.IsValid = window.CARACTERES_MINIMOS <= args.Value.Length
-                                            && args.Value.Length <= window.CARACTERES_MAXIMOS;
-                                    }
-                            </script>
                                 <td class="style52">
                                     <asp:TextBox ID="txtNombreUsuario" runat="server" tooltip="Más de 5 caracteres" 
                                         Width="213px"></asp:TextBox>

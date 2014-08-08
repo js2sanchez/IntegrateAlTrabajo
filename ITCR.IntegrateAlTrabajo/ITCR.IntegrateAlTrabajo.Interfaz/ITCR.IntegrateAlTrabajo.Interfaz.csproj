@@ -81,15 +81,14 @@
     <Content Include="AdultoMayor\frmRegistroAdultoMayor.aspx" />
     <Content Include="Autenticacion\frmAutenticacion.aspx" />
     <Content Include="Empresa\frmOpinarSobreBolsaTrabajo.aspx" />
-    <Content Include="Empresa\frmPerfilAdultoMayor.aspx" />
     <Content Include="Empresa\frmFiltrarServicios.aspx" />
-    <Content Include="Empresa\frmEditarPerfilEmpresa.aspx" />
     <Content Include="Empresa\frmPerfilEmpresa.aspx" />
     <Content Include="Empresa\frmPublicarOfertaTrabajo.aspx" />
     <Content Include="Empresa\frmRegistroEmpresa.aspx" />
     <Content Include="js\alertify.min.js" />
     <Content Include="js\jquery.js" />
     <Content Include="js\jquery.maskedinput.min.js" />
+    <Content Include="js\registropam.js" />
     <Content Include="Multimedia\banner_adultos_mayores.jpg" />
     <Content Include="Multimedia\banner_autenticacion.jpg" />
     <Content Include="Multimedia\icono-buscar.jpg" />
@@ -257,26 +256,12 @@
     <Compile Include="Empresa\frmOpinarSobreBolsaTrabajo.aspx.designer.cs">
       <DependentUpon>frmOpinarSobreBolsaTrabajo.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Empresa\frmPerfilAdultoMayor.aspx.cs">
-      <DependentUpon>frmPerfilAdultoMayor.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Empresa\frmPerfilAdultoMayor.aspx.designer.cs">
-      <DependentUpon>frmPerfilAdultoMayor.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Empresa\frmFiltrarServicios.aspx.cs">
       <DependentUpon>frmFiltrarServicios.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Empresa\frmFiltrarServicios.aspx.designer.cs">
       <DependentUpon>frmFiltrarServicios.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Empresa\frmEditarPerfilEmpresa.aspx.cs">
-      <DependentUpon>frmEditarPerfilEmpresa.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Empresa\frmEditarPerfilEmpresa.aspx.designer.cs">
-      <DependentUpon>frmEditarPerfilEmpresa.aspx</DependentUpon>
     </Compile>
     <Compile Include="Empresa\frmPerfilEmpresa.aspx.cs">
       <DependentUpon>frmPerfilEmpresa.aspx</DependentUpon>
