@@ -80,6 +80,8 @@
     <Content Include="AdultoMayor\frmOpinarSobreBolsaTrabajo.aspx" />
     <Content Include="AdultoMayor\frmRegistroAdultoMayor.aspx" />
     <Content Include="Autenticacion\frmAutenticacion.aspx" />
+    <Content Include="Empresa\frmEditarDatosAutenticacionEmpresa.aspx" />
+    <Content Include="Empresa\frmEditarDatosGeneralesEmpresa.aspx" />
     <Content Include="Empresa\frmOpinarSobreBolsaTrabajo.aspx" />
     <Content Include="Empresa\frmFiltrarServicios.aspx" />
     <Content Include="Empresa\frmPerfilEmpresa.aspx" />
@@ -248,6 +250,18 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\frmEditarDatosAutenticacionEmpresa.aspx.cs">
+      <DependentUpon>frmEditarDatosAutenticacionEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\frmEditarDatosAutenticacionEmpresa.aspx.designer.cs">
+      <DependentUpon>frmEditarDatosAutenticacionEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\frmEditarDatosGeneralesEmpresa.aspx.cs">
+      <DependentUpon>frmEditarDatosGeneralesEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\frmEditarDatosGeneralesEmpresa.aspx.designer.cs">
+      <DependentUpon>frmEditarDatosGeneralesEmpresa.aspx</DependentUpon>
     </Compile>
     <Compile Include="Empresa\frmOpinarSobreBolsaTrabajo.aspx.cs">
       <DependentUpon>frmOpinarSobreBolsaTrabajo.aspx</DependentUpon>
