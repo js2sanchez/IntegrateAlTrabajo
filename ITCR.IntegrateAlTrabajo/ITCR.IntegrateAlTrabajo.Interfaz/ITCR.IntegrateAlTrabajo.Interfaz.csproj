@@ -21,9 +21,9 @@
     <OldToolsVersion>4.0</OldToolsVersion>
     <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
-    <IISExpressUseClassicPipelineMode />
+    <IISExpressAnonymousAuthentication>enabled</IISExpressAnonymousAuthentication>
+    <IISExpressWindowsAuthentication>enabled</IISExpressWindowsAuthentication>
+    <IISExpressUseClassicPipelineMode>false</IISExpressUseClassicPipelineMode>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -253,12 +253,14 @@
     </Compile>
     <Compile Include="Empresa\frmEditarDatosAutenticacionEmpresa.aspx.cs">
       <DependentUpon>frmEditarDatosAutenticacionEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Empresa\frmEditarDatosAutenticacionEmpresa.aspx.designer.cs">
       <DependentUpon>frmEditarDatosAutenticacionEmpresa.aspx</DependentUpon>
     </Compile>
     <Compile Include="Empresa\frmEditarDatosGeneralesEmpresa.aspx.cs">
       <DependentUpon>frmEditarDatosGeneralesEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Empresa\frmEditarDatosGeneralesEmpresa.aspx.designer.cs">
       <DependentUpon>frmEditarDatosGeneralesEmpresa.aspx</DependentUpon>

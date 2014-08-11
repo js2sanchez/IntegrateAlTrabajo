@@ -124,7 +124,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                 Usuario.FK_IdTipoUsuario = Int16.Parse(tablaUsuario.Rows[0]["FK_IdTipoUsuario"].ToString());
             }
             Usuario.Estado = 3;
-            Usuario.Actualizar();
+            Usuario.Eliminar();
             Response.Redirect("/Autenticacion/frmAutenticacion.aspx");
         }
 

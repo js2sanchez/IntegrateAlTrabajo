@@ -4,7 +4,7 @@
    <script id="clientEventHandlersJS" language="javascript" type="text/javascript">
 
        function confirmarBorradoExperienciaLaboral() {
-           if (confirm("¿Está seguro que desea borrar este estudio? Los cambios son irreversibles.", "Confirmación de borrado") == true)
+           if (confirm("¿Está seguro que desea eliminar esta fila de experiencia laboral?", "Confirmación de borrado") == true)
                return true;
            else
                return false;

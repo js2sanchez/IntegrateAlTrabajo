@@ -202,7 +202,104 @@
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/jquery.maskedinput.min.js"></script>
     <script type="text/javascript" src="../js/alertify.min.js"></script>   
-    <script type="text/javascript" src="../js/registropam.js"></script> 
+    <script type="text/javascript">
+        function alertBoxCustom(acceptText, cancelText, message) {
+            // custom OK and Cancel label
+            // default: OK, Cancel
+            alertify.set({ labels: {
+                ok: acceptText,
+                cancel: cancelText
+            }
+            });
+            // button labels will be "Accept" and "Deny"
+            alertify.confirm(message)
+        }
+
+        function finalizar() {
+            alert('Usted se ha registrado exitosamente.');
+            location.href = "/Autenticacion/frmAutenticacion.aspx";
+        }
+
+        function endConfirmation() {
+            // custom OK and Cancel label
+            // default: OK, Cancel
+            alertify.set({ labels: {
+                ok: "Si, estoy seguro",
+                cancel: "No, deseo continuar el formulario"
+            }
+            });
+            // button labels will be "Accept" and "Deny"
+            alertify.confirm("¿Esta seguro que desea salir sin guardar?", function (e) {
+                if (e) {
+                    location.href = "/Autenticacion/frmAutenticacion.aspx";
+                }
+            });
+        }
+
+        function eliminarEstudio(index) {
+            // custom OK and Cancel label
+            // default: OK, Cancel
+            alertify.set({ labels: {
+                ok: "Si, estoy seguro",
+                cancel: "No, quiero mantenerlo"
+            }
+            });
+            // button labels will be "Accept" and "Deny"
+            alertify.confirm("¿Esta seguro que desea eliminar esta fila de estudios?", function (e) {
+                if (e) {
+                    eliminarFila("<%= dgEstudios.ClientID %>", index);
+                    PageMethods.eliminarEstudio(index, OnSuccess, OnError);
+                }
+            });
+        }
+
+        function validarTelefonosClient(oSrc, args) {
+            args.IsValid = (window.txtTelefonoHabitacion.Text != "" || window.txtCelular.Text != "");
+        }
+        function eliminarExperiencia(index) {
+            // custom OK and Cancel label
+            // default: OK, Cancel
+            alertify.set({ labels: {
+                ok: "Si, estoy seguro",
+                cancel: "No, quiero mantenerlo"
+            }
+            });
+            // button labels will be "Accept" and "Deny"
+            alertify.confirm("¿Esta seguro que desea eliminar esta fila de experiencia laboral?", function (e) {
+                if (e) {
+                    eliminarFila("<%= dgExperienciasLaborales.ClientID %>", index);
+                    PageMethods.eliminarExperiencia(index, OnSuccess, OnError);
+                }
+            });
+        }
+
+        function validarUsuarioClient(oSrc, args) {
+            args.IsValid = window.CARACTERES_MINIMOS <= args.Value.Length
+                                            && args.Value.Length <= window.CARACTERES_MAXIMOS;
+        }
+
+        function eliminarFila(id, rowindex) {
+            var tabla = document.getElementById(id);
+            tabla.deleteRow(rowindex + 1);
+        }
+
+        function OnSuccess(response) {
+            alertify.set({ labels: {
+                ok: "Aceptar",
+                cancel: "Cancelar"
+            }
+            });
+            alertify.alert("Se ha eliminado la fila.");
+        }
+        function OnError(error) {
+            alertify.set({ labels: {
+                ok: "Aceptar",
+                cancel: "Cancelar"
+            }
+            });
+            alert(error);
+        }
+    </script> 
     <div id="Div1" style="width:100%; overflow:auto;">
     <table class="style8">
         <tr>
@@ -226,7 +323,7 @@
                 &nbsp;</td>
             <td class="style11" colspan="5">
                 <asp:Label ID="lblRegistroAdultoMayor" runat="server" 
-                    Text="Registro de Adulto Mayor" CssClass="Titulo1"></asp:Label>
+                    Text="Registro de Persona Adulta Mayor" CssClass="Titulo1"></asp:Label>
             </td>
             <td class="style9">
                 &nbsp;</td>
@@ -291,11 +388,11 @@
                                     <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
                                 </td>
                                 <td class="style40">
-                                    <asp:TextBox ID="txtNombrePersona" runat="server" onblur="this.placeholder = 'Laura'" onfocus="this.placeholder = ''" placeholder="Laura" tooltip="Escriba su nombre aqui" Width="248px"></asp:TextBox>
+                                    <asp:TextBox ID="txtNombrePersona" runat="server" onblur="this.placeholder = 'Laura'" onfocus="this.placeholder = ''" placeholder="Laura" tooltip="Escriba su nombre aquí" Width="248px"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvNombrePersona" runat="server" ControlToValidate="txtNombrePersona"
                                     ErrorMessage="El nombre de la persona es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="RegEx_Nombre" runat="server" ControlToValidate="txtNombrePersona" ValidationExpression="([a-zA-ZÀ-ÿ ])*"
-                                    ErrorMessage="Nombre inválido (Simbolos inválidos)" ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
+                                    ErrorMessage="Nombre inválido (Símbolos inválidos)" ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                 </td>
                                 <td class="style43">
                                     &nbsp;</td>
@@ -307,13 +404,13 @@
                                     <asp:TextBox ID="txtTelefonoHabitacion" runat="server" Width="248px" 
                                         tooltip="Sin guiones" TabIndex="12" MaxLength="8"></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="revTelefonoHabitacion" runat="server" ControlToValidate="txtTelefonoHabitacion"
-                                    ErrorMessage="El número de teléfono de habitación introducido es inválido." ForeColor="Red" ValidationExpression="([0-9]*)"
+                                    ErrorMessage="El número de teléfono principal introducido es inválido." ForeColor="Red" ValidationExpression="([0-9]*)"
                                     ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                     <asp:CustomValidator id="cvTelefonoHabitacion" runat="server" 
                                     OnServerValidate="validarTelefonosServer" ClientValidationFunction="validarTelefonosClient"
                                     ErrorMessage = "Debe haber al menos un número de contacto." ValidationGroup="gvDatosPersonales" ForeColor="red">*</asp:CustomValidator>
                                     <asp:CustomValidator ID="largoHabitacion" runat="server" OnServerValidate="validarLargoHabitacionServer" 
-                                        ForeColor="red" ErrorMessage="El teléfono de habitación es inválido (longitud invalida)" 
+                                        ForeColor="red" ErrorMessage="El teléfono principal es inválido (longitud inválida)" 
                                         ValidationGroup="gvDatosPersonales">*</asp:CustomValidator>
                                 </td>
                             </tr>
@@ -326,8 +423,8 @@
                                         Width="248px" tooltip="Escriba su primer apellido aquí" TabIndex="1"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvApellido1Persona" runat="server" ControlToValidate="txtApellido1"
                                     ErrorMessage="El primer apellido es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
-                                    <asp:RegularExpressionValidator ID="RegEx_Apellido1" runat="server" ControlToValidate="txtApellido1" ValidationExpression="([a-zA-ZÀ-ÿ])*"
-                                    ErrorMessage="Primer apellido inválido (Simbolos inválidos)" ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
+                                    <asp:RegularExpressionValidator ID="RegEx_Apellido1" runat="server" ControlToValidate="txtApellido1" ValidationExpression="([a-zA-ZÀ-ÿ ])*"
+                                    ErrorMessage="Primer apellido inválido (Símbolos inválidos)" ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                 </td>
                                 <td class="style43">
                                     &nbsp;</td>
@@ -338,10 +435,10 @@
                                     <asp:TextBox ID="txtCelular" runat="server" Width="248px" tooltip="Sin guiones" 
                                         TabIndex="13" MaxLength="8"></asp:TextBox>
                                     <asp:RegularExpressionValidator ID="revCelular" runat="server" ControlToValidate="txtCelular"
-                                    ErrorMessage="El número de celular introducido es inválido." ForeColor="Red" ValidationExpression="([0-9]*)"
+                                    ErrorMessage="El número de teléfono secundario introducido es inválido." ForeColor="Red" ValidationExpression="([0-9]*)"
                                     ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                     <asp:CustomValidator id="validarLargoCelular" runat="server" 
-                                    OnServerValidate="validarLargoMovilServer" ErrorMessage = "El número de teléfono  móvil introducido es inválido (longitud invalida)." 
+                                    OnServerValidate="validarLargoMovilServer" ErrorMessage = "El número de teléfono secundario introducido es inválido (longitud inválida)." 
                                     ValidationGroup="gvDatosPersonales" ForeColor="red">*</asp:CustomValidator>
                                 </td>
                             </tr>
@@ -354,8 +451,8 @@
                                         Width="248px" tooltip="Escriba su segundo apellido aquí" TabIndex="2"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvApellido2Persona" runat="server" ControlToValidate="txtApellido2"
                                     ErrorMessage="El segundo apellido es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
-                                    <asp:RegularExpressionValidator ID="RegEx_Apellido2" runat="server" ControlToValidate="txtApellido2" ValidationExpression="([a-zA-ZÀ-ÿ])*"
-                                    ErrorMessage="Segundo apellido inválido (Simbolos inválidos)" ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
+                                    <asp:RegularExpressionValidator ID="RegEx_Apellido2" runat="server" ControlToValidate="txtApellido2" ValidationExpression="([a-zA-ZÀ-ÿ ])*"
+                                    ErrorMessage="Segundo apellido inválido (Símbolos inválidos)" ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                 </td>
                                 <td class="style43">
                                     &nbsp;</td>
@@ -434,15 +531,15 @@
                                         ValidationGroup="gvDatosPersonales">*</asp:CustomValidator>
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
                                         ControlToValidate="txtCedula" 
-                                        ErrorMessage="La cédula solo debe tener números." ForeColor="Red" 
+                                        ErrorMessage="La cédula sólo debe tener números." ForeColor="Red" 
                                         ValidationExpression="[1-9]*" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" 
                                         ControlToValidate="txtCedula2" 
-                                        ErrorMessage="La cédula solo debe tener números." ForeColor="Red" 
+                                        ErrorMessage="La cédula sólo debe tener números." ForeColor="Red" 
                                         ValidationExpression="[0-9]*" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" 
                                         ControlToValidate="txtCedula3" 
-                                        ErrorMessage="La cédula solo debe tener números." ForeColor="Red" 
+                                        ErrorMessage="La cédula sólo debe tener números." ForeColor="Red" 
                                         ValidationExpression="[0-9]*" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
 
                                 </td>
@@ -465,7 +562,7 @@
                                     <asp:DropDownList ID="DdlAnioNacimiento" runat="server" AutoPostBack="True" 
                                         OnSelectedIndexChanged="DdlAnnoNacimiento_SelectedIndexChanged" TabIndex="11" ></asp:DropDownList>
                                         <asp:CustomValidator ID="CustomValidator2" runat="server" 
-                                        ErrorMessage="La fecha de nacimiento es incorrecta, por favor, reintroduzca el dato nuevamente." 
+                                        ErrorMessage="La fecha de nacimiento es incorrecta, por favor, introduzca el dato nuevamente." 
                                         ForeColor="red" OnServerValidate="validarNacimientoServer" 
                                         ValidationGroup="gvDatosPersonales">*</asp:CustomValidator>
                                     <asp:DropDownList ID="DdlMesNacimiento" runat="server" AutoPostBack="True" 
@@ -516,7 +613,7 @@
                             </tr>
                             <tr>
                                 <td class="style54">
-                                    <asp:Label ID="lblNombreUsuario" runat="server" Text="Nombre de usuario (Letras,números o guiones(-,_) permitidos)"></asp:Label>
+                                    <asp:Label ID="lblNombreUsuario" runat="server" Text="Nombre de usuario (Letras, números o guiones(-,_) permitidos)"></asp:Label>
                                 </td>
                                 <td class="style52">
                                     <asp:TextBox ID="txtNombreUsuario" runat="server" tooltip="Más de 5 caracteres" 
@@ -644,7 +741,7 @@
                                                 <td class="style28">
                                                     <asp:RequiredFieldValidator ID="rfvInstitucionEstudio" runat="server" ControlToValidate="txtInstitucionEstudio" ErrorMessage="La institución es un dato requerido." ForeColor="Red" ValidationGroup="gvEstudios">*</asp:RequiredFieldValidator>
                                                     <asp:RegularExpressionValidator ID="RegEx_Institucion" runat="server" ControlToValidate="txtInstitucionEstudio"
-                                                    ErrorMessage="Institución inválido (Símbolos inválidos)." ForeColor="Red" ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)"
+                                                    ErrorMessage="Institución inválida (Símbolos inválidos)." ForeColor="Red" ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)"
                                                     ValidationGroup="gvEstudios">*</asp:RegularExpressionValidator>
                                                 </td>
                                             </tr>

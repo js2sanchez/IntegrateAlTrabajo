@@ -52,3 +52,8 @@ C:\Users\Desarrollador\Desktop\IntegrateAlTrabajo\IntegrateAlTrabajo-master\ITCR
 C:\Users\Desarrollador\Desktop\IntegrateAlTrabajo\IntegrateAlTrabajo-master\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Datos\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\Desarrollador\Desktop\IntegrateAlTrabajo\IntegrateAlTrabajo-master\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Datos\obj\Debug\ITCR.IntegrateAlTrabajo.Datos.dll
 C:\Users\Desarrollador\Desktop\IntegrateAlTrabajo\IntegrateAlTrabajo-master\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Datos\obj\Debug\ITCR.IntegrateAlTrabajo.Datos.pdb
+C:\Users\Desarrollador\Downloads\IntegrateAlTrabajo-master prueba 6\IntegrateAlTrabajo-master prueba 6\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Datos\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.dll
+C:\Users\Desarrollador\Downloads\IntegrateAlTrabajo-master prueba 6\IntegrateAlTrabajo-master prueba 6\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Datos\bin\Debug\ITCR.IntegrateAlTrabajo.Datos.pdb
+C:\Users\Desarrollador\Downloads\IntegrateAlTrabajo-master prueba 6\IntegrateAlTrabajo-master prueba 6\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Datos\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Desarrollador\Downloads\IntegrateAlTrabajo-master prueba 6\IntegrateAlTrabajo-master prueba 6\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Datos\obj\Debug\ITCR.IntegrateAlTrabajo.Datos.dll
+C:\Users\Desarrollador\Downloads\IntegrateAlTrabajo-master prueba 6\IntegrateAlTrabajo-master prueba 6\ITCR.IntegrateAlTrabajo\ITCR.IntegrateAlTrabajo.Datos\obj\Debug\ITCR.IntegrateAlTrabajo.Datos.pdb

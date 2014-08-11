@@ -34,6 +34,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
         private static ArrayList ListaIdiomas = new ArrayList();
 
+
         #region Constantes
 
         protected readonly static string[] MESES_ESPANIOL = {"Enero","Febrero","Marzo","Abril","Mayo",
@@ -53,7 +54,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 mvRegistroAdultoMayor.ActiveViewIndex = 0;
                 txtCedulaExt.Visible = false;
                 cargarTodosDropDownList();
-                ViewState["MesValido"] = ViewState["DiaValido"] = true;                
+                ViewState["MesValido"] = ViewState["DiaValido"] = true;
+                HttpContext.Current.Session["onChangeRow"] = -1;
             }
         }
 
@@ -122,6 +124,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
         private void cargarDropDownListFechas(bool pPrimerAnnio)
         {
+            int currmes = DdlMesNacimiento.SelectedIndex;
             DdlMesNacimiento.Items.Clear();
             int meses = 12;
             if(pPrimerAnnio)
@@ -133,8 +136,13 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 ListItem mesItem =new ListItem(MESES_ESPANIOL[mes]);
                 DdlMesNacimiento.Items.Add(mesItem);
             }
+            if (meses>currmes)
+            {
+                DdlMesNacimiento.SelectedIndex = currmes;
+            }
             bool ultimoMes = meses == 1;
-            cargarDropDownListDias(1,int.Parse(DdlAnioNacimiento.SelectedItem.Text),pPrimerAnnio&&ultimoMes);
+            if (currmes < 0) { currmes = 0; }
+            cargarDropDownListDias(currmes+1,int.Parse(DdlAnioNacimiento.SelectedItem.Text),pPrimerAnnio&&ultimoMes);
             
         }
 
@@ -259,6 +267,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
         protected void btnSiguiente3_Click(object sender, EventArgs e)
         {
+            actualizarDgEstudios();
+            HttpContext.Current.Session["onChangeRow"] = -1;
             btnCancelarActualizarExperiencia.Visible = false;
             mvRegistroAdultoMayor.ActiveViewIndex = 3;
         }
@@ -266,6 +276,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         //Experiencias laborales
         protected void btnSiguiente4_Click(object sender, EventArgs e)
         {
+            actualizarDgExperienciasLaborales();
+            HttpContext.Current.Session["onChangeRow"] = -1;
             mvRegistroAdultoMayor.ActiveViewIndex = 4;
         }
 
@@ -570,13 +582,20 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         {
             if (e.CommandName == "Editar")
             {
-                txtInstitucionEstudio.Text = e.Item.Cells[0].Text;
-                txtTituloEstudio.Text = e.Item.Cells[1].Text;
                 EstudioEnModificacion = e.Item.ItemIndex;
+                if (((int)HttpContext.Current.Session["onChangeRow"]) >= 0 && 
+                    ((int)HttpContext.Current.Session["onChangeRow"]) < e.Item.ItemIndex)
+                {
+                    EstudioEnModificacion--;
+                }
+                actualizarDgEstudios();
+                txtInstitucionEstudio.Text = e.Item.Cells[0].Text;
+                txtTituloEstudio.Text = e.Item.Cells[1].Text;                
                 btnActualizarEstudio.Visible = true;
                 btnAgregarEstudio.Visible = false;
                 btnCancelarAgregarEstudio.Visible = false;
                 btnCancelarActualizarEstudio.Visible = true;
+                HttpContext.Current.Session["onChangeRow"] = -1;
             }
             else if (e.CommandName == "Eliminar")
             {
@@ -584,17 +603,19 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
             }
         }
-
+        
         [WebMethod]
         public static void eliminarEstudio(int index)
         {
             ListaEstudios.RemoveAt(index);
+            HttpContext.Current.Session["onChangeRow"] = index;
         }
 
         [WebMethod]
         public static void eliminarExperiencia(int index)
         {
             ListaExperienciasLaborales.RemoveAt(index);
+            HttpContext.Current.Session["onChangeRow"] = index;
         }
         
         protected void btnActualizarEstudio_Click(object sender, EventArgs e)
@@ -634,17 +655,24 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         {
             if (e.CommandName == "Editar")
             {
-                txtEmpresa.Text = e.Item.Cells[0].Text;
-                txtPuesto.Text = e.Item.Cells[1].Text;
                 ExperienciaEnModificacion = e.Item.ItemIndex;
+                if (((int)HttpContext.Current.Session["onChangeRow"])>=0 && 
+                    ((int)HttpContext.Current.Session["onChangeRow"]) < e.Item.ItemIndex)
+                {
+                    ExperienciaEnModificacion--;
+                }
+                actualizarDgExperienciasLaborales();
+                txtEmpresa.Text = e.Item.Cells[0].Text;
+                txtPuesto.Text = e.Item.Cells[1].Text;                
                 btnActualizarExperienciaLaboral.Visible = true;
                 btnAgregarExperienciaLaboral.Visible = false;
                 btnCancelarActualizarExperiencia.Visible = true;
                 btnCancelarAgregarExperiencia.Visible = false;
+                HttpContext.Current.Session["onChangeRow"] = -1;
             }
             else if (e.CommandName == "Eliminar")
             {
-                string code = @"<script type='text/javascript'>eliminarExperiencia(" + e.Item.ItemIndex + ";</script>";
+                string code = @"<script type='text/javascript'>eliminarExperiencia(" + e.Item.ItemIndex +");</script>";
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);  
             }
         }

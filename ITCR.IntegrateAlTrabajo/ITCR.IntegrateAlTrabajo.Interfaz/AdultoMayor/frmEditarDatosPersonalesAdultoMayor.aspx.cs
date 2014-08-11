@@ -26,8 +26,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         private void cargarDropDownListSexo()
         {
             drpSexo.Items.Clear();
-            ListItem ItemSexo1 = new ListItem("M");
-            ListItem ItemSexo2 = new ListItem("F");
+            ListItem ItemSexo1 = new ListItem("Masculino");
+            ListItem ItemSexo2 = new ListItem("Femenino");
             drpSexo.Items.Add(ItemSexo1);
             drpSexo.Items.Add(ItemSexo2);
         }

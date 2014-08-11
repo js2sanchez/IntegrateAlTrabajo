@@ -101,9 +101,8 @@
                             </td>
                             <td class="style6">
                                 <asp:TextBox ID="txtTelefonoCelular" runat="server"></asp:TextBox>
-                                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtTelefonoCelular"
-                                    ErrorMessage="El número de teléfono secundario (Solo debe contener números) introducido es inválido." ForeColor="Red" ValidationExpression="([0-9]*)"
+                                    ErrorMessage="El número de teléfono secundario (Sólo debe contener números) introducido es inválido." ForeColor="Red" ValidationExpression="([0-9]*)"
                                     ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                             </td>
                         </tr>
@@ -203,7 +202,7 @@
                             <td class="style27">
                                 <asp:TextBox ID="txtTelefonoHabitacion" runat="server"></asp:TextBox>
                                 <asp:RegularExpressionValidator ID="revTelefonoHabitacion" runat="server" ControlToValidate="txtTelefonoHabitacion"
-                                    ErrorMessage="El número de teléfono principal (Solo debe contener números) introducido es inválido." ForeColor="Red" ValidationExpression="([0-9]*)"
+                                    ErrorMessage="El número de teléfono principal (Sólo debe contener números) introducido es inválido." ForeColor="Red" ValidationExpression="([0-9]*)"
                                     ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                             </td>
                             <td class="style31">

@@ -4,7 +4,7 @@
    <script id="clientEventHandlersJS" language="javascript" type="text/javascript">
 
        function confirmarBorradoEstudio() {
-           if (confirm("¿Está seguro que desea borrar este estudio? Los cambios son irreversibles.", "Confirmación de borrado") == true)
+           if (confirm("¿Está seguro que desea eliminar esta fila de estudios?", "Confirmación de borrado") == true)
                return true;
            else
                return false;
@@ -107,7 +107,7 @@
             <td class="style4">
             </td>
             <td class="style5" colspan="2">
-                <asp:Label ID="lblEditarEstudios" runat="server" Text="Editar estudios" 
+                <asp:Label ID="lblEditarEstudios" runat="server" Text="Editar formación académica" 
                     CssClass="Titulo1"></asp:Label>
             </td>
             <td class="style7">
