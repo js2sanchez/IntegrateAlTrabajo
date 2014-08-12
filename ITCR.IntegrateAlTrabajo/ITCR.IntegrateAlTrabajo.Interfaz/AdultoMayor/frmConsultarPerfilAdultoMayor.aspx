@@ -59,26 +59,6 @@
             width: 100px;
             height: 25px;
         }
-        .style26
-        {
-            height: 25px;
-            width: 112px;
-        }
-        .style27
-        {
-            width: 294px;
-            height: 25px;
-        }
-        .style28
-        {
-            width: 27px;
-            height: 25px;
-        }
-        .style29
-        {
-            width: 116px;
-            height: 25px;
-        }
         .style30
         {
             width: 115px;
@@ -118,14 +98,34 @@
             width: 298px;
             height: 25px;
         }
-        .style45
-        {
-            width: 335px;
-            height: 25px;
-        }
         .style46
         {
             width: 375px;
+            height: 25px;
+        }
+        .style48
+        {
+            width: 203px;
+            height: 25px;
+        }
+        .style50
+        {
+            width: 251px;
+            height: 25px;
+        }
+        .style51
+        {
+            width: 19px;
+            height: 25px;
+        }
+        .style52
+        {
+            width: 144px;
+            height: 25px;
+        }
+        .style53
+        {
+            width: 182px;
             height: 25px;
         }
     </style>
@@ -175,9 +175,9 @@
                                 <asp:Label ID="lblDatosPersonales" runat="server" Text="Datos personales" 
                                     CssClass="Titulo2"></asp:Label>
                             </td>
-                            <td class="style28">
+                            <td class="style51">
                             </td>
-                            <td class="style29">
+                            <td class="style53">
                             </td>
                             <td class="style6">
                                 <asp:Panel ID="PanelEditarDatosPersonales" runat="server" 
@@ -189,31 +189,31 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="style26">
+                            <td class="style48">
                                 <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
                             </td>
-                            <td class="style27">
+                            <td class="style50">
                                 <asp:Label ID="lblNombreDato" runat="server"></asp:Label>
                             </td>
-                            <td class="style28">
+                            <td class="style51">
                                 &nbsp;</td>
-                            <td class="style29">
-                                <asp:Label ID="lblTelefonoCelular" runat="server" Text="Teléfono celular"></asp:Label>
+                            <td class="style53">
+                                <asp:Label ID="lblTelefonoCelular" runat="server" Text="Teléfono secundario"></asp:Label>
                             </td>
                             <td class="style6">
                                 <asp:Label ID="lblTelefonoCelularDato" runat="server"></asp:Label>
                             </td>
                         </tr>
                         <tr>
-                            <td class="style26">
+                            <td class="style48">
                                 <asp:Label ID="lblApellido1" runat="server" Text="Primer apellido"></asp:Label>
                             </td>
-                            <td class="style27">
+                            <td class="style50">
                                 <asp:Label ID="lblApellido1Dato" runat="server"></asp:Label>
                             </td>
-                            <td class="style28">
+                            <td class="style51">
                                 &nbsp;</td>
-                            <td class="style29">
+                            <td class="style53">
                                 <asp:Label ID="lblCorreoElectronico" runat="server" Text="Correo electrónico"></asp:Label>
                             </td>
                             <td class="style6">
@@ -221,15 +221,15 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="style26">
+                            <td class="style48">
                                 <asp:Label ID="lblApellido2" runat="server" Text="Segundo apellido"></asp:Label>
                             </td>
-                            <td class="style27">
+                            <td class="style50">
                                 <asp:Label ID="lblApellido2Dato" runat="server"></asp:Label>
                             </td>
-                            <td class="style28">
+                            <td class="style51">
                                 &nbsp;</td>
-                            <td class="style29">
+                            <td class="style53">
                                 <asp:Label ID="lblProvincia" runat="server" Text="Provincia"></asp:Label>
                             </td>
                             <td class="style6">
@@ -237,15 +237,15 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="style26">
+                            <td class="style48">
                                 <asp:Label ID="lblSexo" runat="server" Text="Sexo"></asp:Label>
                             </td>
-                            <td class="style27">
+                            <td class="style50">
                                 <asp:Label ID="lblSexoDato" runat="server"></asp:Label>
                             </td>
-                            <td class="style28">
+                            <td class="style51">
                                 &nbsp;</td>
-                            <td class="style29">
+                            <td class="style53">
                                 <asp:Label ID="lblCanton" runat="server" Text="Cantón"></asp:Label>
                             </td>
                             <td class="style6">
@@ -253,15 +253,15 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="style26">
+                            <td class="style48">
                                 <asp:Label ID="lblCedula" runat="server" Text="Cédula"></asp:Label>
                             </td>
-                            <td class="style27">
+                            <td class="style50">
                                 <asp:Label ID="lblCedulaDato" runat="server"></asp:Label>
                             </td>
-                            <td class="style28">
+                            <td class="style51">
                                 &nbsp;</td>
-                            <td class="style29">
+                            <td class="style53">
                                 <asp:Label ID="lblDistrito" runat="server" Text="Distrito"></asp:Label>
                             </td>
                             <td class="style6">
@@ -269,30 +269,30 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="style26">
+                            <td class="style48">
                                 <asp:Label ID="lblFechaNacimiento" runat="server" Text="Fecha de nacimiento"></asp:Label>
                             </td>
-                            <td class="style27">
+                            <td class="style50">
                                 <asp:Label ID="lblFechaNacimientoDato" runat="server"></asp:Label>
                             </td>
-                            <td class="style28">
+                            <td class="style51">
                                 &nbsp;</td>
-                            <td class="style29">
+                            <td class="style53">
                                 &nbsp;</td>
                             <td class="style6">
                                 &nbsp;</td>
                         </tr>
                         <tr>
-                            <td class="style26">
+                            <td class="style48">
                                 <asp:Label ID="lblTelefonoHabitacion" runat="server" 
-                                    Text="Teléfono de habitación"></asp:Label>
+                                    Text="Teléfono primario"></asp:Label>
                             </td>
-                            <td class="style27">
+                            <td class="style50">
                                 <asp:Label ID="lblTelefonoHabitacionDato" runat="server"></asp:Label>
                             </td>
-                            <td class="style28">
+                            <td class="style51">
                                 &nbsp;</td>
-                            <td class="style29">
+                            <td class="style53">
                                 &nbsp;</td>
                             <td class="style6">
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
@@ -538,101 +538,5 @@
             <td class="style5">
                 &nbsp;</td>
         </tr>
-        <tr>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style25">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style25">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style25">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style25">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style25">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style25">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style25">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style25">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style25">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style25">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style25">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style25">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-        </tr>
-    </table>
+        </table>
 </asp:Content>

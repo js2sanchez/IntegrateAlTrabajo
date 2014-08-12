@@ -67,24 +67,17 @@
         {
             height: 25px;
             }
-        .style26
+        .style30
         {
-            width: 109px;
             height: 25px;
         }
-        .style27
+        .style31
         {
-            width: 298px;
+            width: 286px;
             height: 25px;
         }
-        .style28
+        .style32
         {
-            width: 27px;
-            height: 25px;
-        }
-        .style29
-        {
-            width: 117px;
             height: 25px;
         }
         </style>
@@ -108,6 +101,16 @@
             </td>
             <td class="style8">
             </td>
+        </tr>
+        <tr>
+            <td class="style4">
+                &nbsp;</td>
+            <td class="style5" colspan="5">
+                <asp:ValidationSummary ID="vsExperienciasLaborales" runat="server" 
+                    ForeColor="#CC0000" ValidationGroup="gvExperienciasLaborales" />
+            </td>
+            <td class="style8">
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="style4">
@@ -137,40 +140,40 @@
                                         BorderWidth="2px">
                                     <table class="style14">
                                         <tr>
-                                            <td class="style26">
-                                                <asp:Label ID="lblEmpresa" runat="server" Text="Empresa"></asp:Label>
+                                            <td class="style31">
+                                                <asp:Label ID="lblPuesto" runat="server" Text="Puesto laboral"></asp:Label>
                                             </td>
-                                            <td class="style27">
-                                                <asp:TextBox ID="txtEmpresa" runat="server" Width="413px"></asp:TextBox>
-                                            </td>
-                                            <td class="style28">
-                                                <asp:RequiredFieldValidator ID="rfvEmpresa" runat="server" ControlToValidate="txtEmpresa" ErrorMessage="La empresa es un dato requerido." ForeColor="Red" ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="style29">
-                                                <asp:Label ID="lblPuesto" runat="server" Text="Puesto"></asp:Label>
-                                            </td>
-                                            <td class="style27">
+                                            <td class="style32">
                                                 <asp:TextBox ID="txtPuesto" runat="server" Height="26px" Width="414px"></asp:TextBox>
-                                            </td>
-                                            <td class="style28">
-                                                <asp:RequiredFieldValidator ID="rfvPuesto" runat="server" ControlToValidate="txtPuesto" ErrorMessage="El puesto es un dato requerido." ForeColor="Red" ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
+                                                <asp:RequiredFieldValidator ID="rfvPuesto" runat="server" 
+                                                    ControlToValidate="txtPuesto" ErrorMessage="El puesto es un dato requerido." 
+                                                    ForeColor="Red" ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td class="style26">
-                                                &nbsp;</td>
-                                            <td class="style27">
-                                                &nbsp;</td>
-                                            <td class="style28">
-                                                &nbsp;</td>
-                                            <td class="style11">
+                                            <td class="style31">
+                                                <asp:Label ID="lblEmpresa" runat="server" 
+                                                    Text="Empresa o institución en la que laboró"></asp:Label>
+                                            </td>
+                                            <td class="style32">
+                                                <asp:TextBox ID="txtEmpresa" runat="server" Width="413px"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="rfvEmpresa" runat="server" 
+                                                    ControlToValidate="txtEmpresa" ErrorMessage="La empresa es un dato requerido." 
+                                                    ForeColor="Red" ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="style30" colspan="2">
                                                 <asp:Panel ID="PanelBotonActualizar" runat="server" HorizontalAlign="Right">
-                                                    <asp:Button ID="btnAgregar" runat="server" onclick="btnAgregar_Click" 
-                                                        Text="Agregar" CssClass="Boton" />
-                                                    <asp:Button ID="btnActualizar" runat="server" onclick="btnActualizar_Click" 
-                                                        Text="Actualizar" CssClass="Boton" />
+                                                    <asp:Button ID="btnCancelarAgregar" runat="server" CssClass="Boton" 
+                                                        onclick="btnCancelarAgregar_Click" Text="Cancelar" />
+                                                    &nbsp;&nbsp;<asp:Button ID="btnCancelarActualizar" runat="server" CssClass="Boton" 
+                                                        Text="Cancelar" onclick="btnCancelarActualizar_Click" />
+                                                    &nbsp;&nbsp;<asp:Button ID="btnAgregar" runat="server" CssClass="Boton" 
+                                                        onclick="btnAgregar_Click" Text="Agregar" />
+                                                    &nbsp;
+                                                    <asp:Button ID="btnActualizar" runat="server" CssClass="Boton" 
+                                                        onclick="btnActualizar_Click" Text="Actualizar" />
                                                 </asp:Panel>
                                             </td>
                                         </tr>
@@ -263,197 +266,5 @@
             <td class="style8">
                 &nbsp;</td>
         </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-        </tr>
-    </table>
+        </table>
 </asp:Content>

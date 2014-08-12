@@ -231,21 +231,5 @@
             <td class="style4">
                 &nbsp;</td>
         </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-    </table>
+        </table>
 </asp:Content>

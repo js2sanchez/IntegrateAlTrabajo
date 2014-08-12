@@ -16,8 +16,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         {
             if (!IsPostBack)
             {
-                btnAgregar.Visible = true;
                 btnActualizar.Visible = false;
+                btnCancelarActualizar.Visible = false;
+                btnAgregar.Visible = true;
+                btnCancelarAgregar.Visible = true;
                 cargarDataGridExperienciasLaborales();
             }
         }
@@ -67,22 +69,27 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
-            cIATExperienciaLaboralNegocios ExperienciaLaboral = new cIATExperienciaLaboralNegocios(1, "A", 2, "B");
-            ExperienciaLaboral.Id_ExperienciaLaboral = Int16.Parse(Session["Id_ExperienciaLaboral"].ToString());
-            ExperienciaLaboral.Empresa = txtEmpresa.Text;
-            ExperienciaLaboral.Puesto = txtPuesto.Text;
-            ExperienciaLaboral.FK_IdPersona = Int16.Parse(Session["Id_Persona"].ToString());
+            Validate("gvExperienciasLaborales");
 
-            ExperienciaLaboral.Actualizar();
+            if (Page.IsValid)
+            {
+                cIATExperienciaLaboralNegocios ExperienciaLaboral = new cIATExperienciaLaboralNegocios(1, "A", 2, "B");
+                ExperienciaLaboral.Id_ExperienciaLaboral = Int16.Parse(Session["Id_ExperienciaLaboral"].ToString());
+                ExperienciaLaboral.Empresa = txtEmpresa.Text;
+                ExperienciaLaboral.Puesto = txtPuesto.Text;
+                ExperienciaLaboral.FK_IdPersona = Int16.Parse(Session["Id_Persona"].ToString());
 
-            txtEmpresa.Text = "";
-            txtPuesto.Text = "";
-            txtEmpresa.Focus();
+                ExperienciaLaboral.Actualizar();
 
-            btnAgregar.Visible = true;
-            btnActualizar.Visible = false;
+                txtEmpresa.Text = "";
+                txtPuesto.Text = "";
+                txtEmpresa.Focus();
 
-            cargarDataGridExperienciasLaborales();
+                btnAgregar.Visible = true;
+                btnActualizar.Visible = false;
+
+                cargarDataGridExperienciasLaborales();
+            }
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
@@ -115,7 +122,9 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 txtPuesto.Text = e.Item.Cells[2].Text;
 
                 btnActualizar.Visible = true;
+                btnCancelarActualizar.Visible = true;
                 btnAgregar.Visible = false;
+                btnCancelarAgregar.Visible = false;
             }
             else if (e.CommandName == "Eliminar")
             {
@@ -135,6 +144,22 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         protected void btnSalir_Click(object sender, EventArgs e)
         {
             Response.Redirect("frmConsultarPerfilAdultoMayor.aspx");
+        }
+
+        protected void btnCancelarAgregar_Click(object sender, EventArgs e)
+        {
+            txtPuesto.Text = "";
+            txtEmpresa.Text = "";
+        }
+
+        protected void btnCancelarActualizar_Click(object sender, EventArgs e)
+        {
+            txtPuesto.Text = "";
+            txtEmpresa.Text = "";
+            btnActualizar.Visible = false;
+            btnCancelarActualizar.Visible = false;
+            btnAgregar.Visible = true;
+            btnCancelarAgregar.Visible = true;
         }
 
     }
