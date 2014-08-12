@@ -97,24 +97,8 @@
             width: 172px;
             height: 25px;
         }
-        .auto-style9 {
-            height: 25px;
-            width: 530px;
-        }
         .auto-style13 {
             width: 351px;
-        }
-        .auto-style14 {
-            width: 358px;
-        }
-        .auto-style16 {
-            width: 384px;
-        }
-        .auto-style20 {
-            width: 472px;
-        }
-        .auto-style21 {
-            width: 530px;
         }
         .auto-style23 {
             width: 1065px;
@@ -125,9 +109,6 @@
         .auto-style25 {
             width: 1089px;
         }
-        .auto-style29 {
-            width: 1905px;
-        }
         .auto-style30 {
         }
         .auto-style32 {
@@ -137,10 +118,6 @@
         .auto-style33 {
             height: 25px;
             width: 339px;
-        }
-        .auto-style34 {
-            width: 22px;
-            height: 25px;
         }
         .auto-style35 {
             width: 6px;
@@ -189,6 +166,14 @@
         {
             height: 25px;
             width: 2817px;
+        }
+        .auto-style37 {
+            width: 240px;
+            height: 25px;
+        }
+        .auto-style38 {
+            height: 25px;
+            width: 256px;
         }
     </style>
 </asp:Content>
@@ -732,11 +717,11 @@
                                         BorderWidth="2px">
                                         <table class="style14">
                                             <tr>
-                                                <td class="style26">
-                                                    <asp:Label ID="lblInstitucion" runat="server" Text="Institución"></asp:Label>
+                                                <td class="auto-style37">
+                                                    <asp:Label ID="lblInstitucion" runat="server" Text="Título Académico"></asp:Label>
                                                 </td>
-                                                <td class="auto-style3">
-                                                    <asp:TextBox ID="txtInstitucionEstudio" runat="server" Width="528px"></asp:TextBox>
+                                                <td class="style11">
+                                                    <asp:TextBox ID="txtTituloEstudio" runat="server" TabIndex="1" Width="528px"></asp:TextBox>
                                                 </td>
                                                 <td class="style28">
                                                     <asp:RequiredFieldValidator ID="rfvInstitucionEstudio" runat="server" ControlToValidate="txtInstitucionEstudio" ErrorMessage="La institución es un dato requerido." ForeColor="Red" ValidationGroup="gvEstudios">*</asp:RequiredFieldValidator>
@@ -746,11 +731,11 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="style26">
-                                                    <asp:Label ID="lblTitulo" runat="server" Text="Título"></asp:Label>
+                                                <td class="auto-style37">
+                                                    <asp:Label ID="lblTitulo" runat="server" Text="Institución en la que recibió el título"></asp:Label>
                                                 </td>
-                                                <td class="auto-style3">
-                                                    <asp:TextBox ID="txtTituloEstudio" runat="server" Width="528px" TabIndex="1"></asp:TextBox>
+                                                <td class="style11">
+                                                    <asp:TextBox ID="txtInstitucionEstudio" runat="server" Width="528px"></asp:TextBox>
                                                 </td>
                                                 <td class="style28">
                                                     <asp:RequiredFieldValidator ID="rfvTituloEstudio" runat="server" ControlToValidate="txtTituloEstudio"
@@ -761,7 +746,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="style26">
+                                                <td class="auto-style37">
                                                     &nbsp;</td>
                                                 <td class="auto-style3" colspan="2">
                                                     <asp:Panel ID="PanelAgregar1" runat="server" HorizontalAlign="Right">
@@ -868,11 +853,11 @@
                                         BorderWidth="2px">
                                         <table class="style14">
                                             <tr>
-                                                <td class="auto-style3">
-                                                    <asp:Label ID="lblEmpresa" runat="server" Text="Empresa o institución"></asp:Label>
+                                                <td class="auto-style38">
+                                                    <asp:Label ID="lblEmpresa" runat="server" Text="Puesto laboral"></asp:Label>
                                                 </td>
                                                 <td class="style27">
-                                                    <asp:TextBox ID="txtEmpresa" runat="server" Width="458px"></asp:TextBox>
+                                                    <asp:TextBox ID="txtPuesto" runat="server" TabIndex="1" Width="460px"></asp:TextBox>
                                                 </td>
                                                 <td class="style28">
                                                     <asp:RequiredFieldValidator ID="rfvEmpresa" runat="server" ControlToValidate="txtEmpresa" ErrorMessage="La empresa es un dato requerido." ForeColor="Red" ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
@@ -882,11 +867,11 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="auto-style3">
-                                                    <asp:Label ID="lblPuesto" runat="server" Text="Puesto"></asp:Label>
+                                                <td class="auto-style38">
+                                                    <asp:Label ID="lblPuesto" runat="server" Text="Empresa o institución en la que laboró"></asp:Label>
                                                 </td>
                                                 <td class="style11">
-                                                    <asp:TextBox ID="txtPuesto" runat="server" Width="460px" TabIndex="1"></asp:TextBox>
+                                                    <asp:TextBox ID="txtEmpresa" runat="server" Width="460px"></asp:TextBox>
                                                 </td>
                                                 <td class="style28">
                                                     <asp:RequiredFieldValidator ID="rfvPuesto" runat="server" ControlToValidate="txtPuesto" ErrorMessage="El puesto es un dato requerido." ForeColor="Red" ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
@@ -896,7 +881,7 @@
                                                 </td>
                                             </tr>
                                             <tr>
-                                                <td class="style26">
+                                                <td class="auto-style38">
                                                     &nbsp;</td>
                                                 <td class="auto-style4" colspan="2">
                                                     <asp:Panel ID="PanelAgregar2" runat="server" HorizontalAlign="Right">
