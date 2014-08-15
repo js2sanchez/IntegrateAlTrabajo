@@ -562,7 +562,7 @@ EXEC dbo.pr_IATDistrito_Insertar "Duacarí",80,NULL,NULL;
 
 EXEC dbo.pr_IATIdioma_Insertar "Inglés", NULL, NULL;
 EXEC dbo.pr_IATIdioma_Insertar "Francés", NULL, NULL;
-EXEC dbo.pr_IATIdioma_Insertar "Portugés", NULL, NULL;
+EXEC dbo.pr_IATIdioma_Insertar "Portugués", NULL, NULL;
 EXEC dbo.pr_IATIdioma_Insertar "Mandarín", NULL, NULL;
 EXEC dbo.pr_IATIdioma_Insertar "Otro", NULL, NULL;
 
