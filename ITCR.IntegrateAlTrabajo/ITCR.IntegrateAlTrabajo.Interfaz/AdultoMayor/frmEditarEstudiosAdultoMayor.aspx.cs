@@ -18,6 +18,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             {
                 btnAgregar.Visible = true;
                 btnActualizar.Visible = false;
+                btnCancelarAgregar.Visible = true;
+                btnCancelarActualizar.Visible = false;
                 cargarDataGridEstudios();
             }
         }
@@ -74,7 +76,9 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 txtTituloEstudio.Text = e.Item.Cells[2].Text;
 
                 btnActualizar.Visible = true;
+                btnCancelarActualizar.Visible = true;
                 btnAgregar.Visible = false;
+                btnCancelarAgregar.Visible = false;
             }
             else if (e.CommandName == "Eliminar")
             {
@@ -88,22 +92,27 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
-            cIATEstudioNegocios Estudio = new cIATEstudioNegocios(1, "A", 2, "B");
-            Estudio.Id_Estudio = Int16.Parse(Session["Id_Estudio"].ToString());
-            Estudio.Institucion = txtInstitucionEstudio.Text;
-            Estudio.Titulo = txtTituloEstudio.Text;
-            Estudio.FK_IdPersona = Int16.Parse(Session["Id_Persona"].ToString());
+                        Validate("gvEstudios");
 
-            Estudio.Actualizar();
+                        if (Page.IsValid)
+                        {
+                            cIATEstudioNegocios Estudio = new cIATEstudioNegocios(1, "A", 2, "B");
+                            Estudio.Id_Estudio = Int16.Parse(Session["Id_Estudio"].ToString());
+                            Estudio.Institucion = txtInstitucionEstudio.Text;
+                            Estudio.Titulo = txtTituloEstudio.Text;
+                            Estudio.FK_IdPersona = Int16.Parse(Session["Id_Persona"].ToString());
 
-            txtInstitucionEstudio.Text = "";
-            txtTituloEstudio.Text = "";
-            txtInstitucionEstudio.Focus();
+                            Estudio.Actualizar();
 
-            btnAgregar.Visible = true;
-            btnActualizar.Visible = false;
+                            txtInstitucionEstudio.Text = "";
+                            txtTituloEstudio.Text = "";
+                            txtInstitucionEstudio.Focus();
 
-            cargarDataGridEstudios();
+                            btnAgregar.Visible = true;
+                            btnActualizar.Visible = false;
+
+                            cargarDataGridEstudios();
+                        }
         }
 
         protected void dgEstudios_ItemDataBound(object sender, DataGridItemEventArgs e)
@@ -136,6 +145,22 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         protected void btnSalir_Click(object sender, EventArgs e)
         {
             Response.Redirect("frmConsultarPerfilAdultoMayor.aspx");
+        }
+
+        protected void btnCancelarAgregar_Click(object sender, EventArgs e)
+        {
+            txtTituloEstudio.Text = "";
+            txtInstitucionEstudio.Text = "";
+        }
+
+        protected void btnCancelarActualizar_Click(object sender, EventArgs e)
+        {
+            txtTituloEstudio.Text = "";
+            txtInstitucionEstudio.Text = "";
+            btnActualizar.Visible = false;
+            btnCancelarActualizar.Visible = false;
+            btnAgregar.Visible = true;
+            btnCancelarAgregar.Visible = true;
         }
 
     }
