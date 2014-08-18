@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMaestraEmpresa.Master" AutoEventWireup="true" CodeBehind="frmPerfilEmpresa.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.Empresa.frmPerfilEmpresa" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+<link rel="stylesheet" href="../Styles/alertify.bootstrap.css" />
+    <link rel="stylesheet" href="../Styles/alertify.core.css" />
+    <link rel="stylesheet" href="../Styles/alertify.default.css" />
     <style type="text/css">
         .style3
         {
@@ -78,6 +81,50 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+<asp:ScriptManager ID="ScriptManagerMain"
+            runat="server"
+            EnablePageMethods="true" 
+            ScriptMode="Release" 
+            LoadScriptsBeforeUI="true">
+    </asp:ScriptManager>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript" src="../js/alertify.min.js"></script>   
+    <script type="text/javascript">        
+        function eliminarEmpresa(user) {
+            // custom OK and Cancel label
+            // default: OK, Cancel
+            alertify.set({ labels: {
+                ok: "Si, estoy seguro",
+                cancel: "No, deseo manterla"
+            }
+            });
+            // button labels will be "Accept" and "Deny"
+            alertify.confirm("¿Esta seguro que desea eliminar esta empresa?", function (e) {
+                if (e) {
+                    PageMethods.eliminarEmpresa(user, OnSuccess, OnError);                    
+                }
+            });
+        }
+
+        function OnSuccess(response) {
+            alertify.set({ labels: {
+                ok: "Aceptar",
+                cancel: "Cancelar"
+            }
+            });
+        alertify.alert("Se ha eliminado la empresa.");
+        location.href = "/Autenticacion/frmAutenticacion.aspx";
+        }
+        function OnError(error) {
+            alertify.set({ labels: {
+                ok: "Aceptar",
+                cancel: "Cancelar"
+            }
+            });
+            alert("Hubo un error. Inténtelo de nuevo. Error: " + error.toString());
+        }
+    </script> 
     <table class="style3">
         <tr>
             <td class="style12">

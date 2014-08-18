@@ -149,7 +149,7 @@
                                 <asp:Label ID="lblTelefonoCelular" runat="server" Text="Teléfono secundario"></asp:Label>
                             </td>
                             <td class="style6">
-                                <asp:TextBox ID="txtTelefonoCelular" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtTelefonoCelular" runat="server" MaxLength="8"></asp:TextBox>
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
                                     ControlToValidate="txtTelefonoCelular" 
                                     ErrorMessage="El número de teléfono secundario (Sólo debe contener números) introducido es inválido." 
@@ -251,7 +251,7 @@
                                     Text="Teléfono principal"></asp:Label>
                             </td>
                             <td class="style34">
-                                <asp:TextBox ID="txtTelefonoHabitacion" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtTelefonoHabitacion" runat="server" MaxLength="8"></asp:TextBox>
                                 <asp:RegularExpressionValidator ID="revTelefonoHabitacion" runat="server" 
                                     ControlToValidate="txtTelefonoHabitacion" 
                                     ErrorMessage="El número de teléfono principal (Sólo debe contener números) introducido es inválido." 

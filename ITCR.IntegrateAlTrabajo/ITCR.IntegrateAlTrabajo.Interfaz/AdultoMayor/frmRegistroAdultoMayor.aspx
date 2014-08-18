@@ -175,6 +175,10 @@
             height: 25px;
             width: 256px;
         }
+        .style57
+        {
+            width: 763px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceholderID="MainContent" runat="server">
@@ -342,7 +346,7 @@
                         <table class="style14">
                             <tr>
                                 <td class="style39" colspan="2">
-                                    <asp:Label ID="lblPaso1" runat="server" Text="Paso 1 de 6" CssClass="Titulo2"></asp:Label>
+                                    <asp:Label ID="lblPaso1" runat="server" Text="Paso 1 de 7" CssClass="Titulo2"></asp:Label>
                                 </td>
                                 <td class="style40" colspan="3">
                                     <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Right">
@@ -569,7 +573,7 @@
                         <table class="style14">
                             <tr>
                                 <td class="style54">
-                                    <asp:Label ID="lblPaso2" runat="server" Text="Paso 2 de 6" CssClass="Titulo2"></asp:Label>
+                                    <asp:Label ID="lblPaso2" runat="server" Text="Paso 2 de 7" CssClass="Titulo2"></asp:Label>
                                     
                                 </td>
                                 <td align="right" class="style52">
@@ -598,11 +602,11 @@
                             </tr>
                             <tr>
                                 <td class="style54">
-                                    <asp:Label ID="lblNombreUsuario" runat="server" Text="Nombre de usuario (Letras, números o guiones(-,_) permitidos)"></asp:Label>
+                                    <asp:Label ID="lblNombreUsuario" runat="server" Text="Nombre de usuario"></asp:Label>
                                 </td>
                                 <td class="style52">
                                     <asp:TextBox ID="txtNombreUsuario" runat="server" tooltip="Más de 5 caracteres" 
-                                        Width="213px"></asp:TextBox>
+                                        Width="260px" onblur="this.placeholder = '(Letras, números o guiones(-,_) permitidos)'" onfocus="this.placeholder = ''" placeholder="(Letras, números o guiones(-,_) permitidos)"></asp:TextBox>
                                     <asp:CustomValidator ID="cvValidarUsuario" runat="server" 
                                         ClientValidationFunction="validarUsuarioClient" 
                                         ErrorMessage="El usuario debe contener entre 5 a 50 caracteres." 
@@ -621,11 +625,11 @@
                             </tr>
                             <tr>
                                 <td class="style54">
-                                    <asp:Label ID="lblContraseña" runat="server" Text="Contraseña (Letras y números permitidos)"></asp:Label>
+                                    <asp:Label ID="lblContraseña" runat="server" Text="Contraseña"></asp:Label>
                                 </td>
                                 <td class="style52">
                                     <asp:TextBox ID="txtContraseña" runat="server" TabIndex="1" TextMode="Password" 
-                                        tooltip="Más de 8 caracteres" Width="213px"></asp:TextBox>
+                                        tooltip="Más de 8 caracteres" Width="260px" onblur="this.placeholder = '(Letras y números permitidos)'" onfocus="this.placeholder = ''" placeholder="(Letras y números permitidos)"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvContraseña" runat="server" 
                                         ControlToValidate="txtContraseña" 
                                         ErrorMessage="La contraseña es un dato requerido." ForeColor="Red" 
@@ -647,7 +651,7 @@
                                 </td>
                                 <td class="style52">
                                     <asp:TextBox ID="txtConfirmacionContraseña" runat="server" TabIndex="2" 
-                                        TextMode="Password" Width="213px"></asp:TextBox>
+                                        TextMode="Password" Width="260px"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvConfirmacionContraseña" runat="server" 
                                         ControlToValidate="txtConfirmacionContraseña" 
                                         ErrorMessage="Es necesario confirmar la contraseña." ForeColor="Red" 
@@ -665,7 +669,7 @@
                                 </td>
                                 <td class="style52">
                                     <asp:TextBox ID="txtIndicioContraseña" runat="server" TabIndex="3" 
-                                        Width="213px"></asp:TextBox>
+                                        Width="260px"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvIndicioContraseña" runat="server" 
                                         ControlToValidate="txtIndicioContraseña" 
                                         ErrorMessage="El indicio de contraseña es un dato requerido." ForeColor="Red" 
@@ -679,7 +683,7 @@
                         <table class="style14">
                             <tr>
                                 <td class="style24">
-                                    <asp:Label ID="lblPaso3" runat="server" Text="Paso 3 de 6" CssClass="Titulo2"></asp:Label>
+                                    <asp:Label ID="lblPaso3" runat="server" Text="Paso 3 de 7" CssClass="Titulo2"></asp:Label>
                                 </td>
                                 <td class="style25">
                                     &nbsp;</td>
@@ -722,12 +726,13 @@
                                                 </td>
                                                 <td class="style11">
                                                     <asp:TextBox ID="txtTituloEstudio" runat="server" TabIndex="1" Width="528px"></asp:TextBox>
-                                                </td>
-                                                <td class="style28">
-                                                    <asp:RequiredFieldValidator ID="rfvInstitucionEstudio" runat="server" ControlToValidate="txtInstitucionEstudio" ErrorMessage="La institución es un dato requerido." ForeColor="Red" ValidationGroup="gvEstudios">*</asp:RequiredFieldValidator>
-                                                    <asp:RegularExpressionValidator ID="RegEx_Institucion" runat="server" ControlToValidate="txtInstitucionEstudio"
-                                                    ErrorMessage="Institución inválida (Símbolos inválidos)." ForeColor="Red" ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)"
+                                                     <asp:RequiredFieldValidator ID="rfvTituloEstudio" runat="server" ControlToValidate="txtTituloEstudio"
+                                                    ErrorMessage="El título es un dato requerido." ForeColor="Red" ValidationGroup="gvEstudios">*</asp:RequiredFieldValidator>
+                                                    <asp:RegularExpressionValidator ID="RegEx_EstTitulo" runat="server" ControlToValidate="txtTituloEstudio"
+                                                    ErrorMessage="Título inválido (Símbolos inválidos)." ForeColor="Red" ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)"
                                                     ValidationGroup="gvEstudios">*</asp:RegularExpressionValidator>
+                                                </td>
+                                                <td class="style28">                                                   
                                                 </td>
                                             </tr>
                                             <tr>
@@ -736,13 +741,12 @@
                                                 </td>
                                                 <td class="style11">
                                                     <asp:TextBox ID="txtInstitucionEstudio" runat="server" Width="528px"></asp:TextBox>
+                                                    <asp:RequiredFieldValidator ID="rfvInstitucionEstudio" runat="server" ControlToValidate="txtInstitucionEstudio" ErrorMessage="La institución es un dato requerido." ForeColor="Red" ValidationGroup="gvEstudios">*</asp:RequiredFieldValidator>
+                                                    <asp:RegularExpressionValidator ID="RegEx_Institucion" runat="server" ControlToValidate="txtInstitucionEstudio"
+                                                    ErrorMessage="Institución inválida (Símbolos inválidos)." ForeColor="Red" ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)"
+                                                    ValidationGroup="gvEstudios">*</asp:RegularExpressionValidator> 
                                                 </td>
-                                                <td class="style28">
-                                                    <asp:RequiredFieldValidator ID="rfvTituloEstudio" runat="server" ControlToValidate="txtTituloEstudio"
-                                                    ErrorMessage="El título es un dato requerido." ForeColor="Red" ValidationGroup="gvEstudios">*</asp:RequiredFieldValidator>
-                                                    <asp:RegularExpressionValidator ID="RegEx_EstTitulo" runat="server" ControlToValidate="txtTituloEstudio"
-                                                    ErrorMessage="Título inválido (Símbolos inválidos)." ForeColor="Red" ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)"
-                                                    ValidationGroup="gvEstudios">*</asp:RegularExpressionValidator>
+                                                <td class="style28">                                                                                                   
                                                 </td>
                                             </tr>
                                             <tr>
@@ -822,7 +826,7 @@
                         <table class="style14">
                             <tr>
                                 <td class="style24" colspan="4">
-                                    <asp:Label ID="lblPaso4" runat="server" Text="Paso 4 de 6" CssClass="Titulo2"></asp:Label>
+                                    <asp:Label ID="lblPaso4" runat="server" Text="Paso 4 de 7" CssClass="Titulo2"></asp:Label>
                                 </td>                                
                                 <td class="auto-style23">
                                 <asp:Panel ID="Panel5" runat="server" HorizontalAlign="Right" 
@@ -959,7 +963,7 @@
                         <table class="style14">
                             <tr>
                                 <td class="style24">
-                                    <asp:Label ID="lblPaso5" runat="server" Text="Paso 5 de 6" CssClass="Titulo2"></asp:Label>
+                                    <asp:Label ID="lblPaso5" runat="server" Text="Paso 5 de 7" CssClass="Titulo2"></asp:Label>
                                 </td>
                                 <td class="style25">
                                     &nbsp;</td>
@@ -985,7 +989,7 @@
                             <tr>
                                 <td class="style24" colspan="2">
                                     <asp:Label ID="lblIdiomasPasatiempos" runat="server" 
-                                        Text="Idiomas y pasatiempos" CssClass="Titulo3"></asp:Label>
+                                        Text="Idiomas" CssClass="Titulo3"></asp:Label>
                                 </td>
                                 <td class="style17">
                                     &nbsp;</td>
@@ -1009,7 +1013,6 @@
                                                         <asp:ListItem>Inglés</asp:ListItem>
                                                         <asp:ListItem>Francés</asp:ListItem>
                                                         <asp:ListItem>Portugués</asp:ListItem>
-                                                        <asp:ListItem>Mandarín</asp:ListItem>
                                                         <asp:ListItem>Otro</asp:ListItem>
                                                     </asp:CheckBoxList>
                                                 </td>
@@ -1029,18 +1032,65 @@
                                     &nbsp;</td>
                                 <td class="style11">
                                     &nbsp;</td>
+                            </tr>                                                 
+                        </table>
+                    </asp:View>
+                    <br />
+                    <asp:View ID="vPaso6" runat="server">
+                        <table class="style14">
+                            <tr>
+                                <td class="style24">
+                                    <asp:Label ID="Label1" runat="server" Text="Paso 6 de 7" CssClass="Titulo2"></asp:Label>
+                                </td>
+                                <td class="style25">
+                                    &nbsp;</td>
+                                <td class="style17">
+                                </td>
+                                <td class="auto-style32">
+                                </td>
+                                <td class="style11">
+                                <asp:Panel ID="Panel7" runat="server" HorizontalAlign="Right">
+                                        <asp:Button ID="btnCancelar7" runat="server" CssClass="Boton" 
+                                            TabIndex="4" Text="Salir sin guardar" 
+                                            UseSubmitBehavior="False" onclick="btnCancelar7_Click" />
+                                        &nbsp;
+                                        <asp:Button ID="btnAtras7" runat="server" CssClass="Boton" 
+                                            Text="Atrás" UseSubmitBehavior="False" 
+                                            TabIndex="3" onclick="btnAtras7_Click" />
+                                        &nbsp;&nbsp;<asp:Button ID="btnSiguiente7" runat="server" CssClass="Boton" 
+                                            Text="Siguiente" UseSubmitBehavior="False" 
+                                            TabIndex="2" onclick="btnSiguiente7_Click" />
+                                    </asp:Panel>
+                                </td>
                             </tr>
+                            <tr>
+                                <td class="style24" colspan="2">
+                                    <asp:Label ID="Label2" runat="server" 
+                                        Text="Pasatiempo favorito" CssClass="Titulo3"></asp:Label>
+                                </td>
+                                <td class="style17">
+                                    &nbsp;</td>
+                                <td class="auto-style32">
+                                    &nbsp;</td>
+                                <td class="style11">
+                                    &nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td class="style24" colspan="5">
+                                    <asp:Panel ID="Panel8" runat="server" BorderStyle="Solid" 
+                                        BorderWidth="2px">
+                                        <table class="style14">
                             <tr>
                                 <td class="style24" colspan="5">
                                     <asp:Panel ID="PanelIdiomas0" runat="server" BorderStyle="Solid" 
                                         BorderWidth="2px">
                                         <table class="style14">
                                             <tr>
-                                                <td class="auto-style8">
-                                                    <asp:Label ID="lblPasatiempos" runat="server" Text="Pasatiempo favorito"></asp:Label>
+                                                <td colspan="3">
+                                                    <asp:Label ID="lblPasatiempos" runat="server" Text="¿Cuál es su pasatiempo favorito?"></asp:Label>
                                                 </td>
-                                                <td class="auto-style24">
-                                                    <asp:TextBox ID="txtPasatiempos" runat="server" Width="740px" 
+                                                <td>
+                                                    <asp:TextBox ID="txtPasatiempos" runat="server" Width="500px" 
                                                         tooltip="Escriba aquí pasatiempo principal" TabIndex="1"></asp:TextBox>
                                                     <asp:RegularExpressionValidator ID="RegEx_Pasatiempo" runat="server" ControlToValidate="txtPasatiempos"
                                                     ErrorMessage="Pasatiempo inválido (Símbolos inválidos)." ForeColor="Red" ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)"
@@ -1050,15 +1100,16 @@
                                         </table>
                                     </asp:Panel>
                                 </td>
-                            </tr>                            
+                            </tr>                                
                         </table>
+                        </asp:Panel></td></tr></table>
                     </asp:View>
                     <br />
-                    <asp:View ID="vPaso6" runat="server">
+                    <asp:View ID="vPaso7" runat="server">
                         <table class="style14">
                             <tr>
                                 <td class="auto-style30">
-                                    <asp:Label ID="lblPaso6" runat="server" Text="Paso 6 de 6" CssClass="Titulo2"></asp:Label>
+                                    <asp:Label ID="lblPaso7" runat="server" Text="Paso 7 de 7" CssClass="Titulo2"></asp:Label>
                                 </td>
                                 <td class="style25">
                                     &nbsp;</td>
@@ -1101,8 +1152,7 @@
                                             onclick="btnAtras6_Click" Text="Atrás" UseSubmitBehavior="False" 
                                             TabIndex="2" />
                                         &nbsp;&nbsp;<asp:Button ID="btnFinalizar" runat="server" CssClass="Boton"
-                                            onClick="btnFinalizar_Click" Text="Finalizar" disabled="true" 
-                                            TabIndex="1"/>
+                                            onClick="btnFinalizar_Click" Text="Finalizar" TabIndex="1"/>
                                     </asp:Panel>
                                     &nbsp;&nbsp;&nbsp;&nbsp;
                                     </td>
@@ -1137,8 +1187,8 @@
                             </tr>
                             <tr>
                                 <td class="auto-style30" colspan="5">
-                                    <asp:CheckBox ID="chkAceptarTerminos" runat="server" AutoPostBack="True" 
-                                        Checked="False" oncheckedchanged="chkAceptarTerminos_CheckedChanged" 
+                                    <asp:CheckBox ID="chkAceptarTerminos" runat="server" 
+                                        Checked="False"
                                         Text="Acepto los términos y condiciones anteriores (Necesario para finalizar)" />
                                 </td>
                             </tr>                            

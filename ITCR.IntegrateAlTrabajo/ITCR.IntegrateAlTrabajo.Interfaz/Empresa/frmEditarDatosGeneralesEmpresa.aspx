@@ -143,7 +143,7 @@
                                 <asp:Label ID="lblCedulaJuridica" runat="server" Text="Cédula Jurídica"></asp:Label>
                             </td>
                             <td class="style14">
-                                <asp:TextBox ID="txtCedulaE" runat="server" TextMode="Number" Width="300px" 
+                                <asp:TextBox ID="txtCedulaE" runat="server" Width="300px" 
                                     Enabled="False" TabIndex="1"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                                     ControlToValidate="txtCedulaE" 
@@ -162,7 +162,7 @@
                                 <asp:Label ID="lblDescripcion" runat="server" Text="Descripción"></asp:Label>
                             </td>
                             <td class="style14">
-                                <asp:TextBox ID="txtDscE" runat="server" TextMode="MultiLine" Enabled="False" 
+                                <asp:TextBox ID="txtDscE" runat="server" TextMode="MultiLine"
                                     Height="50px" Width="300px" TabIndex="2"></asp:TextBox>
                             </td>
                             <td class="style15">

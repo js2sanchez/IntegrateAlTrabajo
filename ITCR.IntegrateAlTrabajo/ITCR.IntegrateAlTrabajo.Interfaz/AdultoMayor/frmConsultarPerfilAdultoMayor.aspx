@@ -458,7 +458,7 @@
                     <table class="style9">
                         <tr>
                             <td class="style18" colspan="2">
-                                <asp:Label ID="lblOtros" runat="server" Text="Otros" CssClass="Titulo2"></asp:Label>
+                                <asp:Label ID="lblOtros" runat="server" Text="Idiomas" CssClass="Titulo2"></asp:Label>
                             </td>
                             <td class="style20">
                             </td>
@@ -489,16 +489,68 @@
                                                         <asp:ListItem>Inglés</asp:ListItem>
                                                         <asp:ListItem>Francés</asp:ListItem>
                                                         <asp:ListItem>Portugués</asp:ListItem>
-                                                        <asp:ListItem>Mandarín</asp:ListItem>
                                                         <asp:ListItem>Otro</asp:ListItem>
                                                     </asp:CheckBoxList>
                             </td>
                             <td>
-                                <asp:Button ID="btnEditarIdiomas" runat="server" Text="Editar idiomas" 
-                                    CssClass="Boton" Width="160px" onclick="btnEditarIdiomas_Click"/>
-                                <asp:Button ID="btnActualizarIdiomas" runat="server" Text="Actualizar Idiomas" CssClass="Boton" Width="160px" 
-                                    onclick="btnActualizarIdiomas_Click"/>
+                                <asp:ImageButton ID="ibtnEditarIdiomas" runat="server" 
+                                    Height="50px" ImageUrl="~/Multimedia/icono-editar.jpg" 
+                                    onclick="btnEditarIdiomas_Click" Width="50px" />
+                                    <asp:ImageButton ID="ibtnActualizarIdiomas" runat="server" 
+                                    Height="50px" ImageUrl="~/Multimedia/icono-check.jpg" 
+                                    onclick="btnActualizarIdiomas_Click" Width="50px" />
                             </td>
+                        </tr>                        
+                    </table>
+                </asp:Panel>
+            </td>
+            <td class="style5">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style5">
+                &nbsp;</td>
+            <td class="style25">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style8">
+                &nbsp;</td>
+            <td class="style25">
+                &nbsp;</td>
+            <td class="style7">
+                &nbsp;</td>
+            <td class="style5">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style5">
+                &nbsp;</td>
+            <td class="style6" colspan="5">
+                <asp:Panel ID="Panel2" runat="server" BorderStyle="Solid" BorderWidth="2px">
+                    <table class="style9">
+                        <tr>
+                            <td class="style18" colspan="2">
+                                <asp:Label ID="Label1" runat="server" Text="Pasatiempo favorito" CssClass="Titulo2"></asp:Label>
+                            </td>
+                            <td class="style20">
+                            </td>
+                            <td class="style46">
+                            </td>
+                            <td class="style6" width="165px">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style30">
+                                &nbsp;</td>
+                            <td class="style44">
+                                &nbsp;</td>
+                            <td class="style20">
+                                &nbsp;</td>
+                            <td class="style46">
+                                &nbsp;</td>
+                            <td class="style6">
+                                &nbsp;</td>
                         </tr>
                         <tr>
                             <td class="style30">
@@ -508,12 +560,13 @@
                                 <asp:Label ID="lblPasatiemposDato" runat="server"></asp:Label>
                                 <asp:TextBox ID="txtPasatiempo" runat="server" Width="100%" />
                             </td>
-                            <td>
-                                <asp:Button ID="btnEditarPasatiempo" runat="server" Text="Editar pasatiempo" 
-                                    CssClass="Boton" Width="160px" onclick="btnEditarPasatiempo_Click"/>
-                                <asp:Button ID="btnActualizarPasatiempo" runat="server" 
-                                    Text="Actualizar pasatiempo" CssClass="Boton" Width="160px" 
-                                    onclick="btnActualizarPasatiempo_Click"/>
+                            <td>                                
+                                    <asp:ImageButton ID="ibtnEditarPasatiempo" runat="server" 
+                                    Height="50px" ImageUrl="~/Multimedia/icono-editar.jpg" 
+                                    onclick="btnEditarPasatiempo_Click" Width="50px" />
+                                    <asp:ImageButton ID="ibtnActualizarPasatiempo" runat="server" 
+                                    Height="50px" ImageUrl="~/Multimedia/icono-check.jpg" 
+                                    onclick="btnActualizarPasatiempo_Click" Width="50px" />
                             </td>
                         </tr>
                     </table>

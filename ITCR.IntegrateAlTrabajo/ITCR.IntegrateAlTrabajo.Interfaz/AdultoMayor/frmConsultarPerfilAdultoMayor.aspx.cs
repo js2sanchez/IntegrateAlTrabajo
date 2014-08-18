@@ -22,8 +22,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             {
                 //Edicion
                 txtPasatiempo.Visible = false;                
-                btnActualizarIdiomas.Visible = false;
-                btnActualizarPasatiempo.Visible = false;
+                ibtnActualizarIdiomas.Visible = false;
+                ibtnActualizarPasatiempo.Visible = false;
                 //Comprobar sesion
                 if (Session["Nombre_Usuario"] == null)
                 {
@@ -263,18 +263,18 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         {
             Response.Redirect("frmEditarExperienciasLaboralesAdultoMayor.aspx");
         }
-
-        protected void btnEditarIdiomas_Click(object sender, EventArgs e)
+    
+        protected void btnEditarIdiomas_Click(object sender, ImageClickEventArgs e)
         {
-            btnActualizarIdiomas.Visible = true;
-            btnEditarIdiomas.Visible = false;
+            ibtnActualizarIdiomas.Visible = true;
+            ibtnEditarIdiomas.Visible = false;
             chkIdiomas.Enabled = true;
         }
 
-        protected void btnActualizarIdiomas_Click(object sender, EventArgs e)
+        protected void btnActualizarIdiomas_Click(object sender, ImageClickEventArgs e)
         {
-            btnActualizarIdiomas.Visible = false;
-            btnEditarIdiomas.Visible = true;
+            ibtnActualizarIdiomas.Visible = false;
+            ibtnEditarIdiomas.Visible = true;
             //Base de datos
             cIATIdiomaXPersonaNegocios IdiomaXPersona = new cIATIdiomaXPersonaNegocios(1, "A", 2, "B");
             cargarUsuario();
@@ -304,36 +304,36 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                         IdiomaXPersona.FK_IdIdioma = IdIdioma;
                         IdiomaXPersona.Insertar();
                         ListaIdiomas.Add(idiomat.Text);
-                    }                   
+                    }
                 }
             }
             cargarIdiomas();
             chkIdiomas.Enabled = false;
-            //           
+            // 
         }
 
-        protected void btnEditarPasatiempo_Click(object sender, EventArgs e)
+        protected void btnEditarPasatiempo_Click(object sender, ImageClickEventArgs e)
         {
             txtPasatiempo.Text = lblPasatiemposDato.Text;
             txtPasatiempo.Visible = true;
-            btnEditarPasatiempo.Visible = false;
-            btnActualizarPasatiempo.Visible = true;
+            ibtnEditarPasatiempo.Visible = false;
+            ibtnActualizarPasatiempo.Visible = true;
             lblPasatiemposDato.Visible = false;
         }
 
-        protected void btnActualizarPasatiempo_Click(object sender, EventArgs e)
+        protected void btnActualizarPasatiempo_Click(object sender, ImageClickEventArgs e)
         {
             lblPasatiemposDato.Text = txtPasatiempo.Text;
             txtPasatiempo.Visible = false;
-            btnEditarPasatiempo.Visible = true;
-            btnActualizarPasatiempo.Visible = false;
+            ibtnEditarPasatiempo.Visible = true;
+            ibtnActualizarPasatiempo.Visible = false;
             lblPasatiemposDato.Visible = true;
             cargarUsuario();
             DataTable TablaPersona = Persona.Buscar();
 
             if (TablaPersona.Rows.Count > 0)
             {
-                Persona.Id_Persona = Int16.Parse(TablaPersona.Rows[0]["Id_Persona"].ToString());                
+                Persona.Id_Persona = Int16.Parse(TablaPersona.Rows[0]["Id_Persona"].ToString());
             }
 
             Persona.Nom_Persona = TablaPersona.Rows[0]["Nom_Persona"].ToString(); ;
@@ -346,7 +346,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             Persona.Pasatiempos = txtPasatiempo.Text;
 
             Persona.Actualizar();
-
         }
     }
 }

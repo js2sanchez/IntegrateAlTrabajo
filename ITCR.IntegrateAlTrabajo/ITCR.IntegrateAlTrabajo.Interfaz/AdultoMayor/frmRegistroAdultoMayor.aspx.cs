@@ -77,6 +77,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             ListItem ItemNacionalidad2 = new ListItem("Extranjero");
             ddlNacionalidad.Items.Add(ItemNacionalidad1);
             ddlNacionalidad.Items.Add(ItemNacionalidad2);
+            ddlNacionalidad.SelectedIndex = 0;
         }
 
         private void cargarDropDownListProvincias()
@@ -284,24 +285,16 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         //Idiomas y pasatiempos
         protected void btnSiguiente5_Click(object sender, EventArgs e)
         {
-            Validate("gvPasatiempos");
 
-            if(Page.IsValid)
+            for (int ContadorIdiomas = 0; ContadorIdiomas < chkIdiomas.Items.Count; ContadorIdiomas++)
             {
-            
-                for (int ContadorIdiomas = 0; ContadorIdiomas < chkIdiomas.Items.Count; ContadorIdiomas++)
+                if (chkIdiomas.Items[ContadorIdiomas].Selected)
                 {
-                    if (chkIdiomas.Items[ContadorIdiomas].Selected)
-                    {
-                        ListaIdiomas.Add(chkIdiomas.Items[ContadorIdiomas].Text);
-                    }
+                    ListaIdiomas.Add(chkIdiomas.Items[ContadorIdiomas].Text);
                 }
-
-                Persona.Pasatiempos = txtPasatiempos.Text;
-
-                mvRegistroAdultoMayor.ActiveViewIndex = 5;
-                chkAceptarTerminos_CheckedChanged(sender, e);
             }
+
+            mvRegistroAdultoMayor.ActiveViewIndex = 5;
     }
 
         protected void drpProvincia_SelectedIndexChanged(object sender, EventArgs e)
@@ -389,98 +382,92 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             dgExperienciasLaborales.DataBind();
             
         }      
-        
-
-        protected void chkAceptarTerminos_CheckedChanged(object sender, EventArgs e)
-        {
-            bool _checked = chkAceptarTerminos.Checked;
-            if (_checked)
-            {
-                btnFinalizar.Attributes.Remove("disabled");
-                btnFinalizar.Attributes["onclick"] = "btnFinalizar_Click";
-            }
-            else
-            {
-                btnFinalizar.Attributes["disabled"] = "true";
-            }
-            
-        }
-
+                
         protected void btnFinalizar_Click(object sender, EventArgs e)
         {
-            Usuario.Insertar();
-            DataTable TablaUsuario = Usuario.Buscar();
-
-            Int16 IdUsuario = 0;
-
-            if (TablaUsuario.Rows.Count > 0)
+            if (chkAceptarTerminos.Checked)
             {
-                IdUsuario = Int16.Parse(TablaUsuario.Rows[0]["Id_Usuario"].ToString());
-            }
+                Usuario.Insertar();
+                DataTable TablaUsuario = Usuario.Buscar();
 
-            Persona.FK_IdUsuario = IdUsuario;
+                Int16 IdUsuario = 0;
 
-            Persona.Insertar();
-
-            DataTable TablaPersona = Persona.Buscar();
-
-            Int16 IdPersona = 0;
-
-            if (TablaPersona.Rows.Count > 0)
-            {
-                IdPersona = Int16.Parse(TablaPersona.Rows[0]["Id_Persona"].ToString());
-            }
-
-            foreach (cIATEstudioNegocios ItemEstudio in ListaEstudios)
-            {
-                Estudio.Institucion = ItemEstudio.Institucion.ToString();
-                Estudio.Titulo = ItemEstudio.Titulo.ToString();
-                Estudio.FK_IdPersona = IdPersona;
-                Estudio.Insertar();
-            }
-
-            foreach (cIATExperienciaLaboralNegocios ItemExperienciaLaboral in ListaExperienciasLaborales)
-            {
-                ExperienciaLaboral.Empresa = ItemExperienciaLaboral.Empresa.ToString();
-                ExperienciaLaboral.Puesto = ItemExperienciaLaboral.Puesto.ToString();
-                ExperienciaLaboral.FK_IdPersona = IdPersona;
-                ExperienciaLaboral.Insertar();
-            }
-
-            foreach (String NombreIdioma in ListaIdiomas)
-            {
-                Idioma.Nom_Idioma = NombreIdioma;
-                DataTable TablaIdioma = Idioma.Buscar();
-
-                Int16 IdIdioma = 0;
-
-                if (TablaIdioma.Rows.Count > 0)
+                if (TablaUsuario.Rows.Count > 0)
                 {
-                    IdIdioma = Int16.Parse(TablaIdioma.Rows[0]["Id_Idioma"].ToString());
+                    IdUsuario = Int16.Parse(TablaUsuario.Rows[0]["Id_Usuario"].ToString());
                 }
 
-                IdiomaXPersona.FK_IdPersona = IdPersona;
-                IdiomaXPersona.FK_IdIdioma = IdIdioma;
-                IdiomaXPersona.Insertar();
-            }
+                Persona.FK_IdUsuario = IdUsuario;
 
-            TelefonoHabitacion.FK_IdTipoContacto = 1;
-            TelefonoHabitacion.FK_IdUsuario = IdUsuario;
-            TelefonoHabitacion.Insertar();
+                Persona.Insertar();
 
-            TelefonoCelular.FK_IdTipoContacto = 2;
-            TelefonoCelular.FK_IdUsuario = IdUsuario;
-            TelefonoCelular.Insertar();
+                DataTable TablaPersona = Persona.Buscar();
 
-            CorreoElectronico.FK_IdTipoContacto = 3;
-            CorreoElectronico.FK_IdUsuario = IdUsuario;
-            CorreoElectronico.Insertar();
+                Int16 IdPersona = 0;
 
-            string script = @"<script type='text/javascript'>
+                if (TablaPersona.Rows.Count > 0)
+                {
+                    IdPersona = Int16.Parse(TablaPersona.Rows[0]["Id_Persona"].ToString());
+                }
+
+                foreach (cIATEstudioNegocios ItemEstudio in ListaEstudios)
+                {
+                    Estudio.Institucion = ItemEstudio.Institucion.ToString();
+                    Estudio.Titulo = ItemEstudio.Titulo.ToString();
+                    Estudio.FK_IdPersona = IdPersona;
+                    Estudio.Insertar();
+                }
+
+                foreach (cIATExperienciaLaboralNegocios ItemExperienciaLaboral in ListaExperienciasLaborales)
+                {
+                    ExperienciaLaboral.Empresa = ItemExperienciaLaboral.Empresa.ToString();
+                    ExperienciaLaboral.Puesto = ItemExperienciaLaboral.Puesto.ToString();
+                    ExperienciaLaboral.FK_IdPersona = IdPersona;
+                    ExperienciaLaboral.Insertar();
+                }
+
+                foreach (String NombreIdioma in ListaIdiomas)
+                {
+                    Idioma.Nom_Idioma = NombreIdioma;
+                    DataTable TablaIdioma = Idioma.Buscar();
+
+                    Int16 IdIdioma = 0;
+
+                    if (TablaIdioma.Rows.Count > 0)
+                    {
+                        IdIdioma = Int16.Parse(TablaIdioma.Rows[0]["Id_Idioma"].ToString());
+                    }
+
+                    IdiomaXPersona.FK_IdPersona = IdPersona;
+                    IdiomaXPersona.FK_IdIdioma = IdIdioma;
+                    IdiomaXPersona.Insertar();
+                }
+
+                TelefonoHabitacion.FK_IdTipoContacto = 1;
+                TelefonoHabitacion.FK_IdUsuario = IdUsuario;
+                TelefonoHabitacion.Insertar();
+
+                TelefonoCelular.FK_IdTipoContacto = 2;
+                TelefonoCelular.FK_IdUsuario = IdUsuario;
+                TelefonoCelular.Insertar();
+
+                CorreoElectronico.FK_IdTipoContacto = 3;
+                CorreoElectronico.FK_IdUsuario = IdUsuario;
+                CorreoElectronico.Insertar();
+
+                string script = @"<script type='text/javascript'>
                             finalizar();
                             </script>";
 
-            ScriptManager.RegisterStartupScript(this, typeof(Page), "Registro", script, false);
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "Registro", script, false);
+            }
+            else {
+                string script = @"<script type='text/javascript'>
+                            alertify.alert('Debe aceptar los términos y condiciones antes de finalizar. Si no desea aceptarlos, presione el botón de salir sin guardar');
+                            </script>";
+
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "Registro", script, false);
+            }
         }
 
         protected void btnCancelar3_Click(object sender, EventArgs e)
@@ -638,14 +625,14 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
         protected void validarCedulaServer(object source, ServerValidateEventArgs args)
         {
-            if (ddlNacionalidad.SelectedIndex == 0)
+            if (ddlNacionalidad.SelectedIndex == 1)
             {
-                args.IsValid = txtCedula.Text.Length > 0 && txtCedula2.Text.Length > 0 && txtCedula3.Text.Length > 0 &&
-                    txtCedula.Text.Length + txtCedula2.Text.Length + txtCedula3.Text.Length == 9;
+                args.IsValid = txtCedulaExt.Text.Length > 0;
             }
             else
             {
-                args.IsValid = txtCedulaExt.Text.Length > 0;
+                args.IsValid = txtCedula.Text.Length > 0 && txtCedula2.Text.Length > 0 && txtCedula3.Text.Length > 0 &&
+                    txtCedula.Text.Length + txtCedula2.Text.Length + txtCedula3.Text.Length == 9;                
             }
         }
 
@@ -698,7 +685,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
         protected void btnAtras6_Click(object sender, EventArgs e)
         {
-            mvRegistroAdultoMayor.ActiveViewIndex = 4;
+            mvRegistroAdultoMayor.ActiveViewIndex = 5;
         }
 
         protected void validarContrasennaServer(object source, ServerValidateEventArgs args)
@@ -786,6 +773,27 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         protected void validarNacimientoServer(object source, ServerValidateEventArgs args)
         {
             args.IsValid = (bool)(ViewState["DiaValido"]) && (bool)(ViewState["MesValido"]);
+        }
+
+        protected void btnSiguiente7_Click(object sender, EventArgs e)
+        {
+            Validate("gvPasatiempos");
+
+            if (Page.IsValid)
+            {                
+                Persona.Pasatiempos = txtPasatiempos.Text;
+                mvRegistroAdultoMayor.ActiveViewIndex = 6;
+            }
+        }
+
+        protected void btnAtras7_Click(object sender, EventArgs e)
+        {
+            mvRegistroAdultoMayor.ActiveViewIndex = 4;
+        }
+
+        protected void btnCancelar7_Click(object sender, EventArgs e)
+        {
+            salirSinGuardar();
         }
 
     }

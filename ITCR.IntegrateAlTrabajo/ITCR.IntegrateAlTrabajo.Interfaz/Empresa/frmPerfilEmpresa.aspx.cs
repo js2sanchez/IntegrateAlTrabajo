@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using ITCR.IntegrateAlTrabajo.Negocios;
 using ITCR.IntegrateAlTrabajo.Datos;
 using System.Data;
+using System.Web.Services;
 
 namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
 {
@@ -112,7 +113,14 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
 
         protected void ibtnEliminarPerfilEmpresa_Click(object sender, ImageClickEventArgs e)
         {
-            Usuario.Nom_Usuario = Convert.ToString(Session["Nombre_Usuario"]);
+            string code = @"<script type='text/javascript'>eliminarEmpresa('" + Convert.ToString(Session["Nombre_Usuario"]) + "');</script>";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
+        }
+
+        [WebMethod]
+        public static void eliminarEmpresa(string user)
+        {
+            Usuario.Nom_Usuario = user;
             DataTable tablaUsuario = Usuario.Buscar();
 
             if (tablaUsuario.Rows.Count > 0)
@@ -125,7 +133,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
             }
             Usuario.Estado = 3;
             Usuario.Eliminar();
-            Response.Redirect("/Autenticacion/frmAutenticacion.aspx");
         }
 
         protected void ibtnEditarDatosAutenticacion_Click(object sender, ImageClickEventArgs e)
