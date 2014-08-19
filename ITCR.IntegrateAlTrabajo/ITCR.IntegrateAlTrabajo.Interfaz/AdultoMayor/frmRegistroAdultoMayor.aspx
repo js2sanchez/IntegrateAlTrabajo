@@ -70,12 +70,11 @@
         }
         .style26
         {
-            width: 109px;
+            width: 253px;
             height: 25px;
         }
         .style27
         {
-            width: 298px;
             height: 25px;
         }
         .style28
@@ -175,9 +174,9 @@
             height: 25px;
             width: 256px;
         }
-        .style57
+        .style56
         {
-            width: 763px;
+            height: 25px;
         }
     </style>
 </asp:Content>
@@ -379,9 +378,9 @@
                                 <td class="style40">
                                     <asp:TextBox ID="txtNombrePersona" runat="server" onblur="this.placeholder = 'Laura'" onfocus="this.placeholder = ''" placeholder="Laura" tooltip="Escriba su nombre aquí" Width="248px"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvNombrePersona" runat="server" ControlToValidate="txtNombrePersona"
-                                    ErrorMessage="El nombre de la persona es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
+                                    ErrorMessage="El nombre de la persona es un dato requerido, por lo que debe introducir un valor válido.." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="RegEx_Nombre" runat="server" ControlToValidate="txtNombrePersona" ValidationExpression="([a-zA-ZÀ-ÿ ])*"
-                                    ErrorMessage="Nombre inválido (Símbolos inválidos)" ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
+                                    ErrorMessage="El nombre proporcionado tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                 </td>
                                 <td class="style43">
                                     &nbsp;</td>
@@ -411,9 +410,9 @@
                                     <asp:TextBox ID="txtApellido1" runat="server" onblur="this.placeholder = 'Brenes'" onfocus="this.placeholder = ''" placeholder="Brenes" 
                                         Width="248px" tooltip="Escriba su primer apellido aquí" TabIndex="1"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvApellido1Persona" runat="server" ControlToValidate="txtApellido1"
-                                    ErrorMessage="El primer apellido es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
+                                    ErrorMessage="El primer apellido es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="RegEx_Apellido1" runat="server" ControlToValidate="txtApellido1" ValidationExpression="([a-zA-ZÀ-ÿ ])*"
-                                    ErrorMessage="Primer apellido inválido (Símbolos inválidos)" ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
+                                    ErrorMessage="El primer apellido proporcionado tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                 </td>
                                 <td class="style43">
                                     &nbsp;</td>
@@ -439,9 +438,9 @@
                                     <asp:TextBox ID="txtApellido2" runat="server" onblur="this.placeholder = 'Fernández'" onfocus="this.placeholder = ''" placeholder="Fernández" 
                                         Width="248px" tooltip="Escriba su segundo apellido aquí" TabIndex="2"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvApellido2Persona" runat="server" ControlToValidate="txtApellido2"
-                                    ErrorMessage="El segundo apellido es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
+                                    ErrorMessage="El segundo apellido es un dato requerido, por lo que debe introducir un valor válido.." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="RegEx_Apellido2" runat="server" ControlToValidate="txtApellido2" ValidationExpression="([a-zA-ZÀ-ÿ ])*"
-                                    ErrorMessage="Segundo apellido inválido (Símbolos inválidos)" ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
+                                    ErrorMessage="El segundo apellido proporcionado tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                 </td>
                                 <td class="style43">
                                     &nbsp;</td>
@@ -516,19 +515,19 @@
                                     <asp:TextBox id="txtCedulaExt" runat="server" Width="248px" 
                                         ClientIdMode="Static" TabIndex="8"></asp:TextBox>
                                    <asp:CustomValidator ID="cvCedula" runat="server" OnServerValidate="validarCedulaServer" 
-                                        ForeColor="red" ErrorMessage="La cédula es un espacio requerido." 
+                                        ForeColor="red" ErrorMessage="La cédula es un dato requerido, por lo que debe introducir un valor válido." 
                                         ValidationGroup="gvDatosPersonales">*</asp:CustomValidator>
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
                                         ControlToValidate="txtCedula" 
-                                        ErrorMessage="La cédula sólo debe tener números." ForeColor="Red" 
+                                        ErrorMessage="La cédula introducida tiene un formato inválido. Verifique que empiece con un número entre 1 y 9, y que posteriormente contenga sólo números.." ForeColor="Red" 
                                         ValidationExpression="[1-9]*" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" 
                                         ControlToValidate="txtCedula2" 
-                                        ErrorMessage="La cédula sólo debe tener números." ForeColor="Red" 
+                                        ErrorMessage="La cédula introducida tiene un formato inválido. Verifique que empiece con un número entre 1 y 9, y que posteriormente contenga sólo números." ForeColor="Red" 
                                         ValidationExpression="[0-9]*" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" 
                                         ControlToValidate="txtCedula3" 
-                                        ErrorMessage="La cédula sólo debe tener números." ForeColor="Red" 
+                                        ErrorMessage="La cédula introducida tiene un formato inválido. Verifique que empiece con un número entre 1 y 9, y que posteriormente contenga sólo números." ForeColor="Red" 
                                         ValidationExpression="[0-9]*" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
 
                                 </td>
@@ -551,7 +550,7 @@
                                     <asp:DropDownList ID="DdlAnioNacimiento" runat="server" AutoPostBack="True" 
                                         OnSelectedIndexChanged="DdlAnnoNacimiento_SelectedIndexChanged" TabIndex="11" ></asp:DropDownList>
                                         <asp:CustomValidator ID="CustomValidator2" runat="server" 
-                                        ErrorMessage="La fecha de nacimiento es incorrecta, por favor, introduzca el dato nuevamente." 
+                                        ErrorMessage="La fecha de nacimiento es incorrecta, por favor, introduzca un valor válido." 
                                         ForeColor="red" OnServerValidate="validarNacimientoServer" 
                                         ValidationGroup="gvDatosPersonales">*</asp:CustomValidator>
                                     <asp:DropDownList ID="DdlMesNacimiento" runat="server" AutoPostBack="True" 
@@ -862,12 +861,14 @@
                                                 </td>
                                                 <td class="style27">
                                                     <asp:TextBox ID="txtPuesto" runat="server" TabIndex="1" Width="460px"></asp:TextBox>
-                                                </td>
-                                                <td class="style28">
-                                                    <asp:RequiredFieldValidator ID="rfvEmpresa" runat="server" ControlToValidate="txtEmpresa" ErrorMessage="La empresa es un dato requerido." ForeColor="Red" ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
-                                                    <asp:RegularExpressionValidator ID="RegEx_Empresa" runat="server" ControlToValidate="txtEmpresa"
-                                                    ErrorMessage="Empresa inválida (Símbolos inválidos)." ForeColor="Red" ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)"
-                                                    ValidationGroup="gvExperienciasLaborales">*</asp:RegularExpressionValidator>
+                                                    <asp:RequiredFieldValidator ID="rfvPuesto" runat="server" 
+                                                        ControlToValidate="txtPuesto" ErrorMessage="El puesto es un dato requerido." 
+                                                        ForeColor="Red" ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
+                                                    <asp:RegularExpressionValidator ID="RegEx_Puesto" runat="server" 
+                                                        ControlToValidate="txtPuesto" 
+                                                        ErrorMessage="Puesto inválido (Símbolos inválidos)." ForeColor="Red" 
+                                                        ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)" 
+                                                        ValidationGroup="gvExperienciasLaborales">*</asp:RegularExpressionValidator>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -876,18 +877,20 @@
                                                 </td>
                                                 <td class="style11">
                                                     <asp:TextBox ID="txtEmpresa" runat="server" Width="460px"></asp:TextBox>
-                                                </td>
-                                                <td class="style28">
-                                                    <asp:RequiredFieldValidator ID="rfvPuesto" runat="server" ControlToValidate="txtPuesto" ErrorMessage="El puesto es un dato requerido." ForeColor="Red" ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
-                                                    <asp:RegularExpressionValidator ID="RegEx_Puesto" runat="server" ControlToValidate="txtPuesto"
-                                                    ErrorMessage="Puesto inválido (Símbolos inválidos)." ForeColor="Red" ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)"
-                                                    ValidationGroup="gvExperienciasLaborales">*</asp:RegularExpressionValidator>
+                                                    <asp:RequiredFieldValidator ID="rfvEmpresa" runat="server" 
+                                                        ControlToValidate="txtEmpresa" ErrorMessage="La empresa es un dato requerido." 
+                                                        ForeColor="Red" ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
+                                                    <asp:RegularExpressionValidator ID="RegEx_Empresa" runat="server" 
+                                                        ControlToValidate="txtEmpresa" 
+                                                        ErrorMessage="Empresa inválida (Símbolos inválidos)." ForeColor="Red" 
+                                                        ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)" 
+                                                        ValidationGroup="gvExperienciasLaborales">*</asp:RegularExpressionValidator>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td class="auto-style38">
                                                     &nbsp;</td>
-                                                <td class="auto-style4" colspan="2">
+                                                <td class="auto-style4">
                                                     <asp:Panel ID="PanelAgregar2" runat="server" HorizontalAlign="Right">
                                                         <asp:Button ID="btnCancelarAgregarExperiencia" runat="server" CssClass="Boton" 
                                                             onclick="btnCancelarAgregarExperiencia_Click" Text="Cancelar" 
@@ -1000,22 +1003,37 @@
                             </tr>
                             <tr>
                                 <td class="style24" colspan="5">
+                                    &nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td class="style24" colspan="5">
                                     <asp:Panel ID="PanelIdiomas" runat="server" BorderStyle="Solid" 
                                         BorderWidth="2px">
                                         <table class="style14">
                                             <tr>
-                                                <td class="style26">
-                                                    <asp:Label ID="lblIdiomas" runat="server" Text="Idiomas"></asp:Label>
+                                                <td class="style56" colspan="2">
+                                                    <asp:Label ID="lblIdiomas" runat="server" 
+                                                        Text="Seleccione los idiomas en los que tenga habilidades escritas, orales, de lectura y/o de escucha"></asp:Label>
                                                 </td>
-                                                <td class="style30">
+                                            </tr>
+                                            <tr>
+                                                <td class="style56">
                                                     <asp:CheckBoxList ID="chkIdiomas" runat="server" CellPadding="0" 
-                                                        CellSpacing="0" Height="16px" RepeatDirection="Horizontal" Width="744px">
+                                                        CellSpacing="0" Height="16px" Width="450px">
                                                         <asp:ListItem>Inglés</asp:ListItem>
                                                         <asp:ListItem>Francés</asp:ListItem>
                                                         <asp:ListItem>Portugués</asp:ListItem>
                                                         <asp:ListItem>Otro</asp:ListItem>
                                                     </asp:CheckBoxList>
                                                 </td>
+                                                <td class="style30">
+                                                    &nbsp;</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="style56">
+                                                    &nbsp;</td>
+                                                <td class="style30">
+                                                    &nbsp;</td>
                                             </tr>
                                         </table>
                                     </asp:Panel>
@@ -1077,32 +1095,40 @@
                             </tr>
                             <tr>
                                 <td class="style24" colspan="5">
-                                    <asp:Panel ID="Panel8" runat="server" BorderStyle="Solid" 
-                                        BorderWidth="2px">
-                                        <table class="style14">
+                                    &nbsp;</td></tr>
                             <tr>
                                 <td class="style24" colspan="5">
-                                    <asp:Panel ID="PanelIdiomas0" runat="server" BorderStyle="Solid" 
-                                        BorderWidth="2px">
+                                    <asp:Panel ID="Panel8" runat="server" BorderStyle="Solid" BorderWidth="2px">
                                         <table class="style14">
                                             <tr>
-                                                <td colspan="3">
-                                                    <asp:Label ID="lblPasatiempos" runat="server" Text="¿Cuál es su pasatiempo favorito?"></asp:Label>
-                                                </td>
-                                                <td>
-                                                    <asp:TextBox ID="txtPasatiempos" runat="server" Width="500px" 
-                                                        tooltip="Escriba aquí pasatiempo principal" TabIndex="1"></asp:TextBox>
-                                                    <asp:RegularExpressionValidator ID="RegEx_Pasatiempo" runat="server" ControlToValidate="txtPasatiempos"
-                                                    ErrorMessage="Pasatiempo inválido (Símbolos inválidos)." ForeColor="Red" ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)"
-                                                    ValidationGroup="gvPasatiempos">*</asp:RegularExpressionValidator>
+                                                <td class="style24" colspan="5">
+                                                    <asp:Panel ID="PanelIdiomas0" runat="server" BorderStyle="None" 
+                                                        BorderWidth="2px">
+                                                        <table class="style14">
+                                                            <tr>
+                                                                <td colspan="3">
+                                                                    <asp:Label ID="lblPasatiempos" runat="server" 
+                                                                        Text="¿Cuál es su pasatiempo favorito?"></asp:Label>
+                                                                </td>
+                                                                <td>
+                                                                    <asp:TextBox ID="txtPasatiempos" runat="server" TabIndex="1" 
+                                                                        tooltip="Escriba aquí pasatiempo principal" Width="500px"></asp:TextBox>
+                                                                    <asp:RegularExpressionValidator ID="RegEx_Pasatiempo" runat="server" 
+                                                                        ControlToValidate="txtPasatiempos" 
+                                                                        ErrorMessage="Pasatiempo inválido (Símbolos inválidos)." ForeColor="Red" 
+                                                                        ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)" 
+                                                                        ValidationGroup="gvPasatiempos">*</asp:RegularExpressionValidator>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </asp:Panel>
                                                 </td>
                                             </tr>
                                         </table>
                                     </asp:Panel>
                                 </td>
-                            </tr>                                
+                            </tr>
                         </table>
-                        </asp:Panel></td></tr></table>
                     </asp:View>
                     <br />
                     <asp:View ID="vPaso7" runat="server">

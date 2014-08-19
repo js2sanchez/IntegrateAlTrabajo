@@ -118,14 +118,14 @@
             width: 19px;
             height: 25px;
         }
-        .style52
-        {
-            width: 144px;
-            height: 25px;
-        }
         .style53
         {
             width: 182px;
+            height: 25px;
+        }
+        .style54
+        {
+            width: 195px;
             height: 25px;
         }
     </style>
@@ -328,7 +328,8 @@
                     <table class="style9">
                         <tr>
                             <td class="style34">
-                                <asp:Label ID="lblEstudios" runat="server" Text="Estudios" CssClass="Titulo2"></asp:Label>
+                                <asp:Label ID="lblEstudios" runat="server" Text="Formación académica" 
+                                    CssClass="Titulo2"></asp:Label>
                             </td>
                             <td class="style36">
                             </td>
@@ -493,12 +494,14 @@
                                                     </asp:CheckBoxList>
                             </td>
                             <td>
-                                <asp:ImageButton ID="ibtnEditarIdiomas" runat="server" 
-                                    Height="50px" ImageUrl="~/Multimedia/icono-editar.jpg" 
-                                    onclick="btnEditarIdiomas_Click" Width="50px" />
-                                    <asp:ImageButton ID="ibtnActualizarIdiomas" runat="server" 
-                                    Height="50px" ImageUrl="~/Multimedia/icono-check.jpg" 
-                                    onclick="btnActualizarIdiomas_Click" Width="50px" />
+                                <asp:Panel ID="PanelIdiomas" runat="server" HorizontalAlign="Right">
+                                    <asp:ImageButton ID="ibtnEditarIdiomas" runat="server" Height="50px" 
+                                        ImageUrl="~/Multimedia/icono-editar.jpg" onclick="btnEditarIdiomas_Click" 
+                                        Width="50px" />
+                                    <asp:ImageButton ID="ibtnActualizarIdiomas" runat="server" Height="50px" 
+                                        ImageUrl="~/Multimedia/icono-check.jpg" onclick="btnActualizarIdiomas_Click" 
+                                        Width="50px" />
+                                </asp:Panel>
                             </td>
                         </tr>                        
                     </table>
@@ -541,7 +544,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="style30">
+                            <td class="style54">
                                 &nbsp;</td>
                             <td class="style44">
                                 &nbsp;</td>
@@ -553,20 +556,22 @@
                                 &nbsp;</td>
                         </tr>
                         <tr>
-                            <td class="style30">
-                                <asp:Label ID="lblPasatiempos" runat="server" Text="Pasatiempo"></asp:Label>
+                            <td class="style54">
+                                <asp:Label ID="lblPasatiempos" runat="server" Text="Pasatiempo favorito"></asp:Label>
                             </td>
                             <td class="style19" colspan="3">
                                 <asp:Label ID="lblPasatiemposDato" runat="server"></asp:Label>
                                 <asp:TextBox ID="txtPasatiempo" runat="server" Width="100%" />
                             </td>
                             <td>                                
-                                    <asp:ImageButton ID="ibtnEditarPasatiempo" runat="server" 
-                                    Height="50px" ImageUrl="~/Multimedia/icono-editar.jpg" 
-                                    onclick="btnEditarPasatiempo_Click" Width="50px" />
-                                    <asp:ImageButton ID="ibtnActualizarPasatiempo" runat="server" 
-                                    Height="50px" ImageUrl="~/Multimedia/icono-check.jpg" 
-                                    onclick="btnActualizarPasatiempo_Click" Width="50px" />
+                                    <asp:Panel ID="PanelPasatiempoFavorito" runat="server" HorizontalAlign="Right">
+                                        <asp:ImageButton ID="ibtnEditarPasatiempo" runat="server" Height="50px" 
+                                            ImageUrl="~/Multimedia/icono-editar.jpg" onclick="btnEditarPasatiempo_Click" 
+                                            Width="50px" />
+                                        <asp:ImageButton ID="ibtnActualizarPasatiempo" runat="server" Height="50px" 
+                                            ImageUrl="~/Multimedia/icono-check.jpg" onclick="btnActualizarPasatiempo_Click" 
+                                            Width="50px" />
+                                    </asp:Panel>
                             </td>
                         </tr>
                     </table>
