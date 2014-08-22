@@ -11,12 +11,7 @@ using ITCR.IntegrateAlTrabajo.Datos;
 namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
 {
     public partial class frmRegistroEmpresa : System.Web.UI.Page
-    {
-        private static cIATEmpresaNegocios Empresa = new cIATEmpresaNegocios(1, "A", 2, "B");
-        private static cIATUsuarioNegocios Usuario = new cIATUsuarioNegocios(1, "A", 2, "B");
-        private static cIATContactoNegocios Telefono = new cIATContactoNegocios(1, "A", 2, "B");
-        private static cIATContactoNegocios CorreoElectronico = new cIATContactoNegocios(1, "A", 2, "B");
-
+    {        
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -24,6 +19,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                 mvRegistroEmpresa.ActiveViewIndex = 0;
                 cargarTodosDropDownList();
                 txtNombreEmpresa.Focus();
+                HttpContext.Current.Session["Empresa"] = new cIATEmpresaNegocios(1, "A", 2, "B");
+                HttpContext.Current.Session["Usuario"] = new cIATUsuarioNegocios(1, "A", 2, "B");
+                HttpContext.Current.Session["Telefono"] = new cIATContactoNegocios(1, "A", 2, "B");
+                HttpContext.Current.Session["CorreoElectronico"] = new cIATContactoNegocios(1, "A", 2, "B");
             }
         }
 
@@ -88,16 +87,16 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
 
             if (Page.IsValid)
             {
-                Empresa.Nom_Empresa = txtNombreEmpresa.Text;
-                Empresa.Num_CedulaJuridica = txtCedulaJuridica.Text;
-                DataTable TablaNomEmpresa = Empresa.Buscar();
-                Empresa.Dsc_Empresa = txtDescripcion.Text;
-                CorreoElectronico.Detalle = txtEmail.Text;
-                CorreoElectronico.FK_IdTipoContacto = 3;
-                Telefono.Detalle = txtTelefono.Text;
-                Telefono.FK_IdTipoContacto = 1;
-                Empresa.FK_IdDistrito = Int16.Parse(drpDistrito.SelectedValue);
-                Empresa.PuntajePromedio = 0.00;
+                ((cIATEmpresaNegocios)HttpContext.Current.Session["Empresa"]).Nom_Empresa = txtNombreEmpresa.Text;
+                ((cIATEmpresaNegocios)HttpContext.Current.Session["Empresa"]).Num_CedulaJuridica = txtCedulaJuridica.Text;
+                DataTable TablaNomEmpresa = ((cIATEmpresaNegocios)HttpContext.Current.Session["Empresa"]).Buscar();
+                ((cIATEmpresaNegocios)HttpContext.Current.Session["Empresa"]).Dsc_Empresa = txtDescripcion.Text;
+                ((cIATContactoNegocios)HttpContext.Current.Session["CorreoElectronico"]).Detalle = txtEmail.Text;
+                ((cIATContactoNegocios)HttpContext.Current.Session["CorreoElectronico"]).FK_IdTipoContacto = 3;
+                ((cIATContactoNegocios)HttpContext.Current.Session["Telefono"]).Detalle = txtTelefono.Text;
+                ((cIATContactoNegocios)HttpContext.Current.Session["Telefono"]).FK_IdTipoContacto = 1;
+                ((cIATEmpresaNegocios)HttpContext.Current.Session["Empresa"]).FK_IdDistrito = Int16.Parse(drpDistrito.SelectedValue);
+                ((cIATEmpresaNegocios)HttpContext.Current.Session["Empresa"]).PuntajePromedio = 0.00;
                 if (TablaNomEmpresa.Rows.Count == 0)
                 {
                     mvRegistroEmpresa.ActiveViewIndex = 1;
@@ -129,12 +128,12 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
             Validate("gvDatosCuenta");
             if (Page.IsValid)
             {
-                Usuario.Nom_Usuario = txtNombreUsuario.Text;
-                DataTable TablaNomUsuario = Usuario.Buscar();
-                Usuario.Contrasenna = txtContraseña.Text;
-                Usuario.Indicio_Contrasenna = txtIndicioContraseña.Text;
-                Usuario.FK_IdTipoUsuario = 2;
-                Usuario.Estado = 1;
+                ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).Nom_Usuario = txtNombreUsuario.Text;
+                DataTable TablaNomUsuario = ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).Buscar();
+                ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).Contrasenna = txtContraseña.Text;
+                ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).Indicio_Contrasenna = txtIndicioContraseña.Text;
+                ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).FK_IdTipoUsuario = 2;
+                ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).Estado = 1;
                 if (TablaNomUsuario.Rows.Count.Equals(0))
                 {
                     mvRegistroEmpresa.ActiveViewIndex = 2;
@@ -163,8 +162,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
 
         protected void btnFinalizar_Click(object sender, EventArgs e)
         {
-            Usuario.Insertar();
-            DataTable TablaUsuario = Usuario.Buscar();
+            ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).Insertar();
+            DataTable TablaUsuario = ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).Buscar();
 
             Int16 IdUsuario = 0;
 
@@ -173,12 +172,12 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                 IdUsuario = Int16.Parse(TablaUsuario.Rows[0]["Id_Usuario"].ToString());
             }
 
-            Empresa.FK_IdUsuario = IdUsuario;
-            Empresa.Insertar();
-            CorreoElectronico.FK_IdUsuario = IdUsuario;
-            CorreoElectronico.Insertar();
-            Telefono.FK_IdUsuario = IdUsuario;
-            Telefono.Insertar();
+            ((cIATEmpresaNegocios)HttpContext.Current.Session["Empresa"]).FK_IdUsuario = IdUsuario;
+            ((cIATEmpresaNegocios)HttpContext.Current.Session["Empresa"]).Insertar();
+            ((cIATContactoNegocios)HttpContext.Current.Session["CorreoElectronico"]).FK_IdUsuario = IdUsuario;
+            ((cIATContactoNegocios)HttpContext.Current.Session["CorreoElectronico"]).Insertar();
+            ((cIATContactoNegocios)HttpContext.Current.Session["Telefono"]).FK_IdUsuario = IdUsuario;
+            ((cIATContactoNegocios)HttpContext.Current.Session["Telefono"]).Insertar();
             string script = @"<script type='text/javascript'>
                             alert('La empresa se ha registrado con éxito.');
                             </script>";

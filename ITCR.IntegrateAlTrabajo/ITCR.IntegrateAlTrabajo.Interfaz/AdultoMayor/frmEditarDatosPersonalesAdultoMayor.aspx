@@ -171,6 +171,8 @@
                             </td>
                             <td class="style6">
                                 <asp:TextBox ID="txtCorreoElectronico" runat="server"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCorreoElectronico"
+                                    ErrorMessage="El correo electrónico es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
                                         ControlToValidate="txtCorreoElectronico" 
                                         ErrorMessage="Correo electrónico inválido." ForeColor="Red" 
@@ -252,6 +254,8 @@
                             </td>
                             <td class="style34">
                                 <asp:TextBox ID="txtTelefonoHabitacion" runat="server" MaxLength="8"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rfvTelefonoHabitacion" runat="server" ControlToValidate="txtTelefonoHabitacion"
+                                    ErrorMessage="El teléfono principal es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="revTelefonoHabitacion" runat="server" 
                                     ControlToValidate="txtTelefonoHabitacion" 
                                     ErrorMessage="El número de teléfono principal (Sólo debe contener números) introducido es inválido." 
