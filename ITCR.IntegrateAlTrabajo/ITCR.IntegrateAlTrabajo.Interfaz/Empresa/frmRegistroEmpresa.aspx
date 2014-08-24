@@ -209,7 +209,7 @@
                                         Placeholder="Escriba el nombre de la empresa aquí" ToolTip="ICE" Width="290px"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvNombreEmpresa" runat="server" 
                                         ControlToValidate="txtNombreEmpresa" 
-                                        ErrorMessage="El nombre de la empresa es un dato requerido." ForeColor="Red" 
+                                        ErrorMessage="El nombre de la empresa es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" 
                                         ValidationGroup="gvDatosGenerales">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
@@ -222,9 +222,9 @@
                                         ToolTip= "10005888" Placeholder="Escriba la cédula aquí (Sin guiones)" 
                                         TabIndex="1"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvCedulaJuridica" runat="server" ControlToValidate="txtCedulaJuridica"
-                                    ErrorMessage="La cédula jurídica es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosGenerales">*</asp:RequiredFieldValidator>
+                                    ErrorMessage="La cédula jurídica es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvDatosGenerales">*</asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="RegEx_Cedula" runat="server" ControlToValidate="txtCedulaJuridica" ValidationExpression="[0-9]*"
-                                    ErrorMessage="La cédula jurídica contiene símbolos inválidos." ForeColor="Red" ValidationGroup="gvDatosGenerales">*</asp:RegularExpressionValidator>
+                                    ErrorMessage="La cédula jurídica proporcionada tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red" ValidationGroup="gvDatosGenerales">*</asp:RegularExpressionValidator>
                                 </td>
                             </tr>
                             <tr>
@@ -235,7 +235,7 @@
                                     <asp:TextBox ID="txtDescripcion" runat="server" Height="61px" 
                                         TextMode="MultiLine" Width="290px" TabIndex="2"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtDescripcion"
-                                    ErrorMessage="La descripción de la empresa es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosGenerales">*</asp:RequiredFieldValidator>
+                                    ErrorMessage="La descripción de la empresa es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvDatosGenerales">*</asp:RequiredFieldValidator>
                                 </td>
                             </tr>
                             <tr>
@@ -247,12 +247,12 @@
                                         Placeholder="Escriba el teléfono aquí (Sin guiones)" TabIndex="3" 
                                         MaxLength="8"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvTelefono" runat="server" ControlToValidate="txtTelefono"
-                                    ErrorMessage="El teléfono de la empresa es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosGenerales">*</asp:RequiredFieldValidator>
+                                    ErrorMessage="El número de teléfono de la empresa es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvDatosGenerales">*</asp:RequiredFieldValidator>
                                     <asp:CustomValidator ID="cvLen_Telefono" ControlToValidate="txtTelefono" ForeColor="Red" OnServerValidate="validarTelefonoServer"
-                                    ErrorMessage="El largo del teléfono es inválido" ValidationGroup="gvDatosGenerales"
+                                    ErrorMessage="El número de teléfono proporcionado tiene un formato inválido, asegúrese que la longitud numérica sea válida." ValidationGroup="gvDatosGenerales"
                                     runat="server">*</asp:CustomValidator>
                                     <asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtTelefono"
-                                    ErrorMessage="El número de teléfono introducido es inválido." ForeColor="Red" ValidationExpression="([24][0-9]*)"
+                                    ErrorMessage="El número de teléfono proporcionado tiene un formato inválido, asegúrese que únicamente contenga números válidos." ForeColor="Red" ValidationExpression="([24][0-9]*)"
                                     ValidationGroup="gvDatosGenerales">*</asp:RegularExpressionValidator>
                                 </td>
                             </tr>
@@ -263,9 +263,9 @@
                                 <td class="style28">
                                     <asp:TextBox ID="txtEmail" runat="server" Width="290px" TabIndex="4"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail"
-                                    ErrorMessage="El correo electrónico de la empresa es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosGenerales">*</asp:RequiredFieldValidator>
+                                    ErrorMessage="El correo electrónico de la empresa es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvDatosGenerales">*</asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator runat="server" ControlToValidate="txtEmail" ValidationExpression=".+@.+\..+"
-                                    ErrorMessage="Correo electrónico inválido." ForeColor="Red" ValidationGroup="gvDatosGenerales">*</asp:RegularExpressionValidator>
+                                    ErrorMessage="El correo electrónico proporcionado tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red" ValidationGroup="gvDatosGenerales">*</asp:RegularExpressionValidator>
                                 </td>
                             </tr>
                             <tr>
@@ -363,16 +363,16 @@
                                         Placeholder="Entre 5 a 50 caracteres" Width="250px"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvNombreUsuario" runat="server" 
                                         ControlToValidate="txtNombreUsuario" 
-                                        ErrorMessage="El nombre de usuario es un dato requerido." ForeColor="Red" 
+                                        ErrorMessage="El nombre de usuario es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" 
                                         ValidationGroup="gvDatosCuenta">*</asp:RequiredFieldValidator>
                                     <asp:CustomValidator ID="cvLen_Usuario" runat="server" 
                                         ControlToValidate="txtNombreUsuario" 
-                                        ErrorMessage="El nombre de usuario debe contener entre 5 a 50 caracteres" 
+                                        ErrorMessage="El nombre de usuario proporcionado tiene un formato inválido, asegúrese que contenga entre 5 a 50 caracteres." 
                                         ForeColor="Red" OnServerValidate="validarUsuarioServer" 
                                         ValidationGroup="gvDatosCuenta">*</asp:CustomValidator>
                                     <asp:RegularExpressionValidator ID="RegEx_Usuario" runat="server" 
                                         ControlToValidate="txtNombreUsuario" 
-                                        ErrorMessage="Nombre de usuario inválido (Símbolos inválidos)." ForeColor="Red" 
+                                        ErrorMessage="El nombre de usuario proporcionado tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red" 
                                         ValidationExpression="(([0-9A-Za-z]|-|_)*)" ValidationGroup="gvDatosCuenta">*</asp:RegularExpressionValidator>
                                 </td>
                                 <td class="auto-style14">
@@ -386,12 +386,12 @@
                                     <asp:TextBox ID="txtContraseña" runat="server" TextMode="Password" 
                                         Width="250px" Placeholder="Más de 8 caracteres" TabIndex="1"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvContraseña" runat="server" ControlToValidate="txtContraseña"
-                                    ErrorMessage="La contraseña es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosCuenta">*</asp:RequiredFieldValidator>
+                                    ErrorMessage="La contraseña es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvDatosCuenta">*</asp:RequiredFieldValidator>
                                     <asp:CustomValidator ID="cvLen_Contrasenna" runat="server" OnServerValidate="validarContrasennaServer"
-                                    ControlToValidate="txtContraseña" ErrorMessage="La contraseña debe tener al menos 8 caracteres" ForeColor="Red" 
+                                    ControlToValidate="txtContraseña" ErrorMessage="La contraseña proporcionada tiene un formato inválido, asegúrese que contenga al menos 8 caracteres." ForeColor="Red" 
                                     ValidationGroup="gvDatosCuenta">*</asp:CustomValidator>
                                     <asp:RegularExpressionValidator ID="RegEx_Contrasenna" runat="server" ControlToValidate="txtContraseña"
-                                    ErrorMessage="Contraseña inválida (Símbolos inválidos)." ForeColor="Red" ValidationExpression="([0-9A-Za-z]*)"
+                                    ErrorMessage="La contraseña proporcionada tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red" ValidationExpression="([0-9A-Za-z]*)"
                                     ValidationGroup="gvDatosCuenta">*</asp:RegularExpressionValidator>
                                 </td>
                                 <td class="auto-style14">
@@ -406,9 +406,9 @@
                                     <asp:TextBox ID="txtConfirmarContraseña" runat="server" TextMode="Password" 
                                         Width="250px" TabIndex="2"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvConfirmacion" runat="server" ControlToValidate="txtConfirmarContraseña"
-                                    ErrorMessage="La confirmación de la contraseña es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosCuenta">*</asp:RequiredFieldValidator>
+                                    ErrorMessage="Por favor, vuelva a escribir la contraseña." ForeColor="Red" ValidationGroup="gvDatosCuenta">*</asp:RequiredFieldValidator>
                                     <asp:CompareValidator ID="cvContrasena" runat="server" ControlToValidate="txtConfirmarContraseña" 
-                                    Operator="Equal" ControlToCompare="txtContraseña" ErrorMessage="La 'contraseña' y 'confirmación de contraseña' no coinciden." ForeColor="Red" 
+                                    Operator="Equal" ControlToCompare="txtContraseña" ErrorMessage="El espacio para volver a escribir la contraseña no coincide con el de contraseña." ForeColor="Red" 
                                     ValidationGroup="gvDatosCuenta">*</asp:CompareValidator>
                                 </td>
                                 <td class="auto-style14">
@@ -423,7 +423,7 @@
                                     <asp:TextBox ID="txtIndicioContraseña" runat="server" Width="250px" 
                                         TabIndex="3"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvIndicioContraseña" runat="server" ControlToValidate="txtIndicioContraseña"
-                                    ErrorMessage="El indicio de contraseña es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosCuenta">*</asp:RequiredFieldValidator>
+                                    ErrorMessage="La frase para recordar la contraseña es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvDatosCuenta">*</asp:RequiredFieldValidator>
                                 </td>
                                 <td class="auto-style14">
                                     &nbsp;</td>

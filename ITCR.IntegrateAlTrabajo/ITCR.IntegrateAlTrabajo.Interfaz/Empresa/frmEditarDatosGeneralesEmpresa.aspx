@@ -128,7 +128,7 @@
                                 <asp:TextBox ID="txtNombreE" runat="server" Enabled="False" Width="300px"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="rfvNombreEmpresa" runat="server" 
                                     ControlToValidate="txtNombreE" 
-                                    ErrorMessage="El nombre de la empresa es un dato requerido." ForeColor="Red" 
+                                    ErrorMessage="El nombre de la empresa es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" 
                                     ValidationGroup="gvDatosGenerales">*</asp:RequiredFieldValidator>
                             </td>
                             <td class="style15">
@@ -147,7 +147,7 @@
                                     Enabled="False" TabIndex="1"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" 
                                     ControlToValidate="txtCedulaE" 
-                                    ErrorMessage="La cédula jurídica de la empresa es un dato requerido." 
+                                    ErrorMessage="La cédula jurídica es un dato requerido, por lo que debe introducir un valor válido." 
                                     ForeColor="Red" ValidationGroup="gvDatosGenerales">*</asp:RequiredFieldValidator>
                             </td>
                             <td class="style15">
@@ -181,10 +181,10 @@
                                     MaxLength="8" TabIndex="3"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" 
                                     ControlToValidate="txtTelefono" 
-                                    ErrorMessage="El teléfono de la empresa es un dato requerido." ForeColor="Red" 
+                                    ErrorMessage="El número de teléfono de la empresa es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" 
                                     ValidationGroup="gvDatosGenerales">*</asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtTelefono"
-                                    ErrorMessage="El número de teléfono introducido es inválido." ForeColor="Red" ValidationExpression="([26789][0-9]*)"
+                                    ErrorMessage="El número de teléfono proporcionado tiene un formato inválido, asegúrese que únicamente contenga números válidos." ForeColor="Red" ValidationExpression="([26789][0-9]*)"
                                     ValidationGroup="gvDatosGenerales">*</asp:RegularExpressionValidator>
                             </td>
                             <td class="style15">
@@ -202,11 +202,11 @@
                                 <asp:TextBox ID="txtEmail" runat="server" Width="300px" TabIndex="4"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
                                     ControlToValidate="txtEmail" 
-                                    ErrorMessage="El correo electrónico de la empresa es un dato requerido." 
+                                    ErrorMessage="El correo electrónico de la empresa es un dato requerido, por lo que debe introducir un valor válido." 
                                     ForeColor="Red" ValidationGroup="gvDatosGenerales">*</asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="revEmail" runat="server" 
                                     ControlToValidate="txtEmail" 
-                                    ErrorMessage="Correo electrónico inválido." ForeColor="Red" 
+                                    ErrorMessage="El correo electrónico proporcionado tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red" 
                                     ValidationExpression=".+@.+\..+" ValidationGroup="gvDatosGenerales">*</asp:RegularExpressionValidator>
                             </td>
                             <td class="style15">

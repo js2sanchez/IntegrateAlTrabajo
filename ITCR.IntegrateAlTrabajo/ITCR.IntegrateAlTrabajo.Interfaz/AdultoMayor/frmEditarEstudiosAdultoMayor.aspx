@@ -154,7 +154,7 @@
                                                 <asp:TextBox ID="txtTituloEstudio" runat="server" Width="402px"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="rfvTituloEstudio" runat="server" 
                                                     ControlToValidate="txtTituloEstudio" 
-                                                    ErrorMessage="El título es un dato requerido." ForeColor="Red" 
+                                                    ErrorMessage="El título académico es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" 
                                                     ValidationGroup="gvEstudios">*</asp:RequiredFieldValidator>
                                             </td>
                                             <td class="style30">
@@ -169,7 +169,7 @@
                                                 <asp:TextBox ID="txtInstitucionEstudio" runat="server" Width="403px"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="rfvInstitucionEstudio" runat="server" 
                                                     ControlToValidate="txtInstitucionEstudio" 
-                                                    ErrorMessage="La institución es un dato requerido." ForeColor="Red" 
+                                                    ErrorMessage="La institución en la que recibió el título es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" 
                                                     ValidationGroup="gvEstudios">*</asp:RequiredFieldValidator>
                                             </td>
                                             <td class="style30">

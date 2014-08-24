@@ -152,7 +152,7 @@
                                 <asp:TextBox ID="txtTelefonoCelular" runat="server" MaxLength="8"></asp:TextBox>
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
                                     ControlToValidate="txtTelefonoCelular" 
-                                    ErrorMessage="El número de teléfono secundario (Sólo debe contener números) introducido es inválido." 
+                                    ErrorMessage="El número de teléfono secundario proporcionado tiene un formato inválido, asegúrese que la longitud numérica sea válida." 
                                     ForeColor="Red" ValidationExpression="([0-9]*)" 
                                     ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                             </td>
@@ -175,7 +175,7 @@
                                     ErrorMessage="El correo electrónico es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
                                         ControlToValidate="txtCorreoElectronico" 
-                                        ErrorMessage="Correo electrónico inválido." ForeColor="Red" 
+                                        ErrorMessage="El correo electrónico proporcionado tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red" 
                                         ValidationExpression=".+@.+\..+" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                             </td>
                         </tr>
@@ -255,10 +255,10 @@
                             <td class="style34">
                                 <asp:TextBox ID="txtTelefonoHabitacion" runat="server" MaxLength="8"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="rfvTelefonoHabitacion" runat="server" ControlToValidate="txtTelefonoHabitacion"
-                                    ErrorMessage="El teléfono principal es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
+                                    ErrorMessage="El número de teléfono principal proporcionado tiene un formato inválido, asegúrese que únicamente contenga números válidos." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="revTelefonoHabitacion" runat="server" 
                                     ControlToValidate="txtTelefonoHabitacion" 
-                                    ErrorMessage="El número de teléfono principal (Sólo debe contener números) introducido es inválido." 
+                                    ErrorMessage="El número de teléfono principal proporcionado tiene un formato inválido, asegúrese que la longitud numérica sea válida." 
                                     ForeColor="Red" ValidationExpression="([0-9]*)" 
                                     ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                             </td>
