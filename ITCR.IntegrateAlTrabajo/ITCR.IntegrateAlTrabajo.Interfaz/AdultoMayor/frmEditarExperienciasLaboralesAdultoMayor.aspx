@@ -144,9 +144,13 @@
                                                 <asp:Label ID="lblPuesto" runat="server" Text="Puesto laboral"></asp:Label>
                                             </td>
                                             <td class="style32">
-                                                <asp:TextBox ID="txtPuesto" runat="server" Height="26px" Width="414px"></asp:TextBox>
+                                                <asp:TextBox ID="txtPuesto" runat="server" Height="26px" Width="414px"
+                                                    tooltip="Ejemplo: Asistente de Mantenimiento"
+                                                    onblur="this.placeholder = 'Escriba el puesto aquí'" 
+                                                    onfocus="this.placeholder = ''" placeholder="Escriba el puesto aquí"  
+                                                    MaxLength="50"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="rfvPuesto" runat="server" 
-                                                    ControlToValidate="txtPuesto" ErrorMessage="El puesto laboral es un dato requerido, por lo que debe introducir un valor válido." 
+                                                    ControlToValidate="txtPuesto" ErrorMessage="El puesto es un dato requerido." 
                                                     ForeColor="Red" ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
                                             </td>
                                         </tr>
@@ -156,9 +160,13 @@
                                                     Text="Empresa o institución en la que laboró"></asp:Label>
                                             </td>
                                             <td class="style32">
-                                                <asp:TextBox ID="txtEmpresa" runat="server" Width="413px"></asp:TextBox>
+                                                <asp:TextBox ID="txtEmpresa" runat="server" Width="413px" 
+                                                tooltip="Ejemplo: Ministerio de Obras Públicas y Transporte"
+                                                onblur="this.placeholder = 'Escriba el nombre de la empresa o institución aquí'" 
+                                                onfocus="this.placeholder = ''" placeholder="Escriba el nombre de la empresa o institución aquí" 
+                                                MaxLength="60"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="rfvEmpresa" runat="server" 
-                                                    ControlToValidate="txtEmpresa" ErrorMessage="La empresa o institución donde laboró es un dato requerido, por lo que debe introducir un valor válido." 
+                                                    ControlToValidate="txtEmpresa" ErrorMessage="La empresa es un dato requerido." 
                                                     ForeColor="Red" ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
                                             </td>
                                         </tr>

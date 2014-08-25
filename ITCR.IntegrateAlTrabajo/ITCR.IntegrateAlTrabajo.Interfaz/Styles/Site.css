@@ -338,19 +338,22 @@ input
 {
     font-family:Century Gothic;
     font-size:15px;
-    margin-left: 1px;
+    margin-left: 0px;
+    margin-right: 2px;
 }
 
 select
 {
     font-family:Century Gothic;
     font-size:15px;
+    margin-left: 0px;
 }
 
 textarea
 {
     font-family:Century Gothic;
     font-size:15px;
+    margin-left: 0px;
 }
 
 .Boton

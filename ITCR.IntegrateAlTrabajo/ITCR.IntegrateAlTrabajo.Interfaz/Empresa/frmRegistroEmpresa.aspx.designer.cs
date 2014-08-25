@@ -13,6 +13,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
     public partial class frmRegistroEmpresa {
         
         /// <summary>
+        /// ScriptManagerMain control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManagerMain;
+        
+        /// <summary>
         /// lblRegistroEmpresa control.
         /// </summary>
         /// <remarks>
@@ -409,15 +418,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombreUsuario;
         
         /// <summary>
-        /// cvLen_Usuario control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CustomValidator cvLen_Usuario;
-        
-        /// <summary>
         /// RegEx_Usuario control.
         /// </summary>
         /// <remarks>
@@ -425,6 +425,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegEx_Usuario;
+        
+        /// <summary>
+        /// cvLen_Usuario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CustomValidator cvLen_Usuario;
         
         /// <summary>
         /// lblContraseña control.
@@ -445,15 +454,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
         protected global::System.Web.UI.WebControls.TextBox txtContraseña;
         
         /// <summary>
-        /// rfvContraseña control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvContraseña;
-        
-        /// <summary>
         /// cvLen_Contrasenna control.
         /// </summary>
         /// <remarks>
@@ -470,6 +470,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RegularExpressionValidator RegEx_Contrasenna;
+        
+        /// <summary>
+        /// rfvContraseña control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvContraseña;
         
         /// <summary>
         /// lblConfirmarContraseña control.
@@ -571,15 +580,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
         protected global::System.Web.UI.WebControls.Panel Panel6;
         
         /// <summary>
-        /// btnAtras1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAtras1;
-        
-        /// <summary>
         /// btnCancelarPaso3 control.
         /// </summary>
         /// <remarks>
@@ -587,6 +587,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnCancelarPaso3;
+        
+        /// <summary>
+        /// btnAtras1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAtras1;
         
         /// <summary>
         /// btnFinalizar control.

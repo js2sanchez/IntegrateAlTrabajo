@@ -162,28 +162,38 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
 
         protected void btnFinalizar_Click(object sender, EventArgs e)
         {
-            ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).Insertar();
-            DataTable TablaUsuario = ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).Buscar();
-
-            Int16 IdUsuario = 0;
-
-            if (TablaUsuario.Rows.Count > 0)
+            if (chkAceptarTerminos.Checked)
             {
-                IdUsuario = Int16.Parse(TablaUsuario.Rows[0]["Id_Usuario"].ToString());
-            }
+                ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).Insertar();
+                DataTable TablaUsuario = ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).Buscar();
 
-            ((cIATEmpresaNegocios)HttpContext.Current.Session["Empresa"]).FK_IdUsuario = IdUsuario;
-            ((cIATEmpresaNegocios)HttpContext.Current.Session["Empresa"]).Insertar();
-            ((cIATContactoNegocios)HttpContext.Current.Session["CorreoElectronico"]).FK_IdUsuario = IdUsuario;
-            ((cIATContactoNegocios)HttpContext.Current.Session["CorreoElectronico"]).Insertar();
-            ((cIATContactoNegocios)HttpContext.Current.Session["Telefono"]).FK_IdUsuario = IdUsuario;
-            ((cIATContactoNegocios)HttpContext.Current.Session["Telefono"]).Insertar();
-            string script = @"<script type='text/javascript'>
-                            alert('La empresa se ha registrado con éxito.');
+                Int16 IdUsuario = 0;
+
+                if (TablaUsuario.Rows.Count > 0)
+                {
+                    IdUsuario = Int16.Parse(TablaUsuario.Rows[0]["Id_Usuario"].ToString());
+                }
+
+                ((cIATEmpresaNegocios)HttpContext.Current.Session["Empresa"]).FK_IdUsuario = IdUsuario;
+                ((cIATEmpresaNegocios)HttpContext.Current.Session["Empresa"]).Insertar();
+                ((cIATContactoNegocios)HttpContext.Current.Session["CorreoElectronico"]).FK_IdUsuario = IdUsuario;
+                ((cIATContactoNegocios)HttpContext.Current.Session["CorreoElectronico"]).Insertar();
+                ((cIATContactoNegocios)HttpContext.Current.Session["Telefono"]).FK_IdUsuario = IdUsuario;
+                ((cIATContactoNegocios)HttpContext.Current.Session["Telefono"]).Insertar();
+                
+                string script = @"<script type='text/javascript'>
+                            finalizar();
                             </script>";
-            ScriptManager.RegisterStartupScript(this, typeof(Page), "Registro", script, false);
-            Response.Redirect("/Autenticacion/frmAutenticacion.aspx");
 
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "Registro", script, false);
+            }
+            else
+            {
+                string script = @"<script type='text/javascript'>
+                            aceptarTerminos();
+                            </script>";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "Registro", script, false);
+            }
         }
 
         protected void chkAceptarTerminos_CheckedChanged(object sender, EventArgs e)
@@ -200,19 +210,25 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
             }
         }
 
+        private void salirSinGuardar()
+        {
+            string code = @"<script type='text/javascript'>endConfirmation();</script>";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
+        }
+
         protected void btnCancelarPaso1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Autenticacion/frmAutenticacion.aspx");
+            salirSinGuardar();
         }
 
         protected void btnCancelarPaso2_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Autenticacion/frmAutenticacion.aspx");
+            salirSinGuardar();
         }
 
         protected void btnCancelarPaso3_Click(object sender, EventArgs e)
         {
-            Response.Redirect("/Autenticacion/frmAutenticacion.aspx");
+            salirSinGuardar();
         }
 
         protected void btnAtras_Click(object sender, EventArgs e)

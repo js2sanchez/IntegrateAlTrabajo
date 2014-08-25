@@ -462,10 +462,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "Registro", script, false);
             }
             else {
-                string script = @"<script type='text/javascript'>
-                            alertify.alert('Debe aceptar los términos y condiciones antes de finalizar. Si no desea aceptarlos, presione el botón de salir sin guardar');
-                            </script>";
 
+                string script = @"<script type='text/javascript'>
+                            aceptarTerminos();
+                            </script>";
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "Registro", script, false);
             }
         }

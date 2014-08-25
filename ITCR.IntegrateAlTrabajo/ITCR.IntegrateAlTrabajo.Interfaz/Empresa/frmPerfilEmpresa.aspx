@@ -1,6 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMaestraEmpresa.Master" AutoEventWireup="true" CodeBehind="frmPerfilEmpresa.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.Empresa.frmPerfilEmpresa" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMaestraEmpresa.Master" AutoEventWireup="true"
+    CodeBehind="frmPerfilEmpresa.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.Empresa.frmPerfilEmpresa" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-<link rel="stylesheet" href="../Styles/alertify.bootstrap.css" />
+    <link rel="stylesheet" href="../Styles/alertify.bootstrap.css" />
     <link rel="stylesheet" href="../Styles/alertify.core.css" />
     <link rel="stylesheet" href="../Styles/alertify.default.css" />
     <style type="text/css">
@@ -81,28 +83,25 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-<asp:ScriptManager ID="ScriptManagerMain"
-            runat="server"
-            EnablePageMethods="true" 
-            ScriptMode="Release" 
-            LoadScriptsBeforeUI="true">
+    <asp:ScriptManager ID="ScriptManagerMain" runat="server" EnablePageMethods="true"
+        ScriptMode="Release" LoadScriptsBeforeUI="true">
     </asp:ScriptManager>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/jquery.maskedinput.min.js"></script>
-    <script type="text/javascript" src="../js/alertify.min.js"></script>   
-    <script type="text/javascript">        
+    <script type="text/javascript" src="../js/alertify.min.js"></script>
+    <script type="text/javascript">
         function eliminarEmpresa(user) {
-            // custom OK and Cancel label
-            // default: OK, Cancel
+            alertify.set({ buttonFocus: "none" });
+            alertify.set({ buttonReverse: true });
             alertify.set({ labels: {
-                ok: "Si, estoy seguro",
+                ok: "Sí, estoy seguro",
                 cancel: "No, deseo manterla"
             }
             });
             // button labels will be "Accept" and "Deny"
-            alertify.confirm("¿Esta seguro que desea eliminar esta empresa?", function (e) {
+            alertify.confirm("¿Está seguro que desea eliminar esta empresa?", function (e) {
                 if (e) {
-                    PageMethods.eliminarEmpresa(user, OnSuccess, OnError);                    
+                    PageMethods.eliminarEmpresa(user, OnSuccess, OnError);
                 }
             });
         }
@@ -113,8 +112,8 @@
                 cancel: "Cancelar"
             }
             });
-        alertify.alert("Se ha eliminado la empresa.");
-        location.href = "/Autenticacion/frmAutenticacion.aspx";
+            alertify.alert("La empresa se ha eliminado de la bolsa de trabajo exitosamente. ¡Gracias por haber cooperado para que las personas adultas mayores tengan una vejez activa!.");
+            location.href = "/Autenticacion/frmAutenticacion.aspx";
         }
         function OnError(error) {
             alertify.set({ labels: {
@@ -122,54 +121,54 @@
                 cancel: "Cancelar"
             }
             });
-            alert("Hubo un error. Inténtelo de nuevo. Error: " + error.toString());
+            alertify.alert("Hubo un error. Inténtelo más tarde.");
         }
-    </script> 
+    </script>
     <table class="style3">
         <tr>
             <td class="style12">
-                </td>
+            </td>
             <td class="style13" colspan="2">
                 <asp:Label ID="lblPerfil" runat="server" Text="Mi perfil" CssClass="Titulo1"></asp:Label>
             </td>
             <td class="style15">
-                </td>
+            </td>
             <td class="style13">
-                </td>
+            </td>
             <td class="style14">
-                </td>
+            </td>
             <td class="style12">
-                </td>
+            </td>
         </tr>
         <tr>
             <td class="style12">
-                &nbsp;</td>
+                &nbsp;
+            </td>
             <td class="style9" colspan="5">
-                &nbsp;</td>
+                &nbsp;
+            </td>
             <td class="style12">
-                &nbsp;</td>
+                &nbsp;
+            </td>
         </tr>
         <tr>
             <td class="style12">
             </td>
             <td class="style9" colspan="5">
-                <asp:Panel ID="pnlPerfil" runat="server" 
-                    BorderStyle="Solid" BorderWidth="2px">
+                <asp:Panel ID="pnlPerfil" runat="server" BorderStyle="Solid" BorderWidth="2px">
                     <table class="style16">
                         <tr>
                             <td class="style31" colspan="2">
-                                <asp:Label ID="lblDatosGenerales" runat="server" CssClass="Titulo2" 
-                                    Text="Datos generales"></asp:Label>
+                                <asp:Label ID="lblDatosGenerales" runat="server" CssClass="Titulo2" Text="Datos generales"></asp:Label>
                             </td>
                             <td class="style24">
-                                &nbsp;</td>
+                                &nbsp;
+                            </td>
                             <td class="style25" colspan="2">
-                                <asp:Panel ID="PanelEditarDatosPersonales" runat="server" 
-                                    HorizontalAlign="Right">
+                                <asp:Panel ID="PanelEditarDatosPersonales" runat="server" HorizontalAlign="Right">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <asp:ImageButton ID="ibtnEditarPerfilEmpresa" runat="server" Height="50px" 
-                                        ImageUrl="~/Multimedia/icono-editar.jpg" 
-                                        onclick="ibtnEditarPerfilEmpresa_Click" Width="50px" />
+                                    <asp:ImageButton ID="ibtnEditarPerfilEmpresa" runat="server" Height="50px" ImageUrl="~/Multimedia/icono-editar.jpg"
+                                        OnClick="ibtnEditarPerfilEmpresa_Click" Width="50px" />
                                 </asp:Panel>
                             </td>
                         </tr>
@@ -288,7 +287,8 @@
                             <td class="style26">
                             </td>
                             <td class="style27">
-                                &nbsp;</td>
+                                &nbsp;
+                            </td>
                             <td class="style28">
                             </td>
                             <td class="style29">
@@ -304,41 +304,39 @@
         </tr>
         <tr>
             <td class="style12">
-                </td>
+            </td>
             <td class="style13">
-                </td>
+            </td>
             <td class="style14">
-                </td>
+            </td>
             <td class="style15">
-                </td>
+            </td>
             <td class="style13">
-                </td>
+            </td>
             <td class="style14">
-                </td>
+            </td>
             <td class="style12">
-                </td>
+            </td>
         </tr>
         <tr>
             <td class="style12">
-                &nbsp;</td>
+                &nbsp;
+            </td>
             <td class="style13" colspan="5">
-                <asp:Panel ID="PanelDatosAutenticacion" runat="server" 
-                    BorderStyle="Solid" BorderWidth="2px">
+                <asp:Panel ID="PanelDatosAutenticacion" runat="server" BorderStyle="Solid" BorderWidth="2px">
                     <table class="style16">
                         <tr>
                             <td class="style31" colspan="2">
-                                <asp:Label ID="lblDatosAutenticacion" runat="server" CssClass="Titulo2" 
-                                    Text="Datos de autenticación"></asp:Label>
+                                <asp:Label ID="lblDatosAutenticacion" runat="server" CssClass="Titulo2" Text="Datos de autenticación"></asp:Label>
                             </td>
                             <td class="style24">
-                                &nbsp;</td>
+                                &nbsp;
+                            </td>
                             <td class="style25" colspan="2">
-                                <asp:Panel ID="PanelEditarDatosAutenticacion" runat="server" 
-                                    HorizontalAlign="Right">
+                                <asp:Panel ID="PanelEditarDatosAutenticacion" runat="server" HorizontalAlign="Right">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <asp:ImageButton ID="ibtnEditarDatosAutenticacion" runat="server" Height="50px" 
-                                        ImageUrl="~/Multimedia/icono-editar.jpg" 
-                                        onclick="ibtnEditarDatosAutenticacion_Click" Width="50px" />
+                                    <asp:ImageButton ID="ibtnEditarDatosAutenticacion" runat="server" Height="50px" ImageUrl="~/Multimedia/icono-editar.jpg"
+                                        OnClick="ibtnEditarDatosAutenticacion_Click" Width="50px" />
                                 </asp:Panel>
                             </td>
                         </tr>
@@ -372,7 +370,8 @@
                             <td class="style26">
                             </td>
                             <td class="style27">
-                                &nbsp;</td>
+                                &nbsp;
+                            </td>
                             <td class="style28">
                             </td>
                             <td class="style29">
@@ -382,73 +381,88 @@
                         </tr>
                     </table>
                 </asp:Panel>
-                </td>
+            </td>
             <td class="style12">
-                &nbsp;</td>
+                &nbsp;
+            </td>
         </tr>
         <tr>
             <td class="style12">
-                &nbsp;</td>
+                &nbsp;
+            </td>
             <td class="style13">
-                &nbsp;</td>
+                &nbsp;
+            </td>
             <td class="style14">
-                &nbsp;</td>
+                &nbsp;
+            </td>
             <td class="style15">
-                &nbsp;</td>
+                &nbsp;
+            </td>
             <td class="style13">
-                &nbsp;</td>
+                &nbsp;
+            </td>
             <td class="style14">
-                &nbsp;</td>
+                &nbsp;
+            </td>
             <td class="style12">
-                &nbsp;</td>
+                &nbsp;
+            </td>
         </tr>
         <tr>
             <td class="style12">
-                &nbsp;</td>
+                &nbsp;
+            </td>
             <td class="style13" colspan="5">
                 <asp:Panel ID="PanelEliminarPerfilEmpresa" runat="server" BorderWidth="2px">
                     <table class="style16">
                         <tr>
                             <td>
-                                <asp:Label ID="lblEliminarPerfilTitulo" runat="server" CssClass="Titulo2" 
-                                    Text="Eliminar perfil"></asp:Label>
+                                <asp:Label ID="lblEliminarPerfilTitulo" runat="server" CssClass="Titulo2" Text="Eliminar perfil"></asp:Label>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <asp:Label ID="lblEliminarPerfil" runat="server" 
-                                    Text="Presione el siguiente botón si desea eliminar por completo el perfil de esta empresa en la bolsa de trabajo."></asp:Label>
+                                <asp:Label ID="lblEliminarPerfil" runat="server" Text="Presione el siguiente botón si desea eliminar por completo el perfil de esta empresa en la bolsa de trabajo."></asp:Label>
                                 &nbsp;&nbsp;&nbsp;
-                                <asp:ImageButton ID="ibtnEliminarPerfilEmpresa1" runat="server" Height="50px" 
-                                    ImageUrl="~/Multimedia/icono-eliminar.jpg" 
-                                    onclick="ibtnEliminarPerfilEmpresa_Click" Width="50px" />
+                                <asp:ImageButton ID="ibtnEliminarPerfilEmpresa1" runat="server" Height="50px" ImageUrl="~/Multimedia/icono-eliminar.jpg"
+                                    OnClick="ibtnEliminarPerfilEmpresa_Click" Width="50px" />
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                &nbsp;</td>
+                                &nbsp;
+                            </td>
                         </tr>
                     </table>
                 </asp:Panel>
-                </td>
+            </td>
             <td class="style12">
-                &nbsp;</td>
+                &nbsp;
+            </td>
         </tr>
         <tr>
             <td class="style12">
-                &nbsp;</td>
+                &nbsp;
+            </td>
             <td class="style13">
-                &nbsp;</td>
+                &nbsp;
+            </td>
             <td class="style14">
-                &nbsp;</td>
+                &nbsp;
+            </td>
             <td class="style15">
-                &nbsp;</td>
+                &nbsp;
+            </td>
             <td class="style13">
-                &nbsp;</td>
+                &nbsp;
+            </td>
             <td class="style14">
-                &nbsp;</td>
+                &nbsp;
+            </td>
             <td class="style12">
-                &nbsp;</td>
+                &nbsp;
+            </td>
         </tr>
     </table>
 </asp:Content>

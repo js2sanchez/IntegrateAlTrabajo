@@ -561,7 +561,11 @@
                             </td>
                             <td class="style19" colspan="3">
                                 <asp:Label ID="lblPasatiemposDato" runat="server"></asp:Label>
-                                <asp:TextBox ID="txtPasatiempo" runat="server" Width="100%" />
+                                <asp:TextBox ID="txtPasatiempo" runat="server" 
+                                tooltip="Por favor, ingrese sólo un pasatiempo. Ejemplo: Leer libros de historia."
+                                onblur="this.placeholder = 'Escriba su pasatiempo favorito aquí'" 
+                                onfocus="this.placeholder = ''" placeholder="Escriba su pasatiempo favorito aquí" 
+                                 Width="100%" MaxLength="80" />
                             </td>
                             <td>                                
                                     <asp:Panel ID="PanelPasatiempoFavorito" runat="server" HorizontalAlign="Right">

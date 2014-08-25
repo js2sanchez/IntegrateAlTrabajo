@@ -3,7 +3,8 @@
  */
 .alertify,
 .alertify-log {
-	font-family: sans-serif;
+	font-family:Century Gothic;
+	font-size:larger;
 }
 .alertify {
 	background: #FFF;
@@ -23,7 +24,7 @@
 	.alertify-button {
 		border-radius: 4px;
 		color: #FFF;
-		font-weight: bold;
+		font-weight: normal;
 		padding: 6px 15px;
 		text-decoration: none;
 		text-shadow: 1px 1px 0 rgba(0,0,0,.5);
@@ -33,7 +34,9 @@
 		background-image:     -ms-linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));
 		background-image:      -o-linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));
 		background-image:         linear-gradient(top, rgba(255,255,255,.3), rgba(255,255,255,0));
+		font-family:Century Gothic;
 	}
+	
 	.alertify-button:hover,
 	.alertify-button:focus {
 		outline: none;
@@ -53,14 +56,14 @@
 		.alertify-button-cancel,
 		.alertify-button-cancel:hover,
 		.alertify-button-cancel:focus {
-			background-color: #FE1A00;
-			border: 1px solid #D83526;
+			background-color: #379FCC;
+			border: 1px solid #0079AD;
 		}
 		.alertify-button-ok,
 		.alertify-button-ok:hover,
 		.alertify-button-ok:focus {
-			background-color: #5CB811;
-			border: 1px solid #3B7808;
+			background-color: #379FCC;
+			border: 1px solid #0079AD;
 		}
 
 .alertify-log {

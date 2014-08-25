@@ -151,10 +151,14 @@
                                                 <asp:Label ID="lblTitulo" runat="server" Text="Título Académico"></asp:Label>
                                             </td>
                                             <td class="style33">
-                                                <asp:TextBox ID="txtTituloEstudio" runat="server" Width="402px"></asp:TextBox>
+                                                <asp:TextBox ID="txtTituloEstudio" runat="server" Width="402px" 
+                                                tooltip="Ejemplo: Bachiller en Educación Media"
+                                                onblur="this.placeholder = 'Escriba su título aquí'" 
+                                                onfocus="this.placeholder = ''" placeholder="Escriba su título aquí"  
+                                                MaxLength="50"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="rfvTituloEstudio" runat="server" 
                                                     ControlToValidate="txtTituloEstudio" 
-                                                    ErrorMessage="El título académico es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" 
+                                                    ErrorMessage="El título es un dato requerido." ForeColor="Red" 
                                                     ValidationGroup="gvEstudios">*</asp:RequiredFieldValidator>
                                             </td>
                                             <td class="style30">
@@ -166,10 +170,14 @@
                                                     Text="Institución en la que recibió el título"></asp:Label>
                                             </td>
                                             <td class="style33">
-                                                <asp:TextBox ID="txtInstitucionEstudio" runat="server" Width="403px"></asp:TextBox>
+                                                <asp:TextBox ID="txtInstitucionEstudio" runat="server" Width="403px"
+                                                    tooltip="Ejemplo: Colegio Técnico Profesional de Pococí"
+                                                    onblur="this.placeholder = 'Escriba el nombre de la institución aquí'" 
+                                                    onfocus="this.placeholder = ''" placeholder="Escriba el nombre de la institución aquí"   
+                                                    MaxLength="60"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="rfvInstitucionEstudio" runat="server" 
                                                     ControlToValidate="txtInstitucionEstudio" 
-                                                    ErrorMessage="La institución en la que recibió el título es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" 
+                                                    ErrorMessage="La institución es un dato requerido." ForeColor="Red" 
                                                     ValidationGroup="gvEstudios">*</asp:RequiredFieldValidator>
                                             </td>
                                             <td class="style30">

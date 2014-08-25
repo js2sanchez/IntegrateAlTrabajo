@@ -37,15 +37,6 @@
             width: 161px;
             height: 25px;
         }
-        .style34
-        {
-            width: 212px;
-            height: 25px;
-        }
-        .style35
-        {
-            height: 25px;
-        }
         .style36
         {
             width: 151px;
@@ -55,13 +46,9 @@
         {
             width: 161px;
         }
-        .style38
-        {
-            width: 212px;
-        }
         .style39
         {
-            width: 21px;
+            width: 3px;
         }
         .style40
         {
@@ -78,12 +65,31 @@
         }
         .style43
         {
-            width: 212px;
+            width: 269px;
             height: 38px;
         }
         .style44
         {
             height: 38px;
+        }
+        .style45
+        {
+            width: 269px;
+            height: 25px;
+        }
+        .style46
+        {
+            width: 269px;
+        }
+        .style47
+        {
+            height: 25px;
+            width: 34px;
+        }
+        .style48
+        {
+            width: 3px;
+            height: 25px;
         }
     </style>
 </asp:Content>
@@ -140,19 +146,23 @@
                             <td class="style32">
                                 <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
                             </td>
-                            <td class="style34">
-                                <asp:TextBox ID="txtNombre" runat="server" Enabled="False"></asp:TextBox>
+                            <td class="style45">
+                                <asp:TextBox ID="txtNombre" runat="server" Enabled="False" Width="230px"></asp:TextBox>
                             </td>
-                            <td class="style35">
+                            <td class="style48">
                                 &nbsp;</td>
                             <td class="style36">
                                 <asp:Label ID="lblTelefonoCelular" runat="server" Text="Teléfono secundario"></asp:Label>
                             </td>
                             <td class="style6">
-                                <asp:TextBox ID="txtTelefonoCelular" runat="server" MaxLength="8"></asp:TextBox>
+                                <asp:TextBox ID="txtTelefonoCelular" runat="server" MaxLength="8"
+                                onblur="this.placeholder = 'Opcionalmente otro teléfono'" 
+                                onfocus="this.placeholder = ''" placeholder="Opcionalmente otro teléfono"
+                                ToolTip="Ejemplo: 87721144 (Por favor, no use guiones)" Width="230px"  
+                                ></asp:TextBox>
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" 
                                     ControlToValidate="txtTelefonoCelular" 
-                                    ErrorMessage="El número de teléfono secundario proporcionado tiene un formato inválido, asegúrese que la longitud numérica sea válida." 
+                                    ErrorMessage="El número de teléfono secundario (Sólo debe contener números) introducido es inválido." 
                                     ForeColor="Red" ValidationExpression="([0-9]*)" 
                                     ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                             </td>
@@ -161,21 +171,25 @@
                             <td class="style32">
                                 <asp:Label ID="lblApellido1" runat="server" Text="Primer apellido"></asp:Label>
                             </td>
-                            <td class="style34">
-                                <asp:TextBox ID="txtApellido1" runat="server" Enabled="False"></asp:TextBox>
+                            <td class="style45">
+                                <asp:TextBox ID="txtApellido1" runat="server" Enabled="False" Width="230px"></asp:TextBox>
                             </td>
-                            <td class="style35">
+                            <td class="style48">
                                 &nbsp;</td>
                             <td class="style36">
                                 <asp:Label ID="lblCorreoElectronico" runat="server" Text="Correo electrónico"></asp:Label>
                             </td>
                             <td class="style6">
-                                <asp:TextBox ID="txtCorreoElectronico" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="txtCorreoElectronico" runat="server" 
+                                onblur="this.placeholder = 'Escriba su correo electrónico aquí'" 
+                                onfocus="this.placeholder = ''" placeholder="Escriba su correo electrónico aquí"  
+                                tooltip="Ejemplo: laura-fernandez@gmail.com"
+                                MaxLength="80" Width="230px"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCorreoElectronico"
                                     ErrorMessage="El correo electrónico es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" 
                                         ControlToValidate="txtCorreoElectronico" 
-                                        ErrorMessage="El correo electrónico proporcionado tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red" 
+                                        ErrorMessage="Correo electrónico inválido." ForeColor="Red" 
                                         ValidationExpression=".+@.+\..+" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                             </td>
                         </tr>
@@ -183,10 +197,10 @@
                             <td class="style32">
                                 <asp:Label ID="lblApellido2" runat="server" Text="Segundo apellido"></asp:Label>
                             </td>
-                            <td class="style34">
-                                <asp:TextBox ID="txtApellido2" runat="server" Enabled="False"></asp:TextBox>
+                            <td class="style45">
+                                <asp:TextBox ID="txtApellido2" runat="server" Enabled="False" Width="230px"></asp:TextBox>
                             </td>
-                            <td class="style35">
+                            <td class="style48">
                                 &nbsp;</td>
                             <td class="style36">
                                 <asp:Label ID="lblProvincia" runat="server" Text="Provincia"></asp:Label>
@@ -201,11 +215,11 @@
                             <td class="style32">
                                 <asp:Label ID="lblSexo" runat="server" Text="Sexo"></asp:Label>
                             </td>
-                            <td class="style34">
+                            <td class="style45">
                                 <asp:DropDownList ID="drpSexo" runat="server" Enabled="False">
                                 </asp:DropDownList>
                             </td>
-                            <td class="style35">
+                            <td class="style48">
                                 &nbsp;</td>
                             <td class="style36">
                                 <asp:Label ID="lblCanton" runat="server" Text="Cantón"></asp:Label>
@@ -220,10 +234,10 @@
                             <td class="style32">
                                 <asp:Label ID="lblCedula" runat="server" Text="Cédula"></asp:Label>
                             </td>
-                            <td class="style34">
-                                <asp:TextBox ID="txtCedula" runat="server" Enabled="False"></asp:TextBox>
+                            <td class="style45">
+                                <asp:TextBox ID="txtCedula" runat="server" Enabled="False" Width="230px"></asp:TextBox>
                             </td>
-                            <td class="style35">
+                            <td class="style48">
                                 &nbsp;</td>
                             <td class="style36">
                                 <asp:Label ID="lblDistrito" runat="server" Text="Distrito"></asp:Label>
@@ -237,10 +251,11 @@
                             <td class="style32">
                                 <asp:Label ID="lblFechaNacimiento" runat="server" Text="Fecha de nacimiento"></asp:Label>
                             </td>
-                            <td class="style34">
-                                <asp:TextBox ID="txtFechaNacimiento" runat="server" Enabled="False"></asp:TextBox>
+                            <td class="style45">
+                                <asp:TextBox ID="txtFechaNacimiento" runat="server" Enabled="False" 
+                                    Width="230px"></asp:TextBox>
                             </td>
-                            <td class="style35">
+                            <td class="style48">
                                 &nbsp;</td>
                             <td class="style36">
                                 &nbsp;</td>
@@ -252,17 +267,21 @@
                                 <asp:Label ID="lblTelefonoHabitacion" runat="server" 
                                     Text="Teléfono principal"></asp:Label>
                             </td>
-                            <td class="style34">
-                                <asp:TextBox ID="txtTelefonoHabitacion" runat="server" MaxLength="8"></asp:TextBox>
+                            <td class="style45">
+                                <asp:TextBox ID="txtTelefonoHabitacion" runat="server" MaxLength="8"
+                                onblur="this.placeholder = 'Escriba su teléfono aquí'" 
+                                onfocus="this.placeholder = ''" placeholder="Escriba su teléfono aquí" 
+                                tooltip="Ejemplo: 25517722 (Por favor, no use guiones)" TabIndex="12" Width="230px" 
+                                ></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="rfvTelefonoHabitacion" runat="server" ControlToValidate="txtTelefonoHabitacion"
-                                    ErrorMessage="El número de teléfono principal proporcionado tiene un formato inválido, asegúrese que únicamente contenga números válidos." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
+                                    ErrorMessage="El teléfono principal es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="revTelefonoHabitacion" runat="server" 
                                     ControlToValidate="txtTelefonoHabitacion" 
-                                    ErrorMessage="El número de teléfono principal proporcionado tiene un formato inválido, asegúrese que la longitud numérica sea válida." 
+                                    ErrorMessage="El número de teléfono principal (Sólo debe contener números) introducido es inválido." 
                                     ForeColor="Red" ValidationExpression="([0-9]*)" 
                                     ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                             </td>
-                            <td class="style35">
+                            <td class="style48">
                                 &nbsp;</td>
                             <td class="style36">
                                 &nbsp;</td>
@@ -272,7 +291,7 @@
                         <tr>
                             <td class="style37">
                                 &nbsp;</td>
-                            <td class="style38">
+                            <td class="style46">
                                 &nbsp;</td>
                             <td class="style39">
                             </td>
