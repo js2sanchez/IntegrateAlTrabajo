@@ -15,25 +15,14 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 {
     public partial class frmRegistroAdultoMayor : System.Web.UI.Page
     {
-        private static cIATPersonaNegocios Persona = new cIATPersonaNegocios(1, "A", 2, "B");
-        private static cIATUsuarioNegocios Usuario = new cIATUsuarioNegocios(1, "A", 2, "B");
+        #region Variables
         cIATEstudioNegocios Estudio = new cIATEstudioNegocios(1, "A", 2, "B");
         cIATExperienciaLaboralNegocios ExperienciaLaboral = new cIATExperienciaLaboralNegocios(1, "A", 2, "B");
         cIATIdiomaNegocios Idioma = new cIATIdiomaNegocios(1, "A", 2, "B");
-        private static cIATContactoNegocios TelefonoHabitacion = new cIATContactoNegocios(1, "A", 2, "B");
-        private static cIATContactoNegocios TelefonoCelular = new cIATContactoNegocios(1, "A", 2, "B");
-        private static cIATContactoNegocios CorreoElectronico = new cIATContactoNegocios(1, "A", 2, "B");
-
         cIATIdiomaXPersonaNegocios IdiomaXPersona = new cIATIdiomaXPersonaNegocios(1, "A", 2, "B");
-
         DataTable TablaEstudios = new DataTable();
-        private static ArrayList ListaEstudios = new ArrayList();
-
         DataTable TablaExperienciasLaborales = new DataTable();
-        private static ArrayList ListaExperienciasLaborales = new ArrayList();
-
-        private static ArrayList ListaIdiomas = new ArrayList();
-
+        #endregion
 
         #region Constantes
 
@@ -48,9 +37,19 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         {
             if (!IsPostBack)
             {
-                ListaEstudios.Clear();
-                ListaExperienciasLaborales.Clear();
-                ListaIdiomas.Clear();
+                //Inicializar variables de sesion
+                HttpContext.Current.Session["Persona"] = new cIATPersonaNegocios(1, "A", 2, "B");
+                HttpContext.Current.Session["Usuario"] = new cIATUsuarioNegocios(1, "A", 2, "B");
+                HttpContext.Current.Session["TelefonoHabitacion"] = new cIATContactoNegocios(1, "A", 2, "B");
+                HttpContext.Current.Session["TelefonoCelular"] = new cIATContactoNegocios(1, "A", 2, "B");
+                HttpContext.Current.Session["CorreoElectronico"] = new cIATContactoNegocios(1, "A", 2, "B");
+                //Inicializar interfaz
+                HttpContext.Current.Session["ListaEstudios"] = new ArrayList();
+                ((ArrayList)HttpContext.Current.Session["ListaEstudios"]).Clear();
+                HttpContext.Current.Session["ListaExperienciasLaborales"] = new ArrayList();
+                ((ArrayList)HttpContext.Current.Session["ListaExperienciasLaborales"]).Clear();
+                HttpContext.Current.Session["ListaIdiomas"] = new ArrayList();
+                ((ArrayList)HttpContext.Current.Session["ListaIdiomas"]).Clear();
                 mvRegistroAdultoMayor.ActiveViewIndex = 0;
                 txtCedulaExt.Visible = false;
                 cargarTodosDropDownList();
@@ -196,16 +195,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
         #endregion
 
-        protected void validarTelefonosServer(object sender, ServerValidateEventArgs e)
-        {
-            e.IsValid = txtTelefonoHabitacion.Text != "" || txtCelular.Text != "";
-        }
-
-        protected  void validarUsuarioServer(object sender, ServerValidateEventArgs e)
-        {
-            e.IsValid = CARACTERES_MINIMOS <= txtNombreUsuario.Text.Length 
-                && txtNombreUsuario.Text.Length <= CARACTERES_MAXIMOS;
-        }
+        #region MetodosOnClick
 
         protected void btnSiguiente1_Click(object sender, EventArgs e)
         {
@@ -213,9 +203,9 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
             if (Page.IsValid)
             {
-                Persona.Nom_Persona = txtNombrePersona.Text;
-                Persona.Apellido1 = txtApellido1.Text;
-                Persona.Apellido2 = txtApellido2.Text;
+                ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).Nom_Persona = txtNombrePersona.Text;
+                ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).Apellido1 = txtApellido1.Text;
+                ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).Apellido2 = txtApellido2.Text;
                 string ced;
                 if (ddlNacionalidad.SelectedIndex == 0)
                 {
@@ -225,15 +215,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 {
                     ced = txtCedulaExt.Text;
                 }
-                Persona.Num_Cedula = ced;
-                Persona.Fec_Nacimiento = DateTime.Parse(DdlDiaNacimiento.Text+"/"+(DdlMesNacimiento.SelectedIndex+1)
+                ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).Num_Cedula = ced;
+                ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).Fec_Nacimiento = DateTime.Parse(DdlDiaNacimiento.Text+"/"+(DdlMesNacimiento.SelectedIndex+1)
                     +"/"+DdlAnioNacimiento.Text);
-                Persona.Sexo = drpSexo.SelectedValue;
-                Persona.FK_IdDistrito = Int16.Parse(drpDistrito.SelectedValue);
+                ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).Sexo = drpSexo.SelectedValue;
+                ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).FK_IdDistrito = Int16.Parse(drpDistrito.SelectedValue);
 
-                TelefonoHabitacion.Detalle = txtTelefonoHabitacion.Text;
-                TelefonoCelular.Detalle = txtCelular.Text;
-                CorreoElectronico.Detalle = txtCorreoElectronico.Text;
+                ((cIATContactoNegocios)HttpContext.Current.Session["TelefonoHabitacion"]).Detalle = txtTelefonoHabitacion.Text;
+                ((cIATContactoNegocios)HttpContext.Current.Session["TelefonoCelular"]).Detalle = txtCelular.Text;
+                ((cIATContactoNegocios)HttpContext.Current.Session["CorreoElectronico"]).Detalle = txtCorreoElectronico.Text;
 
                 mvRegistroAdultoMayor.ActiveViewIndex = 1;
             }
@@ -242,7 +232,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         protected void btnSiguiente2_Click(object sender, EventArgs e)
         {
             Validate("gvDatosAutenticacion");
-
+            cIATUsuarioNegocios Usuario = ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]);
             if (Page.IsValid)
             {
                 if (txtContraseña.Text.CompareTo(txtConfirmacionContraseña.Text) == 0)
@@ -290,7 +280,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             {
                 if (chkIdiomas.Items[ContadorIdiomas].Selected)
                 {
-                    ListaIdiomas.Add(chkIdiomas.Items[ContadorIdiomas].Text);
+                    ((ArrayList)HttpContext.Current.Session["ListaIdiomas"]).Add(chkIdiomas.Items[ContadorIdiomas].Text);
                 }
             }
 
@@ -307,8 +297,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         {
             cargarDropDownListDistritos();
         }
-
-
+        
         protected void btnCancelar1_Click(object sender, EventArgs e)
         {
             salirSinGuardar();
@@ -322,7 +311,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             {
                 Estudio.Institucion = txtInstitucionEstudio.Text;
                 Estudio.Titulo = txtTituloEstudio.Text;
-                ListaEstudios.Add(Estudio);
+                ((ArrayList)HttpContext.Current.Session["ListaEstudios"]).Add(Estudio);
                 actualizarDgEstudios();               
                 
                 txtInstitucionEstudio.Text = "";
@@ -331,60 +320,9 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             }
         }
 
-        protected void actualizarDgEstudios()
-        {            
-            TablaEstudios.Columns.Add("Institucion", typeof(string));
-            TablaEstudios.Columns.Add("Titulo", typeof(string));
-
-            foreach (cIATEstudioNegocios ItemEstudio in ListaEstudios)
-            {
-                DataRow FilaEstudio = TablaEstudios.NewRow();
-                FilaEstudio["Institucion"] = ItemEstudio.Institucion.ToString();
-                FilaEstudio["Titulo"] = ItemEstudio.Titulo.ToString();
-                TablaEstudios.Rows.Add(FilaEstudio);
-            }            
-            dgEstudios.DataSource = TablaEstudios;
-            dgEstudios.DataBind();
-
-        }
-
-        protected void btnAgregarExperienciaLaboral_Click(object sender, EventArgs e)
-        {
-            Validate("gvExperienciasLaborales");
-
-            if (Page.IsValid)
-            {
-                ExperienciaLaboral.Empresa = txtEmpresa.Text;
-                ExperienciaLaboral.Puesto = txtPuesto.Text;
-                ListaExperienciasLaborales.Add(ExperienciaLaboral);
-                actualizarDgExperienciasLaborales();              
-
-                txtEmpresa.Text = "";
-                txtPuesto.Text = "";
-                txtEmpresa.Focus();
-            }
-        }
-
-        protected void actualizarDgExperienciasLaborales()
-        {
-            TablaExperienciasLaborales.Columns.Add("Empresa", typeof(string));
-            TablaExperienciasLaborales.Columns.Add("Puesto", typeof(string));
-
-            foreach (cIATExperienciaLaboralNegocios ItemExperienciaLaboral in ListaExperienciasLaborales)
-            {
-                DataRow FilaExperienciaLaboral = TablaExperienciasLaborales.NewRow();
-                FilaExperienciaLaboral["Empresa"] = ItemExperienciaLaboral.Empresa.ToString();
-                FilaExperienciaLaboral["Puesto"] = ItemExperienciaLaboral.Puesto.ToString();
-
-                TablaExperienciasLaborales.Rows.Add(FilaExperienciaLaboral);
-            }
-            dgExperienciasLaborales.DataSource = TablaExperienciasLaborales;
-            dgExperienciasLaborales.DataBind();
-            
-        }      
-                
         protected void btnFinalizar_Click(object sender, EventArgs e)
         {
+            cIATUsuarioNegocios Usuario = ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]);
             if (chkAceptarTerminos.Checked)
             {
                 Usuario.Insertar();
@@ -397,11 +335,11 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                     IdUsuario = Int16.Parse(TablaUsuario.Rows[0]["Id_Usuario"].ToString());
                 }
 
-                Persona.FK_IdUsuario = IdUsuario;
+                ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).FK_IdUsuario = IdUsuario;
 
-                Persona.Insertar();
+                ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).Insertar();
 
-                DataTable TablaPersona = Persona.Buscar();
+                DataTable TablaPersona = ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).Buscar();
 
                 Int16 IdPersona = 0;
 
@@ -409,7 +347,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 {
                     IdPersona = Int16.Parse(TablaPersona.Rows[0]["Id_Persona"].ToString());
                 }
-
+                ArrayList ListaEstudios = ((ArrayList)HttpContext.Current.Session["ListaEstudios"]);
                 foreach (cIATEstudioNegocios ItemEstudio in ListaEstudios)
                 {
                     Estudio.Institucion = ItemEstudio.Institucion.ToString();
@@ -417,7 +355,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                     Estudio.FK_IdPersona = IdPersona;
                     Estudio.Insertar();
                 }
-
+                ArrayList ListaExperienciasLaborales = ((ArrayList)HttpContext.Current.Session["ListaExperienciasLaborales"]);
                 foreach (cIATExperienciaLaboralNegocios ItemExperienciaLaboral in ListaExperienciasLaborales)
                 {
                     ExperienciaLaboral.Empresa = ItemExperienciaLaboral.Empresa.ToString();
@@ -425,7 +363,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                     ExperienciaLaboral.FK_IdPersona = IdPersona;
                     ExperienciaLaboral.Insertar();
                 }
-
+                ArrayList ListaIdiomas = ((ArrayList)HttpContext.Current.Session["ListaIdiomas"]);
                 foreach (String NombreIdioma in ListaIdiomas)
                 {
                     Idioma.Nom_Idioma = NombreIdioma;
@@ -443,14 +381,16 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                     IdiomaXPersona.Insertar();
                 }
 
-                TelefonoHabitacion.FK_IdTipoContacto = 1;
-                TelefonoHabitacion.FK_IdUsuario = IdUsuario;
-                TelefonoHabitacion.Insertar();
+                ((cIATContactoNegocios)HttpContext.Current.Session["TelefonoHabitacion"]).FK_IdTipoContacto = 1;
+                ((cIATContactoNegocios)HttpContext.Current.Session["TelefonoHabitacion"]).FK_IdUsuario = IdUsuario;
+                ((cIATContactoNegocios)HttpContext.Current.Session["TelefonoHabitacion"]).Insertar();
 
+                cIATContactoNegocios TelefonoCelular = ((cIATContactoNegocios)HttpContext.Current.Session["TelefonoCelular"]);
                 TelefonoCelular.FK_IdTipoContacto = 2;
                 TelefonoCelular.FK_IdUsuario = IdUsuario;
                 TelefonoCelular.Insertar();
 
+                cIATContactoNegocios CorreoElectronico = ((cIATContactoNegocios)HttpContext.Current.Session["CorreoElectronico"]);
                 CorreoElectronico.FK_IdTipoContacto = 3;
                 CorreoElectronico.FK_IdUsuario = IdUsuario;
                 CorreoElectronico.Insertar();
@@ -461,8 +401,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "Registro", script, false);
             }
-            else {
-
+            else
+            {
                 string script = @"<script type='text/javascript'>
                             aceptarTerminos();
                             </script>";
@@ -510,6 +450,231 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             mvRegistroAdultoMayor.ActiveViewIndex = 3;
         }
 
+        protected void btnCancelarActualizarEstudio_Click(object sender, EventArgs e)
+        {
+            txtInstitucionEstudio.Text = "";
+            txtTituloEstudio.Text = "";
+            btnActualizarEstudio.Visible = false;
+            btnAgregarEstudio.Visible = true;
+        }
+
+        protected void btnCancelarAgregarEstudio_Click(object sender, EventArgs e)
+        {
+            txtInstitucionEstudio.Text = "";
+            txtTituloEstudio.Text = "";
+        }
+
+        protected void btnCancelarActualizarExperiencia_Click(object sender, EventArgs e)
+        {
+            txtEmpresa.Text = "";
+            txtPuesto.Text = "";
+            btnActualizarExperienciaLaboral.Visible = false;
+            btnAgregarExperienciaLaboral.Visible = true;
+        }
+
+        protected void btnCancelarAgregarExperiencia_Click(object sender, EventArgs e)
+        {
+            txtEmpresa.Text = "";
+            txtPuesto.Text = "";
+        }
+
+        protected void btnSiguiente7_Click(object sender, EventArgs e)
+        {
+            Validate("gvPasatiempos");
+
+            if (Page.IsValid)
+            {
+                ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).Pasatiempos = txtPasatiempos.Text;
+                mvRegistroAdultoMayor.ActiveViewIndex = 6;
+            }
+        }
+
+        protected void btnAtras7_Click(object sender, EventArgs e)
+        {
+            mvRegistroAdultoMayor.ActiveViewIndex = 4;
+        }
+
+        protected void btnCancelar7_Click(object sender, EventArgs e)
+        {
+            salirSinGuardar();
+        }
+
+        protected void btnActualizarEstudio_Click(object sender, EventArgs e)
+        {
+            Validate("gvEstudios");
+
+            if (Page.IsValid)
+            {
+                int EstudioEnModificacion = (int)HttpContext.Current.Session["EstudioEnModificacion"];
+                ArrayList ListaEstudios = ((ArrayList)HttpContext.Current.Session["ListaEstudios"]);
+                ((cIATEstudioNegocios)ListaEstudios[EstudioEnModificacion]).Institucion = txtInstitucionEstudio.Text;
+                ((cIATEstudioNegocios)ListaEstudios[EstudioEnModificacion]).Titulo = txtTituloEstudio.Text;
+                actualizarDgEstudios();
+                btnAgregarEstudio.Visible = true;
+                btnActualizarEstudio.Visible = false;
+                btnCancelarAgregarEstudio.Visible = true;
+                btnCancelarActualizarEstudio.Visible = false;
+                txtInstitucionEstudio.Text = "";
+                txtTituloEstudio.Text = "";
+            }
+        }
+
+        protected void btnAtras6_Click(object sender, EventArgs e)
+        {
+            mvRegistroAdultoMayor.ActiveViewIndex = 5;
+        }
+
+        protected void btnCancelar2_Click(object sender, EventArgs e)
+        {
+            salirSinGuardar();
+        }
+
+        protected void btnActualizarExperienciaLaboral_Click(object sender, EventArgs e)
+        {
+            Validate("gvExperienciasLaborales");
+
+            if (Page.IsValid)
+            {
+                ArrayList ListaExperienciasLaborales = ((ArrayList)HttpContext.Current.Session["ListaExperienciasLaborales"]);
+                int ExperienciaEnModificacion = ((int)HttpContext.Current.Session["ExperienciaEnModificacion"]);
+                ((cIATExperienciaLaboralNegocios)ListaExperienciasLaborales[ExperienciaEnModificacion]).Empresa = txtEmpresa.Text;
+                ((cIATExperienciaLaboralNegocios)ListaExperienciasLaborales[ExperienciaEnModificacion]).Puesto = txtPuesto.Text;
+                actualizarDgExperienciasLaborales();
+                btnAgregarExperienciaLaboral.Visible = true;
+                btnActualizarExperienciaLaboral.Visible = false;
+                btnCancelarAgregarExperiencia.Visible = true;
+                btnCancelarActualizarExperiencia.Visible = false;
+                txtEmpresa.Text = "";
+                txtPuesto.Text = "";
+            }
+
+        }
+
+        protected void btnAgregarExperienciaLaboral_Click(object sender, EventArgs e)
+        {
+            Validate("gvExperienciasLaborales");
+
+            if (Page.IsValid)
+            {
+                ExperienciaLaboral.Empresa = txtEmpresa.Text;
+                ExperienciaLaboral.Puesto = txtPuesto.Text;
+                ((ArrayList)HttpContext.Current.Session["ListaExperienciasLaborales"]).Add(ExperienciaLaboral);
+                actualizarDgExperienciasLaborales();
+
+                txtEmpresa.Text = "";
+                txtPuesto.Text = "";
+                txtEmpresa.Focus();
+            }
+        }
+    
+        #endregion
+
+        #region ActualizarDataGrids
+
+        protected void actualizarDgEstudios()
+        {            
+            TablaEstudios.Columns.Add("Institucion", typeof(string));
+            TablaEstudios.Columns.Add("Titulo", typeof(string));
+            ArrayList ListaEstudios = ((ArrayList)HttpContext.Current.Session["ListaEstudios"]);
+            foreach (cIATEstudioNegocios ItemEstudio in ListaEstudios)
+            {
+                DataRow FilaEstudio = TablaEstudios.NewRow();
+                FilaEstudio["Institucion"] = ItemEstudio.Institucion.ToString();
+                FilaEstudio["Titulo"] = ItemEstudio.Titulo.ToString();
+                TablaEstudios.Rows.Add(FilaEstudio);
+            }            
+            dgEstudios.DataSource = TablaEstudios;
+            dgEstudios.DataBind();
+
+        }
+
+        protected void actualizarDgExperienciasLaborales()
+        {
+            TablaExperienciasLaborales.Columns.Add("Empresa", typeof(string));
+            TablaExperienciasLaborales.Columns.Add("Puesto", typeof(string));
+            ArrayList ListaExperienciasLaborales = ((ArrayList)HttpContext.Current.Session["ListaExperienciasLaborales"]);
+            foreach (cIATExperienciaLaboralNegocios ItemExperienciaLaboral in ListaExperienciasLaborales)
+            {
+                DataRow FilaExperienciaLaboral = TablaExperienciasLaborales.NewRow();
+                FilaExperienciaLaboral["Empresa"] = ItemExperienciaLaboral.Empresa.ToString();
+                FilaExperienciaLaboral["Puesto"] = ItemExperienciaLaboral.Puesto.ToString();
+
+                TablaExperienciasLaborales.Rows.Add(FilaExperienciaLaboral);
+            }
+            dgExperienciasLaborales.DataSource = TablaExperienciasLaborales;
+            dgExperienciasLaborales.DataBind();
+            
+        }
+
+        protected void dgEstudios_ItemCommand(object source, DataGridCommandEventArgs e)
+        {
+            if (e.CommandName == "Editar")
+            {
+                HttpContext.Current.Session["EstudioEnModificacion"] = e.Item.ItemIndex;
+                if (((int)HttpContext.Current.Session["onChangeRow"]) >= 0 &&
+                    ((int)HttpContext.Current.Session["onChangeRow"]) < e.Item.ItemIndex)
+                {
+                    HttpContext.Current.Session["EstudioEnModificacion"] = ((int)HttpContext.Current.Session["EstudioEnModificacion"]) - 1;
+                }
+                actualizarDgEstudios();
+                txtInstitucionEstudio.Text = e.Item.Cells[0].Text;
+                txtTituloEstudio.Text = e.Item.Cells[1].Text;
+                btnActualizarEstudio.Visible = true;
+                btnAgregarEstudio.Visible = false;
+                btnCancelarAgregarEstudio.Visible = false;
+                btnCancelarActualizarEstudio.Visible = true;
+                HttpContext.Current.Session["onChangeRow"] = -1;
+            }
+            else if (e.CommandName == "Eliminar")
+            {
+                string code = @"<script type='text/javascript'>eliminarEstudio(" + e.Item.ItemIndex + ");</script>";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
+            }
+        }
+
+        [WebMethod]
+        public static void eliminarEstudio(int index)
+        {
+            ((ArrayList)HttpContext.Current.Session["ListaEstudios"]).RemoveAt(index);
+            HttpContext.Current.Session["onChangeRow"] = index;
+        }
+
+        [WebMethod]
+        public static void eliminarExperiencia(int index)
+        {
+            ((ArrayList)HttpContext.Current.Session["ListaExperienciasLaborales"]).RemoveAt(index);
+            HttpContext.Current.Session["onChangeRow"] = index;
+        }
+
+        protected void dgExperienciasLaborales_ItemCommand(object source, DataGridCommandEventArgs e)
+        {
+            if (e.CommandName == "Editar")
+            {
+                HttpContext.Current.Session["ExperienciaEnModificacion"] = e.Item.ItemIndex;
+                if (((int)HttpContext.Current.Session["onChangeRow"]) >= 0 &&
+                    ((int)HttpContext.Current.Session["onChangeRow"]) < e.Item.ItemIndex)
+                {
+                    HttpContext.Current.Session["ExperienciaEnModificacion"] = ((int)HttpContext.Current.Session["ExperienciaEnModificacion"]) - 1;
+                }
+                actualizarDgExperienciasLaborales();
+                txtEmpresa.Text = e.Item.Cells[0].Text;
+                txtPuesto.Text = e.Item.Cells[1].Text;
+                btnActualizarExperienciaLaboral.Visible = true;
+                btnAgregarExperienciaLaboral.Visible = false;
+                btnCancelarActualizarExperiencia.Visible = true;
+                btnCancelarAgregarExperiencia.Visible = false;
+                HttpContext.Current.Session["onChangeRow"] = -1;
+            }
+            else if (e.CommandName == "Eliminar")
+            {
+                string code = @"<script type='text/javascript'>eliminarExperiencia(" + e.Item.ItemIndex + ");</script>";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
+            }
+        }
+
+        #endregion
+
+        #region MetodosOnChange
 
         protected void DdlAnnoNacimiento_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -550,154 +715,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             }
         }
 
-
-        protected void validarLargoHabitacionServer(object source, ServerValidateEventArgs args)
-        {
-            args.IsValid = txtTelefonoHabitacion.Text.Length == LARGO_TELEFONO_CR 
-                || txtTelefonoHabitacion.Text.Length == 0;
-        }
-
-        protected void validarLargoMovilServer(object source, ServerValidateEventArgs args)
-        {
-            args.IsValid = txtCelular.Text.Length == LARGO_TELEFONO_CR
-                || txtCelular.Text.Length == 0;
-        }
-
-        private static int EstudioEnModificacion;
-
-        protected void dgEstudios_ItemCommand(object source, DataGridCommandEventArgs e)
-        {
-            if (e.CommandName == "Editar")
-            {
-                EstudioEnModificacion = e.Item.ItemIndex;
-                if (((int)HttpContext.Current.Session["onChangeRow"]) >= 0 && 
-                    ((int)HttpContext.Current.Session["onChangeRow"]) < e.Item.ItemIndex)
-                {
-                    EstudioEnModificacion--;
-                }
-                actualizarDgEstudios();
-                txtInstitucionEstudio.Text = e.Item.Cells[0].Text;
-                txtTituloEstudio.Text = e.Item.Cells[1].Text;                
-                btnActualizarEstudio.Visible = true;
-                btnAgregarEstudio.Visible = false;
-                btnCancelarAgregarEstudio.Visible = false;
-                btnCancelarActualizarEstudio.Visible = true;
-                HttpContext.Current.Session["onChangeRow"] = -1;
-            }
-            else if (e.CommandName == "Eliminar")
-            {
-                string code = @"<script type='text/javascript'>eliminarEstudio(" + e.Item.ItemIndex + ");</script>";
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
-            }
-        }
-        
-        [WebMethod]
-        public static void eliminarEstudio(int index)
-        {
-            ListaEstudios.RemoveAt(index);
-            HttpContext.Current.Session["onChangeRow"] = index;
-        }
-
-        [WebMethod]
-        public static void eliminarExperiencia(int index)
-        {
-            ListaExperienciasLaborales.RemoveAt(index);
-            HttpContext.Current.Session["onChangeRow"] = index;
-        }
-        
-        protected void btnActualizarEstudio_Click(object sender, EventArgs e)
-        {
-            Validate("gvEstudios");
-
-            if (Page.IsValid)
-            {
-                ((cIATEstudioNegocios)ListaEstudios[EstudioEnModificacion]).Institucion = txtInstitucionEstudio.Text;
-                ((cIATEstudioNegocios)ListaEstudios[EstudioEnModificacion]).Titulo = txtTituloEstudio.Text;
-                actualizarDgEstudios();
-                btnAgregarEstudio.Visible = true;
-                btnActualizarEstudio.Visible = false;
-                btnCancelarAgregarEstudio.Visible = true;
-                btnCancelarActualizarEstudio.Visible = false;
-                txtInstitucionEstudio.Text = "";
-                txtTituloEstudio.Text = "";
-            }
-        }
-
-        protected void validarCedulaServer(object source, ServerValidateEventArgs args)
-        {
-            if (ddlNacionalidad.SelectedIndex == 1)
-            {
-                args.IsValid = txtCedulaExt.Text.Length > 0;
-            }
-            else
-            {
-                args.IsValid = txtCedula.Text.Length > 0 && txtCedula2.Text.Length > 0 && txtCedula3.Text.Length > 0 &&
-                    txtCedula.Text.Length + txtCedula2.Text.Length + txtCedula3.Text.Length == 9;                
-            }
-        }
-
-        private static int ExperienciaEnModificacion;
-
-        protected void dgExperienciasLaborales_ItemCommand(object source, DataGridCommandEventArgs e)
-        {
-            if (e.CommandName == "Editar")
-            {
-                ExperienciaEnModificacion = e.Item.ItemIndex;
-                if (((int)HttpContext.Current.Session["onChangeRow"])>=0 && 
-                    ((int)HttpContext.Current.Session["onChangeRow"]) < e.Item.ItemIndex)
-                {
-                    ExperienciaEnModificacion--;
-                }
-                actualizarDgExperienciasLaborales();
-                txtEmpresa.Text = e.Item.Cells[0].Text;
-                txtPuesto.Text = e.Item.Cells[1].Text;                
-                btnActualizarExperienciaLaboral.Visible = true;
-                btnAgregarExperienciaLaboral.Visible = false;
-                btnCancelarActualizarExperiencia.Visible = true;
-                btnCancelarAgregarExperiencia.Visible = false;
-                HttpContext.Current.Session["onChangeRow"] = -1;
-            }
-            else if (e.CommandName == "Eliminar")
-            {
-                string code = @"<script type='text/javascript'>eliminarExperiencia(" + e.Item.ItemIndex +");</script>";
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);  
-            }
-        }
-
-        protected void btnActualizarExperienciaLaboral_Click(object sender, EventArgs e)
-        {
-            Validate("gvExperienciasLaborales");
-
-            if (Page.IsValid)
-            {
-                ((cIATExperienciaLaboralNegocios)ListaExperienciasLaborales[ExperienciaEnModificacion]).Empresa = txtEmpresa.Text;
-                ((cIATExperienciaLaboralNegocios)ListaExperienciasLaborales[ExperienciaEnModificacion]).Puesto = txtPuesto.Text;
-            }
-            actualizarDgExperienciasLaborales();
-            btnAgregarExperienciaLaboral.Visible = true;
-            btnActualizarExperienciaLaboral.Visible = false;
-            btnCancelarAgregarExperiencia.Visible = true;
-            btnCancelarActualizarExperiencia.Visible = false;
-            txtEmpresa.Text = "";
-            txtPuesto.Text = "";
-
-        }
-
-        protected void btnAtras6_Click(object sender, EventArgs e)
-        {
-            mvRegistroAdultoMayor.ActiveViewIndex = 5;
-        }
-
-        protected void validarContrasennaServer(object source, ServerValidateEventArgs args)
-        {
-            args.IsValid = txtContraseña.Text.Length >= 8;
-        }
-
-        protected void btnCancelar2_Click(object sender, EventArgs e)
-        {
-            salirSinGuardar();
-        }
-
         protected void ddlNacionalidad_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ddlNacionalidad.SelectedIndex == 0)
@@ -731,6 +748,58 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             txtCedula3.Text = setId(txtCedula3.Text);
         }
 
+        #endregion
+
+        #region Validaciones
+
+        protected void validarTelefonosServer(object sender, ServerValidateEventArgs e)
+        {
+            e.IsValid = txtTelefonoHabitacion.Text != "" || txtCelular.Text != "";
+        }
+
+        protected void validarUsuarioServer(object sender, ServerValidateEventArgs e)
+        {
+            e.IsValid = CARACTERES_MINIMOS <= txtNombreUsuario.Text.Length
+                && txtNombreUsuario.Text.Length <= CARACTERES_MAXIMOS;
+        }
+
+        protected void validarLargoHabitacionServer(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = txtTelefonoHabitacion.Text.Length == LARGO_TELEFONO_CR 
+                || txtTelefonoHabitacion.Text.Length == 0;
+        }
+
+        protected void validarLargoMovilServer(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = txtCelular.Text.Length == LARGO_TELEFONO_CR
+                || txtCelular.Text.Length == 0;
+        }
+
+        protected void validarCedulaServer(object source, ServerValidateEventArgs args)
+        {
+            if (ddlNacionalidad.SelectedIndex == 1)
+            {
+                args.IsValid = txtCedulaExt.Text.Length > 0;
+            }
+            else
+            {
+                args.IsValid = txtCedula.Text.Length > 0 && txtCedula2.Text.Length > 0 && txtCedula3.Text.Length > 0 &&
+                    txtCedula.Text.Length + txtCedula2.Text.Length + txtCedula3.Text.Length == 9;
+            }
+        }
+
+        protected void validarNacimientoServer(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = (bool)(ViewState["DiaValido"]) && (bool)(ViewState["MesValido"]);
+        }
+
+        protected void validarContrasennaServer(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = txtContraseña.Text.Length >= 8;
+        }
+
+        #endregion
+        
         private void mensajeConfirmacion(string acceptText, string cancelText, string message){
             string code = @"<script type='text/javascript'>alertBoxCustom("+ acceptText+','+ cancelText+','+ message+");</script>";
             ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);                
@@ -740,60 +809,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         {
             string code = @"<script type='text/javascript'>endConfirmation();</script>";
             ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);  
-        }
-
-        protected void btnCancelarActualizarEstudio_Click(object sender, EventArgs e)
-        {
-            txtInstitucionEstudio.Text = "";
-            txtTituloEstudio.Text = "";
-            btnActualizarEstudio.Visible = false;
-            btnAgregarEstudio.Visible = true;
-        }
-
-        protected void btnCancelarAgregarEstudio_Click(object sender, EventArgs e)
-        {
-            txtInstitucionEstudio.Text = "";
-            txtTituloEstudio.Text = "";
-        }
-
-        protected void btnCancelarActualizarExperiencia_Click(object sender, EventArgs e)
-        {
-            txtEmpresa.Text = "";
-            txtPuesto.Text = "";
-            btnActualizarExperienciaLaboral.Visible = false;
-            btnAgregarExperienciaLaboral.Visible = true;
-        }
-
-        protected void btnCancelarAgregarExperiencia_Click(object sender, EventArgs e)
-        {
-            txtEmpresa.Text = "";
-            txtPuesto.Text = "";
-        }        
-
-        protected void validarNacimientoServer(object source, ServerValidateEventArgs args)
-        {
-            args.IsValid = (bool)(ViewState["DiaValido"]) && (bool)(ViewState["MesValido"]);
-        }
-
-        protected void btnSiguiente7_Click(object sender, EventArgs e)
-        {
-            Validate("gvPasatiempos");
-
-            if (Page.IsValid)
-            {                
-                Persona.Pasatiempos = txtPasatiempos.Text;
-                mvRegistroAdultoMayor.ActiveViewIndex = 6;
-            }
-        }
-
-        protected void btnAtras7_Click(object sender, EventArgs e)
-        {
-            mvRegistroAdultoMayor.ActiveViewIndex = 4;
-        }
-
-        protected void btnCancelar7_Click(object sender, EventArgs e)
-        {
-            salirSinGuardar();
         }
 
     }
