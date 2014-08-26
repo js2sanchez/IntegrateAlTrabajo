@@ -124,8 +124,12 @@
                             <td class="style14" rowspan="5" bgcolor="White">
                                 &nbsp;</td>
                             <td bgcolor="White" class="style11" rowspan="5">
-                                <asp:Label ID="lblTextoAcerca" runat="server" ForeColor="#005190" 
-                                    Text="El proyecto a desarrollar es parte de la iniciativa “Empoderar y Emprender: las Personas Adultas Mayores Protagonistas y Agentes de Cambio”, el cual está centrado en hacer que los adultos mayores tengan un envejecimiento activo.  Este proyecto como un todo, comprende talleres y capacitaciones para los adultos mayores en los cuales se tratan diversos temas, con el fin de incidir efectivamente en un cambio en el estilo de vida de la persona adulta mayor, para que ésta alcance una mejor calidad de vida y se integre en su entorno personal, familiar y social."></asp:Label>
+                                <p><asp:Label ID="lblTextoAcerca" runat="server" ForeColor="#005190" 
+                                    Text="La Bolsa de Empleo Mayor tiene como objetivo poner en contacto a Personas Adultas Mayores oferentes de servicios, productos o habilidades; con Empresas o Instituciones demandantes que requieren estos servicios. Para que así las Personas Mayores puedan ser contratadas en tiempo parcial o total y de manera remunerada o voluntaria.
+"></asp:Label></p><p><asp:Label ID="lblTextoAcerca1" runat="server" ForeColor="#005190" 
+Text="Esta herramienta contribuye a la consolidación del derecho al trabajo para las Personas Adultas Mayores.
+"></asp:Label></p><asp:Label ID="lblTextoAcerca2" runat="server" ForeColor="#005190" 
+Text="En el futuro se ofrecerán productos y servicios adicionales relacionados con esta temática."></asp:Label>
                             </td>
                             <td class="style13" rowspan="5" bgcolor="White">
                                 <asp:Image ID="Image1" runat="server" Height="259px" 
