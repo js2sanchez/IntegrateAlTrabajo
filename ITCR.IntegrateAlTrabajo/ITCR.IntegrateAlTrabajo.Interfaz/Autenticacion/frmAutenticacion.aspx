@@ -125,12 +125,12 @@
                                 &nbsp;</td>
                             <td bgcolor="White" class="style11" rowspan="5">
                                 <p><asp:Label ID="lblTextoAcerca" runat="server" ForeColor="#005190" 
-                                    Text="La Bolsa de Empleo Mayor tiene como objetivo poner en contacto a Personas Adultas Mayores oferentes de servicios, productos o habilidades; con Empresas o Instituciones demandantes que requieren estos servicios. Para que así las Personas Mayores puedan ser contratadas en tiempo parcial o total y de manera remunerada o voluntaria.
-"></asp:Label></p><p><asp:Label ID="lblTextoAcerca1" runat="server" ForeColor="#005190" 
-Text="Esta herramienta contribuye a la consolidación del derecho al trabajo para las Personas Adultas Mayores.
-"></asp:Label></p><asp:Label ID="lblTextoAcerca2" runat="server" ForeColor="#005190" 
-Text="En el futuro se ofrecerán productos y servicios adicionales relacionados con esta temática."></asp:Label>
-                            </td>
+                                    Text="Tiene como finalidad facilitar el derecho al trabajo de la PAM."></asp:Label></p>
+                                    <p><asp:Label ID="lblTextoAcerca1" runat="server" ForeColor="#005190" 
+Text="Es un espacio virtual en el que convergen las personas adultas mayores oferentes de productos y servicios en jornada parcial o total, en forma remunerada o voluntaria y las empresas demandantes que se inscriben para contratarlas.
+"></asp:Label></p><p><asp:Label ID="lblTextoAcerca2" runat="server" ForeColor="#005190" 
+Text="El espacio busca reivindicar los derechos, el protagonismo y los saberes de las personas adultas mayores, así como la responsabilidad social de las empresas para facilitar su inclusión en su entorno inmediato."></asp:Label>
+                          </p>  </td>
                             <td class="style13" rowspan="5" bgcolor="White">
                                 <asp:Image ID="Image1" runat="server" Height="259px" 
                                     ImageUrl="~/Multimedia/RayaAutenticacion.PNG" style="margin-left: 16px" 
