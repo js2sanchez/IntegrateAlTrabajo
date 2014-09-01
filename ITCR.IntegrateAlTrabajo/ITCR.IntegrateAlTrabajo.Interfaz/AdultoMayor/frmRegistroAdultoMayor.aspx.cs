@@ -56,6 +56,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 ViewState["MesValido"] = ViewState["DiaValido"] = true;
                 HttpContext.Current.Session["onChangeRow"] = -1;
             }
+            if (HttpContext.Current.Session["Usuario"] == null)
+            {
+                Response.Redirect("/Autenticacion/frmAutenticacion.aspx");
+            }
         }
 
         #region DatosIniciales
@@ -203,29 +207,42 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
             if (Page.IsValid)
             {
-                ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).Nom_Persona = txtNombrePersona.Text;
-                ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).Apellido1 = txtApellido1.Text;
-                ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).Apellido2 = txtApellido2.Text;
                 string ced;
                 if (ddlNacionalidad.SelectedIndex == 0)
                 {
-                    ced =txtCedula.Text + txtCedula2.Text + txtCedula3.Text;
+                    ced = txtCedula.Text + txtCedula2.Text + txtCedula3.Text;
                 }
                 else
                 {
                     ced = txtCedulaExt.Text;
                 }
-                ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).Num_Cedula = ced;
-                ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).Fec_Nacimiento = DateTime.Parse(DdlDiaNacimiento.Text+"/"+(DdlMesNacimiento.SelectedIndex+1)
-                    +"/"+DdlAnioNacimiento.Text);
-                ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).Sexo = drpSexo.SelectedValue;
-                ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).FK_IdDistrito = Int16.Parse(drpDistrito.SelectedValue);
+                cIATPersonaNegocios validarCedulaEnBase = new cIATPersonaNegocios(1, "A", 2, "B");
+                validarCedulaEnBase.Num_Cedula = ced;
+                DataTable encontrados = validarCedulaEnBase.Buscar();
+                if (encontrados.Rows.Count < 0)
+                {
+                    ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).Nom_Persona = txtNombrePersona.Text;
+                    ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).Apellido1 = txtApellido1.Text;
+                    ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).Apellido2 = txtApellido2.Text;
+                    ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).Num_Cedula = ced;
+                    ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).Fec_Nacimiento = DateTime.Parse(DdlDiaNacimiento.Text + "/" + (DdlMesNacimiento.SelectedIndex + 1)
+                        + "/" + DdlAnioNacimiento.Text);
+                    ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).Sexo = drpSexo.SelectedValue;
+                    ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).FK_IdDistrito = Int16.Parse(drpDistrito.SelectedValue);
 
-                ((cIATContactoNegocios)HttpContext.Current.Session["TelefonoHabitacion"]).Detalle = txtTelefonoHabitacion.Text;
-                ((cIATContactoNegocios)HttpContext.Current.Session["TelefonoCelular"]).Detalle = txtCelular.Text;
-                ((cIATContactoNegocios)HttpContext.Current.Session["CorreoElectronico"]).Detalle = txtCorreoElectronico.Text;
+                    ((cIATContactoNegocios)HttpContext.Current.Session["TelefonoHabitacion"]).Detalle = txtTelefonoHabitacion.Text;
+                    ((cIATContactoNegocios)HttpContext.Current.Session["TelefonoCelular"]).Detalle = txtCelular.Text;
+                    ((cIATContactoNegocios)HttpContext.Current.Session["CorreoElectronico"]).Detalle = txtCorreoElectronico.Text;
+                    mvRegistroAdultoMayor.ActiveViewIndex = 1;
+                }
+                else 
+                {
+                    string script = @"<script type='text/javascript'>
+                            alertify.alert('El número de cédula introducido ya esta registrado en el sistema.');
+                            </script>";
 
-                mvRegistroAdultoMayor.ActiveViewIndex = 1;
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "Datos personales", script, false);
+                }
             }
         }
 
@@ -235,9 +252,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             cIATUsuarioNegocios Usuario = ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]);
             if (Page.IsValid)
             {
-                if (txtContraseña.Text.CompareTo(txtConfirmacionContraseña.Text) == 0)
-                {
-                    Usuario.Nom_Usuario = txtNombreUsuario.Text;
+                Usuario.Nom_Usuario = txtNombreUsuario.Text;
+                int validacionUsuarioExistente = Usuario.Validar(txtContraseña.Text);
+                if (validacionUsuarioExistente == 0)
+                {                   
                     Usuario.Contrasenna = txtContraseña.Text;
                     Usuario.Indicio_Contrasenna = txtIndicioContraseña.Text;
                     Usuario.Estado = 1; //CAMBIAR
@@ -248,7 +266,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 else
                 {
                     string script = @"<script type='text/javascript'>
-                            alertify.alert('La contraseña y confirmación de contraseña no coinciden.');
+                            alertify.alert('El nombre de usuario introducido ya existe. Por favor, intente con un nombre de usuario diferente.');
                             </script>";
 
                     ScriptManager.RegisterStartupScript(this, typeof(Page), "Datos de autenticación", script, false);
@@ -394,7 +412,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 CorreoElectronico.FK_IdTipoContacto = 3;
                 CorreoElectronico.FK_IdUsuario = IdUsuario;
                 CorreoElectronico.Insertar();
-
+                HttpContext.Current.Session["Usuario"] = null;
                 string script = @"<script type='text/javascript'>
                             finalizar();
                             </script>";

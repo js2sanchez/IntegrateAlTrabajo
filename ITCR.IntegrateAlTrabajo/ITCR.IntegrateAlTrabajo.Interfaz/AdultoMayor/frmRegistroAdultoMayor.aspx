@@ -2,10 +2,27 @@
     CodeBehind="frmRegistroAdultoMayor.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor.frmRegistroAdultoMayor" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <link rel="stylesheet" href="../Styles/bootstrap.min.css" /> 
     <link rel="stylesheet" href="../Styles/alertify.bootstrap.css" />
     <link rel="stylesheet" href="../Styles/alertify.core.css" />
     <link rel="stylesheet" href="../Styles/alertify.default.css" />
     <style type="text/css">
+        body   
+        {
+            background: #b6b7bc;
+            font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+            margin: 0px;
+            padding: 0px;
+            color: #696969;
+        }
+        table
+        {
+            font-family:Century Gothic;
+            font-size:15px;
+            text-align:justify;
+            border-spacing: 5px;
+            border-collapse: separate;
+        }
         .DisabledButton input[disabled="true"][type="button"]
         {
             color: Gray;
@@ -205,7 +222,9 @@
     </asp:ScriptManager>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/alertify.min.js"></script>
+    <script type="text/javascript" src="../js/bootbox.js"></script>  
     <script type="text/javascript">
         function alertBoxCustom(acceptText, cancelText, message) {
             // custom OK and Cancel label
@@ -220,19 +239,17 @@
         }
 
         function finalizar() {
-            alertify.set({ buttonFocus: "none" });
-            alertify.set({ labels: {
-                ok: "Aceptar",
-                cancel: "Ir a página de inicio"
-            }
-            });
-
-            alertify.confirm("¡Felicidades! Usted está dando un paso importante para tener una vejez activa. En este momento su cuenta de usuario quedará inactiva, pero una vez que se haya verificado que sus datos son correctos, esta se activirá para que usted pueda ofrecer sus valiosos servios.", function (e) {
-                if (e) {
-                    location.href = "/Autenticacion/frmAutenticacion.aspx";
-                }
-                else {
-                    location.href = "/Autenticacion/frmAutenticacion.aspx";
+            bootbox.dialog({
+                message: "¡Felicidades! Usted está dando un paso importante para tener una vejez activa. En este momento su cuenta de usuario quedará inactiva, pero una vez que se haya verificado que sus datos son correctos, esta se activirá para que usted pueda ofrecer sus valiosos servios.",
+                title: "Ha completado el registro satisfactoriamente",
+                buttons: {
+                    success: {
+                        label: "Volver a la página de autenticación",
+                        className: "btn-primary",
+                        callback: function () {
+                            location.href = "/Autenticacion/frmAutenticacion.aspx";
+                        }
+                    }
                 }
             });
         }
@@ -693,6 +710,9 @@
                                             ValidationGroup="gvDatosAutenticacion">*</asp:RegularExpressionValidator>
                                         <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="La contraseña debe contener al menos 8 caracteres."
                                             ForeColor="red" OnServerValidate="validarContrasennaServer" ValidationGroup="gvDatosAutenticacion">*</asp:CustomValidator>
+                                        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtNombreUsuario"
+                                            ControlToValidate="txtContraseña" ErrorMessage="Por su seguridad, la contraseña y el usuario deben ser diferentes."
+                                            ForeColor="Red" Operator="NotEqual" ValidationGroup="gvDatosAutenticacion">*</asp:CompareValidator>
                                     </td>
                                 </tr>
                                 <tr>

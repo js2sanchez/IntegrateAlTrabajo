@@ -24,6 +24,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                 HttpContext.Current.Session["Telefono"] = new cIATContactoNegocios(1, "A", 2, "B");
                 HttpContext.Current.Session["CorreoElectronico"] = new cIATContactoNegocios(1, "A", 2, "B");
             }
+            if (HttpContext.Current.Session["Usuario"] == null)
+            {
+                Response.Redirect("/Autenticacion/frmAutenticacion.aspx");
+            }
         }
 
         private void cargarDropDownListProvincias()
@@ -117,7 +121,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                         }
                     }
                     string script = @"<script type='text/javascript'>
-                            alert('Los siguientes datos ya estan registrados:" +datos+ "');</script>";
+                            alertify.alert('Los siguientes datos ya estan registrados:" +datos+ "');</script>";
                     ScriptManager.RegisterStartupScript(this, typeof(Page), "Datos de empresa", script, false);
                 }
             }
@@ -129,19 +133,19 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
             if (Page.IsValid)
             {
                 ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).Nom_Usuario = txtNombreUsuario.Text;
-                DataTable TablaNomUsuario = ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).Buscar();
-                ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).Contrasenna = txtContraseña.Text;
-                ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).Indicio_Contrasenna = txtIndicioContraseña.Text;
-                ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).FK_IdTipoUsuario = 2;
-                ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).Estado = 1;
-                if (TablaNomUsuario.Rows.Count.Equals(0))
+                int validacionUsuario = ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).Validar(txtContraseña.Text);                
+                if (validacionUsuario==0)
                 {
+                    ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).Contrasenna = txtContraseña.Text;
+                    ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).Indicio_Contrasenna = txtIndicioContraseña.Text;
+                    ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).FK_IdTipoUsuario = 2;
+                    ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).Estado = 1;
                     mvRegistroEmpresa.ActiveViewIndex = 2;
                 }
                 else
                 {
                     string script = @"<script type='text/javascript'>
-                            alert('El nombre de usuario ya existe. Escriba otro por favor.');
+                            alertify.alert('El nombre de usuario ya existe. Escriba otro por favor.');
                             </script>";
                     ScriptManager.RegisterStartupScript(this, typeof(Page), "Datos de cuenta", script, false);
                     txtNombreUsuario.Focus();
@@ -180,7 +184,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                 ((cIATContactoNegocios)HttpContext.Current.Session["CorreoElectronico"]).Insertar();
                 ((cIATContactoNegocios)HttpContext.Current.Session["Telefono"]).FK_IdUsuario = IdUsuario;
                 ((cIATContactoNegocios)HttpContext.Current.Session["Telefono"]).Insertar();
-                
+                HttpContext.Current.Session["Usuario"] = null;
                 string script = @"<script type='text/javascript'>
                             finalizar();
                             </script>";

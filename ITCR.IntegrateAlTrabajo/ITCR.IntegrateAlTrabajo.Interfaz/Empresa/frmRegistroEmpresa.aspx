@@ -2,10 +2,32 @@
     CodeBehind="frmRegistroEmpresa.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.Empresa.frmRegistroEmpresa" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <link rel="stylesheet" href="../Styles/bootstrap.min.css" /> 
     <link rel="stylesheet" href="../Styles/alertify.bootstrap.css" />
     <link rel="stylesheet" href="../Styles/alertify.core.css" />
     <link rel="stylesheet" href="../Styles/alertify.default.css" />
     <style type="text/css">
+        body   
+        {
+            background: #b6b7bc;
+            font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+            margin: 0px;
+            padding: 0px;
+            color: #696969;
+        }
+        table
+        {
+            font-family:Century Gothic;
+            font-size:15px;
+            text-align:justify;
+            border-spacing: 8px;
+            border-collapse: separate;
+        }
+        p
+        {
+            margin-bottom: 10px;
+            line-height: 1.6em;
+        }
         .DisabledButton input[disabled="true"][type="button"]
         {
             color: Gray;
@@ -140,7 +162,9 @@
     </asp:ScriptManager>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/alertify.min.js"></script>
+    <script type="text/javascript" src="../js/bootbox.js"></script>    
     <script type="text/javascript">
         function alertBoxCustom(acceptText, cancelText, message) {
             // custom OK and Cancel label
@@ -155,19 +179,17 @@
         }
 
         function finalizar() {
-            alertify.set({ buttonFocus: "none" });
-            alertify.set({ labels: {
-                ok: "Aceptar",
-                cancel: "Ir a página de inicio"
-            }
-            });
-
-            alertify.confirm("¡Felicidades por ser parte del cambio y estar dispuesta a adquirir talento humano de alta calidad! En este momento su cuenta de usuario quedará inactiva, pero una vez que se haya verificado que sus datos son correctos, esta se activirá para que usted pueda publicar valiosas ofertas de trabajo.", function (e) {
-                if (e) {
-                    location.href = "/Autenticacion/frmAutenticacion.aspx";
-                }
-                else {
-                    location.href = "/Autenticacion/frmAutenticacion.aspx";
+            bootbox.dialog({
+                message: "¡Felicidades por ser parte del cambio y estar dispuesta a adquirir talento humano de alta calidad! En este momento su cuenta de usuario quedará inactiva, pero una vez que se haya verificado que sus datos son correctos, esta se activirá para que usted pueda publicar valiosas ofertas de trabajo.",
+                title: "Ha completado el registro satisfactoriamente",
+                buttons: {
+                    success: {
+                        label: "Volver a la página de autenticación",
+                        className: "btn-primary",
+                        callback: function () {
+                            location.href = "/Autenticacion/frmAutenticacion.aspx";
+                        }
+                    }
                 }
             });
         }
@@ -347,7 +369,7 @@
                                         ValidationGroup="gvDatosGenerales" runat="server">*</asp:CustomValidator>
                                     <asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtTelefono"
                                         ErrorMessage="El número de teléfono introducido es inválido." ForeColor="Red"
-                                        ValidationExpression="([24][0-9]*)" ValidationGroup="gvDatosGenerales">*</asp:RegularExpressionValidator>
+                                        ValidationExpression="([0-9]*)" ValidationGroup="gvDatosGenerales">*</asp:RegularExpressionValidator>
                                 </td>
                             </tr>
                             <tr>
@@ -488,6 +510,9 @@
                                         ValidationGroup="gvDatosCuenta">*</asp:RegularExpressionValidator>
                                     <asp:RequiredFieldValidator ID="rfvContraseña" runat="server" ControlToValidate="txtContraseña"
                                         ErrorMessage="La contraseña es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosCuenta">*</asp:RequiredFieldValidator>
+                                        <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtNombreUsuario"
+                                        ControlToValidate="txtContraseña" ErrorMessage="Por su seguridad, la contraseña y el nombre de usuario deben ser diferentes."
+                                        ForeColor="Red" Operator="NotEqual" ValidationGroup="gvDatosCuenta">*</asp:CompareValidator>
                                 </td>
                                 <td class="auto-style14">
                                 </td>
