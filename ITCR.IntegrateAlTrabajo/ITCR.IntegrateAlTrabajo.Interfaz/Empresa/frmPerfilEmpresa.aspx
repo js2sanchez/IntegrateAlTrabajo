@@ -2,10 +2,27 @@
     CodeBehind="frmPerfilEmpresa.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.Empresa.frmPerfilEmpresa" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <link rel="stylesheet" href="../Styles/bootstrap.min.css" /> 
     <link rel="stylesheet" href="../Styles/alertify.bootstrap.css" />
     <link rel="stylesheet" href="../Styles/alertify.core.css" />
     <link rel="stylesheet" href="../Styles/alertify.default.css" />
     <style type="text/css">
+        body   
+        {
+            background: #b6b7bc;
+            font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+            margin: 0px;
+            padding: 0px;
+            color: #696969;
+        }
+        table
+        {
+            font-family:Century Gothic;
+            font-size:15px;
+            text-align:justify;
+            border-spacing: 8px;
+            border-collapse: separate;
+        }
         .style3
         {
             width: 99%;
@@ -88,7 +105,9 @@
     </asp:ScriptManager>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/alertify.min.js"></script>
+    <script type="text/javascript" src="../js/bootbox.js"></script>   
     <script type="text/javascript">
         function eliminarEmpresa(user) {
             alertify.set({ buttonFocus: "none" });
@@ -107,14 +126,22 @@
         }
 
         function OnSuccess(response) {
-            alertify.set({ labels: {
-                ok: "Aceptar",
-                cancel: "Cancelar"
-            }
+            bootbox.dialog({
+                closeButton: false,
+                message: "La empresa se ha eliminado de la bolsa de trabajo exitosamente. ¡Gracias por haber cooperado para que las personas adultas mayores tengan una vejez activa!.",
+                title: "Ha completado la eliminación de empresa satisfactoriamente",
+                buttons: {
+                    success: {
+                        label: "Volver a la página de autenticación",
+                        className: "btn-primary",
+                        callback: function () {
+                            location.href = "/Autenticacion/frmAutenticacion.aspx";
+                        }
+                    }
+                }
             });
-            alertify.alert("La empresa se ha eliminado de la bolsa de trabajo exitosamente. ¡Gracias por haber cooperado para que las personas adultas mayores tengan una vejez activa!.");
-            location.href = "/Autenticacion/frmAutenticacion.aspx";
         }
+
         function OnError(error) {
             alertify.set({ labels: {
                 ok: "Aceptar",

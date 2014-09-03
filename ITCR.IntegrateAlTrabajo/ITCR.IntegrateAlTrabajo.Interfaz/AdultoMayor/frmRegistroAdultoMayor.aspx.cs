@@ -55,8 +55,9 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 cargarTodosDropDownList();
                 ViewState["MesValido"] = ViewState["DiaValido"] = true;
                 HttpContext.Current.Session["onChangeRow"] = -1;
+                if (mvRegistroAdultoMayor.ActiveViewIndex == 0) { Session["Proceso"] = 0; }
             }
-            if (HttpContext.Current.Session["Usuario"] == null)
+            if (((int)Session["Proceso"]) == 1)
             {
                 Response.Redirect("/Autenticacion/frmAutenticacion.aspx");
             }
@@ -219,7 +220,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 cIATPersonaNegocios validarCedulaEnBase = new cIATPersonaNegocios(1, "A", 2, "B");
                 validarCedulaEnBase.Num_Cedula = ced;
                 DataTable encontrados = validarCedulaEnBase.Buscar();
-                if (encontrados.Rows.Count < 0)
+                if (encontrados.Rows.Count <= 0)
                 {
                     ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).Nom_Persona = txtNombrePersona.Text;
                     ((cIATPersonaNegocios)HttpContext.Current.Session["Persona"]).Apellido1 = txtApellido1.Text;
@@ -412,7 +413,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 CorreoElectronico.FK_IdTipoContacto = 3;
                 CorreoElectronico.FK_IdUsuario = IdUsuario;
                 CorreoElectronico.Insertar();
-                HttpContext.Current.Session["Usuario"] = null;
+                Session["Proceso"] = 1;
                 string script = @"<script type='text/javascript'>
                             finalizar();
                             </script>";

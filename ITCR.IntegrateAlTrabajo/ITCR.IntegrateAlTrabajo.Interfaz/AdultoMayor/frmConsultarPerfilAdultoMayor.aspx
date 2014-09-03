@@ -182,7 +182,7 @@
                             <td class="style6">
                                 <asp:Panel ID="PanelEditarDatosPersonales" runat="server" 
                                     HorizontalAlign="Right">
-                                    <asp:ImageButton ID="ibtnEditarDatosPersonales" runat="server" Height="50px" 
+                                    <asp:ImageButton ID="ibtnEditarDatosPersonales" runat="server" Height="50px" tooltip="Presione este botón para editar datos personales"
                                         ImageUrl="~/Multimedia/icono-editar.jpg" 
                                         onclick="ibtnEditarDatosPersonales_Click1" Width="50px" />
                                 </asp:Panel>
@@ -337,7 +337,7 @@
                             </td>
                             <td class="style37">
                                 <asp:Panel ID="PanelEditarEstudios" runat="server" HorizontalAlign="Right">
-                                    <asp:ImageButton ID="ibtnEditarEstudios" runat="server" Height="50px" 
+                                    <asp:ImageButton ID="ibtnEditarEstudios" runat="server" Height="50px" tooltip="Presione este botón para editar formación académica"
                                         ImageUrl="~/Multimedia/icono-editar.jpg" 
                                         onclick="ibtnEditarDatosPersonales_Click" Width="50px" />
                                 </asp:Panel>
@@ -405,7 +405,7 @@
                                 </asp:Panel>
                                 <asp:Panel ID="PanelBotonEditarExperienciasLaborales" runat="server" 
                                     HorizontalAlign="Right">
-                                    <asp:ImageButton ID="ibtnEditarExperienciasLaborales" runat="server" 
+                                    <asp:ImageButton ID="ibtnEditarExperienciasLaborales" runat="server" tooltip="Presione este botón para editar experiencias laborales"
                                         Height="50px" ImageUrl="~/Multimedia/icono-editar.jpg" 
                                         onclick="ibtnEditarExperienciasLaborales_Click" Width="50px" />
                                 </asp:Panel>
@@ -495,10 +495,10 @@
                             </td>
                             <td>
                                 <asp:Panel ID="PanelIdiomas" runat="server" HorizontalAlign="Right">
-                                    <asp:ImageButton ID="ibtnEditarIdiomas" runat="server" Height="50px" 
+                                    <asp:ImageButton ID="ibtnEditarIdiomas" runat="server" Height="50px" tooltip="Presione este botón para editar idiomas"
                                         ImageUrl="~/Multimedia/icono-editar.jpg" onclick="btnEditarIdiomas_Click" 
                                         Width="50px" />
-                                    <asp:ImageButton ID="ibtnActualizarIdiomas" runat="server" Height="50px" 
+                                    <asp:ImageButton ID="ibtnActualizarIdiomas" runat="server" Height="50px" tooltip="Presione este botón para actualizar idiomas"
                                         ImageUrl="~/Multimedia/icono-check.jpg" onclick="btnActualizarIdiomas_Click" 
                                         Width="50px" />
                                 </asp:Panel>
@@ -569,10 +569,10 @@
                             </td>
                             <td>                                
                                     <asp:Panel ID="PanelPasatiempoFavorito" runat="server" HorizontalAlign="Right">
-                                        <asp:ImageButton ID="ibtnEditarPasatiempo" runat="server" Height="50px" 
+                                        <asp:ImageButton ID="ibtnEditarPasatiempo" runat="server" Height="50px" tooltip="Presione este botón para editar pasatiempo"
                                             ImageUrl="~/Multimedia/icono-editar.jpg" onclick="btnEditarPasatiempo_Click" 
                                             Width="50px" />
-                                        <asp:ImageButton ID="ibtnActualizarPasatiempo" runat="server" Height="50px" 
+                                        <asp:ImageButton ID="ibtnActualizarPasatiempo" runat="server" Height="50px" tooltip="Presione este botón para actualizar pasatiempo"
                                             ImageUrl="~/Multimedia/icono-check.jpg" onclick="btnActualizarPasatiempo_Click" 
                                             Width="50px" />
                                     </asp:Panel>

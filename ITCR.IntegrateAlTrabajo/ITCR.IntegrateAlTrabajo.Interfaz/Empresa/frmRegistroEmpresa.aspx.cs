@@ -23,8 +23,9 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                 HttpContext.Current.Session["Usuario"] = new cIATUsuarioNegocios(1, "A", 2, "B");
                 HttpContext.Current.Session["Telefono"] = new cIATContactoNegocios(1, "A", 2, "B");
                 HttpContext.Current.Session["CorreoElectronico"] = new cIATContactoNegocios(1, "A", 2, "B");
+                if (mvRegistroEmpresa.ActiveViewIndex == 0) { Session["Proceso"] = 0; }
             }
-            if (HttpContext.Current.Session["Usuario"] == null)
+            if (((int)Session["Proceso"]) == 1)
             {
                 Response.Redirect("/Autenticacion/frmAutenticacion.aspx");
             }
@@ -184,7 +185,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                 ((cIATContactoNegocios)HttpContext.Current.Session["CorreoElectronico"]).Insertar();
                 ((cIATContactoNegocios)HttpContext.Current.Session["Telefono"]).FK_IdUsuario = IdUsuario;
                 ((cIATContactoNegocios)HttpContext.Current.Session["Telefono"]).Insertar();
-                HttpContext.Current.Session["Usuario"] = null;
+                Session["Proceso"] = 1;
                 string script = @"<script type='text/javascript'>
                             finalizar();
                             </script>";

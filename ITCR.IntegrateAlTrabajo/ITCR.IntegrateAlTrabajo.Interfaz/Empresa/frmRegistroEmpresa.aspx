@@ -180,6 +180,7 @@
 
         function finalizar() {
             bootbox.dialog({
+                closeButton: false,
                 message: "¡Felicidades por ser parte del cambio y estar dispuesta a adquirir talento humano de alta calidad! En este momento su cuenta de usuario quedará inactiva, pero una vez que se haya verificado que sus datos son correctos, esta se activirá para que usted pueda publicar valiosas ofertas de trabajo.",
                 title: "Ha completado el registro satisfactoriamente",
                 buttons: {

@@ -240,6 +240,7 @@
 
         function finalizar() {
             bootbox.dialog({
+                closeButton: false,
                 message: "¡Felicidades! Usted está dando un paso importante para tener una vejez activa. En este momento su cuenta de usuario quedará inactiva, pero una vez que se haya verificado que sus datos son correctos, esta se activirá para que usted pueda ofrecer sus valiosos servios.",
                 title: "Ha completado el registro satisfactoriamente",
                 buttons: {
