@@ -164,11 +164,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             DiaBuscar.FK_IdServicio = Int16.Parse(IdServicio.ToString());
             DataTable TablaDias = DiaBuscar.Buscar();
 
-            String Dias = TablaDias.Rows[0]["Nom_Dia"].ToString();
-
-            for (int i = 1; i < TablaDias.Rows.Count; i++)
+            String Dias = "";
+            if (TablaDias.Rows.Count > 0)
             {
-                Dias = Dias + ", " + TablaDias.Rows[i]["Nom_Dia"].ToString();
+                Dias = TablaDias.Rows[0]["Nom_Dia"].ToString();
+
+                for (int i = 1; i < TablaDias.Rows.Count; i++)
+                {
+                    Dias = Dias + ", " + TablaDias.Rows[i]["Nom_Dia"].ToString();
+                }
             }
 
             return Dias;

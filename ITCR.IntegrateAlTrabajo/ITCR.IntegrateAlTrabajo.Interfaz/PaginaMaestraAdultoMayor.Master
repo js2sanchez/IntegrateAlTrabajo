@@ -48,10 +48,12 @@
                         <asp:MenuItem Text="Mi perfil" Value="Mi perfil"
                             NavigateUrl="~/AdultoMayor/frmConsultarPerfilAdultoMayor.aspx" 
                             Selected="True"/>
-                        <asp:MenuItem Text="Ofrecer servicios" Value="Ofrecer servicios" 
-                            NavigateUrl="~/AdultoMayor/frmOfrecerServicios.aspx"/>
-                        <asp:MenuItem Text="Mis servicios" Value="Mis servicios" 
-                            NavigateUrl="~/AdultoMayor/frmConsultarServiciosOfrecidos.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Servicios" Value="Servicios">
+                            <asp:MenuItem NavigateUrl="~/AdultoMayor/frmOfrecerServicios.aspx" 
+                                Text="Ofrecer servicios" Value="Ofrecer servicios"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/AdultoMayor/frmConsultarServiciosOfrecidos.aspx" 
+                                Text="Ver mis servicios" Value="Mis servicios"></asp:MenuItem>
+                        </asp:MenuItem>
                         <asp:MenuItem Text="Ofertas de trabajo" Value="Ofertas de trabajo" 
                             NavigateUrl="~/AdultoMayor/frmFiltrarOfertasTrabajo.aspx">
                         </asp:MenuItem>

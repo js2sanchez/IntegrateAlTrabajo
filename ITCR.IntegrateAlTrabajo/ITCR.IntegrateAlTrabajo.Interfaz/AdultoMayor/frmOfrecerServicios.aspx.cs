@@ -15,14 +15,12 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         cIATDiaServicioNegocios DiaServicio = new cIATDiaServicioNegocios(1, "A", 2, "B");
         cIATServicioNegocios Servicio = new cIATServicioNegocios(1, "A", 2, "B");
         cIATUsuarioNegocios Usuario = new cIATUsuarioNegocios(1, "A", 2, "B");
-        cIATPersonaNegocios Persona = new cIATPersonaNegocios(1, "A", 2, "B");        
+        cIATPersonaNegocios Persona = new cIATPersonaNegocios(1, "A", 2, "B");
 
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                //Session["Nombre_Usuario"] = "sat";
-                mvOfrecerServicios.ActiveViewIndex = 0;
                 cargarTodosDropDownList();
             }
         }
@@ -63,7 +61,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             drpHora4.Items.Clear();
             drpHora5.Items.Clear();
             drpHora6.Items.Clear();
-            for (int i = 4; i <= 8; i++) {
+            for (int i = 4; i <= 8; i++)
+            {
                 ListItem ItemTipoHora = new ListItem(i.ToString());
                 drpHora1.Items.Add(ItemTipoHora);
                 drpHora2.Items.Add(ItemTipoHora);
@@ -71,6 +70,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 drpHora4.Items.Add(ItemTipoHora);
                 drpHora5.Items.Add(ItemTipoHora);
                 drpHora6.Items.Add(ItemTipoHora);
+                drpHora7.Items.Add(ItemTipoHora);
             }
         }
 
@@ -82,21 +82,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         }
 
         #endregion
-
-        protected void dgEstudios_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnCancelar3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void btnSiguiente2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         protected void btnAgregarServicio_Click(object sender, EventArgs e)
         {
@@ -128,7 +113,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 {
                     IdPersona = Int16.Parse(TablaPersona.Rows[0]["Id_Persona"].ToString());
                 }
-                
+
                 Servicio.FK_IdPersona = IdPersona;
 
                 Servicio.Insertar();
@@ -141,7 +126,11 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                     IdServicio = Int16.Parse(TablaServicio.Rows[0]["Id_Servicio"].ToString());
                 }
 
-                if(chkLunes.Checked){
+                int ContadorDiasServicio = 0;
+
+                if (chkLunes.Checked)
+                {
+                    ContadorDiasServicio++;
                     DiaServicio.Nom_Dia = "L";
                     DiaServicio.Can_Horas = byte.Parse(drpHora1.SelectedItem.Value);
                     DiaServicio.FK_IdServicio = IdServicio;
@@ -150,6 +139,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
                 if (chkMartes.Checked)
                 {
+                    ContadorDiasServicio++;
                     DiaServicio.Nom_Dia = "K";
                     DiaServicio.Can_Horas = byte.Parse(drpHora2.SelectedItem.Value);
                     DiaServicio.FK_IdServicio = IdServicio;
@@ -158,6 +148,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
                 if (chkMiercoles.Checked)
                 {
+                    ContadorDiasServicio++;
                     DiaServicio.Nom_Dia = "M";
                     DiaServicio.Can_Horas = byte.Parse(drpHora3.SelectedItem.Value);
                     DiaServicio.FK_IdServicio = IdServicio;
@@ -166,6 +157,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
                 if (chkJueves.Checked)
                 {
+                    ContadorDiasServicio++;
                     DiaServicio.Nom_Dia = "J";
                     DiaServicio.Can_Horas = byte.Parse(drpHora4.SelectedItem.Value);
                     DiaServicio.FK_IdServicio = IdServicio;
@@ -174,6 +166,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
                 if (chkViernes.Checked)
                 {
+                    ContadorDiasServicio++;
                     DiaServicio.Nom_Dia = "V";
                     DiaServicio.Can_Horas = byte.Parse(drpHora5.SelectedItem.Value);
                     DiaServicio.FK_IdServicio = IdServicio;
@@ -182,160 +175,123 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
                 if (chkSabado.Checked)
                 {
+                    ContadorDiasServicio++;
                     DiaServicio.Nom_Dia = "S";
                     DiaServicio.Can_Horas = byte.Parse(drpHora6.SelectedItem.Value);
                     DiaServicio.FK_IdServicio = IdServicio;
                     DiaServicio.Insertar();
                 }
 
-                mostrarServicios(IdPersona);
+                if (chkDomingo.Checked)
+                {
+                    ContadorDiasServicio++;
+                    DiaServicio.Nom_Dia = "D";
+                    DiaServicio.Can_Horas = byte.Parse(drpHora7.SelectedItem.Value);
+                    DiaServicio.FK_IdServicio = IdServicio;
+                    DiaServicio.Insertar();
+                }
 
-                txtNombreServicios.Text = "";
-                txtDescripcionServicios.Text = "";
-                chkLunes.Checked = false;
-                chkMartes.Checked = false;
-                chkMiercoles.Checked = false;
-                chkJueves.Checked = false;
-                chkViernes.Checked = false;
-                chkSabado.Checked = false;
-                drpHora1.Enabled = false;
-                drpHora2.Enabled = false;
-                drpHora3.Enabled = false;
-                drpHora4.Enabled = false;
-                drpHora5.Enabled = false;
-                drpHora6.Enabled = false;
+                if (ContadorDiasServicio > 0)
+                {
+                    string script = @"<script type='text/javascript'>
+                            NotificarNuevoServicio();
+                            </script>";
 
-                //Response.Write(@"<SCRIPT LANGUAGE=""JavaScript"">alert('El servicio fue agregado exitosamente')</SCRIPT>");
-            }
-        }
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "Servicio", script, false);
+                }
+                else
+                {
+                    string script = @"<script type='text/javascript'>
+                            NotificarErrorCantidadDias();
+                            </script>";
 
-        protected void mostrarServicios(int IdPersona)
-        {
-            dgServicios.DataSource = null;
-            cIATServicioNegocios ServicioBuscar = new cIATServicioNegocios(1, "A", 2, "B");
-            ServicioBuscar.FK_IdPersona = IdPersona;
-            
-            DataTable TablaServicio = ServicioBuscar.Buscar();
-
-            if (TablaServicio.Rows.Count > 0) {
-                dgServicios.DataSource = TablaServicio;
-                dgServicios.DataBind();
-
-                foreach (DataGridItem Fila in dgServicios.Items) {
-                    Fila.Cells[3].Text = obtenerCategoriasServicios(Fila.Cells[3].Text);
-                    Fila.Cells[4].Text = obtenerTiposServicios(Fila.Cells[4].Text);
-                    Fila.Cells[5].Text = obtenerDiasServicios(Fila.Cells[0].Text);
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "Servicio", script, false);
                 }
             }
         }
 
-        protected String obtenerCategoriasServicios(String Categoria)
-        {
-            cIATCategoriaTrabajoNegocios CategoriaBuscar = new cIATCategoriaTrabajoNegocios(1, "A", 2, "B");
-            CategoriaBuscar.Id_CategoriaTrabajo = Int16.Parse(Categoria.ToString());
-            DataTable TablaCategoria = CategoriaBuscar.Buscar();
-
-            if (TablaCategoria.Rows.Count > 0)
-            {
-                Categoria = TablaCategoria.Rows[0]["Nom_CategoriaTrabajo"].ToString();
-            }
-
-            return Categoria;
-        }
-
-        protected String obtenerTiposServicios(String Tipo)
-        {
-            cIATTipoTrabajoNegocios TipoBuscar = new cIATTipoTrabajoNegocios(1, "A", 2, "B");
-            TipoBuscar.Id_TipoTrabajo = Int16.Parse(Tipo.ToString());
-            DataTable TablaTipo = TipoBuscar.Buscar();
-
-            if (TablaTipo.Rows.Count > 0)
-            {
-                Tipo = TablaTipo.Rows[0]["Nom_TipoTrabajo"].ToString();
-            }
-
-            return Tipo;
-        }
-
-        protected String obtenerDiasServicios(String IdServicio)
-        {
-            cIATDiaServicioNegocios DiaBuscar = new cIATDiaServicioNegocios(1, "A", 2, "B");
-            DiaBuscar.FK_IdServicio = Int16.Parse(IdServicio.ToString());
-            DataTable TablaDias = DiaBuscar.Buscar();
-
-            String Dias = TablaDias.Rows[0]["Nom_Dia"].ToString();
-            
-            for (int i = 1; i < TablaDias.Rows.Count; i++)
-            {
-                Dias = Dias + ", " + TablaDias.Rows[i]["Nom_Dia"].ToString();
-            }
-
-            return Dias;
-        }
-
         protected void chkLunes_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkLunes.Checked == true) {
+            if (chkLunes.Checked == true)
+            {
                 drpHora1.Enabled = true;
             }
-            else {
+            else
+            {
                 drpHora1.Enabled = false;
             }
         }
 
         protected void chkMartes_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkMartes.Checked == true) {
+            if (chkMartes.Checked == true)
+            {
                 drpHora2.Enabled = true;
             }
-            else {
+            else
+            {
                 drpHora2.Enabled = false;
             }
         }
 
         protected void chkMiercoles_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkMiercoles.Checked == true) {
+            if (chkMiercoles.Checked == true)
+            {
                 drpHora3.Enabled = true;
             }
-            else {
+            else
+            {
                 drpHora3.Enabled = false;
             }
         }
 
         protected void chkJueves_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkJueves.Checked == true) {
+            if (chkJueves.Checked == true)
+            {
                 drpHora4.Enabled = true;
             }
-            else {
+            else
+            {
                 drpHora4.Enabled = false;
             }
         }
 
         protected void chkViernes_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkViernes.Checked == true) {
+            if (chkViernes.Checked == true)
+            {
                 drpHora5.Enabled = true;
             }
-            else {
+            else
+            {
                 drpHora5.Enabled = false;
             }
         }
 
         protected void chkSabado_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkSabado.Checked == true) {
+            if (chkSabado.Checked == true)
+            {
                 drpHora6.Enabled = true;
             }
-            else {
+            else
+            {
                 drpHora6.Enabled = false;
             }
         }
 
-        protected void drpHora1_SelectedIndexChanged(object sender, EventArgs e)
+        protected void chkDomingo_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (chkDomingo.Checked == true)
+            {
+                drpHora7.Enabled = true;
+            }
+            else
+            {
+                drpHora7.Enabled = false;
+            }
         }
     }
 }

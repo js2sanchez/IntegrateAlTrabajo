@@ -13,6 +13,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
     public partial class frmOfrecerServicios {
         
         /// <summary>
+        /// ScriptManagerMain control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManagerMain;
+        
+        /// <summary>
         /// lblAgregarServicio control.
         /// </summary>
         /// <remarks>
@@ -29,24 +38,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ValidationSummary vsOfrecerServicios;
-        
-        /// <summary>
-        /// mvOfrecerServicios control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.MultiView mvOfrecerServicios;
-        
-        /// <summary>
-        /// vPaso1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.View vPaso1;
         
         /// <summary>
         /// PanelIngresoDatos control.
@@ -85,42 +76,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
         protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombreServicio;
         
         /// <summary>
-        /// lblCategoria control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCategoria;
-        
-        /// <summary>
-        /// drpCategoriaServicio control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpCategoriaServicio;
-        
-        /// <summary>
-        /// lblTipo control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTipo;
-        
-        /// <summary>
-        /// drpTipoServicio control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpTipoServicio;
-        
-        /// <summary>
         /// lblDescripcion control.
         /// </summary>
         /// <remarks>
@@ -139,6 +94,60 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
         protected global::System.Web.UI.WebControls.TextBox txtDescripcionServicios;
         
         /// <summary>
+        /// lblTipoServicio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTipoServicio;
+        
+        /// <summary>
+        /// drpTipoServicio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drpTipoServicio;
+        
+        /// <summary>
+        /// lblCategoria control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCategoria;
+        
+        /// <summary>
+        /// drpCategoriaServicio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drpCategoriaServicio;
+        
+        /// <summary>
+        /// lblInstruccion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblInstruccion;
+        
+        /// <summary>
+        /// PanelDias control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelDias;
+        
+        /// <summary>
         /// lblDias control.
         /// </summary>
         /// <remarks>
@@ -148,15 +157,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
         protected global::System.Web.UI.WebControls.Label lblDias;
         
         /// <summary>
-        /// chkLunes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chkLunes;
-        
-        /// <summary>
         /// lblHoras control.
         /// </summary>
         /// <remarks>
@@ -164,6 +164,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblHoras;
+        
+        /// <summary>
+        /// chkLunes control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkLunes;
         
         /// <summary>
         /// drpHora1 control.
@@ -265,6 +274,24 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
         protected global::System.Web.UI.WebControls.DropDownList drpHora6;
         
         /// <summary>
+        /// chkDomingo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox chkDomingo;
+        
+        /// <summary>
+        /// drpHora7 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drpHora7;
+        
+        /// <summary>
         /// PanelBotonAgregar control.
         /// </summary>
         /// <remarks>
@@ -281,23 +308,5 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnAgregarServicio;
-        
-        /// <summary>
-        /// PanelTablaDatosServicios control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelTablaDatosServicios;
-        
-        /// <summary>
-        /// dgServicios control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DataGrid dgServicios;
     }
 }
