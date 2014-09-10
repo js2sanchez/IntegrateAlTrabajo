@@ -122,7 +122,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                         }
                     }
                     string script = @"<script type='text/javascript'>
-                            alertify.alert('Los siguientes datos ya estan registrados:" +datos+ "');</script>";
+                            bootbox.alert('Los siguientes datos ya estan registrados:" +datos+ "');</script>";
                     ScriptManager.RegisterStartupScript(this, typeof(Page), "Datos de empresa", script, false);
                 }
             }
@@ -146,7 +146,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                 else
                 {
                     string script = @"<script type='text/javascript'>
-                            alertify.alert('El nombre de usuario ya existe. Escriba otro por favor.');
+                            bootbox.alert('El nombre de usuario ya existe. Escriba otro por favor.');
                             </script>";
                     ScriptManager.RegisterStartupScript(this, typeof(Page), "Datos de cuenta", script, false);
                     txtNombreUsuario.Focus();
