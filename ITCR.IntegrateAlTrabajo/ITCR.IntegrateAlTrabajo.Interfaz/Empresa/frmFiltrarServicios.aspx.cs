@@ -130,10 +130,16 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
             DataTable Filtro = busqueda.Buscar_por_Filtrado();
             if (Filtro.Rows.Count > 0)
             {
-                
                 dgResultados.DataSource = Filtro;
                 dgResultados.DataBind();
+                lbl_resultados.Visible = true;
                 pnl_resultados.Visible = true;
+            }
+            else
+            {
+                pnl_resultados.Visible = false;
+                string code = @"<script type='text/javascript'>serviciosNoEncontrados();</script>";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
             }
         }
 
