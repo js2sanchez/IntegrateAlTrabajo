@@ -4,6 +4,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <link rel="stylesheet" href="../Styles/bootstrap.min.css" />
     <link rel="stylesheet" href="../Styles/alertify.bootstrap.css" />
+    <link rel="stylesheet" href="../Styles/Site.css" />
     <style type="text/css">
         .style3
         {
@@ -265,9 +266,8 @@
                             </td>
                             <td class="style33" colspan="4">
                                 <asp:TextBox ID="txtDescripcionServicios" runat="server" ToolTip="Ejemplo: La decoración de interiores ofrecida se llevará a cabo utilizando materiales reciclables."
-                                    onblur="this.placeholder = 'Escriba la descripción del servicio aquí'"
-                                    onfocus="this.placeholder = ''" placeholder="Escriba la descripción del servicio aquí"
-                                    Width="500px" TabIndex="1"></asp:TextBox>
+                                    onblur="this.placeholder = 'Escriba la descripción del servicio aquí'" onfocus="this.placeholder = ''"
+                                    placeholder="Escriba la descripción del servicio aquí" Width="500px" TabIndex="1"></asp:TextBox>
                             </td>
                             <td class="style33">
                                 &nbsp;
@@ -281,8 +281,8 @@
                                 <asp:Label ID="lblTipoServicio" runat="server" Text="Tipo de servicio"></asp:Label>
                             </td>
                             <td class="style33">
-                                <asp:DropDownList ID="drpTipoServicio" runat="server" Height="30px" 
-                                    Width="200px" TabIndex="2">
+                                <asp:DropDownList ID="drpTipoServicio" runat="server" Height="30px" Width="200px"
+                                    TabIndex="2">
                                 </asp:DropDownList>
                             </td>
                             <td class="style33">
@@ -305,8 +305,8 @@
                                 <asp:Label ID="lblCategoria" runat="server" Text="Categoría"></asp:Label>
                             </td>
                             <td class="style27">
-                                <asp:DropDownList ID="drpCategoriaServicio" runat="server" Height="30px" 
-                                    Width="200px" TabIndex="3">
+                                <asp:DropDownList ID="drpCategoriaServicio" runat="server" Height="30px" Width="200px"
+                                    TabIndex="3">
                                 </asp:DropDownList>
                             </td>
                             <td class="style28">
@@ -400,8 +400,8 @@
                                                     Text="Lunes" TabIndex="4" />
                                             </td>
                                             <td class="style33">
-                                                <asp:DropDownList ID="drpHora1" runat="server" Enabled="False" Height="30px" 
-                                                    Width="121px" TabIndex="5">
+                                                <asp:DropDownList ID="drpHora1" runat="server" Enabled="False" Height="30px" Width="121px"
+                                                    TabIndex="5">
                                                 </asp:DropDownList>
                                             </td>
                                             <td class="style33">
@@ -429,8 +429,8 @@
                                                     Text="Martes" TabIndex="6" />
                                             </td>
                                             <td class="style33">
-                                                <asp:DropDownList ID="drpHora2" runat="server" Enabled="False" Height="30px" 
-                                                    Width="121px" TabIndex="7">
+                                                <asp:DropDownList ID="drpHora2" runat="server" Enabled="False" Height="30px" Width="121px"
+                                                    TabIndex="7">
                                                 </asp:DropDownList>
                                             </td>
                                             <td class="style33">
@@ -458,8 +458,8 @@
                                                     Text="Miércoles" TabIndex="8" />
                                             </td>
                                             <td class="style33">
-                                                <asp:DropDownList ID="drpHora3" runat="server" Enabled="False" Height="30px" 
-                                                    Width="121px" TabIndex="9">
+                                                <asp:DropDownList ID="drpHora3" runat="server" Enabled="False" Height="30px" Width="121px"
+                                                    TabIndex="9">
                                                 </asp:DropDownList>
                                             </td>
                                             <td class="style33">
@@ -487,8 +487,8 @@
                                                     Text="Jueves" TabIndex="10" />
                                             </td>
                                             <td class="style33">
-                                                <asp:DropDownList ID="drpHora4" runat="server" Enabled="False" Height="30px" 
-                                                    Width="121px" TabIndex="11">
+                                                <asp:DropDownList ID="drpHora4" runat="server" Enabled="False" Height="30px" Width="121px"
+                                                    TabIndex="11">
                                                 </asp:DropDownList>
                                             </td>
                                             <td class="style33">
@@ -516,8 +516,8 @@
                                                     Text="Viernes" TabIndex="12" />
                                             </td>
                                             <td class="style33">
-                                                <asp:DropDownList ID="drpHora5" runat="server" Enabled="False" Height="30px" 
-                                                    Width="121px" TabIndex="13">
+                                                <asp:DropDownList ID="drpHora5" runat="server" Enabled="False" Height="30px" Width="121px"
+                                                    TabIndex="13">
                                                 </asp:DropDownList>
                                             </td>
                                             <td class="style33">
@@ -545,8 +545,8 @@
                                                     Text="Sábado" TabIndex="14" />
                                             </td>
                                             <td class="style33">
-                                                <asp:DropDownList ID="drpHora6" runat="server" Enabled="False" Height="30px" 
-                                                    Width="121px" TabIndex="15">
+                                                <asp:DropDownList ID="drpHora6" runat="server" Enabled="False" Height="30px" Width="121px"
+                                                    TabIndex="15">
                                                 </asp:DropDownList>
                                             </td>
                                             <td class="style33">
@@ -570,12 +570,12 @@
                                                 &nbsp;
                                             </td>
                                             <td class="style49">
-                                                <asp:CheckBox ID="chkDomingo" runat="server" AutoPostBack="True" Text="Domingo" 
-                                                    OnCheckedChanged="chkDomingo_CheckedChanged" TabIndex="16" />
+                                                <asp:CheckBox ID="chkDomingo" runat="server" AutoPostBack="True" Text="Domingo" OnCheckedChanged="chkDomingo_CheckedChanged"
+                                                    TabIndex="16" />
                                             </td>
                                             <td class="style33">
-                                                <asp:DropDownList ID="drpHora7" runat="server" Enabled="False" Height="30px" 
-                                                    Width="121px" TabIndex="17">
+                                                <asp:DropDownList ID="drpHora7" runat="server" Enabled="False" Height="30px" Width="121px"
+                                                    TabIndex="17">
                                                 </asp:DropDownList>
                                             </td>
                                             <td class="style33">
