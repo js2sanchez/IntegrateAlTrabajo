@@ -25,7 +25,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
         {
             if (!IsPostBack)
             {
-                //Session["Nombre_Usuario"] = "ina";
                 cargar_datos_usuario();
             }
         }

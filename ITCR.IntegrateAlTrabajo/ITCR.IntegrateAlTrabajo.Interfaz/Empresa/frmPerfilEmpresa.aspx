@@ -3,14 +3,11 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <link rel="stylesheet" href="../Styles/bootstrap.min.css" /> 
-    <link rel="stylesheet" href="../Styles/alertify.bootstrap.css" />
-    <link rel="stylesheet" href="../Styles/alertify.core.css" />
-    <link rel="stylesheet" href="../Styles/alertify.default.css" />
     <style type="text/css">
         body   
         {
             background: #b6b7bc;
-            font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+            font-family: Century Gothic;
             margin: 0px;
             padding: 0px;
             color: #696969;
@@ -22,6 +19,14 @@
             text-align:justify;
             border-spacing: 8px;
             border-collapse: separate;
+        }
+        label
+        {
+            font-weight:normal;
+        }
+        input
+        {
+            font-weight:normal;
         }
         .style3
         {
@@ -106,24 +111,29 @@
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/jquery.maskedinput.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../js/alertify.min.js"></script>
     <script type="text/javascript" src="../js/bootbox.js"></script>   
     <script type="text/javascript">
         function eliminarEmpresa(user) {
-            alertify.set({ buttonFocus: "none" });
-            alertify.set({ buttonReverse: true });
-            alertify.set({ labels: {
-                ok: "Sí, estoy seguro",
-                cancel: "No, deseo manterla"
-            }
-            });
-            // button labels will be "Accept" and "Deny"
-            alertify.confirm("¿Está seguro que desea eliminar esta empresa?", function (e) {
-                if (e) {
-                    PageMethods.eliminarEmpresa(user, OnSuccess, OnError);
+            bootbox.dialog({
+                closeButton: false,
+                title: false,
+                message: "¿Está seguro que desea eliminar esta empresa?",
+                buttons: {
+                    success: {
+                        label: "Sí, estoy seguro",
+                        className: "btn-primary",
+                        callback: function () {
+                            PageMethods.eliminarEmpresa(user, OnSuccess, OnError);
+                        }
+                    },
+                    main: {
+                        label: "No, deseo mantenerla",
+                        className: "btn-primary"
+                    }
                 }
             });
         }
+            
 
         function OnSuccess(response) {
             bootbox.dialog({
@@ -143,12 +153,7 @@
         }
 
         function OnError(error) {
-            alertify.set({ labels: {
-                ok: "Aceptar",
-                cancel: "Cancelar"
-            }
-            });
-            alertify.alert("Hubo un error. Inténtelo más tarde.");
+            bootbox.alert("Hubo un error. Inténtelo más tarde.");
         }
     </script>
     <table class="style3">

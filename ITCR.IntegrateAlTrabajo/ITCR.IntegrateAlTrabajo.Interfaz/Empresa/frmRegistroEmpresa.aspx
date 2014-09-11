@@ -3,14 +3,11 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <link rel="stylesheet" href="../Styles/bootstrap.min.css" /> 
-    <link rel="stylesheet" href="../Styles/alertify.bootstrap.css" />
-    <link rel="stylesheet" href="../Styles/alertify.core.css" />
-    <link rel="stylesheet" href="../Styles/alertify.default.css" />
     <style type="text/css">
         body   
         {
             background: #b6b7bc;
-            font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
+            font-family: Century Gothic;
             margin: 0px;
             padding: 0px;
             color: #696969;
@@ -22,6 +19,14 @@
             text-align:justify;
             border-spacing: 8px;
             border-collapse: separate;
+        }
+        label
+        {
+            font-weight:normal;
+        }
+        input
+        {
+            font-weight:normal;
         }
         p
         {
@@ -163,20 +168,8 @@
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/jquery.maskedinput.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../js/alertify.min.js"></script>
     <script type="text/javascript" src="../js/bootbox.js"></script>    
     <script type="text/javascript">
-        function alertBoxCustom(acceptText, cancelText, message) {
-            // custom OK and Cancel label
-            // default: OK, Cancel
-            alertify.set({ labels: {
-                ok: acceptText,
-                cancel: cancelText
-            }
-            });
-            // button labels will be "Accept" and "Deny"
-            alertify.confirm(message)
-        }
 
         function finalizar() {
             bootbox.dialog({
@@ -196,29 +189,26 @@
         }
 
         function aceptarTerminos() {
-            alertify.set({ buttonFocus: "none" });
-            alertify.set({ labels: {
-                ok: "Aceptar"
-                //cancel: "Cancelar"
-            }
-            });
-            alertify.alert("Usted debe aceptar los términos y condiciones para poder finalizar el registro. Si no desea aceptarlos, presione el botón 'Salir sin guardar'.");
+            bootbox.alert("Usted debe aceptar los términos y condiciones para poder finalizar el registro. Si no desea aceptarlos, presione el botón 'Salir sin guardar'.");
         }
 
         function endConfirmation() {
-            // custom OK and Cancel label
-            // default: OK, Cancel
-            alertify.set({ buttonFocus: "none" });
-            alertify.set({ buttonReverse: true });
-            alertify.set({ labels: {
-                ok: "Sí, estoy seguro",
-                cancel: "No, deseo continuar en el formulario"
-            }
-            });
-            // button labels will be "Accept" and "Deny"
-            alertify.confirm("¿Está seguro que desea salir sin guardar?", function (e) {
-                if (e) {
-                    location.href = "/Autenticacion/frmAutenticacion.aspx";
+            bootbox.dialog({
+                closeButton: false,
+                title: false,
+                message: "¿Está seguro que desea salir sin guardar?",
+                buttons: {
+                    success: {
+                        label: "Sí, estoy seguro",
+                        className: "btn-primary",
+                        callback: function () {
+                            location.href = "/Autenticacion/frmAutenticacion.aspx";
+                        }
+                    },
+                    main: {
+                        label: "No, deseo continuar en el formulario",
+                        className: "btn-primary"
+                    }
                 }
             });
         }
