@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using ITCR.IntegrateAlTrabajo.Negocios;
 using ITCR.IntegrateAlTrabajo.Datos;
+using System.Web.Services;
 
 namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
 {
@@ -27,13 +28,22 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
             DataTable TablaOfertaTrabajo = OfertaTrabajo.Buscar();
             if (TablaOfertaTrabajo.Rows.Count > 0)
             {
-                lblNombrePuestoDato.Text = TablaOfertaTrabajo.Rows[0]["Nom_Puesto"].ToString();
+                lblNombrePuestoDato.Text =TablaOfertaTrabajo.Rows[0]["Nom_Puesto"].ToString();
                 lblDescripcionDato.Text = TablaOfertaTrabajo.Rows[0]["Dsc_OfertaTrabajo"].ToString();
                 lblTipoDato.Text = obtenerNombreTipoOfertaTrabajo(Int16.Parse(TablaOfertaTrabajo.Rows[0]["FK_IdTipoOfertaTrabajo"].ToString()));
                 lblCategoriaDato.Text = obtenerNombreCategoriaOfertaTrabajo(Int16.Parse(TablaOfertaTrabajo.Rows[0]["FK_IdCategoriaOfertaTrabajo"].ToString()));
                 lblObservacionesDato.Text = TablaOfertaTrabajo.Rows[0]["InformacionAdicional"].ToString();
+                Session["detalles_oferta"] = TablaOfertaTrabajo;
             }
-
+            cIATRequisitoOfertaTrabajoNegocios Requisitos = new cIATRequisitoOfertaTrabajoNegocios(1, "A", 2, "B");
+            Requisitos.FK_IdOfertaTrabajo = OfertaTrabajo.Id_OfertaTrabajo;
+            DataTable TablaRequisitos = Requisitos.Buscar();
+            if (TablaRequisitos.Rows.Count > 0)
+            {
+                dgRequisitos.DataSource = TablaRequisitos;
+                dgRequisitos.DataBind();
+                HttpContext.Current.Session["oferta_requisitos"] = TablaRequisitos;
+            }
         }
 
         private String obtenerNombreTipoOfertaTrabajo(Int16 IdTipoOfertaTrabajo)
@@ -68,6 +78,32 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
             }
 
             return NombreCategoriaOfertaTrabajo;
+        }
+
+        protected void ibtnEditarOferta_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("/Empresa/frmEditarOfertaTrabajo.aspx");
+        }
+
+        protected void ibtEliminarOferta_Click(object sender, ImageClickEventArgs e)
+        {
+            string code = @"<script type='text/javascript'>eliminarOferta('" + Int16.Parse(Session["Id_OfertaTrabajo"].ToString()) + "');</script>";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
+        }
+
+        [WebMethod]
+        public static void eliminarOferta(int id_oferta)
+        {
+            cIATRequisitoOfertaTrabajoNegocios n_req = new cIATRequisitoOfertaTrabajoNegocios(1, "A", 2, "B");
+            n_req.FK_IdOfertaTrabajo = id_oferta;
+            foreach (DataRow requisito in ((DataTable)HttpContext.Current.Session["oferta_requisitos"]).Rows)
+            {
+                n_req.Id_RequisitoOfertaTrabajo = Int16.Parse(requisito[0].ToString());
+                n_req.Eliminar();
+            }
+            cIATOfertaTrabajoNegocios oferta = new cIATOfertaTrabajoNegocios(1, "A", 2, "B");
+            oferta.Id_OfertaTrabajo = id_oferta;
+            oferta.Eliminar();
         }
     }
 }

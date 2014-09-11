@@ -32,8 +32,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             {
                 lblNombreDato.Text = TablaServicios.Rows[0]["Nom_Servicio"].ToString();
                 lblDescripcionDato.Text = TablaServicios.Rows[0]["Descripcion"].ToString();
-                lblTipoServicioDato.Text = obtenerDetalleTipoServicio(TablaServicios.Rows[0]["FK_IdCategoriaServicio"].ToString());
-                lblCategoriaServicioDato.Text = obtenerDetalleCategoriaServicio(TablaServicios.Rows[0]["FK_IdTipoServicio"].ToString());
+                lblTipoServicioDato.Text = obtenerDetalleTipoServicio(TablaServicios.Rows[0]["FK_IdTipoServicio"].ToString());
+                lblCategoriaServicioDato.Text = obtenerDetalleCategoriaServicio(TablaServicios.Rows[0]["FK_IdCategoriaServicio"].ToString());
                 lblDiasHorasDato.Text = obtenerDiasServicios(Session["IdServicio"].ToString());
             }
         }
@@ -128,6 +128,35 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         {
             Session["IdServicio"] = Session["IdServicio"].ToString();
             Response.Redirect("frmActualizarServicio.aspx");
+        }
+
+        protected void ibtnEliminarServicio_Click(object sender, ImageClickEventArgs e)
+        {
+            string code = @"<script type='text/javascript'>eliminarServicio(" + Session["IdServicio"].ToString() + ");</script>";
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false); 
+        }
+
+        [WebMethod]
+        public static void eliminarServicio(int index)
+        {
+            cIATDiaServicioNegocios DiaServicio = new cIATDiaServicioNegocios(1, "A", 2, "B");
+            DiaServicio.FK_IdServicio = index;
+
+            DataTable TablaDiasServicio = DiaServicio.Buscar();
+
+            if (TablaDiasServicio.Rows.Count > 0)
+            {
+                cIATDiaServicioNegocios DiaServicioBorrado = new cIATDiaServicioNegocios(1, "A", 2, "B");
+                for (int i = 0; i < TablaDiasServicio.Rows.Count; i++)
+                {
+                    DiaServicioBorrado.Id_DiaServicio = Int16.Parse(TablaDiasServicio.Rows[i]["Id_DiaServicio"].ToString());
+                    DiaServicioBorrado.Eliminar();
+                }
+            }
+
+            cIATServicioNegocios Servicio = new cIATServicioNegocios(1, "A", 2, "B");
+            Servicio.Id_Servicio = index;
+            Servicio.Eliminar();
         }
     }
 }

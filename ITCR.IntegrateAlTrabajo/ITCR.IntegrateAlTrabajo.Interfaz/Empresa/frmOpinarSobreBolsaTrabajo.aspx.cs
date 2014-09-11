@@ -46,8 +46,11 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                 Opinion.FK_IdUsuario = obtenerIdUsuario(Session["Nombre_Usuario"].ToString());
 
                 Opinion.Insertar();
-                txtOpinion.Text = "";
-                txtOpinion.Focus();
+
+                string script = @"<script type='text/javascript'>
+                            mostrarMensajeAgradecimiento();
+                            </script>";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "MensajeAgradecimiento", script, false);
             }
         }
     }
