@@ -69,9 +69,11 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="Administrador\frmCambiarEstadoPerfil.aspx" />
     <Content Include="Administrador\frmOpinionesSobreBolsaTrabajo.aspx" />
+    <Content Include="AdultoMayor\frmActualizarServicio.aspx" />
     <Content Include="AdultoMayor\frmAplicarOfertaTrabajo.aspx" />
     <Content Include="AdultoMayor\frmConsultarPerfilAdultoMayor.aspx" />
     <Content Include="AdultoMayor\frmConsultarServiciosOfrecidos.aspx" />
+    <Content Include="AdultoMayor\frmDetalleServicio.aspx" />
     <Content Include="AdultoMayor\frmEditarDatosPersonalesAdultoMayor.aspx" />
     <Content Include="AdultoMayor\frmEditarEstudiosAdultoMayor.aspx" />
     <Content Include="AdultoMayor\frmEditarExperienciasLaboralesAdultoMayor.aspx" />
@@ -80,8 +82,13 @@
     <Content Include="AdultoMayor\frmOpinarSobreBolsaTrabajo.aspx" />
     <Content Include="AdultoMayor\frmRegistroAdultoMayor.aspx" />
     <Content Include="Autenticacion\frmAutenticacion.aspx" />
+    <Content Include="Empresa\frmConsultarPerfilEmpresa.aspx" />
+    <Content Include="Empresa\frmDatosServicio.aspx" />
+    <Content Include="Empresa\frmDetallesOferta.aspx" />
     <Content Include="Empresa\frmEditarDatosAutenticacionEmpresa.aspx" />
     <Content Include="Empresa\frmEditarDatosGeneralesEmpresa.aspx" />
+    <Content Include="Empresa\frmEditarOfertaTrabajo.aspx" />
+    <Content Include="Empresa\frmOfertasTrabajo.aspx" />
     <Content Include="Empresa\frmOpinarSobreBolsaTrabajo.aspx" />
     <Content Include="Empresa\frmFiltrarServicios.aspx" />
     <Content Include="Empresa\frmPerfilAdultoMayor.aspx" />
@@ -171,6 +178,12 @@
     <Compile Include="Administrador\frmOpinionesSobreBolsaTrabajo.aspx.designer.cs">
       <DependentUpon>frmOpinionesSobreBolsaTrabajo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdultoMayor\frmActualizarServicio.aspx.cs">
+      <DependentUpon>frmActualizarServicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdultoMayor\frmActualizarServicio.aspx.designer.cs">
+      <DependentUpon>frmActualizarServicio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdultoMayor\frmAplicarOfertaTrabajo.aspx.cs">
       <DependentUpon>frmAplicarOfertaTrabajo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -191,6 +204,12 @@
     </Compile>
     <Compile Include="AdultoMayor\frmConsultarServiciosOfrecidos.aspx.designer.cs">
       <DependentUpon>frmConsultarServiciosOfrecidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdultoMayor\frmDetalleServicio.aspx.cs">
+      <DependentUpon>frmDetalleServicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdultoMayor\frmDetalleServicio.aspx.designer.cs">
+      <DependentUpon>frmDetalleServicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdultoMayor\frmEditarDatosPersonalesAdultoMayor.aspx.cs">
       <DependentUpon>frmEditarDatosPersonalesAdultoMayor.aspx</DependentUpon>
@@ -255,6 +274,24 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Empresa\frmConsultarPerfilEmpresa.aspx.cs">
+      <DependentUpon>frmConsultarPerfilEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\frmConsultarPerfilEmpresa.aspx.designer.cs">
+      <DependentUpon>frmConsultarPerfilEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\frmDatosServicio.aspx.cs">
+      <DependentUpon>frmDatosServicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\frmDatosServicio.aspx.designer.cs">
+      <DependentUpon>frmDatosServicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\frmDetallesOferta.aspx.cs">
+      <DependentUpon>frmDetallesOferta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\frmDetallesOferta.aspx.designer.cs">
+      <DependentUpon>frmDetallesOferta.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Empresa\frmEditarDatosAutenticacionEmpresa.aspx.cs">
       <DependentUpon>frmEditarDatosAutenticacionEmpresa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -268,6 +305,18 @@
     </Compile>
     <Compile Include="Empresa\frmEditarDatosGeneralesEmpresa.aspx.designer.cs">
       <DependentUpon>frmEditarDatosGeneralesEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\frmEditarOfertaTrabajo.aspx.cs">
+      <DependentUpon>frmEditarOfertaTrabajo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\frmEditarOfertaTrabajo.aspx.designer.cs">
+      <DependentUpon>frmEditarOfertaTrabajo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\frmOfertasTrabajo.aspx.cs">
+      <DependentUpon>frmOfertasTrabajo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\frmOfertasTrabajo.aspx.designer.cs">
+      <DependentUpon>frmOfertasTrabajo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Empresa\frmOpinarSobreBolsaTrabajo.aspx.cs">
       <DependentUpon>frmOpinarSobreBolsaTrabajo.aspx</DependentUpon>
