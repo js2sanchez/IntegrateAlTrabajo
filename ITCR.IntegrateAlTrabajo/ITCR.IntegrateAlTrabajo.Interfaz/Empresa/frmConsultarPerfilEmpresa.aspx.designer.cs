@@ -10,52 +10,79 @@
 namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
     
     
-    public partial class frmDatosServicio {
+    public partial class frmConsultarPerfilEmpresa {
         
         /// <summary>
-        /// lblServicio control.
+        /// ScriptManagerMain control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblServicio;
+        protected global::System.Web.UI.ScriptManager ScriptManagerMain;
         
         /// <summary>
-        /// PanelDatosServicio control.
+        /// lblPerfil control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelDatosServicio;
+        protected global::System.Web.UI.WebControls.Label lblPerfil;
         
         /// <summary>
-        /// lblDatosServicio control.
+        /// pnlPerfil control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDatosServicio;
+        protected global::System.Web.UI.WebControls.Panel pnlPerfil;
         
         /// <summary>
-        /// lblNombre control.
+        /// lblDatosGenerales control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombre;
+        protected global::System.Web.UI.WebControls.Label lblDatosGenerales;
         
         /// <summary>
-        /// lblNombreDato control.
+        /// lblNombreEmpresa control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombreDato;
+        protected global::System.Web.UI.WebControls.Label lblNombreEmpresa;
+        
+        /// <summary>
+        /// lblContenidoNombreEmpresa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblContenidoNombreEmpresa;
+        
+        /// <summary>
+        /// lblCedulaJuridica control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblCedulaJuridica;
+        
+        /// <summary>
+        /// lblContenidoCedulaJuridica control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblContenidoCedulaJuridica;
         
         /// <summary>
         /// lblDescripcion control.
@@ -67,75 +94,102 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
         protected global::System.Web.UI.WebControls.Label lblDescripcion;
         
         /// <summary>
-        /// lblDescripcionDato control.
+        /// lblContenidoDescripcion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescripcionDato;
+        protected global::System.Web.UI.WebControls.Label lblContenidoDescripcion;
         
         /// <summary>
-        /// lblTipo control.
+        /// lblTelefono control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTipo;
+        protected global::System.Web.UI.WebControls.Label lblTelefono;
         
         /// <summary>
-        /// lblTipoDato control.
+        /// lblContenidoTelefono control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTipoDato;
+        protected global::System.Web.UI.WebControls.Label lblContenidoTelefono;
         
         /// <summary>
-        /// lblCategoria control.
+        /// lblEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCategoria;
+        protected global::System.Web.UI.WebControls.Label lblEmail;
         
         /// <summary>
-        /// lblCategoriaDato control.
+        /// lblContenidoEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCategoriaDato;
+        protected global::System.Web.UI.WebControls.Label lblContenidoEmail;
         
         /// <summary>
-        /// PanelDiasServicio control.
+        /// lblProvincia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelDiasServicio;
+        protected global::System.Web.UI.WebControls.Label lblProvincia;
         
         /// <summary>
-        /// lblHorasDias control.
+        /// lblContenidoProvincia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblHorasDias;
+        protected global::System.Web.UI.WebControls.Label lblContenidoProvincia;
         
         /// <summary>
-        /// dgDiasServicio control.
+        /// lblContenidoCanton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataGrid dgDiasServicio;
+        protected global::System.Web.UI.WebControls.Label lblContenidoCanton;
+        
+        /// <summary>
+        /// lblContenidoCant control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblContenidoCant;
+        
+        /// <summary>
+        /// lblDistrito control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDistrito;
+        
+        /// <summary>
+        /// lblContenidoDistrito control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblContenidoDistrito;
     }
 }

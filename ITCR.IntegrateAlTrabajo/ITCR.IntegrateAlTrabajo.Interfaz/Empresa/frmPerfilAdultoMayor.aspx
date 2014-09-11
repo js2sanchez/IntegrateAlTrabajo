@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMaestraEmpresa.Master" AutoEventWireup="true" CodeBehind="frmPerfilAdultoMayor.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.Empresa.frmPerfilAdultoMayor" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMaestraAdministrador.Master" AutoEventWireup="true" CodeBehind="frmPerfilAdultoMayor.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.Empresa.frmPerfilAdultoMayor" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
         .style3
@@ -136,7 +136,7 @@
             <td class="style5">
                 </td>
             <td class="style6" colspan="2">
-                <asp:Label ID="lblMiPerfil" runat="server" Text="Mi perfil" CssClass="Titulo1"></asp:Label>
+                <asp:Label ID="lblMiPerfil" runat="server" Text="Perfil Persona Adulta Mayor" CssClass="Titulo1"></asp:Label>
             </td>
             <td class="style8">
                 </td>
@@ -180,10 +180,7 @@
                             <td class="style53">
                             </td>
                             <td class="style6">
-                                <asp:Panel ID="PanelEditarDatosPersonales" runat="server" 
-                                    HorizontalAlign="Right">
-                                </asp:Panel>
-                            </td>
+                                &nbsp;</td>
                         </tr>
                         <tr>
                             <td class="style48">
@@ -333,9 +330,7 @@
                             <td class="style35">
                             </td>
                             <td class="style37">
-                                <asp:Panel ID="PanelEditarEstudios" runat="server" HorizontalAlign="Right">
-                                </asp:Panel>
-                            </td>
+                                &nbsp;</td>
                         </tr>
                         <tr>
                             <td class="style14" colspan="4">
@@ -395,12 +390,7 @@
                             <td class="style40">
                             </td>
                             <td class="style6">
-                                <asp:Panel ID="Panel1" runat="server">
-                                </asp:Panel>
-                                <asp:Panel ID="PanelBotonEditarExperienciasLaborales" runat="server" 
-                                    HorizontalAlign="Right">
-                                </asp:Panel>
-                            </td>
+                                &nbsp;</td>
                         </tr>
                         <tr>
                             <td class="style14" colspan="4">
@@ -485,9 +475,7 @@
                                                     </asp:CheckBoxList>
                             </td>
                             <td>
-                                <asp:Panel ID="PanelIdiomas" runat="server" HorizontalAlign="Right">
-                                </asp:Panel>
-                            </td>
+                                &nbsp;</td>
                         </tr>                        
                     </table>
                 </asp:Panel>
@@ -518,7 +506,7 @@
                 <asp:Panel ID="Panel2" runat="server" BorderStyle="Solid" BorderWidth="2px">
                     <table class="style9">
                         <tr>
-                            <td class="style18" colspan="2">
+                            <td class="style6" colspan="2">
                                 <asp:Label ID="Label1" runat="server" Text="Pasatiempo favorito" CssClass="Titulo2"></asp:Label>
                             </td>
                             <td class="style20">
@@ -553,9 +541,7 @@
                                  Width="100%" MaxLength="80" />
                             </td>
                             <td>                                
-                                    <asp:Panel ID="PanelPasatiempoFavorito" runat="server" HorizontalAlign="Right">
-                                    </asp:Panel>
-                            </td>
+                                    &nbsp;</td>
                         </tr>
                     </table>
                 </asp:Panel>

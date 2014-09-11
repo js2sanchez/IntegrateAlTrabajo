@@ -128,6 +128,37 @@
             width: 195px;
             height: 25px;
         }
+        .auto-style6 {
+            width: 19px;
+            height: 15px;
+        }
+        .auto-style7 {
+            width: 182px;
+            height: 15px;
+        }
+        .auto-style9 {
+            height: 15px;
+        }
+        .auto-style10 {
+            width: 203px;
+            height: 15px;
+        }
+        .auto-style11 {
+            width: 251px;
+            height: 15px;
+        }
+        .auto-style12 {
+            height: 15px;
+            width: 408px;
+        }
+        .auto-style13 {
+            width: 31px;
+            height: 15px;
+        }
+        .auto-style14 {
+            width: 131px;
+            height: 15px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -171,19 +202,22 @@
                     BorderWidth="2px">
                     <table class="style9">
                         <tr>
-                            <td class="style10" colspan="2">
-                                <asp:Label ID="lblDatosServicio" runat="server" Text="Información del servicio" 
-                                    CssClass="Titulo2"></asp:Label>
+                            <td class="auto-style9" colspan="2">
                             </td>
-                            <td class="style51">
+                            <td class="auto-style6">
                             </td>
-                            <td class="style53">
+                            <td class="auto-style7">
                             </td>
-                            <td class="style6">
-                                <asp:Panel ID="PanelEditarDatosPersonales" runat="server" 
-                                    HorizontalAlign="Right">
-                                </asp:Panel>
+                            <td class="auto-style9">
                             </td>
+                        </tr>
+                        <tr>
+                            <td class="style6" colspan="2">
+                                <asp:Label ID="lblDatosServicio" runat="server" CssClass="Titulo2" Text="Información del servicio"></asp:Label>
+                            </td>
+                            <td class="style51"></td>
+                            <td class="style53"></td>
+                            <td class="style6"></td>
                         </tr>
                         <tr>
                             <td class="style48">
@@ -195,11 +229,9 @@
                             <td class="style51">
                                 &nbsp;</td>
                             <td class="style53">
-                                <asp:Label ID="lblTipo" runat="server" Text="Tipo de servicio"></asp:Label>
-                            </td>
+                                &nbsp;</td>
                             <td class="style6">
-                                <asp:Label ID="lblTipoDato" runat="server"></asp:Label>
-                            </td>
+                                &nbsp;</td>
                         </tr>
                         <tr>
                             <td class="style48">
@@ -211,11 +243,38 @@
                             <td class="style51">
                                 </td>
                             <td class="style53">
+                                &nbsp;</td>
+                            <td class="style6">
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="style48">
+                                <asp:Label ID="lblTipo" runat="server" Text="Tipo de servicio"></asp:Label>
+                            </td>
+                            <td class="style50">
+                                <asp:Label ID="lblTipoDato" runat="server"></asp:Label>
+                            </td>
+                            <td class="style51">&nbsp;</td>
+                            <td class="style53">&nbsp;</td>
+                            <td class="style6">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="style48">
                                 <asp:Label ID="lblCategoria" runat="server" Text="Categoría del servicio"></asp:Label>
                             </td>
-                            <td class="style6">
+                            <td class="style50">
                                 <asp:Label ID="lblCategoriaDato" runat="server"></asp:Label>
                             </td>
+                            <td class="style51">&nbsp;</td>
+                            <td class="style53">&nbsp;</td>
+                            <td class="style6">&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style10"></td>
+                            <td class="auto-style11"></td>
+                            <td class="auto-style6"></td>
+                            <td class="auto-style7"></td>
+                            <td class="auto-style9"></td>
                         </tr>
                     </table>
                 </asp:Panel>
@@ -247,33 +306,31 @@
                     BorderWidth="2px" Height="200px" ScrollBars="Auto">
                     <table class="style9">
                         <tr>
-                            <td class="style34">
-                                <asp:Label ID="lblHorasDias" runat="server" Text="Días y horas en los que se ofrece el servicio" 
-                                    CssClass="Titulo2"></asp:Label>
+                            <td class="auto-style12">
                             </td>
-                            <td class="style36">
+                            <td class="auto-style13">
                             </td>
-                            <td class="style35">
+                            <td class="auto-style14">
                             </td>
-                            <td class="style37">
-                                <asp:Panel ID="PanelEditarEstudios" runat="server" HorizontalAlign="Right">
-                                </asp:Panel>
+                            <td class="auto-style9">
                             </td>
                         </tr>
                         <tr>
+                            <td class="style34">
+                                <asp:Label ID="lblHorasDias" runat="server" CssClass="Titulo2" Text="Días y horas en los que se ofrece el servicio"></asp:Label>
+                            </td>
+                            <td class="style36"></td>
+                            <td class="style35"></td>
+                            <td class="style37">&nbsp;</td>
+                        </tr>
+                        <tr>
                             <td class="style14" colspan="4">
-                                <asp:DataGrid ID="dgHorasDiasServicio" runat="server" AutoGenerateColumns="False" 
-                                    BackColor="WhiteSmoke" BorderStyle="Solid" CssClass="GridMantenimiento" 
-                                    Font-Names="Century Gothic" Font-Size="Small" ForeColor="Black" Height="19px" 
-                                    Width="99%">
+                                <asp:DataGrid ID="dgDiasServicio" runat="server" AutoGenerateColumns="False" BackColor="WhiteSmoke" BorderStyle="Solid" CssClass="GridMantenimiento" Font-Names="Century Gothic" Font-Size="Small" ForeColor="Black" Height="19px" Width="99%">
                                     <AlternatingItemStyle BackColor="Gainsboro" />
-                                    <HeaderStyle BackColor="Navy" Font-Bold="True" Font-Names="Century Gothic" 
-                                        Font-Size="Larger" ForeColor="White" HorizontalAlign="Center" />
+                                    <HeaderStyle BackColor="Navy" Font-Bold="True" Font-Names="Century Gothic" Font-Size="Larger" ForeColor="White" HorizontalAlign="Center" />
                                     <Columns>
-                                        <asp:BoundColumn DataField="Id_DiaServicio" HeaderText="Id_DiaServicio" Visible="False">
-                                        </asp:BoundColumn>
-                                        <asp:BoundColumn DataField="Nom_Dia" HeaderText="Día">
-                                        </asp:BoundColumn>
+                                        <asp:BoundColumn DataField="Id_DiaServicio" HeaderText="Id_DiaServicio" Visible="False"></asp:BoundColumn>
+                                        <asp:BoundColumn DataField="Nom_Dia" HeaderText="Día"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="Can_Horas" HeaderText="Horas"></asp:BoundColumn>
                                     </Columns>
                                 </asp:DataGrid>

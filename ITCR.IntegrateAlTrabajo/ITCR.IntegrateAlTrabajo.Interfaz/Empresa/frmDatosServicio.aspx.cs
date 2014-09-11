@@ -79,7 +79,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
 
         private void cargarDataGridDiasServicio()
         {
-            dgHorasDiasServicio.DataSource = " ";
+            dgDiasServicio.DataSource = " ";
             PanelDiasServicio.Visible = true;
 
             cIATDiaServicioNegocios Dia = new cIATDiaServicioNegocios(1, "A", 2, "B");
@@ -90,8 +90,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
 
             if (TablaDia.Rows.Count > 0)
             {
-                dgHorasDiasServicio.DataSource = TablaDia;
-                dgHorasDiasServicio.DataBind();
+                dgDiasServicio.DataSource = TablaDia;
+                dgDiasServicio.DataBind();
             }
         }
     }

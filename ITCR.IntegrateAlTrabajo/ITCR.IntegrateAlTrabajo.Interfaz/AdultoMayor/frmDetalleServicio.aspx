@@ -139,15 +139,15 @@
                         </tr>
                         <tr>
                             <td class="style4">
-                                &nbsp;</td>
-                            <td class="style11">
+                                </td>
+                            <td class="style5">
                                 <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
                             </td>
                             <td class="style5">
                                 <asp:Label ID="lblNombreDato" runat="server"></asp:Label>
                             </td>
                             <td class="style4">
-                                &nbsp;</td>
+                                </td>
                         </tr>
                         <tr>
                             <td class="style4">

@@ -196,7 +196,11 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador
 
         protected void dgPerfilesAdultosMayores_ItemCommand(object source, DataGridCommandEventArgs e)
         {
-
+            if (e.CommandName == "PerfilPersona")
+            {
+                Session["Id_usuario"] = e.Item.Cells[0].Text.ToString();
+                Response.Redirect("/Empresa/frmPerfilAdultoMayor.aspx");
+            }
         }
 
         protected void btnGuardarEstado_Click(object sender, EventArgs e)
@@ -242,11 +246,17 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador
 
                 UsuarioEmpresaActualizar.Actualizar();
 
-                string script = @"<script type='text/javascript'>
-                            alert('Se han cambiado los estados de las cuentas.');
-                            </script>";
+                string code = @"<script type='text/javascript'>cambioEstado();</script>";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
+            }
+        }
 
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "Administrador", script, false);
+        protected void dgPerfilesEmpresas_ItemCommand(object source, DataGridCommandEventArgs e)
+        { 
+            if (e.CommandName == "PerfilEmpresa")
+            {
+                Session["Id_usuario"] = e.Item.Cells[0].Text.ToString();
+                Response.Redirect("/Empresa/frmConsultarPerfilEmpresa.aspx");
             }
         }
     }
