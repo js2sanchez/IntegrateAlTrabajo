@@ -20,9 +20,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             {
                 cargarIdEmpresa();
                 btnAgregar.Visible = true;
-                btnActualizar.Visible = false;
-                cargarTodosDropDownList();
-                cargarDataGridOfertasTrabajo();
+                cargarTodosDropDownList();                
             }
         }
 
@@ -89,63 +87,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         #endregion
 
 
-        private String obtenerNombreTipoOfertaTrabajo(Int16 IdTipoOfertaTrabajo)
-        {
-            cIATTipoTrabajoNegocios TipoOfertaTrabajo = new cIATTipoTrabajoNegocios(1, "A", 2, "B");
-            TipoOfertaTrabajo.Id_TipoTrabajo = IdTipoOfertaTrabajo;
-
-            DataTable TablaTipoOfertaTrabajo = TipoOfertaTrabajo.Buscar();
-
-            String NombreTipoOfertaTrabajo = "";
-
-            if (TablaTipoOfertaTrabajo.Rows.Count > 0)
-            {
-                NombreTipoOfertaTrabajo = TablaTipoOfertaTrabajo.Rows[0]["Nom_TipoTrabajo"].ToString();
-            }
-
-            return NombreTipoOfertaTrabajo;
-        }
-
-        private String obtenerNombreCategoriaOfertaTrabajo(Int16 IdCategoriaOfertaTrabajo)
-        {
-            cIATCategoriaTrabajoNegocios CategoriaOfertaTrabajo = new cIATCategoriaTrabajoNegocios(1, "A", 2, "B");
-            CategoriaOfertaTrabajo.Id_CategoriaTrabajo = IdCategoriaOfertaTrabajo;
-
-            DataTable TablaCategoriaOfertaTrabajo = CategoriaOfertaTrabajo.Buscar();
-
-            String NombreCategoriaOfertaTrabajo = "";
-
-            if (TablaCategoriaOfertaTrabajo.Rows.Count > 0)
-            {
-                NombreCategoriaOfertaTrabajo = TablaCategoriaOfertaTrabajo.Rows[0]["Nom_CategoriaTrabajo"].ToString();
-            }
-
-            return NombreCategoriaOfertaTrabajo;
-        }
-
-        private void cargarDataGridOfertasTrabajo()
-        {
-            PanelTablaDatos.Visible = false;
-            dgOfertaTrabajo.DataSource = null;
-            cIATOfertaTrabajoNegocios OfertaTrabajo = new cIATOfertaTrabajoNegocios(1, "A", 2, "B");
-            OfertaTrabajo.FK_IdEmpresa = IdEmpresa;
-
-            DataTable TablaOfertaTrabajo = OfertaTrabajo.Buscar();
-
-            if (TablaOfertaTrabajo.Rows.Count > 0)
-            {
-                dgOfertaTrabajo.DataSource = TablaOfertaTrabajo;
-                dgOfertaTrabajo.DataBind();
-
-                foreach (DataGridItem Fila in dgOfertaTrabajo.Items)
-                {
-                    Fila.Cells[7].Text = obtenerNombreTipoOfertaTrabajo(Int16.Parse(Fila.Cells[6].Text));
-                    Fila.Cells[9].Text = obtenerNombreCategoriaOfertaTrabajo(Int16.Parse(Fila.Cells[8].Text));
-                }
-                PanelTablaDatos.Visible = true;
-            }
-        }
-
+        
+        
         private void inicializarComponentesGraficos()
         {
             txtNombrePuesto.Text = "";
@@ -154,9 +97,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             txtObservaciones.Text = "";
             drpCategoria.SelectedIndex = 0;
             drpTipo.SelectedIndex = 0;
-            chkActiva.Checked = false;
             btnAgregar.Visible = true;
-            btnActualizar.Visible = false;
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
@@ -179,80 +120,21 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 {
                     OfertaTrabajo.InformacionAdicional = txtObservaciones.Text;
                 }
-
-                if (chkActiva.Checked)
-                {
-                    OfertaTrabajo.Ind_Activa = true;
-                }
-                else
-                {
-                    OfertaTrabajo.Ind_Activa = false;
-                }
+                OfertaTrabajo.Ind_Activa = true;
                 OfertaTrabajo.FK_IdCategoriaOfertaTrabajo = Int16.Parse(drpCategoria.SelectedValue);
                 OfertaTrabajo.FK_IdTipoOfertaTrabajo = Int16.Parse(drpTipo.SelectedValue);
                 OfertaTrabajo.FK_IdEmpresa = IdEmpresa;
 
                 OfertaTrabajo.Insertar();
-                cargarDataGridOfertasTrabajo();
-                inicializarComponentesGraficos();
+                string script = @"<script type='text/javascript'>
+                            retornar();</script>";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "Datos de empresa", script, false);
             }
         }
 
         protected void dgOfertaTrabajo_ItemDataBound(object sender, DataGridItemEventArgs e)
         {
             e.Item.Cells[12].Attributes.Add("onClick", "return confirmarBorradoOfertaTrabajo();");
-        }
-
-        protected void dgOfertaTrabajo_ItemCommand(object source, DataGridCommandEventArgs e)
-        {
-            if (e.CommandName == "Editar")
-            {
-                Session["Id_OfertaTrabajo"] = e.Item.Cells[0].Text;
-                txtNombrePuesto.Text = e.Item.Cells[1].Text;
-
-                if (e.Item.Cells[2].Text.CompareTo("&nbsp;") == 0)
-                {
-                    txtDescripcion.Text = "";
-                }
-                else
-                {
-                    txtDescripcion.Text = e.Item.Cells[2].Text;
-                }
-
-                txtRequisitos.Text = e.Item.Cells[3].Text;
-
-                if (e.Item.Cells[4].Text.CompareTo("&nbsp;") == 0)
-                {
-                    txtObservaciones.Text = "";
-                }
-                else
-                {
-                    txtObservaciones.Text = e.Item.Cells[4].Text;
-                }
-
-                if (e.Item.Cells[5].Text.CompareTo("true") == 0)
-                {
-                    chkActiva.Checked = true;
-                }
-                else
-                {
-                    chkActiva.Checked = false;
-                }
-
-                drpTipo.SelectedValue = e.Item.Cells[6].Text;
-                drpCategoria.SelectedValue = e.Item.Cells[8].Text;
-
-                btnActualizar.Visible = true;
-                btnAgregar.Visible = false;
-            }
-            else if (e.CommandName == "Eliminar")
-            {
-                cIATOfertaTrabajoNegocios OfertaTrabajo = new cIATOfertaTrabajoNegocios(1, "A", 2, "B");
-
-                OfertaTrabajo.Id_OfertaTrabajo = Int16.Parse(e.Item.Cells[0].Text);
-                OfertaTrabajo.Eliminar();
-                cargarDataGridOfertasTrabajo();
-            }
         }
 
         protected void btnActualizar_Click(object sender, EventArgs e)
@@ -277,21 +159,12 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 {
                     OfertaTrabajo.InformacionAdicional = txtObservaciones.Text;
                 }
-
-                if (chkActiva.Checked)
-                {
-                    OfertaTrabajo.Ind_Activa = true;
-                }
-                else
-                {
-                    OfertaTrabajo.Ind_Activa = false;
-                }
+                OfertaTrabajo.Ind_Activa = true;
                 OfertaTrabajo.FK_IdCategoriaOfertaTrabajo = Int16.Parse(drpCategoria.SelectedValue);
                 OfertaTrabajo.FK_IdTipoOfertaTrabajo = Int16.Parse(drpTipo.SelectedValue);
                 OfertaTrabajo.FK_IdEmpresa = IdEmpresa;
 
                 OfertaTrabajo.Actualizar();
-                cargarDataGridOfertasTrabajo();
                 inicializarComponentesGraficos();
             }
         }

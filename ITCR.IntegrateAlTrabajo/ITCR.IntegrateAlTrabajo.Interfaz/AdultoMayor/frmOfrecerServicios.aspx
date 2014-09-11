@@ -228,25 +228,9 @@
     <table class="style3">
         <tr>
             <td class="style5">
-            </td>
-            <td class="style6">
-            </td>
-            <td class="style7">
-            </td>
-            <td class="style8">
-            </td>
-            <td class="style6">
-            </td>
-            <td class="style7">
-            </td>
-            <td class="style4">
-            </td>
-        </tr>
-        <tr>
-            <td class="style5">
                 &nbsp;
             </td>
-            <td class="style6" colspan="2">
+            <td class="style6">
                 <asp:Label ID="lblAgregarServicio" runat="server" Text="Ofrecer Servicios" CssClass="Titulo1"></asp:Label>
             </td>
             <td class="style8">
@@ -263,7 +247,7 @@
             </td>
         </tr>
         <tr>
-            <td class="style30" colspan="7">
+            <td class="style30" colspan="6">
                 <asp:ValidationSummary ID="vsOfrecerServicios" runat="server" ForeColor="#CC0000"
                     ValidationGroup="gvServicios" />
             </td>
@@ -272,7 +256,7 @@
             <td class="style5">
                 &nbsp;
             </td>
-            <td class="style6" colspan="5">
+            <td class="style6" colspan="4">
                 <asp:Panel ID="PanelIngresoDatos" runat="server" BorderStyle="Solid" BorderWidth="2px">
                     <table class="style14">
                         <tr>
@@ -702,7 +686,7 @@
             <td class="style5">
                 &nbsp;
             </td>
-            <td class="style6" colspan="5">
+            <td class="style6" colspan="4">
                 &nbsp;
             </td>
             <td class="style4">

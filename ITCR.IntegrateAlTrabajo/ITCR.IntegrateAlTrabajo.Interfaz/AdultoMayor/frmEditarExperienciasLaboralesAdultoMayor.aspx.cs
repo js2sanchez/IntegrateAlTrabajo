@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using ITCR.IntegrateAlTrabajo.Negocios;
 using ITCR.IntegrateAlTrabajo.Datos;
+using System.Web.Services;
 
 namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 {
@@ -125,15 +126,22 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 btnCancelarActualizar.Visible = true;
                 btnAgregar.Visible = false;
                 btnCancelarAgregar.Visible = false;
+                cargarDataGridExperienciasLaborales();
             }
             else if (e.CommandName == "Eliminar")
             {
-                cIATExperienciaLaboralNegocios Estudio = new cIATExperienciaLaboralNegocios(1, "A", 2, "B");
-
-                Estudio.Id_ExperienciaLaboral = Int16.Parse(e.Item.Cells[0].Text);
-                Estudio.Eliminar();
-                cargarDataGridExperienciasLaborales();
+                int index = Int16.Parse(e.Item.Cells[0].Text);
+                string code = @"<script type='text/javascript'>eliminarExperiencia(" + index + "," + e.Item.ItemIndex + ");</script>";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
             }
+        }
+
+        [WebMethod]
+        public static void eliminarExperiencia(int index)
+        {
+            cIATExperienciaLaboralNegocios Estudio = new cIATExperienciaLaboralNegocios(1, "A", 2, "B");
+            Estudio.Id_ExperienciaLaboral = index;
+            Estudio.Eliminar();
         }
 
         protected void dgExperienciasLaborales_ItemDataBound(object sender, DataGridItemEventArgs e)
