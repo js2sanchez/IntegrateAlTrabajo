@@ -3,9 +3,39 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <link rel="stylesheet" href="../Styles/bootstrap.min.css" />
-    <link rel="stylesheet" href="../Styles/alertify.bootstrap.css" />
-    <link rel="stylesheet" href="../Styles/Site.css" />
     <style type="text/css">
+        body   
+        {
+            background: #b6b7bc;
+            font-family: Century Gothic;
+            margin: 0px;
+            padding: 0px;
+            color: #696969;
+        }
+        table
+        {
+            font-family:Century Gothic;
+            font-size:15px;
+            text-align:justify;
+            border-spacing: 5px;
+            border-collapse: separate;
+        }
+        label
+        {
+            font-weight:normal;
+        }
+        input
+        {
+            font-weight:normal;
+        }
+        .DisabledButton input[disabled="true"][type="button"]
+        {
+            color: Gray;
+        }
+        input[disabled="true"][type="submit"]
+        {
+            color: Gray;
+        }
         .style3
         {
             width: 97%;
@@ -145,6 +175,23 @@
             });
             // button labels will be "Accept" and "Deny"
             alertify.confirm(message)
+        }
+
+        function mostrarErrorSistema() {
+            bootbox.dialog({
+                closeButton: false,
+                message: "Estimado usuario (a): El sistema Intégrate al trabajo está presentando algunos problemas, por favor intente llevar a cabo sus tareas más tarde. ¡Gracias por su comprensión!",
+                title: "¡Error del sistema!",
+                buttons: {
+                    success: {
+                        label: "Aceptar",
+                        className: "btn-primary",
+                        callback: function () {
+                            location.href = "/Autenticacion/frmAutenticacion.aspx";
+                        }
+                    }
+                }
+            });
         }
 
         function NotificarNuevoServicio() {

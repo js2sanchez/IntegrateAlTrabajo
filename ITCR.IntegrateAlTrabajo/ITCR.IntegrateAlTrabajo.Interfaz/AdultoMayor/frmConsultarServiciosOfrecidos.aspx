@@ -3,9 +3,39 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <link rel="stylesheet" href="../Styles/bootstrap.min.css" />
-    <link rel="stylesheet" href="../Styles/alertify.bootstrap.css" />
-    <link rel="stylesheet" href="../Styles/Site.css" />
     <style type="text/css">
+        body
+        {
+            background: #b6b7bc;
+            font-family: Century Gothic;
+            margin: 0px;
+            padding: 0px;
+            color: #696969;
+        }
+        table
+        {
+            font-family: Century Gothic;
+            font-size: 15px;
+            text-align: justify;
+            border-spacing: 5px;
+            border-collapse: separate;
+        }
+        label
+        {
+            font-weight: normal;
+        }
+        input
+        {
+            font-weight: normal;
+        }
+        .DisabledButton input[disabled="true"][type="button"]
+        {
+            color: Gray;
+        }
+        input[disabled="true"][type="submit"]
+        {
+            color: Gray;
+        }
         .style3
         {
             width: 98%;
@@ -52,21 +82,61 @@
             alertify.confirm(message)
         }
 
-        function ConfirmarEliminarServicio() {
+        function mostrarErrorSistema() {
             bootbox.dialog({
                 closeButton: false,
-                message: "¿Está seguro (a) que desea eliminar este servicio?",
-                title: "Servicio",
+                message: "Estimado usuario (a): El sistema Intégrate al trabajo está presentando algunos problemas, por favor intente llevar a cabo sus tareas más tarde. ¡Gracias por su comprensión!",
+                title: "¡Error del sistema!",
                 buttons: {
                     success: {
-                        label: "Sí",
+                        label: "Aceptar",
                         className: "btn-primary",
                         callback: function () {
-                            location.href = "/AdultoMayor/frmConsultarServiciosOfrecidos.aspx";
+                            location.href = "/Autenticacion/frmAutenticacion.aspx";
                         }
-                    }          
+                    }
                 }
             });
+        }
+
+        function eliminarServicio(IdServicio, index) {
+            bootbox.dialog({
+            closeButton: false,
+            title: "Servicio",
+            message: "¿Está seguro (a) que desea eliminar este servicio?",
+            buttons: {
+                success: {
+                    label: "Sí, quiero eliminarlo",
+                    className: "btn-primary",
+                    callback: function () {
+                            PageMethods.eliminarServicio(IdServicio, OnSuccess, OnError);
+                        }
+                    },
+                    main: {
+                        label: "No, quiero mantenerlo",
+                        className: "btn-primary"
+                    }
+                }
+            });
+        }
+
+        function eliminarFila(id, rowindex) {
+            var tabla = document.getElementById(id);
+            tabla.deleteRow(rowindex + 1);
+        }
+
+        function OnSuccess(response) {
+            
+            bootbox.alert("El proceso de eliminación se llevó a cabo correctamente.",
+            function()
+            {
+                window.location.href = "frmConsultarServiciosOfrecidos.aspx";
+            }
+            );
+        }
+
+        function OnError(error) {
+            bootbox.alert(error);
         }
 
         function NotificarErrorCantidadDias() {
@@ -132,7 +202,9 @@
                 &nbsp;
             </td>
             <td class="style5" colspan="5">
-                &nbsp;
+                <asp:Panel ID="PanelNoDatos" runat="server">
+                    <asp:Label ID="Label2" runat="server" Text="No hay ningún servicio para mostrar."></asp:Label>
+                </asp:Panel>
             </td>
             <td class="style9">
                 &nbsp;
