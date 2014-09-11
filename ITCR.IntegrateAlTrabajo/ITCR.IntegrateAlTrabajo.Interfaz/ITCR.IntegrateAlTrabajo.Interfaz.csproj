@@ -80,6 +80,7 @@
     <Content Include="AdultoMayor\frmOpinarSobreBolsaTrabajo.aspx" />
     <Content Include="AdultoMayor\frmRegistroAdultoMayor.aspx" />
     <Content Include="Autenticacion\frmAutenticacion.aspx" />
+    <Content Include="Empresa\frmDatosServicio.aspx" />
     <Content Include="Empresa\frmEditarDatosAutenticacionEmpresa.aspx" />
     <Content Include="Empresa\frmEditarDatosGeneralesEmpresa.aspx" />
     <Content Include="Empresa\frmOpinarSobreBolsaTrabajo.aspx" />
@@ -97,6 +98,7 @@
     <Content Include="Multimedia\banner_adultos_mayores.jpg" />
     <Content Include="Multimedia\banner_autenticacion.jpg" />
     <Content Include="Multimedia\icono-buscar.jpg" />
+    <Content Include="Multimedia\icono-check.jpg" />
     <Content Include="Multimedia\icono-editar.jpg" />
     <Content Include="Multimedia\icono-eliminar.jpg" />
     <Content Include="Multimedia\Logo.PNG" />
@@ -254,6 +256,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\frmDatosServicio.aspx.cs">
+      <DependentUpon>frmDatosServicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empresa\frmDatosServicio.aspx.designer.cs">
+      <DependentUpon>frmDatosServicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="Empresa\frmEditarDatosAutenticacionEmpresa.aspx.cs">
       <DependentUpon>frmEditarDatosAutenticacionEmpresa.aspx</DependentUpon>

@@ -150,6 +150,12 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                 Session["Id_usuario"] = e.Item.Cells[0].Text.ToString();
                 Response.Redirect("/Empresa/frmPerfilAdultoMayor.aspx");
             }
+
+            if (e.CommandName == "Servicio")
+            {
+                Session["Id_servicio"] = e.Item.Cells[1].Text.ToString();
+                Response.Redirect("/Empresa/frmDatosServicio.aspx");
+            }
         }
 
     }

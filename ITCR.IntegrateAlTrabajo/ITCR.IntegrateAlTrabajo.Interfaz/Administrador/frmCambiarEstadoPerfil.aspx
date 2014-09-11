@@ -143,6 +143,11 @@
                                 <asp:BoundColumn HeaderText="Contraseña" Visible="False"></asp:BoundColumn>
                                 <asp:BoundColumn HeaderText="Indicio" Visible="False"></asp:BoundColumn>
                                 <asp:BoundColumn HeaderText="Tipo Usuario" Visible="False"></asp:BoundColumn>
+                                <asp:TemplateColumn HeaderText="Ver perfil">
+                                    <ItemTemplate>
+                                        <asp:ImageButton ID="imgbtn_verservicio" runat="server" CommandName="Servicio" Height="30px" ImageAlign="Right" ImageUrl="~/Multimedia/icono-buscar.jpg" />
+                                    </ItemTemplate>
+                                </asp:TemplateColumn>
                             </Columns>
                         </asp:DataGrid>
                     </asp:Panel>
@@ -220,6 +225,11 @@
                                 <asp:BoundColumn HeaderText="Indicio Contraseña" Visible="False">
                                 </asp:BoundColumn>
                                 <asp:BoundColumn HeaderText="Tipo Usuario" Visible="False"></asp:BoundColumn>
+                                <asp:TemplateColumn HeaderText="Ver perfil">
+                                    <ItemTemplate>
+                                        <asp:ImageButton ID="imgbtn_verservicio" runat="server" CommandName="Servicio" Height="30px" ImageAlign="Right" ImageUrl="~/Multimedia/icono-buscar.jpg" />
+                                    </ItemTemplate>
+                                </asp:TemplateColumn>
                             </Columns>
                         </asp:DataGrid>
                     </asp:Panel>

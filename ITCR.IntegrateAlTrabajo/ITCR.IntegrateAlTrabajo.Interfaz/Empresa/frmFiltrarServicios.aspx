@@ -37,6 +37,7 @@
         .style3
         {
             width: 100%;
+            margin-top: 0px;
         }
         .style4
         {
@@ -107,10 +108,24 @@
         .auto-style12 {
             height: 35px;
         }
+        .auto-style13 {
+            width: 15px;
+            height: 24px;
+        }
+        .auto-style14 {
+            height: 24px;
+        }
+        .auto-style15 {
+            width: 20px;
+            height: 24px;
+        }
+        .auto-style16 {
+            width: 250px;
+            height: 24px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <br />
     <asp:ScriptManager ID="ScriptManagerMain" runat="server" EnablePageMethods="true"
         ScriptMode="Release" LoadScriptsBeforeUI="true">
     </asp:ScriptManager>
@@ -127,18 +142,18 @@
     </script>
     <table class="style3">
         <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style5" colspan="2">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
+            <td class="auto-style13">
+                </td>
+            <td class="auto-style14" colspan="2">
+                </td>
+            <td class="auto-style15">
+                </td>
+            <td class="auto-style14">
+                </td>
+            <td class="auto-style16">
+                </td>
+            <td class="auto-style13">
+                </td>
         </tr>
         <tr>
             <td class="style4">
@@ -228,28 +243,14 @@
                 </asp:DropDownList>
             </td>
             <td class="auto-style10">
+                <asp:Button ID="btn_buscar" runat="server" Height="34px" Text="Buscar" 
+                    Enabled="False" onclick="btn_buscar_Click" CssClass="Boton" Width="140px" />
                 </td>
             <td class="auto-style11">
                 </td>
         </tr>
         <tr>
             <td class="style4">
-            </td>
-            <td class="auto-style2">
-            </td>
-            <td class="auto-style1">
-            </td>
-            <td class="style7">
-            </td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style4">
-            </td>
-        </tr>
-        <tr>
-            <td class="style4">
                 &nbsp;</td>
             <td class="auto-style2">
                 &nbsp;</td>
@@ -258,9 +259,7 @@
             <td class="style7">
                 &nbsp;</td>
             <td class="style5">
-                <asp:Button ID="btn_buscar" runat="server" Height="34px" Text="Buscar" 
-                    Enabled="False" onclick="btn_buscar_Click" CssClass="Boton" Width="140px" />
-            </td>
+                &nbsp;</td>
             <td class="style6">
                 &nbsp;</td>
             <td class="style4">
@@ -308,10 +307,16 @@
                                     <Columns>
                                         <asp:BoundColumn DataField="FK_IdUsuario" HeaderText="Id" Visible="False">
                                         </asp:BoundColumn>
+                                        <asp:BoundColumn DataField="Id_Servicio" HeaderText="Id_Servicio" Visible="False"></asp:BoundColumn>
                                         <asp:BoundColumn DataField="Nom_Persona" HeaderText="Nombre"></asp:BoundColumn>
                                         <asp:BoundColumn HeaderText="Primer Apellido" DataField="Apellido1"></asp:BoundColumn>
                                         <asp:BoundColumn HeaderText="Servicio Ofrecido" DataField="Nom_Servicio"></asp:BoundColumn>
-                                        <asp:TemplateColumn HeaderText="Ver más detalles">
+                                        <asp:TemplateColumn HeaderText="Ver detalle del servicio">
+                                            <ItemTemplate>
+                                                <asp:ImageButton ID="imgbtn_verservicio" runat="server" CommandName="Servicio" Height="30px" ImageAlign="Right" ImageUrl="~/Multimedia/icono-buscar.jpg" />
+                                            </ItemTemplate>
+                                        </asp:TemplateColumn>
+                                        <asp:TemplateColumn HeaderText="Ver perfil de la PAM">
                                             <ItemTemplate>
                                                 <asp:ImageButton ID="imgbtn_verperfil" runat="server" CommandName="Perfil" 
                                                     Height="30px" ImageAlign="Right" ImageUrl="~/Multimedia/icono-buscar.jpg" 
