@@ -7,81 +7,72 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ITCR.IntegrateAlTrabajo.Interfaz {
+namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador {
     
     
-    public partial class PaginaMaestraEmpresa {
+    public partial class frmCambiarEstadoPerfilPersona {
         
         /// <summary>
-        /// Head1 control.
+        /// ScriptManagerMain control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
+        protected global::System.Web.UI.ScriptManager ScriptManagerMain;
         
         /// <summary>
-        /// HeadContent control.
+        /// lblActivarDesactivarEstado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
+        protected global::System.Web.UI.WebControls.Label lblActivarDesactivarEstado;
         
         /// <summary>
-        /// Form1 control.
+        /// PanelBotonActualizar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm Form1;
+        protected global::System.Web.UI.WebControls.Panel PanelBotonActualizar;
         
         /// <summary>
-        /// imgLogo control.
+        /// btnGuardarEstado control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgLogo;
+        protected global::System.Web.UI.WebControls.Button btnGuardarEstado;
         
         /// <summary>
-        /// imgBanner control.
+        /// lblAdultosMayores control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgBanner;
+        protected global::System.Web.UI.WebControls.Label lblAdultosMayores;
         
         /// <summary>
-        /// NavigationMenu control.
+        /// panelAdultosMayores control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu NavigationMenu;
+        protected global::System.Web.UI.WebControls.Panel panelAdultosMayores;
         
         /// <summary>
-        /// PanelBarra2 control.
+        /// dgPerfilesAdultosMayores control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelBarra2;
-        
-        /// <summary>
-        /// MainContent control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.DataGrid dgPerfilesAdultosMayores;
     }
 }

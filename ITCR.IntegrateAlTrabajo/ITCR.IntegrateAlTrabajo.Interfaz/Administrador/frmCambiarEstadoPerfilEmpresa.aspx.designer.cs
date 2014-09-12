@@ -10,7 +10,7 @@
 namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador {
     
     
-    public partial class frmCambiarEstadoPerfil {
+    public partial class frmCambiarEstadoPerfilEmpresa {
         
         /// <summary>
         /// ScriptManagerMain control.
@@ -47,33 +47,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnGuardarEstado;
-        
-        /// <summary>
-        /// lblAdultosMayores control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAdultosMayores;
-        
-        /// <summary>
-        /// panelAdultosMayores control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel panelAdultosMayores;
-        
-        /// <summary>
-        /// dgPerfilesAdultosMayores control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DataGrid dgPerfilesAdultosMayores;
         
         /// <summary>
         /// lblEmpresas control.
