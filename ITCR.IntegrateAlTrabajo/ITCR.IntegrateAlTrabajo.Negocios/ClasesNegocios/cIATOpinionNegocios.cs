@@ -4,7 +4,7 @@
 // Proyecto: Intégrate al trabajo
 // Descripción: Clase de LOGICA DE NEGOCIOS para tabla 'IATOpinion'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: Sunday, September 28, 2014, 12:01:04 AM
+// Fecha: Monday, September 29, 2014, 9:12:22 PM
 ///////////////////////////////////////////////////////////////////////////
 #endregion
 
@@ -53,6 +53,7 @@ namespace ITCR.IntegrateAlTrabajo.Negocios
 		///		 <LI>Detalle</LI>
 		///		 <LI>FK_IdUsuario</LI>
 		///		 <LI>Ind_PAM</LI>
+		///		 <LI>Ind_Seguimiento</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
@@ -63,19 +64,23 @@ namespace ITCR.IntegrateAlTrabajo.Negocios
 		public override bool Insertar()
 		{
 			string operacion;
+			//SeguridadSoapClient wsseg = new SeguridadSoapClient();
 			try
 			{
 				//Construir aqui el string a guardar en la bitacora.
 				operacion = "Insertar cIATOpinion;"
 					+"Detalle:"+Detalle.ToString()+";"
 					+"FK_IdUsuario:"+FK_IdUsuario.ToString()+";"
-					+"Ind_PAM:"+Ind_PAM.ToString()+";";
+					+"Ind_PAM:"+Ind_PAM.ToString()+";"
+					+"Ind_Seguimiento:"+Ind_Seguimiento.ToString()+";";
+				//wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.UsoFuncionalidad, _ID_USUARIOBitacora,operacion);
 				return base.Insertar();
 			}
 			catch (Exception ex)
 			{
 				//Construir el string a guardar en la bitácora en caso de error.
 				operacion = "Error Insertar cIATOpinion;"+ex.Message;
+				//wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.Error, _ID_USUARIOBitacora,operacion);
 				throw ex;
 			}
 		}
@@ -92,6 +97,7 @@ namespace ITCR.IntegrateAlTrabajo.Negocios
 		///		 <LI>Detalle</LI>
 		///		 <LI>FK_IdUsuario</LI>
 		///		 <LI>Ind_PAM</LI>
+		///		 <LI>Ind_Seguimiento</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
@@ -101,6 +107,7 @@ namespace ITCR.IntegrateAlTrabajo.Negocios
 		public override bool Actualizar()
 		{
 			string operacion;
+			//SeguridadSoapClient wsseg = new SeguridadSoapClient();
 			try
 			{
 				//Construir aqui el string a guardar en la bitacora.
@@ -108,13 +115,16 @@ namespace ITCR.IntegrateAlTrabajo.Negocios
 					+"Id_Opinion:"+Id_Opinion.ToString()+";"
 					+"Detalle:"+Detalle.ToString()+";"
 					+"FK_IdUsuario:"+FK_IdUsuario.ToString()+";"
-					+"Ind_PAM:"+Ind_PAM.ToString()+";";
+					+"Ind_PAM:"+Ind_PAM.ToString()+";"
+					+"Ind_Seguimiento:"+Ind_Seguimiento.ToString()+";";
+				//wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.UsoFuncionalidad, _ID_USUARIOBitacora,operacion);
 				return base.Actualizar();
 			}
 			catch (Exception ex)
 			{
 				//Construir el string a guardar en la bitácora en caso de error.
 				operacion = "Error Actualizar cIATOpinion;"+ex.Message;
+				//wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.Error, _ID_USUARIOBitacora,operacion);
 				throw ex;
 			}
 		}
@@ -137,17 +147,20 @@ namespace ITCR.IntegrateAlTrabajo.Negocios
 		public override bool Eliminar()
 		{
 			string operacion;
+			//SeguridadSoapClient wsseg = new SeguridadSoapClient();
 			try
 			{
 				//Construir aqui el string a guardar en la bitacora.
 				operacion = "Eliminar cIATOpinion;"
 					+"Id_Opinion:"+Id_Opinion.ToString()+";";
+				//wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.UsoFuncionalidad, _ID_USUARIOBitacora,operacion);
 				return base.Eliminar();
 			}
 			catch (Exception ex)
 			{
 				//Construir el string a guardar en la bitácora en caso de error.
 				operacion = "Error Eliminar cIATOpinion;"+ex.Message;
+				//wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.Error, _ID_USUARIOBitacora,operacion);
 				throw ex;
 			}
 		}
@@ -169,6 +182,7 @@ namespace ITCR.IntegrateAlTrabajo.Negocios
 		///		 <LI>Detalle</LI>
 		///		 <LI>FK_IdUsuario</LI>
 		///		 <LI>Ind_PAM</LI>
+		///		 <LI>Ind_Seguimiento</LI>
 		/// </UL>
 		/// Llena todas las propiedades que corresponden al campo en tabla con el valor de la fila seleccionada.
 		/// </remarks>
@@ -219,6 +233,7 @@ namespace ITCR.IntegrateAlTrabajo.Negocios
 		///		 <LI>Detalle</LI>
 		///		 <LI>FK_IdUsuario</LI>
 		///		 <LI>Ind_PAM</LI>
+		///		 <LI>Ind_Seguimiento</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>

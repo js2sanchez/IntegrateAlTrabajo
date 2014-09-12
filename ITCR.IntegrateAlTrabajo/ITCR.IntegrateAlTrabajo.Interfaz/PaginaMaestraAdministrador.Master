@@ -54,8 +54,13 @@
                         </asp:MenuItem>
                         <asp:MenuItem Text="Ayuda" Value="Noticias y artículos">
                         </asp:MenuItem>
-                        <asp:MenuItem NavigateUrl="~/Administrador/frmOpinionesSobreBolsaTrabajo.aspx" 
-                            Text="Opiniones" Value="Opiniones"></asp:MenuItem>
+                        <asp:MenuItem 
+                            Text="Opiniones" Value="Opiniones">
+                            <asp:MenuItem Text="Personas Adultas Mayores" Value="Personas Adultas Mayores" 
+                                NavigateUrl="~/Administrador/frmOpinionesPAM.aspx">
+                            </asp:MenuItem>
+                            <asp:MenuItem Text="Empresas" Value="Empresas"></asp:MenuItem>
+                        </asp:MenuItem>
                         <asp:MenuItem Text="Cerrar sesión" Value="Cerrar sesión" 
                             NavigateUrl="~/Autenticacion/frmAutenticacion.aspx"></asp:MenuItem>
                     </Items>

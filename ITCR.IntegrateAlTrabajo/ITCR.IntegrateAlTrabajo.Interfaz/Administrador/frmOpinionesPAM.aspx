@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMaestraAdministrador.Master" AutoEventWireup="true" CodeBehind="frmOpinionesSobreBolsaTrabajo.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.Administrador.frmOpinionesSobreBolsaTrabajo" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMaestraAdministrador.Master" AutoEventWireup="true" CodeBehind="frmOpinionesPAM.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.Administrador.frmOpinionesSobreBolsaTrabajo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
         .style3
@@ -38,7 +38,7 @@
             </td>
             <td class="style5" colspan="2">
                 <asp:Label ID="lblTituloPagina" runat="server" CssClass="Titulo1" 
-                    Text="Opiniones sobre la bolsa de trabajo"></asp:Label>
+                    Text="Comentarios y sugerencias de PAMs"></asp:Label>
             </td>
             <td class="style7">
             </td>
@@ -73,11 +73,11 @@
                     <asp:DataGrid ID="dgOpinionesBolsaTrabajo" runat="server" AutoGenerateColumns="False" 
                                             BackColor="WhiteSmoke" 
     BorderStyle="Solid" CssClass="GridMantenimiento" 
-                                            Font-Names="Verdana" Font-Size="Smaller" 
+                                            Font-Names="Century Gothic" Font-Size="Small" 
                         ForeColor="Black" Height="19px" 
                                             Width="100%">
                         <AlternatingItemStyle BackColor="Gainsboro" />
-                        <HeaderStyle BackColor="Navy" Font-Bold="True" Font-Names="Verdana" 
+                        <HeaderStyle BackColor="Navy" Font-Bold="True" Font-Names="Century Gothic" 
                                                 Font-Size="Larger" ForeColor="White" 
                             HorizontalAlign="Center" />
                         <Columns>
@@ -85,6 +85,22 @@
                             </asp:BoundColumn>
                             <asp:BoundColumn DataField="FK_IdUsuario" HeaderText="Usuario">
                             </asp:BoundColumn>
+                            <asp:TemplateColumn HeaderText="Procesar">
+                                <ItemTemplate>
+                                    <asp:ImageButton ID="ibtnProcesar" runat="server" Height="30px" 
+                                        ImageUrl="~/Multimedia/icono-editar.jpg" style="text-align: center" 
+                                        ToolTip="Presione este botón para marcar como procesado el comentario o sugerencia" 
+                                        Width="30px" />
+                                </ItemTemplate>
+                            </asp:TemplateColumn>
+                            <asp:TemplateColumn HeaderText="Eliminar">
+                                <ItemTemplate>
+                                    <asp:ImageButton ID="ibtnEliminar" runat="server" Height="30px" 
+                                        ImageUrl="~/Multimedia/icono-eliminar.jpg" 
+                                        ToolTip="Presione este botón para eliminar el comentario o sugerencia" 
+                                        Width="30px" />
+                                </ItemTemplate>
+                            </asp:TemplateColumn>
                         </Columns>
                     </asp:DataGrid>
                 </asp:Panel>

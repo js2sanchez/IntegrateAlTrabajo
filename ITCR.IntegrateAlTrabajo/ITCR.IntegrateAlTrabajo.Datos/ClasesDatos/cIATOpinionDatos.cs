@@ -4,7 +4,7 @@
 // Proyecto: Intégrate al trabajo
 // Descripción: Clase de acceso a datos para tabla 'IATOpinion'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: Sunday, September 28, 2014, 12:01:04 AM
+// Fecha: Monday, September 29, 2014, 9:12:22 PM
 // Dado que esta clase implementa IDispose, las clases derivadas no deben hacerlo.
 ///////////////////////////////////////////////////////////////////////////
 #endregion
@@ -44,6 +44,7 @@ namespace ITCR.IntegrateAlTrabajo.Datos
 		///		 <LI>Detalle</LI>
 		///		 <LI>FK_IdUsuario</LI>
 		///		 <LI>Ind_PAM</LI>
+		///		 <LI>Ind_Seguimiento</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
@@ -68,6 +69,7 @@ namespace ITCR.IntegrateAlTrabajo.Datos
 		///		 <LI>Detalle</LI>
 		///		 <LI>FK_IdUsuario</LI>
 		///		 <LI>Ind_PAM</LI>
+		///		 <LI>Ind_Seguimiento</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
@@ -116,6 +118,7 @@ namespace ITCR.IntegrateAlTrabajo.Datos
 		///		 <LI>Detalle</LI>
 		///		 <LI>FK_IdUsuario</LI>
 		///		 <LI>Ind_PAM</LI>
+		///		 <LI>Ind_Seguimiento</LI>
 		/// </UL>
 		/// Llena todas las propiedades que corresponden al campo en tabla con el valor de la fila seleccionada.
 		/// </remarks>
@@ -152,6 +155,7 @@ namespace ITCR.IntegrateAlTrabajo.Datos
 		///		 <LI>Detalle</LI>
 		///		 <LI>FK_IdUsuario</LI>
 		///		 <LI>Ind_PAM</LI>
+		///		 <LI>Ind_Seguimiento</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>

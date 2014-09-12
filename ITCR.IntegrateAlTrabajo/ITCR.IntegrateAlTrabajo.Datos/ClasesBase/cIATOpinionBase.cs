@@ -4,7 +4,7 @@
 // Proyecto: Intégrate al trabajo
 // Descripción: Clase de acceso a datos para tabla 'IATOpinion'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: Sunday, September 28, 2014, 12:01:04 AM
+// Fecha: Monday, September 29, 2014, 9:12:22 PM
 // Dado que esta clase implementa IDispose, las clases derivadas no deben hacerlo.
 ///////////////////////////////////////////////////////////////////////////
 #endregion
@@ -24,8 +24,8 @@ namespace ITCR.IntegrateAlTrabajo.Base
 	public class cIATOpinionBase : cBDInteraccionBase
 	{
 		#region Declaraciones de miembros de la clase
-			private SqlBoolean		_ind_PAM;
-			private SqlInt32		_fK_IdUsuario, _fK_IdUsuarioOld, _id_Opinion;
+			private SqlBoolean		_ind_PAM, _ind_Seguimiento;
+			private SqlInt32		_id_Opinion, _fK_IdUsuario, _fK_IdUsuarioOld;
 			private SqlString		_detalle;
 		#endregion
 
@@ -49,6 +49,7 @@ namespace ITCR.IntegrateAlTrabajo.Base
 		///		 <LI>Detalle</LI>
 		///		 <LI>FK_IdUsuario</LI>
 		///		 <LI>Ind_PAM</LI>
+		///		 <LI>Ind_Seguimiento</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
@@ -70,6 +71,7 @@ namespace ITCR.IntegrateAlTrabajo.Base
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sDetalle", SqlDbType.VarChar, 400, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _detalle));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iFK_IdUsuario", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fK_IdUsuario));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@bInd_PAM", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _ind_PAM));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@bInd_Seguimiento", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _ind_Seguimiento));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iId_Opinion", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _id_Opinion));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
 
@@ -127,6 +129,7 @@ namespace ITCR.IntegrateAlTrabajo.Base
 		///		 <LI>Detalle</LI>
 		///		 <LI>FK_IdUsuario</LI>
 		///		 <LI>Ind_PAM</LI>
+		///		 <LI>Ind_Seguimiento</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
@@ -148,6 +151,7 @@ namespace ITCR.IntegrateAlTrabajo.Base
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sDetalle", SqlDbType.VarChar, 400, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _detalle));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iFK_IdUsuario", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fK_IdUsuario));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@bInd_PAM", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _ind_PAM));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@bInd_Seguimiento", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _ind_Seguimiento));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
 
 				if(_conexionBDEsCreadaLocal)
@@ -423,6 +427,7 @@ namespace ITCR.IntegrateAlTrabajo.Base
 		///		 <LI>Detalle</LI>
 		///		 <LI>FK_IdUsuario</LI>
 		///		 <LI>Ind_PAM</LI>
+		///		 <LI>Ind_Seguimiento</LI>
 		/// </UL>
 		/// Llena todas las propiedades que corresponden al campo en tabla con el valor de la fila seleccionada.
 		/// </remarks>
@@ -471,6 +476,7 @@ namespace ITCR.IntegrateAlTrabajo.Base
 					_detalle = (string)toReturn.Rows[0]["Detalle"];
 					_fK_IdUsuario = (Int32)toReturn.Rows[0]["FK_IdUsuario"];
 					_ind_PAM = (bool)toReturn.Rows[0]["Ind_PAM"];
+					_ind_Seguimiento = (bool)toReturn.Rows[0]["Ind_Seguimiento"];
 				}
 				return toReturn;
 			}
@@ -644,6 +650,7 @@ namespace ITCR.IntegrateAlTrabajo.Base
 		///		 <LI>Detalle</LI>
 		///		 <LI>FK_IdUsuario</LI>
 		///		 <LI>Ind_PAM</LI>
+		///		 <LI>Ind_Seguimiento</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
@@ -667,6 +674,7 @@ namespace ITCR.IntegrateAlTrabajo.Base
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@sDetalle", SqlDbType.VarChar, 400, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _detalle));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iFK_IdUsuario", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fK_IdUsuario));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@bInd_PAM", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _ind_PAM));
+				cmdAEjecutar.Parameters.Add(new SqlParameter("@bInd_Seguimiento", SqlDbType.Bit, 1, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _ind_Seguimiento));
 				cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
 
 				if(_conexionBDEsCreadaLocal)
@@ -797,6 +805,24 @@ namespace ITCR.IntegrateAlTrabajo.Base
 					throw new ArgumentOutOfRangeException("Ind_PAM", "Ind_PAM can't be NULL");
 				}
 				_ind_PAM = value;
+			}
+		}
+
+
+		public SqlBoolean Ind_Seguimiento
+		{
+			get
+			{
+				return _ind_Seguimiento;
+			}
+			set
+			{
+				SqlBoolean ind_SeguimientoTmp = (SqlBoolean)value;
+				if(ind_SeguimientoTmp.IsNull)
+				{
+					throw new ArgumentOutOfRangeException("Ind_Seguimiento", "Ind_Seguimiento can't be NULL");
+				}
+				_ind_Seguimiento = value;
 			}
 		}
 		#endregion
