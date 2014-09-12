@@ -86,7 +86,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Autenticacion
                         }
                         else if (TipoUsuario == 3)
                         {
-                            Response.Redirect("/Administrador/frmCambiarEstadoPerfil.aspx");
+                            Response.Redirect("/Administrador/frmCambiarEstadoPerfilPersona.aspx");
                         }
                     }
                 }

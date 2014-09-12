@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using ITCR.IntegrateAlTrabajo.Negocios;
 using ITCR.IntegrateAlTrabajo.Datos;
+using System.Web.Services;
 
 namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 {
@@ -18,12 +19,13 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         {
             if (!IsPostBack)
             {
-                cargarIdEmpresa();
+                cargarIdEmpresa();                
                 btnAgregar.Visible = true;
                 cargarTodosDropDownList();
                 DataTable Requisitos = new DataTable();
+                inicializarComponentesGraficos();
                 Requisitos.Columns.Add("Req_Oferta", typeof(string));
-                HttpContext.Current.Session["tabla_requisitos"] = Requisitos;
+                HttpContext.Current.Session["tabla_requisitos"] = Requisitos;                
             }
         }
 
@@ -89,17 +91,20 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
         #endregion
 
+        [WebMethod]
+        public static void eliminarRequisito(int index)
+        {
+            ((DataTable)HttpContext.Current.Session["tabla_requisitos"]).Rows.RemoveAt(index);
+        }
 
         protected void dgRequisitos_ItemCommand(object source, DataGridCommandEventArgs e)
         {
             if (e.CommandName == "Eliminar")
             {
-                ((DataTable)HttpContext.Current.Session["tabla_requisitos"]).Rows.RemoveAt(e.Item.ItemIndex);
-                dgRequisitos.DataSource = ((DataTable)HttpContext.Current.Session["tabla_requisitos"]);
-                dgRequisitos.DataBind();
+                string code = @"<script type='text/javascript'>eliminarRequisito(" + e.Item.ItemIndex + ");</script>";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);                
             }
-        }
-        
+        }        
         
         private void inicializarComponentesGraficos()
         {
@@ -114,6 +119,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
+            dgRequisitos.DataSource = ((DataTable)HttpContext.Current.Session["tabla_requisitos"]);
+            dgRequisitos.DataBind();
             Validate("gvOfertaTrabajo");
 
             if (Page.IsValid)
@@ -163,6 +170,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             ((DataTable)HttpContext.Current.Session["tabla_requisitos"]).Rows.Add(requisito);
             dgRequisitos.DataSource = ((DataTable)HttpContext.Current.Session["tabla_requisitos"]);
             dgRequisitos.DataBind();
+            txtRequisitos.Text = "";
         }
 
     }

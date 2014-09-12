@@ -10,7 +10,7 @@
 namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador {
     
     
-    public partial class frmOpinionesSobreBolsaTrabajo {
+    public partial class frmOpinionesEmpresa {
         
         /// <summary>
         /// ScriptManagerMain control.

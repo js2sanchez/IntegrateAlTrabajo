@@ -47,7 +47,7 @@
                             Selected="True"/>
                         <asp:MenuItem Text="Publicar noticias y artículos" Value="Ofrecer servicios"/>
                         <asp:MenuItem Text="Activar/Desactivar perfil" Value="Mis servicios">
-                            <asp:MenuItem NavigateUrl="~/Administrador/frmCambiarEstadoPerfilPersonas.aspx" Text="Personas" Value="Personas"></asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="~/Administrador/frmCambiarEstadoPerfilPersona.aspx" Text="Personas" Value="Personas"></asp:MenuItem>
                             <asp:MenuItem NavigateUrl="~/Administrador/frmCambiarEstadoPerfilEmpresa.aspx" Text="Empresas" Value="Empresas"></asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Publicar guía" Value="Ofertas de trabajo">
@@ -59,7 +59,8 @@
                             <asp:MenuItem Text="Personas Adultas Mayores" Value="Personas Adultas Mayores" 
                                 NavigateUrl="~/Administrador/frmOpinionesPAM.aspx">
                             </asp:MenuItem>
-                            <asp:MenuItem Text="Empresas" Value="Empresas"></asp:MenuItem>
+                            <asp:MenuItem Text="Empresas" Value="Empresas" 
+                                NavigateUrl="~/Administrador/frmOpinionesEmpresa.aspx"></asp:MenuItem>
                         </asp:MenuItem>
                         <asp:MenuItem Text="Cerrar sesión" Value="Cerrar sesión" 
                             NavigateUrl="~/Autenticacion/frmAutenticacion.aspx"></asp:MenuItem>

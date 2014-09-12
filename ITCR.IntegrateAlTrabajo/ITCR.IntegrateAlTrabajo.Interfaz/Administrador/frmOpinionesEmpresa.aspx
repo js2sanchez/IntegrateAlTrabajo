@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMaestraAdministrador.Master"
-    AutoEventWireup="true" CodeBehind="frmOpinionesPAM.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.Administrador.frmOpinionesSobreBolsaTrabajo" %>
+    AutoEventWireup="true" CodeBehind="frmOpinionesEmpresa.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.Administrador.frmOpinionesEmpresa" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <link rel="stylesheet" href="../Styles/bootstrap.min.css" />
@@ -99,7 +99,7 @@
                         label: "Aceptar",
                         className: "btn-primary",
                         callback: function () {
-                            location.href = "frmOpinionesPAM.aspx";
+                            location.href = "frmOpinionesEmpresa.aspx";
                         }
                     }
                 }
@@ -115,7 +115,8 @@
             <td class="style4">
             </td>
             <td class="style5" colspan="5">
-                <asp:Label ID="lblTituloPagina" runat="server" CssClass="Titulo1" Text="Comentarios y sugerencias de PAMs"></asp:Label>
+                <asp:Label ID="lblTituloPagina" runat="server" CssClass="Titulo1" 
+                    Text="Comentarios y sugerencias de Empresas"></asp:Label>
             </td>
             <td class="style8">
             </td>

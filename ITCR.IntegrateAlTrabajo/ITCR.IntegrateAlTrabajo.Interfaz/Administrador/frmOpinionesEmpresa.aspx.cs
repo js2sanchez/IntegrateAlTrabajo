@@ -11,7 +11,7 @@ using System.Web.Services;
 
 namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador
 {
-    public partial class frmOpinionesSobreBolsaTrabajo : System.Web.UI.Page
+    public partial class frmOpinionesEmpresa : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -41,7 +41,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador
         private void cargarDataGridViewOpiniones()
         {
             cIATOpinionNegocios Opinion = new cIATOpinionNegocios(1, "A", 2, "B");
-            Opinion.Ind_PAM = true;
+            Opinion.Ind_PAM = false;
             Opinion.Ind_Seguimiento = false;
 
             DataTable TablaOpinion = Opinion.Buscar();
@@ -85,7 +85,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador
                     Opinion.Ind_Seguimiento = true;
 
                     Opinion.Actualizar();
-                    Response.Redirect("frmOpinionesPAM.aspx");
+                    Response.Redirect("frmOpinionesEmpresa.aspx");
                 }
             }
 

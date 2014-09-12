@@ -33,6 +33,14 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                 lblTipoDato.Text = obtenerNombreTipoOfertaTrabajo(Int16.Parse(TablaOfertaTrabajo.Rows[0]["FK_IdTipoOfertaTrabajo"].ToString()));
                 lblCategoriaDato.Text = obtenerNombreCategoriaOfertaTrabajo(Int16.Parse(TablaOfertaTrabajo.Rows[0]["FK_IdCategoriaOfertaTrabajo"].ToString()));
                 lblObservacionesDato.Text = TablaOfertaTrabajo.Rows[0]["InformacionAdicional"].ToString();
+                if (bool.Parse(TablaOfertaTrabajo.Rows[0]["Ind_Activa"].ToString()))
+                {
+                    lblEstado.Text = "Activa";
+                }
+                else
+                {
+                    lblEstado.Text = "Inactiva";
+                }
                 Session["detalles_oferta"] = TablaOfertaTrabajo;
             }
             cIATRequisitoOfertaTrabajoNegocios Requisitos = new cIATRequisitoOfertaTrabajoNegocios(1, "A", 2, "B");

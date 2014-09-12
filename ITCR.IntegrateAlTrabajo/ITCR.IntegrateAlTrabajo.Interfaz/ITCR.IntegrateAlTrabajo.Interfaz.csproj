@@ -69,7 +69,7 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="Administrador\frmCambiarEstadoPerfilEmpresa.aspx" />
     <Content Include="Administrador\frmCambiarEstadoPerfilPersona.aspx" />
-    <Content Include="Administrador\frmOpinionesSobreBolsaTrabajo.aspx" />
+    <Content Include="Administrador\frmOpinionesEmpresa.aspx" />
     <Content Include="Administrador\frmOpinionesPAM.aspx" />
     <Content Include="AdultoMayor\frmActualizarServicio.aspx" />
     <Content Include="AdultoMayor\frmAplicarOfertaTrabajo.aspx" />
@@ -180,17 +180,19 @@
     <Compile Include="Administrador\frmCambiarEstadoPerfilPersona.aspx.designer.cs">
       <DependentUpon>frmCambiarEstadoPerfilPersona.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Administrador\frmOpinionesEmpresa.aspx.cs">
+      <DependentUpon>frmOpinionesEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador\frmOpinionesEmpresa.aspx.designer.cs">
+      <DependentUpon>frmOpinionesEmpresa.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Administrador\frmOpinionesPAM.aspx.cs">
       <DependentUpon>frmOpinionesPAM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Administrador\frmOpinionesPAM.aspx.designer.cs">
       <DependentUpon>frmOpinionesPAM.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AdultoMayor\frmActualizarServicio.aspx.cs">
-      <DependentUpon>frmActualizarServicio.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AdultoMayor\frmActualizarServicio.aspx.designer.cs">
-      <DependentUpon>frmActualizarServicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdultoMayor\frmActualizarServicio.aspx.cs">
       <DependentUpon>frmActualizarServicio.aspx</DependentUpon>
