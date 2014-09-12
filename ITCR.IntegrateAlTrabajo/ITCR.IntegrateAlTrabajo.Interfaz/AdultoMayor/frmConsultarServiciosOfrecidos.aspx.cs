@@ -22,58 +22,80 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         {
             if (!IsPostBack)
             {
-                Session["Id_Servicio"] = "0";
-                PanelNoDatos.Visible = false;
-                mostrarServicios();
+                try
+                {
+                    Session["Id_Servicio"] = "0";
+                    PanelNoDatos.Visible = false;
+                    mostrarServicios();
+                }
+                catch
+                {
+                    string script = @"<script type='text/javascript'>
+                            mostrarErrorSistema();
+                            </script>";
+
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "Error del sistema", script, false);
+                }
             }
         }
 
         protected void mostrarServicios()
         {
-            dgServicios.DataSource = "";
-            PanelTablaDatos.Visible = false;
-            Usuario.Nom_Usuario = Convert.ToString(Session["Nombre_Usuario"]);
-            DataTable TablaUsuario = Usuario.Buscar();
-
-            Int16 IdUsuario = 0;
-
-            if (TablaUsuario.Rows.Count > 0)
+            try
             {
-                IdUsuario = Int16.Parse(TablaUsuario.Rows[0]["Id_Usuario"].ToString());
-            }
+                dgServicios.DataSource = "";
+                PanelTablaDatos.Visible = false;
+                Usuario.Nom_Usuario = Convert.ToString(Session["Nombre_Usuario"]);
+                DataTable TablaUsuario = Usuario.Buscar();
 
-            Persona.FK_IdUsuario = IdUsuario;
-            DataTable TablaPersona = Persona.Buscar();
+                Int16 IdUsuario = 0;
 
-            Int16 IdPersona = 0;
-
-            if (TablaPersona.Rows.Count > 0)
-            {
-                IdPersona = Int16.Parse(TablaPersona.Rows[0]["Id_Persona"].ToString());
-            }
-
-            dgServicios.DataSource = null;
-            cIATServicioNegocios ServicioBuscar = new cIATServicioNegocios(1, "A", 2, "B");
-            ServicioBuscar.FK_IdPersona = IdPersona;
-
-            DataTable TablaServicio = ServicioBuscar.Buscar();
-
-            if (TablaServicio.Rows.Count > 0)
-            {
-                dgServicios.DataSource = TablaServicio;
-                dgServicios.DataBind();
-
-                foreach (DataGridItem Fila in dgServicios.Items)
+                if (TablaUsuario.Rows.Count > 0)
                 {
-                    Fila.Cells[3].Text = obtenerCategoriasServicios(Fila.Cells[3].Text);
-                    Fila.Cells[4].Text = obtenerTiposServicios(Fila.Cells[4].Text);
-                    Fila.Cells[5].Text = obtenerDiasServicios(Fila.Cells[0].Text);
+                    IdUsuario = Int16.Parse(TablaUsuario.Rows[0]["Id_Usuario"].ToString());
                 }
-                PanelTablaDatos.Visible = true;
+
+                Persona.FK_IdUsuario = IdUsuario;
+                DataTable TablaPersona = Persona.Buscar();
+
+                Int16 IdPersona = 0;
+
+                if (TablaPersona.Rows.Count > 0)
+                {
+                    IdPersona = Int16.Parse(TablaPersona.Rows[0]["Id_Persona"].ToString());
+                }
+
+                dgServicios.DataSource = null;
+                cIATServicioNegocios ServicioBuscar = new cIATServicioNegocios(1, "A", 2, "B");
+                ServicioBuscar.FK_IdPersona = IdPersona;
+
+                DataTable TablaServicio = ServicioBuscar.Buscar();
+
+                if (TablaServicio.Rows.Count > 0)
+                {
+                    dgServicios.DataSource = TablaServicio;
+                    dgServicios.DataBind();
+
+                    foreach (DataGridItem Fila in dgServicios.Items)
+                    {
+                        Fila.Cells[3].Text = obtenerCategoriasServicios(Fila.Cells[3].Text);
+                        Fila.Cells[4].Text = obtenerTiposServicios(Fila.Cells[4].Text);
+                        Fila.Cells[5].Text = obtenerDiasServicios(Fila.Cells[0].Text);
+                    }
+                    PanelTablaDatos.Visible = true;
+                }
+                else
+                {
+                    PanelNoDatos.Visible = true;
+                }
             }
-            else
+            catch
             {
-                PanelNoDatos.Visible = true;
+                string script = @"<script type='text/javascript'>
+                            mostrarErrorSistema();
+                            </script>";
+
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "Error del sistema", script, false);
             }
         }
 
@@ -133,17 +155,34 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
         protected void dgServicios_ItemCommand(object source, DataGridCommandEventArgs e)
         {
-            if (e.CommandName == "Eliminar")
+            try
             {
-                Int16 IdServicio = Int16.Parse(e.Item.Cells[0].Text.ToString());
-                string code = @"<script type='text/javascript'>eliminarServicio(" + IdServicio + e.Item.ItemIndex + ");</script>";
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
-                mostrarServicios();
-            }
+                if (e.CommandName == "Eliminar")
+                {
+                    Int16 IdServicio = Int16.Parse(e.Item.Cells[0].Text.ToString());
+                    string code = @"<script type='text/javascript'>eliminarServicio(" + IdServicio + e.Item.ItemIndex + ");</script>";
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
+                    mostrarServicios();
+                }
 
-            if (e.CommandName == "Editar")
+                if (e.CommandName == "Editar")
+                {
+                    //Sólo para mostrar mensaje de error
+                    int[] valores = new int[100];
+
+                    for (int i = 1; i < 500; i++)
+                    {
+                        int x = valores[i];
+                    }
+                }
+            }
+            catch
             {
-                
+                string script = @"<script type='text/javascript'>
+                            mostrarErrorSistema();
+                            </script>";
+
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "Error del sistema", script, false);
             }
         }
 
@@ -170,13 +209,13 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             ServicioEliminar.Id_Servicio = IdServicio;
             ServicioEliminar.Eliminar();
 
-            
+
         }
 
         protected void dgServicios_ItemDataBound(object sender, DataGridItemEventArgs e)
         {
             string code = @"<script type='text/javascript'>endConfirmation();</script>";
-            ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false); 
+            ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
             e.Item.Cells[7].Attributes.Add("onClick", "return ConfirmarEliminarServicio();");
         }
     }

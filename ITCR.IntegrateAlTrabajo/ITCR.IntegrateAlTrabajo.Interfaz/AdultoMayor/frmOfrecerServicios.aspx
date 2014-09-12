@@ -177,6 +177,23 @@
             alertify.confirm(message)
         }
 
+        function mostrarErrorSistema() {
+            bootbox.dialog({
+                closeButton: false,
+                message: "Estimado usuario (a): El sistema Intégrate al trabajo está presentando algunos problemas, por favor intente llevar a cabo sus tareas más tarde. ¡Gracias por su comprensión!",
+                title: "¡Error del sistema!",
+                buttons: {
+                    success: {
+                        label: "Aceptar",
+                        className: "btn-primary",
+                        callback: function () {
+                            location.href = "/Autenticacion/frmAutenticacion.aspx";
+                        }
+                    }
+                }
+            });
+        }
+
         function NotificarNuevoServicio() {
             bootbox.dialog({
                 closeButton: false,

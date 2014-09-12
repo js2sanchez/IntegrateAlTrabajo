@@ -21,7 +21,18 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         {
             if (!IsPostBack)
             {
-                cargarTodosDropDownList();
+                try
+                {
+                    cargarTodosDropDownList();
+                }
+                catch
+                {
+                    string script = @"<script type='text/javascript'>
+                            mostrarErrorSistema();
+                            </script>";
+
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "Error del sistema", script, false);
+                }
             }
         }
 
@@ -85,156 +96,167 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
         protected void btnAgregarServicio_Click(object sender, EventArgs e)
         {
-            Validate("gvServicios");
-
-            if (Page.IsValid)
+            try
             {
-                int ContadorDiasServicio = 0;
+                Validate("gvServicios");
 
-                if (chkLunes.Checked)
+                if (Page.IsValid)
                 {
-                    ContadorDiasServicio++;
-                }
-
-                if (chkMartes.Checked)
-                {
-                    ContadorDiasServicio++;
-                }
-
-                if (chkMiercoles.Checked)
-                {
-                    ContadorDiasServicio++;
-                }
-
-                if (chkJueves.Checked)
-                {
-                    ContadorDiasServicio++;
-                }
-
-                if (chkViernes.Checked)
-                {
-                    ContadorDiasServicio++;
-                }
-
-                if (chkSabado.Checked)
-                {
-                    ContadorDiasServicio++;
-                }
-
-                if (chkDomingo.Checked)
-                {
-                    ContadorDiasServicio++;
-                }
-
-                if (ContadorDiasServicio != 0)
-                {
-                    Servicio.Nom_Servicio = txtNombreServicios.Text;
-                    Servicio.Descripcion = txtDescripcionServicios.Text;
-                    Servicio.FK_IdCategoriaServicio = Int16.Parse(drpCategoriaServicio.SelectedValue);
-                    Servicio.FK_IdTipoServicio = Int16.Parse(drpTipoServicio.SelectedValue);
-
-                    Usuario.Nom_Usuario = Convert.ToString(Session["Nombre_Usuario"]);
-                    DataTable TablaUsuario = Usuario.Buscar();
-
-                    Int16 IdUsuario = 0;
-
-                    if (TablaUsuario.Rows.Count > 0)
-                    {
-                        IdUsuario = Int16.Parse(TablaUsuario.Rows[0]["Id_Usuario"].ToString());
-                    }
-
-                    Persona.FK_IdUsuario = IdUsuario;
-                    DataTable TablaPersona = Persona.Buscar();
-
-                    Int16 IdPersona = 0;
-
-                    if (TablaPersona.Rows.Count > 0)
-                    {
-                        IdPersona = Int16.Parse(TablaPersona.Rows[0]["Id_Persona"].ToString());
-                    }
-
-                    Servicio.FK_IdPersona = IdPersona;
-
-                    Servicio.Insertar();
-                    DataTable TablaServicio = Servicio.Buscar();
-
-                    Int16 IdServicio = 0;
-
-                    if (TablaServicio.Rows.Count > 0)
-                    {
-                        IdServicio = Int16.Parse(TablaServicio.Rows[0]["Id_Servicio"].ToString());
-                    }
+                    int ContadorDiasServicio = 0;
 
                     if (chkLunes.Checked)
                     {
-                        DiaServicio.Nom_Dia = "L";
-                        DiaServicio.Can_Horas = byte.Parse(drpHora1.SelectedItem.Value);
-                        DiaServicio.FK_IdServicio = IdServicio;
-                        DiaServicio.Insertar();
+                        ContadorDiasServicio++;
                     }
 
                     if (chkMartes.Checked)
                     {
-                        DiaServicio.Nom_Dia = "K";
-                        DiaServicio.Can_Horas = byte.Parse(drpHora2.SelectedItem.Value);
-                        DiaServicio.FK_IdServicio = IdServicio;
-                        DiaServicio.Insertar();
+                        ContadorDiasServicio++;
                     }
 
                     if (chkMiercoles.Checked)
                     {
-                        DiaServicio.Nom_Dia = "M";
-                        DiaServicio.Can_Horas = byte.Parse(drpHora3.SelectedItem.Value);
-                        DiaServicio.FK_IdServicio = IdServicio;
-                        DiaServicio.Insertar();
+                        ContadorDiasServicio++;
                     }
 
                     if (chkJueves.Checked)
                     {
-                        DiaServicio.Nom_Dia = "J";
-                        DiaServicio.Can_Horas = byte.Parse(drpHora4.SelectedItem.Value);
-                        DiaServicio.FK_IdServicio = IdServicio;
-                        DiaServicio.Insertar();
+                        ContadorDiasServicio++;
                     }
 
                     if (chkViernes.Checked)
                     {
-                        DiaServicio.Nom_Dia = "V";
-                        DiaServicio.Can_Horas = byte.Parse(drpHora5.SelectedItem.Value);
-                        DiaServicio.FK_IdServicio = IdServicio;
-                        DiaServicio.Insertar();
+                        ContadorDiasServicio++;
                     }
 
                     if (chkSabado.Checked)
                     {
-                        DiaServicio.Nom_Dia = "S";
-                        DiaServicio.Can_Horas = byte.Parse(drpHora6.SelectedItem.Value);
-                        DiaServicio.FK_IdServicio = IdServicio;
-                        DiaServicio.Insertar();
+                        ContadorDiasServicio++;
                     }
 
                     if (chkDomingo.Checked)
                     {
-                        DiaServicio.Nom_Dia = "D";
-                        DiaServicio.Can_Horas = byte.Parse(drpHora7.SelectedItem.Value);
-                        DiaServicio.FK_IdServicio = IdServicio;
-                        DiaServicio.Insertar();
+                        ContadorDiasServicio++;
                     }
 
-                    string script = @"<script type='text/javascript'>
+                    if (ContadorDiasServicio != 0)
+                    {
+                        Servicio.Nom_Servicio = txtNombreServicios.Text;
+                        Servicio.Descripcion = txtDescripcionServicios.Text;
+                        Servicio.FK_IdCategoriaServicio = Int16.Parse(drpCategoriaServicio.SelectedValue);
+                        Servicio.FK_IdTipoServicio = Int16.Parse(drpTipoServicio.SelectedValue);
+
+                        Usuario.Nom_Usuario = Convert.ToString(Session["Nombre_Usuario"]);
+                        DataTable TablaUsuario = Usuario.Buscar();
+
+                        Int16 IdUsuario = 0;
+
+                        if (TablaUsuario.Rows.Count > 0)
+                        {
+                            IdUsuario = Int16.Parse(TablaUsuario.Rows[0]["Id_Usuario"].ToString());
+                        }
+
+                        Persona.FK_IdUsuario = IdUsuario;
+                        DataTable TablaPersona = Persona.Buscar();
+
+                        Int16 IdPersona = 0;
+
+                        if (TablaPersona.Rows.Count > 0)
+                        {
+                            IdPersona = Int16.Parse(TablaPersona.Rows[0]["Id_Persona"].ToString());
+                        }
+
+                        Servicio.FK_IdPersona = IdPersona;
+
+                        Servicio.Insertar();
+                        DataTable TablaServicio = Servicio.Buscar();
+
+                        Int16 IdServicio = 0;
+
+                        if (TablaServicio.Rows.Count > 0)
+                        {
+                            IdServicio = Int16.Parse(TablaServicio.Rows[0]["Id_Servicio"].ToString());
+                        }
+
+                        if (chkLunes.Checked)
+                        {
+                            DiaServicio.Nom_Dia = "L";
+                            DiaServicio.Can_Horas = byte.Parse(drpHora1.SelectedItem.Value);
+                            DiaServicio.FK_IdServicio = IdServicio;
+                            DiaServicio.Insertar();
+                        }
+
+                        if (chkMartes.Checked)
+                        {
+                            DiaServicio.Nom_Dia = "K";
+                            DiaServicio.Can_Horas = byte.Parse(drpHora2.SelectedItem.Value);
+                            DiaServicio.FK_IdServicio = IdServicio;
+                            DiaServicio.Insertar();
+                        }
+
+                        if (chkMiercoles.Checked)
+                        {
+                            DiaServicio.Nom_Dia = "M";
+                            DiaServicio.Can_Horas = byte.Parse(drpHora3.SelectedItem.Value);
+                            DiaServicio.FK_IdServicio = IdServicio;
+                            DiaServicio.Insertar();
+                        }
+
+                        if (chkJueves.Checked)
+                        {
+                            DiaServicio.Nom_Dia = "J";
+                            DiaServicio.Can_Horas = byte.Parse(drpHora4.SelectedItem.Value);
+                            DiaServicio.FK_IdServicio = IdServicio;
+                            DiaServicio.Insertar();
+                        }
+
+                        if (chkViernes.Checked)
+                        {
+                            DiaServicio.Nom_Dia = "V";
+                            DiaServicio.Can_Horas = byte.Parse(drpHora5.SelectedItem.Value);
+                            DiaServicio.FK_IdServicio = IdServicio;
+                            DiaServicio.Insertar();
+                        }
+
+                        if (chkSabado.Checked)
+                        {
+                            DiaServicio.Nom_Dia = "S";
+                            DiaServicio.Can_Horas = byte.Parse(drpHora6.SelectedItem.Value);
+                            DiaServicio.FK_IdServicio = IdServicio;
+                            DiaServicio.Insertar();
+                        }
+
+                        if (chkDomingo.Checked)
+                        {
+                            DiaServicio.Nom_Dia = "D";
+                            DiaServicio.Can_Horas = byte.Parse(drpHora7.SelectedItem.Value);
+                            DiaServicio.FK_IdServicio = IdServicio;
+                            DiaServicio.Insertar();
+                        }
+
+                        string script = @"<script type='text/javascript'>
                             NotificarNuevoServicio();
                             </script>";
 
-                    ScriptManager.RegisterStartupScript(this, typeof(Page), "Servicio", script, false);
-                }
-                else
-                {
-                    string script = @"<script type='text/javascript'>
+                        ScriptManager.RegisterStartupScript(this, typeof(Page), "Servicio", script, false);
+                    }
+                    else
+                    {
+                        string script = @"<script type='text/javascript'>
                             NotificarErrorCantidadDias();
                             </script>";
 
-                    ScriptManager.RegisterStartupScript(this, typeof(Page), "Servicio", script, false);
+                        ScriptManager.RegisterStartupScript(this, typeof(Page), "Servicio", script, false);
+                    }
                 }
+            }
+            catch
+            {
+                string script = @"<script type='text/javascript'>
+                            mostrarErrorSistema();
+                            </script>";
+
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "Error del sistema", script, false);
             }
         }
 
