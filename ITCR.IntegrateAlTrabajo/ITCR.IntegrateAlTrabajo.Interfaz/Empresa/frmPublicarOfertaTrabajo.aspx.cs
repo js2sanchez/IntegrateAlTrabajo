@@ -137,38 +137,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             e.Item.Cells[12].Attributes.Add("onClick", "return confirmarBorradoOfertaTrabajo();");
         }
 
-        protected void dgOfertaTrabajo_ItemCommand(object source, DataGridCommandEventArgs e)
-        {
-            if (e.CommandName == "Editar")
-            {
-                Session["Id_OfertaTrabajo"] = e.Item.Cells[0].Text;
-                txtNombrePuesto.Text = e.Item.Cells[1].Text;
-
-                if (e.Item.Cells[2].Text.CompareTo("&nbsp;") == 0)
-                {
-                    txtDescripcion.Text = "";
-                }
-                else
-                {
-                    txtDescripcion.Text = e.Item.Cells[2].Text;
-                }
-
-                txtRequisitos.Text = e.Item.Cells[3].Text;
-
-                if (e.Item.Cells[4].Text.CompareTo("&nbsp;") == 0)
-                {
-                    txtObservaciones.Text = "";
-                }
-                else
-                {
-                    txtObservaciones.Text = e.Item.Cells[4].Text;
-                }
-                drpTipo.SelectedValue = e.Item.Cells[6].Text;
-                drpCategoria.SelectedValue = e.Item.Cells[8].Text;
-                btnAgregar.Visible = false;
-            }
-        }
-
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
             Validate("gvOfertaTrabajo");

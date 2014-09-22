@@ -114,8 +114,7 @@
                                             Font-Names="Verdana" Font-Size="Smaller" 
                         ForeColor="Black" Height="19px" 
                                             Width="99%" 
-                        onitemcommand="dgOfertaTrabajo_ItemCommand" 
-                        onitemdatabound="dgOfertaTrabajo_ItemDataBound">
+                        onitemcommand="dgOfertaTrabajo_ItemCommand">
                         <AlternatingItemStyle BackColor="Gainsboro" />
                         <HeaderStyle BackColor="Navy" Font-Bold="True" Font-Names="Verdana" 
                                                 Font-Size="Larger" ForeColor="White" 

@@ -127,7 +127,7 @@
             });
         }
 
-        function eliminarEstudio(index) {
+        function eliminarEstudio(index,item) {
             bootbox.dialog({
                 closeButton: false,
                 title: false,
@@ -138,6 +138,8 @@
                         className: "btn-primary",
                         callback: function () {
                             PageMethods.eliminarEstudio(index, OnSuccess, OnError);
+                            var tabla = document.getElementById("<%= dgEstudios.ClientID %>");
+                            tabla.deleteRow(item + 1);
                         }
                     },
                     main: {

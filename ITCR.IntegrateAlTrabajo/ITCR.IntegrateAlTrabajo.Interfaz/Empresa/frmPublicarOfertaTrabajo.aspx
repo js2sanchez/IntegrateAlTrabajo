@@ -187,7 +187,8 @@
                             </td>
                             <td align="right">
                                 <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Right">
-                                    <asp:Button ID="btnAgregarRequisito" runat="server" CssClass="Boton" Text="Agregar" />
+                                    <asp:Button ID="btnAgregarRequisito" runat="server" CssClass="Boton" 
+                                        Text="Agregar" onclick="btnAgregarRequisito_Click" />
                                 </asp:Panel>
                             </td>
                         </tr>
@@ -197,15 +198,14 @@
                             </td>
                             <td colspan="2">
                                 <asp:Panel ID="PanelTablaDatos" runat="server">
-                                    <asp:DataGrid ID="dgOfertaTrabajo" runat="server" AutoGenerateColumns="False" BackColor="WhiteSmoke"
+                                    <asp:DataGrid ID="dgRequisitos" runat="server" AutoGenerateColumns="False" BackColor="WhiteSmoke"
                                         BorderStyle="Solid" CssClass="GridMantenimiento" Font-Names="Verdana" Font-Size="Smaller"
-                                        ForeColor="Black" Height="19px" Width="99%" OnItemCommand="dgOfertaTrabajo_ItemCommand"
-                                        OnItemDataBound="dgOfertaTrabajo_ItemDataBound">
+                                        ForeColor="Black" Height="19px" Width="99%">
                                         <AlternatingItemStyle BackColor="Gainsboro" />
                                         <HeaderStyle BackColor="Navy" Font-Bold="True" Font-Names="Verdana" Font-Size="Larger"
                                             ForeColor="White" HorizontalAlign="Center" />
                                         <Columns>
-                                            <asp:BoundColumn DataField="Id_OfertaTrabajo" HeaderText="Id_OfertaTrabajo" Visible="False">
+                                            <asp:BoundColumn DataField="Id_Requisito" HeaderText="Id_Requisito" Visible="False">
                                             </asp:BoundColumn>
                                             <asp:BoundColumn HeaderText="Requisito" DataField="Req_Oferta"></asp:BoundColumn>
                                             <asp:TemplateColumn>

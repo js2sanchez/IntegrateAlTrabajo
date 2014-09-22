@@ -148,13 +148,13 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
         protected global::System.Web.UI.WebControls.Panel PanelTablaDatos;
         
         /// <summary>
-        /// Control dgOfertaTrabajo.
+        /// Control dgRequisitos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataGrid dgOfertaTrabajo;
+        protected global::System.Web.UI.WebControls.DataGrid dgRequisitos;
         
         /// <summary>
         /// Control lblObservaciones.

@@ -21,7 +21,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 btnActualizar.Visible = false;
                 btnCancelarAgregar.Visible = true;
                 btnCancelarActualizar.Visible = false;                
-                HttpContext.Current.Session["update"] = 1;
+                HttpContext.Current.Session["onChangeRow"] = -1;
                 cargarDataGridEstudios();
             }            
         }
@@ -76,16 +76,16 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 Session["Id_Estudio"] = e.Item.Cells[0].Text;
                 txtInstitucionEstudio.Text = e.Item.Cells[1].Text;
                 txtTituloEstudio.Text = e.Item.Cells[2].Text;
-
                 btnActualizar.Visible = true;
                 btnCancelarActualizar.Visible = true;
                 btnAgregar.Visible = false;
                 btnCancelarAgregar.Visible = false;
+                cargarDataGridEstudios();
             }
             else if (e.CommandName == "Eliminar")
             {
                 int index = Int16.Parse(e.Item.Cells[0].Text);
-                string code = @"<script type='text/javascript'>eliminarEstudio(" + index + ");</script>";
+                string code = @"<script type='text/javascript'>eliminarEstudio(" + index +","+  e.Item.ItemIndex + ");</script>";
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
             }
         }

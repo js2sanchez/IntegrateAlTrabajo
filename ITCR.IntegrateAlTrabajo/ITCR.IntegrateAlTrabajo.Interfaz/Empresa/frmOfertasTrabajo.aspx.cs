@@ -105,6 +105,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             return NombreCategoriaOfertaTrabajo;
         }
 
+        protected void dgOfertaTrabajo_ItemCommand(object source, DataGridCommandEventArgs e)
+        {
+            if (e.CommandName == "Detalles")
+            {
+                Session["Id_OfertaTrabajo"] = Int16.Parse(e.Item.Cells[0].Text);
+                Response.Redirect("/Empresa/frmDetallesOferta.aspx");
+            }
+        }
+
         protected void btnCrear_Click(object sender, EventArgs e)
         {
             Response.Redirect("/Empresa/frmPublicarOfertaTrabajo.aspx");
