@@ -2,16 +2,32 @@
     CodeBehind="frmPublicarOfertaTrabajo.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor.frmPublicarOfertaTrabajo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <script id="clientEventHandlersJS" language="javascript" type="text/javascript">
-
-        function confirmarBorradoOfertaTrabajo() {
-            if (confirm("¿Está seguro que desea borrar esta oferta de trabajo? Los cambios son irreversibles.", "Confirmación de borrado") == true)
-                return true;
-            else
-                return false;
-        }
-    </script>
+    <link rel="stylesheet" href="../Styles/bootstrap.min.css" /> 
     <style type="text/css">
+        body   
+        {
+            background: #b6b7bc;
+            font-family: Century Gothic;
+            margin: 0px;
+            padding: 0px;
+            color: #696969;
+        }
+        table
+        {
+            font-family:Century Gothic;
+            font-size:15px;
+            text-align:justify;
+            border-spacing: 8px;
+            border-collapse: separate;
+        }
+        label
+        {
+            font-weight:normal;
+        }
+        input
+        {
+            font-weight:normal;
+        }
         .style3
         {
             width: 98%;
@@ -61,6 +77,31 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:ScriptManager ID="ScriptManagerMain" runat="server" EnablePageMethods="true"
+        ScriptMode="Release" LoadScriptsBeforeUI="true">
+    </asp:ScriptManager>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/bootbox.js"></script> 
+    <script type="text/javascript">
+        function custom_alert(msg) {
+            bootbox.dialog({
+                closeButton: false,
+                message: msg,
+                buttons: {
+                    success: {
+                        label: "Aceptar",
+                        className: "btn-primary"
+                    }
+                }
+            });
+        }
+
+        function retornar() {
+            custom_alert('Ha creado la oferta satisfactoriamente.');
+            location.href = "/Empresa/frmOfertasTrabajo.aspx";
+        }
+    </script>
     <table class="style3">
         <tr>
             <td class="style4">
@@ -188,7 +229,7 @@
                             <td align="right">
                                 <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Right">
                                     <asp:Button ID="btnAgregarRequisito" runat="server" CssClass="Boton" 
-                                        Text="Agregar" onclick="btnAgregarRequisito_Click" />
+                                        Text="Agregar"/>
                                 </asp:Panel>
                             </td>
                         </tr>

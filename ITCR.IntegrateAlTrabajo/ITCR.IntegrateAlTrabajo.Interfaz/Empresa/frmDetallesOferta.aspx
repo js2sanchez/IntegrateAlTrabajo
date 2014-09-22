@@ -85,8 +85,7 @@
                             <td class="style25" colspan="2">
                                 <asp:Panel ID="PanelEditarDatosPersonales" runat="server" HorizontalAlign="Right">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <asp:ImageButton ID="ibtnEditarPerfilEmpresa" runat="server" Height="50px" ImageUrl="~/Multimedia/icono-editar.jpg"
-                                        OnClick="ibtnEditarPerfilEmpresa_Click" Width="50px" />
+                                    <asp:ImageButton ID="ibtnEditarOferta" runat="server" Height="50px" ImageUrl="~/Multimedia/icono-editar.jpg" Width="50px" />
                                 </asp:Panel>
                             </td>
                         </tr>
@@ -116,7 +115,7 @@
                                 <asp:Label ID="lblDescripcion" runat="server" Text="Descripción"></asp:Label>
                             </td>
                             <td>
-                                <asp:Label ID="lblDescripcionDato" runat="server" Height="100px" TextMode="MultiLine"
+                                <asp:Label ID="lblDescripcionDato" runat="server"
                                     Width="99%"></asp:Label>
                             </td>
                             <td class="style11">
@@ -172,7 +171,7 @@
                                 <asp:Label ID="lblObservaciones" runat="server" Text="Observaciones adicionales"></asp:Label>
                             </td>
                             <td colspan="2">
-                                <asp:Label ID="lblObservacionesDato" runat="server" Height="100px" TextMode="MultiLine"
+                                <asp:Label ID="lblObservacionesDato" runat="server"
                                     Width="99%"></asp:Label>
                             </td>
                         </tr>
@@ -216,8 +215,7 @@
                             </td>
                             <td>
                                 <asp:Panel ID="Panel2" runat="server" HorizontalAlign="Right">
-                                    <asp:ImageButton ID="ImageButton1" runat="server" Height="50px" ImageUrl="~/Multimedia/icono-eliminar.jpg"
-                                        OnClick="ibtnEditarPerfilEmpresa_Click" Width="50px" />
+                                    <asp:ImageButton ID="ibtEliminarOferta" runat="server" Height="50px" ImageUrl="~/Multimedia/icono-eliminar.jpg" Width="50px" />
                                 </asp:Panel>
                             </td>
                         </tr>

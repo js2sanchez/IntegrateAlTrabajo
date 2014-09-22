@@ -13,6 +13,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
     public partial class frmPublicarOfertaTrabajo {
         
         /// <summary>
+        /// Control ScriptManagerMain.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManagerMain;
+        
+        /// <summary>
         /// Control lblPublicarOfertaTrabajo.
         /// </summary>
         /// <remarks>

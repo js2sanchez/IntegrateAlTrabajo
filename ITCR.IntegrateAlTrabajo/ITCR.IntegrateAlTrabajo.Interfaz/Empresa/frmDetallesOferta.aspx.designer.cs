@@ -49,13 +49,13 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
         protected global::System.Web.UI.WebControls.Panel PanelEditarDatosPersonales;
         
         /// <summary>
-        /// Control ibtnEditarPerfilEmpresa.
+        /// Control ibtnEditarOferta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ibtnEditarPerfilEmpresa;
+        protected global::System.Web.UI.WebControls.ImageButton ibtnEditarOferta;
         
         /// <summary>
         /// Control lblNombrePuesto.
@@ -211,12 +211,12 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
         protected global::System.Web.UI.WebControls.Panel Panel2;
         
         /// <summary>
-        /// Control ImageButton1.
+        /// Control ibtEliminarOferta.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
+        protected global::System.Web.UI.WebControls.ImageButton ibtEliminarOferta;
     }
 }

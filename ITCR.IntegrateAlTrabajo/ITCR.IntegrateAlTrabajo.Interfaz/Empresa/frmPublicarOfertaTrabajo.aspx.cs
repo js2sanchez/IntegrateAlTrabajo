@@ -126,9 +126,9 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 OfertaTrabajo.FK_IdEmpresa = IdEmpresa;
 
                 OfertaTrabajo.Insertar();
-                /*
-                 * Terminar: retornar a al datagrid y mostrar mensaje de exito
-                 */
+                string script = @"<script type='text/javascript'>
+                            retornar();</script>";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "Datos de empresa", script, false);
             }
         }
 

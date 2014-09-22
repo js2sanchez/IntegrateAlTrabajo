@@ -170,6 +170,18 @@
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/bootbox.js"></script>    
     <script type="text/javascript">
+        function custom_alert(msg) {
+            bootbox.dialog({
+                closeButton: false,
+                message: msg,
+                buttons: {
+                    success: {
+                        label: "Aceptar",
+                        className: "btn-primary"
+                    }
+                }
+            });
+        }
 
         function finalizar() {
             bootbox.dialog({
@@ -189,7 +201,7 @@
         }
 
         function aceptarTerminos() {
-            bootbox.alert("Usted debe aceptar los términos y condiciones para poder finalizar el registro. Si no desea aceptarlos, presione el botón 'Salir sin guardar'.");
+            custom_alert("Usted debe aceptar los términos y condiciones para poder finalizar el registro. Si no desea aceptarlos, presione el botón 'Salir sin guardar'.");
         }
 
         function endConfirmation() {
