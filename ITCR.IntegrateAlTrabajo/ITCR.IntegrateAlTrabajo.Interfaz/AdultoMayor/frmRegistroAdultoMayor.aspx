@@ -231,6 +231,19 @@
     <script type="text/javascript" src="../js/bootbox.js"></script>  
     <script type="text/javascript">
 
+        function custom_alert(msg) {
+            bootbox.dialog({
+                closeButton: false,
+                message: msg,
+                buttons: {
+                    success: {
+                        label: "Aceptar",
+                        className: "btn-primary"
+                    }
+                }
+            });
+        }
+
         function finalizar() {
             bootbox.dialog({
                 closeButton: false,
@@ -249,7 +262,7 @@
         }
 
         function aceptarTerminos() {
-            bootbox.alert("Usted debe aceptar los términos y condiciones para poder finalizar el registro. Si no desea aceptarlos, presione el botón 'Salir sin guardar'.");
+            custom_alert("Usted debe aceptar los términos y condiciones para poder finalizar el registro. Si no desea aceptarlos, presione el botón 'Salir sin guardar'.");
         }
 
         function endConfirmation() {
@@ -331,10 +344,10 @@
         }
 
         function OnSuccess(response) {
-            bootbox.alert("El proceso de eliminación se llevó a cabo correctamente.");
+            custom_alert("El proceso de eliminación se llevó a cabo correctamente.");
         }
         function OnError(error) {
-            bootbox.alert(error);
+            custom_alert(error);
         }
     </script>
     <div id="Div1" style="width: 100%; overflow: auto;">

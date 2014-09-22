@@ -1,16 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMaestraEmpresa.Master" AutoEventWireup="true"
-    CodeBehind="frmPublicarOfertaTrabajo.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor.frmPublicarOfertaTrabajo" %>
+    CodeBehind="frmDetallesOferta.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.Empresa.frmDetallesOferta" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <script id="clientEventHandlersJS" language="javascript" type="text/javascript">
-
-        function confirmarBorradoOfertaTrabajo() {
-            if (confirm("¿Está seguro que desea borrar esta oferta de trabajo? Los cambios son irreversibles.", "Confirmación de borrado") == true)
-                return true;
-            else
-                return false;
-        }
-    </script>
     <style type="text/css">
         .style3
         {
@@ -65,8 +56,10 @@
         <tr>
             <td class="style4">
             </td>
+            <td class="style4">
+            </td>
             <td class="style5" colspan="2">
-                <asp:Label ID="lblPublicarOfertaTrabajo" runat="server" CssClass="Titulo1" Text="Publicar oferta de trabajo"></asp:Label>
+                <asp:Label ID="lblDetallesOfertaTrabajo" runat="server" CssClass="Titulo1" Text="Detalles de oferta de trabajo"></asp:Label>
             </td>
             <td class="style7">
             </td>
@@ -79,45 +72,24 @@
         </tr>
         <tr>
             <td class="style4">
-                &nbsp;
-            </td>
-            <td class="style13" colspan="5">
-                <asp:ValidationSummary ID="vsOfertaTrabajo" runat="server" ForeColor="#CC0000" ValidationGroup="gvOfertaTrabajo" />
             </td>
             <td class="style4">
-                &nbsp;
             </td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;
-            </td>
-            <td class="style13">
-                &nbsp;
-            </td>
-            <td class="style6">
-                &nbsp;
-            </td>
-            <td class="style7">
-                &nbsp;
-            </td>
-            <td class="style13">
-                &nbsp;
-            </td>
-            <td class="style6">
-                &nbsp;
-            </td>
-            <td class="style4">
-                &nbsp;
-            </td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;
-            </td>
-            <td class="style5" colspan="5">
-                <asp:Panel ID="PanelDatos" runat="server" BorderStyle="Solid" BorderWidth="2px">
+            <td class="style8" colspan="5">
+                <asp:Panel ID="pnlPerfil" runat="server" BorderStyle="Solid" BorderWidth="2px">
                     <table class="style8">
+                        <tr>
+                            <td class="style31" colspan="2">
+                                <asp:Label ID="lblDatosGenerales" runat="server" CssClass="Titulo2" Text="Datos de la oferta de trabajo"></asp:Label>
+                            </td>
+                            <td class="style25" colspan="2">
+                                <asp:Panel ID="PanelEditarDatosPersonales" runat="server" HorizontalAlign="Right">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <asp:ImageButton ID="ibtnEditarPerfilEmpresa" runat="server" Height="50px" ImageUrl="~/Multimedia/icono-editar.jpg"
+                                        OnClick="ibtnEditarPerfilEmpresa_Click" Width="50px" />
+                                </asp:Panel>
+                            </td>
+                        </tr>
                         <tr>
                             <td class="style16">
                                 &nbsp;
@@ -134,9 +106,7 @@
                                 <asp:Label ID="lblNombrePuesto" runat="server" Text="Nombre del puesto"></asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtNombrePuesto" runat="server" Width="99%"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="rfvNombrePuesto" runat="server" ControlToValidate="txtNombrePuesto"
-                                    ErrorMessage="El nombre del puesto es un dato requerido." ForeColor="Red" ValidationGroup="gvOfertaTrabajo">*</asp:RequiredFieldValidator>
+                                <asp:Label ID="lblNombrePuestoDato" runat="server" Width="99%"></asp:Label>
                             </td>
                             <td class="style11">
                             </td>
@@ -146,8 +116,8 @@
                                 <asp:Label ID="lblDescripcion" runat="server" Text="Descripción"></asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtDescripcion" runat="server" Height="100px" TextMode="MultiLine"
-                                    Width="99%"></asp:TextBox>
+                                <asp:Label ID="lblDescripcionDato" runat="server" Height="100px" TextMode="MultiLine"
+                                    Width="99%"></asp:Label>
                             </td>
                             <td class="style11">
                             </td>
@@ -157,8 +127,8 @@
                                 <asp:Label ID="lblTipo" runat="server" Text="Tipo"></asp:Label>
                             </td>
                             <td class="style15">
-                                <asp:DropDownList ID="drpTipo" runat="server" Width="250px">
-                                </asp:DropDownList>
+                                <asp:Label ID="lblTipoDato" runat="server" Width="250px">
+                                </asp:Label>
                             </td>
                             <td class="style11">
                                 &nbsp;
@@ -169,8 +139,8 @@
                                 <asp:Label ID="lblCategoria" runat="server" Text="Categoría"></asp:Label>
                             </td>
                             <td class="style5">
-                                <asp:DropDownList ID="drpCategoria" runat="server" Width="250px">
-                                </asp:DropDownList>
+                                <asp:Label ID="lblCategoriaDato" runat="server" Width="250px">
+                                </asp:Label>
                             </td>
                             <td class="style11">
                                 &nbsp;
@@ -178,22 +148,7 @@
                         </tr>
                         <tr>
                             <td class="style16">
-                                <asp:Label ID="lblRequisitos" runat="server" Text="Requisito"></asp:Label>
-                            </td>
-                            <td>
-                                <asp:TextBox ID="txtRequisitos" runat="server" Width="99%"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="rfvRequisitos" runat="server" ControlToValidate="txtRequisitos"
-                                    ErrorMessage="Los requisitos son datos requeridos." ForeColor="Red" ValidationGroup="gvOfertaTrabajo">*</asp:RequiredFieldValidator>
-                            </td>
-                            <td align="right">
-                                <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Right">
-                                    <asp:Button ID="btnAgregarRequisito" runat="server" CssClass="Boton" Text="Agregar" />
-                                </asp:Panel>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="style16">
-                                &nbsp;
+                                <asp:Label ID="lblRequisitos" runat="server" Text="Requisitos"></asp:Label>
                             </td>
                             <td colspan="2">
                                 <asp:Panel ID="PanelTablaDatos" runat="server">
@@ -208,12 +163,6 @@
                                             <asp:BoundColumn DataField="Id_OfertaTrabajo" HeaderText="Id_OfertaTrabajo" Visible="False">
                                             </asp:BoundColumn>
                                             <asp:BoundColumn HeaderText="Requisito" DataField="Req_Oferta"></asp:BoundColumn>
-                                            <asp:TemplateColumn>
-                                                <ItemTemplate>
-                                                    <asp:ImageButton ID="ibtnEliminar" runat="server" CommandName="Eliminar" Height="30px"
-                                                        ImageAlign="Right" ImageUrl="~/Multimedia/icono-eliminar.jpg" Width="30px" />
-                                                </ItemTemplate>
-                                            </asp:TemplateColumn>
                                         </Columns>
                                     </asp:DataGrid>
                                 </asp:Panel>
@@ -224,8 +173,8 @@
                                 <asp:Label ID="lblObservaciones" runat="server" Text="Observaciones adicionales"></asp:Label>
                             </td>
                             <td colspan="2">
-                                <asp:TextBox ID="txtObservaciones" runat="server" Height="100px" TextMode="MultiLine"
-                                    Width="99%"></asp:TextBox>
+                                <asp:Label ID="lblObservacionesDato" runat="server" Height="100px" TextMode="MultiLine"
+                                    Width="99%"></asp:Label>
                             </td>
                         </tr>
                         <tr>
@@ -233,48 +182,59 @@
                                 &nbsp;
                             </td>
                         </tr>
+                    </table>
+                </asp:Panel>
+            </td>
+            <td class="style4">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="8">
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td colspan="8">
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td class="style4">
+            </td>
+            <td class="style4">
+            </td>
+            <td class="style8" colspan="5">
+                <asp:Panel ID="Panel1" runat="server" BorderStyle="Solid" BorderWidth="2px">
+                    <table class="style8">
                         <tr>
-                            <td class="style5" colspan="3" align="right">
-                                <asp:Panel ID="PanelBotones" runat="server" HorizontalAlign="Right">
-                                    <asp:Button ID="btnAgregar" runat="server" CssClass="Boton" OnClick="btnAgregar_Click"
-                                        Text="Crear oferta de trabajo" />
+                            <td class="style31" colspan="4">
+                                <asp:Label ID="Label1" runat="server" CssClass="Titulo2" Text="Eliminar oferta de trabajo"></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style31" colspan="3">
+                                <asp:Label ID="Label2" runat="server" Text="Presione el siguiente botón si desea eliminar la oferta de trabajo por completo de la bolsa de trabajo."></asp:Label>
+                            </td>
+                            <td>
+                                <asp:Panel ID="Panel2" runat="server" HorizontalAlign="Right">
+                                    <asp:ImageButton ID="ImageButton1" runat="server" Height="50px" ImageUrl="~/Multimedia/icono-eliminar.jpg"
+                                        OnClick="ibtnEditarPerfilEmpresa_Click" Width="50px" />
                                 </asp:Panel>
                             </td>
                         </tr>
                     </table>
                 </asp:Panel>
             </td>
+            <td class="style4">
+            </td>
         </tr>
         <tr>
-            <td class="style4">
-                &nbsp;
-            </td>
-            <td class="style13">
-                &nbsp;
-            </td>
-            <td class="style6">
-                &nbsp;
-            </td>
-            <td class="style7">
-                &nbsp;
-            </td>
-            <td class="style13">
-                &nbsp;
-            </td>
-            <td class="style6">
-                &nbsp;
-            </td>
-            <td class="style4">
+            <td colspan="8">
                 &nbsp;
             </td>
         </tr>
         <tr>
-            <td class="style4">
-                &nbsp;
-            </td>
-            <td class="style13" colspan="5">
-            </td>
-            <td class="style4">
+            <td colspan="8">
                 &nbsp;
             </td>
         </tr>

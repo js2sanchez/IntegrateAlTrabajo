@@ -46,7 +46,7 @@
                         <asp:MenuItem Text="Mi perfil" Value="Mi perfil" 
                             NavigateUrl="~/Empresa/frmPerfilEmpresa.aspx" Selected="True"/>
                         <asp:MenuItem Text="Ofertas de trabajo" Value="Ofertas de trabajo" 
-                            NavigateUrl="~/Empresa/frmPublicarOfertaTrabajo.aspx"/>
+                            NavigateUrl="~/Empresa/frmOfertasTrabajo.aspx"/>
                         <asp:MenuItem Text="Servicios" Value="Servicios" 
                             NavigateUrl="~/Empresa/frmFiltrarServicios.aspx">
                         </asp:MenuItem>

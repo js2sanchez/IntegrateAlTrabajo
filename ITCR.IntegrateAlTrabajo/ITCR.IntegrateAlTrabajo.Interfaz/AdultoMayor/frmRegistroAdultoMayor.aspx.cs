@@ -239,7 +239,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 else 
                 {
                     string script = @"<script type='text/javascript'>
-                            bootbox.alert('El número de cédula introducido ya esta registrado en el sistema. con la finalidad de solucionar el problema comuníquese al teléfono X o envíe un mensaje al correo Y.');
+                            custom_alert('El número de cédula introducido ya esta registrado en el sistema. con la finalidad de solucionar el problema comuníquese al teléfono X o envíe un mensaje al correo Y.');
                             </script>";
 
                     ScriptManager.RegisterStartupScript(this, typeof(Page), "Datos personales", script, false);
@@ -267,7 +267,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 else
                 {
                     string script = @"<script type='text/javascript'>
-                            bootbox.alert('El nombre de usuario introducido ya existe. Por favor, intente con un nombre de usuario diferente.');
+                            custom_alert('El nombre de usuario introducido ya existe. Por favor, intente con un nombre de usuario diferente.');
                             </script>";
 
                     ScriptManager.RegisterStartupScript(this, typeof(Page), "Datos de autenticación", script, false);

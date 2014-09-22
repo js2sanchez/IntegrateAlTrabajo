@@ -40,7 +40,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Autenticacion
                     if (Validacion==0)
                     {
                         string script = @"<script type='text/javascript'>
-                            alert('Nombre de usuario y contraseña inválidos.');
+                            custom_alert('Nombre de usuario y contraseña inválidos.');
                             </script>";
 
                         ScriptManager.RegisterStartupScript(this, typeof(Page), "Autenticación", script, false);
@@ -49,7 +49,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Autenticacion
                     else if (Validacion==1)
                     {
                         string script = @"<script type='text/javascript'>
-                            alert('Contraseña inválida.');
+                            custom_alert('Contraseña inválida.');
                             </script>";
 
                         ScriptManager.RegisterStartupScript(this, typeof(Page), "Autenticación", script, false);
@@ -58,7 +58,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Autenticacion
                     else if (Estado == 2)
                     {
                         string script = @"<script type='text/javascript'>
-                            alert('Su cuenta aún no ha sido activada.');
+                            custom_alert('Su cuenta aún no ha sido activada.');
                             </script>";
 
                         ScriptManager.RegisterStartupScript(this, typeof(Page), "Autenticación", script, false);
@@ -67,7 +67,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Autenticacion
                     else if (Estado == 3)
                     {
                         string script = @"<script type='text/javascript'>
-                            alert('Su cuenta ha sido eliminada.');
+                            custom_alert('Su cuenta ha sido eliminada.');
                             </script>"; 
 
                         ScriptManager.RegisterStartupScript(this, typeof(Page), "Autenticación", script, false);
@@ -93,7 +93,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Autenticacion
                 else
                 {
                     string script = @"<script type='text/javascript'>
-                            alert('Nombre de usuario inválido.');
+                            custom_alert('Nombre de usuario inválido.');
                             </script>";
 
                     ScriptManager.RegisterStartupScript(this, typeof(Page), "Autenticación", script, false);
@@ -103,7 +103,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Autenticacion
             else
             {
                 string script = @"<script type='text/javascript'>
-                            alert('Nombre de usuario y contraseña requeridos para autenticación.');
+                            custom_alert('Nombre de usuario y contraseña requeridos para autenticación.');
                             </script>";
 
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "Autenticación", script, false);

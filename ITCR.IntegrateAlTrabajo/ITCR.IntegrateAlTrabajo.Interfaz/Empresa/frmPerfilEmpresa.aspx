@@ -102,6 +102,10 @@
         {
             height: 25px;
         }
+        .style32
+        {
+            width: 726px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -449,19 +453,28 @@
                 <asp:Panel ID="PanelEliminarPerfilEmpresa" runat="server" BorderWidth="2px">
                     <table class="style16">
                         <tr>
-                            <td>
+                            <td class="style32">
                                 <asp:Label ID="lblEliminarPerfilTitulo" runat="server" CssClass="Titulo2" Text="Eliminar perfil"></asp:Label>
                             </td>
-                        </tr>
-                        <tr>
                             <td>
-                                <asp:Label ID="lblEliminarPerfil" runat="server" Text="Presione el siguiente botón si desea eliminar por completo el perfil de esta empresa en la bolsa de trabajo."></asp:Label>
-                                &nbsp;&nbsp;&nbsp;
-                                <asp:ImageButton ID="ibtnEliminarPerfilEmpresa1" runat="server" Height="50px" ImageUrl="~/Multimedia/icono-eliminar.jpg"
-                                    OnClick="ibtnEliminarPerfilEmpresa_Click" Width="50px" />
+                                &nbsp;
                             </td>
                         </tr>
                         <tr>
+                            <td class="style32">
+                                <asp:Label ID="lblEliminarPerfil" runat="server" Text="Presione el siguiente botón si desea eliminar por completo el perfil de esta empresa en la bolsa de trabajo."></asp:Label>
+                                &nbsp;&nbsp;&nbsp;                                
+                            </td>
+                            <td>
+                            <asp:ImageButton ID="ibtnEliminarPerfilEmpresa1" runat="server" Height="50px" ImageUrl="~/Multimedia/icono-eliminar.jpg"
+                                    OnClick="ibtnEliminarPerfilEmpresa_Click" Width="50px" />
+                                    &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style32">
+                                &nbsp;
+                            </td>
                             <td>
                                 &nbsp;
                             </td>

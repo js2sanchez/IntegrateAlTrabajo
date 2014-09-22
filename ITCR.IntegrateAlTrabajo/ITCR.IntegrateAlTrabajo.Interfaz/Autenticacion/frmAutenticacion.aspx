@@ -6,10 +6,39 @@
 <head runat="server">
     
     <title></title>
-
     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
-
+    <link rel="stylesheet" href="../Styles/bootstrap.min.css" />     
+        
     <style type="text/css">
+        body   
+        {
+            background: #b6b7bc;
+            font-family: Century Gothic;
+            margin: 0px;
+            padding: 0px;
+            color: #696969;
+        }
+        table
+        {
+            font-family:Century Gothic;
+            font-size:15px;
+            text-align:justify;
+            border-spacing: 8px;
+            border-collapse: separate;
+        }
+        label
+        {
+            font-weight:normal;
+        }
+        input
+        {
+            font-weight:normal;
+        }
+        p
+        {
+            margin-bottom: 10px;
+            line-height: 1.6em;
+        }
         .style1
         {
             width: 100%;
@@ -44,9 +73,31 @@
         {
             width: 25px;
         }
+        .style15
+        {
+            width: 176px;
+        }
     </style>
 </head>
 <body bgcolor="#cccccc">
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/bootbox.js"></script> 
+    <script type="text/javascript">
+        function custom_alert(msg) {
+            bootbox.dialog({
+                closeButton: false,
+                message: msg,
+                buttons: {
+                    success: {
+                        label: "Aceptar",
+                        className: "btn-primary"
+                    }
+                }
+            });
+        }
+    </script>
     <form id="form1" runat="server">
     <table class="style1" align="center">
         <tr>
@@ -136,7 +187,7 @@ Text="El espacio busca reivindicar los derechos, el protagonismo y los saberes d
                                     ImageUrl="~/Multimedia/RayaAutenticacion.PNG" style="margin-left: 16px" 
                                     Width="16px" />
                             </td>
-                            <td bgcolor="White">
+                            <td bgcolor="White" class="style15">
                                 <asp:Label ID="lblNombreUsuario" runat="server" ForeColor="#005190" 
                                     Text="Nombre de usuario" Font-Bold="True"></asp:Label>
                             </td>
@@ -147,7 +198,7 @@ Text="El espacio busca reivindicar los derechos, el protagonismo y los saberes d
                                 &nbsp;</td>
                         </tr>
                         <tr>
-                            <td bgcolor="White">
+                            <td bgcolor="White" class="style15">
                                 <asp:Label ID="lblContraseña" runat="server" ForeColor="#005190" 
                                     Text="Contraseña" Font-Bold="True"></asp:Label>
                             </td>
@@ -158,7 +209,7 @@ Text="El espacio busca reivindicar los derechos, el protagonismo y los saberes d
                                 &nbsp;</td>
                         </tr>
                         <tr>
-                            <td bgcolor="White">
+                            <td bgcolor="White" class="style15">
                                 &nbsp;</td>
                             <td bgcolor="White">
                                 <asp:Panel ID="PanelBotonIniciarSesion" runat="server" HorizontalAlign="Right">
@@ -176,7 +227,7 @@ Text="El espacio busca reivindicar los derechos, el protagonismo y los saberes d
                                 &nbsp;</td>
                         </tr>
                         <tr>
-                            <td bgcolor="White">
+                            <td bgcolor="White" class="style15">
                                 <asp:HyperLink ID="hlRegistrarPersona" runat="server" ForeColor="#005190" 
                                     NavigateUrl="~/AdultoMayor/frmRegistroAdultoMayor.aspx">Registrar persona</asp:HyperLink>
                             </td>

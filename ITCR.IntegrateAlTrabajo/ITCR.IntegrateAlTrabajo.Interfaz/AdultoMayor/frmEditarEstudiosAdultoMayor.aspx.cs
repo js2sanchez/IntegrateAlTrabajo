@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using ITCR.IntegrateAlTrabajo.Negocios;
 using ITCR.IntegrateAlTrabajo.Datos;
+using System.Web.Services;
 
 namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 {
@@ -19,9 +20,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 btnAgregar.Visible = true;
                 btnActualizar.Visible = false;
                 btnCancelarAgregar.Visible = true;
-                btnCancelarActualizar.Visible = false;
+                btnCancelarActualizar.Visible = false;                
+                HttpContext.Current.Session["update"] = 1;
                 cargarDataGridEstudios();
-            }
+            }            
         }
 
         private void cargarDataGridEstudios()
@@ -82,42 +84,43 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             }
             else if (e.CommandName == "Eliminar")
             {
-                cIATEstudioNegocios Estudio = new cIATEstudioNegocios(1, "A", 2, "B");
-
-                Estudio.Id_Estudio = Int16.Parse(e.Item.Cells[0].Text);
-                Estudio.Eliminar();
-                cargarDataGridEstudios();
+                int index = Int16.Parse(e.Item.Cells[0].Text);
+                string code = @"<script type='text/javascript'>eliminarEstudio(" + index + ");</script>";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
             }
         }
 
+        [WebMethod]
+        public static void eliminarEstudio(int index)
+        {
+            cIATEstudioNegocios Estudio = new cIATEstudioNegocios(1, "A", 2, "B");
+            Estudio.Id_Estudio = index;
+            Estudio.Eliminar();
+        }
+         
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
-                        Validate("gvEstudios");
+            Validate("gvEstudios");
 
-                        if (Page.IsValid)
-                        {
-                            cIATEstudioNegocios Estudio = new cIATEstudioNegocios(1, "A", 2, "B");
-                            Estudio.Id_Estudio = Int16.Parse(Session["Id_Estudio"].ToString());
-                            Estudio.Institucion = txtInstitucionEstudio.Text;
-                            Estudio.Titulo = txtTituloEstudio.Text;
-                            Estudio.FK_IdPersona = Int16.Parse(Session["Id_Persona"].ToString());
+            if (Page.IsValid)
+            {
+                cIATEstudioNegocios Estudio = new cIATEstudioNegocios(1, "A", 2, "B");
+                Estudio.Id_Estudio = Int16.Parse(Session["Id_Estudio"].ToString());
+                Estudio.Institucion = txtInstitucionEstudio.Text;
+                Estudio.Titulo = txtTituloEstudio.Text;
+                Estudio.FK_IdPersona = Int16.Parse(Session["Id_Persona"].ToString());
 
-                            Estudio.Actualizar();
+                Estudio.Actualizar();
 
-                            txtInstitucionEstudio.Text = "";
-                            txtTituloEstudio.Text = "";
-                            txtInstitucionEstudio.Focus();
+                txtInstitucionEstudio.Text = "";
+                txtTituloEstudio.Text = "";
+                txtInstitucionEstudio.Focus();
 
-                            btnAgregar.Visible = true;
-                            btnActualizar.Visible = false;
+                btnAgregar.Visible = true;
+                btnActualizar.Visible = false;
 
-                            cargarDataGridEstudios();
-                        }
-        }
-
-        protected void dgEstudios_ItemDataBound(object sender, DataGridItemEventArgs e)
-        {
-            e.Item.Cells[4].Attributes.Add("onClick", "return confirmarBorradoEstudio();");
+                cargarDataGridEstudios();
+            }
         }
 
         protected void btnAgregar_Click(object sender, EventArgs e)
