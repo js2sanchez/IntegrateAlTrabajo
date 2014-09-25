@@ -14,7 +14,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            txtOpinion.Focus();
+
         }
 
         private Int16 obtenerIdUsuario(String NombreUsuario)

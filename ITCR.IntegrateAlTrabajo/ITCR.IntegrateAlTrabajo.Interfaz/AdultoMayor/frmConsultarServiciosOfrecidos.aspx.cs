@@ -79,8 +79,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                     foreach (DataGridItem Fila in dgServicios.Items)
                     {
                         Fila.Cells[3].Text = obtenerCategoriasServicios(Fila.Cells[3].Text);
-                        Fila.Cells[4].Text = obtenerTiposServicios(Fila.Cells[4].Text);
-                        Fila.Cells[5].Text = obtenerDiasServicios(Fila.Cells[0].Text);
+                        Fila.Cells[2].Text = obtenerTiposServicios(Fila.Cells[2].Text);
                     }
                     PanelTablaDatos.Visible = true;
                 }
@@ -127,53 +126,14 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             return Tipo;
         }
 
-        protected String obtenerDiasServicios(String IdServicio)
-        {
-            cIATDiaServicioNegocios DiaBuscar = new cIATDiaServicioNegocios(1, "A", 2, "B");
-            DiaBuscar.FK_IdServicio = Int16.Parse(IdServicio.ToString());
-            DataTable TablaDias = DiaBuscar.Buscar();
-
-            String Dias = "";
-            if (TablaDias.Rows.Count > 0)
-            {
-                Dias = TablaDias.Rows[0]["Nom_Dia"].ToString() + "(" + TablaDias.Rows[0]["Can_Horas"].ToString() + ")";
-
-                for (int i = 1; i < TablaDias.Rows.Count; i++)
-                {
-                    Dias = Dias + ", " + TablaDias.Rows[i]["Nom_Dia"].ToString() + "(" + TablaDias.Rows[i]["Can_Horas"].ToString() + ")";
-                }
-            }
-
-            return Dias;
-        }
-
-        protected void dgServicios_DeleteCommand(object source, DataGridCommandEventArgs e)
-        {
-
-
-        }
-
         protected void dgServicios_ItemCommand(object source, DataGridCommandEventArgs e)
         {
             try
             {
-                if (e.CommandName == "Eliminar")
+                if (e.CommandName == "VerDetalles")
                 {
-                    Int16 IdServicio = Int16.Parse(e.Item.Cells[0].Text.ToString());
-                    string code = @"<script type='text/javascript'>eliminarServicio(" + IdServicio + e.Item.ItemIndex + ");</script>";
-                    ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
-                    mostrarServicios();
-                }
-
-                if (e.CommandName == "Editar")
-                {
-                    //Sólo para mostrar mensaje de error
-                    int[] valores = new int[100];
-
-                    for (int i = 1; i < 500; i++)
-                    {
-                        int x = valores[i];
-                    }
+                    Session["IdServicio"] = e.Item.Cells[0].Text;
+                    Response.Redirect("frmDetalleServicio.aspx");
                 }
             }
             catch
@@ -184,39 +144,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "Error del sistema", script, false);
             }
-        }
-
-        [WebMethod]
-        public static void eliminarServicio(String pIdServicio)
-        {
-            //Solución al problema de "0" al final del pIdServicio
-            int Tamaño = pIdServicio.Length;
-            String NuevoIdServicio = pIdServicio.Substring(0, Tamaño - 1);
-            int IdServicio = int.Parse(NuevoIdServicio);
-
-            cIATDiaServicioNegocios DiaEliminar = new cIATDiaServicioNegocios(1, "A", 2, "B");
-            DiaEliminar.FK_IdServicio = IdServicio;
-            DataTable TablaDias = DiaEliminar.Buscar();
-
-            for (int i = 0; i < TablaDias.Rows.Count; i++)
-            {
-                Int16 IdDia = Int16.Parse(TablaDias.Rows[i]["Id_DiaServicio"].ToString());
-                DiaEliminar.Id_DiaServicio = IdDia;
-                DiaEliminar.Eliminar();
-            }
-
-            cIATServicioNegocios ServicioEliminar = new cIATServicioNegocios(1, "A", 2, "B");
-            ServicioEliminar.Id_Servicio = IdServicio;
-            ServicioEliminar.Eliminar();
-
-
-        }
-
-        protected void dgServicios_ItemDataBound(object sender, DataGridItemEventArgs e)
-        {
-            string code = @"<script type='text/javascript'>endConfirmation();</script>";
-            ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
-            e.Item.Cells[7].Attributes.Add("onClick", "return ConfirmarEliminarServicio();");
         }
     }
 }
