@@ -128,7 +128,9 @@
                                 Visible="False"></asp:BoundColumn>
                             <asp:BoundColumn HeaderText="Observaciones" DataField="InformacionAdicional" 
                                 Visible="False"></asp:BoundColumn>
-                            <asp:BoundColumn DataField="Ind_Activa" HeaderText="Estado">
+                            <asp:BoundColumn DataField="Ind_Activa" HeaderText="Estado" Visible="false">
+                            </asp:BoundColumn>
+                            <asp:BoundColumn HeaderText="Estado">
                             </asp:BoundColumn>
                             <asp:BoundColumn DataField="FK_IdTipoOfertaTrabajo" 
                                 HeaderText="IdTipoOfertaTrabajo" Visible="False"></asp:BoundColumn>

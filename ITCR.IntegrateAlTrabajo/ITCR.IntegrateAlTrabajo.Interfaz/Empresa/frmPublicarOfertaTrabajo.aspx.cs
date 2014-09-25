@@ -12,7 +12,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 {
     public partial class frmPublicarOfertaTrabajo : System.Web.UI.Page
     {
-        private static Int16 IdEmpresa = 0;
+        private static Int16 IdEmpresa = 0;        
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -20,7 +20,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             {
                 cargarIdEmpresa();
                 btnAgregar.Visible = true;
-                cargarTodosDropDownList();                
+                cargarTodosDropDownList();
+                DataTable Requisitos = new DataTable();
+                Requisitos.Columns.Add("Req_Oferta", typeof(string));
+                HttpContext.Current.Session["tabla_requisitos"] = Requisitos;
             }
         }
 
@@ -87,6 +90,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         #endregion
 
 
+        protected void dgRequisitos_ItemCommand(object source, DataGridCommandEventArgs e)
+        {
+            if (e.CommandName == "Eliminar")
+            {
+                ((DataTable)HttpContext.Current.Session["tabla_requisitos"]).Rows.RemoveAt(e.Item.ItemIndex);
+                dgRequisitos.DataSource = ((DataTable)HttpContext.Current.Session["tabla_requisitos"]);
+                dgRequisitos.DataBind();
+            }
+        }
         
         
         private void inicializarComponentesGraficos()
@@ -126,6 +138,13 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 OfertaTrabajo.FK_IdEmpresa = IdEmpresa;
 
                 OfertaTrabajo.Insertar();
+                cIATRequisitoOfertaTrabajoNegocios n_requisito = new cIATRequisitoOfertaTrabajoNegocios(1, "A", 2, "B");
+                n_requisito.FK_IdOfertaTrabajo = OfertaTrabajo.Id_OfertaTrabajo;
+                foreach (DataRow req in ((DataTable)HttpContext.Current.Session["tabla_requisitos"]).Rows)
+                {
+                    n_requisito.Detalle = req["Req_Oferta"].ToString();
+                    n_requisito.Insertar();
+                }
                 string script = @"<script type='text/javascript'>
                             retornar();</script>";
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "Datos de empresa", script, false);
@@ -135,38 +154,16 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         protected void dgOfertaTrabajo_ItemDataBound(object sender, DataGridItemEventArgs e)
         {
             e.Item.Cells[12].Attributes.Add("onClick", "return confirmarBorradoOfertaTrabajo();");
-        }
+        }        
 
-        protected void btnActualizar_Click(object sender, EventArgs e)
+        protected void btnAgregarRequisito_Click(object sender, EventArgs e)
         {
-            Validate("gvOfertaTrabajo");
-
-            if (Page.IsValid)
-            {
-                cIATOfertaTrabajoNegocios OfertaTrabajo = new cIATOfertaTrabajoNegocios(1, "A", 2, "B");
-
-                OfertaTrabajo.Id_OfertaTrabajo = Int16.Parse(Session["Id_OfertaTrabajo"].ToString());
-                OfertaTrabajo.Nom_Puesto = txtNombrePuesto.Text;
-
-                if (txtDescripcion.Text.CompareTo("") != 0)
-                {
-                    OfertaTrabajo.Dsc_OfertaTrabajo = txtDescripcion.Text;
-                }
-
-                OfertaTrabajo.Txt_Requisitos = txtRequisitos.Text;
-
-                if (txtObservaciones.Text.CompareTo("") != 0)
-                {
-                    OfertaTrabajo.InformacionAdicional = txtObservaciones.Text;
-                }
-                OfertaTrabajo.Ind_Activa = true;
-                OfertaTrabajo.FK_IdCategoriaOfertaTrabajo = Int16.Parse(drpCategoria.SelectedValue);
-                OfertaTrabajo.FK_IdTipoOfertaTrabajo = Int16.Parse(drpTipo.SelectedValue);
-                OfertaTrabajo.FK_IdEmpresa = IdEmpresa;
-
-                OfertaTrabajo.Actualizar();
-                inicializarComponentesGraficos();
-            }
+            DataRow requisito = ((DataTable)HttpContext.Current.Session["tabla_requisitos"]).NewRow();
+            requisito["Req_Oferta"] = txtRequisitos.Text;
+            ((DataTable)HttpContext.Current.Session["tabla_requisitos"]).Rows.Add(requisito);
+            dgRequisitos.DataSource = ((DataTable)HttpContext.Current.Session["tabla_requisitos"]);
+            dgRequisitos.DataBind();
         }
+
     }
 }

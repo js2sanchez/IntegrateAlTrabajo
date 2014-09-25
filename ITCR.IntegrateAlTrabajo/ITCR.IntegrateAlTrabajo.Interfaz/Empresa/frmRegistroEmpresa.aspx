@@ -643,7 +643,7 @@
                             <tr>
                                 <td class="auto-style3" colspan="5">
                                     <asp:CheckBox ID="chkAceptarTerminos" runat="server" Text="Acepto los términos y condiciones anteriores"
-                                        OnCheckedChanged="chkAceptarTerminos_CheckedChanged" AutoPostBack="True" TabIndex="1"
+                                        TabIndex="1"
                                         Width="600px" />
                                     &nbsp;
                                 </td>

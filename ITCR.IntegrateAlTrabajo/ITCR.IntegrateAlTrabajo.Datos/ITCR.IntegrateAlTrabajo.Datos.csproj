@@ -61,6 +61,7 @@
     <Compile Include="ClasesBase\cIATOpinionBase.cs" />
     <Compile Include="ClasesBase\cIATPersonaBase.cs" />
     <Compile Include="ClasesBase\cIATProvinciaBase.cs" />
+    <Compile Include="ClasesBase\cIATRequisitoOfertaTrabajoBase.cs" />
     <Compile Include="ClasesBase\cIATServicioBase.cs" />
     <Compile Include="ClasesBase\cIATTipoContactoBase.cs" />
     <Compile Include="ClasesBase\cIATTipoGuiaUsoBase.cs" />
@@ -86,6 +87,7 @@
     <Compile Include="ClasesDatos\cIATOpinionDatos.cs" />
     <Compile Include="ClasesDatos\cIATPersonaDatos.cs" />
     <Compile Include="ClasesDatos\cIATProvinciaDatos.cs" />
+    <Compile Include="ClasesDatos\cIATRequisitoOfertaTrabajoDatos.cs" />
     <Compile Include="ClasesDatos\cIATServicioDatos.cs" />
     <Compile Include="ClasesDatos\cIATTipoContactoDatos.cs" />
     <Compile Include="ClasesDatos\cIATTipoGuiaUsoDatos.cs" />

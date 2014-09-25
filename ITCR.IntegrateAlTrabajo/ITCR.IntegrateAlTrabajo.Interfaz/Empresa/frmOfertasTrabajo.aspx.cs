@@ -64,8 +64,16 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
                 foreach (DataGridItem Fila in dgOfertaTrabajo.Items)
                 {
-                    Fila.Cells[6].Text = obtenerNombreTipoOfertaTrabajo(Int16.Parse(Fila.Cells[5].Text));
-                    Fila.Cells[8].Text = obtenerNombreCategoriaOfertaTrabajo(Int16.Parse(Fila.Cells[7].Text));
+                    if (Fila.Cells[4].Text == "True")
+                    {
+                        Fila.Cells[5].Text = "Activa";
+                    }
+                    else
+                    {
+                        Fila.Cells[5].Text = "Inactiva";
+                    }
+                    Fila.Cells[7].Text = obtenerNombreTipoOfertaTrabajo(Int16.Parse(Fila.Cells[6].Text));
+                    Fila.Cells[9].Text = obtenerNombreCategoriaOfertaTrabajo(Int16.Parse(Fila.Cells[8].Text));
                 }
                 PanelTablaDatos.Visible = true;
             }

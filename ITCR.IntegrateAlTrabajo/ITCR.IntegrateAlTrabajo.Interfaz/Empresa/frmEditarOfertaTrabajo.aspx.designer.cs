@@ -10,7 +10,7 @@
 namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
     
     
-    public partial class frmDetallesOferta {
+    public partial class frmEditarOfertaTrabajo {
         
         /// <summary>
         /// Control ScriptManagerMain.
@@ -22,49 +22,31 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
         protected global::System.Web.UI.ScriptManager ScriptManagerMain;
         
         /// <summary>
-        /// Control lblDetallesOfertaTrabajo.
+        /// Control lblEditarOfertaTrabajo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDetallesOfertaTrabajo;
+        protected global::System.Web.UI.WebControls.Label lblEditarOfertaTrabajo;
         
         /// <summary>
-        /// Control pnlPerfil.
+        /// Control vsOfertaTrabajo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnlPerfil;
+        protected global::System.Web.UI.WebControls.ValidationSummary vsOfertaTrabajo;
         
         /// <summary>
-        /// Control lblDatosGenerales.
+        /// Control PanelDatos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDatosGenerales;
-        
-        /// <summary>
-        /// Control PanelEditarDatosPersonales.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelEditarDatosPersonales;
-        
-        /// <summary>
-        /// Control ibtnEditarOferta.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ibtnEditarOferta;
+        protected global::System.Web.UI.WebControls.Panel PanelDatos;
         
         /// <summary>
         /// Control lblNombrePuesto.
@@ -76,13 +58,22 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
         protected global::System.Web.UI.WebControls.Label lblNombrePuesto;
         
         /// <summary>
-        /// Control lblNombrePuestoDato.
+        /// Control txtNombrePuesto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombrePuestoDato;
+        protected global::System.Web.UI.WebControls.TextBox txtNombrePuesto;
+        
+        /// <summary>
+        /// Control rfvNombrePuesto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvNombrePuesto;
         
         /// <summary>
         /// Control lblDescripcion.
@@ -94,13 +85,13 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
         protected global::System.Web.UI.WebControls.Label lblDescripcion;
         
         /// <summary>
-        /// Control lblDescripcionDato.
+        /// Control txtDescripcion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescripcionDato;
+        protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
         
         /// <summary>
         /// Control lblTipo.
@@ -112,13 +103,13 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
         protected global::System.Web.UI.WebControls.Label lblTipo;
         
         /// <summary>
-        /// Control lblTipoDato.
+        /// Control drpTipo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTipoDato;
+        protected global::System.Web.UI.WebControls.DropDownList drpTipo;
         
         /// <summary>
         /// Control lblCategoria.
@@ -130,13 +121,13 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
         protected global::System.Web.UI.WebControls.Label lblCategoria;
         
         /// <summary>
-        /// Control lblCategoriaDato.
+        /// Control drpCategoria.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCategoriaDato;
+        protected global::System.Web.UI.WebControls.DropDownList drpCategoria;
         
         /// <summary>
         /// Control lblRequisitos.
@@ -146,6 +137,33 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblRequisitos;
+        
+        /// <summary>
+        /// Control txtRequisitos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtRequisitos;
+        
+        /// <summary>
+        /// Control Panel1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel1;
+        
+        /// <summary>
+        /// Control btnAgregarRequisito.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAgregarRequisito;
         
         /// <summary>
         /// Control PanelTablaDatos.
@@ -175,57 +193,39 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
         protected global::System.Web.UI.WebControls.Label lblObservaciones;
         
         /// <summary>
-        /// Control lblObservacionesDato.
+        /// Control txtObservaciones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblObservacionesDato;
+        protected global::System.Web.UI.WebControls.TextBox txtObservaciones;
         
         /// <summary>
-        /// Control Panel1.
+        /// Control PanelBotones.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
+        protected global::System.Web.UI.WebControls.Panel PanelBotones;
         
         /// <summary>
-        /// Control Label1.
+        /// Control btnSalir.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Button btnSalir;
         
         /// <summary>
-        /// Control Label2.
+        /// Control btnActualizar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-        
-        /// <summary>
-        /// Control Panel2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel2;
-        
-        /// <summary>
-        /// Control ibtEliminarOferta.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ibtEliminarOferta;
+        protected global::System.Web.UI.WebControls.Button btnActualizar;
     }
 }
