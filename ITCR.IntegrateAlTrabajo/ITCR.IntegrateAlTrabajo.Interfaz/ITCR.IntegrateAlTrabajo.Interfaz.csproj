@@ -69,9 +69,11 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="Administrador\frmCambiarEstadoPerfil.aspx" />
     <Content Include="Administrador\frmOpinionesSobreBolsaTrabajo.aspx" />
+    <Content Include="AdultoMayor\frmActualizarServicio.aspx" />
     <Content Include="AdultoMayor\frmAplicarOfertaTrabajo.aspx" />
     <Content Include="AdultoMayor\frmConsultarPerfilAdultoMayor.aspx" />
     <Content Include="AdultoMayor\frmConsultarServiciosOfrecidos.aspx" />
+    <Content Include="AdultoMayor\frmDetalleServicio.aspx" />
     <Content Include="AdultoMayor\frmEditarDatosPersonalesAdultoMayor.aspx" />
     <Content Include="AdultoMayor\frmEditarEstudiosAdultoMayor.aspx" />
     <Content Include="AdultoMayor\frmEditarExperienciasLaboralesAdultoMayor.aspx" />
@@ -173,6 +175,13 @@
     <Compile Include="Administrador\frmOpinionesSobreBolsaTrabajo.aspx.designer.cs">
       <DependentUpon>frmOpinionesSobreBolsaTrabajo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdultoMayor\frmActualizarServicio.aspx.cs">
+      <DependentUpon>frmActualizarServicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdultoMayor\frmActualizarServicio.aspx.designer.cs">
+      <DependentUpon>frmActualizarServicio.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdultoMayor\frmAplicarOfertaTrabajo.aspx.cs">
       <DependentUpon>frmAplicarOfertaTrabajo.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -193,6 +202,13 @@
     </Compile>
     <Compile Include="AdultoMayor\frmConsultarServiciosOfrecidos.aspx.designer.cs">
       <DependentUpon>frmConsultarServiciosOfrecidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdultoMayor\frmDetalleServicio.aspx.cs">
+      <DependentUpon>frmDetalleServicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdultoMayor\frmDetalleServicio.aspx.designer.cs">
+      <DependentUpon>frmDetalleServicio.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdultoMayor\frmEditarDatosPersonalesAdultoMayor.aspx.cs">
       <DependentUpon>frmEditarDatosPersonalesAdultoMayor.aspx</DependentUpon>

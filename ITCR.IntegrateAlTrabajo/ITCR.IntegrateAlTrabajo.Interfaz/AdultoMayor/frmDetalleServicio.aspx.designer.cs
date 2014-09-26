@@ -13,6 +13,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
     public partial class frmDetalleServicio {
         
         /// <summary>
+        /// ScriptManagerMain control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManagerMain;
+        
+        /// <summary>
         /// Titulo control.
         /// </summary>
         /// <remarks>
@@ -193,12 +202,12 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
         protected global::System.Web.UI.WebControls.Label lblMensajeBorrado;
         
         /// <summary>
-        /// ibtnEliminarPerfilEmpresa1 control.
+        /// ibtnEliminarServicio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ibtnEliminarPerfilEmpresa1;
+        protected global::System.Web.UI.WebControls.ImageButton ibtnEliminarServicio;
     }
 }
