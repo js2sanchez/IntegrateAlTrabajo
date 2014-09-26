@@ -1,6 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMaestraEmpresa.Master" AutoEventWireup="true"
-    CodeBehind="frmPublicarOfertaTrabajo.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor.frmPublicarOfertaTrabajo" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMaestraEmpresa.Master" AutoEventWireup="true" CodeBehind="frmEditarOfertaTrabajo.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.Empresa.frmEditarOfertaTrabajo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <link rel="stylesheet" href="../Styles/bootstrap.min.css" /> 
     <style type="text/css">
@@ -98,7 +96,7 @@
         }
 
         function retornar() {
-            custom_alert('Ha creado la oferta satisfactoriamente.');
+            custom_alert('Ha actualizado la oferta satisfactoriamente.');
             location.href = "/Empresa/frmOfertasTrabajo.aspx";
         }
     </script>
@@ -107,7 +105,7 @@
             <td class="style4">
             </td>
             <td class="style5" colspan="2">
-                <asp:Label ID="lblPublicarOfertaTrabajo" runat="server" CssClass="Titulo1" Text="Publicar oferta de trabajo"></asp:Label>
+                <asp:Label ID="lblEditarOfertaTrabajo" runat="server" CssClass="Titulo1" Text="Editar oferta de trabajo"></asp:Label>
             </td>
             <td class="style7">
             </td>
@@ -223,8 +221,6 @@
                             </td>
                             <td>
                                 <asp:TextBox ID="txtRequisitos" runat="server" Width="99%"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="rfvRequisitos" runat="server" ControlToValidate="txtRequisitos"
-                                    ErrorMessage="Los requisitos son datos requeridos." ForeColor="Red" ValidationGroup="gvOfertaTrabajo">*</asp:RequiredFieldValidator>
                             </td>
                             <td align="right">
                                 <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Right">
@@ -246,7 +242,8 @@
                                         <HeaderStyle BackColor="Navy" Font-Bold="True" Font-Names="Verdana" Font-Size="Larger"
                                             ForeColor="White" HorizontalAlign="Center" />
                                         <Columns>
-                                            <asp:BoundColumn HeaderText="Requisito" DataField="Req_Oferta"></asp:BoundColumn>
+                                        <asp:BoundColumn HeaderText="Id_Requisito" DataField="Id_RequisitoOfertaTrabajo" Visible="false"></asp:BoundColumn>
+                                            <asp:BoundColumn HeaderText="Requisito" DataField="Detalle"></asp:BoundColumn>
                                             <asp:TemplateColumn>
                                                 <ItemTemplate>
                                                     <asp:ImageButton ID="ibtnEliminar" runat="server" CommandName="Eliminar" Height="30px"
@@ -275,8 +272,11 @@
                         <tr>
                             <td class="style5" colspan="3" align="right">
                                 <asp:Panel ID="PanelBotones" runat="server" HorizontalAlign="Right">
-                                    <asp:Button ID="btnAgregar" runat="server" CssClass="Boton" OnClick="btnAgregar_Click"
-                                        Text="Crear oferta de trabajo" />
+                                    <asp:Button ID="btnSalir" runat="server" CssClass="Boton"
+                                        Text="Salir sin guardar" onclick="btnSalir_Click" />
+                                        &nbsp;&nbsp;
+                                    <asp:Button ID="btnActualizar" runat="server" CssClass="Boton" OnClick="btnActualizar_Click"
+                                        Text="Actualizar oferta de trabajo" />
                                 </asp:Panel>
                             </td>
                         </tr>

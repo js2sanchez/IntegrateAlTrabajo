@@ -59,6 +59,7 @@
     <Compile Include="ClasesNegocios\cIATOpinionNegocios.cs" />
     <Compile Include="ClasesNegocios\cIATPersonaNegocios.cs" />
     <Compile Include="ClasesNegocios\cIATProvinciaNegocios.cs" />
+    <Compile Include="ClasesNegocios\cIATRequisitoOfertaTrabajoNegocios.cs" />
     <Compile Include="ClasesNegocios\cIATServicioNegocios.cs" />
     <Compile Include="ClasesNegocios\cIATTipoContactoNegocios.cs" />
     <Compile Include="ClasesNegocios\cIATTipoGuiaUsoNegocios.cs" />

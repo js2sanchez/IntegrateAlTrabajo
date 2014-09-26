@@ -2,7 +2,32 @@
     CodeBehind="frmDetallesOferta.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.Empresa.frmDetallesOferta" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <link rel="stylesheet" href="../Styles/bootstrap.min.css" /> 
     <style type="text/css">
+        body   
+        {
+            background: #b6b7bc;
+            font-family: Century Gothic;
+            margin: 0px;
+            padding: 0px;
+            color: #696969;
+        }
+        table
+        {
+            font-family:Century Gothic;
+            font-size:15px;
+            text-align:justify;
+            border-spacing: 8px;
+            border-collapse: separate;
+        }
+        label
+        {
+            font-weight:normal;
+        }
+        input
+        {
+            font-weight:normal;
+        }
         .style3
         {
             width: 98%;
@@ -52,6 +77,57 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:ScriptManager ID="ScriptManagerMain" runat="server" EnablePageMethods="true"
+        ScriptMode="Release" LoadScriptsBeforeUI="true">
+    </asp:ScriptManager>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/bootbox.js"></script>   
+    <script type="text/javascript">
+        function eliminarOferta(id) {
+            bootbox.dialog({
+                closeButton: false,
+                title: false,
+                message: "¿Está seguro que desea eliminar esta oferta de trabajo?",
+                buttons: {
+                    success: {
+                        label: "Sí, estoy seguro",
+                        className: "btn-primary",
+                        callback: function () {
+                            PageMethods.eliminarOferta(id, OnSuccess, OnError);
+                        }
+                    },
+                    main: {
+                        label: "No, deseo mantenerla",
+                        className: "btn-primary"
+                    }
+                }
+            });
+        }
+
+
+        function OnSuccess(response) {
+            bootbox.dialog({
+                closeButton: false,
+                message: "La oferta se ha eliminado de la bolsa de trabajo exitosamente.",
+                title: "Eliminación completada",
+                buttons: {
+                    success: {
+                        label: "Volver a la página de ofertas de trabajo",
+                        className: "btn-primary",
+                        callback: function () {
+                            location.href = "/Empresa/frmOfertasTrabajo.aspx";
+                        }
+                    }
+                }
+            });
+        }
+
+        function OnError(error) {
+            bootbox.alert("Hubo un error. Inténtelo más tarde.");
+        }
+    </script>
     <table class="style3">
         <tr>
             <td class="style4">
@@ -85,7 +161,9 @@
                             <td class="style25" colspan="2">
                                 <asp:Panel ID="PanelEditarDatosPersonales" runat="server" HorizontalAlign="Right">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <asp:ImageButton ID="ibtnEditarOferta" runat="server" Height="50px" ImageUrl="~/Multimedia/icono-editar.jpg" Width="50px" />
+                                    <asp:ImageButton ID="ibtnEditarOferta" runat="server" Height="50px" 
+                                        ImageUrl="~/Multimedia/icono-editar.jpg" Width="50px" 
+                                        onclick="ibtnEditarOferta_Click" />
                                 </asp:Panel>
                             </td>
                         </tr>
@@ -158,9 +236,11 @@
                                         <HeaderStyle BackColor="Navy" Font-Bold="True" Font-Names="Verdana" Font-Size="Larger"
                                             ForeColor="White" HorizontalAlign="Center" />
                                         <Columns>
-                                            <asp:BoundColumn DataField="Id_Requisito" HeaderText="Id_Requisito" Visible="False">
+                                            <asp:BoundColumn DataField="Id_RequisitoOfertaTrabajo" HeaderText="Id_Requisito" Visible="False">
                                             </asp:BoundColumn>
-                                            <asp:BoundColumn HeaderText="Requisito" DataField="Req_Oferta"></asp:BoundColumn>
+                                            <asp:BoundColumn HeaderText="Requisito" DataField="Detalle"></asp:BoundColumn>
+                                            <asp:BoundColumn DataField="FK_IdOfertaTrabajo" HeaderText="FK_IdOfertaTrabajo" Visible="False">
+                                            </asp:BoundColumn>
                                         </Columns>
                                     </asp:DataGrid>
                                 </asp:Panel>
@@ -215,7 +295,9 @@
                             </td>
                             <td>
                                 <asp:Panel ID="Panel2" runat="server" HorizontalAlign="Right">
-                                    <asp:ImageButton ID="ibtEliminarOferta" runat="server" Height="50px" ImageUrl="~/Multimedia/icono-eliminar.jpg" Width="50px" />
+                                    <asp:ImageButton ID="ibtEliminarOferta" runat="server" Height="50px" 
+                                        ImageUrl="~/Multimedia/icono-eliminar.jpg" Width="50px" 
+                                        onclick="ibtEliminarOferta_Click" />
                                 </asp:Panel>
                             </td>
                         </tr>

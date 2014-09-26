@@ -200,21 +200,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "Registro", script, false);
             }
         }
-
-        protected void chkAceptarTerminos_CheckedChanged(object sender, EventArgs e)
-        {
-            bool _checked = chkAceptarTerminos.Checked;
-            if (_checked)
-            {
-                btnFinalizar.Attributes.Remove("disabled");
-                btnFinalizar.Attributes["onclick"] = "btnFinalizar_Click";
-            }
-            else
-            {
-                btnFinalizar.Attributes["disabled"] = "true";
-            }
-        }
-
+        
         private void salirSinGuardar()
         {
             string code = @"<script type='text/javascript'>endConfirmation();</script>";

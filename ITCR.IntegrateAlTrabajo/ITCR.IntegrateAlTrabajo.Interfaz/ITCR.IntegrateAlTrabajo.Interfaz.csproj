@@ -85,6 +85,7 @@
     <Content Include="Empresa\frmDetallesOferta.aspx" />
     <Content Include="Empresa\frmEditarDatosAutenticacionEmpresa.aspx" />
     <Content Include="Empresa\frmEditarDatosGeneralesEmpresa.aspx" />
+    <Content Include="Empresa\frmEditarOfertaTrabajo.aspx" />
     <Content Include="Empresa\frmFiltrarServicios.aspx" />
     <Content Include="Empresa\frmOfertasTrabajo.aspx" />
     <Content Include="Empresa\frmOpinarSobreBolsaTrabajo.aspx" />
@@ -293,6 +294,13 @@
     </Compile>
     <Compile Include="Empresa\frmEditarDatosGeneralesEmpresa.aspx.designer.cs">
       <DependentUpon>frmEditarDatosGeneralesEmpresa.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empresa\frmEditarOfertaTrabajo.aspx.cs">
+      <DependentUpon>frmEditarOfertaTrabajo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empresa\frmEditarOfertaTrabajo.aspx.designer.cs">
+      <DependentUpon>frmEditarOfertaTrabajo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Empresa\frmFiltrarServicios.aspx.cs">
       <DependentUpon>frmFiltrarServicios.aspx</DependentUpon>
