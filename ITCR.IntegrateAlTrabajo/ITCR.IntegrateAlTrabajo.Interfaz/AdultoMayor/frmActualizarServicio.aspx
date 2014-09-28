@@ -68,10 +68,6 @@
         {
             width: 100%;
         }
-        .style24
-        {
-            height: 25px;
-        }
         .style11
         {
             height: 25px;
@@ -194,10 +190,10 @@
             });
         }
 
-        function NotificarNuevoServicio() {
+        function NotificarActualizacionServicio() {
             bootbox.dialog({
                 closeButton: false,
-                message: "¡El servicio se registró satisfactoriamente!",
+                message: "¡El servicio se actualizó correctamente!",
                 title: "Servicio",
                 buttons: {
                     success: {
@@ -432,8 +428,7 @@
                                                     Text="Lunes" TabIndex="4" />
                                             </td>
                                             <td class="style33">
-                                                <asp:DropDownList ID="drpHora1" runat="server" Enabled="False" Height="30px" Width="121px"
-                                                    TabIndex="5">
+                                                <asp:DropDownList ID="drpHora1" runat="server" Enabled="False" Width="121px">
                                                 </asp:DropDownList>
                                             </td>
                                             <td class="style33">

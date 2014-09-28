@@ -336,6 +336,61 @@ namespace ITCR.IntegrateAlTrabajo.Base
 			}
 		}
 
+        public bool EliminarTodo()
+        {
+            SqlCommand cmdAEjecutar = new SqlCommand();
+            cmdAEjecutar.CommandText = "dbo.[pr_IATDiaServicio_EliminarTodo]";
+            cmdAEjecutar.CommandType = CommandType.StoredProcedure;
+
+            // Usar el objeto conexión de la clase base
+            cmdAEjecutar.Connection = _conexionBD;
+
+            try
+            {
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iFK_IdServicio", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fK_IdServicio));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
+
+                if (_conexionBDEsCreadaLocal)
+                {
+                    // Abre una conexión.
+                    _conexionBD.Open();
+                }
+                else
+                {
+                    if (_conexionBDProvider.IsTransactionPending)
+                    {
+                        cmdAEjecutar.Transaction = _conexionBDProvider.CurrentTransaction;
+                    }
+                }
+
+                // Ejecuta la consulta.
+                _filasAfectadas = cmdAEjecutar.ExecuteNonQuery();
+                _codError = Int32.Parse(cmdAEjecutar.Parameters["@iCodError"].Value.ToString());
+
+                if (_codError != (int)ITCRError.AllOk)
+                {
+                    // Genera un error.
+                    throw new Exception("Procedimiento Almacenado 'pr_IATDiaServicio_EliminarTodo' reportó el error Codigo: " + _codError);
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Ocurrió un error. le hace Bubble a quien llama y encapsula el objeto Exception
+                throw new Exception("cIATDiaServicioBase::EliminarTodo::Ocurrió un error." + ex.Message, ex);
+            }
+            finally
+            {
+                if (_conexionBDEsCreadaLocal)
+                {
+                    // Cierra la conexión.
+                    _conexionBD.Close();
+                }
+                cmdAEjecutar.Dispose();
+            }
+        }
+
 
 		/// <summary>
 		/// Propósito: Método Eliminar para una llave primaria. Este método va a borrar una o más filas en la base de datos, basado en la llave primaria 'FK_IdServicio'

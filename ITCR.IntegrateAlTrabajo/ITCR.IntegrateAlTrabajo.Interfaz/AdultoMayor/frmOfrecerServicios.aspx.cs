@@ -72,15 +72,46 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             drpHora4.Items.Clear();
             drpHora5.Items.Clear();
             drpHora6.Items.Clear();
+
             for (int i = 4; i <= 8; i++)
             {
                 ListItem ItemTipoHora = new ListItem(i.ToString());
                 drpHora1.Items.Add(ItemTipoHora);
+            }
+
+            for (int i = 4; i <= 8; i++)
+            {
+                ListItem ItemTipoHora = new ListItem(i.ToString());
                 drpHora2.Items.Add(ItemTipoHora);
+            }
+
+            for (int i = 4; i <= 8; i++)
+            {
+                ListItem ItemTipoHora = new ListItem(i.ToString());
                 drpHora3.Items.Add(ItemTipoHora);
+            }
+
+            for (int i = 4; i <= 8; i++)
+            {
+                ListItem ItemTipoHora = new ListItem(i.ToString());
                 drpHora4.Items.Add(ItemTipoHora);
+            }
+
+            for (int i = 4; i <= 8; i++)
+            {
+                ListItem ItemTipoHora = new ListItem(i.ToString());
                 drpHora5.Items.Add(ItemTipoHora);
+            }
+
+            for (int i = 4; i <= 8; i++)
+            {
+                ListItem ItemTipoHora = new ListItem(i.ToString());
                 drpHora6.Items.Add(ItemTipoHora);
+            }
+
+            for (int i = 4; i <= 8; i++)
+            {
+                ListItem ItemTipoHora = new ListItem(i.ToString());
                 drpHora7.Items.Add(ItemTipoHora);
             }
         }

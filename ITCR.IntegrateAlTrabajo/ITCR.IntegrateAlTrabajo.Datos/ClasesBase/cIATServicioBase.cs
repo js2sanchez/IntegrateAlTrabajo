@@ -493,7 +493,6 @@ namespace ITCR.IntegrateAlTrabajo.Base
 			}
 		}
 
-
 		/// <summary>
 		/// Propósito: Método Eliminar para una llave primaria. Este método va a borrar una o más filas en la base de datos, basado en la llave primaria 'FK_IdCategoriaServicio'
 		/// </summary>

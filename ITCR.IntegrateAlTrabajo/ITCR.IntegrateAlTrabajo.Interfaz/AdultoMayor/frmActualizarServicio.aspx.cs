@@ -73,15 +73,46 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             drpHora4.Items.Clear();
             drpHora5.Items.Clear();
             drpHora6.Items.Clear();
+
             for (int i = 4; i <= 8; i++)
             {
                 ListItem ItemTipoHora = new ListItem(i.ToString());
                 drpHora1.Items.Add(ItemTipoHora);
+            }
+
+            for (int i = 4; i <= 8; i++)
+            {
+                ListItem ItemTipoHora = new ListItem(i.ToString());
                 drpHora2.Items.Add(ItemTipoHora);
+            }
+
+            for (int i = 4; i <= 8; i++)
+            {
+                ListItem ItemTipoHora = new ListItem(i.ToString());
                 drpHora3.Items.Add(ItemTipoHora);
+            }
+
+            for (int i = 4; i <= 8; i++)
+            {
+                ListItem ItemTipoHora = new ListItem(i.ToString());
                 drpHora4.Items.Add(ItemTipoHora);
+            }
+
+            for (int i = 4; i <= 8; i++)
+            {
+                ListItem ItemTipoHora = new ListItem(i.ToString());
                 drpHora5.Items.Add(ItemTipoHora);
+            }
+
+            for (int i = 4; i <= 8; i++)
+            {
+                ListItem ItemTipoHora = new ListItem(i.ToString());
                 drpHora6.Items.Add(ItemTipoHora);
+            }
+
+            for (int i = 4; i <= 8; i++)
+            {
+                ListItem ItemTipoHora = new ListItem(i.ToString());
                 drpHora7.Items.Add(ItemTipoHora);
             }
         }
@@ -111,7 +142,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 drpCategoriaServicio.SelectedValue = TablaServicios.Rows[0]["FK_IdCategoriaServicio"].ToString();
             }
 
-            //Cargar dias y horas
             cIATDiaServicioNegocios DiaServicio2 = new cIATDiaServicioNegocios(1, "A", 2, "B");
             DiaServicio2.FK_IdServicio = Int16.Parse(Session["IdServicio"].ToString());
 
@@ -123,38 +153,45 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 {
                     String NombreDia = TablaDiaServicio.Rows[i]["Nom_Dia"].ToString();
                     String CantHoras = TablaDiaServicio.Rows[i]["Can_Horas"].ToString();
-                    switch(NombreDia)
+
+                    switch (NombreDia)
                     {
                         case "L":
                             chkLunes.Checked = true;
                             drpHora1.SelectedValue = CantHoras;
+                            drpHora1.Enabled = true;
                             break;
                         case "K":
                             chkMartes.Checked = true;
                             drpHora2.SelectedValue = CantHoras;
+                            drpHora2.Enabled = true;
                             break;
                         case "M":
                             chkMiercoles.Checked = true;
                             drpHora3.SelectedValue = CantHoras;
+                            drpHora3.Enabled = true;
                             break;
                         case "J":
                             chkJueves.Checked = true;
                             drpHora4.SelectedValue = CantHoras;
+                            drpHora4.Enabled = true;
                             break;
                         case "V":
                             chkViernes.Checked = true;
                             drpHora5.SelectedValue = CantHoras;
+                            drpHora5.Enabled = true;
                             break;
                         case "S":
                             chkSabado.Checked = true;
                             drpHora6.SelectedValue = CantHoras;
+                            drpHora6.Enabled = true;
                             break;
                         case "D":
                             chkDomingo.Checked = true;
                             drpHora7.SelectedValue = CantHoras;
+                            drpHora7.Enabled = true;
                             break;
                     }
-
                 }
             }
         }
@@ -322,6 +359,9 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
                         Int16 IdServicio = Int16.Parse(Session["IdServicio"].ToString());
 
+                        DiaServicio.FK_IdServicio = IdServicio;
+                        DiaServicio.EliminarTodo();
+
                         if (chkLunes.Checked)
                         {
                             DiaServicio.Nom_Dia = "L";
@@ -379,7 +419,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                         }
 
                         string script = @"<script type='text/javascript'>
-                            NotificarNuevoServicio();
+                            NotificarActualizacionServicio();
                             </script>";
 
                         ScriptManager.RegisterStartupScript(this, typeof(Page), "Servicio", script, false);

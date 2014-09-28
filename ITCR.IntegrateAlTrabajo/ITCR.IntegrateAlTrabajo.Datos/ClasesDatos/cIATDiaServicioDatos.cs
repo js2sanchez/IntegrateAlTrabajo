@@ -99,6 +99,10 @@ namespace ITCR.IntegrateAlTrabajo.Datos
 			return base.Eliminar();
 		}
 
+        public bool EliminarTodo()
+        {
+            return base.EliminarTodo();
+        }
 
 		/// <summary>
 		/// Propósito: Método SELECT. Este método hace Select de una fila existente en la base de datos, basado en la llave primaria.
