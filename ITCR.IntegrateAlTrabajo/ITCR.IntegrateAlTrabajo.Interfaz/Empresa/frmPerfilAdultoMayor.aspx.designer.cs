@@ -40,15 +40,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
         protected global::System.Web.UI.WebControls.Label lblDatosPersonales;
         
         /// <summary>
-        /// PanelEditarDatosPersonales control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelEditarDatosPersonales;
-        
-        /// <summary>
         /// lblNombre control.
         /// </summary>
         /// <remarks>
@@ -283,15 +274,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
         protected global::System.Web.UI.WebControls.Label lblEstudios;
         
         /// <summary>
-        /// PanelEditarEstudios control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelEditarEstudios;
-        
-        /// <summary>
         /// dgEstudios control.
         /// </summary>
         /// <remarks>
@@ -317,24 +299,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblExperienciasLaborales;
-        
-        /// <summary>
-        /// Panel1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
-        
-        /// <summary>
-        /// PanelBotonEditarExperienciasLaborales control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelBotonEditarExperienciasLaborales;
         
         /// <summary>
         /// dgExperienciasLaborales control.
@@ -382,15 +346,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
         protected global::System.Web.UI.WebControls.CheckBoxList chkIdiomas;
         
         /// <summary>
-        /// PanelIdiomas control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelIdiomas;
-        
-        /// <summary>
         /// Panel2 control.
         /// </summary>
         /// <remarks>
@@ -434,14 +389,5 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPasatiempo;
-        
-        /// <summary>
-        /// PanelPasatiempoFavorito control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelPasatiempoFavorito;
     }
 }

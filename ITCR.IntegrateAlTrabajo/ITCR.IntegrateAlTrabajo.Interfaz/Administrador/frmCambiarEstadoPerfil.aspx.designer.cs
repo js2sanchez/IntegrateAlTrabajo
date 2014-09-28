@@ -13,6 +13,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador {
     public partial class frmCambiarEstadoPerfil {
         
         /// <summary>
+        /// ScriptManagerMain control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.ScriptManager ScriptManagerMain;
+        
+        /// <summary>
         /// lblActivarDesactivarEstado control.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,24 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblActivarDesactivarEstado;
+        
+        /// <summary>
+        /// PanelBotonActualizar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelBotonActualizar;
+        
+        /// <summary>
+        /// btnGuardarEstado control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnGuardarEstado;
         
         /// <summary>
         /// lblAdultosMayores control.
@@ -74,14 +101,5 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DataGrid dgPerfilesEmpresas;
-        
-        /// <summary>
-        /// btnGuardarEstado control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardarEstado;
     }
 }

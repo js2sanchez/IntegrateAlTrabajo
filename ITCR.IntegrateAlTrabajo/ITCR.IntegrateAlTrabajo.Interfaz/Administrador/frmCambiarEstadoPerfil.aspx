@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMaestraAdministrador.Master" AutoEventWireup="true" CodeBehind="frmCambiarEstadoPerfil.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.Administrador.frmCambiarEstadoPerfil" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <link rel="stylesheet" href="../Styles/bootstrap.min.css" />
     <style type="text/css">
         .style3
         {
@@ -34,9 +35,52 @@
         .style12
         {
     }
+        .auto-style1 {
+            width: 15px;
+            height: 24px;
+        }
+        .auto-style2 {
+            height: 24px;
+        }
+        .auto-style3 {
+            width: 250px;
+            height: 24px;
+        }
+        .auto-style4 {
+            width: 20px;
+            height: 24px;
+        }
+        .auto-style5 {
+            width: 15px;
+            height: 21px;
+        }
+        .auto-style6 {
+            height: 21px;
+        }
+        .auto-style7 {
+            width: 250px;
+            height: 21px;
+        }
+        .auto-style8 {
+            width: 20px;
+            height: 21px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:ScriptManager ID="ScriptManagerMain" runat="server" EnablePageMethods="true"
+        ScriptMode="Release" LoadScriptsBeforeUI="true">
+    </asp:ScriptManager>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/bootbox.js"></script>  
+    <script type="text/javascript">
+        function cambioEstado() {
+            bootbox.alert("Los cambios sobre los estados de los perfiles se aplicaron correctamente.");
+        }
+
+    </script>
     <table class="style3">
         <tr>
             <td class="style8">
@@ -71,20 +115,40 @@
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style8">
+            <td class="auto-style1">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style2">
                 &nbsp;</td>
-            <td class="style6">
+            <td class="auto-style3">
                 &nbsp;</td>
-            <td class="style7">
+            <td class="auto-style4">
                 &nbsp;</td>
-            <td class="style12">
+            <td class="auto-style2">
                 &nbsp;</td>
-            <td class="style6">
+            <td class="auto-style3">
                 &nbsp;</td>
-            <td class="style8">
+            <td class="auto-style1">
                 &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="auto-style1">
+                </td>
+            <td class="auto-style2">
+                </td>
+            <td class="auto-style3">
+                </td>
+            <td class="auto-style4">
+                </td>
+            <td class="auto-style2">
+                </td>
+            <td class="auto-style3">
+                                <asp:Panel ID="PanelBotonActualizar" runat="server" HorizontalAlign="Right" 
+                                    Width="441px">
+                                    <asp:Button ID="btnGuardarEstado" runat="server" CssClass="Boton" onclick="btnGuardarEstado_Click" Text="Guardar" />
+                                </asp:Panel>
+                </td>
+            <td class="auto-style1">
+                </td>
         </tr>
         <tr>
             <td class="style8">
@@ -110,12 +174,12 @@
                         <asp:DataGrid ID="dgPerfilesAdultosMayores" runat="server" AutoGenerateColumns="False" 
                                             BackColor="WhiteSmoke" 
     BorderStyle="Solid" CssClass="GridMantenimiento" 
-                                            Font-Names="Verdana" Font-Size="Smaller" 
+                                            Font-Names="Century Gothic" Font-Size="Small" 
                         ForeColor="Black" Height="19px" 
-                                            Width="100%" 
-                            onitemcommand="dgPerfilesAdultosMayores_ItemCommand">
+                                            Width="99%" 
+                            onitemcommand="dgPerfilesAdultosMayores_ItemCommand" TabIndex="4">
                             <AlternatingItemStyle BackColor="Gainsboro" />
-                            <HeaderStyle BackColor="Navy" Font-Bold="True" Font-Names="Verdana" 
+                            <HeaderStyle BackColor="Navy" Font-Bold="True" Font-Names="Century Gothic" 
                                                 Font-Size="Larger" ForeColor="White" 
                             HorizontalAlign="Center" />
                             <Columns>
@@ -143,6 +207,11 @@
                                 <asp:BoundColumn HeaderText="Contraseña" Visible="False"></asp:BoundColumn>
                                 <asp:BoundColumn HeaderText="Indicio" Visible="False"></asp:BoundColumn>
                                 <asp:BoundColumn HeaderText="Tipo Usuario" Visible="False"></asp:BoundColumn>
+                                <asp:TemplateColumn HeaderText="Ver perfil">
+                                    <ItemTemplate>
+                                        <asp:ImageButton ID="imgbtn_verperfilpersona" runat="server" CommandName="PerfilPersona" Height="30px" ImageAlign="Right" ImageUrl="~/Multimedia/icono-buscar.jpg" />
+                                    </ItemTemplate>
+                                </asp:TemplateColumn>
                             </Columns>
                         </asp:DataGrid>
                     </asp:Panel>
@@ -190,11 +259,11 @@
                         <asp:DataGrid ID="dgPerfilesEmpresas" runat="server" AutoGenerateColumns="False" 
                                             BackColor="WhiteSmoke" 
     BorderStyle="Solid" CssClass="GridMantenimiento" 
-                                            Font-Names="Verdana" Font-Size="Smaller" 
+                                            Font-Names="Century Gothic" Font-Size="Small" 
                         ForeColor="Black" Height="19px" 
-                                            Width="100%">
+                                            Width="99%">
                             <AlternatingItemStyle BackColor="Gainsboro" />
-                            <HeaderStyle BackColor="Navy" Font-Bold="True" Font-Names="Verdana" 
+                            <HeaderStyle BackColor="Navy" Font-Bold="True" Font-Names="Century Gothic" 
                                                 Font-Size="Larger" ForeColor="White" 
                             HorizontalAlign="Center" />
                             <Columns>
@@ -220,6 +289,11 @@
                                 <asp:BoundColumn HeaderText="Indicio Contraseña" Visible="False">
                                 </asp:BoundColumn>
                                 <asp:BoundColumn HeaderText="Tipo Usuario" Visible="False"></asp:BoundColumn>
+                                <asp:TemplateColumn HeaderText="Ver perfil">
+                                    <ItemTemplate>
+                                        <asp:ImageButton ID="imgbtn_verperfilempresa" runat="server" CommandName="PerfilEmpresa" Height="30px" ImageAlign="Right" ImageUrl="~/Multimedia/icono-buscar.jpg" />
+                                    </ItemTemplate>
+                                </asp:TemplateColumn>
                             </Columns>
                         </asp:DataGrid>
                     </asp:Panel>
@@ -255,41 +329,7 @@
             <td class="style12">
                 &nbsp;</td>
             <td class="style6">
-                                                    <asp:Button ID="btnGuardarEstado" runat="server" Text="Guardar" 
-                                                        onclick="btnGuardarEstado_Click" />
-                                                </td>
-            <td class="style8">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style12">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style12">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style12">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style12">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
+                                                    &nbsp;</td>
             <td class="style8">
                 &nbsp;</td>
         </tr>

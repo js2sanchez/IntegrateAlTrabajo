@@ -7,126 +7,135 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
+namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
     
     
-    public partial class frmFiltrarOfertasTrabajo {
+    public partial class frmDatosServicio {
         
         /// <summary>
-        /// lblActualizarDatosPersonales control.
+        /// lblServicio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblActualizarDatosPersonales;
+        protected global::System.Web.UI.WebControls.Label lblServicio;
         
         /// <summary>
-        /// chk_tipo control.
+        /// PanelDatosServicio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chk_tipo;
+        protected global::System.Web.UI.WebControls.Panel PanelDatosServicio;
         
         /// <summary>
-        /// chk_Categoria control.
+        /// lblDatosServicio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chk_Categoria;
+        protected global::System.Web.UI.WebControls.Label lblDatosServicio;
         
         /// <summary>
-        /// chk_Provincia control.
+        /// lblNombre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBox chk_Provincia;
+        protected global::System.Web.UI.WebControls.Label lblNombre;
         
         /// <summary>
-        /// drpTipo control.
+        /// lblNombreDato control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpTipo;
+        protected global::System.Web.UI.WebControls.Label lblNombreDato;
         
         /// <summary>
-        /// drpCategoria control.
+        /// lblDescripcion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpCategoria;
+        protected global::System.Web.UI.WebControls.Label lblDescripcion;
         
         /// <summary>
-        /// drpprovincia control.
+        /// lblDescripcionDato control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drpprovincia;
+        protected global::System.Web.UI.WebControls.Label lblDescripcionDato;
         
         /// <summary>
-        /// PanelBotonBuscar control.
+        /// lblTipo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelBotonBuscar;
+        protected global::System.Web.UI.WebControls.Label lblTipo;
         
         /// <summary>
-        /// btn_buscar control.
+        /// lblTipoDato control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_buscar;
+        protected global::System.Web.UI.WebControls.Label lblTipoDato;
         
         /// <summary>
-        /// pnl_resultados control.
+        /// lblCategoria control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnl_resultados;
+        protected global::System.Web.UI.WebControls.Label lblCategoria;
         
         /// <summary>
-        /// pnl_resultado control.
+        /// lblCategoriaDato control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnl_resultado;
+        protected global::System.Web.UI.WebControls.Label lblCategoriaDato;
         
         /// <summary>
-        /// lbl_resultados control.
+        /// PanelDiasServicio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_resultados;
+        protected global::System.Web.UI.WebControls.Panel PanelDiasServicio;
         
         /// <summary>
-        /// dgResultados control.
+        /// lblHorasDias control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataGrid dgResultados;
+        protected global::System.Web.UI.WebControls.Label lblHorasDias;
+        
+        /// <summary>
+        /// dgDiasServicio control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataGrid dgDiasServicio;
     }
 }

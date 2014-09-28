@@ -230,17 +230,26 @@
                         </tr>
                         <tr>
                             <td class="style4">
+<<<<<<< HEAD
+                                </td>
+                            <td class="style5">
+=======
                                 &nbsp;
                             </td>
                             <td class="style11">
+>>>>>>> 6df13c329a8d59347af74cd41e48d40c2481e0f7
                                 <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
                             </td>
                             <td class="style5">
                                 <asp:Label ID="lblNombreDato" runat="server"></asp:Label>
                             </td>
                             <td class="style4">
+<<<<<<< HEAD
+                                </td>
+=======
                                 &nbsp;
                             </td>
+>>>>>>> 6df13c329a8d59347af74cd41e48d40c2481e0f7
                         </tr>
                         <tr>
                             <td class="style4">
