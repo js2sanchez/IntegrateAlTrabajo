@@ -4,7 +4,7 @@
 // Proyecto: Intégrate al trabajo
 // Descripción: Clase de acceso a datos para tabla 'IATOpinion'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: martes 27 de agosto de 2013, 09:45:39 p.m.
+// Fecha: Sunday, September 28, 2014, 12:01:04 AM
 // Dado que esta clase implementa IDispose, las clases derivadas no deben hacerlo.
 ///////////////////////////////////////////////////////////////////////////
 #endregion
@@ -43,6 +43,7 @@ namespace ITCR.IntegrateAlTrabajo.Datos
 		/// <UL>
 		///		 <LI>Detalle</LI>
 		///		 <LI>FK_IdUsuario</LI>
+		///		 <LI>Ind_PAM</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
@@ -66,6 +67,7 @@ namespace ITCR.IntegrateAlTrabajo.Datos
 		///		 <LI>Id_Opinion</LI>
 		///		 <LI>Detalle</LI>
 		///		 <LI>FK_IdUsuario</LI>
+		///		 <LI>Ind_PAM</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
@@ -113,6 +115,7 @@ namespace ITCR.IntegrateAlTrabajo.Datos
 		///		 <LI>Id_Opinion</LI>
 		///		 <LI>Detalle</LI>
 		///		 <LI>FK_IdUsuario</LI>
+		///		 <LI>Ind_PAM</LI>
 		/// </UL>
 		/// Llena todas las propiedades que corresponden al campo en tabla con el valor de la fila seleccionada.
 		/// </remarks>
@@ -148,6 +151,7 @@ namespace ITCR.IntegrateAlTrabajo.Datos
 		///		 <LI>Id_Opinion</LI>
 		///		 <LI>Detalle</LI>
 		///		 <LI>FK_IdUsuario</LI>
+		///		 <LI>Ind_PAM</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>

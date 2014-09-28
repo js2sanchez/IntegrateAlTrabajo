@@ -43,6 +43,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                 cIATOpinionNegocios Opinion = new cIATOpinionNegocios(1, "A", 2, "B");
 
                 Opinion.Detalle = txtOpinion.Text;
+                Opinion.Ind_PAM = false;
                 Opinion.FK_IdUsuario = obtenerIdUsuario(Session["Nombre_Usuario"].ToString());
 
                 Opinion.Insertar();
