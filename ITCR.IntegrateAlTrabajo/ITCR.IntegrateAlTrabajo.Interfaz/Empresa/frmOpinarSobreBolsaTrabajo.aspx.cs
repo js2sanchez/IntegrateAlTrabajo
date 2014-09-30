@@ -44,6 +44,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
 
                 Opinion.Detalle = txtOpinion.Text;
                 Opinion.Ind_PAM = false;
+                Opinion.Ind_Seguimiento = false;
                 Opinion.FK_IdUsuario = obtenerIdUsuario(Session["Nombre_Usuario"].ToString());
 
                 Opinion.Insertar();

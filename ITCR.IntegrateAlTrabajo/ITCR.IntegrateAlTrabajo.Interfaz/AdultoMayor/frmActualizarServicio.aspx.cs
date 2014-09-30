@@ -418,6 +418,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                             DiaServicio.Insertar();
                         }
 
+                        Session["IdServicio"] = Servicio.Id_Servicio;
+
                         string script = @"<script type='text/javascript'>
                             NotificarActualizacionServicio();
                             </script>";

@@ -200,7 +200,7 @@
                         label: "Aceptar",
                         className: "btn-primary",
                         callback: function () {
-                            location.href = "/AdultoMayor/frmConsultarServiciosOfrecidos.aspx";
+                            location.href = "/AdultoMayor/frmDetalleServicio.aspx";
                         }
                     }
                 }

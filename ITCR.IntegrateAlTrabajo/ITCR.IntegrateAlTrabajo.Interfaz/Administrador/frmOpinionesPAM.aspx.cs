@@ -37,6 +37,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador
         private void cargarDataGridViewOpiniones()
         {
             cIATOpinionNegocios Opinion = new cIATOpinionNegocios(1, "A", 2, "B");
+            Opinion.Ind_PAM = true;
 
             DataTable TablaOpinion = Opinion.Buscar();
 
