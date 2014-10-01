@@ -225,6 +225,18 @@
                         </tr>
                         <tr>
                             <td class="style16">
+                                <asp:Label ID="Label3" runat="server" Text="Estado"></asp:Label>
+                            </td>
+                            <td class="style5">
+                                <asp:Label ID="lblEstado" runat="server" Width="250px">
+                                </asp:Label>
+                            </td>
+                            <td class="style11">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style16">
                                 <asp:Label ID="lblRequisitos" runat="server" Text="Requisitos"></asp:Label>
                             </td>
                             <td colspan="2">

@@ -97,6 +97,40 @@
             });
         }
 
+        function OnSuccess(response) {
+            custom_alert("El proceso de eliminación se llevó a cabo correctamente.");
+        }
+        function OnError(error) {
+            custom_alert(error);
+        }
+
+        function eliminarFila(id, rowindex) {
+            var tabla = document.getElementById(id);
+            tabla.deleteRow(rowindex + 1);
+        }
+
+        function eliminarRequisito(index) {
+            bootbox.dialog({
+                closeButton: false,
+                title: false,
+                message: "¿Está seguro que desea eliminar este requisito?",
+                buttons: {
+                    success: {
+                        label: "Sí, quiero eliminarlo",
+                        className: "btn-primary",
+                        callback: function () {
+                            eliminarFila("<%= dgRequisitos.ClientID %>", index);
+                            PageMethods.eliminarRequisito(index, OnSuccess, OnError);
+                        }
+                    },
+                    main: {
+                        label: "No, quiero mantenerlo",
+                        className: "btn-primary"
+                    }
+                }
+            });
+        }
+
         function retornar() {
             custom_alert('Ha creado la oferta satisfactoriamente.');
             location.href = "/Empresa/frmOfertasTrabajo.aspx";
@@ -175,7 +209,7 @@
                                 <asp:Label ID="lblNombrePuesto" runat="server" Text="Nombre del puesto"></asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtNombrePuesto" runat="server" Width="99%"></asp:TextBox>
+                                <asp:TextBox ID="txtNombrePuesto" runat="server" Width="99%" placeholder="Escriba el nombre del puesto de la oferta de trabajo"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="rfvNombrePuesto" runat="server" ControlToValidate="txtNombrePuesto"
                                     ErrorMessage="El nombre del puesto es un dato requerido." ForeColor="Red" ValidationGroup="gvOfertaTrabajo">*</asp:RequiredFieldValidator>
                             </td>
@@ -222,9 +256,7 @@
                                 <asp:Label ID="lblRequisitos" runat="server" Text="Requisito"></asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtRequisitos" runat="server" Width="99%"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="rfvRequisitos" runat="server" ControlToValidate="txtRequisitos"
-                                    ErrorMessage="Los requisitos son datos requeridos." ForeColor="Red" ValidationGroup="gvOfertaTrabajo">*</asp:RequiredFieldValidator>
+                                <asp:TextBox ID="txtRequisitos" runat="server" Width="99%" placeholder="Escriba un requisito y luego presione agregar"></asp:TextBox>
                             </td>
                             <td align="right">
                                 <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Right">

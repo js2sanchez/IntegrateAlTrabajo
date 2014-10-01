@@ -83,23 +83,6 @@
             <td class="style13">
                 &nbsp;</td>
             <td class="style6">
-                <asp:Button ID="btnCrear" runat="server" Text="Crear nueva oferta de trabajo" CssClass="Boton" OnClick="btnCrear_Click"/>
-                </td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style13">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style13">
-                &nbsp;</td>
-            <td class="style6">
                 &nbsp;</td>
             <td class="style4">
                 &nbsp;</td>
@@ -108,7 +91,8 @@
             <td class="style4">
                 &nbsp;</td>
             <td class="style13" colspan="5">
-                <asp:Panel ID="PanelTablaDatos" runat="server">
+            <asp:Label runat="server" ID="lblNoOfertas" Text="No hay ofertas disponibles"></asp:Label>
+                <asp:Panel ID="PanelTablaDatos" runat="server">                
                     <asp:DataGrid ID="dgOfertaTrabajo" runat="server" AutoGenerateColumns="False" 
                                             BackColor="WhiteSmoke" BorderStyle="Solid" CssClass="GridMantenimiento" 
                                             Font-Names="Verdana" Font-Size="Smaller" 
@@ -140,9 +124,11 @@
                             <asp:BoundColumn HeaderText="Categoría"></asp:BoundColumn>
                             <asp:BoundColumn DataField="FK_IdEmpresa" HeaderText="IdEmpresa" 
                                 Visible="False"></asp:BoundColumn>
-                            <asp:TemplateColumn>
+                            <asp:TemplateColumn HeaderText="Ver más detalles">
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="ibtnDetalles" Text="Ver más detalles" runat="server" CommandName="Detalles"/>
+                                    <asp:ImageButton ID="ibtnDetalles" ImageUrl="~/Multimedia/icono-buscar.jpg" Height="30px" Width="30px" 
+                                    Style="display: block; margin: 0 auto;" 
+                                    runat="server" CommandName="Detalles"/>
                                 </ItemTemplate>
                             </asp:TemplateColumn>
                         </Columns>

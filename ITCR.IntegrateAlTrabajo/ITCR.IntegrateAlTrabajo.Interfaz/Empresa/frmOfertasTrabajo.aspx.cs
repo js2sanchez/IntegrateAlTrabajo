@@ -76,6 +76,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                     Fila.Cells[9].Text = obtenerNombreCategoriaOfertaTrabajo(Int16.Parse(Fila.Cells[8].Text));
                 }
                 PanelTablaDatos.Visible = true;
+                lblNoOfertas.Visible = false;
             }
         }
 
@@ -122,9 +123,5 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             }
         }
 
-        protected void btnCrear_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("/Empresa/frmPublicarOfertaTrabajo.aspx");
-        }
     }    
 }

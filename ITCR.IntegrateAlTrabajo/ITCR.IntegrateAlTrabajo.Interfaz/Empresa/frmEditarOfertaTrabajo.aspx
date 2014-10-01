@@ -1,8 +1,10 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMaestraEmpresa.Master" AutoEventWireup="true" CodeBehind="frmEditarOfertaTrabajo.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.Empresa.frmEditarOfertaTrabajo" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMaestraEmpresa.Master" AutoEventWireup="true"
+    CodeBehind="frmEditarOfertaTrabajo.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.Empresa.frmEditarOfertaTrabajo" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-    <link rel="stylesheet" href="../Styles/bootstrap.min.css" /> 
+    <link rel="stylesheet" href="../Styles/bootstrap.min.css" />
     <style type="text/css">
-        body   
+        body
         {
             background: #b6b7bc;
             font-family: Century Gothic;
@@ -12,19 +14,19 @@
         }
         table
         {
-            font-family:Century Gothic;
-            font-size:15px;
-            text-align:justify;
+            font-family: Century Gothic;
+            font-size: 15px;
+            text-align: justify;
             border-spacing: 8px;
             border-collapse: separate;
         }
         label
         {
-            font-weight:normal;
+            font-weight: normal;
         }
         input
         {
-            font-weight:normal;
+            font-weight: normal;
         }
         .style3
         {
@@ -80,7 +82,7 @@
     </asp:ScriptManager>
     <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="../js/bootbox.js"></script> 
+    <script type="text/javascript" src="../js/bootbox.js"></script>
     <script type="text/javascript">
         function custom_alert(msg) {
             bootbox.dialog({
@@ -95,9 +97,64 @@
             });
         }
 
+        function eliminarFila(id, rowindex) {
+            var tabla = document.getElementById(id);
+            tabla.deleteRow(rowindex + 1);
+        }
+
+        function OnSuccess(response) {
+            custom_alert("El proceso de eliminación se llevó a cabo correctamente.");
+        }
+        function OnError(error) {
+            custom_alert(error);
+        }
+
+        function endConfirmation() {
+            bootbox.dialog({
+                closeButton: false,
+                title: false,
+                message: "¿Está seguro que desea salir sin guardar?",
+                buttons: {
+                    success: {
+                        label: "Sí, estoy seguro",
+                        className: "btn-primary",
+                        callback: function () {
+                            location.href = "/Empresa/frmDetallesOferta.aspx";
+                        }
+                    },
+                    main: {
+                        label: "No, deseo continuar editando la oferta",
+                        className: "btn-primary"
+                    }
+                }
+            });
+        }
+
+        function eliminarRequisito(index) {
+            bootbox.dialog({
+                closeButton: false,
+                title: false,
+                message: "¿Está seguro que desea eliminar este requisito?",
+                buttons: {
+                    success: {
+                        label: "Sí, quiero eliminarlo",
+                        className: "btn-primary",
+                        callback: function () {
+                            eliminarFila("<%= dgRequisitos.ClientID %>", index);
+                            PageMethods.eliminarRequisito(index, OnSuccess, OnError);
+                        }
+                    },
+                    main: {
+                        label: "No, quiero mantenerlo",
+                        className: "btn-primary"
+                    }
+                }
+            });
+        }
+
         function retornar() {
             custom_alert('Ha actualizado la oferta satisfactoriamente.');
-            location.href = "/Empresa/frmOfertasTrabajo.aspx";
+            location.href = "/Empresa/frmDetallesOferta.aspx";
         }
     </script>
     <table class="style3">
@@ -173,7 +230,7 @@
                                 <asp:Label ID="lblNombrePuesto" runat="server" Text="Nombre del puesto"></asp:Label>
                             </td>
                             <td>
-                                <asp:TextBox ID="txtNombrePuesto" runat="server" Width="99%"></asp:TextBox>
+                                <asp:TextBox ID="txtNombrePuesto" runat="server" Width="99%" placeholder="Escriba el nombre del puesto"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="rfvNombrePuesto" runat="server" ControlToValidate="txtNombrePuesto"
                                     ErrorMessage="El nombre del puesto es un dato requerido." ForeColor="Red" ValidationGroup="gvOfertaTrabajo">*</asp:RequiredFieldValidator>
                             </td>
@@ -217,6 +274,17 @@
                         </tr>
                         <tr>
                             <td class="style16">
+                                <asp:Label ID="Label1" runat="server" Text="Estado"></asp:Label>
+                            </td>
+                            <td class="style5">
+                                <asp:CheckBox runat="server" ID="ckbEstado" Text=" Activa (Seleccione la casilla si la oferta está activa.)" />
+                            </td>
+                            <td class="style11">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style16">
                                 <asp:Label ID="lblRequisitos" runat="server" Text="Requisito"></asp:Label>
                             </td>
                             <td>
@@ -224,8 +292,8 @@
                             </td>
                             <td align="right">
                                 <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Right">
-                                    <asp:Button ID="btnAgregarRequisito" runat="server" CssClass="Boton" 
-                                        Text="Agregar" onclick="btnAgregarRequisito_Click"/>
+                                    <asp:Button ID="btnAgregarRequisito" runat="server" CssClass="Boton" Text="Agregar"
+                                        OnClick="btnAgregarRequisito_Click" />
                                 </asp:Panel>
                             </td>
                         </tr>
@@ -237,17 +305,19 @@
                                 <asp:Panel ID="PanelTablaDatos" runat="server">
                                     <asp:DataGrid ID="dgRequisitos" runat="server" AutoGenerateColumns="False" BackColor="WhiteSmoke"
                                         BorderStyle="Solid" CssClass="GridMantenimiento" Font-Names="Verdana" Font-Size="Smaller"
-                                        ForeColor="Black" Height="19px" Width="99%" onitemcommand="dgRequisitos_ItemCommand">
+                                        ForeColor="Black" Height="19px" Width="99%" OnItemCommand="dgRequisitos_ItemCommand">
                                         <AlternatingItemStyle BackColor="Gainsboro" />
                                         <HeaderStyle BackColor="Navy" Font-Bold="True" Font-Names="Verdana" Font-Size="Larger"
                                             ForeColor="White" HorizontalAlign="Center" />
                                         <Columns>
-                                        <asp:BoundColumn HeaderText="Id_Requisito" DataField="Id_RequisitoOfertaTrabajo" Visible="false"></asp:BoundColumn>
+                                            <asp:BoundColumn HeaderText="Id_Requisito" DataField="Id_RequisitoOfertaTrabajo"
+                                                Visible="false"></asp:BoundColumn>
                                             <asp:BoundColumn HeaderText="Requisito" DataField="Detalle"></asp:BoundColumn>
                                             <asp:TemplateColumn>
                                                 <ItemTemplate>
                                                     <asp:ImageButton ID="ibtnEliminar" runat="server" CommandName="Eliminar" Height="30px"
-                                                    ImageUrl="~/Multimedia/icono-eliminar.jpg" Width="30px" Style="display: block; margin: 0 auto" />
+                                                        ImageUrl="~/Multimedia/icono-eliminar.jpg" Width="30px" Style="display: block;
+                                                        margin: 0 auto" />
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
                                         </Columns>
@@ -272,9 +342,9 @@
                         <tr>
                             <td class="style5" colspan="3" align="right">
                                 <asp:Panel ID="PanelBotones" runat="server" HorizontalAlign="Right">
-                                    <asp:Button ID="btnSalir" runat="server" CssClass="Boton"
-                                        Text="Salir sin guardar" onclick="btnSalir_Click" />
-                                        &nbsp;&nbsp;
+                                    <asp:Button ID="btnSalir" runat="server" CssClass="Boton" Text="Salir sin guardar"
+                                        OnClick="btnSalir_Click" />
+                                    &nbsp;&nbsp;
                                     <asp:Button ID="btnActualizar" runat="server" CssClass="Boton" OnClick="btnActualizar_Click"
                                         Text="Actualizar oferta de trabajo" />
                                 </asp:Panel>

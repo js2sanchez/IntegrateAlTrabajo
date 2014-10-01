@@ -22,13 +22,13 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
         protected global::System.Web.UI.WebControls.Label lblOfertaTrabajo;
         
         /// <summary>
-        /// Control btnCrear.
+        /// Control lblNoOfertas.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCrear;
+        protected global::System.Web.UI.WebControls.Label lblNoOfertas;
         
         /// <summary>
         /// Control PanelTablaDatos.
