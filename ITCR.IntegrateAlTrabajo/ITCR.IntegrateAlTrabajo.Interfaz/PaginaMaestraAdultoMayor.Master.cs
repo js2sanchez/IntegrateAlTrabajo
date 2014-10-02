@@ -22,7 +22,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz
             {
                 FormsAuthentication.SignOut();
                 Session.Abandon();
-                Response.Redirect("/Autenticacion/frmAutenticacion.aspx");
+                Response.Redirect("/HOME.aspx");
             }
         }
     }

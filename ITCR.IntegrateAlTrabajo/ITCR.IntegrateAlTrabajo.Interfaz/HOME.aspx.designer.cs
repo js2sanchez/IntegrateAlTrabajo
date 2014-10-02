@@ -7,10 +7,10 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace ITCR.IntegrateAlTrabajo.Interfaz.Autenticacion {
+namespace ITCR.IntegrateAlTrabajo.Interfaz {
     
     
-    public partial class frmAutenticacion {
+    public partial class HOME {
         
         /// <summary>
         /// Control form1.

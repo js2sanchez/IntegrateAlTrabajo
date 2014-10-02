@@ -8,9 +8,9 @@ using System.Data;
 using ITCR.IntegrateAlTrabajo.Negocios;
 using ITCR.IntegrateAlTrabajo.Datos;
 
-namespace ITCR.IntegrateAlTrabajo.Interfaz.Autenticacion
+namespace ITCR.IntegrateAlTrabajo.Interfaz
 {
-    public partial class frmAutenticacion : System.Web.UI.Page
+    public partial class HOME : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

@@ -220,7 +220,7 @@
                                             </td>
                                             <td class="style32">
                                                 <asp:TextBox ID="txtPuesto" runat="server" Height="26px" Width="414px" ToolTip="Ejemplo: Asistente de Mantenimiento"
-                                                    onblur="this.placeholder = 'Escriba el puesto aquí'" onfocus="this.placeholder = ''"
+                                                    onblur="this.placeholder = 'Escriba el puesto aquí'" onfocus="this.placeholder = ''" TabIndex="1"
                                                     placeholder="Escriba el puesto aquí" MaxLength="50"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="rfvPuesto" runat="server" ControlToValidate="txtPuesto"
                                                     ErrorMessage="El puesto es un dato requerido." ForeColor="Red" ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
@@ -232,7 +232,7 @@
                                             </td>
                                             <td class="style32">
                                                 <asp:TextBox ID="txtEmpresa" runat="server" Width="413px" ToolTip="Ejemplo: Ministerio de Obras Públicas y Transporte"
-                                                    onblur="this.placeholder = 'Escriba el nombre de la empresa o institución aquí'"
+                                                    onblur="this.placeholder = 'Escriba el nombre de la empresa o institución aquí'" TabIndex="2"
                                                     onfocus="this.placeholder = ''" placeholder="Escriba el nombre de la empresa o institución aquí"
                                                     MaxLength="60"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="rfvEmpresa" runat="server" ControlToValidate="txtEmpresa"

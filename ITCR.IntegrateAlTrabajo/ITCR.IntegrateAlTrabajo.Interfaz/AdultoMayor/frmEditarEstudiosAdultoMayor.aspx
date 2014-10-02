@@ -226,7 +226,7 @@
                                             </td>
                                             <td class="style33">
                                                 <asp:TextBox ID="txtTituloEstudio" runat="server" Width="402px" ToolTip="Ejemplo: Bachiller en Educación Media"
-                                                    onblur="this.placeholder = 'Escriba su título aquí'" onfocus="this.placeholder = ''"
+                                                    onblur="this.placeholder = 'Escriba su título aquí'" onfocus="this.placeholder = ''" TabIndex="1"
                                                     placeholder="Escriba su título aquí" MaxLength="50"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="rfvTituloEstudio" runat="server" ControlToValidate="txtTituloEstudio"
                                                     ErrorMessage="El título es un dato requerido." ForeColor="Red" ValidationGroup="gvEstudios">*</asp:RequiredFieldValidator>
@@ -241,7 +241,7 @@
                                             </td>
                                             <td class="style33">
                                                 <asp:TextBox ID="txtInstitucionEstudio" runat="server" Width="403px" ToolTip="Ejemplo: Colegio Técnico Profesional de Pococí"
-                                                    onblur="this.placeholder = 'Escriba el nombre de la institución aquí'" onfocus="this.placeholder = ''"
+                                                    onblur="this.placeholder = 'Escriba el nombre de la institución aquí'" onfocus="this.placeholder = ''" TabIndex="2"
                                                     placeholder="Escriba el nombre de la institución aquí" MaxLength="60"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="rfvInstitucionEstudio" runat="server" ControlToValidate="txtInstitucionEstudio"
                                                     ErrorMessage="La institución es un dato requerido." ForeColor="Red" ValidationGroup="gvEstudios">*</asp:RequiredFieldValidator>

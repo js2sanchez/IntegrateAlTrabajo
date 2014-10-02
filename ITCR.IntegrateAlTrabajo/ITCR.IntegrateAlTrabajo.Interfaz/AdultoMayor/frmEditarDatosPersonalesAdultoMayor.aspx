@@ -155,7 +155,7 @@
                                 <asp:Label ID="lblTelefonoCelular" runat="server" Text="Teléfono secundario"></asp:Label>
                             </td>
                             <td class="style6">
-                                <asp:TextBox ID="txtTelefonoCelular" runat="server" MaxLength="8"
+                                <asp:TextBox ID="txtTelefonoCelular" runat="server" MaxLength="8" TabIndex="2"
                                 onblur="this.placeholder = 'Opcionalmente otro teléfono'" 
                                 onfocus="this.placeholder = ''" placeholder="Opcionalmente otro teléfono"
                                 ToolTip="Ejemplo: 87721144 (Por favor, no use guiones)" Width="230px"  
@@ -180,7 +180,7 @@
                                 <asp:Label ID="lblCorreoElectronico" runat="server" Text="Correo electrónico"></asp:Label>
                             </td>
                             <td class="style6">
-                                <asp:TextBox ID="txtCorreoElectronico" runat="server" 
+                                <asp:TextBox ID="txtCorreoElectronico" runat="server" TabIndex="3"
                                 onblur="this.placeholder = 'Escriba su correo electrónico aquí'" 
                                 onfocus="this.placeholder = ''" placeholder="Escriba su correo electrónico aquí"  
                                 tooltip="Ejemplo: laura-fernandez@gmail.com"
@@ -271,7 +271,7 @@
                                 <asp:TextBox ID="txtTelefonoHabitacion" runat="server" MaxLength="8"
                                 onblur="this.placeholder = 'Escriba su teléfono aquí'" 
                                 onfocus="this.placeholder = ''" placeholder="Escriba su teléfono aquí" 
-                                tooltip="Ejemplo: 25517722 (Por favor, no use guiones)" TabIndex="12" Width="230px" 
+                                tooltip="Ejemplo: 25517722 (Por favor, no use guiones)" TabIndex="1" Width="230px" 
                                 ></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="rfvTelefonoHabitacion" runat="server" ControlToValidate="txtTelefonoHabitacion"
                                     ErrorMessage="El teléfono principal es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>

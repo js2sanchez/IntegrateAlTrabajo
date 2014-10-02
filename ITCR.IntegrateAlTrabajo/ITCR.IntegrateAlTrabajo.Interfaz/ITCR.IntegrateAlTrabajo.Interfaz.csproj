@@ -83,7 +83,7 @@
     <Content Include="AdultoMayor\frmOfrecerServicios.aspx" />
     <Content Include="AdultoMayor\frmOpinarSobreBolsaTrabajo.aspx" />
     <Content Include="AdultoMayor\frmRegistroAdultoMayor.aspx" />
-    <Content Include="Autenticacion\frmAutenticacion.aspx" />
+    <Content Include="HOME.aspx" />
     <Content Include="Empresa\frmConsultarPerfilEmpresa.aspx" />
     <Content Include="Empresa\frmDatosServicio.aspx" />
     <Content Include="Empresa\frmDetallesOferta.aspx" />
@@ -278,12 +278,12 @@
     <Compile Include="AdultoMayor\frmRegistroAdultoMayor.aspx.designer.cs">
       <DependentUpon>frmRegistroAdultoMayor.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Autenticacion\frmAutenticacion.aspx.cs">
-      <DependentUpon>frmAutenticacion.aspx</DependentUpon>
+    <Compile Include="HOME.aspx.cs">
+      <DependentUpon>HOME.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Autenticacion\frmAutenticacion.aspx.designer.cs">
-      <DependentUpon>frmAutenticacion.aspx</DependentUpon>
+    <Compile Include="HOME.aspx.designer.cs">
+      <DependentUpon>HOME.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

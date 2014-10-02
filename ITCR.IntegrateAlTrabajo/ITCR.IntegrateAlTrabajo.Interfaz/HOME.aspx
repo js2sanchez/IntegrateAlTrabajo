@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="frmAutenticacion.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.Autenticacion.frmAutenticacion" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HOME.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.HOME" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 

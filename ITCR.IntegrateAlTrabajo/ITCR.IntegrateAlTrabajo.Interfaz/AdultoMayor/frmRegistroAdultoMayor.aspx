@@ -254,7 +254,7 @@
                         label: "Volver a la página de autenticación",
                         className: "btn-primary",
                         callback: function () {
-                            location.href = "/Autenticacion/frmAutenticacion.aspx";
+                            location.href = "/HOME.aspx";
                         }
                     }
                 }
@@ -275,7 +275,7 @@
                         label: "Sí, estoy seguro",
                         className: "btn-primary",
                         callback: function () {
-                            location.href = "/Autenticacion/frmAutenticacion.aspx";
+                            location.href = "/HOME.aspx";
                         }
                     },
                     main: {
