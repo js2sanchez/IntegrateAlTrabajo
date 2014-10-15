@@ -7,180 +7,225 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ITCR.IntegrateAlTrabajo.Interfaz {
+namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador {
     
     
-    public partial class HOME {
+    public partial class frmCreditos {
         
         /// <summary>
-        /// form1 control.
+        /// lblCreditos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.Label lblCreditos;
         
         /// <summary>
-        /// PanelBanner2 control.
+        /// lblDesarrolladores control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelBanner2;
+        protected global::System.Web.UI.WebControls.Label lblDesarrolladores;
         
         /// <summary>
-        /// imgBanner2 control.
+        /// lblDesarrollador1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image imgBanner2;
+        protected global::System.Web.UI.WebControls.Label lblDesarrollador1;
         
         /// <summary>
-        /// PanelBarra control.
+        /// lblDesarrollador2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelBarra;
+        protected global::System.Web.UI.WebControls.Label lblDesarrollador2;
         
         /// <summary>
-        /// Panel1 control.
+        /// lblDesarrollador3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
+        protected global::System.Web.UI.WebControls.Label lblDesarrollador3;
         
         /// <summary>
-        /// lblAcercaBolsaTrabajo control.
+        /// lblDescripcion1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAcercaBolsaTrabajo;
+        protected global::System.Web.UI.WebControls.Label lblDescripcion1;
         
         /// <summary>
-        /// lblIniciarSesion control.
+        /// lblDiseñador control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblIniciarSesion;
+        protected global::System.Web.UI.WebControls.Label lblDiseñador;
         
         /// <summary>
-        /// lblTextoAcerca control.
+        /// lblDiseñadorGrafico control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTextoAcerca;
+        protected global::System.Web.UI.WebControls.Label lblDiseñadorGrafico;
         
         /// <summary>
-        /// lblTextoAcerca1 control.
+        /// lblDescripcion2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTextoAcerca1;
+        protected global::System.Web.UI.WebControls.Label lblDescripcion2;
         
         /// <summary>
-        /// lblTextoAcerca2 control.
+        /// lblAsistentes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTextoAcerca2;
+        protected global::System.Web.UI.WebControls.Label lblAsistentes;
         
         /// <summary>
-        /// Image1 control.
+        /// lblAsistente1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
+        protected global::System.Web.UI.WebControls.Label lblAsistente1;
         
         /// <summary>
-        /// lblNombreUsuario control.
+        /// lblAsistente2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombreUsuario;
+        protected global::System.Web.UI.WebControls.Label lblAsistente2;
         
         /// <summary>
-        /// txtNombreUsuario control.
+        /// lblDescripcion3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreUsuario;
+        protected global::System.Web.UI.WebControls.Label lblDescripcion3;
         
         /// <summary>
-        /// lblContraseña control.
+        /// lblProponentes control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblContraseña;
+        protected global::System.Web.UI.WebControls.Label lblProponentes;
         
         /// <summary>
-        /// txtContraseña control.
+        /// lblProponente1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtContraseña;
+        protected global::System.Web.UI.WebControls.Label lblProponente1;
         
         /// <summary>
-        /// PanelBotonIniciarSesion control.
+        /// lblProponente2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelBotonIniciarSesion;
+        protected global::System.Web.UI.WebControls.Label lblProponente2;
         
         /// <summary>
-        /// btnIniciarSesion control.
+        /// lblProponente3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnIniciarSesion;
+        protected global::System.Web.UI.WebControls.Label lblProponente3;
         
         /// <summary>
-        /// hlRegistrarPersona control.
+        /// lblPatrocinador control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlRegistrarPersona;
+        protected global::System.Web.UI.WebControls.Label lblPatrocinador;
         
         /// <summary>
-        /// hlRegistrarEmpresa control.
+        /// lblPatrocinadorDato control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HyperLink hlRegistrarEmpresa;
+        protected global::System.Web.UI.WebControls.Label lblPatrocinadorDato;
+        
+        /// <summary>
+        /// lblDescripcion4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDescripcion4;
+        
+        /// <summary>
+        /// lblAgradecimientos control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAgradecimientos;
+        
+        /// <summary>
+        /// lblAgradecimiento1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAgradecimiento1;
+        
+        /// <summary>
+        /// lblAgradecimiento2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAgradecimiento2;
+        
+        /// <summary>
+        /// lblDescripcion5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDescripcion5;
     }
 }
