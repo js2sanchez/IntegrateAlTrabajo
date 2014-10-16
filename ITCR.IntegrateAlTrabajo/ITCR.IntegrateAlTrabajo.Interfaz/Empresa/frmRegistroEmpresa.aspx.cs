@@ -27,7 +27,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
             }
             if (((int)Session["Proceso"]) == 1)
             {
-                Response.Redirect("/HOME.aspx");
+                Response.Redirect("/home.aspx");
             }
         }
 

@@ -43,7 +43,17 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             {
                 txtNombrePuesto.Text = TablaOfertaTrabajo.Rows[0]["Nom_Puesto"].ToString();
                 txtDescripciónPuesto.Text = TablaOfertaTrabajo.Rows[0]["Dsc_OfertaTrabajo"].ToString();
-                txtRequisitosPuesto.Text = TablaOfertaTrabajo.Rows[0]["Txt_Requisitos"].ToString();
+                cIATRequisitoOfertaTrabajoNegocios requisito = new cIATRequisitoOfertaTrabajoNegocios(1, "A", 2, "B");
+                requisito.FK_IdOfertaTrabajo = OfertaTrabajo.Id_OfertaTrabajo;
+                DataTable TablaRequisitos = requisito.Buscar();
+                txtRequisitosPuesto.Text = "";
+                if (TablaRequisitos.Rows.Count > 0)
+                {
+                    foreach (DataRow row in TablaRequisitos.Rows)
+                    {
+                        txtRequisitosPuesto.Text += row["Detalle"].ToString() + "\n";
+                    }
+                }
                 txtInformaciónAdicionalPuesto.Text = TablaOfertaTrabajo.Rows[0]["InformacionAdicional"].ToString();
                 IdCategoria = Int16.Parse(TablaOfertaTrabajo.Rows[0]["FK_IdCategoriaOfertaTrabajo"].ToString());
                 IdTipoOferta = Int16.Parse(TablaOfertaTrabajo.Rows[0]["FK_IdTipoOfertaTrabajo"].ToString());
@@ -151,11 +161,25 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             NuevoAplicantesOferta.FK_IdOfertaTrabajo = Int16.Parse(Convert.ToString(Session["Id_Oferta"]));
             NuevoAplicantesOferta.FK_IdPersona = IdPersona;
 
-            NuevoAplicantesOferta.Insertar();
+            DataTable Aplicaciones = NuevoAplicantesOferta.Buscar();
+
+            string msg = "Estimada Persona Adulta Mayor, usted ya aplicó a esta oferta de trabajo anteriormente.";
+
+            if (Aplicaciones.Rows.Count <= 0)
+            {
+                try
+                {
+                    NuevoAplicantesOferta.Insertar();
+                    msg = "Estimada Persona Adulta Mayor, se le notificará a la empresa respectiva que usted tiene interés en esta oferta de trabajo.";
+                }
+                catch 
+                {
+                    msg = "No se pudo establecer conexión con la base de datos. Por favor, inténtelo más tarde.";
+                }
+            }
 
             string script = @"<script type='text/javascript'>
-                            alert('La aplicación de la oferta de trabajo ha sido realizada correctamente.');
-                            </script>";
+                            custom_alert('"+msg+"');</script>";
 
             ScriptManager.RegisterStartupScript(this, typeof(Page), "Persona Adulta Mayor", script, false);
         }

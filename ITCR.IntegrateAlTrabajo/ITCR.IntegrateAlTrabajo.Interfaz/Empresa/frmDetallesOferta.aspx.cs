@@ -113,5 +113,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
             oferta.Id_OfertaTrabajo = id_oferta;
             oferta.Eliminar();
         }
+
+        protected void btnInteresados_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Empresa/frmInteresados.aspx");
+        }
     }
 }

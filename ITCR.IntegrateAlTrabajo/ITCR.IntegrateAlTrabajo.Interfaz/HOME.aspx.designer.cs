@@ -10,7 +10,7 @@
 namespace ITCR.IntegrateAlTrabajo.Interfaz {
     
     
-    public partial class HOME {
+    public partial class home {
         
         /// <summary>
         /// Control form1.

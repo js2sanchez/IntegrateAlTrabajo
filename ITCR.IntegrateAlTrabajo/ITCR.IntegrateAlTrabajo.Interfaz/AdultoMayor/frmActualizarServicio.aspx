@@ -183,7 +183,7 @@
                         label: "Aceptar",
                         className: "btn-primary",
                         callback: function () {
-                            location.href = "/HOME.aspx";
+                            location.href = "/home.aspx";
                         }
                     }
                 }

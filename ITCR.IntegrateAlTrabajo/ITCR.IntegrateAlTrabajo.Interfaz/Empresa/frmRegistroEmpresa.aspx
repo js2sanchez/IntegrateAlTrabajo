@@ -193,7 +193,7 @@
                         label: "Volver a la página de autenticación",
                         className: "btn-primary",
                         callback: function () {
-                            location.href = "/HOME.aspx";
+                            location.href = "/home.aspx";
                         }
                     }
                 }
@@ -214,7 +214,7 @@
                         label: "Sí, estoy seguro",
                         className: "btn-primary",
                         callback: function () {
-                            location.href = "/HOME.aspx";
+                            location.href = "/home.aspx";
                         }
                     },
                     main: {

@@ -59,7 +59,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             }
             if (((int)Session["Proceso"]) == 1)
             {
-                Response.Redirect("/HOME.aspx");
+                Response.Redirect("/home.aspx");
             }
         }
 

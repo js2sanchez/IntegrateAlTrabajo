@@ -83,7 +83,8 @@
     <Content Include="AdultoMayor\frmOfrecerServicios.aspx" />
     <Content Include="AdultoMayor\frmOpinarSobreBolsaTrabajo.aspx" />
     <Content Include="AdultoMayor\frmRegistroAdultoMayor.aspx" />
-    <Content Include="HOME.aspx" />
+    <Content Include="Empresa\frmInteresados.aspx" />
+    <Content Include="home.aspx" />
     <Content Include="Empresa\frmConsultarPerfilEmpresa.aspx" />
     <Content Include="Empresa\frmDatosServicio.aspx" />
     <Content Include="Empresa\frmDetallesOferta.aspx" />
@@ -278,12 +279,19 @@
     <Compile Include="AdultoMayor\frmRegistroAdultoMayor.aspx.designer.cs">
       <DependentUpon>frmRegistroAdultoMayor.aspx</DependentUpon>
     </Compile>
-    <Compile Include="HOME.aspx.cs">
-      <DependentUpon>HOME.aspx</DependentUpon>
+    <Compile Include="Empresa\frmInteresados.aspx.cs">
+      <DependentUpon>frmInteresados.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="HOME.aspx.designer.cs">
-      <DependentUpon>HOME.aspx</DependentUpon>
+    <Compile Include="Empresa\frmInteresados.aspx.designer.cs">
+      <DependentUpon>frmInteresados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

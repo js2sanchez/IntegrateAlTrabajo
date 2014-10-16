@@ -141,7 +141,10 @@
             </td>
             <td class="style13">
             </td>
-            <td class="style6">
+            <td align="right">
+            <asp:Button ID="btnInteresados" runat="server" CssClass="Boton"
+               Text="Ver interesados" UseSubmitBehavior="False" 
+                    onclick="btnInteresados_Click" />
             </td>
             <td class="style4">
             </td>
