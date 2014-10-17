@@ -69,12 +69,14 @@
     <Content Include="Account\Register.aspx" />
     <Content Include="Administrador\frmCambiarEstadoPerfilEmpresa.aspx" />
     <Content Include="Administrador\frmCambiarEstadoPerfilPersona.aspx" />
+    <Content Include="Administrador\frmCreditos.aspx" />
     <Content Include="Administrador\frmOpinionesEmpresa.aspx" />
     <Content Include="Administrador\frmOpinionesPAM.aspx" />
     <Content Include="AdultoMayor\frmActualizarServicio.aspx" />
     <Content Include="AdultoMayor\frmAplicarOfertaTrabajo.aspx" />
     <Content Include="AdultoMayor\frmConsultarPerfilAdultoMayor.aspx" />
     <Content Include="AdultoMayor\frmConsultarServiciosOfrecidos.aspx" />
+    <Content Include="AdultoMayor\frmCreditos.aspx" />
     <Content Include="AdultoMayor\frmDetalleServicio.aspx" />
     <Content Include="AdultoMayor\frmEditarDatosPersonalesAdultoMayor.aspx" />
     <Content Include="AdultoMayor\frmEditarEstudiosAdultoMayor.aspx" />
@@ -83,7 +85,13 @@
     <Content Include="AdultoMayor\frmOfrecerServicios.aspx" />
     <Content Include="AdultoMayor\frmOpinarSobreBolsaTrabajo.aspx" />
     <Content Include="AdultoMayor\frmRegistroAdultoMayor.aspx" />
+<<<<<<< HEAD
+    <Content Include="Empresa\frmInteresados.aspx" />
+    <Content Include="home.aspx" />
+=======
+    <Content Include="Empresa\frmCreditos.aspx" />
     <Content Include="HOME.aspx" />
+>>>>>>> 144f31b1d632d7f7be05221ae2fbfe1ec49c5e86
     <Content Include="Empresa\frmConsultarPerfilEmpresa.aspx" />
     <Content Include="Empresa\frmDatosServicio.aspx" />
     <Content Include="Empresa\frmDetallesOferta.aspx" />
@@ -180,6 +188,13 @@
     <Compile Include="Administrador\frmCambiarEstadoPerfilPersona.aspx.designer.cs">
       <DependentUpon>frmCambiarEstadoPerfilPersona.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Administrador\frmCreditos.aspx.cs">
+      <DependentUpon>frmCreditos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador\frmCreditos.aspx.designer.cs">
+      <DependentUpon>frmCreditos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Administrador\frmOpinionesEmpresa.aspx.cs">
       <DependentUpon>frmOpinionesEmpresa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -221,6 +236,13 @@
     </Compile>
     <Compile Include="AdultoMayor\frmConsultarServiciosOfrecidos.aspx.designer.cs">
       <DependentUpon>frmConsultarServiciosOfrecidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdultoMayor\frmCreditos.aspx.cs">
+      <DependentUpon>frmCreditos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdultoMayor\frmCreditos.aspx.designer.cs">
+      <DependentUpon>frmCreditos.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdultoMayor\frmDetalleServicio.aspx.cs">
       <DependentUpon>frmDetalleServicio.aspx</DependentUpon>
@@ -278,12 +300,31 @@
     <Compile Include="AdultoMayor\frmRegistroAdultoMayor.aspx.designer.cs">
       <DependentUpon>frmRegistroAdultoMayor.aspx</DependentUpon>
     </Compile>
-    <Compile Include="HOME.aspx.cs">
-      <DependentUpon>HOME.aspx</DependentUpon>
+<<<<<<< HEAD
+    <Compile Include="Empresa\frmInteresados.aspx.cs">
+      <DependentUpon>frmInteresados.aspx</DependentUpon>
+=======
+    <Compile Include="Empresa\frmCreditos.aspx.cs">
+      <DependentUpon>frmCreditos.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="HOME.aspx.designer.cs">
+    <Compile Include="Empresa\frmCreditos.aspx.designer.cs">
+      <DependentUpon>frmCreditos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HOME.aspx.cs">
       <DependentUpon>HOME.aspx</DependentUpon>
+>>>>>>> 144f31b1d632d7f7be05221ae2fbfe1ec49c5e86
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empresa\frmInteresados.aspx.designer.cs">
+      <DependentUpon>frmInteresados.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

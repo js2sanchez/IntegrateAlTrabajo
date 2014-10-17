@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HOME.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.HOME" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="home.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.home" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
@@ -222,19 +222,20 @@ Text="El espacio busca reivindicar los derechos, el protagonismo y los saberes d
                         </tr>
                         <tr>
                             <td colspan="2" bgcolor="White">
-                                &nbsp;</td>
+                                <asp:HyperLink ID="hlRegistrarPersona" runat="server" ForeColor="#005190" 
+                                    NavigateUrl="~/AdultoMayor/frmRegistroAdultoMayor.aspx">Registrar persona</asp:HyperLink>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <asp:HyperLink ID="hlRegistrarEmpresa" runat="server" ForeColor="#005190" 
+                                    NavigateUrl="~/Empresa/frmRegistroEmpresa.aspx">Registrar empresa</asp:HyperLink>
+                            </td>
                             <td bgcolor="White">
                                 &nbsp;</td>
                         </tr>
                         <tr>
                             <td bgcolor="White" class="style15">
-                                <asp:HyperLink ID="hlRegistrarPersona" runat="server" ForeColor="#005190" 
-                                    NavigateUrl="~/AdultoMayor/frmRegistroAdultoMayor.aspx">Registrar persona</asp:HyperLink>
-                            </td>
+                                &nbsp;</td>
                             <td bgcolor="White">
-                                <asp:HyperLink ID="hlRegistrarEmpresa" runat="server" ForeColor="#005190" 
-                                    NavigateUrl="~/Empresa/frmRegistroEmpresa.aspx">Registrar empresa</asp:HyperLink>
-                            </td>
+                                &nbsp;</td>
                             <td bgcolor="White">
                                 &nbsp;</td>
                         </tr>

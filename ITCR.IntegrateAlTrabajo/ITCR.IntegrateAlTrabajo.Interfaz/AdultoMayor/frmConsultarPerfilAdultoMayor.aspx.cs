@@ -27,7 +27,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 //Comprobar sesion
                 if (Session["Nombre_Usuario"] == null)
                 {
-                    Response.Redirect("/HOME.aspx");
+                    Response.Redirect("/home.aspx");
                 }
                 //Cargas
                 cargarUsuario();

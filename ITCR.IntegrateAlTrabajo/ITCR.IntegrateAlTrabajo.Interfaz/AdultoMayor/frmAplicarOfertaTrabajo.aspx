@@ -1,6 +1,38 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMaestraAdultoMayor.Master" AutoEventWireup="true" CodeBehind="frmAplicarOfertaTrabajo.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor.frmAplicarOfertaTrabajo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="../Styles/bootstrap.min.css" />     
+        
     <style type="text/css">
+        body   
+        {
+            background: #b6b7bc;
+            font-family: Century Gothic;
+            margin: 0px;
+            padding: 0px;
+            color: #696969;
+        }
+        table
+        {
+            font-family:Century Gothic;
+            font-size:15px;
+            text-align:justify;
+            border-spacing: 8px;
+            border-collapse: separate;
+        }
+        label
+        {
+            font-weight:normal;
+        }
+        input
+        {
+            font-weight:normal;
+        }
+        p
+        {
+            margin-bottom: 10px;
+            line-height: 1.6em;
+        }
         .style3
         {
             width: 100%;
@@ -57,6 +89,24 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/bootbox.js"></script>  
+    <script type="text/javascript">
+        function custom_alert(msg) {
+            bootbox.dialog({
+                closeButton: false,
+                message: msg,
+                buttons: {
+                    success: {
+                        label: "Aceptar",
+                        className: "btn-primary"
+                    }
+                }
+            });
+        }
+    </script>
     <table class="style3">
         <tr>
             <td class="style4">
@@ -189,7 +239,7 @@
                                                 <td class="style30">
                                                     <asp:Panel ID="PanelBotonAplicar" runat="server" HorizontalAlign="Right">
                                                         <asp:Button ID="btnAplicarOfertaTrabajo" runat="server" CssClass="Boton" 
-                                                            onclick="btnAplicarOfertaTrabajo_Click" Text="Aplicar" />
+                                                            onclick="btnAplicarOfertaTrabajo_Click" Text="Aplicar a esta oferta de trabajo" />
                                                     </asp:Panel>
                                                 </td>
                                             </tr>

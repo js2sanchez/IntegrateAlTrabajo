@@ -11,7 +11,12 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz
     public partial class PaginaMaestraAdultoMayor : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
-        {            
+        {
+            //Comprobar sesion
+            if (Session["Nombre_Usuario"] == null)
+            {
+                Response.Redirect("/home.aspx");
+            }
         }
 
         
@@ -21,8 +26,9 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz
             if (e.Item.Value == "logout")
             {
                 FormsAuthentication.SignOut();
+                Session["Nombre_Usuario"] = null;
                 Session.Abandon();
-                Response.Redirect("/HOME.aspx");
+                Response.Redirect("/home.aspx");
             }
         }
     }

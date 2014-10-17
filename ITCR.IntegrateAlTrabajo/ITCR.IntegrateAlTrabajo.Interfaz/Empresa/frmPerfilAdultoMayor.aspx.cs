@@ -21,12 +21,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
             if (!IsPostBack)
             {
                 //Edicion
-                txtPasatiempo.Visible = false;             
-                //Comprobar sesion
-                if (Session["Nombre_Usuario"] == null)
-                {
-                    Response.Redirect("/HOME.aspx");
-                }
+                txtPasatiempo.Visible = false;                    
                 //Cargas
                 cargarUsuario();
                 cargarDatosPersonales();                
@@ -39,7 +34,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
 
         private void cargarUsuario()
         {
-            Usuario.Id_Usuario = Int16.Parse(Session["Id_usuario"].ToString());
+            Usuario.Id_Usuario = Int16.Parse(Session["Id_Usuario_P"].ToString());
             DataTable TablaUsuario = Usuario.Buscar();
 
             Int16 IdUsuario = 0;
@@ -50,7 +45,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                 Usuario.Id_Usuario = IdUsuario;
             }
 
-            Session["Id_Usuario"] = IdUsuario;
+            Session["Id_Usuario_P"] = IdUsuario;
 
             Persona.FK_IdUsuario = IdUsuario;
         }
