@@ -133,8 +133,14 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             {
                 dgResultados.DataSource = Filtro;
                 dgResultados.DataBind();
-                pnl_resultados.Visible = true;
+                pnl_resultado.Visible = true;
                 lbl_resultados.Visible = true;
+            }
+            else
+            {
+                pnl_resultado.Visible = false;
+                string code = @"<script type='text/javascript'>ofertasNoEncontradas();</script>";
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
             }
         }
         protected void dgResultados_ItemCommand(object source, DataGridCommandEventArgs e)

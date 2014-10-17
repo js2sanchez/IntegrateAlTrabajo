@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PaginaMaestraAdultoMayor.Master" AutoEventWireup="true" CodeBehind="frmFiltrarOfertasTrabajo.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor.frmFiltrarOfertasTrabajo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <link rel="stylesheet" href="../Styles/bootstrap.min.css" />
     <style type="text/css">
         .style3
         {
@@ -95,15 +96,101 @@
         {
             height: 26px;
         }
+        .auto-style1 {
+            width: 15px;
+            height: 24px;
+        }
+        .auto-style2 {
+            width: 20px;
+            height: 24px;
+        }
+        .auto-style3 {
+            width: 250px;
+            height: 24px;
+        }
+        .auto-style4 {
+            width: 15px;
+            height: 35px;
+        }
+        .auto-style5 {
+            width: 250px;
+            height: 35px;
+        }
+        .auto-style6 {
+            width: 20px;
+            height: 35px;
+        }
+        .auto-style7 {
+            height: 35px;
+        }
+        .auto-style8 {
+            height: 23px;
+        }
+        .auto-style9 {
+            width: 251px;
+            height: 23px;
+        }
+        .auto-style10 {
+            width: 21px;
+            height: 23px;
+        }
+        .auto-style11 {
+            width: 160px;
+            height: 23px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <asp:ScriptManager ID="ScriptManagerMain" runat="server" EnablePageMethods="true"
+        ScriptMode="Release" LoadScriptsBeforeUI="true">
+    </asp:ScriptManager>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/bootbox.js"></script>  
+    <script type="text/javascript">
+
+        function ofertasNoEncontradas() {
+            bootbox.alert("No hay ofertas que cumplan con los criterios de búsqueda específicados.");
+        }
+
+    </script>
     <table class="style3">
+        <tr>
+            <td class="auto-style1">
+            </td>
+            <td class="style17" colspan="2">
+                </td>
+            <td class="auto-style2">
+            </td>
+            <td class="style17">
+            </td>
+            <td class="auto-style3">
+            </td>
+            <td class="auto-style1">
+            </td>
+        </tr>
         <tr>
             <td class="style4">
             </td>
             <td class="style5" colspan="2">
-                Buscar ofertas de trabajo por:</td>
+                    <asp:Label ID="lblFiltrarOfertas" runat="server" Text="Filtrar Ofertas de Trabajo"
+                        CssClass="Titulo1"></asp:Label>
+            </td>
+            <td class="style7">
+            </td>
+            <td class="style5">
+            </td>
+            <td class="style6">
+            </td>
+            <td class="style4">
+            </td>
+        </tr>
+        <tr>
+            <td class="style4">
+            </td>
+            <td class="style5" colspan="2">
+                </td>
             <td class="style7">
             </td>
             <td class="style5">
@@ -116,66 +203,66 @@
         <tr>
             <td class="style4">
                 &nbsp;</td>
-            <td class="style8">
+            <td class="style5" colspan="5">
+                <asp:Label ID="lbl_titulo" runat="server" 
+                    Text="Seleccione los criterios de búsqueda con los que desea filtrar las ofertas de trabajo ofrecidas por empresas:"></asp:Label>
+            </td>
+            <td class="style4">
+            </td>
+        </tr>
+        <tr>
+            <td class="style4">
+            </td>
+            <td class="style5" colspan="5">
+                </td>
+            <td class="style4">
+            </td>
+        </tr>
+        <tr>
+            <td class="auto-style4">
+                </td>
+            <td class="auto-style7">
                 <asp:CheckBox ID="chk_tipo" runat="server" Text="Tipo de trabajo" 
                     AutoPostBack="True" oncheckedchanged="chk_Busqueda_CheckedChanged"/>
             </td>
-            <td class="style6">
+            <td class="auto-style5">
                 <asp:CheckBox ID="chk_Categoria" runat="server" Text="Categoría de trabajo" 
                     AutoPostBack="True" oncheckedchanged="chk_Busqueda_CheckedChanged" />
             </td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style5">
+            <td class="auto-style6">
+                </td>
+            <td class="auto-style7">
                 <asp:CheckBox ID="chk_Provincia" runat="server" Text="Provincia" 
                     AutoPostBack="True" oncheckedchanged="chk_Busqueda_CheckedChanged" />
             </td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
+            <td class="auto-style5">
+                </td>
+            <td class="auto-style4">
+                </td>
         </tr>
         <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style8">
+            <td class="auto-style4">
+                </td>
+            <td class="auto-style7">
                 <asp:DropDownList ID="drpTipo" runat="server" Enabled="False">
                 </asp:DropDownList>
             </td>
-            <td class="style6">
+            <td class="auto-style5">
                 <asp:DropDownList ID="drpCategoria" runat="server" Enabled="False">
                 </asp:DropDownList>
             </td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style5">
+            <td class="auto-style6">
+                </td>
+            <td class="auto-style7">
                 <asp:DropDownList ID="drpprovincia" runat="server" Enabled="False">
                 </asp:DropDownList>
             </td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style4">
-                &nbsp;</td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style8">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                <asp:Panel ID="PanelBotonBuscar" runat="server" HorizontalAlign="Right">
+            <td class="auto-style5">
                     <asp:Button ID="btn_buscar" runat="server" Text="Buscar" CssClass="Boton" 
-                        onclick="btn_buscar_Click" />
-                </asp:Panel>
-            </td>
-            <td class="style4">
-                &nbsp;</td>
+                        onclick="btn_buscar_Click" Height="34px" Width="140px" />
+                </td>
+            <td class="auto-style4">
+                </td>
         </tr>
         <tr>
             <td class="style4">
@@ -197,22 +284,20 @@
             <td class="style4">
                 &nbsp;</td>
             <td class="style8" colspan="5">
-                <asp:Panel ID="pnl_resultados" runat="server">
-                </asp:Panel>
                 <asp:Panel ID="pnl_resultado" runat="server" Height="414px">
                     <table class="style3">
                         <tr>
-                            <td class="style13">
+                            <td class="auto-style8">
                                 <asp:Label ID="lbl_resultados" runat="server" Text="Resultados de búsqueda" 
                                     Visible="False"></asp:Label>
                             </td>
-                            <td class="style14">
-                                &nbsp;</td>
-                            <td class="style15">
+                            <td class="auto-style9">
+                                </td>
+                            <td class="auto-style10">
                             </td>
-                            <td class="style16">
+                            <td class="auto-style11">
                             </td>
-                            <td class="style5">
+                            <td class="auto-style8">
                             </td>
                         </tr>
                         <tr>

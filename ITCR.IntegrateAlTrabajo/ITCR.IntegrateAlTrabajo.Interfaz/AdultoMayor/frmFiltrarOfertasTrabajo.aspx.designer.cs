@@ -13,13 +13,31 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
     public partial class frmFiltrarOfertasTrabajo {
         
         /// <summary>
-        /// lblActualizarDatosPersonales control.
+        /// ScriptManagerMain control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblActualizarDatosPersonales;
+        protected global::System.Web.UI.ScriptManager ScriptManagerMain;
+        
+        /// <summary>
+        /// lblFiltrarOfertas control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblFiltrarOfertas;
+        
+        /// <summary>
+        /// lbl_titulo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_titulo;
         
         /// <summary>
         /// chk_tipo control.
@@ -76,15 +94,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
         protected global::System.Web.UI.WebControls.DropDownList drpprovincia;
         
         /// <summary>
-        /// PanelBotonBuscar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelBotonBuscar;
-        
-        /// <summary>
         /// btn_buscar control.
         /// </summary>
         /// <remarks>
@@ -92,15 +101,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_buscar;
-        
-        /// <summary>
-        /// pnl_resultados control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel pnl_resultados;
         
         /// <summary>
         /// pnl_resultado control.
