@@ -222,20 +222,19 @@ Text="El espacio busca reivindicar los derechos, el protagonismo y los saberes d
                         </tr>
                         <tr>
                             <td colspan="2" bgcolor="White">
-                                <asp:HyperLink ID="hlRegistrarPersona" runat="server" ForeColor="#005190" 
-                                    NavigateUrl="~/AdultoMayor/frmRegistroAdultoMayor.aspx">Registrar persona</asp:HyperLink>
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:HyperLink ID="hlRegistrarEmpresa" runat="server" ForeColor="#005190" 
-                                    NavigateUrl="~/Empresa/frmRegistroEmpresa.aspx">Registrar empresa</asp:HyperLink>
-                            </td>
+                                &nbsp;</td>
                             <td bgcolor="White">
                                 &nbsp;</td>
                         </tr>
                         <tr>
                             <td bgcolor="White" class="style15">
-                                &nbsp;</td>
+                                <asp:HyperLink ID="hlRegistrarPersona" runat="server" ForeColor="#005190" 
+                                    NavigateUrl="~/AdultoMayor/frmRegistroAdultoMayor.aspx">Registrar persona</asp:HyperLink>
+                            </td>
                             <td bgcolor="White">
-                                &nbsp;</td>
+                                <asp:HyperLink ID="hlRegistrarEmpresa" runat="server" ForeColor="#005190" 
+                                    NavigateUrl="~/Empresa/frmRegistroEmpresa.aspx">Registrar empresa</asp:HyperLink>
+                            </td>
                             <td bgcolor="White">
                                 &nbsp;</td>
                         </tr>

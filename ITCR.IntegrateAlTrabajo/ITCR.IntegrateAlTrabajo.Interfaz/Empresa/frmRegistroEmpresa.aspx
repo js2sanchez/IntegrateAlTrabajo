@@ -309,14 +309,6 @@
                             </tr>
                             <tr>
                                 <td class="style37">
-                                    &nbsp;
-                                </td>
-                                <td class="style28">
-                                    &nbsp;
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="style37">
                                     <asp:Label ID="lblNombreEmpresa" runat="server" Text="Nombre"></asp:Label>
                                 </td>
                                 <td class="style28">
@@ -648,11 +640,6 @@
                                     &nbsp;
                                 </td>
                             </tr>
-                            <tr>
-                                <td class="auto-style7" colspan="5">
-                                    &nbsp;
-                                </td>
-                            </tr>
                         </table>
                     </asp:View>
                 </asp:MultiView>
@@ -661,28 +648,5 @@
                 &nbsp;
             </td>
         </tr>
-        <tr>
-            <td class="style8">
-                &nbsp;
-            </td>
-            <td class="style15">
-                &nbsp;
-            </td>
-            <td class="style10">
-                &nbsp;
-            </td>
-            <td class="style16">
-                &nbsp;
-            </td>
-            <td class="style15">
-                &nbsp;
-            </td>
-            <td class="style10">
-                &nbsp;
-            </td>
-            <td class="style8">
-                &nbsp;
-            </td>
-        </tr>
-    </table>
+        </table>
 </asp:Content>
