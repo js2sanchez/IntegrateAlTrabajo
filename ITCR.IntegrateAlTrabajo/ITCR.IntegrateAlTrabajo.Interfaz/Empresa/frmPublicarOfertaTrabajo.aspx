@@ -74,6 +74,14 @@
             height: 25px;
             width: 164px;
         }
+        .style18
+        {
+            width: 44px;
+        }
+        .style20
+        {
+            width: 25px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -194,6 +202,8 @@
                 <asp:Panel ID="PanelDatos" runat="server" BorderStyle="Solid" BorderWidth="2px">
                     <table class="style8">
                         <tr>
+                            <td class="style11">
+                                &nbsp;</td>
                             <td class="style16">
                                 &nbsp;
                             </td>
@@ -203,8 +213,12 @@
                             <td class="style11">
                                 &nbsp;
                             </td>
+                            <td class="style11">
+                                &nbsp;</td>
                         </tr>
                         <tr>
+                            <td class="style11">
+                                &nbsp;</td>
                             <td class="style16">
                                 <asp:Label ID="lblNombrePuesto" runat="server" Text="Nombre del puesto"></asp:Label>
                             </td>
@@ -215,8 +229,12 @@
                             </td>
                             <td class="style11">
                             </td>
+                            <td class="style11">
+                                &nbsp;</td>
                         </tr>
                         <tr>
+                            <td class="style11">
+                                &nbsp;</td>
                             <td class="style16">
                                 <asp:Label ID="lblDescripcion" runat="server" Text="Descripción"></asp:Label>
                             </td>
@@ -226,8 +244,12 @@
                             </td>
                             <td class="style11">
                             </td>
+                            <td class="style11">
+                                &nbsp;</td>
                         </tr>
                         <tr>
+                            <td class="style11">
+                                &nbsp;</td>
                             <td class="style16">
                                 <asp:Label ID="lblTipo" runat="server" Text="Tipo"></asp:Label>
                             </td>
@@ -238,8 +260,12 @@
                             <td class="style11">
                                 &nbsp;
                             </td>
+                            <td class="style11">
+                                &nbsp;</td>
                         </tr>
                         <tr>
+                            <td class="style11">
+                                &nbsp;</td>
                             <td class="style16">
                                 <asp:Label ID="lblCategoria" runat="server" Text="Categoría"></asp:Label>
                             </td>
@@ -250,8 +276,12 @@
                             <td class="style11">
                                 &nbsp;
                             </td>
+                            <td class="style11">
+                                &nbsp;</td>
                         </tr>
                         <tr>
+                            <td class="style11">
+                                &nbsp;</td>
                             <td class="style16">
                                 <asp:Label ID="lblRequisitos" runat="server" Text="Requisito"></asp:Label>
                             </td>
@@ -264,8 +294,12 @@
                                         Text="Agregar" onclick="btnAgregarRequisito_Click"/>
                                 </asp:Panel>
                             </td>
+                            <td align="right">
+                                &nbsp;</td>
                         </tr>
                         <tr>
+                            <td class="style11">
+                                &nbsp;</td>
                             <td class="style16">
                                 &nbsp;
                             </td>
@@ -289,28 +323,51 @@
                                     </asp:DataGrid>
                                 </asp:Panel>
                             </td>
+                            <td>
+                                &nbsp;</td>
                         </tr>
                         <tr>
+                            <td class="style11">
+                                &nbsp;</td>
                             <td class="style16">
-                                <asp:Label ID="lblObservaciones" runat="server" Text="Observaciones adicionales"></asp:Label>
+                                <asp:Label ID="lblObservaciones" runat="server" 
+                                    Text="Observaciones adicionales"></asp:Label>
                             </td>
                             <td colspan="2">
                                 <asp:TextBox ID="txtObservaciones" runat="server" Height="100px" TextMode="MultiLine"
                                     Width="99%"></asp:TextBox>
                             </td>
+                            <td>
+                                &nbsp;</td>
                         </tr>
                         <tr>
+                            <td class="style20">
+                                &nbsp;</td>
                             <td colspan="3">
                                 &nbsp;
                             </td>
+                            <td>
+                                &nbsp;</td>
                         </tr>
                         <tr>
-                            <td class="style5" colspan="3" align="right">
+                            <td class="style11" align="right">
+                                &nbsp;</td>
+                            <td align="right" class="style5" colspan="3">
                                 <asp:Panel ID="PanelBotones" runat="server" HorizontalAlign="Right">
-                                    <asp:Button ID="btnAgregar" runat="server" CssClass="Boton" OnClick="btnAgregar_Click"
-                                        Text="Crear oferta de trabajo" />
+                                    <asp:Button ID="btnAgregar" runat="server" CssClass="Boton" 
+                                        OnClick="btnAgregar_Click" Text="Crear oferta de trabajo" />
                                 </asp:Panel>
                             </td>
+                            <td align="right" class="style5">
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td align="right" class="style11">
+                                &nbsp;</td>
+                            <td align="right" class="style5" colspan="3">
+                                &nbsp;</td>
+                            <td align="right" class="style5">
+                                &nbsp;</td>
                         </tr>
                     </table>
                 </asp:Panel>
