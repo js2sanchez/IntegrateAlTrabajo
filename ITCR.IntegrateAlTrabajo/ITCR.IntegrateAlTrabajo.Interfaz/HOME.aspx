@@ -30,8 +30,7 @@
         input
         {
             font-weight: normal;
-            text-align: right;
-        }
+            }
         p
         {
             margin-bottom: 10px;
