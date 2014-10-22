@@ -110,5 +110,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz
                 txtNombreUsuario.Focus();
             }
         }
+
+        protected void btnPersona_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/AdultoMayor/frmRegistroAdultoMayor.aspx");
+        }
+
+        protected void btnEmpresa_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Empresa/frmRegistroEmpresa.aspx");
+        }
     }
 }
