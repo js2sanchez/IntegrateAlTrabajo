@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -86,7 +86,13 @@
     <Content Include="AdultoMayor\frmOpinarSobreBolsaTrabajo.aspx" />
     <Content Include="AdultoMayor\frmRegistroAdultoMayor.aspx" />
     <Content Include="Empresa\frmInteresados.aspx" />
+<<<<<<< HEAD
     <Content Include="home.aspx" />
+=======
+    <Content Include="Empresa\frmCreditos.aspx" />
+    <Content Include="HOME.aspx" />
+    <Content Include="Empresa\frmCreditos.aspx" />
+>>>>>>> 9e0b3e40d48416f20111b0a2e911cbae9a9938e1
     <Content Include="Empresa\frmConsultarPerfilEmpresa.aspx" />
     <Content Include="Empresa\frmDatosServicio.aspx" />
     <Content Include="Empresa\frmDetallesOferta.aspx" />
@@ -109,6 +115,7 @@
     <Content Include="Multimedia\banner_adultos_mayores.jpg" />
     <Content Include="Multimedia\banner_autenticacion.jpg" />
     <Content Include="Multimedia\icono-buscar.jpg" />
+    <Content Include="Multimedia\icono-check.jpg" />
     <Content Include="Multimedia\icono-editar.jpg" />
     <Content Include="Multimedia\icono-eliminar.jpg" />
     <Content Include="Multimedia\Logo.PNG" />
@@ -302,8 +309,20 @@
     <Compile Include="Empresa\frmInteresados.aspx.designer.cs">
       <DependentUpon>frmInteresados.aspx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="home.aspx.cs">
       <DependentUpon>home.aspx</DependentUpon>
+=======
+    <Compile Include="Empresa\frmCreditos.aspx.cs">
+      <DependentUpon>frmCreditos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empresa\frmCreditos.aspx.designer.cs">
+      <DependentUpon>frmCreditos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HOME.aspx.cs">
+      <DependentUpon>HOME.aspx</DependentUpon>
+>>>>>>> 9e0b3e40d48416f20111b0a2e911cbae9a9938e1
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="home.aspx.designer.cs">
@@ -465,6 +484,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PaginaMaestraAdministrador.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\PublishProfiles\iatprueba1 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\iatprueba1 - Web Deploy.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

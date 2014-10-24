@@ -58,8 +58,11 @@
                             Value="Comentarios y sugerencias" 
                             NavigateUrl="~/Empresa/frmOpinarSobreBolsaTrabajo.aspx">
                         </asp:MenuItem>
+<<<<<<< HEAD
                         <asp:MenuItem Text="Créditos" Value="Créditos"></asp:MenuItem>
                         <asp:MenuItem Text="Cerrar sesión" Value="logout"></asp:MenuItem>
+=======
+>>>>>>> 9e0b3e40d48416f20111b0a2e911cbae9a9938e1
                         <asp:MenuItem Text="Créditos" Value="Créditos" 
                             NavigateUrl="~/Empresa/frmCreditos.aspx"></asp:MenuItem>
                         <asp:MenuItem Text="Cerrar sesión" Value="Cerrar sesión" 

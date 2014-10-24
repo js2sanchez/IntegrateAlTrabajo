@@ -57,7 +57,18 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador
 
                 foreach (DataGridItem Fila in dgOpinionesBolsaTrabajo.Items)
                 {
-                    Fila.Cells[2].Text = obtenerNombreUsuario(Int32.Parse(Fila.Cells[2].Text));
+                    //Fila.Cells[2].Text = obtenerNombreUsuario(Int32.Parse(Fila.Cells[2].Text));
+
+                    cIATEmpresaNegocios Empresa = new cIATEmpresaNegocios(1, "A", 2, "B");
+                    Empresa.FK_IdUsuario = Int32.Parse(Fila.Cells[2].Text);
+
+                    DataTable TablaEmpresa = Empresa.Buscar();
+
+                    if (TablaEmpresa.Rows.Count > 0)
+                    {
+                        String Nombre = TablaEmpresa.Rows[0]["Nom_Empresa"].ToString();
+                        Fila.Cells[2].Text = Nombre;
+                    }
                 }
             }
         }
