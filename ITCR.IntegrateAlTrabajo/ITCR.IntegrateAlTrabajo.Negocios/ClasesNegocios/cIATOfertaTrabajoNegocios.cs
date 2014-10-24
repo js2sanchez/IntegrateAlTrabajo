@@ -65,85 +65,103 @@ namespace ITCR.IntegrateAlTrabajo.Negocios
 		///		 <LI>CodError</LI>
 		/// </UL>
 		/// </remarks>
-		public override bool Insertar()
-		{
-			string operacion;
-			//SeguridadSoapClient wsseg = new SeguridadSoapClient();
-			try
-			{
-				//Construir aqui el string a guardar en la bitacora.
-				operacion = "Insertar cIATOfertaTrabajo;"
-					+"Nom_Puesto:"+Nom_Puesto.ToString()+";"
-					+"Dsc_OfertaTrabajo:"+Dsc_OfertaTrabajo.ToString()+";"
-					+"Txt_Requisitos:"+Txt_Requisitos.ToString()+";"
-					+"InformacionAdicional:"+InformacionAdicional.ToString()+";"
-					+"Ind_Activa:"+Ind_Activa.ToString()+";"
-					+"FK_IdCategoriaOfertaTrabajo:"+FK_IdCategoriaOfertaTrabajo.ToString()+";"
-					+"FK_IdTipoOfertaTrabajo:"+FK_IdTipoOfertaTrabajo.ToString()+";"
-					+"FK_IdEmpresa:"+FK_IdEmpresa.ToString()+";";
-				//wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.UsoFuncionalidad, _ID_USUARIOBitacora,operacion);
-				return base.Insertar();
-			}
-			catch (Exception ex)
-			{
-				//Construir el string a guardar en la bitácora en caso de error.
-				operacion = "Error Insertar cIATOfertaTrabajo;"+ex.Message;
-				//wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.Error, _ID_USUARIOBitacora,operacion);
-				throw ex;
-			}
-		}
+        public override bool Insertar()
+        {
+            string operacion;
+            try
+            {
+                //Construir aqui el string a guardar en la bitacora.
+                operacion = "Insertar cIATOfertaTrabajo;"
+                    + "Nom_Puesto:" + Nom_Puesto.ToString() + ";"
+                    + "Dsc_OfertaTrabajo:" + Dsc_OfertaTrabajo.ToString() + ";"
+                    + "InformacionAdicional:" + InformacionAdicional.ToString() + ";"
+                    + "Ind_Activa:" + Ind_Activa.ToString() + ";"
+                    + "FK_IdCategoriaOfertaTrabajo:" + FK_IdCategoriaOfertaTrabajo.ToString() + ";"
+                    + "FK_IdTipoOfertaTrabajo:" + FK_IdTipoOfertaTrabajo.ToString() + ";"
+                    + "FK_IdEmpresa:" + FK_IdEmpresa.ToString() + ";"
+                    + "Vencimiento:" + Vencimiento.ToString() + ";";
+                //wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.UsoFuncionalidad, _ID_USUARIOBitacora, operacion);
+                return base.Insertar();
+            }
+            catch (Exception ex)
+            {
+                //Construir el string a guardar en la bitácora en caso de error.
+                operacion = "Error Insertar cIATOfertaTrabajo;" + ex.Message;
+                //wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.Error, _ID_USUARIOBitacora, operacion);
+                throw ex;
+            }
+        }
 
 
-		/// <summary>
-		/// Propósito: Método Update. Actualiza una fila existente en la base de datos.
-		/// </summary>
-		/// <returns>True si tuvo éxito, sino genera una Exception. </returns>
-		/// <remarks>
-		/// Propiedades necesarias para este método: 
-		/// <UL>
-		///		 <LI>Id_OfertaTrabajo</LI>
-		///		 <LI>Nom_Puesto</LI>
-		///		 <LI>Dsc_OfertaTrabajo</LI>
-		///		 <LI>Txt_Requisitos</LI>
-		///		 <LI>InformacionAdicional. May be SqlString.Null</LI>
-		///		 <LI>Ind_Activa</LI>
-		///		 <LI>FK_IdCategoriaOfertaTrabajo</LI>
-		///		 <LI>FK_IdTipoOfertaTrabajo</LI>
-		///		 <LI>FK_IdEmpresa</LI>
-		/// </UL>
-		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
-		/// <UL>
-		///		 <LI>CodError</LI>
-		/// </UL>
-		/// </remarks>
-		public override bool Actualizar()
-		{
-			string operacion;
-			//SeguridadSoapClient wsseg = new SeguridadSoapClient();
-			try
-			{
-				//Construir aqui el string a guardar en la bitacora.
-				operacion = "Actualizar cIATOfertaTrabajo;"
-					+"Id_OfertaTrabajo:"+Id_OfertaTrabajo.ToString()+";"
-					+"Nom_Puesto:"+Nom_Puesto.ToString()+";"
-					+"Dsc_OfertaTrabajo:"+Dsc_OfertaTrabajo.ToString()+";"
-					+"Txt_Requisitos:"+Txt_Requisitos.ToString()+";"
-					+"InformacionAdicional:"+InformacionAdicional.ToString()+";"
-					+"Ind_Activa:"+Ind_Activa.ToString()+";"
-					+"FK_IdCategoriaOfertaTrabajo:"+FK_IdCategoriaOfertaTrabajo.ToString()+";"
-					+"FK_IdTipoOfertaTrabajo:"+FK_IdTipoOfertaTrabajo.ToString()+";"
-					+"FK_IdEmpresa:"+FK_IdEmpresa.ToString()+";";
-				//wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.UsoFuncionalidad, _ID_USUARIOBitacora,operacion);
-				return base.Actualizar();
-			}
-			catch (Exception ex)
-			{
-				//Construir el string a guardar en la bitácora en caso de error.
-				operacion = "Error Actualizar cIATOfertaTrabajo;"+ex.Message;
-				//wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.Error, _ID_USUARIOBitacora,operacion);
-				throw ex;
-			}
-		}
+        /// <summary>
+        /// Propósito: Método Update. Actualiza una fila existente en la base de datos.
+        /// </summary>
+        /// <returns>True si tuvo éxito, sino genera una Exception. </returns>
+        /// <remarks>
+        /// Propiedades necesarias para este método: 
+        /// <UL>
+        ///		 <LI>Id_OfertaTrabajo</LI>
+        ///		 <LI>Nom_Puesto</LI>
+        ///		 <LI>Dsc_OfertaTrabajo</LI>
+        ///		 <LI>InformacionAdicional. May be SqlString.Null</LI>
+        ///		 <LI>Ind_Activa</LI>
+        ///		 <LI>FK_IdCategoriaOfertaTrabajo</LI>
+        ///		 <LI>FK_IdTipoOfertaTrabajo</LI>
+        ///		 <LI>FK_IdEmpresa</LI>
+        ///		 <LI>Vencimiento. May be SqlDateTime.Null</LI>
+        /// </UL>
+        /// Propiedades actualizadas luego de una llamada exitosa a este método: 
+        /// <UL>
+        ///		 <LI>CodError</LI>
+        /// </UL>
+        /// </remarks>
+        public override bool Actualizar()
+        {
+            string operacion;
+            try
+            {
+                //Construir aqui el string a guardar en la bitacora.
+                operacion = "Actualizar cIATOfertaTrabajo;"
+                    + "Id_OfertaTrabajo:" + Id_OfertaTrabajo.ToString() + ";"
+                    + "Nom_Puesto:" + Nom_Puesto.ToString() + ";"
+                    + "Dsc_OfertaTrabajo:" + Dsc_OfertaTrabajo.ToString() + ";"
+                    + "InformacionAdicional:" + InformacionAdicional.ToString() + ";"
+                    + "Ind_Activa:" + Ind_Activa.ToString() + ";"
+                    + "FK_IdCategoriaOfertaTrabajo:" + FK_IdCategoriaOfertaTrabajo.ToString() + ";"
+                    + "FK_IdTipoOfertaTrabajo:" + FK_IdTipoOfertaTrabajo.ToString() + ";"
+                    + "FK_IdEmpresa:" + FK_IdEmpresa.ToString() + ";"
+                    + "Vencimiento:" + Vencimiento.ToString() + ";";
+                //wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.UsoFuncionalidad, _ID_USUARIOBitacora, operacion);
+                return base.Actualizar();
+            }
+            catch (Exception ex)
+            {
+                //Construir el string a guardar en la bitácora en caso de error.
+                operacion = "Error Actualizar cIATOfertaTrabajo;" + ex.Message;
+                //wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.Error, _ID_USUARIOBitacora, operacion);
+                throw ex;
+            }
+        }
+
+        public bool Actualizar_Estado()
+        {
+            string operacion;
+            //SeguridadSoapClient wsseg = new SeguridadSoapClient();
+            try
+            {
+                //Construir aqui el string a guardar en la bitacora.
+                operacion = "Actualizar estado cIATOfertaTrabajo;";
+                //wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.UsoFuncionalidad, _ID_USUARIOBitacora,operacion);
+                return base.Actualizar_Estado();
+            }
+            catch (Exception ex)
+            {
+                //Construir el string a guardar en la bitácora en caso de error.
+                operacion = "Error Actualizar Estado cIATOfertaTrabajo;" + ex.Message;
+                //wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.Error, _ID_USUARIOBitacora,operacion);
+                throw ex;
+            }
+        }
 
 
 		/// <summary>

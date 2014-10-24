@@ -259,7 +259,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 {                   
                     Usuario.Contrasenna = txtContraseña.Text;
                     Usuario.Indicio_Contrasenna = txtIndicioContraseña.Text;
-                    Usuario.Estado = 1; //CAMBIAR
+                    Usuario.Estado = 2; 
                     Usuario.FK_IdTipoUsuario = 1;
                     btnCancelarActualizarEstudio.Visible = false;
                     mvRegistroAdultoMayor.ActiveViewIndex = 2;

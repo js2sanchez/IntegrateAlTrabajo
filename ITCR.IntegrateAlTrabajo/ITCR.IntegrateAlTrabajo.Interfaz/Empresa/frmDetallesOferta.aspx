@@ -142,6 +142,9 @@
             <td class="style13">
             </td>
             <td align="right">
+            <asp:Button ID="btnRegresar" runat="server" CssClass="Boton"
+               Text="Regresar" UseSubmitBehavior="False" onclick="btnRegresar_Click"/>
+               &nbsp&nbsp
             <asp:Button ID="btnInteresados" runat="server" CssClass="Boton"
                Text="Ver interesados" UseSubmitBehavior="False" 
                     onclick="btnInteresados_Click" />
@@ -220,6 +223,18 @@
                             </td>
                             <td class="style5">
                                 <asp:Label ID="lblCategoriaDato" runat="server" Width="250px">
+                                </asp:Label>
+                            </td>
+                            <td class="style11">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style16">
+                                <asp:Label ID="Label4" runat="server" Text="Vencimiento"></asp:Label>
+                            </td>
+                            <td class="style5">
+                                <asp:Label ID="lblVencimiento" runat="server" Width="250px">
                                 </asp:Label>
                             </td>
                             <td class="style11">

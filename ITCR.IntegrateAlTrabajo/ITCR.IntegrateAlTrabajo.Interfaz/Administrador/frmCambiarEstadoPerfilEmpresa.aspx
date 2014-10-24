@@ -140,16 +140,18 @@
         <tr>
             <td class="auto-style1">
             </td>
-            <td class="auto-style2">
-            </td>
-            <td class="auto-style3">
+            <td colspan="2">
+            <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Left" Width="441px">
+                    <asp:Button ID="Button1" runat="server" CssClass="Boton"
+                        Text="Actualizar ofertas de trabajo" onclick="Button1_Click" />
+                </asp:Panel>
             </td>
             <td class="auto-style4">
             </td>
             <td class="auto-style2">
             </td>
             <td class="auto-style3">
-                <asp:Panel ID="PanelBotonActualizar" runat="server" HorizontalAlign="Right" Width="441px">
+                <asp:Panel ID="PanelBotonActualizar" runat="server" HorizontalAlign="Right" Width="441px">                
                     <asp:Button ID="btnGuardarEstado" runat="server" CssClass="Boton" OnClick="btnGuardarEstado_Click"
                         Text="Guardar" />
                 </asp:Panel>

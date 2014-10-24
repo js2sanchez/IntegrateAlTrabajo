@@ -17,6 +17,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador
         {
             if (!IsPostBack)
             {
+                if (Session["Nombre_Usuario"] == null)
+                {
+                    Response.Redirect("/home.aspx");
+                }
                 cargarDataGridViewOpiniones();
             }
         }

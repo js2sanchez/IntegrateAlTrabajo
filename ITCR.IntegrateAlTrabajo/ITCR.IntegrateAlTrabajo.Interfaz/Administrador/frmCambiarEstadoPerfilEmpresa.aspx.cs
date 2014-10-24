@@ -17,6 +17,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador
         {
             if (!IsPostBack)
             {
+                if (Session["Nombre_Usuario"] == null)
+                {
+                    Response.Redirect("/home.aspx");
+                }
                 //mostrarPerfilesAdultosMayores();
                 mostrarPerfilesEmpresas();
             }
@@ -230,10 +234,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador
             {
                 cIATUsuarioNegocios UsuarioEmpresaActualizar = new cIATUsuarioNegocios(1, "A", 2, "B");
                 UsuarioEmpresaActualizar.Id_Usuario = Int16.Parse(filaEmpresa.Cells[0].Text.ToString());
-                UsuarioEmpresaActualizar.Nom_Usuario = filaEmpresa.Cells[7].Text.ToString();
-                UsuarioEmpresaActualizar.Contrasenna = filaEmpresa.Cells[8].Text.ToString();
-                UsuarioEmpresaActualizar.Indicio_Contrasenna = filaEmpresa.Cells[9].Text.ToString();
-                UsuarioEmpresaActualizar.FK_IdTipoUsuario = Int16.Parse(filaEmpresa.Cells[10].Text.ToString());
 
                 if (((DropDownList)filaEmpresa.Cells[6].FindControl("drpEmpresas")).SelectedValue.Equals("1"))
                 {
@@ -244,7 +244,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador
                     UsuarioEmpresaActualizar.Estado = 2;
                 }
 
-                UsuarioEmpresaActualizar.Actualizar();
+                UsuarioEmpresaActualizar.Actualizar_Estado();
             }
 
             string code = @"<script type='text/javascript'>cambioEstado();</script>";
@@ -255,9 +255,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador
         {
             if (e.CommandName == "PerfilEmpresa")
             {
-                Session["Id_usuario"] = e.Item.Cells[0].Text.ToString();
-                Response.Redirect("/Empresa/frmConsultarPerfilEmpresa.aspx");
+                Session["Id_Usuario_P"] = e.Item.Cells[0].Text.ToString();
+                Response.Redirect("/Administrador/frmPerfilEmpresa.aspx");
             }
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            cIATOfertaTrabajoNegocios OfertaGeneral = new cIATOfertaTrabajoNegocios(1, "A", 2, "B");
+            OfertaGeneral.Actualizar_Estado();
         }
     }
 }

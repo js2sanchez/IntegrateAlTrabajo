@@ -21,6 +21,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
         {
             if (!IsPostBack)
             {
+                if (Session["Nombre_Usuario"] == null)
+                {
+                    Response.Redirect("/home.aspx");
+                }
                 cargarTodosDropDownList();
                 cargar_datos_usuario();
                 txtTelefono.Focus();

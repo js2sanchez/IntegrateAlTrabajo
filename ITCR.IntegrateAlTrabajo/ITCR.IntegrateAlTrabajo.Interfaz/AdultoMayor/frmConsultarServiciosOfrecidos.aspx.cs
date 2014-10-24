@@ -19,9 +19,13 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         cIATPersonaNegocios Persona = new cIATPersonaNegocios(1, "A", 2, "B");
 
         protected void Page_Load(object sender, EventArgs e)
-        {
+        {            
             if (!IsPostBack)
             {
+                if (Session["Nombre_Usuario"] == null)
+                {
+                    Response.Redirect("/home.aspx");
+                }
                 try
                 {
                     Session["Id_Servicio"] = "0";

@@ -9,7 +9,7 @@ using ITCR.IntegrateAlTrabajo.Datos;
 using System.Data;
 using System.Web.Services;
 
-namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
+namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador
 {
     public partial class frmPerfilEmpresa : System.Web.UI.Page
     {
@@ -72,17 +72,19 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
             }
         }
 
-        public void cargar_datos_usuario() 
+        public void cargar_datos_usuario()
         {
-            Usuario.Nom_Usuario = Convert.ToString(Session["Nombre_Usuario"]);
-            lblContenidoNombreUsuario.Text = Usuario.Nom_Usuario.ToString();
+            Usuario.Id_Usuario = Int16.Parse(Session["Id_Usuario_P"].ToString());
+
             DataTable tablaUsuario = Usuario.Buscar();
             Int16 IdUsuario = 0;
 
             if (tablaUsuario.Rows.Count > 0)
             {
                 IdUsuario = Int16.Parse(tablaUsuario.Rows[0]["Id_Usuario"].ToString());
+                Usuario.Id_Usuario = IdUsuario;
             }
+
             Empresa.FK_IdUsuario = IdUsuario;
             DataTable tablaEmpresa = Empresa.Buscar();
             if (tablaEmpresa.Rows.Count > 0)
@@ -109,38 +111,9 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
             cargarDireccion(Int16.Parse(lblContenidoDistrito.Text));
         }
 
-        protected void ibtnEditarPerfilEmpresa_Click(object sender, ImageClickEventArgs e)
+        protected void btnRegresar_Click(object sender, EventArgs e)
         {
-            Response.Redirect("./frmEditarDatosGeneralesEmpresa.aspx");
-        }
-
-        protected void ibtnEliminarPerfilEmpresa_Click(object sender, ImageClickEventArgs e)
-        {
-            string code = @"<script type='text/javascript'>eliminarEmpresa('" + Convert.ToString(Session["Nombre_Usuario"]) + "');</script>";
-            ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
-        }
-
-        [WebMethod]
-        public static void eliminarEmpresa(string user)
-        {
-            Usuario.Nom_Usuario = user;
-            DataTable tablaUsuario = Usuario.Buscar();
-
-            if (tablaUsuario.Rows.Count > 0)
-            {
-                Usuario.Id_Usuario = Int16.Parse(tablaUsuario.Rows[0]["Id_Usuario"].ToString());
-                Usuario.Nom_Usuario = tablaUsuario.Rows[0]["Nom_Usuario"].ToString();
-                Usuario.Contrasenna = tablaUsuario.Rows[0]["Contrasenna"].ToString();
-                Usuario.Indicio_Contrasenna = tablaUsuario.Rows[0]["Indicio_Contrasenna"].ToString();
-                Usuario.FK_IdTipoUsuario = Int16.Parse(tablaUsuario.Rows[0]["FK_IdTipoUsuario"].ToString());
-            }
-            Usuario.Estado = 3;
-            Usuario.Eliminar();
-        }
-
-        protected void ibtnEditarDatosAutenticacion_Click(object sender, ImageClickEventArgs e)
-        {
-            Response.Redirect("./frmEditarDatosAutenticacionEmpresa.aspx");
+            Response.Redirect("/Administrador/frmCambiarEstadoPerfilEmpresa.aspx");
         }
     }
 }
