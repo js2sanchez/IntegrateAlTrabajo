@@ -17,6 +17,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador
         {
             if (!IsPostBack)
             {
+                if (Session["Nombre_Usuario"] == null)
+                {
+                    Response.Redirect("/home.aspx");
+                }
                 mostrarPerfilesAdultosMayores();
                 //mostrarPerfilesEmpresas();
             }
@@ -198,8 +202,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador
         {
             if (e.CommandName == "PerfilPersona")
             {
-                Session["Id_usuario"] = e.Item.Cells[0].Text.ToString();
-                Response.Redirect("/Empresa/frmPerfilAdultoMayor.aspx");
+                Session["Id_usuario_P"] = e.Item.Cells[0].Text.ToString();
+                Response.Redirect("/Administrador/frmPerfilAdultoMayor.aspx");
             }
         }
 
@@ -209,10 +213,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador
             {
                 cIATUsuarioNegocios UsuarioPersonaActualizar = new cIATUsuarioNegocios(1, "A", 2, "B");
                 UsuarioPersonaActualizar.Id_Usuario = Int16.Parse(filaAdulto.Cells[0].Text.ToString());
-                UsuarioPersonaActualizar.Nom_Usuario = filaAdulto.Cells[9].Text.ToString();
-                UsuarioPersonaActualizar.Contrasenna = filaAdulto.Cells[10].Text.ToString();
-                UsuarioPersonaActualizar.Indicio_Contrasenna = filaAdulto.Cells[11].Text.ToString();
-                UsuarioPersonaActualizar.FK_IdTipoUsuario = Int16.Parse(filaAdulto.Cells[12].Text.ToString());
 
                 if (((DropDownList)filaAdulto.Cells[8].FindControl("drpEstado")).SelectedValue.Equals("1"))
                 {
@@ -223,7 +223,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador
                     UsuarioPersonaActualizar.Estado = 2;
                 }
 
-                UsuarioPersonaActualizar.Actualizar();
+                UsuarioPersonaActualizar.Actualizar_Estado();
             }
 
             //foreach (DataGridItem filaEmpresa in dgPerfilesEmpresas.Items)

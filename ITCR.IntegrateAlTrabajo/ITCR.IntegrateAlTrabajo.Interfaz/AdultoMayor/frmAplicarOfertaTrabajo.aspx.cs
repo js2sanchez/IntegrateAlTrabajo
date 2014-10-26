@@ -12,6 +12,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 {
     public partial class frmAplicarOfertaTrabajo : System.Web.UI.Page
     {
+
         cIATOfertaTrabajoNegocios OfertaTrabajo = new cIATOfertaTrabajoNegocios(1, "A", 2, "B");
         cIATCategoriaTrabajoNegocios Categoria = new cIATCategoriaTrabajoNegocios(1, "A", 2, "B");
         cIATTipoTrabajoNegocios TipoTrabajo = new cIATTipoTrabajoNegocios(1, "A", 2, "B");
@@ -30,6 +31,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             if (!IsPostBack)
             {
                 //Session["Id_Oferta"] = "2";
+                if (Session["Nombre_Usuario"] == null)
+                {
+                    Response.Redirect("/home.aspx");
+                }
                 mostrarOferta();
             }
         }

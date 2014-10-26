@@ -18,6 +18,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
         {
             if (!IsPostBack)
             {
+                if (Session["Nombre_Usuario"] == null)
+                {
+                    Response.Redirect("/home.aspx");
+                }
                 HttpContext.Current.Session["requisitos_borrar"] = new ArrayList();
                 HttpContext.Current.Session["requisitos_agregar"] = new ArrayList();
                 cargarDropDownListCategorias();
@@ -82,7 +86,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
 
         protected void btnActualizar_Click(object sender, EventArgs e)
         {
-            dgRequisitos.DataSource = ((DataTable)HttpContext.Current.Session["tabla_requisitos"]);
+            dgRequisitos.DataSource = ((DataTable)HttpContext.Current.Session["oferta_requisitos"]);
             dgRequisitos.DataBind();
             Validate("gvOfertaTrabajo");
 
@@ -97,13 +101,12 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                 {
                     OfertaTrabajo.Dsc_OfertaTrabajo = txtDescripcion.Text;
                 }
-
-                OfertaTrabajo.Txt_Requisitos = txtRequisitos.Text;
-
+                
                 if (txtObservaciones.Text.CompareTo("") != 0)
                 {
                     OfertaTrabajo.InformacionAdicional = txtObservaciones.Text;
                 }
+                OfertaTrabajo.Vencimiento = cldVencimiento.SelectedDate;
                 OfertaTrabajo.Ind_Activa = ckbEstado.Checked;
                 OfertaTrabajo.FK_IdCategoriaOfertaTrabajo = Int16.Parse(drpCategoria.SelectedValue);
                 OfertaTrabajo.FK_IdTipoOfertaTrabajo = Int16.Parse(drpTipo.SelectedValue);

@@ -19,6 +19,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         {
             if (!IsPostBack)
             {
+                if (Session["Nombre_Usuario"] == null)
+                {
+                    Response.Redirect("/home.aspx");
+                }
                 cargarIdEmpresa();                
                 btnAgregar.Visible = true;
                 cargarTodosDropDownList();
@@ -133,13 +137,13 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                     OfertaTrabajo.Dsc_OfertaTrabajo = txtDescripcion.Text;
                 }
 
-                OfertaTrabajo.Txt_Requisitos = txtRequisitos.Text;
 
                 if (txtObservaciones.Text.CompareTo("") != 0)
                 {
                     OfertaTrabajo.InformacionAdicional = txtObservaciones.Text;
                 }
                 OfertaTrabajo.Ind_Activa = true;
+                OfertaTrabajo.Vencimiento = cldVencimiento.SelectedDate;
                 OfertaTrabajo.FK_IdCategoriaOfertaTrabajo = Int16.Parse(drpCategoria.SelectedValue);
                 OfertaTrabajo.FK_IdTipoOfertaTrabajo = Int16.Parse(drpTipo.SelectedValue);
                 OfertaTrabajo.FK_IdEmpresa = IdEmpresa;

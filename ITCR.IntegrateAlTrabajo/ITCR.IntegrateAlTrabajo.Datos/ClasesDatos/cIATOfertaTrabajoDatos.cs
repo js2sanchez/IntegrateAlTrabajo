@@ -89,6 +89,11 @@ namespace ITCR.IntegrateAlTrabajo.Datos
 			return base.Actualizar();
 		}
 
+        public bool Actualizar_Estado()
+        {
+            return base.Actualizar_Estado();
+        }
+
 
 		/// <summary>
 		/// Propósito: Método Eliminar. Borra una fila en la base de datos, basado en la llave primaria.

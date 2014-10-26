@@ -15,6 +15,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
         protected void Page_Load(object sender, EventArgs e)
         {
             if(!IsPostBack){
+                if (Session["Nombre_Usuario"] == null)
+                {
+                    Response.Redirect("/home.aspx");
+                }
                 cargarInteresadosOferta();
             }
         }
@@ -38,24 +42,27 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
             DataTable TablaInteresados = null;
 
             cIATPersonaNegocios persona = new cIATPersonaNegocios(1, "A", 2, "B");
-            foreach (DataRow row in TablaInteresadosId.Rows)
+            if (TablaInteresadosId.Rows.Count > 0)
             {
-                persona.Id_Persona = Int16.Parse(row["FK_IdPersona"].ToString());
-                DataTable personas = persona.Buscar();
-                if (personas.Rows.Count > 0)
+                foreach (DataRow row in TablaInteresadosId.Rows)
                 {
-                    if (TablaInteresados == null)
+                    persona.Id_Persona = Int16.Parse(row["FK_IdPersona"].ToString());
+                    DataTable personas = persona.Buscar();
+                    if (personas.Rows.Count > 0)
                     {
-                        TablaInteresados = personas;
-                    }
-                    else
-                    {
-                        TablaInteresados.ImportRow(personas.Rows[0]);
+                        if (TablaInteresados == null)
+                        {
+                            TablaInteresados = personas;
+                        }
+                        else
+                        {
+                            TablaInteresados.ImportRow(personas.Rows[0]);
+                        }
                     }
                 }
             }
 
-            if (TablaInteresados.Rows.Count > 0)
+            if (TablaInteresados != null && TablaInteresados.Rows.Count > 0)
             {
                 dgInteresados.DataSource = TablaInteresados;
                 dgInteresados.DataBind();

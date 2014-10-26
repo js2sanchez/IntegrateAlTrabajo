@@ -140,7 +140,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                     ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).Contrasenna = txtContraseña.Text;
                     ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).Indicio_Contrasenna = txtIndicioContraseña.Text;
                     ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).FK_IdTipoUsuario = 2;
-                    ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).Estado = 1;
+                    ((cIATUsuarioNegocios)HttpContext.Current.Session["Usuario"]).Estado = 2;
                     mvRegistroEmpresa.ActiveViewIndex = 2;
                 }
                 else

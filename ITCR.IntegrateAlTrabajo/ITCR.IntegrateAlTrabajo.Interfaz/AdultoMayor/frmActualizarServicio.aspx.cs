@@ -21,6 +21,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         {
             if (!IsPostBack)
             {
+                if (Session["Nombre_Usuario"] == null)
+                {
+                    Response.Redirect("/home.aspx");
+                }
                 try
                 {
                     cargarTodosDropDownList();

@@ -274,6 +274,17 @@
                         </tr>
                         <tr>
                             <td class="style16">
+                                <asp:Label ID="Label2" runat="server" Text="Vencimiento"></asp:Label>
+                            </td>
+                            <td class="style5">
+                                <asp:Calendar ID="cldVencimiento" runat="server"/>
+                            </td>
+                            <td class="style11">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="style16">
                                 <asp:Label ID="Label1" runat="server" Text="Estado"></asp:Label>
                             </td>
                             <td class="style5">

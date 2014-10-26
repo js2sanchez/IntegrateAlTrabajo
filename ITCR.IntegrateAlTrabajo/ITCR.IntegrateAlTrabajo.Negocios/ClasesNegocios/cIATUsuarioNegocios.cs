@@ -253,6 +253,18 @@ namespace ITCR.IntegrateAlTrabajo.Negocios
             }
         }
 
+        public bool Actualizar_Estado()
+        {
+            try
+            {
+                return base.Actualizar_Estado();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
 		/// <summary>
 		/// Propósito: Método Buscar. Este método va a Hacer un SELECT LIKE de tabla.
 		/// </summary>

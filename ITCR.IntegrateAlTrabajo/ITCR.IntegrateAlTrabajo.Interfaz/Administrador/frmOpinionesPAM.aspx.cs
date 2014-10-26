@@ -17,6 +17,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador
         {
             if (!IsPostBack)
             {
+                if (Session["Nombre_Usuario"] == null)
+                {
+                    Response.Redirect("/home.aspx");
+                }
                 cargarDataGridViewOpiniones();
             }
         }
@@ -53,7 +57,19 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador
 
                 foreach (DataGridItem Fila in dgOpinionesBolsaTrabajo.Items)
                 {
-                    Fila.Cells[2].Text = obtenerNombreUsuario(Int32.Parse(Fila.Cells[2].Text));
+                    cIATPersonaNegocios Persona = new cIATPersonaNegocios(1, "A", 2, "B");
+                    Persona.FK_IdUsuario = Int32.Parse(Fila.Cells[2].Text);
+
+                    DataTable TablaPersona = Persona.Buscar();
+
+                    if (TablaPersona.Rows.Count > 0)
+                    {
+                        String Nombre = TablaPersona.Rows[0]["Nom_Persona"].ToString();
+                        String Apellido1 = TablaPersona.Rows[0]["Apellido1"].ToString();
+                        String Apellido2 = TablaPersona.Rows[0]["Apellido2"].ToString();
+                        Fila.Cells[2].Text = Nombre + " " + Apellido1 + " " + Apellido2;
+                    }
+
                 }
             }
         }

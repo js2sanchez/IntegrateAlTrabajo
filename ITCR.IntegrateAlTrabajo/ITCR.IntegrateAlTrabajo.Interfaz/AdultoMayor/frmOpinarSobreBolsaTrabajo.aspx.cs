@@ -14,7 +14,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (Session["Nombre_Usuario"] == null)
+            {
+                Response.Redirect("/home.aspx");
+            }            
         }
 
         private Int16 obtenerIdUsuario(String NombreUsuario)

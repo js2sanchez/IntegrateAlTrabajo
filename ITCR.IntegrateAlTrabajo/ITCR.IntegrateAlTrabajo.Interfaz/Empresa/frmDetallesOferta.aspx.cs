@@ -17,6 +17,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
         {
             if (!IsPostBack)
             {
+                if (Session["Nombre_Usuario"] == null)
+                {
+                    Response.Redirect("/home.aspx");
+                }
                 cargarDatosOfertaTrabajo();
             }
         }
@@ -33,6 +37,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                 lblTipoDato.Text = obtenerNombreTipoOfertaTrabajo(Int16.Parse(TablaOfertaTrabajo.Rows[0]["FK_IdTipoOfertaTrabajo"].ToString()));
                 lblCategoriaDato.Text = obtenerNombreCategoriaOfertaTrabajo(Int16.Parse(TablaOfertaTrabajo.Rows[0]["FK_IdCategoriaOfertaTrabajo"].ToString()));
                 lblObservacionesDato.Text = TablaOfertaTrabajo.Rows[0]["InformacionAdicional"].ToString();
+                lblVencimiento.Text = TablaOfertaTrabajo.Rows[0]["Vencimiento"].ToString();
                 if (bool.Parse(TablaOfertaTrabajo.Rows[0]["Ind_Activa"].ToString()))
                 {
                     lblEstado.Text = "Activa";
@@ -117,6 +122,11 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
         protected void btnInteresados_Click(object sender, EventArgs e)
         {
             Response.Redirect("/Empresa/frmInteresados.aspx");
+        }
+
+        protected void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Empresa/frmOfertasTrabajo.aspx");
         }
     }
 }

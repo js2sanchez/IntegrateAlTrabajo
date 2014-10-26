@@ -8,7 +8,7 @@ using System.Data;
 using ITCR.IntegrateAlTrabajo.Negocios;
 using ITCR.IntegrateAlTrabajo.Datos;
 
-namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
+namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador
 {
     public partial class frmPerfilAdultoMayor : System.Web.UI.Page
     {
@@ -17,7 +17,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
         List<string> ListaIdiomas = new List<string>();
 
         protected void Page_Load(object sender, EventArgs e)
-        {            
+        {
             if (!IsPostBack)
             {
                 if (Session["Nombre_Usuario"] == null)
@@ -25,10 +25,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                     Response.Redirect("/home.aspx");
                 }
                 //Edicion
-                txtPasatiempo.Visible = false;                    
+                txtPasatiempo.Visible = false;
                 //Cargas
                 cargarUsuario();
-                cargarDatosPersonales();                
+                cargarDatosPersonales();
                 cargarDataGridEstudios();
                 cargarDataGridExperienciasLaborales();
                 cargarIdiomas();
@@ -69,7 +69,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
             }
 
             cIATCantonNegocios Canton = new cIATCantonNegocios(1, "A", 2, "B");
-            
+
             Canton.Id_Canton = IdCanton;
             DataTable TablaCanton = Canton.Buscar();
 
@@ -110,7 +110,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
         }
 
         private void cargarDatosPersonales()
-        {                     
+        {
             DataTable TablaPersona = Persona.Buscar();
 
             if (TablaPersona.Rows.Count > 0)
@@ -216,7 +216,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
             Int16 IdPersona = 0;
 
             if (TablaPersona.Rows.Count > 0)
-            {                
+            {
                 IdPersona = Int16.Parse(TablaPersona.Rows[0]["Id_Persona"].ToString());
             }
 
@@ -244,6 +244,11 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                     }
                 }
             }
+        }
+
+        protected void btnRegresar_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Administrador/frmCambiarEstadoPerfilPersona.aspx");
         }
     }
 }
