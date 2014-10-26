@@ -136,7 +136,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblRequisitos;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
         /// txtRequisitos control.
@@ -145,9 +145,32 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar cldVencimiento;
+        
+        /// <summary>
+        /// Control lblRequisitos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRequisitos;
+        
+        /// <summary>
+        /// Control txtRequisitos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRequisitos;
         
         /// <summary>
+        /// Control Panel1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// Panel1 control.
         /// </summary>
         /// <remarks>

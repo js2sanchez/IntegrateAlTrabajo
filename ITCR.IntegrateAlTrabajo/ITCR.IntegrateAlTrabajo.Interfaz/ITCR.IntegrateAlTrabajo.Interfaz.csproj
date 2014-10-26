@@ -67,16 +67,16 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="Administrador\frmPerfilEmpresa.aspx" />
     <Content Include="Administrador\frmCambiarEstadoPerfilEmpresa.aspx" />
     <Content Include="Administrador\frmCambiarEstadoPerfilPersona.aspx" />
-    <Content Include="Administrador\frmCreditos.aspx" />
     <Content Include="Administrador\frmOpinionesEmpresa.aspx" />
     <Content Include="Administrador\frmOpinionesPAM.aspx" />
+    <Content Include="Administrador\frmPerfilAdultoMayor.aspx" />
     <Content Include="AdultoMayor\frmActualizarServicio.aspx" />
     <Content Include="AdultoMayor\frmAplicarOfertaTrabajo.aspx" />
     <Content Include="AdultoMayor\frmConsultarPerfilAdultoMayor.aspx" />
     <Content Include="AdultoMayor\frmConsultarServiciosOfrecidos.aspx" />
-    <Content Include="AdultoMayor\frmCreditos.aspx" />
     <Content Include="AdultoMayor\frmDetalleServicio.aspx" />
     <Content Include="AdultoMayor\frmEditarDatosPersonalesAdultoMayor.aspx" />
     <Content Include="AdultoMayor\frmEditarEstudiosAdultoMayor.aspx" />
@@ -88,7 +88,6 @@
     <Content Include="Empresa\frmInteresados.aspx" />
     <Content Include="Empresa\frmCreditos.aspx" />
     <Content Include="HOME.aspx" />
-    <Content Include="Empresa\frmCreditos.aspx" />
     <Content Include="Empresa\frmConsultarPerfilEmpresa.aspx" />
     <Content Include="Empresa\frmDatosServicio.aspx" />
     <Content Include="Empresa\frmDetallesOferta.aspx" />
@@ -172,6 +171,13 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Administrador\frmPerfilEmpresa.aspx.cs">
+      <DependentUpon>frmPerfilEmpresa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador\frmPerfilEmpresa.aspx.designer.cs">
+      <DependentUpon>frmPerfilEmpresa.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Administrador\frmCambiarEstadoPerfilEmpresa.aspx.cs">
       <DependentUpon>frmCambiarEstadoPerfilEmpresa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -186,13 +192,6 @@
     <Compile Include="Administrador\frmCambiarEstadoPerfilPersona.aspx.designer.cs">
       <DependentUpon>frmCambiarEstadoPerfilPersona.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Administrador\frmCreditos.aspx.cs">
-      <DependentUpon>frmCreditos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Administrador\frmCreditos.aspx.designer.cs">
-      <DependentUpon>frmCreditos.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Administrador\frmOpinionesEmpresa.aspx.cs">
       <DependentUpon>frmOpinionesEmpresa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -206,6 +205,13 @@
     </Compile>
     <Compile Include="Administrador\frmOpinionesPAM.aspx.designer.cs">
       <DependentUpon>frmOpinionesPAM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\frmPerfilAdultoMayor.aspx.cs">
+      <DependentUpon>frmPerfilAdultoMayor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador\frmPerfilAdultoMayor.aspx.designer.cs">
+      <DependentUpon>frmPerfilAdultoMayor.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdultoMayor\frmActualizarServicio.aspx.cs">
       <DependentUpon>frmActualizarServicio.aspx</DependentUpon>
@@ -234,13 +240,6 @@
     </Compile>
     <Compile Include="AdultoMayor\frmConsultarServiciosOfrecidos.aspx.designer.cs">
       <DependentUpon>frmConsultarServiciosOfrecidos.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AdultoMayor\frmCreditos.aspx.cs">
-      <DependentUpon>frmCreditos.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AdultoMayor\frmCreditos.aspx.designer.cs">
-      <DependentUpon>frmCreditos.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdultoMayor\frmDetalleServicio.aspx.cs">
       <DependentUpon>frmDetalleServicio.aspx</DependentUpon>
