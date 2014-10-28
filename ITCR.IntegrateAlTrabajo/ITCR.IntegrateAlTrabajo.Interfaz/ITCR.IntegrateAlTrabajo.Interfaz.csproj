@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -67,6 +67,7 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="Administrador\frmCreditos.aspx" />
     <Content Include="Administrador\frmPerfilEmpresa.aspx" />
     <Content Include="Administrador\frmCambiarEstadoPerfilEmpresa.aspx" />
     <Content Include="Administrador\frmCambiarEstadoPerfilPersona.aspx" />
@@ -77,6 +78,7 @@
     <Content Include="AdultoMayor\frmAplicarOfertaTrabajo.aspx" />
     <Content Include="AdultoMayor\frmConsultarPerfilAdultoMayor.aspx" />
     <Content Include="AdultoMayor\frmConsultarServiciosOfrecidos.aspx" />
+    <Content Include="AdultoMayor\frmCreditos.aspx" />
     <Content Include="AdultoMayor\frmDetalleServicio.aspx" />
     <Content Include="AdultoMayor\frmEditarDatosPersonalesAdultoMayor.aspx" />
     <Content Include="AdultoMayor\frmEditarEstudiosAdultoMayor.aspx" />
@@ -171,6 +173,13 @@
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Administrador\frmCreditos.aspx.cs">
+      <DependentUpon>frmCreditos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador\frmCreditos.aspx.designer.cs">
+      <DependentUpon>frmCreditos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Administrador\frmPerfilEmpresa.aspx.cs">
       <DependentUpon>frmPerfilEmpresa.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -240,6 +249,13 @@
     </Compile>
     <Compile Include="AdultoMayor\frmConsultarServiciosOfrecidos.aspx.designer.cs">
       <DependentUpon>frmConsultarServiciosOfrecidos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdultoMayor\frmCreditos.aspx.cs">
+      <DependentUpon>frmCreditos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdultoMayor\frmCreditos.aspx.designer.cs">
+      <DependentUpon>frmCreditos.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdultoMayor\frmDetalleServicio.aspx.cs">
       <DependentUpon>frmDetalleServicio.aspx</DependentUpon>
