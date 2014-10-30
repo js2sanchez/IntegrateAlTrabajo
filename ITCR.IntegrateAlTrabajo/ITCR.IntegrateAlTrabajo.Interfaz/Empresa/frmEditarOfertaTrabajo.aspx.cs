@@ -37,6 +37,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
             {
                 DataTable TablaOfertaTrabajo = (DataTable)Session["detalles_oferta"];
                 HttpContext.Current.Session["id_empresa"] = TablaOfertaTrabajo.Rows[0]["FK_IdEmpresa"];
+                HttpContext.Current.Session["id_provincia"] = TablaOfertaTrabajo.Rows[0]["FK_IdProvincia"];
                 txtNombrePuesto.Text = TablaOfertaTrabajo.Rows[0]["Nom_Puesto"].ToString();
                 txtDescripcion.Text = TablaOfertaTrabajo.Rows[0]["Dsc_OfertaTrabajo"].ToString();
                 drpTipo.SelectedIndex = Int16.Parse(TablaOfertaTrabajo.Rows[0]["FK_IdTipoOfertaTrabajo"].ToString())-1;
@@ -111,6 +112,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                 OfertaTrabajo.FK_IdCategoriaOfertaTrabajo = Int16.Parse(drpCategoria.SelectedValue);
                 OfertaTrabajo.FK_IdTipoOfertaTrabajo = Int16.Parse(drpTipo.SelectedValue);
                 OfertaTrabajo.FK_IdEmpresa = Int16.Parse(HttpContext.Current.Session["id_empresa"].ToString());
+                OfertaTrabajo.FK_IdProvincia = Int16.Parse(HttpContext.Current.Session["id_provincia"].ToString());
                 cIATRequisitoOfertaTrabajoNegocios n_requisito = new cIATRequisitoOfertaTrabajoNegocios(1, "A", 2, "B");
                 n_requisito.FK_IdOfertaTrabajo = OfertaTrabajo.Id_OfertaTrabajo;
                 try

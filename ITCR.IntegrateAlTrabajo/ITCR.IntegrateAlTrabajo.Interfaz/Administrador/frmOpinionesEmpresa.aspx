@@ -67,6 +67,22 @@
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/bootbox.js"></script>
     <script type="text/javascript">
+        function custom_alert(msg) {
+            var box = bootbox.dialog({
+                closeButton: false,
+                message: msg,
+                buttons: {
+                    success: {
+                        label: "Aceptar",
+                        className: "btn-primary"
+                    }
+                }
+            });
+
+            box.bind("shown.bs.modal", function () {
+                box.find("btn-primary:first").focus();
+            });
+        }
         function eliminarOpinion(index) {
             bootbox.dialog({
                 closeButton: false,

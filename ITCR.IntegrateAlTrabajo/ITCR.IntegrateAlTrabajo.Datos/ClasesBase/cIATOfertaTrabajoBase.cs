@@ -23,21 +23,22 @@ namespace ITCR.IntegrateAlTrabajo.Base
 	/// </summary>
 	public class cIATOfertaTrabajoBase : cBDInteraccionBase
 	{
+
         #region Declaraciones de miembros de la clase
-            private SqlBoolean _ind_Activa;
-            private SqlDateTime _vencimiento;
-            private SqlInt32 _id_OfertaTrabajo, _fK_IdTipoOfertaTrabajo, _fK_IdTipoOfertaTrabajoOld, _fK_IdEmpresa, _fK_IdEmpresaOld, _fK_IdCategoriaOfertaTrabajo, _fK_IdCategoriaOfertaTrabajoOld;
-            private SqlString _dsc_OfertaTrabajo, _nom_Puesto, _informacionAdicional;
+        private SqlBoolean _ind_Activa;
+        private SqlDateTime _vencimiento;
+        private SqlInt32 _fK_IdTipoOfertaTrabajo, _fK_IdTipoOfertaTrabajoOld, _fK_IdEmpresa, _fK_IdEmpresaOld, _fK_IdProvincia, _fK_IdProvinciaOld, _fK_IdCategoriaOfertaTrabajo, _fK_IdCategoriaOfertaTrabajoOld, _id_OfertaTrabajo;
+        private SqlString _nom_Puesto, _dsc_OfertaTrabajo, _informacionAdicional;
         #endregion
 
 
-		/// <summary>
-		/// Propósito: Constructor de la clase.
-		/// </summary>
-		public cIATOfertaTrabajoBase()
-		{
-			// Agregar código aquí.
-		}
+        /// <summary>
+        /// Propósito: Constructor de la clase.
+        /// </summary>
+        public cIATOfertaTrabajoBase()
+        {
+            // Agregar código aquí.
+        }
 
 
         /// <summary>
@@ -54,7 +55,8 @@ namespace ITCR.IntegrateAlTrabajo.Base
         ///		 <LI>FK_IdCategoriaOfertaTrabajo</LI>
         ///		 <LI>FK_IdTipoOfertaTrabajo</LI>
         ///		 <LI>FK_IdEmpresa</LI>
-        ///		 <LI>Vencimiento. May be SqlDateTime.Null</LI>
+        ///		 <LI>Vencimiento</LI>
+        ///		 <LI>FK_IdProvincia. May be SqlInt32.Null</LI>
         /// </UL>
         /// Propiedades actualizadas luego de una llamada exitosa a este método: 
         /// <UL>
@@ -80,7 +82,8 @@ namespace ITCR.IntegrateAlTrabajo.Base
                 cmdAEjecutar.Parameters.Add(new SqlParameter("@iFK_IdCategoriaOfertaTrabajo", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fK_IdCategoriaOfertaTrabajo));
                 cmdAEjecutar.Parameters.Add(new SqlParameter("@iFK_IdTipoOfertaTrabajo", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fK_IdTipoOfertaTrabajo));
                 cmdAEjecutar.Parameters.Add(new SqlParameter("@iFK_IdEmpresa", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fK_IdEmpresa));
-                cmdAEjecutar.Parameters.Add(new SqlParameter("@daVencimiento", SqlDbType.DateTime, 8, ParameterDirection.Input, true, 0, 0, "", DataRowVersion.Proposed, _vencimiento));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@daVencimiento", SqlDbType.DateTime, 8, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _vencimiento));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iFK_IdProvincia", SqlDbType.Int, 4, ParameterDirection.Input, true, 10, 0, "", DataRowVersion.Proposed, _fK_IdProvincia));
                 cmdAEjecutar.Parameters.Add(new SqlParameter("@iId_OfertaTrabajo", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _id_OfertaTrabajo));
                 cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
 
@@ -142,7 +145,8 @@ namespace ITCR.IntegrateAlTrabajo.Base
         ///		 <LI>FK_IdCategoriaOfertaTrabajo</LI>
         ///		 <LI>FK_IdTipoOfertaTrabajo</LI>
         ///		 <LI>FK_IdEmpresa</LI>
-        ///		 <LI>Vencimiento. May be SqlDateTime.Null</LI>
+        ///		 <LI>Vencimiento</LI>
+        ///		 <LI>FK_IdProvincia. May be SqlInt32.Null</LI>
         /// </UL>
         /// Propiedades actualizadas luego de una llamada exitosa a este método: 
         /// <UL>
@@ -168,7 +172,8 @@ namespace ITCR.IntegrateAlTrabajo.Base
                 cmdAEjecutar.Parameters.Add(new SqlParameter("@iFK_IdCategoriaOfertaTrabajo", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fK_IdCategoriaOfertaTrabajo));
                 cmdAEjecutar.Parameters.Add(new SqlParameter("@iFK_IdTipoOfertaTrabajo", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fK_IdTipoOfertaTrabajo));
                 cmdAEjecutar.Parameters.Add(new SqlParameter("@iFK_IdEmpresa", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fK_IdEmpresa));
-                cmdAEjecutar.Parameters.Add(new SqlParameter("@daVencimiento", SqlDbType.DateTime, 8, ParameterDirection.Input, true, 0, 0, "", DataRowVersion.Proposed, _vencimiento));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@daVencimiento", SqlDbType.DateTime, 8, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _vencimiento));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iFK_IdProvincia", SqlDbType.Int, 4, ParameterDirection.Input, true, 10, 0, "", DataRowVersion.Proposed, _fK_IdProvincia));
                 cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
 
                 if (_conexionBDEsCreadaLocal)
@@ -200,61 +205,6 @@ namespace ITCR.IntegrateAlTrabajo.Base
             {
                 // Ocurrió un error. le hace Bubble a quien llama y encapsula el objeto Exception
                 throw new Exception("cIATOfertaTrabajoBase::Actualizar::Ocurrió un error." + ex.Message, ex);
-            }
-            finally
-            {
-                if (_conexionBDEsCreadaLocal)
-                {
-                    // Cierra la conexión.
-                    _conexionBD.Close();
-                }
-                cmdAEjecutar.Dispose();
-            }
-        }
-
-
-        public bool Actualizar_Estado()
-        {
-            SqlCommand cmdAEjecutar = new SqlCommand();
-            cmdAEjecutar.CommandText = "dbo.[pr_IATOfertaTrabajo_Actualizar_Estado]";
-            cmdAEjecutar.CommandType = CommandType.StoredProcedure;
-
-            // Usar el objeto conexión de la clase base
-            cmdAEjecutar.Connection = _conexionBD;
-
-            try
-            {
-                cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
-
-                if (_conexionBDEsCreadaLocal)
-                {
-                    // Abre una conexión.
-                    _conexionBD.Open();
-                }
-                else
-                {
-                    if (_conexionBDProvider.IsTransactionPending)
-                    {
-                        cmdAEjecutar.Transaction = _conexionBDProvider.CurrentTransaction;
-                    }
-                }
-
-                // Ejecuta la consulta.
-                _filasAfectadas = cmdAEjecutar.ExecuteNonQuery();
-                _codError = Int32.Parse(cmdAEjecutar.Parameters["@iCodError"].Value.ToString());
-
-                if (_codError != (int)ITCRError.AllOk)
-                {
-                    // Genera un error.
-                    throw new Exception("Procedimiento almacenado 'pr_IATOfertaTrabajo_EliminarTodo_Con_FK_IdTipoOfertaTrabajo_FK' reportó el error Código: " + _codError);
-                }
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                // Ocurrió un error. le hace Bubble a quien llama y encapsula el objeto Exception
-                throw new Exception("cIATOfertaTrabajoBase::EliminarTodo_Con_FK_IdTipoOfertaTrabajo_FK::Ocurrió un error." + ex.Message, ex);
             }
             finally
             {
@@ -480,6 +430,81 @@ namespace ITCR.IntegrateAlTrabajo.Base
             {
                 // Ocurrió un error. le hace Bubble a quien llama y encapsula el objeto Exception
                 throw new Exception("cIATOfertaTrabajoBase::ActualizarTodos_Con_FK_IdEmpresa_FK::Ocurrió un error." + ex.Message, ex);
+            }
+            finally
+            {
+                if (_conexionBDEsCreadaLocal)
+                {
+                    // Cierra la conexión.
+                    _conexionBD.Close();
+                }
+                cmdAEjecutar.Dispose();
+            }
+        }
+
+
+        /// <summary>
+        /// Propósito: Método Update para actualizar una o más filas utilizando la llave foránea 'FK_IdProvincia.
+        /// Este método actualiza una o más filas existentes en la base de datos, actualiza el campo 'FK_IdProvincia' en
+        /// todas las filas que tienen ese valor para este campo con el valor 'FK_IdProvinciaanterior 
+        /// con el valor colocado en la propiedad 'FK_IdProvincia'.
+        /// </summary>
+        /// <returns>True si tuvo éxito, sino genera una Exception. </returns>
+        /// <remarks>
+        /// Propiedades necesarias para este método: 
+        /// <UL>
+        ///		 <LI>FK_IdProvincia. May be SqlInt32.Null</LI>
+        ///		 <LI>FK_IdProvinciaOld. May be SqlInt32.Null</LI>
+        /// </UL>
+        /// Propiedades actualizadas luego de una llamada exitosa a este método: 
+        /// <UL>
+        ///		 <LI>CodError</LI>
+        /// </UL>
+        /// </remarks>
+        public bool ActualizarTodos_Con_FK_IdProvincia_FK()
+        {
+            SqlCommand cmdAEjecutar = new SqlCommand();
+            cmdAEjecutar.CommandText = "dbo.[pr_IATOfertaTrabajo_ActualizarTodos_Con_FK_IdProvincia_FK]";
+            cmdAEjecutar.CommandType = CommandType.StoredProcedure;
+
+            // Usar el objeto conexión de la clase base
+            cmdAEjecutar.Connection = _conexionBD;
+
+            try
+            {
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iFK_IdProvincia", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fK_IdProvincia));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iFK_IdProvinciaOld", SqlDbType.Int, 4, ParameterDirection.Input, true, 10, 0, "", DataRowVersion.Proposed, _fK_IdProvinciaOld));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
+
+                if (_conexionBDEsCreadaLocal)
+                {
+                    // Abre una conexión.
+                    _conexionBD.Open();
+                }
+                else
+                {
+                    if (_conexionBDProvider.IsTransactionPending)
+                    {
+                        cmdAEjecutar.Transaction = _conexionBDProvider.CurrentTransaction;
+                    }
+                }
+
+                // Ejecuta la consulta.
+                _filasAfectadas = cmdAEjecutar.ExecuteNonQuery();
+                _codError = Int32.Parse(cmdAEjecutar.Parameters["@iCodError"].Value.ToString());
+
+                if (_codError != (int)ITCRError.AllOk)
+                {
+                    // Genera un error.
+                    throw new Exception("Procedimiento almacenado 'pr_IATOfertaTrabajo_ActualizarTodos_Con_FK_IdProvincia_FK' reportó el error Código: " + _codError);
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Ocurrió un error. le hace Bubble a quien llama y encapsula el objeto Exception
+                throw new Exception("cIATOfertaTrabajoBase::ActualizarTodos_Con_FK_IdProvincia_FK::Ocurrió un error." + ex.Message, ex);
             }
             finally
             {
@@ -774,6 +799,76 @@ namespace ITCR.IntegrateAlTrabajo.Base
 
 
         /// <summary>
+        /// Propósito: Método Eliminar para una llave primaria. Este método va a borrar una o más filas en la base de datos, basado en la llave primaria 'FK_IdProvincia'
+        /// </summary>
+        /// <returns>True si tuvo éxito, false otherwise. </returns>
+        /// <remarks>
+        /// Propiedades necesarias para este método: 
+        /// <UL>
+        ///		 <LI>FK_IdProvincia. May be SqlInt32.Null</LI>
+        /// </UL>
+        /// Propiedades actualizadas luego de una llamada exitosa a este método: 
+        /// <UL>
+        ///		 <LI>CodError</LI>
+        /// </UL>
+        /// </remarks>
+        public bool EliminarTodo_Con_FK_IdProvincia_FK()
+        {
+            SqlCommand cmdAEjecutar = new SqlCommand();
+            cmdAEjecutar.CommandText = "dbo.[pr_IATOfertaTrabajo_EliminarTodo_Con_FK_IdProvincia_FK]";
+            cmdAEjecutar.CommandType = CommandType.StoredProcedure;
+
+            // Usar el objeto conexión de la clase base
+            cmdAEjecutar.Connection = _conexionBD;
+
+            try
+            {
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iFK_IdProvincia", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fK_IdProvincia));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
+
+                if (_conexionBDEsCreadaLocal)
+                {
+                    // Abre una conexión.
+                    _conexionBD.Open();
+                }
+                else
+                {
+                    if (_conexionBDProvider.IsTransactionPending)
+                    {
+                        cmdAEjecutar.Transaction = _conexionBDProvider.CurrentTransaction;
+                    }
+                }
+
+                // Ejecuta la consulta.
+                _filasAfectadas = cmdAEjecutar.ExecuteNonQuery();
+                _codError = Int32.Parse(cmdAEjecutar.Parameters["@iCodError"].Value.ToString());
+
+                if (_codError != (int)ITCRError.AllOk)
+                {
+                    // Genera un error.
+                    throw new Exception("Procedimiento almacenado 'pr_IATOfertaTrabajo_EliminarTodo_Con_FK_IdProvincia_FK' reportó el error Código: " + _codError);
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Ocurrió un error. le hace Bubble a quien llama y encapsula el objeto Exception
+                throw new Exception("cIATOfertaTrabajoBase::EliminarTodo_Con_FK_IdProvincia_FK::Ocurrió un error." + ex.Message, ex);
+            }
+            finally
+            {
+                if (_conexionBDEsCreadaLocal)
+                {
+                    // Cierra la conexión.
+                    _conexionBD.Close();
+                }
+                cmdAEjecutar.Dispose();
+            }
+        }
+
+
+        /// <summary>
         /// Propósito: Método SELECT. Este método hace Select de una fila existente en la base de datos, basado en la llave primaria.
         /// </summary>
         /// <returns>DataTable object si tuvo éxito, sino genera una Exception. </returns>
@@ -794,6 +889,7 @@ namespace ITCR.IntegrateAlTrabajo.Base
         ///		 <LI>FK_IdTipoOfertaTrabajo</LI>
         ///		 <LI>FK_IdEmpresa</LI>
         ///		 <LI>Vencimiento</LI>
+        ///		 <LI>FK_IdProvincia</LI>
         /// </UL>
         /// Llena todas las propiedades que corresponden al campo en tabla con el valor de la fila seleccionada.
         /// </remarks>
@@ -846,7 +942,8 @@ namespace ITCR.IntegrateAlTrabajo.Base
                     _fK_IdCategoriaOfertaTrabajo = (Int32)toReturn.Rows[0]["FK_IdCategoriaOfertaTrabajo"];
                     _fK_IdTipoOfertaTrabajo = (Int32)toReturn.Rows[0]["FK_IdTipoOfertaTrabajo"];
                     _fK_IdEmpresa = (Int32)toReturn.Rows[0]["FK_IdEmpresa"];
-                    _vencimiento = toReturn.Rows[0]["Vencimiento"] == System.DBNull.Value ? SqlDateTime.Null : (DateTime)toReturn.Rows[0]["Vencimiento"];
+                    _vencimiento = (DateTime)toReturn.Rows[0]["Vencimiento"];
+                    _fK_IdProvincia = toReturn.Rows[0]["FK_IdProvincia"] == System.DBNull.Value ? SqlInt32.Null : (Int32)toReturn.Rows[0]["FK_IdProvincia"];
                 }
                 return toReturn;
             }
@@ -1156,6 +1253,79 @@ namespace ITCR.IntegrateAlTrabajo.Base
 
 
         /// <summary>
+        /// Propósito: Método SELECT para una llave primaria. Este método hace Select de una o más filas de la base de datos, basado en la llave primaria 'FK_IdProvincia'
+        /// </summary>
+        /// <returns>DataTable object si tuvo éxito, sino genera una Exception. </returns>
+        /// <remarks>
+        /// Propiedades necesarias para este método: 
+        /// <UL>
+        ///		 <LI>FK_IdProvincia. May be SqlInt32.Null</LI>
+        /// </UL>
+        /// Propiedades actualizadas luego de una llamada exitosa a este método: 
+        /// <UL>
+        ///		 <LI>CodError</LI>
+        /// </UL>
+        /// </remarks>
+        public DataTable SeleccionarTodos_Con_FK_IdProvincia_FK()
+        {
+            SqlCommand cmdAEjecutar = new SqlCommand();
+            cmdAEjecutar.CommandText = "dbo.[pr_IATOfertaTrabajo_SeleccionarTodos_Con_FK_IdProvincia_FK]";
+            cmdAEjecutar.CommandType = CommandType.StoredProcedure;
+            DataTable toReturn = new DataTable("IATOfertaTrabajo");
+            SqlDataAdapter adapter = new SqlDataAdapter(cmdAEjecutar);
+
+            // Usar el objeto conexión de la clase base
+            cmdAEjecutar.Connection = _conexionBD;
+
+            try
+            {
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iFK_IdProvincia", SqlDbType.Int, 4, ParameterDirection.Input, true, 10, 0, "", DataRowVersion.Proposed, _fK_IdProvincia));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
+
+                if (_conexionBDEsCreadaLocal)
+                {
+                    // Abre una conexión.
+                    _conexionBD.Open();
+                }
+                else
+                {
+                    if (_conexionBDProvider.IsTransactionPending)
+                    {
+                        cmdAEjecutar.Transaction = _conexionBDProvider.CurrentTransaction;
+                    }
+                }
+
+                // Ejecuta la consulta.
+                adapter.Fill(toReturn);
+                _codError = Int32.Parse(cmdAEjecutar.Parameters["@iCodError"].Value.ToString());
+
+                if (_codError != (int)ITCRError.AllOk)
+                {
+                    // Genera un error.
+                    throw new Exception("Procedimiento Almacenado 'pr_IATOfertaTrabajo_SeleccionarTodos_Con_FK_IdProvincia_FK' reportó el error Código: " + _codError);
+                }
+
+                return toReturn;
+            }
+            catch (Exception ex)
+            {
+                // Ocurrió un error. Le hace Bubble a quien llama y encapsula el objeto Exception
+                throw new Exception("cIATOfertaTrabajoBase::SeleccionarTodos_Con_FK_IdProvincia_FK::Ocurrió un error." + ex.Message, ex);
+            }
+            finally
+            {
+                if (_conexionBDEsCreadaLocal)
+                {
+                    // Cierra la conexión.
+                    _conexionBD.Close();
+                }
+                cmdAEjecutar.Dispose();
+                adapter.Dispose();
+            }
+        }
+
+
+        /// <summary>
         /// Propósito: Método Buscar. Este método hace una busqueda de acuerdo con todos los campos de la tabla.
         /// </summary>
         /// <returns>DataTable si tuvo éxito, sino genera una Exception. </returns>
@@ -1170,7 +1340,8 @@ namespace ITCR.IntegrateAlTrabajo.Base
         ///		 <LI>FK_IdCategoriaOfertaTrabajo</LI>
         ///		 <LI>FK_IdTipoOfertaTrabajo</LI>
         ///		 <LI>FK_IdEmpresa</LI>
-        ///		 <LI>Vencimiento. May be SqlDateTime.Null</LI>
+        ///		 <LI>Vencimiento</LI>
+        ///		 <LI>FK_IdProvincia. May be SqlInt32.Null</LI>
         /// </UL>
         /// Propiedades actualizadas luego de una llamada exitosa a este método: 
         /// <UL>
@@ -1198,7 +1369,8 @@ namespace ITCR.IntegrateAlTrabajo.Base
                 cmdAEjecutar.Parameters.Add(new SqlParameter("@iFK_IdCategoriaOfertaTrabajo", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fK_IdCategoriaOfertaTrabajo));
                 cmdAEjecutar.Parameters.Add(new SqlParameter("@iFK_IdTipoOfertaTrabajo", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fK_IdTipoOfertaTrabajo));
                 cmdAEjecutar.Parameters.Add(new SqlParameter("@iFK_IdEmpresa", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fK_IdEmpresa));
-                cmdAEjecutar.Parameters.Add(new SqlParameter("@daVencimiento", SqlDbType.DateTime, 8, ParameterDirection.Input, true, 0, 0, "", DataRowVersion.Proposed, _vencimiento));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@daVencimiento", SqlDbType.DateTime, 8, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _vencimiento));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iFK_IdProvincia", SqlDbType.Int, 4, ParameterDirection.Input, true, 10, 0, "", DataRowVersion.Proposed, _fK_IdProvincia));
                 cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
 
                 if (_conexionBDEsCreadaLocal)
@@ -1240,6 +1412,62 @@ namespace ITCR.IntegrateAlTrabajo.Base
                 }
                 cmdAEjecutar.Dispose();
                 adapter.Dispose();
+            }
+        }
+
+
+        /********************************************************/
+        public bool Actualizar_Estado()
+        {
+            SqlCommand cmdAEjecutar = new SqlCommand();
+            cmdAEjecutar.CommandText = "dbo.[pr_IATOfertaTrabajo_Actualizar_Estado]";
+            cmdAEjecutar.CommandType = CommandType.StoredProcedure;
+
+            // Usar el objeto conexión de la clase base
+            cmdAEjecutar.Connection = _conexionBD;
+
+            try
+            {
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iCodError", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
+
+                if (_conexionBDEsCreadaLocal)
+                {
+                    // Abre una conexión.
+                    _conexionBD.Open();
+                }
+                else
+                {
+                    if (_conexionBDProvider.IsTransactionPending)
+                    {
+                        cmdAEjecutar.Transaction = _conexionBDProvider.CurrentTransaction;
+                    }
+                }
+
+                // Ejecuta la consulta.
+                _filasAfectadas = cmdAEjecutar.ExecuteNonQuery();
+                _codError = Int32.Parse(cmdAEjecutar.Parameters["@iCodError"].Value.ToString());
+
+                if (_codError != (int)ITCRError.AllOk)
+                {
+                    // Genera un error.
+                    throw new Exception("Procedimiento almacenado 'pr_IATOfertaTrabajo_EliminarTodo_Con_FK_IdTipoOfertaTrabajo_FK' reportó el error Código: " + _codError);
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                // Ocurrió un error. le hace Bubble a quien llama y encapsula el objeto Exception
+                throw new Exception("cIATOfertaTrabajoBase::EliminarTodo_Con_FK_IdTipoOfertaTrabajo_FK::Ocurrió un error." + ex.Message, ex);
+            }
+            finally
+            {
+                if (_conexionBDEsCreadaLocal)
+                {
+                    // Cierra la conexión.
+                    _conexionBD.Close();
+                }
+                cmdAEjecutar.Dispose();
             }
         }
 
@@ -1305,192 +1533,193 @@ namespace ITCR.IntegrateAlTrabajo.Base
         /*******************************************/
 
 
-		#region Declaraciones de propiedades de la clase
-		public SqlInt32 Id_OfertaTrabajo
-		{
-			get
-			{
-				return _id_OfertaTrabajo;
-			}
-			set
-			{
-				SqlInt32 id_OfertaTrabajoTmp = (SqlInt32)value;
-				if(id_OfertaTrabajoTmp.IsNull)
-				{
-					throw new ArgumentOutOfRangeException("Id_OfertaTrabajo", "Id_OfertaTrabajo can't be NULL");
-				}
-				_id_OfertaTrabajo = value;
-			}
-		}
+        #region Declaraciones de propiedades de la clase
+        public SqlInt32 Id_OfertaTrabajo
+        {
+            get
+            {
+                return _id_OfertaTrabajo;
+            }
+            set
+            {
+                SqlInt32 id_OfertaTrabajoTmp = (SqlInt32)value;
+                if (id_OfertaTrabajoTmp.IsNull)
+                {
+                    throw new ArgumentOutOfRangeException("Id_OfertaTrabajo", "Id_OfertaTrabajo can't be NULL");
+                }
+                _id_OfertaTrabajo = value;
+            }
+        }
 
 
-		public SqlString Nom_Puesto
-		{
-			get
-			{
-				return _nom_Puesto;
-			}
-			set
-			{
-				SqlString nom_PuestoTmp = (SqlString)value;
-				if(nom_PuestoTmp.IsNull)
-				{
-					throw new ArgumentOutOfRangeException("Nom_Puesto", "Nom_Puesto can't be NULL");
-				}
-				_nom_Puesto = value;
-			}
-		}
+        public SqlString Nom_Puesto
+        {
+            get
+            {
+                return _nom_Puesto;
+            }
+            set
+            {
+                SqlString nom_PuestoTmp = (SqlString)value;
+                if (nom_PuestoTmp.IsNull)
+                {
+                    throw new ArgumentOutOfRangeException("Nom_Puesto", "Nom_Puesto can't be NULL");
+                }
+                _nom_Puesto = value;
+            }
+        }
 
 
-		public SqlString Dsc_OfertaTrabajo
-		{
-			get
-			{
-				return _dsc_OfertaTrabajo;
-			}
-			set
-			{
-				SqlString dsc_OfertaTrabajoTmp = (SqlString)value;
-				if(dsc_OfertaTrabajoTmp.IsNull)
-				{
-					throw new ArgumentOutOfRangeException("Dsc_OfertaTrabajo", "Dsc_OfertaTrabajo can't be NULL");
-				}
-				_dsc_OfertaTrabajo = value;
-			}
-		}
-
-        
-		public SqlString InformacionAdicional
-		{
-			get
-			{
-				return _informacionAdicional;
-			}
-			set
-			{
-				_informacionAdicional = value;
-			}
-		}
+        public SqlString Dsc_OfertaTrabajo
+        {
+            get
+            {
+                return _dsc_OfertaTrabajo;
+            }
+            set
+            {
+                SqlString dsc_OfertaTrabajoTmp = (SqlString)value;
+                if (dsc_OfertaTrabajoTmp.IsNull)
+                {
+                    throw new ArgumentOutOfRangeException("Dsc_OfertaTrabajo", "Dsc_OfertaTrabajo can't be NULL");
+                }
+                _dsc_OfertaTrabajo = value;
+            }
+        }
 
 
-		public SqlBoolean Ind_Activa
-		{
-			get
-			{
-				return _ind_Activa;
-			}
-			set
-			{
-				SqlBoolean ind_ActivaTmp = (SqlBoolean)value;
-				if(ind_ActivaTmp.IsNull)
-				{
-					throw new ArgumentOutOfRangeException("Ind_Activa", "Ind_Activa can't be NULL");
-				}
-				_ind_Activa = value;
-			}
-		}
+        public SqlString InformacionAdicional
+        {
+            get
+            {
+                return _informacionAdicional;
+            }
+            set
+            {
+                _informacionAdicional = value;
+            }
+        }
 
 
-		public SqlInt32 FK_IdCategoriaOfertaTrabajo
-		{
-			get
-			{
-				return _fK_IdCategoriaOfertaTrabajo;
-			}
-			set
-			{
-				SqlInt32 fK_IdCategoriaOfertaTrabajoTmp = (SqlInt32)value;
-				if(fK_IdCategoriaOfertaTrabajoTmp.IsNull)
-				{
-					throw new ArgumentOutOfRangeException("FK_IdCategoriaOfertaTrabajo", "FK_IdCategoriaOfertaTrabajo can't be NULL");
-				}
-				_fK_IdCategoriaOfertaTrabajo = value;
-			}
-		}
-		public SqlInt32 FK_IdCategoriaOfertaTrabajoOld
-		{
-			get
-			{
-				return _fK_IdCategoriaOfertaTrabajoOld;
-			}
-			set
-			{
-				SqlInt32 fK_IdCategoriaOfertaTrabajoOldTmp = (SqlInt32)value;
-				if(fK_IdCategoriaOfertaTrabajoOldTmp.IsNull )
-				{
-					throw new ArgumentOutOfRangeException("FK_IdCategoriaOfertaTrabajoOld", "FK_IdCategoriaOfertaTrabajoOld can't be NULL");
-				}
-				_fK_IdCategoriaOfertaTrabajoOld = value;
-			}
-		}
+        public SqlBoolean Ind_Activa
+        {
+            get
+            {
+                return _ind_Activa;
+            }
+            set
+            {
+                SqlBoolean ind_ActivaTmp = (SqlBoolean)value;
+                if (ind_ActivaTmp.IsNull)
+                {
+                    throw new ArgumentOutOfRangeException("Ind_Activa", "Ind_Activa can't be NULL");
+                }
+                _ind_Activa = value;
+            }
+        }
 
 
-		public SqlInt32 FK_IdTipoOfertaTrabajo
-		{
-			get
-			{
-				return _fK_IdTipoOfertaTrabajo;
-			}
-			set
-			{
-				SqlInt32 fK_IdTipoOfertaTrabajoTmp = (SqlInt32)value;
-				if(fK_IdTipoOfertaTrabajoTmp.IsNull)
-				{
-					throw new ArgumentOutOfRangeException("FK_IdTipoOfertaTrabajo", "FK_IdTipoOfertaTrabajo can't be NULL");
-				}
-				_fK_IdTipoOfertaTrabajo = value;
-			}
-		}
-		public SqlInt32 FK_IdTipoOfertaTrabajoOld
-		{
-			get
-			{
-				return _fK_IdTipoOfertaTrabajoOld;
-			}
-			set
-			{
-				SqlInt32 fK_IdTipoOfertaTrabajoOldTmp = (SqlInt32)value;
-				if(fK_IdTipoOfertaTrabajoOldTmp.IsNull )
-				{
-					throw new ArgumentOutOfRangeException("FK_IdTipoOfertaTrabajoOld", "FK_IdTipoOfertaTrabajoOld can't be NULL");
-				}
-				_fK_IdTipoOfertaTrabajoOld = value;
-			}
-		}
+        public SqlInt32 FK_IdCategoriaOfertaTrabajo
+        {
+            get
+            {
+                return _fK_IdCategoriaOfertaTrabajo;
+            }
+            set
+            {
+                SqlInt32 fK_IdCategoriaOfertaTrabajoTmp = (SqlInt32)value;
+                if (fK_IdCategoriaOfertaTrabajoTmp.IsNull)
+                {
+                    throw new ArgumentOutOfRangeException("FK_IdCategoriaOfertaTrabajo", "FK_IdCategoriaOfertaTrabajo can't be NULL");
+                }
+                _fK_IdCategoriaOfertaTrabajo = value;
+            }
+        }
+        public SqlInt32 FK_IdCategoriaOfertaTrabajoOld
+        {
+            get
+            {
+                return _fK_IdCategoriaOfertaTrabajoOld;
+            }
+            set
+            {
+                SqlInt32 fK_IdCategoriaOfertaTrabajoOldTmp = (SqlInt32)value;
+                if (fK_IdCategoriaOfertaTrabajoOldTmp.IsNull)
+                {
+                    throw new ArgumentOutOfRangeException("FK_IdCategoriaOfertaTrabajoOld", "FK_IdCategoriaOfertaTrabajoOld can't be NULL");
+                }
+                _fK_IdCategoriaOfertaTrabajoOld = value;
+            }
+        }
 
 
-		public SqlInt32 FK_IdEmpresa
-		{
-			get
-			{
-				return _fK_IdEmpresa;
-			}
-			set
-			{
-				SqlInt32 fK_IdEmpresaTmp = (SqlInt32)value;
-				if(fK_IdEmpresaTmp.IsNull)
-				{
-					throw new ArgumentOutOfRangeException("FK_IdEmpresa", "FK_IdEmpresa can't be NULL");
-				}
-				_fK_IdEmpresa = value;
-			}
-		}
-		public SqlInt32 FK_IdEmpresaOld
-		{
-			get
-			{
-				return _fK_IdEmpresaOld;
-			}
-			set
-			{
-				SqlInt32 fK_IdEmpresaOldTmp = (SqlInt32)value;
-				if(fK_IdEmpresaOldTmp.IsNull )
-				{
-					throw new ArgumentOutOfRangeException("FK_IdEmpresaOld", "FK_IdEmpresaOld can't be NULL");
-				}
-				_fK_IdEmpresaOld = value;
-			}
-		}
+        public SqlInt32 FK_IdTipoOfertaTrabajo
+        {
+            get
+            {
+                return _fK_IdTipoOfertaTrabajo;
+            }
+            set
+            {
+                SqlInt32 fK_IdTipoOfertaTrabajoTmp = (SqlInt32)value;
+                if (fK_IdTipoOfertaTrabajoTmp.IsNull)
+                {
+                    throw new ArgumentOutOfRangeException("FK_IdTipoOfertaTrabajo", "FK_IdTipoOfertaTrabajo can't be NULL");
+                }
+                _fK_IdTipoOfertaTrabajo = value;
+            }
+        }
+        public SqlInt32 FK_IdTipoOfertaTrabajoOld
+        {
+            get
+            {
+                return _fK_IdTipoOfertaTrabajoOld;
+            }
+            set
+            {
+                SqlInt32 fK_IdTipoOfertaTrabajoOldTmp = (SqlInt32)value;
+                if (fK_IdTipoOfertaTrabajoOldTmp.IsNull)
+                {
+                    throw new ArgumentOutOfRangeException("FK_IdTipoOfertaTrabajoOld", "FK_IdTipoOfertaTrabajoOld can't be NULL");
+                }
+                _fK_IdTipoOfertaTrabajoOld = value;
+            }
+        }
+
+
+        public SqlInt32 FK_IdEmpresa
+        {
+            get
+            {
+                return _fK_IdEmpresa;
+            }
+            set
+            {
+                SqlInt32 fK_IdEmpresaTmp = (SqlInt32)value;
+                if (fK_IdEmpresaTmp.IsNull)
+                {
+                    throw new ArgumentOutOfRangeException("FK_IdEmpresa", "FK_IdEmpresa can't be NULL");
+                }
+                _fK_IdEmpresa = value;
+            }
+        }
+        public SqlInt32 FK_IdEmpresaOld
+        {
+            get
+            {
+                return _fK_IdEmpresaOld;
+            }
+            set
+            {
+                SqlInt32 fK_IdEmpresaOldTmp = (SqlInt32)value;
+                if (fK_IdEmpresaOldTmp.IsNull)
+                {
+                    throw new ArgumentOutOfRangeException("FK_IdEmpresaOld", "FK_IdEmpresaOld can't be NULL");
+                }
+                _fK_IdEmpresaOld = value;
+            }
+        }
+
 
         public SqlDateTime Vencimiento
         {
@@ -1500,9 +1729,39 @@ namespace ITCR.IntegrateAlTrabajo.Base
             }
             set
             {
+                SqlDateTime vencimientoTmp = (SqlDateTime)value;
+                if (vencimientoTmp.IsNull)
+                {
+                    throw new ArgumentOutOfRangeException("Vencimiento", "Vencimiento can't be NULL");
+                }
                 _vencimiento = value;
             }
         }
-		#endregion
-	}
+
+
+        public SqlInt32 FK_IdProvincia
+        {
+            get
+            {
+                return _fK_IdProvincia;
+            }
+            set
+            {
+                _fK_IdProvincia = value;
+            }
+        }
+        public SqlInt32 FK_IdProvinciaOld
+        {
+            get
+            {
+                return _fK_IdProvinciaOld;
+            }
+            set
+            {
+                _fK_IdProvinciaOld = value;
+            }
+        }
+        #endregion
+
+    }
 }

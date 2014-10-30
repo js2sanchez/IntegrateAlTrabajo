@@ -93,10 +93,26 @@
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/bootbox.js"></script>
     <script type="text/javascript">
-        function cambioEstado() {
-            bootbox.alert("Los cambios sobre los estados de los perfiles se aplicaron correctamente.");
+        function custom_alert(msg) {
+            var box = bootbox.dialog({
+                closeButton: false,
+                message: msg,
+                buttons: {
+                    success: {
+                        label: "Aceptar",
+                        className: "btn-primary"
+                    }
+                }
+            });
+
+            box.bind("shown.bs.modal", function () {
+                box.find("btn-primary:first").focus();
+            });
         }
 
+        function cambioEstado() {
+            custom_alert("Los cambios sobre los estados de los perfiles se aplicaron correctamente.");
+        }
     </script>
     <table class="style3">
         <tr>
@@ -186,6 +202,7 @@
             <td class="style11" colspan="5">
                 <asp:Panel ID="panelEmpresas" runat="server">
                     <asp:DataGrid ID="dgPerfilesEmpresas" runat="server" AutoGenerateColumns="False"
+                        OnItemCommand="dgPerfilesEmpresas_ItemCommand"
                         BackColor="WhiteSmoke" BorderStyle="Solid" CssClass="GridMantenimiento" Font-Names="Century Gothic"
                         Font-Size="Small" ForeColor="Black" Height="19px" Width="99%">
                         <AlternatingItemStyle BackColor="Gainsboro" />

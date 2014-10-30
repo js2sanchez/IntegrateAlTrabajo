@@ -128,10 +128,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             {
                 busqueda.FK_IdCategoriaOfertaTrabajo = Int16.Parse(drpCategoria.SelectedValue);
             }
-            /*if (chk_Provincia.Checked)
+            if (chk_Provincia.Checked)
             {
-                busqueda.id_Provincia = Int16.Parse(drpprovincia.SelectedValue);
-            }*/
+                busqueda.FK_IdProvincia = Int16.Parse(drpprovincia.SelectedValue);
+            }
             DataTable Filtro = busqueda.Buscar_por_Filtrado();
             if (Filtro.Rows.Count > 0)
             {

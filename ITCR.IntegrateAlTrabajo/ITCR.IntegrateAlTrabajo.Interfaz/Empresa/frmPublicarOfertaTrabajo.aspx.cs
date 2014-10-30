@@ -121,6 +121,34 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             btnAgregar.Visible = true;
         }
 
+        private Int16 encontrarProvincia()
+        {
+            cIATEmpresaNegocios Empresa = new cIATEmpresaNegocios(1, "A", 2, "B");
+            Empresa.Id_Empresa = IdEmpresa;
+            DataTable tablaEmpresa = Empresa.Buscar();
+            cIATDistritoNegocios Distrito = new cIATDistritoNegocios(1, "A", 2, "B");   
+            if (tablaEmpresa.Rows.Count > 0)
+            {
+                Distrito.Id_Distrito = Int16.Parse(tablaEmpresa.Rows[0]["Fk_IdDistrito"].ToString());
+            }
+            
+            DataTable TablaDistrito = Distrito.Buscar();
+            Int16 IdCanton = 0;
+            if (TablaDistrito.Rows.Count > 0)
+            {
+                IdCanton = Int16.Parse(TablaDistrito.Rows[0]["FK_IdCanton"].ToString());
+            }
+            cIATCantonNegocios Canton = new cIATCantonNegocios(1, "A", 2, "B");
+            Canton.Id_Canton = IdCanton;
+            DataTable TablaCanton = Canton.Buscar();
+            Int16 IdProvincia = 0;
+            if (TablaCanton.Rows.Count > 0)
+            {
+                IdProvincia = Int16.Parse(TablaCanton.Rows[0]["FK_IdProvincia"].ToString());
+            }
+            return IdProvincia;
+        }
+
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
             dgRequisitos.DataSource = ((DataTable)HttpContext.Current.Session["tabla_requisitos"]);
@@ -147,6 +175,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 OfertaTrabajo.FK_IdCategoriaOfertaTrabajo = Int16.Parse(drpCategoria.SelectedValue);
                 OfertaTrabajo.FK_IdTipoOfertaTrabajo = Int16.Parse(drpTipo.SelectedValue);
                 OfertaTrabajo.FK_IdEmpresa = IdEmpresa;
+                OfertaTrabajo.FK_IdProvincia = encontrarProvincia();
 
                 OfertaTrabajo.Insertar();
                 cIATRequisitoOfertaTrabajoNegocios n_requisito = new cIATRequisitoOfertaTrabajoNegocios(1, "A", 2, "B");

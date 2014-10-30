@@ -123,14 +123,14 @@
                 title: false,
                 message: "¿Está seguro que desea eliminar esta empresa?",
                 buttons: {
-                    success: {
+                    main: {
                         label: "Sí, estoy seguro",
                         className: "btn-primary",
                         callback: function () {
                             PageMethods.eliminarEmpresa(user, OnSuccess, OnError);
                         }
                     },
-                    main: {
+                    success: {
                         label: "No, deseo mantenerla",
                         className: "btn-primary"
                     }

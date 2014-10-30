@@ -194,9 +194,20 @@
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/bootbox.js"></script>
     <script type="text/javascript">
-
+        function custom_alert(msg) {
+            bootbox.dialog({
+                closeButton: false,
+                message: msg,
+                buttons: {
+                    success: {
+                        label: "Aceptar",
+                        className: "btn-primary"
+                    }
+                }
+            });
+        }
         function ofertasNoEncontradas() {
-            bootbox.alert("No hay ofertas que cumplan con los criterios de búsqueda específicados.");
+            custom_alert("No hay ofertas que cumplan con los criterios de búsqueda específicados.");
         }
 
     </script>
