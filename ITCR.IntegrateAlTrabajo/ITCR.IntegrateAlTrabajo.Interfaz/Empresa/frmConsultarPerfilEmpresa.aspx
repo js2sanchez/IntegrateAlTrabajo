@@ -149,7 +149,7 @@
                         label: "Volver a la página de autenticación",
                         className: "btn-primary",
                         callback: function () {
-                            location.href = "/home.aspx";
+                            location.href = "/Default.aspx";
                         }
                     }
                 }

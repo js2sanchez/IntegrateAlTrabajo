@@ -20,7 +20,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
             {
                 if (Session["Nombre_Usuario"] == null)
                 {
-                    Response.Redirect("/home.aspx");
+                    Response.Redirect("/Default.aspx");
                 }
                 HttpContext.Current.Session["requisitos_borrar"] = new ArrayList();
                 HttpContext.Current.Session["requisitos_agregar"] = new ArrayList();

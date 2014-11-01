@@ -17,7 +17,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
             if(!IsPostBack){
                 if (Session["Nombre_Usuario"] == null)
                 {
-                    Response.Redirect("/home.aspx");
+                    Response.Redirect("/Default.aspx");
                 }
                 cargarInteresadosOferta();
             }

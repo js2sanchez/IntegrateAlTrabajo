@@ -23,7 +23,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             {
                 if (Session["Nombre_Usuario"] == null)
                 {
-                    Response.Redirect("/home.aspx");
+                    Response.Redirect("/Default.aspx");
                 }
                 try
                 {

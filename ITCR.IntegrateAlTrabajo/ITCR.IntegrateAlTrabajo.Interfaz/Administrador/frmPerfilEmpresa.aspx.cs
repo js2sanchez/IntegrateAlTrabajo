@@ -27,7 +27,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador
             {
                 if (Session["Nombre_Usuario"] == null)
                 {
-                    Response.Redirect("/home.aspx");
+                    Response.Redirect("/Default.aspx");
                 }
                 cargar_datos_usuario();
             }

@@ -23,7 +23,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
             {
                 if (Session["Nombre_Usuario"] == null)
                 {
-                    Response.Redirect("/home.aspx");
+                    Response.Redirect("/Default.aspx");
                 }
                 cargarTodosDropDownList();
                 cargar_datos_usuario();
