@@ -210,7 +210,7 @@
         function NotificarErrorCantidadDias() {
             bootbox.dialog({
                 closeButton: false,
-                message: "El servicio se debe ofrecer al menos 1 día a la semana. Si todavía no está seguro (a) de los días en los que ofrecerá el servicio, ingréselo posteriormente.",
+                message: "El servicio se debe ofrecer al menos 1 día a la semana.",
                 title: "Servicio",
                 buttons: {
                     success: {

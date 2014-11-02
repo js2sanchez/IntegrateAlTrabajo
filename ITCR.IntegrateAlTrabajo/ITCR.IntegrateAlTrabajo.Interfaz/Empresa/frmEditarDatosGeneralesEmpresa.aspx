@@ -34,11 +34,6 @@
         {
             width: 100%;
         }
-        .style15
-        {
-            width: 26px;
-            height: 25px;
-        }
         .style16
         {
             height: 25px;
@@ -54,6 +49,15 @@
         .style20
         {
             width: 166px;
+        }
+        .style21
+        {
+            width: 123px;
+        }
+        .style22
+        {
+            width: 337px;
+            height: 25px;
         }
     </style>
 </asp:Content>
@@ -122,7 +126,7 @@
                 <asp:Panel ID="PanelActualizarDatosGenerales" runat="server" BorderWidth="2px">
                     <table class="style10">
                         <tr>
-                            <td class="style18" colspan="5">
+                            <td class="style18" colspan="4">
                                 <asp:Panel ID="PanelBotonAplicar" runat="server" HorizontalAlign="Right">
                                     <asp:Button ID="btnCancelarActualización" runat="server" CssClass="Boton" 
                                         OnClick="btnCancelarActualización_Click" TabIndex="9" Text="Cancelar" />
@@ -133,11 +137,9 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="style20">
+                            <td class="style21">
                                 &nbsp;</td>
-                            <td class="style19">
-                                &nbsp;</td>
-                            <td class="style15">
+                            <td class="style22">
                                 &nbsp;</td>
                             <td class="style16">
                                 &nbsp;</td>
@@ -145,165 +147,101 @@
                                 &nbsp;</td>
                         </tr>
                         <tr>
-                            <td class="style20">
+                            <td class="style21">
                                 <asp:Label ID="lblNombreEmpresa" runat="server" Text="Nombre"></asp:Label>
                             </td>
-                            <td class="style19">
+                            <td class="style22">
                                 <asp:TextBox ID="txtNombreE" runat="server" Enabled="False" Width="300px"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="rfvNombreEmpresa" runat="server" 
                                     ControlToValidate="txtNombreE" 
-                                    ErrorMessage="El nombre de la empresa es un dato requerido." ForeColor="Red" 
+                                    ErrorMessage="El nombre de la empresa es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" 
                                     ValidationGroup="gvDatosGenerales">*</asp:RequiredFieldValidator>
                             </td>
-                            <td class="style15">
-                            </td>
                             <td class="style16">
+                                <asp:Label ID="lblEmail" runat="server" Text="Correo electrónico"></asp:Label>
                             </td>
                             <td class="style5">
+                                <asp:TextBox ID="txtEmail" runat="server" 
+                                    onblur="this.placeholder = 'Escriba el correo electrónico aquí'" 
+                                    onfocus="this.placeholder = ''" 
+                                    placeholder="Escriba el correo electrónico aquí" TabIndex="4" 
+                                    ToolTip="Ejemplo: recursos-humanos@intel.com" Width="300px"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" 
+                                    ControlToValidate="txtEmail" 
+                                    ErrorMessage="El correo electrónico de la empresa es un dato requerido, por lo que debe introducir un valor válido." 
+                                    ForeColor="Red" ValidationGroup="gvDatosGenerales">*</asp:RequiredFieldValidator>
+                                <asp:RegularExpressionValidator ID="revEmail" runat="server" 
+                                    ControlToValidate="txtEmail" ErrorMessage="El correo electrónico proporcionado tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos." 
+                                    ForeColor="Red" ValidationExpression=".+@.+\..+" 
+                                    ValidationGroup="gvDatosGenerales">*</asp:RegularExpressionValidator>
                             </td>
                         </tr>
                         <tr>
-                            <td class="style20">
+                            <td class="style21">
                                 <asp:Label ID="lblCedulaJuridica" runat="server" Text="Cédula Jurídica"></asp:Label>
                             </td>
-                            <td class="style19">
+                            <td class="style22">
                                 <asp:TextBox ID="txtCedulaE" runat="server" Width="300px" Enabled="False" TabIndex="1"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtCedulaE"
-                                    ErrorMessage="La cédula jurídica de la empresa es un dato requerido." ForeColor="Red"
+                                    ErrorMessage="La cédula jurídica de la empresa es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red"
                                     ValidationGroup="gvDatosGenerales">*</asp:RequiredFieldValidator>
                             </td>
-                            <td class="style15">
-                            </td>
                             <td class="style16">
+                                <asp:Label ID="lblProvincia" runat="server" Text="Provincia"></asp:Label>
                             </td>
                             <td class="style5">
+                                <asp:DropDownList ID="drpProvincia" runat="server" AutoPostBack="True" 
+                                    OnSelectedIndexChanged="drpProvincia_SelectedIndexChanged" TabIndex="5" 
+                                    Width="181px">
+                                </asp:DropDownList>
                             </td>
                         </tr>
                         <tr>
-                            <td class="style20">
+                            <td class="style21">
                                 <asp:Label ID="lblDescripcion" runat="server" Text="Descripción"></asp:Label>
                             </td>
-                            <td class="style19">
+                            <td class="style22">
                                 <asp:TextBox ID="txtDscE" runat="server" TextMode="MultiLine" Height="50px" Width="300px"
                                     onblur="this.placeholder = 'Escriba la descripción aquí'" onfocus="this.placeholder = ''"
                                     placeholder="Escriba la descripción aquí." ToolTip="Ejemplo: Intel diseña y construye las tecnologías escenciales que sirven como base para los dispositivos del mundo computacional."
                                     TabIndex="2"></asp:TextBox>
                             </td>
-                            <td class="style15">
-                                &nbsp;
-                            </td>
                             <td class="style16">
                                 &nbsp;
+                                <asp:Label ID="lblCanton" runat="server" Text="Cantón"></asp:Label>
                             </td>
                             <td class="style5">
                                 &nbsp;
+                                <asp:DropDownList ID="drpCanton" runat="server" AutoPostBack="True" 
+                                    OnSelectedIndexChanged="drpCanton_SelectedIndexChanged" TabIndex="6" 
+                                    Width="179px">
+                                </asp:DropDownList>
                             </td>
                         </tr>
                         <tr>
-                            <td class="style20">
+                            <td class="style21">
                                 <asp:Label ID="lblTelefono" runat="server" Text="Teléfono"></asp:Label>
                             </td>
-                            <td class="style19">
+                            <td class="style22">
                                 <asp:TextBox ID="txtTelefono" runat="server" Width="300px" MaxLength="8" TabIndex="3"
                                     onblur="this.placeholder = 'Escriba el teléfono aquí'" onfocus="this.placeholder = ''"
                                     placeholder="Escriba el teléfono aquí" ToolTip="Ejemplo: 25511922. Por favor, no utilice guiones."></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtTelefono"
-                                    ErrorMessage="El teléfono de la empresa es un dato requerido." ForeColor="Red"
+                                    ErrorMessage="El teléfono de la empresa es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red"
                                     ValidationGroup="gvDatosGenerales">*</asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtTelefono"
-                                    ErrorMessage="El número de teléfono introducido es inválido." ForeColor="Red"
+                                    ErrorMessage="El número de teléfono introducido es inválido, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red"
                                     ValidationExpression="([26789][0-9]*)" ValidationGroup="gvDatosGenerales">*</asp:RegularExpressionValidator>
                             </td>
-                            <td class="style15">
-                                &nbsp;
-                            </td>
                             <td class="style16">
                                 &nbsp;
-                            </td>
-                            <td class="style5">
-                                &nbsp;
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="style20">
-                                <asp:Label ID="lblEmail" runat="server" Text="Correo electrónico"></asp:Label>
-                            </td>
-                            <td class="style19">
-                                <asp:TextBox ID="txtEmail" runat="server" Width="300px" TabIndex="4" onblur="this.placeholder = 'Escriba el correo electrónico aquí'"
-                                    onfocus="this.placeholder = ''" placeholder="Escriba el correo electrónico aquí"
-                                    ToolTip="Ejemplo: recursos-humanos@intel.com"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtEmail"
-                                    ErrorMessage="El correo electrónico de la empresa es un dato requerido." ForeColor="Red"
-                                    ValidationGroup="gvDatosGenerales">*</asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="revEmail" runat="server" ControlToValidate="txtEmail"
-                                    ErrorMessage="Correo electrónico inválido." ForeColor="Red" ValidationExpression=".+@.+\..+"
-                                    ValidationGroup="gvDatosGenerales">*</asp:RegularExpressionValidator>
-                            </td>
-                            <td class="style15">
-                                &nbsp;
-                            </td>
-                            <td class="style16">
-                                &nbsp;
-                            </td>
-                            <td class="style5">
-                                &nbsp;
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="style20">
-                                <asp:Label ID="lblProvincia" runat="server" Text="Provincia"></asp:Label>
-                            </td>
-                            <td class="style19">
-                                <asp:DropDownList ID="drpProvincia" runat="server" AutoPostBack="True" OnSelectedIndexChanged="drpProvincia_SelectedIndexChanged"
-                                    Width="181px" TabIndex="5">
-                                </asp:DropDownList>
-                            </td>
-                            <td class="style15">
-                                &nbsp;
-                            </td>
-                            <td class="style16">
-                                &nbsp;
-                            </td>
-                            <td class="style5">
-                                &nbsp;
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="style20">
-                                <asp:Label ID="lblCanton" runat="server" Text="Cantón"></asp:Label>
-                            </td>
-                            <td class="style19">
-                                <asp:DropDownList ID="drpCanton" runat="server" AutoPostBack="True" OnSelectedIndexChanged="drpCanton_SelectedIndexChanged"
-                                    Width="179px" TabIndex="6">
-                                </asp:DropDownList>
-                            </td>
-                            <td class="style15">
-                                &nbsp;
-                            </td>
-                            <td class="style16">
-                                &nbsp;
-                            </td>
-                            <td class="style5">
-                                &nbsp;
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="style20">
                                 <asp:Label ID="lblDistrito" runat="server" Text="Distrito"></asp:Label>
                             </td>
-                            <td class="style19">
-                                <asp:DropDownList ID="drpDistrito" runat="server" AutoPostBack="True" Width="181px"
-                                    TabIndex="7">
-                                </asp:DropDownList>
-                            </td>
-                            <td class="style15">
-                                &nbsp;
-                            </td>
-                            <td class="style16">
-                                &nbsp;
-                            </td>
                             <td class="style5">
                                 &nbsp;
+                                <asp:DropDownList ID="drpDistrito" runat="server" AutoPostBack="True" 
+                                    TabIndex="7" Width="181px">
+                                </asp:DropDownList>
                             </td>
                         </tr>
                     </table>

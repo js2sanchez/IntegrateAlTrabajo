@@ -1435,15 +1435,6 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
         protected global::System.Web.UI.WebControls.Label lblPaso7;
         
         /// <summary>
-        /// lblTerminosCondicionesUso control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTerminosCondicionesUso;
-        
-        /// <summary>
         /// Panel6 control.
         /// </summary>
         /// <remarks>
@@ -1478,6 +1469,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnFinalizar;
+        
+        /// <summary>
+        /// lblTerminosCondicionesUso control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTerminosCondicionesUso;
         
         /// <summary>
         /// PanelTerminosCondiciones control.

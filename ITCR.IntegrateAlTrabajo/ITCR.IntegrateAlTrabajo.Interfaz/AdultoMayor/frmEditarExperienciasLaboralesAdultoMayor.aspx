@@ -317,23 +317,6 @@
                                 &nbsp;
                             </td>
                         </tr>
-                        <tr>
-                            <td class="style24">
-                                &nbsp;
-                            </td>
-                            <td class="style25">
-                                &nbsp;
-                            </td>
-                            <td class="style17">
-                                &nbsp;
-                            </td>
-                            <td class="style20">
-                                &nbsp;
-                            </td>
-                            <td class="style11">
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-                                &nbsp;&nbsp;&nbsp;&nbsp;
-                            </td>
                     </table>
                 </asp:Panel>
             </td>

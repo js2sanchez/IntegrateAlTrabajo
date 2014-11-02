@@ -87,21 +87,6 @@
         {
             height: 25px;
         }
-        .style14
-        {
-            width: 251px;
-            height: 25px;
-        }
-        .style15
-        {
-            width: 21px;
-            height: 25px;
-        }
-        .style16
-        {
-            width: 160px;
-            height: 25px;
-        }
         .style17
         {
             height: 24px;
@@ -183,6 +168,10 @@
             width: 160px;
             height: 23px;
         }
+        .style23
+        {
+            width: 15px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -197,6 +186,7 @@
         function custom_alert(msg) {
             bootbox.dialog({
                 closeButton: false,
+                title: "Ofertas de trabajo",
                 message: msg,
                 buttons: {
                     success: {
@@ -316,11 +306,11 @@
             </td>
         </tr>
         <tr>
-            <td class="style4">
+            <td class="style23">
                 &nbsp;
             </td>
-            <td class="style8" colspan="5">
-                <asp:Panel ID="pnl_resultado" runat="server" Height="414px">
+            <td colspan="5">
+                <asp:Panel ID="pnl_resultado" runat="server" Height="320px">
                     <table class="style3">
                         <tr>
                             <td class="auto-style8">
@@ -349,76 +339,33 @@
                         </tr>
                         <tr>
                             <td class="style13" colspan="5">
-                                <asp:DataGrid ID="dgResultados" runat="server" AutoGenerateColumns="False" BackColor="WhiteSmoke"
-                                    BorderStyle="Solid" CssClass="GridMantenimiento" Font-Names="Century Gothic"
-                                    Font-Size="Small" ForeColor="Black" Height="19px" OnItemCommand="dgResultados_ItemCommand"
-                                    Width="99%" Font-Overline="False">
-                                    <AlternatingItemStyle BackColor="Gainsboro" />
-                                    <HeaderStyle BackColor="Navy" Font-Bold="True" Font-Names="Century Gothic" Font-Size="Larger"
-                                        ForeColor="White" HorizontalAlign="Center" />
-                                    <Columns>
-                                        <asp:BoundColumn DataField="Id_OfertaTrabajo" HeaderText="Id_Oferta" Visible="False">
-                                        </asp:BoundColumn>
-                                        <asp:BoundColumn DataField="Id_Empresa" HeaderText="Id" Visible="False"></asp:BoundColumn>
-                                        <asp:BoundColumn DataField="Nom_Empresa" HeaderText="Empresa"></asp:BoundColumn>
-                                        <asp:BoundColumn DataField="Nom_Puesto" HeaderText="Puesto"></asp:BoundColumn>
-                                        <asp:BoundColumn DataField="Detalle" HeaderText="Teléfono"></asp:BoundColumn>
-                                        <asp:TemplateColumn HeaderText="Ver Oferta">
-                                            <ItemTemplate>
-                                                <asp:ImageButton ID="imgbtn_verperfil" runat="server" CommandName="Perfil" Height="30px"
-                                                    ImageAlign="Right" ImageUrl="~/Multimedia/icono-buscar.jpg" />
-                                            </ItemTemplate>
-                                        </asp:TemplateColumn>
-                                    </Columns>
-                                </asp:DataGrid>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="style9">
-                                &nbsp;
-                            </td>
-                            <td class="style10">
-                                &nbsp;
-                            </td>
-                            <td class="style11">
-                                &nbsp;
-                            </td>
-                            <td class="style12">
-                                &nbsp;
-                            </td>
-                            <td class="style17">
-                                &nbsp;
+                                <asp:Panel ID="PanelTablaDatos" runat="server" ScrollBars="Auto" Height="250px">
+                                    <asp:DataGrid ID="dgResultados" runat="server" AutoGenerateColumns="False" BackColor="WhiteSmoke"
+                                        BorderStyle="Solid" CssClass="GridMantenimiento" Font-Names="Century Gothic"
+                                        Font-Overline="False" Font-Size="Small" ForeColor="Black" Height="19px" OnItemCommand="dgResultados_ItemCommand"
+                                        Width="99%">
+                                        <AlternatingItemStyle BackColor="Gainsboro" />
+                                        <HeaderStyle BackColor="Navy" Font-Bold="True" Font-Names="Century Gothic" Font-Size="Larger"
+                                            ForeColor="White" HorizontalAlign="Center" />
+                                        <Columns>
+                                            <asp:BoundColumn DataField="Id_OfertaTrabajo" HeaderText="Id_Oferta" Visible="False">
+                                            </asp:BoundColumn>
+                                            <asp:BoundColumn DataField="Id_Empresa" HeaderText="Id" Visible="False"></asp:BoundColumn>
+                                            <asp:BoundColumn DataField="Nom_Empresa" HeaderText="Empresa"></asp:BoundColumn>
+                                            <asp:BoundColumn DataField="Nom_Puesto" HeaderText="Puesto"></asp:BoundColumn>
+                                            <asp:BoundColumn DataField="Detalle" HeaderText="Teléfono"></asp:BoundColumn>
+                                            <asp:TemplateColumn HeaderText="Ver Oferta">
+                                                <ItemTemplate>
+                                                    <asp:ImageButton ID="imgbtn_verperfil" runat="server" CommandName="Perfil" Height="30px"
+                                                        ImageAlign="Right" ImageUrl="~/Multimedia/icono-buscar.jpg" />
+                                                </ItemTemplate>
+                                            </asp:TemplateColumn>
+                                        </Columns>
+                                    </asp:DataGrid>
+                                </asp:Panel>
                             </td>
                         </tr>
                     </table>
                 </asp:Panel>
             </td>
-            <td class="style4">
-                &nbsp;
-            </td>
-        </tr>
-        <tr>
-            <td class="style4">
-                &nbsp;
-            </td>
-            <td class="style8">
-                &nbsp;
-            </td>
-            <td class="style6">
-                &nbsp;
-            </td>
-            <td class="style7">
-                &nbsp;
-            </td>
-            <td class="style5">
-                &nbsp;
-            </td>
-            <td class="style6">
-                &nbsp;
-            </td>
-            <td class="style4">
-                &nbsp;
-            </td>
-        </tr>
-    </table>
 </asp:Content>

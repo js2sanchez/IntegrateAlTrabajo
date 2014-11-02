@@ -121,6 +121,7 @@
         function custom_alert(msg) {
             bootbox.dialog({
                 closeButton: false,
+                title: "Ingreso a la bolsa de trabajo",
                 message: msg,
                 buttons: {
                     success: {

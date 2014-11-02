@@ -106,6 +106,10 @@
         {
             width: 726px;
         }
+        .style33
+        {
+            width: 831px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -120,8 +124,8 @@
         function eliminarEmpresa(user) {
             bootbox.dialog({
                 closeButton: false,
-                title: false,
-                message: "¿Está seguro que desea eliminar esta empresa?",
+                title: "Eliminar perfil de la empresa",
+                message: "¿Está seguro que desea eliminar el perfil de esta empresa en la bolsa de trabajo?",
                 buttons: {
                     main: {
                         label: "Sí, estoy seguro",
@@ -142,6 +146,7 @@
         function OnSuccess(response) {
             bootbox.dialog({
                 closeButton: false,
+                title: "Eliminación exitosa",
                 message: "La empresa se ha eliminado de la bolsa de trabajo exitosamente. ¡Gracias por haber cooperado para que las personas adultas mayores tengan una vejez activa!.",
                 title: "Ha completado la eliminación de empresa satisfactoriamente",
                 buttons: {
@@ -204,7 +209,8 @@
                                 <asp:Panel ID="PanelEditarDatosPersonales" runat="server" HorizontalAlign="Right">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <asp:ImageButton ID="ibtnEditarPerfilEmpresa" runat="server" Height="50px" ImageUrl="~/Multimedia/icono-editar.jpg"
-                                        OnClick="ibtnEditarPerfilEmpresa_Click" Width="50px" />
+                                        OnClick="ibtnEditarPerfilEmpresa_Click" Width="50px" 
+                                        ToolTip="Presione este botón para actualizar los datos generales de la empresa" />
                                 </asp:Panel>
                             </td>
                         </tr>
@@ -372,7 +378,8 @@
                                 <asp:Panel ID="PanelEditarDatosAutenticacion" runat="server" HorizontalAlign="Right">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                     <asp:ImageButton ID="ibtnEditarDatosAutenticacion" runat="server" Height="50px" ImageUrl="~/Multimedia/icono-editar.jpg"
-                                        OnClick="ibtnEditarDatosAutenticacion_Click" Width="50px" />
+                                        OnClick="ibtnEditarDatosAutenticacion_Click" Width="50px" 
+                                        ToolTip="Presione este botón para actualizar los datos de autenticación de la empresa" />
                                 </asp:Panel>
                             </td>
                         </tr>
@@ -453,7 +460,7 @@
                 <asp:Panel ID="PanelEliminarPerfilEmpresa" runat="server" BorderWidth="2px">
                     <table class="style16">
                         <tr>
-                            <td class="style32">
+                            <td class="style33">
                                 <asp:Label ID="lblEliminarPerfilTitulo" runat="server" CssClass="Titulo2" Text="Eliminar perfil"></asp:Label>
                             </td>
                             <td>
@@ -461,18 +468,19 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="style32">
+                            <td class="style33">
                                 <asp:Label ID="lblEliminarPerfil" runat="server" Text="Presione el siguiente botón si desea eliminar por completo el perfil de esta empresa en la bolsa de trabajo."></asp:Label>
                                 &nbsp;&nbsp;&nbsp;                                
                             </td>
                             <td>
                             <asp:ImageButton ID="ibtnEliminarPerfilEmpresa1" runat="server" Height="50px" ImageUrl="~/Multimedia/icono-eliminar.jpg"
-                                    OnClick="ibtnEliminarPerfilEmpresa_Click" Width="50px" />
+                                    OnClick="ibtnEliminarPerfilEmpresa_Click" Width="50px" 
+                                    ToolTip="Presione este botón para eliminar el perfil de la empresa" />
                                     &nbsp;
                             </td>
                         </tr>
                         <tr>
-                            <td class="style32">
+                            <td class="style33">
                                 &nbsp;
                             </td>
                             <td>

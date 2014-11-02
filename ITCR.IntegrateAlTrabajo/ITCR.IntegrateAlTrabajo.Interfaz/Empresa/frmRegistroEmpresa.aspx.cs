@@ -114,15 +114,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                     {
                         if (txtNombreEmpresa.Text.CompareTo(_row["Nom_Empresa"].ToString()) == 0)
                         {
-                            datos += "\\n-Nombre de la empresa";
+                            datos += "\\n*Nombre de la empresa";
                         }
                         if (txtCedulaJuridica.Text.CompareTo(_row["Num_CedulaJuridica"].ToString()) == 0)
                         {
-                            datos += "\\n-Cédula Jurídica";
+                            datos += "\\n*Cédula jurídica";
                         }
                     }
                     string script = @"<script type='text/javascript'>
-                            custom_alert('Los siguientes datos ya estan registrados:" +datos+ "');</script>";
+                            custom_alert('Los siguientes datos ya estan registrados:" +datos+ ". Para solventar el problema comuníquese al teléfono X o al correo Y.');</script>";
                     ScriptManager.RegisterStartupScript(this, typeof(Page), "Datos de empresa", script, false);
                 }
             }

@@ -208,11 +208,6 @@
         {
             width: 335px;
         }
-        .style74
-        {
-            height: 25px;
-            width: 168px;
-        }
         .style75
         {
             height: 25px;
@@ -1085,7 +1080,8 @@
                                             <table class="style14">
                                                 <tr>
                                                     <td class="style56" colspan="2">
-                                                        <asp:Label ID="lblIdiomas" runat="server" Text="Seleccione los idiomas en los que tenga habilidades escritas, orales, de lectura y/o de escucha"></asp:Label>
+                                                        <asp:Label ID="lblIdiomas" runat="server" 
+                                                            Text="Seleccione los idiomas en los que tenga habilidades escritas, orales, de lectura y/o de escucha. Es importante aclarar que debe marcar únicamente los idiomas que conoce, porque una vez finalizado el registro únicamente podrá agregar nuevos idiomas que aprenda, pero no quitar los ya existentes."></asp:Label>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -1216,14 +1212,17 @@
                                     <td class="auto-style30">
                                         <asp:Label ID="lblPaso7" runat="server" Text="Paso 7 de 7" CssClass="Titulo2"></asp:Label>
                                     </td>
-                                    <td class="style25">
-                                        &nbsp;
-                                    </td>
-                                    <td class="style17">
-                                    </td>
-                                    <td class="auto-style35">
-                                    </td>
-                                    <td class="style11">
+                                    <td class="style25" colspan="4">
+                                        &nbsp;<asp:Panel ID="Panel6" runat="server" HorizontalAlign="Right">
+                                            <asp:Button ID="btnCancelar6" runat="server" CssClass="Boton" 
+                                                OnClick="btnCancelar6_Click" TabIndex="3" Text="Salir sin guardar" 
+                                                UseSubmitBehavior="False" />
+                                            &nbsp;
+                                            <asp:Button ID="btnAtras6" runat="server" CssClass="Boton" 
+                                                OnClick="btnAtras6_Click" TabIndex="2" Text="Atrás" UseSubmitBehavior="False" />
+                                            &nbsp;&nbsp;<asp:Button ID="btnFinalizar" runat="server" CssClass="Boton" 
+                                                OnClick="btnFinalizar_Click" TabIndex="1" Text="Finalizar" />
+                                        </asp:Panel>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1255,15 +1254,6 @@
                                         &nbsp;
                                     </td>
                                     <td class="style11">
-                                        <asp:Panel ID="Panel6" runat="server" HorizontalAlign="Right">
-                                            <asp:Button ID="btnCancelar6" runat="server" CssClass="Boton" OnClick="btnCancelar6_Click"
-                                                TabIndex="3" Text="Salir sin guardar" UseSubmitBehavior="False" />
-                                            &nbsp;
-                                            <asp:Button ID="btnAtras6" runat="server" CssClass="Boton" OnClick="btnAtras6_Click"
-                                                Text="Atrás" UseSubmitBehavior="False" TabIndex="2" />
-                                            &nbsp;&nbsp;<asp:Button ID="btnFinalizar" runat="server" CssClass="Boton" OnClick="btnFinalizar_Click"
-                                                Text="Finalizar" TabIndex="1" />
-                                        </asp:Panel>
                                         &nbsp;&nbsp;&nbsp;&nbsp;
                                     </td>
                                 </tr>
