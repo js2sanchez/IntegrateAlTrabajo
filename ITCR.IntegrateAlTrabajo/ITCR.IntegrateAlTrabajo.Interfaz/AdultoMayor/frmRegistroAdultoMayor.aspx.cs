@@ -239,7 +239,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 else 
                 {
                     string script = @"<script type='text/javascript'>
-                            custom_alert('El número de cédula introducido ya esta registrado en el sistema. con la finalidad de solucionar el problema comuníquese al teléfono X o envíe un mensaje al correo Y.');
+                            custom_alert('El número de cédula introducido ya esta registrado en el sistema. Con la finalidad de solucionar el problema comuníquese al teléfono X o envíe un mensaje al correo Y.');
                             </script>";
 
                     ScriptManager.RegisterStartupScript(this, typeof(Page), "Datos personales", script, false);
@@ -773,7 +773,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
         protected void validarTelefonosServer(object sender, ServerValidateEventArgs e)
         {
-            e.IsValid = txtTelefonoHabitacion.Text != "" || txtCelular.Text != "";
+            e.IsValid = txtTelefonoHabitacion.Text != "";
         }
 
         protected void validarUsuarioServer(object sender, ServerValidateEventArgs e)

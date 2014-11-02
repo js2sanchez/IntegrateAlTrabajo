@@ -123,7 +123,7 @@
         function eliminarExperiencia(index,item) {
             bootbox.dialog({
                 closeButton: false,
-                title: false,
+                title: "Eliminar experiencia laboral",
                 message: "¿Está seguro que desea eliminar esta experiencia laboral permanentemente?",
                 buttons: {
                     success: {
@@ -223,7 +223,7 @@
                                                     onblur="this.placeholder = 'Escriba el puesto aquí'" onfocus="this.placeholder = ''" TabIndex="1"
                                                     placeholder="Escriba el puesto aquí" MaxLength="50"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="rfvPuesto" runat="server" ControlToValidate="txtPuesto"
-                                                    ErrorMessage="El puesto es un dato requerido." ForeColor="Red" ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
+                                                    ErrorMessage="El puesto es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
                                             </td>
                                         </tr>
                                         <tr>
@@ -236,7 +236,7 @@
                                                     onfocus="this.placeholder = ''" placeholder="Escriba el nombre de la empresa o institución aquí"
                                                     MaxLength="60"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="rfvEmpresa" runat="server" ControlToValidate="txtEmpresa"
-                                                    ErrorMessage="La empresa es un dato requerido." ForeColor="Red" ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
+                                                    ErrorMessage="La empresa o institución es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
                                             </td>
                                         </tr>
                                         <tr>
@@ -289,20 +289,22 @@
                                         <Columns>
                                             <asp:BoundColumn DataField="Id_ExperienciaLaboral" HeaderText="Id_ExperienciaLaboral"
                                                 Visible="False"></asp:BoundColumn>
-                                            <asp:BoundColumn DataField="Empresa" HeaderText="Empresa"></asp:BoundColumn>
                                             <asp:BoundColumn DataField="Puesto" HeaderText="Puesto"></asp:BoundColumn>
-                                            <asp:TemplateColumn HeaderText="Editar">
+                                            <asp:BoundColumn DataField="Empresa" HeaderText="Empresa"></asp:BoundColumn>
+                                            <asp:TemplateColumn HeaderText="Actualizar">
                                                 <ItemTemplate>
                                                     <asp:ImageButton ID="ibtnEditar" runat="server" CommandName="Editar" Height="30px"
                                                         ImageUrl="~/Multimedia/icono-editar.jpg" Width="30px" Style="display: block;
-                                                        margin: 0 auto" />
+                                                        margin: 0 auto" 
+                                                        ToolTip="Presione este botón para actualizar esta experiencia laboral" />
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
                                             <asp:TemplateColumn HeaderText="Eliminar">
                                                 <ItemTemplate>
                                                     <asp:ImageButton ID="ibtnEliminar" runat="server" CommandName="Eliminar" Height="30px"
                                                         Style="display: block; margin: 0 auto" ImageUrl="~/Multimedia/icono-eliminar.jpg"
-                                                        Width="30px" />
+                                                        Width="30px" 
+                                                        ToolTip="Presione este botón para eliminar esta experiencia laboral" />
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
                                         </Columns>

@@ -123,8 +123,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             if (e.CommandName == "Editar")
             {
                 Session["Id_ExperienciaLaboral"] = e.Item.Cells[0].Text;
-                txtEmpresa.Text = e.Item.Cells[1].Text;
-                txtPuesto.Text = e.Item.Cells[2].Text;
+                txtEmpresa.Text = e.Item.Cells[2].Text;
+                txtPuesto.Text = e.Item.Cells[1].Text;
 
                 btnActualizar.Visible = true;
                 btnCancelarActualizar.Visible = true;
@@ -137,6 +137,12 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 int index = Int16.Parse(e.Item.Cells[0].Text);
                 string code = @"<script type='text/javascript'>eliminarExperiencia(" + index + "," + e.Item.ItemIndex + ");</script>";
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
+                txtPuesto.Text = "";
+                txtEmpresa.Text = "";
+                btnActualizar.Visible = false;
+                btnCancelarActualizar.Visible = false;
+                btnAgregar.Visible = true;
+                btnCancelarAgregar.Visible = true;
             }
         }
 

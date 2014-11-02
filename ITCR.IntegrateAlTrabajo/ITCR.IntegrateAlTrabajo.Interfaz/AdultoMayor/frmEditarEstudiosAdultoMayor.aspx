@@ -130,7 +130,7 @@
         function eliminarEstudio(index,item) {
             bootbox.dialog({
                 closeButton: false,
-                title: false,
+                title: "Eliminar estudio",
                 message: "¿Está seguro que desea eliminar este estudio permanentemente?",
                 buttons: {
                     success: {
@@ -162,7 +162,7 @@
             <td class="style4">
             </td>
             <td class="style5" colspan="2">
-                <asp:Label ID="lblEditarEstudios" runat="server" Text="Editar formación académica"
+                <asp:Label ID="lblEditarEstudios" runat="server" Text="Actualizar formación académica"
                     CssClass="Titulo1"></asp:Label>
             </td>
             <td class="style7">
@@ -229,7 +229,7 @@
                                                     onblur="this.placeholder = 'Escriba su título aquí'" onfocus="this.placeholder = ''" TabIndex="1"
                                                     placeholder="Escriba su título aquí" MaxLength="50"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="rfvTituloEstudio" runat="server" ControlToValidate="txtTituloEstudio"
-                                                    ErrorMessage="El título es un dato requerido." ForeColor="Red" ValidationGroup="gvEstudios">*</asp:RequiredFieldValidator>
+                                                    ErrorMessage="El título es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvEstudios">*</asp:RequiredFieldValidator>
                                             </td>
                                             <td class="style30">
                                                 &nbsp;
@@ -244,7 +244,7 @@
                                                     onblur="this.placeholder = 'Escriba el nombre de la institución aquí'" onfocus="this.placeholder = ''" TabIndex="2"
                                                     placeholder="Escriba el nombre de la institución aquí" MaxLength="60"></asp:TextBox>
                                                 <asp:RequiredFieldValidator ID="rfvInstitucionEstudio" runat="server" ControlToValidate="txtInstitucionEstudio"
-                                                    ErrorMessage="La institución es un dato requerido." ForeColor="Red" ValidationGroup="gvEstudios">*</asp:RequiredFieldValidator>
+                                                    ErrorMessage="La institución es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvEstudios">*</asp:RequiredFieldValidator>
                                             </td>
                                             <td class="style30">
                                                 &nbsp;
@@ -299,20 +299,21 @@
                                         <Columns>
                                             <asp:BoundColumn DataField="Id_Estudio" HeaderText="Id_Estudio" Visible="False">
                                             </asp:BoundColumn>
+                                            <asp:BoundColumn DataField="Titulo" HeaderText="Título"></asp:BoundColumn>
                                             <asp:BoundColumn HeaderText="Institución" DataField="Institucion"></asp:BoundColumn>
-                                            <asp:BoundColumn HeaderText="Título" DataField="Titulo"></asp:BoundColumn>
-                                            <asp:TemplateColumn HeaderText="Editar">
+                                            <asp:TemplateColumn HeaderText="Actualizar">
                                                 <ItemTemplate>
                                                     <asp:ImageButton ID="ibtnEditar" runat="server" CommandName="Editar" Height="30px"
                                                         ImageUrl="~/Multimedia/icono-editar.jpg" Width="30px" Style="display: block;
-                                                        margin: 0 auto" />
+                                                        margin: 0 auto" 
+                                                        ToolTip="Presione este botón para actualizar este estudio" />
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
                                             <asp:TemplateColumn HeaderText="Eliminar">
                                                 <ItemTemplate>
                                                     <asp:ImageButton ID="ibtnEliminar" runat="server" CommandName="Eliminar" Height="30px"
                                                         Style="display: block; margin: 0 auto" ImageUrl="~/Multimedia/icono-eliminar.jpg"
-                                                        Width="30px" />
+                                                        Width="30px" ToolTip="Presione este botón para eliminar este estudio" />
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
                                         </Columns>

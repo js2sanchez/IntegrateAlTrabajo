@@ -78,8 +78,8 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             if (e.CommandName == "Editar")
             {
                 Session["Id_Estudio"] = e.Item.Cells[0].Text;
-                txtInstitucionEstudio.Text = e.Item.Cells[1].Text;
-                txtTituloEstudio.Text = e.Item.Cells[2].Text;
+                txtInstitucionEstudio.Text = e.Item.Cells[2].Text;
+                txtTituloEstudio.Text = e.Item.Cells[1].Text;
                 btnActualizar.Visible = true;
                 btnCancelarActualizar.Visible = true;
                 btnAgregar.Visible = false;
@@ -91,6 +91,12 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 int index = Int16.Parse(e.Item.Cells[0].Text);
                 string code = @"<script type='text/javascript'>eliminarEstudio(" + index +","+  e.Item.ItemIndex + ");</script>";
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
+                txtTituloEstudio.Text = "";
+                txtInstitucionEstudio.Text = "";
+                btnActualizar.Visible = false;
+                btnCancelarActualizar.Visible = false;
+                btnAgregar.Visible = true;
+                btnCancelarAgregar.Visible = true;
             }
         }
 

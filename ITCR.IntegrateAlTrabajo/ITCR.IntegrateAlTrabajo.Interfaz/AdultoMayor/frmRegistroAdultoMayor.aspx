@@ -251,7 +251,7 @@
                 title: "Ha completado el registro satisfactoriamente",
                 buttons: {
                     success: {
-                        label: "Volver a la página de autenticación",
+                        label: "Volver a la página principal",
                         className: "btn-primary",
                         callback: function () {
                             location.href = "/home.aspx";
@@ -262,13 +262,13 @@
         }
 
         function aceptarTerminos() {
-            custom_alert("Usted debe aceptar los términos y condiciones para poder finalizar el registro. Si no desea aceptarlos, presione el botón 'Salir sin guardar'.");
+            custom_alert("Usted debe aceptar los términos y condiciones para poder finalizar el registro. Si no desea aceptarlos, presione el botón 'Salir sin guardar', esto cancelará el proceso de registro sin guardar ningún dato.");
         }
 
         function endConfirmation() {
             bootbox.dialog({
                 closeButton: false,
-                title: false,
+                title: "Cancelar el proceso de registro",
                 message: "¿Está seguro que desea salir sin guardar?",
                 buttons: {
                     success: {
@@ -289,7 +289,7 @@
         function eliminarEstudio(index) {
             bootbox.dialog({
                 closeButton: false,
-                title: false,
+                title: "Eliminar estudio",
                 message: "¿Está seguro que desea eliminar este estudio?",
                 buttons: {
                     success: {
@@ -314,7 +314,7 @@
         function eliminarExperiencia(index) {
             bootbox.dialog({
                 closeButton: false,
-                title: false,
+                title: "Eliminar experiencia laboral",
                 message: "¿Está seguro que desea eliminar esta experiencia laboral?",
                 buttons: {
                     success: {
@@ -444,7 +444,7 @@
                                             onfocus="this.placeholder = ''" placeholder="Escriba su nombre aquí" ToolTip="Ejemplo: Laura"
                                             Width="250px" MaxLength="30" TabIndex="0"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="rfvNombrePersona" runat="server" ControlToValidate="txtNombrePersona"
-                                            ErrorMessage="El nombre de la persona es un dato requerido, por lo que debe introducir un valor válido.."
+                                            ErrorMessage="El nombre de la persona es un dato requerido, por lo que debe introducir un valor válido."
                                             ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
                                         <asp:RegularExpressionValidator ID="RegEx_Nombre" runat="server" ControlToValidate="txtNombrePersona"
                                             ValidationExpression="([a-zA-ZÀ-ÿ ])*" ErrorMessage="El nombre proporcionado tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos."
@@ -461,13 +461,13 @@
                                             onfocus="this.placeholder = ''" placeholder="Escriba su teléfono aquí" ToolTip="Ejemplo: 25517722 (Por favor, no use guiones)"
                                             TabIndex="12" MaxLength="8"></asp:TextBox>
                                         <asp:RegularExpressionValidator ID="revTelefonoHabitacion" runat="server" ControlToValidate="txtTelefonoHabitacion"
-                                            ErrorMessage="El número de teléfono principal introducido es inválido." ForeColor="Red"
+                                            ErrorMessage="El número de teléfono principal introducido es inválido, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red"
                                             ValidationExpression="([0-9]*)" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                         <asp:CustomValidator ID="cvTelefonoHabitacion" runat="server" OnServerValidate="validarTelefonosServer"
-                                            ClientValidationFunction="validarTelefonosClient" ErrorMessage="Debe haber al menos un número de contacto."
+                                            ClientValidationFunction="validarTelefonosClient" ErrorMessage="El número de teléfono principal es requerido con el fin de contactarle."
                                             ValidationGroup="gvDatosPersonales" ForeColor="red">*</asp:CustomValidator>
                                         <asp:CustomValidator ID="largoHabitacion" runat="server" OnServerValidate="validarLargoHabitacionServer"
-                                            ForeColor="red" ErrorMessage="El teléfono principal es inválido (longitud inválida)"
+                                            ForeColor="red" ErrorMessage="El teléfono principal tiene una longitud inválida."
                                             ValidationGroup="gvDatosPersonales">*</asp:CustomValidator>
                                     </td>
                                 </tr>
@@ -497,10 +497,10 @@
                                             onfocus="this.placeholder = ''" placeholder="Opcionalmente otro teléfono" TabIndex="13"
                                             MaxLength="8" ToolTip="Ejemplo: 87721144 (Por favor, no use guiones)"></asp:TextBox>
                                         <asp:RegularExpressionValidator ID="revCelular" runat="server" ControlToValidate="txtCelular"
-                                            ErrorMessage="El número de teléfono secundario introducido es inválido." ForeColor="Red"
+                                            ErrorMessage="El número de teléfono secundario introducido es inválido, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red"
                                             ValidationExpression="([0-9]*)" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                         <asp:CustomValidator ID="validarLargoCelular" runat="server" OnServerValidate="validarLargoMovilServer"
-                                            ErrorMessage="El número de teléfono secundario introducido es inválido (longitud inválida)."
+                                            ErrorMessage="El número de teléfono secundario introducido tiene una longitud inválida."
                                             ValidationGroup="gvDatosPersonales" ForeColor="red">*</asp:CustomValidator>
                                     </td>
                                 </tr>
@@ -513,7 +513,7 @@
                                             onfocus="this.placeholder = ''" placeholder="Escriba su segundo apellido aquí"
                                             Width="250px" ToolTip="Ejemplo: García" TabIndex="2" MaxLength="30"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="rfvApellido2Persona" runat="server" ControlToValidate="txtApellido2"
-                                            ErrorMessage="El segundo apellido es un dato requerido, por lo que debe introducir un valor válido.."
+                                            ErrorMessage="El segundo apellido es un dato requerido, por lo que debe introducir un valor válido."
                                             ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
                                         <asp:RegularExpressionValidator ID="RegEx_Apellido2" runat="server" ControlToValidate="txtApellido2"
                                             ValidationExpression="([a-zA-ZÀ-ÿ ])*" ErrorMessage="El segundo apellido proporcionado tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos."
@@ -530,9 +530,9 @@
                                             onfocus="this.placeholder = ''" placeholder="Escriba su correo electrónico aquí"
                                             ToolTip="Ejemplo: laura-fernandez@gmail.com" Width="250px" TabIndex="14" MaxLength="80"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="rfvCorreoElectronico" runat="server" ControlToValidate="txtCorreoElectronico"
-                                            ErrorMessage="El correo electrónico es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
+                                            ErrorMessage="El correo electrónico es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtCorreoElectronico"
-                                            ErrorMessage="Correo electrónico inválido." ForeColor="Red" ValidationExpression=".+@.+\..+"
+                                            ErrorMessage="El correo electrónico proporcionado tiene un formato inválido." ForeColor="Red" ValidationExpression=".+@.+\..+"
                                             ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                     </td>
                                 </tr>
@@ -601,7 +601,7 @@
                                             ForeColor="red" ErrorMessage="La cédula es un dato requerido, por lo que debe introducir un valor válido."
                                             ValidationGroup="gvDatosPersonales">*</asp:CustomValidator>
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtCedula"
-                                            ErrorMessage="La cédula introducida tiene un formato inválido. Verifique que empiece con un número entre 1 y 9, y que posteriormente contenga sólo números.."
+                                            ErrorMessage="La cédula introducida tiene un formato inválido. Verifique que empiece con un número entre 1 y 9, y que posteriormente contenga sólo números."
                                             ForeColor="Red" ValidationExpression="[1-9]*" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="txtCedula2"
                                             ErrorMessage="La cédula introducida tiene un formato inválido. Verifique que empiece con un número entre 1 y 9, y que posteriormente contenga sólo números."
@@ -689,13 +689,13 @@
                                             onfocus="this.placeholder = ''" placeholder="Escriba su nombre de usuario aquí" TabIndex="0"
                                             MaxLength="30"></asp:TextBox>
                                         <asp:CustomValidator ID="cvValidarUsuario" runat="server" ClientValidationFunction="validarUsuarioClient"
-                                            ErrorMessage="El usuario debe contener entre 5 a 50 caracteres." ForeColor="red"
+                                            ErrorMessage="El nombre de usuario debe contener entre 5 a 50 caracteres." ForeColor="red"
                                             OnServerValidate="validarUsuarioServer" ValidationGroup="gvDatosAutenticacion">*</asp:CustomValidator>
                                         <asp:RegularExpressionValidator ID="RegEx_Usuario" runat="server" ControlToValidate="txtNombreUsuario"
-                                            ErrorMessage="Nombre de usuario inválido (Símbolos inválidos)." ForeColor="Red"
+                                            ErrorMessage="El nombre de usuario proporcionado es inválido, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red"
                                             ValidationExpression="(([0-9A-Za-z]|-|_)*)" ValidationGroup="gvDatosAutenticacion">*</asp:RegularExpressionValidator>
                                         <asp:RequiredFieldValidator ID="rfvNombreUsuario" runat="server" ControlToValidate="txtNombreUsuario"
-                                            ErrorMessage="El nombre de usuario es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosAutenticacion">*</asp:RequiredFieldValidator>
+                                            ErrorMessage="El nombre de usuario es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvDatosAutenticacion">*</asp:RequiredFieldValidator>
                                     </td>
                                 </tr>
                                 <tr>
@@ -707,9 +707,9 @@
                                             Width="260px" onblur="this.placeholder = 'Escriba su contraseña aquí'" onfocus="this.placeholder = ''"
                                             placeholder="Escriba su contraseña aquí" MaxLength="50"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="rfvContraseña" runat="server" ControlToValidate="txtContraseña"
-                                            ErrorMessage="La contraseña es un dato requerido." ForeColor="Red" ValidationGroup="gvDatosAutenticacion">*</asp:RequiredFieldValidator>
+                                            ErrorMessage="La contraseña es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvDatosAutenticacion">*</asp:RequiredFieldValidator>
                                         <asp:RegularExpressionValidator ID="RegEx_Contrasenna" runat="server" ControlToValidate="txtContraseña"
-                                            ErrorMessage="Contraseña inválida (Símbolos inválidos)." ForeColor="Red" ValidationExpression="([0-9A-Za-z]*)"
+                                            ErrorMessage="La contraseña ingresada es inválida, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red" ValidationExpression="([0-9A-Za-z]*)"
                                             ValidationGroup="gvDatosAutenticacion">*</asp:RegularExpressionValidator>
                                         <asp:CustomValidator ID="CustomValidator1" runat="server" ErrorMessage="La contraseña debe contener al menos 8 caracteres."
                                             ForeColor="red" OnServerValidate="validarContrasennaServer" ValidationGroup="gvDatosAutenticacion">*</asp:CustomValidator>
@@ -728,7 +728,7 @@
                                         <asp:RequiredFieldValidator ID="rfvConfirmacionContraseña" runat="server" ControlToValidate="txtConfirmacionContraseña"
                                             ErrorMessage="Es necesario confirmar la contraseña." ForeColor="Red" ValidationGroup="gvDatosAutenticacion">*</asp:RequiredFieldValidator>
                                         <asp:CompareValidator ID="cvContrasenia" runat="server" ControlToCompare="txtContraseña"
-                                            ControlToValidate="txtConfirmacionContraseña" ErrorMessage="El espacio no coincide con el de contraseña."
+                                            ControlToValidate="txtConfirmacionContraseña" ErrorMessage="Las contraseña y confirmación de la misma no coinciden. Asegúrese de ingresarlas exactamente igual."
                                             ForeColor="Red" Operator="Equal" ValidationGroup="gvDatosAutenticacion">*</asp:CompareValidator>
                                     </td>
                                 </tr>
@@ -741,7 +741,7 @@
                                             onblur="this.placeholder = 'Escriba su frase aquí'" onfocus="this.placeholder = ''"
                                             placeholder="Escriba su frase aquí" Width="260px" MaxLength="50"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="rfvIndicioContraseña" runat="server" ControlToValidate="txtIndicioContraseña"
-                                            ErrorMessage="El indicio de contraseña es un dato requerido." ForeColor="Red"
+                                            ErrorMessage="La frase para recordar la contraseña es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red"
                                             ValidationGroup="gvDatosAutenticacion">*</asp:RequiredFieldValidator>
                                     </td>
                                 </tr>
@@ -798,9 +798,9 @@
                                                             onblur="this.placeholder = 'Escriba su título aquí'" onfocus="this.placeholder = ''"
                                                             placeholder="Escriba su título aquí" MaxLength="50"></asp:TextBox>
                                                         <asp:RequiredFieldValidator ID="rfvTituloEstudio" runat="server" ControlToValidate="txtTituloEstudio"
-                                                            ErrorMessage="El título es un dato requerido." ForeColor="Red" ValidationGroup="gvEstudios">*</asp:RequiredFieldValidator>
+                                                            ErrorMessage="El título es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvEstudios">*</asp:RequiredFieldValidator>
                                                         <asp:RegularExpressionValidator ID="RegEx_EstTitulo" runat="server" ControlToValidate="txtTituloEstudio"
-                                                            ErrorMessage="Título inválido (Símbolos inválidos)." ForeColor="Red" ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)"
+                                                            ErrorMessage="El título proporcionado tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red" ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)"
                                                             ValidationGroup="gvEstudios">*</asp:RegularExpressionValidator>
                                                     </td>
                                                     <td class="style28">
@@ -815,9 +815,9 @@
                                                             onblur="this.placeholder = 'Escriba el nombre de la institución aquí'" onfocus="this.placeholder = ''" TabIndex="1"
                                                             placeholder="Escriba el nombre de la institución aquí" MaxLength="60"></asp:TextBox>
                                                         <asp:RequiredFieldValidator ID="rfvInstitucionEstudio" runat="server" ControlToValidate="txtInstitucionEstudio"
-                                                            ErrorMessage="La institución es un dato requerido." ForeColor="Red" ValidationGroup="gvEstudios">*</asp:RequiredFieldValidator>
+                                                            ErrorMessage="La institución es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvEstudios">*</asp:RequiredFieldValidator>
                                                         <asp:RegularExpressionValidator ID="RegEx_Institucion" runat="server" ControlToValidate="txtInstitucionEstudio"
-                                                            ErrorMessage="Institución inválida (Símbolos inválidos)." ForeColor="Red" ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)"
+                                                            ErrorMessage="La institución proporcionada tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red" ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)"
                                                             ValidationGroup="gvEstudios">*</asp:RegularExpressionValidator>
                                                     </td>
                                                     <td class="style28">
@@ -936,9 +936,9 @@
                                                             onblur="this.placeholder = 'Escriba el puesto aquí'" onfocus="this.placeholder = ''"
                                                             placeholder="Escriba el puesto aquí" MaxLength="50"></asp:TextBox>
                                                         <asp:RequiredFieldValidator ID="rfvPuesto" runat="server" ControlToValidate="txtPuesto"
-                                                            ErrorMessage="El puesto es un dato requerido." ForeColor="Red" ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
+                                                            ErrorMessage="El puesto es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
                                                         <asp:RegularExpressionValidator ID="RegEx_Puesto" runat="server" ControlToValidate="txtPuesto"
-                                                            ErrorMessage="Puesto inválido (Símbolos inválidos)." ForeColor="Red" ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)"
+                                                            ErrorMessage="El puesto proporcionado tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red" ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)"
                                                             ValidationGroup="gvExperienciasLaborales">*</asp:RegularExpressionValidator>
                                                     </td>
                                                 </tr>
@@ -952,9 +952,9 @@
                                                             onfocus="this.placeholder = ''" placeholder="Escriba el nombre de la empresa o institución aquí"
                                                             MaxLength="60"></asp:TextBox>
                                                         <asp:RequiredFieldValidator ID="rfvEmpresa" runat="server" ControlToValidate="txtEmpresa"
-                                                            ErrorMessage="La empresa es un dato requerido." ForeColor="Red" ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
+                                                            ErrorMessage="La empresa o institución es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvExperienciasLaborales">*</asp:RequiredFieldValidator>
                                                         <asp:RegularExpressionValidator ID="RegEx_Empresa" runat="server" ControlToValidate="txtEmpresa"
-                                                            ErrorMessage="Empresa inválida (Símbolos inválidos)." ForeColor="Red" ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)"
+                                                            ErrorMessage="La empresa o institución proporcionada tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red" ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)"
                                                             ValidationGroup="gvExperienciasLaborales">*</asp:RegularExpressionValidator>
                                                     </td>
                                                 </tr>
@@ -1195,7 +1195,7 @@
                                                                             onblur="this.placeholder = 'Escriba su pasatiempo favorito aquí'" onfocus="this.placeholder = ''"
                                                                             placeholder="Escriba su pasatiempo favorito aquí" Width="500px" MaxLength="80"></asp:TextBox>
                                                                         <asp:RegularExpressionValidator ID="RegEx_Pasatiempo" runat="server" ControlToValidate="txtPasatiempos"
-                                                                            ErrorMessage="Pasatiempo inválido (Símbolos inválidos)." ForeColor="Red" ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)"
+                                                                            ErrorMessage="El pasatiempo proporcionado tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red" ValidationExpression="(([0-9a-zA-ZÀ-ÿ ]|\-|\.)*)"
                                                                             ValidationGroup="gvPasatiempos">*</asp:RegularExpressionValidator>
                                                                     </td>
                                                                 </tr>

@@ -103,7 +103,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz
             else
             {
                 string script = @"<script type='text/javascript'>
-                            custom_alert('Nombre de usuario y contraseña requeridos para autenticación.');
+                            custom_alert('El nombre de usuario y la contraseña son requeridos para ingresar a la bolsa de trabajo.');
                             </script>";
 
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "Autenticación", script, false);

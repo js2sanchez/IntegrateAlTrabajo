@@ -12,6 +12,9 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 {
     public partial class frmEditarDatosPersonalesAdultoMayor : System.Web.UI.Page
     {
+        protected const int CARACTERES_MINIMOS = 5, CARACTERES_MAXIMOS = 50;
+        protected const int LARGO_TELEFONO_CR = 8;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -278,6 +281,23 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         protected void btnSalir_Click(object sender, EventArgs e)
         {
             Response.Redirect("frmConsultarPerfilAdultoMayor.aspx");
+        }
+
+        protected void validarTelefonosServer(object sender, ServerValidateEventArgs e)
+        {
+            e.IsValid = txtTelefonoHabitacion.Text != "";
+        }
+
+        protected void validarLargoHabitacionServer(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = txtTelefonoHabitacion.Text.Length == LARGO_TELEFONO_CR
+                || txtTelefonoHabitacion.Text.Length == 0;
+        }
+
+        protected void validarLargoMovilServer(object source, ServerValidateEventArgs args)
+        {
+            args.IsValid = txtTelefonoCelular.Text.Length == LARGO_TELEFONO_CR
+                || txtTelefonoCelular.Text.Length == 0;
         }
     }
 }
