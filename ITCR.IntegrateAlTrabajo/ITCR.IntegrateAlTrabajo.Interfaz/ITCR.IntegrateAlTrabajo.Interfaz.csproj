@@ -89,7 +89,7 @@
     <Content Include="AdultoMayor\frmRegistroAdultoMayor.aspx" />
     <Content Include="Empresa\frmInteresados.aspx" />
     <Content Include="Empresa\frmCreditos.aspx" />
-    <Content Include="HOME.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="Empresa\frmConsultarPerfilEmpresa.aspx" />
     <Content Include="Empresa\frmDatosServicio.aspx" />
     <Content Include="Empresa\frmDetallesOferta.aspx" />
@@ -122,7 +122,7 @@
     <Content Include="Styles\alertify.default.css" />
     <Content Include="Styles\bootstrap.min.css" />
     <Content Include="Styles\Site.css" />
-    <Content Include="Default.aspx" />
+    <Content Include="Default1.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.4.1.js" />
@@ -327,19 +327,19 @@
     <Compile Include="Empresa\frmCreditos.aspx.designer.cs">
       <DependentUpon>frmCreditos.aspx</DependentUpon>
     </Compile>
-    <Compile Include="HOME.aspx.cs">
-      <DependentUpon>HOME.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="home.aspx.designer.cs">
-      <DependentUpon>home.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default1.aspx.cs">
+      <DependentUpon>Default1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default1.aspx.designer.cs">
+      <DependentUpon>Default1.aspx</DependentUpon>
     </Compile>
     <Compile Include="Empresa\frmConsultarPerfilEmpresa.aspx.cs">
       <DependentUpon>frmConsultarPerfilEmpresa.aspx</DependentUpon>

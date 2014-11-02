@@ -19,7 +19,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador
             {
                 if (Session["Nombre_Usuario"] == null)
                 {
-                    Response.Redirect("/home.aspx");
+                    Response.Redirect("/Default.aspx");
                 }
                 cargarDataGridViewOpiniones();
             }

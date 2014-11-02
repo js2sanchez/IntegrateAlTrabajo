@@ -61,7 +61,7 @@
                             NavigateUrl="~/AdultoMayor/frmOpinarSobreBolsaTrabajo.aspx"></asp:MenuItem>
                         <asp:MenuItem Text="Créditos" Value="Créditos" 
                             NavigateUrl="~/AdultoMayor/frmCreditos.aspx"></asp:MenuItem>
-                        <asp:MenuItem Text="Cerrar sesión" Value="logout"></asp:MenuItem>
+                        <asp:MenuItem Text="Cerrar sesión" Value="Cerrar sesión" NavigateUrl="~/Default.aspx"></asp:MenuItem>
                     </Items>
                 </asp:Menu>
             </div>

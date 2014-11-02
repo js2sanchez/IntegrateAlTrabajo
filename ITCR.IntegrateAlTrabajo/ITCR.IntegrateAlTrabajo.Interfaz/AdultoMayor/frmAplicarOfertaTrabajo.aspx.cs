@@ -33,7 +33,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 //Session["Id_Oferta"] = "2";
                 if (Session["Nombre_Usuario"] == null)
                 {
-                    Response.Redirect("/home.aspx");
+                    Response.Redirect("/Default.aspx");
                 }
                 mostrarOferta();
             }

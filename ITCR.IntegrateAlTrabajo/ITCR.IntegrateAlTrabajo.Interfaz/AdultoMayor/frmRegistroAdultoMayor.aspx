@@ -254,7 +254,7 @@
                         label: "Volver a la página principal",
                         className: "btn-primary",
                         callback: function () {
-                            location.href = "/home.aspx";
+                            location.href = "/Default.aspx";
                         }
                     }
                 }
@@ -275,7 +275,7 @@
                         label: "Sí, estoy seguro",
                         className: "btn-primary",
                         callback: function () {
-                            location.href = "/home.aspx";
+                            location.href = "/Default.aspx";
                         }
                     },
                     main: {

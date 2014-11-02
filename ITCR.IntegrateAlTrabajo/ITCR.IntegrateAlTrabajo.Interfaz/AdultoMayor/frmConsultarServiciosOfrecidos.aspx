@@ -80,7 +80,7 @@
                         label: "Aceptar",
                         className: "btn-primary",
                         callback: function () {
-                            location.href = "/home.aspx";
+                            location.href = "/Default.aspx";
                         }
                     }
                 }

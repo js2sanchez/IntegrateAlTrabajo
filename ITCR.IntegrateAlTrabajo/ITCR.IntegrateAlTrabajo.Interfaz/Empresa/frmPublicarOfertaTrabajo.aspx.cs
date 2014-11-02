@@ -21,7 +21,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             {
                 if (Session["Nombre_Usuario"] == null)
                 {
-                    Response.Redirect("/home.aspx");
+                    Response.Redirect("/Default.aspx");
                 }
                 cargarIdEmpresa();                
                 btnAgregar.Visible = true;

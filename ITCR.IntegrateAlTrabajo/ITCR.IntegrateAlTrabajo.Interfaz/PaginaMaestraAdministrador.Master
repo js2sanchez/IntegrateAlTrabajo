@@ -59,7 +59,7 @@
                         <asp:MenuItem NavigateUrl="~/Administrador/frmCreditos.aspx" Text="Créditos" 
                             Value="Créditos"></asp:MenuItem>
                         <asp:MenuItem Text="Cerrar sesión" Value="Cerrar sesión" 
-                            NavigateUrl="~/home.aspx"></asp:MenuItem>
+                            NavigateUrl="~/Default.aspx"></asp:MenuItem>
                     </Items>
                 </asp:Menu>
             </div>
