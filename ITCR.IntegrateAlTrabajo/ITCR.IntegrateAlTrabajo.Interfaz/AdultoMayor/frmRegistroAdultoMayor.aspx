@@ -413,10 +413,10 @@
                                         <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Right" Style="margin-left: 92px"
                                             Width="400px">
                                             <asp:Button ID="btnCancelar1" runat="server" CssClass="Boton" OnClick="btnCancelar1_Click"
-                                                TabIndex="19" Text="Salir sin guardar" UseSubmitBehavior="False" />
+                                                TabIndex="20" Text="Salir sin guardar" UseSubmitBehavior="False" />
                                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                             <asp:Button ID="btnSiguiente1" runat="server" CssClass="Boton" OnClick="btnSiguiente1_Click"
-                                                TabIndex="18" Text="Siguiente" UseSubmitBehavior="False" />
+                                                TabIndex="19" Text="Siguiente" UseSubmitBehavior="False" />
                                         </asp:Panel>
                                     </td>
                                 </tr>
@@ -441,7 +441,7 @@
                                     <td class="style71">
                                         <asp:TextBox ID="txtNombrePersona" runat="server" onblur="this.placeholder = 'Escriba su nombre aquí'"
                                             onfocus="this.placeholder = ''" placeholder="Escriba su nombre aquí" ToolTip="Ejemplo: Laura"
-                                            Width="250px" MaxLength="30" TabIndex="0"></asp:TextBox>
+                                            Width="250px" MaxLength="30" TabIndex="1"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="rfvNombrePersona" runat="server" ControlToValidate="txtNombrePersona"
                                             ErrorMessage="El nombre de la persona es un dato requerido, por lo que debe introducir un valor válido."
                                             ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
@@ -458,7 +458,7 @@
                                     <td class="auto-style13">
                                         <asp:TextBox ID="txtTelefonoHabitacion" runat="server" Width="250px" onblur="this.placeholder = 'Escriba su teléfono aquí'"
                                             onfocus="this.placeholder = ''" placeholder="Escriba su teléfono aquí" ToolTip="Ejemplo: 25517722 (Por favor, no use guiones)"
-                                            TabIndex="12" MaxLength="8"></asp:TextBox>
+                                            TabIndex="2" MaxLength="8"></asp:TextBox>
                                         <asp:RegularExpressionValidator ID="revTelefonoHabitacion" runat="server" ControlToValidate="txtTelefonoHabitacion"
                                             ErrorMessage="El número de teléfono principal introducido es inválido, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red"
                                             ValidationExpression="([0-9]*)" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
@@ -477,7 +477,7 @@
                                     <td class="style71">
                                         <asp:TextBox ID="txtApellido1" runat="server" onblur="this.placeholder = 'Escriba su primer apellido aquí'"
                                             onfocus="this.placeholder = ''" placeholder="Escriba su primer apellido aquí"
-                                            Width="250px" ToolTip="Ejemplo: Fernández" TabIndex="1" MaxLength="30"></asp:TextBox>
+                                            Width="250px" ToolTip="Ejemplo: Fernández" TabIndex="2" MaxLength="30"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="rfvApellido1Persona" runat="server" ControlToValidate="txtApellido1"
                                             ErrorMessage="El primer apellido es un dato requerido, por lo que debe introducir un valor válido."
                                             ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
@@ -510,7 +510,7 @@
                                     <td class="style71">
                                         <asp:TextBox ID="txtApellido2" runat="server" onblur="this.placeholder = 'Escriba su segundo apellido aquí'"
                                             onfocus="this.placeholder = ''" placeholder="Escriba su segundo apellido aquí"
-                                            Width="250px" ToolTip="Ejemplo: García" TabIndex="2" MaxLength="30"></asp:TextBox>
+                                            Width="250px" ToolTip="Ejemplo: García" TabIndex="3" MaxLength="30"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="rfvApellido2Persona" runat="server" ControlToValidate="txtApellido2"
                                             ErrorMessage="El segundo apellido es un dato requerido, por lo que debe introducir un valor válido."
                                             ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
@@ -527,7 +527,7 @@
                                     <td class="auto-style13">
                                         <asp:TextBox ID="txtCorreoElectronico" runat="server" onblur="this.placeholder = 'Escriba su correo electrónico aquí'"
                                             onfocus="this.placeholder = ''" placeholder="Escriba su correo electrónico aquí"
-                                            ToolTip="Ejemplo: laura-fernandez@gmail.com" Width="250px" TabIndex="14" MaxLength="80"></asp:TextBox>
+                                            ToolTip="Ejemplo: laura-fernandez@gmail.com" Width="250px" TabIndex="15" MaxLength="80"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="rfvCorreoElectronico" runat="server" ControlToValidate="txtCorreoElectronico"
                                             ErrorMessage="El correo electrónico es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtCorreoElectronico"
@@ -540,7 +540,7 @@
                                         <asp:Label ID="lblSexo" runat="server" Text="Sexo"></asp:Label>
                                     </td>
                                     <td class="style71">
-                                        <asp:DropDownList ID="drpSexo" runat="server" TabIndex="3">
+                                        <asp:DropDownList ID="drpSexo" runat="server" TabIndex="4">
                                         </asp:DropDownList>
                                     </td>
                                     <td class="style70">
@@ -551,7 +551,7 @@
                                     </td>
                                     <td class="auto-style13">
                                         <asp:DropDownList ID="drpProvincia" runat="server" AutoPostBack="True" OnSelectedIndexChanged="drpProvincia_SelectedIndexChanged"
-                                            TabIndex="15">
+                                            TabIndex="16">
                                         </asp:DropDownList>
                                     </td>
                                 </tr>
@@ -562,7 +562,7 @@
                                     </td>
                                     <td class="style71">
                                         <asp:RadioButtonList ID="ddlNacionalidad" runat="server" OnSelectedIndexChanged="ddlNacionalidad_SelectedIndexChanged"
-                                            AutoPostBack="true" TabIndex="4" CssClass="input">
+                                            AutoPostBack="true" TabIndex="5" CssClass="input">
                                         </asp:RadioButtonList>
                                     </td>
                                     <td class="style70">
@@ -573,7 +573,7 @@
                                     </td>
                                     <td class="auto-style13">
                                         <asp:DropDownList ID="drpCanton" runat="server" AutoPostBack="True" OnSelectedIndexChanged="drpCanton_SelectedIndexChanged"
-                                            TabIndex="16">
+                                            TabIndex="17">
                                         </asp:DropDownList>
                                     </td>
                                 </tr>
@@ -584,17 +584,17 @@
                                     </td>
                                     <td class="style71">
                                         <asp:Panel ID="PanelCedula" runat="server" HorizontalAlign="Left">
-                                            <asp:TextBox ID="txtCedula" runat="server" ClientIDMode="Static" MaxLength="1" TabIndex="5"
+                                            <asp:TextBox ID="txtCedula" runat="server" ClientIDMode="Static" MaxLength="1" TabIndex="6"
                                                 ToolTip="Ejemplo: 1" Width="30px"></asp:TextBox>
                                             <asp:TextBox ID="txtCedula2" runat="server" AutoPostBack="true" ClientIDMode="Static"
-                                                MaxLength="4" OnTextChanged="txtCedula2_TextChanged" TabIndex="6" ToolTip="Ejemplo: 0123"
+                                                MaxLength="4" OnTextChanged="txtCedula2_TextChanged" TabIndex="7" ToolTip="Ejemplo: 0123"
                                                 Width="60px"></asp:TextBox>
                                             <asp:TextBox ID="txtCedula3" runat="server" AutoPostBack="true" ClientIDMode="Static"
-                                                MaxLength="4" OnTextChanged="txtCedula3_TextChanged" TabIndex="7" ToolTip="Ejemplo: 1277"
+                                                MaxLength="4" OnTextChanged="txtCedula3_TextChanged" TabIndex="8" ToolTip="Ejemplo: 1277"
                                                 Width="60px"></asp:TextBox>
                                         </asp:Panel>
                                         <asp:TextBox ID="txtCedulaExt" runat="server" Width="250px" ClientIDMode="Static"
-                                            MaxLength="20" TabIndex="8" ToolTip="Ejemplo: 765123085622" onblur="this.placeholder = 'Escriba su número de cédula aquí'"
+                                            MaxLength="20" TabIndex="9" ToolTip="Ejemplo: 765123085622" onblur="this.placeholder = 'Escriba su número de cédula aquí'"
                                             onfocus="this.placeholder = ''" placeholder="Escriba su número de cédula aquí"></asp:TextBox>
                                         <asp:CustomValidator ID="cvCedula" runat="server" OnServerValidate="validarCedulaServer"
                                             ForeColor="red" ErrorMessage="La cédula es un dato requerido, por lo que debe introducir un valor válido."
@@ -616,7 +616,7 @@
                                         <asp:Label ID="lblDistrito" runat="server" Text="Distrito"></asp:Label>
                                     </td>
                                     <td class="auto-style13">
-                                        <asp:DropDownList ID="drpDistrito" runat="server" TabIndex="17">
+                                        <asp:DropDownList ID="drpDistrito" runat="server" TabIndex="18">
                                         </asp:DropDownList>
                                     </td>
                                 </tr>
@@ -626,14 +626,14 @@
                                     </td>
                                     <td class="style71">
                                         <asp:DropDownList ID="DdlAnioNacimiento" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DdlAnnoNacimiento_SelectedIndexChanged"
-                                            TabIndex="9">
+                                            TabIndex="10">
                                         </asp:DropDownList>
                                         <asp:CustomValidator ID="CustomValidator2" runat="server" ErrorMessage="La fecha de nacimiento es incorrecta, por favor, introduzca un valor válido."
                                             ForeColor="red" OnServerValidate="validarNacimientoServer" ValidationGroup="gvDatosPersonales">*</asp:CustomValidator>
                                         <asp:DropDownList ID="DdlMesNacimiento" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DdlMesNacimiento_SelectedIndexChanged"
-                                            TabIndex="10">
+                                            TabIndex="11">
                                         </asp:DropDownList>
-                                        <asp:DropDownList ID="DdlDiaNacimiento" runat="server" AutoPostBack="True" TabIndex="11">
+                                        <asp:DropDownList ID="DdlDiaNacimiento" runat="server" AutoPostBack="True" TabIndex="12">
                                         </asp:DropDownList>
                                     </td>
                                     <td class="style70">
@@ -660,11 +660,11 @@
                                         <asp:Panel ID="Panel3" runat="server" HorizontalAlign="Right" Style="text-align: justify"
                                             Width="500px">
                                             &nbsp;&nbsp;&nbsp;<asp:Button ID="btnCancelar2" runat="server" CssClass="Boton" OnClick="btnCancelar2_Click"
-                                                TabIndex="6" Text="Salir sin guardar" UseSubmitBehavior="False" />
+                                                TabIndex="7" Text="Salir sin guardar" UseSubmitBehavior="False" />
                                             &nbsp;&nbsp;<asp:Button ID="btnAtras" runat="server" CssClass="Boton" OnClick="btnAtras_Click"
-                                                TabIndex="5" Text="Atrás" UseSubmitBehavior="False" />
+                                                TabIndex="6" Text="Atrás" UseSubmitBehavior="False" />
                                             &nbsp;&nbsp;<asp:Button ID="btnSiguiente2" runat="server" CssClass="Boton" OnClick="btnSiguiente2_Click"
-                                                TabIndex="4" Text="Siguiente" UseSubmitBehavior="False" />
+                                                TabIndex="5" Text="Siguiente" UseSubmitBehavior="False" />
                                             &nbsp;</asp:Panel>
                                         &nbsp;&nbsp;
                                     </td>
@@ -685,7 +685,7 @@
                                     <td class="style52">
                                         <asp:TextBox ID="txtNombreUsuario" runat="server" ToolTip="Importante: Debe contener más de 5 caracteres. Únicamente se aceptan letras, números y guiones."
                                             Width="260px" onblur="this.placeholder = 'Escriba su nombre de usuario aquí'"
-                                            onfocus="this.placeholder = ''" placeholder="Escriba su nombre de usuario aquí" TabIndex="0"
+                                            onfocus="this.placeholder = ''" placeholder="Escriba su nombre de usuario aquí" TabIndex="1"
                                             MaxLength="30"></asp:TextBox>
                                         <asp:CustomValidator ID="cvValidarUsuario" runat="server" ClientValidationFunction="validarUsuarioClient"
                                             ErrorMessage="El nombre de usuario debe contener entre 5 a 50 caracteres." ForeColor="red"
@@ -702,7 +702,7 @@
                                         <asp:Label ID="lblContraseña" runat="server" Text="Contraseña"></asp:Label>
                                     </td>
                                     <td class="style52">
-                                        <asp:TextBox ID="txtContraseña" runat="server" TabIndex="1" TextMode="Password" ToolTip="Importante: Debe contener más de 8 caracteres. Únicamente se aceptan letras y números."
+                                        <asp:TextBox ID="txtContraseña" runat="server" TabIndex="2" TextMode="Password" ToolTip="Importante: Debe contener más de 8 caracteres. Únicamente se aceptan letras y números."
                                             Width="260px" onblur="this.placeholder = 'Escriba su contraseña aquí'" onfocus="this.placeholder = ''"
                                             placeholder="Escriba su contraseña aquí" MaxLength="50"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="rfvContraseña" runat="server" ControlToValidate="txtContraseña"
@@ -722,7 +722,7 @@
                                         <asp:Label ID="lblConfirmacionContraseña" runat="server" Text="Vuelva escribir la contraseña"></asp:Label>
                                     </td>
                                     <td class="style52">
-                                        <asp:TextBox ID="txtConfirmacionContraseña" runat="server" TabIndex="2" ToolTip="Debe escribir la contraseña de nuevo exactamente igual"
+                                        <asp:TextBox ID="txtConfirmacionContraseña" runat="server" TabIndex="3" ToolTip="Debe escribir la contraseña de nuevo exactamente igual"
                                             TextMode="Password" Width="260px" MaxLength="50"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="rfvConfirmacionContraseña" runat="server" ControlToValidate="txtConfirmacionContraseña"
                                             ErrorMessage="Es necesario confirmar la contraseña." ForeColor="Red" ValidationGroup="gvDatosAutenticacion">*</asp:RequiredFieldValidator>
@@ -736,7 +736,7 @@
                                         <asp:Label ID="lblIndicioContraseña" runat="server" Text="Frase para recordar la contraseña"></asp:Label>
                                     </td>
                                     <td class="style52">
-                                        <asp:TextBox ID="txtIndicioContraseña" runat="server" TabIndex="3" ToolTip="Importante: Si en algún momento olvida su contraseña, esta frase le permitirá recordarla."
+                                        <asp:TextBox ID="txtIndicioContraseña" runat="server" TabIndex="4" ToolTip="Importante: Si en algún momento olvida su contraseña, esta frase le permitirá recordarla."
                                             onblur="this.placeholder = 'Escriba su frase aquí'" onfocus="this.placeholder = ''"
                                             placeholder="Escriba su frase aquí" Width="260px" MaxLength="50"></asp:TextBox>
                                         <asp:RequiredFieldValidator ID="rfvIndicioContraseña" runat="server" ControlToValidate="txtIndicioContraseña"
@@ -761,12 +761,12 @@
                                     <td class="style20" colspan="2">
                                         <asp:Panel ID="Panel4" runat="server" HorizontalAlign="Right">
                                             <asp:Button ID="btnCancelar3" runat="server" CssClass="Boton" OnClick="btnCancelar3_Click"
-                                                TabIndex="8" Text="Salir sin guardar" UseSubmitBehavior="False" />
+                                                TabIndex="9" Text="Salir sin guardar" UseSubmitBehavior="False" />
                                             &nbsp;&nbsp;<asp:Button ID="btnAtras1" runat="server" CssClass="Boton" OnClick="btnAtras1_Click"
-                                                TabIndex="7" Text="Atrás" UseSubmitBehavior="False" />
+                                                TabIndex="8" Text="Atrás" UseSubmitBehavior="False" />
                                             &nbsp;
                                             <asp:Button ID="btnSiguiente3" runat="server" CssClass="Boton" OnClick="btnSiguiente3_Click"
-                                                Text="Siguiente" UseSubmitBehavior="False" TabIndex="6" />
+                                                Text="Siguiente" UseSubmitBehavior="False" TabIndex="7" />
                                         </asp:Panel>
                                     </td>
                                 </tr>
@@ -793,7 +793,7 @@
                                                         <asp:Label ID="lblInstitucion" runat="server" Text="Título Académico"></asp:Label>
                                                     </td>
                                                     <td class="style11">
-                                                        <asp:TextBox ID="txtTituloEstudio" runat="server" TabIndex="0" Width="528px" ToolTip="Ejemplo: Bachiller en Educación Media"
+                                                        <asp:TextBox ID="txtTituloEstudio" runat="server" TabIndex="1" Width="528px" ToolTip="Ejemplo: Bachiller en Educación Media"
                                                             onblur="this.placeholder = 'Escriba su título aquí'" onfocus="this.placeholder = ''"
                                                             placeholder="Escriba su título aquí" MaxLength="50"></asp:TextBox>
                                                         <asp:RequiredFieldValidator ID="rfvTituloEstudio" runat="server" ControlToValidate="txtTituloEstudio"
@@ -811,7 +811,7 @@
                                                     </td>
                                                     <td class="style11">
                                                         <asp:TextBox ID="txtInstitucionEstudio" runat="server" Width="528px" ToolTip="Ejemplo: Colegio Técnico Profesional de Pococí"
-                                                            onblur="this.placeholder = 'Escriba el nombre de la institución aquí'" onfocus="this.placeholder = ''" TabIndex="1"
+                                                            onblur="this.placeholder = 'Escriba el nombre de la institución aquí'" onfocus="this.placeholder = ''" TabIndex="2"
                                                             placeholder="Escriba el nombre de la institución aquí" MaxLength="60"></asp:TextBox>
                                                         <asp:RequiredFieldValidator ID="rfvInstitucionEstudio" runat="server" ControlToValidate="txtInstitucionEstudio"
                                                             ErrorMessage="La institución es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvEstudios">*</asp:RequiredFieldValidator>
@@ -829,14 +829,14 @@
                                                     <td class="auto-style3" colspan="2">
                                                         <asp:Panel ID="PanelAgregar1" runat="server" HorizontalAlign="Right">
                                                             <asp:Button ID="btnCancelarAgregarEstudio" runat="server" CssClass="Boton" OnClick="btnCancelarAgregarEstudio_Click"
-                                                                Text="Cancelar" TabIndex="4" />
+                                                                Text="Cancelar" TabIndex="5" />
                                                             &nbsp;&nbsp;<asp:Button ID="btnCancelarActualizarEstudio" runat="server" CssClass="Boton"
-                                                                OnClick="btnCancelarActualizarEstudio_Click" Text="Cancelar" TabIndex="5" />
+                                                                OnClick="btnCancelarActualizarEstudio_Click" Text="Cancelar" TabIndex="6" />
                                                             &nbsp;&nbsp;<asp:Button ID="btnAgregarEstudio" runat="server" CssClass="Boton" OnClick="btnAgregarEstudio_Click"
-                                                                TabIndex="2" Text="Agregar" UseSubmitBehavior="False" />
+                                                                TabIndex="3" Text="Agregar" UseSubmitBehavior="False" />
                                                             &nbsp;
                                                             <asp:Button ID="btnActualizarEstudio" runat="server" CssClass="Boton" OnClick="btnActualizarEstudio_Click"
-                                                                TabIndex="3" Text="Actualizar" UseSubmitBehavior="False" Visible="False" />
+                                                                TabIndex="4" Text="Actualizar" UseSubmitBehavior="False" Visible="False" />
                                                         </asp:Panel>
                                                     </td>
                                                 </tr>
@@ -868,7 +868,7 @@
                                             <asp:DataGrid ID="dgEstudios" runat="server" AutoGenerateColumns="False" BackColor="WhiteSmoke"
                                                 BorderStyle="Solid" CssClass="GridMantenimiento" Font-Names="Century Gothic"
                                                 Font-Size="Small" ForeColor="Black" Height="19px" OnItemCommand="dgEstudios_ItemCommand"
-                                                Width="99%" TabIndex="4">
+                                                Width="99%" TabIndex="5">
                                                 <AlternatingItemStyle BackColor="Gainsboro" />
                                                 <HeaderStyle BackColor="Navy" Font-Bold="True" Font-Names="Century Gothic" Font-Size="Larger"
                                                     ForeColor="White" HorizontalAlign="Center" />
@@ -906,13 +906,13 @@
                                     <td class="auto-style23">
                                         <asp:Panel ID="Panel5" runat="server" HorizontalAlign="Right" Style="margin-left: 74px">
                                             <asp:Button ID="btnCancelar4" runat="server" CssClass="Boton" OnClick="btnCancelar4_Click"
-                                                TabIndex="8" Text="Salir sin guardar" UseSubmitBehavior="False" />
+                                                TabIndex="9" Text="Salir sin guardar" UseSubmitBehavior="False" />
                                             &nbsp;
                                             <asp:Button ID="btnAtras2" runat="server" CssClass="Boton" OnClick="btnAtras2_Click"
-                                                TabIndex="7" Text="Atrás" UseSubmitBehavior="False" />
+                                                TabIndex="8" Text="Atrás" UseSubmitBehavior="False" />
                                             &nbsp;
                                             <asp:Button ID="btnSiguiente4" runat="server" CssClass="Boton" OnClick="btnSiguiente4_Click"
-                                                Text="Siguiente" UseSubmitBehavior="False" TabIndex="6" />
+                                                Text="Siguiente" UseSubmitBehavior="False" TabIndex="7" />
                                         </asp:Panel>
                                     </td>
                                 </tr>
@@ -931,7 +931,7 @@
                                                         <asp:Label ID="lblEmpresa" runat="server" Text="Puesto laboral"></asp:Label>
                                                     </td>
                                                     <td class="style27">
-                                                        <asp:TextBox ID="txtPuesto" runat="server" TabIndex="0" Width="460px" ToolTip="Ejemplo: Asistente de Mantenimiento"
+                                                        <asp:TextBox ID="txtPuesto" runat="server" TabIndex="1" Width="460px" ToolTip="Ejemplo: Asistente de Mantenimiento"
                                                             onblur="this.placeholder = 'Escriba el puesto aquí'" onfocus="this.placeholder = ''"
                                                             placeholder="Escriba el puesto aquí" MaxLength="50"></asp:TextBox>
                                                         <asp:RequiredFieldValidator ID="rfvPuesto" runat="server" ControlToValidate="txtPuesto"
@@ -947,7 +947,7 @@
                                                     </td>
                                                     <td class="style11">
                                                         <asp:TextBox ID="txtEmpresa" runat="server" Width="460px" ToolTip="Ejemplo: Ministerio de Obras Públicas y Transporte"
-                                                            onblur="this.placeholder = 'Escriba el nombre de la empresa o institución aquí'" TabIndex="1"
+                                                            onblur="this.placeholder = 'Escriba el nombre de la empresa o institución aquí'" TabIndex="2"
                                                             onfocus="this.placeholder = ''" placeholder="Escriba el nombre de la empresa o institución aquí"
                                                             MaxLength="60"></asp:TextBox>
                                                         <asp:RequiredFieldValidator ID="rfvEmpresa" runat="server" ControlToValidate="txtEmpresa"
@@ -964,14 +964,14 @@
                                                     <td class="auto-style4">
                                                         <asp:Panel ID="PanelAgregar2" runat="server" HorizontalAlign="Right">
                                                             <asp:Button ID="btnCancelarAgregarExperiencia" runat="server" CssClass="Boton" OnClick="btnCancelarAgregarExperiencia_Click"
-                                                                Text="Cancelar" TabIndex="4" />
+                                                                Text="Cancelar" TabIndex="5" />
                                                             &nbsp;&nbsp;<asp:Button ID="btnCancelarActualizarExperiencia" runat="server" CssClass="Boton"
-                                                                OnClick="btnCancelarActualizarExperiencia_Click" Text="Cancelar" TabIndex="5" />
+                                                                OnClick="btnCancelarActualizarExperiencia_Click" Text="Cancelar" TabIndex="6" />
                                                             &nbsp;&nbsp;<asp:Button ID="btnAgregarExperienciaLaboral" runat="server" CssClass="Boton"
-                                                                OnClick="btnAgregarExperienciaLaboral_Click" TabIndex="2" Text="Agregar" UseSubmitBehavior="False" />
+                                                                OnClick="btnAgregarExperienciaLaboral_Click" TabIndex="3" Text="Agregar" UseSubmitBehavior="False" />
                                                             &nbsp;
                                                             <asp:Button ID="btnActualizarExperienciaLaboral" runat="server" CssClass="Boton"
-                                                                OnClick="btnActualizarExperienciaLaboral_Click" TabIndex="3" Text="Actualizar"
+                                                                OnClick="btnActualizarExperienciaLaboral_Click" TabIndex="4" Text="Actualizar"
                                                                 UseSubmitBehavior="False" Visible="False" />
                                                         </asp:Panel>
                                                     </td>
@@ -1004,7 +1004,7 @@
                                             <asp:DataGrid ID="dgExperienciasLaborales" runat="server" AutoGenerateColumns="False"
                                                 BackColor="WhiteSmoke" BorderStyle="Solid" CssClass="GridMantenimiento" Font-Names="Century Gothic"
                                                 Font-Size="Small" OnItemCommand="dgExperienciasLaborales_ItemCommand" ForeColor="Black"
-                                                Height="19px" Width="99%" TabIndex="4">
+                                                Height="19px" Width="99%" TabIndex="5">
                                                 <AlternatingItemStyle BackColor="Gainsboro" />
                                                 <FooterStyle Font-Names="Century Gothic" />
                                                 <HeaderStyle BackColor="Navy" Font-Bold="True" Font-Names="Century Gothic" Font-Size="Larger"
@@ -1050,12 +1050,12 @@
                                     <td class="style11">
                                         <asp:Panel ID="Panel2" runat="server" HorizontalAlign="Right">
                                             <asp:Button ID="btnCancelar5" runat="server" CssClass="Boton" OnClick="btnCancelar5_Click"
-                                                TabIndex="2" Text="Salir sin guardar" UseSubmitBehavior="False" />
+                                                TabIndex="3" Text="Salir sin guardar" UseSubmitBehavior="False" />
                                             &nbsp;
                                             <asp:Button ID="btnAtras3" runat="server" CssClass="Boton" OnClick="btnAtras3_Click"
-                                                Text="Atrás" UseSubmitBehavior="False" TabIndex="1" />
+                                                Text="Atrás" UseSubmitBehavior="False" TabIndex="2" />
                                             &nbsp;&nbsp;<asp:Button ID="btnSiguiente5" runat="server" CssClass="Boton" OnClick="btnSiguiente5_Click"
-                                                Text="Siguiente" UseSubmitBehavior="False" TabIndex="0" />
+                                                Text="Siguiente" UseSubmitBehavior="False" TabIndex="1" />
                                         </asp:Panel>
                                     </td>
                                 </tr>
@@ -1149,13 +1149,13 @@
                                     </td>
                                     <td class="style11">
                                         <asp:Panel ID="Panel7" runat="server" HorizontalAlign="Right">
-                                            <asp:Button ID="btnCancelar7" runat="server" CssClass="Boton" TabIndex="3" Text="Salir sin guardar"
+                                            <asp:Button ID="btnCancelar7" runat="server" CssClass="Boton" TabIndex="4" Text="Salir sin guardar"
                                                 UseSubmitBehavior="False" OnClick="btnCancelar7_Click" />
                                             &nbsp;
                                             <asp:Button ID="btnAtras7" runat="server" CssClass="Boton" Text="Atrás" UseSubmitBehavior="False"
-                                                TabIndex="2" OnClick="btnAtras7_Click" />
+                                                TabIndex="3" OnClick="btnAtras7_Click" />
                                             &nbsp;&nbsp;<asp:Button ID="btnSiguiente7" runat="server" CssClass="Boton" Text="Siguiente"
-                                                UseSubmitBehavior="False" TabIndex="1" OnClick="btnSiguiente7_Click" />
+                                                UseSubmitBehavior="False" TabIndex="2" OnClick="btnSiguiente7_Click" />
                                         </asp:Panel>
                                     </td>
                                 </tr>
@@ -1191,7 +1191,7 @@
                                                                         <asp:Label ID="lblPasatiempos" runat="server" Text="¿Cuál es su pasatiempo favorito?"></asp:Label>
                                                                     </td>
                                                                     <td>
-                                                                        <asp:TextBox ID="txtPasatiempos" runat="server" TabIndex="0" ToolTip="Por favor, ingrese sólo un pasatiempo. Ejemplo: Leer libros de historia."
+                                                                        <asp:TextBox ID="txtPasatiempos" runat="server" TabIndex="1" ToolTip="Por favor, ingrese sólo un pasatiempo. Ejemplo: Leer libros de historia."
                                                                             onblur="this.placeholder = 'Escriba su pasatiempo favorito aquí'" onfocus="this.placeholder = ''"
                                                                             placeholder="Escriba su pasatiempo favorito aquí" Width="500px" MaxLength="80"></asp:TextBox>
                                                                         <asp:RegularExpressionValidator ID="RegEx_Pasatiempo" runat="server" ControlToValidate="txtPasatiempos"
@@ -1219,13 +1219,13 @@
                                     <td class="style25" colspan="4">
                                         &nbsp;<asp:Panel ID="Panel6" runat="server" HorizontalAlign="Right">
                                             <asp:Button ID="btnCancelar6" runat="server" CssClass="Boton" 
-                                                OnClick="btnCancelar6_Click" TabIndex="3" Text="Salir sin guardar" 
+                                                OnClick="btnCancelar6_Click" TabIndex="4" Text="Salir sin guardar" 
                                                 UseSubmitBehavior="False" />
                                             &nbsp;
                                             <asp:Button ID="btnAtras6" runat="server" CssClass="Boton" 
-                                                OnClick="btnAtras6_Click" TabIndex="2" Text="Atrás" UseSubmitBehavior="False" />
+                                                OnClick="btnAtras6_Click" TabIndex="3" Text="Atrás" UseSubmitBehavior="False" />
                                             &nbsp;&nbsp;<asp:Button ID="btnFinalizar" runat="server" CssClass="Boton" 
-                                                OnClick="btnFinalizar_Click" TabIndex="1" Text="Finalizar" />
+                                                OnClick="btnFinalizar_Click" TabIndex="2" Text="Finalizar" />
                                         </asp:Panel>
                                     </td>
                                 </tr>
@@ -1291,7 +1291,7 @@
                                 </tr>
                                 <tr>
                                     <td class="auto-style30" colspan="5">
-                                        <asp:CheckBox ID="chkAceptarTerminos" runat="server" Checked="False" Text="Acepto los términos y condiciones anteriores" TabIndex="0" />
+                                        <asp:CheckBox ID="chkAceptarTerminos" runat="server" Checked="False" Text="Acepto los términos y condiciones anteriores" TabIndex="1" />
                                     </td>
                                 </tr>
                             </table>

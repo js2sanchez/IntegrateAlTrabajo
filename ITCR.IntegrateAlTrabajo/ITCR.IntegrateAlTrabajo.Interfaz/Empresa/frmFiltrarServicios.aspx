@@ -134,19 +134,7 @@
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/bootbox.js"></script>  
     <script type="text/javascript">
-        function custom_alert(msg) {
-            bootbox.dialog({
-                closeButton: false,
-                title: "Servicios",
-                message: msg,
-                buttons: {
-                    success: {
-                        label: "Aceptar",
-                        className: "btn-primary"
-                    }
-                }
-            });
-        }
+
         function serviciosNoEncontrados() {
             bootbox.alert("No hay servicios que cumplan con los criterios de búsqueda específicados.");
         }
