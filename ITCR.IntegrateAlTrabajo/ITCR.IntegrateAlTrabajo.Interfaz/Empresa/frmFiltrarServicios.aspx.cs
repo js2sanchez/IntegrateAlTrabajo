@@ -135,7 +135,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                 {
                     busqueda.id_Provincia = Int16.Parse(drpprovincia.SelectedValue);
                 }
-                DataTable Filtro = busqueda.Buscar_por_Filtrado();
+                DataTable Filtro = busqueda.Buscar();
                 if (Filtro.Rows.Count > 0)
                 {
                     dgResultados.DataSource = Filtro;

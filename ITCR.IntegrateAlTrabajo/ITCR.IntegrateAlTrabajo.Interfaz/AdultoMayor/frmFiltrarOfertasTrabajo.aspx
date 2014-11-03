@@ -202,6 +202,9 @@
         function ofertasNoEncontradas() {
             custom_alert("No hay ofertas que cumplan con los criterios de búsqueda específicados.");
         }
+        function criteriosNoSeleccionados() {
+            bootbox.alert("Para efectuar el filtrado de servicios debe seleccionar al menos un criterio de búsqueda.");
+        }
 
     </script>
     <table class="style3">
@@ -244,17 +247,17 @@
             </td>
             <td class="auto-style7">
                 <asp:CheckBox ID="chk_tipo" runat="server" Text="Tipo de trabajo" AutoPostBack="True"
-                    OnCheckedChanged="chk_Busqueda_CheckedChanged" />
+                    OnCheckedChanged="chk_tipo_activado" />
             </td>
             <td class="auto-style5">
                 <asp:CheckBox ID="chk_Categoria" runat="server" Text="Categoría de trabajo" AutoPostBack="True"
-                    OnCheckedChanged="chk_Busqueda_CheckedChanged" />
+                    OnCheckedChanged="chk_categoria_activado" />
             </td>
             <td class="auto-style6">
             </td>
             <td class="auto-style7">
                 <asp:CheckBox ID="chk_Provincia" runat="server" Text="Provincia" AutoPostBack="True"
-                    OnCheckedChanged="chk_Busqueda_CheckedChanged" />
+                    OnCheckedChanged="chk_provincia_activado" />
             </td>
             <td class="auto-style5">
             </td>

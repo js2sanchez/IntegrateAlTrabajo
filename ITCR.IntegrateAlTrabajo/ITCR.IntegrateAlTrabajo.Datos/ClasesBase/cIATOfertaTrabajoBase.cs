@@ -1486,7 +1486,7 @@ namespace ITCR.IntegrateAlTrabajo.Base
 
             try
             {
-                cmdAEjecutar.Parameters.Add(new SqlParameter("@iId_Provincia", SqlDbType.Int, 4, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _fK_IdProvincia));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iId_Provincia", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fK_IdProvincia));
                 cmdAEjecutar.Parameters.Add(new SqlParameter("@iId_TipoTrabajo", SqlDbType.Int, 4, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _fK_IdTipoOfertaTrabajo));
                 cmdAEjecutar.Parameters.Add(new SqlParameter("@iId_CategoriaTrabajo", SqlDbType.Int, 4, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _fK_IdCategoriaOfertaTrabajo));
                 cmdAEjecutar.Parameters.Add(new SqlParameter("@iCod_Error", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));

@@ -66,22 +66,22 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             }
         }
         #endregion
-        protected void chk_Busqueda_CheckedChanged(object sender, EventArgs e)
-        {
+        //protected void chk_Busqueda_CheckedChanged(object sender, EventArgs e)
+        //{
 
-            if (chk_Provincia.Checked || chk_Categoria.Checked || chk_tipo.Checked)
-            {
-                btn_buscar.Enabled = true;
-            }
-            else
-            {
-                btn_buscar.Enabled = false;
-            }
-            chk_provincia_activado(sender, e);
-            chk_tipo_activado(sender, e);
-            chk_categoria_activado(sender, e);
+        //    if (chk_Provincia.Checked || chk_Categoria.Checked || chk_tipo.Checked)
+        //    {
+        //        btn_buscar.Enabled = true;
+        //    }
+        //    else
+        //    {
+        //        btn_buscar.Enabled = false;
+        //    }
+        //    chk_provincia_activado(sender, e);
+        //    chk_tipo_activado(sender, e);
+        //    chk_categoria_activado(sender, e);
 
-        }
+        //}
 
         protected void chk_provincia_activado(object sender, EventArgs e)
         {
@@ -118,32 +118,40 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         }
         protected void btn_buscar_Click(object sender, EventArgs e)
         {
-            dgResultados.DataSource = " ";
-            cIATOfertaTrabajoNegocios busqueda = new cIATOfertaTrabajoNegocios(1, "A", 2, "B");
-            if (chk_tipo.Checked)
+            if (chk_Provincia.Checked || chk_Categoria.Checked || chk_tipo.Checked)
             {
-                busqueda.FK_IdTipoOfertaTrabajo = Int16.Parse(drpTipo.SelectedValue);
-            }
-            if (chk_Categoria.Checked)
-            {
-                busqueda.FK_IdCategoriaOfertaTrabajo = Int16.Parse(drpCategoria.SelectedValue);
-            }
-            if (chk_Provincia.Checked)
-            {
-                busqueda.FK_IdProvincia = Int16.Parse(drpprovincia.SelectedValue);
-            }
-            DataTable Filtro = busqueda.Buscar_por_Filtrado();
-            if (Filtro.Rows.Count > 0)
-            {
-                dgResultados.DataSource = Filtro;
-                dgResultados.DataBind();
-                pnl_resultado.Visible = true;
-                lbl_resultados.Visible = true;
+                dgResultados.DataSource = " ";
+                cIATOfertaTrabajoNegocios busqueda = new cIATOfertaTrabajoNegocios(1, "A", 2, "B");
+                if (chk_tipo.Checked)
+                {
+                    busqueda.FK_IdTipoOfertaTrabajo = Int16.Parse(drpTipo.SelectedValue);
+                }
+                if (chk_Categoria.Checked)
+                {
+                    busqueda.FK_IdCategoriaOfertaTrabajo = Int16.Parse(drpCategoria.SelectedValue);
+                }
+                if (chk_Provincia.Checked)
+                {
+                    busqueda.FK_IdProvincia = Int16.Parse(drpprovincia.SelectedValue);
+                }
+                DataTable Filtro = busqueda.Buscar();
+                if (Filtro.Rows.Count > 0)
+                {
+                    dgResultados.DataSource = Filtro;
+                    dgResultados.DataBind();
+                    pnl_resultado.Visible = true;
+                    lbl_resultados.Visible = true;
+                }
+                else
+                {
+                    pnl_resultado.Visible = false;
+                    string code = @"<script type='text/javascript'>ofertasNoEncontradas();</script>";
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
+                }
             }
             else
             {
-                pnl_resultado.Visible = false;
-                string code = @"<script type='text/javascript'>ofertasNoEncontradas();</script>";
+                string code = @"<script type='text/javascript'>criteriosNoSeleccionados();</script>";
                 ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
             }
         }
