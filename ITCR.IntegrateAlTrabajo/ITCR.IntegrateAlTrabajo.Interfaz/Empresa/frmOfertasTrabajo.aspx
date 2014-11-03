@@ -95,12 +95,13 @@
                 <asp:Panel ID="PanelTablaDatos" runat="server">                
                     <asp:DataGrid ID="dgOfertaTrabajo" runat="server" AutoGenerateColumns="False" 
                                             BackColor="WhiteSmoke" BorderStyle="Solid" CssClass="GridMantenimiento" 
-                                            Font-Names="Verdana" Font-Size="Smaller" 
+                                            Font-Names="Century Gothic" Font-Size="Small" 
                         ForeColor="Black" Height="19px" 
                                             Width="99%" 
                         onitemcommand="dgOfertaTrabajo_ItemCommand">
                         <AlternatingItemStyle BackColor="Gainsboro" />
-                        <HeaderStyle BackColor="Navy" Font-Bold="True" Font-Names="Verdana" 
+                        <FooterStyle Font-Names="Century Gothic" />
+                        <HeaderStyle BackColor="Navy" Font-Bold="True" Font-Names="Century Gothic" 
                                                 Font-Size="Larger" ForeColor="White" 
                             HorizontalAlign="Center" />
                         <Columns>
@@ -126,9 +127,11 @@
                                 Visible="False"></asp:BoundColumn>
                             <asp:TemplateColumn HeaderText="Ver más detalles">
                                 <ItemTemplate>
-                                    <asp:ImageButton ID="ibtnDetalles" ImageUrl="~/Multimedia/icono-buscar.jpg" Height="30px" Width="30px" 
+                                    <asp:ImageButton ID="ibtnDetalles" ImageUrl="~/Multimedia/icono-buscar.jpg" 
+                                        Height="30px" Width="30px" 
                                     Style="display: block; margin: 0 auto;" 
-                                    runat="server" CommandName="Detalles"/>
+                                    runat="server" CommandName="Detalles" 
+                                        ToolTip="Presione este botón para ver, actualizar y eliminar esta oferta de trabajo"/>
                                 </ItemTemplate>
                             </asp:TemplateColumn>
                         </Columns>
