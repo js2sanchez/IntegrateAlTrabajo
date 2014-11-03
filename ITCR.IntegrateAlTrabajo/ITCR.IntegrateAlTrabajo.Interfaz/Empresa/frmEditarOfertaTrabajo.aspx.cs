@@ -38,6 +38,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                 DataTable TablaOfertaTrabajo = (DataTable)Session["detalles_oferta"];
                 HttpContext.Current.Session["id_empresa"] = TablaOfertaTrabajo.Rows[0]["FK_IdEmpresa"];
                 HttpContext.Current.Session["id_provincia"] = TablaOfertaTrabajo.Rows[0]["FK_IdProvincia"];
+                cldVencimiento.SelectedDate = DateTime.Parse(TablaOfertaTrabajo.Rows[0]["Vencimiento"].ToString());
                 txtNombrePuesto.Text = TablaOfertaTrabajo.Rows[0]["Nom_Puesto"].ToString();
                 txtDescripcion.Text = TablaOfertaTrabajo.Rows[0]["Dsc_OfertaTrabajo"].ToString();
                 drpTipo.SelectedIndex = Int16.Parse(TablaOfertaTrabajo.Rows[0]["FK_IdTipoOfertaTrabajo"].ToString())-1;
