@@ -23,6 +23,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 {
                     Response.Redirect("/Default.aspx");
                 }
+                cldVencimiento.SelectedDate = DateTime.Now;
                 cargarIdEmpresa();
                 btnAgregar.Visible = true;
                 cargarTodosDropDownList();
