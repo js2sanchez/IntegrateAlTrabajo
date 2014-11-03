@@ -7,45 +7,54 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
+namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador {
     
     
-    public partial class frmOfertasTrabajo {
+    public partial class frmActualizarOfertasTrabajo {
         
         /// <summary>
-        /// lblOfertaTrabajo control.
+        /// ScriptManagerMain control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblOfertaTrabajo;
+        protected global::System.Web.UI.ScriptManager ScriptManagerMain;
         
         /// <summary>
-        /// lblNoOfertas control.
+        /// lblActualizarOfertasTrabajo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNoOfertas;
+        protected global::System.Web.UI.WebControls.Label lblActualizarOfertasTrabajo;
         
         /// <summary>
-        /// PanelTablaDatos control.
+        /// lblActualizar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelTablaDatos;
+        protected global::System.Web.UI.WebControls.Label lblActualizar;
         
         /// <summary>
-        /// dgOfertaTrabajo control.
+        /// PanelBoton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DataGrid dgOfertaTrabajo;
+        protected global::System.Web.UI.WebControls.Panel PanelBoton;
+        
+        /// <summary>
+        /// btnActualizarOfertasTrabajo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnActualizarOfertasTrabajo;
     }
 }

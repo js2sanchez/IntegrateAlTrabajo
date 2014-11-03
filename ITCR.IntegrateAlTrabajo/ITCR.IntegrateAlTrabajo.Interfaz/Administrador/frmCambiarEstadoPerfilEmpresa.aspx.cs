@@ -159,11 +159,5 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador
                 Response.Redirect("/Administrador/frmPerfilEmpresa.aspx");
             }
         }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            cIATOfertaTrabajoNegocios OfertaGeneral = new cIATOfertaTrabajoNegocios(1, "A", 2, "B");
-            OfertaGeneral.Actualizar_Estado();
-        }
     }
 }

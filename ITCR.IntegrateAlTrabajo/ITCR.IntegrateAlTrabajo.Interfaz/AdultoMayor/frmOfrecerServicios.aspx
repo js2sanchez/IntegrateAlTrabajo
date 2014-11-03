@@ -274,7 +274,7 @@
                             <td class="style38" colspan="5">
                                 <asp:Panel ID="PanelBoton" runat="server" HorizontalAlign="Right">
                                     <asp:Button ID="btnAgregarServicio" runat="server" CssClass="Boton" 
-                                        OnClick="btnAgregarServicio_Click" TabIndex="18" Text="Agregar" />
+                                        OnClick="btnAgregarServicio_Click" TabIndex="18" Text="Crear servicio" />
                                 </asp:Panel>
                             </td>
                             <td class="style33">

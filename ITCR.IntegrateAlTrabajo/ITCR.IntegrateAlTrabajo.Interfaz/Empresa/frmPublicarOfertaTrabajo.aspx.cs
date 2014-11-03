@@ -13,7 +13,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 {
     public partial class frmPublicarOfertaTrabajo : System.Web.UI.Page
     {
-        private static Int16 IdEmpresa = 0;        
+        private static Int16 IdEmpresa = 0;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,13 +23,14 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 {
                     Response.Redirect("/Default.aspx");
                 }
-                cargarIdEmpresa();                
+                cldVencimiento.SelectedDate = DateTime.Now;
+                cargarIdEmpresa();
                 btnAgregar.Visible = true;
                 cargarTodosDropDownList();
                 DataTable Requisitos = new DataTable();
                 inicializarComponentesGraficos();
                 Requisitos.Columns.Add("Req_Oferta", typeof(string));
-                HttpContext.Current.Session["tabla_requisitos"] = Requisitos;                
+                HttpContext.Current.Session["tabla_requisitos"] = Requisitos;
             }
         }
 
@@ -106,10 +107,10 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             if (e.CommandName == "Eliminar")
             {
                 string code = @"<script type='text/javascript'>eliminarRequisito(" + e.Item.ItemIndex + ");</script>";
-                ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);                
+                ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
             }
-        }        
-        
+        }
+
         private void inicializarComponentesGraficos()
         {
             txtNombrePuesto.Text = "";
@@ -126,12 +127,12 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
             cIATEmpresaNegocios Empresa = new cIATEmpresaNegocios(1, "A", 2, "B");
             Empresa.Id_Empresa = IdEmpresa;
             DataTable tablaEmpresa = Empresa.Buscar();
-            cIATDistritoNegocios Distrito = new cIATDistritoNegocios(1, "A", 2, "B");   
+            cIATDistritoNegocios Distrito = new cIATDistritoNegocios(1, "A", 2, "B");
             if (tablaEmpresa.Rows.Count > 0)
             {
                 Distrito.Id_Distrito = Int16.Parse(tablaEmpresa.Rows[0]["Fk_IdDistrito"].ToString());
             }
-            
+
             DataTable TablaDistrito = Distrito.Buscar();
             Int16 IdCanton = 0;
             if (TablaDistrito.Rows.Count > 0)
@@ -194,16 +195,31 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
         protected void dgOfertaTrabajo_ItemDataBound(object sender, DataGridItemEventArgs e)
         {
             e.Item.Cells[12].Attributes.Add("onClick", "return confirmarBorradoOfertaTrabajo();");
-        }        
+        }
 
         protected void btnAgregarRequisito_Click(object sender, EventArgs e)
         {
-            DataRow requisito = ((DataTable)HttpContext.Current.Session["tabla_requisitos"]).NewRow();
-            requisito["Req_Oferta"] = txtRequisitos.Text;
-            ((DataTable)HttpContext.Current.Session["tabla_requisitos"]).Rows.Add(requisito);
-            dgRequisitos.DataSource = ((DataTable)HttpContext.Current.Session["tabla_requisitos"]);
-            dgRequisitos.DataBind();
-            txtRequisitos.Text = "";
+            Validate("gvOfertaTrabajo2");
+
+            if (Page.IsValid)
+            {
+                DataRow requisito = ((DataTable)HttpContext.Current.Session["tabla_requisitos"]).NewRow();
+                requisito["Req_Oferta"] = txtRequisitos.Text;
+                ((DataTable)HttpContext.Current.Session["tabla_requisitos"]).Rows.Add(requisito);
+                dgRequisitos.DataSource = ((DataTable)HttpContext.Current.Session["tabla_requisitos"]);
+                dgRequisitos.DataBind();
+                txtRequisitos.Text = "";
+
+                if (((DataTable)HttpContext.Current.Session["tabla_requisitos"]).Rows.Count > 0)
+                {
+                    dgRequisitos.Visible = true;
+                }
+                else
+                {
+                    dgRequisitos.Visible = false;
+                }
+
+            }
         }
 
     }

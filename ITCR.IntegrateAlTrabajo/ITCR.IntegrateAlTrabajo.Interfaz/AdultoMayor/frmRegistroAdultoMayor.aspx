@@ -227,7 +227,7 @@
     <script type="text/javascript">
 
         function custom_alert(msg) {
-            bootbox.dialog({
+            var box = bootbox.dialog({
                 closeButton: false,
                 message: msg,
                 buttons: {
@@ -236,6 +236,10 @@
                         className: "btn-primary"
                     }
                 }
+            });
+
+            box.bind("shown.bs.modal", function () {
+                box.find("btn-primary:first").focus();
             });
         }
 
@@ -267,16 +271,16 @@
                 message: "¿Está seguro que desea salir sin guardar?",
                 buttons: {
                     success: {
+                        label: "No, deseo continuar en el formulario",
+                        className: "btn-primary"
+                    },
+                    main: {
                         label: "Sí, estoy seguro",
                         className: "btn-primary",
                         callback: function () {
                             location.href = "/Default.aspx";
                         }
-                    },
-                    main: {
-                        label: "No, deseo continuar en el formulario",
-                        className: "btn-primary"
-                    }
+                    }                    
                 }
             });
         }
@@ -288,17 +292,17 @@
                 message: "¿Está seguro que desea eliminar este estudio?",
                 buttons: {
                     success: {
+                        label: "No, quiero mantenerlo",
+                        className: "btn-primary"
+                    },
+                    main: {
                         label: "Sí, quiero eliminarlo",
                         className: "btn-primary",
                         callback: function () {
                             eliminarFila("<%= dgEstudios.ClientID %>", index);
                             PageMethods.eliminarEstudio(index, OnSuccess, OnError);
                         }
-                    },
-                    main: {
-                        label: "No, quiero mantenerlo",
-                        className: "btn-primary"
-                    }
+                    }                    
                 }
             });
         }
@@ -313,17 +317,17 @@
                 message: "¿Está seguro que desea eliminar esta experiencia laboral?",
                 buttons: {
                     success: {
+                        label: "No, quiero mantenerla",
+                        className: "btn-primary"
+                    },
+                    main: {
                         label: "Sí, quiero eliminarla",
                         className: "btn-primary",
                         callback: function () {
                             eliminarFila("<%= dgExperienciasLaborales.ClientID %>", index);
                             PageMethods.eliminarExperiencia(index, OnSuccess, OnError);
                         }
-                    },
-                    main: {
-                        label: "No, quiero mantenerla",
-                        className: "btn-primary"
-                    }
+                    }                    
                 }
             });
         }

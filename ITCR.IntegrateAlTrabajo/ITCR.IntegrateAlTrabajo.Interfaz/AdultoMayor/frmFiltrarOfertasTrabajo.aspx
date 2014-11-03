@@ -184,9 +184,8 @@
     <script type="text/javascript" src="../js/bootbox.js"></script>
     <script type="text/javascript">
         function custom_alert(msg) {
-            bootbox.dialog({
+            var box = bootbox.dialog({
                 closeButton: false,
-                title: "Ofertas de trabajo",
                 message: msg,
                 buttons: {
                     success: {
@@ -194,6 +193,10 @@
                         className: "btn-primary"
                     }
                 }
+            });
+
+            box.bind("shown.bs.modal", function () {
+                box.find("btn-primary:first").focus();
             });
         }
         function ofertasNoEncontradas() {

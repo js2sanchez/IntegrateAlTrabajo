@@ -33,12 +33,6 @@
             width: 97%;
             height: 25px;
         }
-        .style4
-        {
-        }
-        .style5
-        {
-        }
         .style6
         {
             width: 250px;
@@ -50,9 +44,6 @@
         .style8
         {
             width: 15px;
-        }
-        .style9
-        {
         }
         .style10
         {
@@ -96,6 +87,7 @@
         function custom_alert(msg) {
             var box = bootbox.dialog({
                 closeButton: false,
+                title: "Cambios de estado en los perfiles de usuarios",
                 message: msg,
                 buttons: {
                     success: {
@@ -157,11 +149,7 @@
             <td class="auto-style1">
             </td>
             <td colspan="2">
-            <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Left" Width="441px">
-                    <asp:Button ID="Button1" runat="server" CssClass="Boton"
-                        Text="Actualizar ofertas de trabajo" onclick="Button1_Click" />
-                </asp:Panel>
-            </td>
+                &nbsp;</td>
             <td class="auto-style4">
             </td>
             <td class="auto-style2">

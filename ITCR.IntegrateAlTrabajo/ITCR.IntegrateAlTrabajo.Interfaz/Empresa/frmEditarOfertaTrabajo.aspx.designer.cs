@@ -49,6 +49,33 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
         protected global::System.Web.UI.WebControls.Panel PanelDatos;
         
         /// <summary>
+        /// Control PanelBotones.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel PanelBotones;
+        
+        /// <summary>
+        /// Control btnSalir.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnSalir;
+        
+        /// <summary>
+        /// Control btnActualizar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnActualizar;
+        
+        /// <summary>
         /// Control lblNombrePuesto.
         /// </summary>
         /// <remarks>
@@ -92,6 +119,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDescripcion;
+        
+        /// <summary>
+        /// Control rfvDescripcion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvDescripcion;
         
         /// <summary>
         /// Control lblTipo.
@@ -184,22 +220,31 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
         protected global::System.Web.UI.WebControls.TextBox txtRequisitos;
         
         /// <summary>
-        /// Control Panel1.
+        /// Control rfvRequisitos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Panel1;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvRequisitos;
         
         /// <summary>
-        /// Control btnAgregarRequisito.
+        /// Control Panel2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAgregarRequisito;
+        protected global::System.Web.UI.WebControls.Panel Panel2;
+        
+        /// <summary>
+        /// Control btnAgregarRequisito0.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnAgregarRequisito0;
         
         /// <summary>
         /// Control PanelTablaDatos.
@@ -236,32 +281,5 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtObservaciones;
-        
-        /// <summary>
-        /// Control PanelBotones.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelBotones;
-        
-        /// <summary>
-        /// Control btnSalir.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSalir;
-        
-        /// <summary>
-        /// Control btnActualizar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnActualizar;
     }
 }
