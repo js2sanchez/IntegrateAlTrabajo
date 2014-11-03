@@ -143,13 +143,17 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
 
         protected void btnAgregarRequisito_Click(object sender, EventArgs e)
         {
-            DataRow requisito = ((DataTable)HttpContext.Current.Session["oferta_requisitos"]).NewRow();
-            requisito["Detalle"] = txtRequisitos.Text;
-            ((ArrayList)HttpContext.Current.Session["requisitos_agregar"]).Add(txtRequisitos.Text);
-            txtRequisitos.Text = "";
-            ((DataTable)HttpContext.Current.Session["oferta_requisitos"]).Rows.Add(requisito);
-            dgRequisitos.DataSource = ((DataTable)HttpContext.Current.Session["oferta_requisitos"]);
-            dgRequisitos.DataBind();
+            Validate("gvOfertaTrabajo2");
+            if (Page.IsValid)
+            {
+                DataRow requisito = ((DataTable)HttpContext.Current.Session["oferta_requisitos"]).NewRow();
+                requisito["Detalle"] = txtRequisitos.Text;
+                ((ArrayList)HttpContext.Current.Session["requisitos_agregar"]).Add(txtRequisitos.Text);
+                txtRequisitos.Text = "";
+                ((DataTable)HttpContext.Current.Session["oferta_requisitos"]).Rows.Add(requisito);
+                dgRequisitos.DataSource = ((DataTable)HttpContext.Current.Session["oferta_requisitos"]);
+                dgRequisitos.DataBind();
+            }
         }
 
         [WebMethod]
@@ -179,10 +183,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
 
         protected void btnSalir_Click(object sender, EventArgs e)
         {
-            dgRequisitos.DataSource = ((DataTable)HttpContext.Current.Session["oferta_requisitos"]);
-            dgRequisitos.DataBind();
-            string code = @"<script type='text/javascript'>endConfirmation();</script>";
-            ScriptManager.RegisterStartupScript(this, typeof(Page), "alert", code, false);
+            Response.Redirect("/Empresa/frmDetallesOferta.aspx");
         }
         
 

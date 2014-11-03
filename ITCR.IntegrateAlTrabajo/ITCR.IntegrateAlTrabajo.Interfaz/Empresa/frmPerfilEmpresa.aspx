@@ -138,24 +138,24 @@
                 title: "Eliminar perfil de la empresa",
                 message: "¿Está seguro que desea eliminar el perfil de esta empresa en la bolsa de trabajo?",
                 buttons: {
+                    success: {
+                        label: "No, deseo mantenerla",
+                        className: "btn-primary"
+                    },
                     main: {
                         label: "Sí, estoy seguro",
                         className: "btn-primary",
                         callback: function () {
                             PageMethods.eliminarEmpresa(user, OnSuccess, OnError);
                         }
-                    },
-                    success: {
-                        label: "No, deseo mantenerla",
-                        className: "btn-primary"
-                    }
+                    }                    
                 }
             });
         }
-            
+                   
 
         function OnSuccess(response) {
-            bootbox.dialog({
+            var box = bootbox.dialog({
                 closeButton: false,
                 title: "Eliminación exitosa",
                 message: "La empresa se ha eliminado de la bolsa de trabajo exitosamente. ¡Gracias por haber cooperado para que las personas adultas mayores tengan una vejez activa!.",
@@ -169,6 +169,10 @@
                         }
                     }
                 }
+            });
+
+            box.bind("shown.bs.modal", function () {
+                box.find("btn-primary:first").focus();
             });
         }
 

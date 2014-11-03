@@ -115,7 +115,7 @@
     <script type="text/javascript" src="../js/bootbox.js"></script>
     <script type="text/javascript">
         function custom_alert(msg) {
-            bootbox.dialog({
+            var box = bootbox.dialog({
                 closeButton: false,
                 message: msg,
                 buttons: {
@@ -124,6 +124,10 @@
                         className: "btn-primary"
                     }
                 }
+            });
+
+            box.bind("shown.bs.modal", function () {
+                box.find("btn-primary:first").focus();
             });
         }
 
@@ -134,6 +138,10 @@
                 message: "¿Está seguro que desea eliminar este estudio permanentemente?",
                 buttons: {
                     success: {
+                        label: "No, quiero mantenerlo",
+                        className: "btn-primary"
+                    },
+                    main: {
                         label: "Sí, quiero eliminarlo",
                         className: "btn-primary",
                         callback: function () {
@@ -141,11 +149,7 @@
                             var tabla = document.getElementById("<%= dgEstudios.ClientID %>");
                             tabla.deleteRow(item + 1);
                         }
-                    },
-                    main: {
-                        label: "No, quiero mantenerlo",
-                        className: "btn-primary"
-                    }
+                    }                    
                 }
             });
         }

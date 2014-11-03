@@ -124,16 +124,16 @@
                 message: "¿Está seguro que desea eliminar esta oferta de trabajo?",
                 buttons: {
                     success: {
+                        label: "No, deseo mantenerla",
+                        className: "btn-primary"
+                    },
+                    main: {
                         label: "Sí, estoy seguro",
                         className: "btn-primary",
                         callback: function () {
                             PageMethods.eliminarOferta(id, OnSuccess, OnError);
                         }
-                    },
-                    main: {
-                        label: "No, deseo mantenerla",
-                        className: "btn-primary"
-                    }
+                    }                    
                 }
             });
         }

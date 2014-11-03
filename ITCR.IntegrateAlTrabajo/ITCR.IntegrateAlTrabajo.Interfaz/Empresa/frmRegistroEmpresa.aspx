@@ -176,7 +176,7 @@
     <script type="text/javascript" src="../js/bootbox.js"></script>
     <script type="text/javascript">
         function custom_alert(msg) {
-            bootbox.dialog({
+            var box = bootbox.dialog({
                 closeButton: false,
                 message: msg,
                 buttons: {
@@ -185,6 +185,10 @@
                         className: "btn-primary"
                     }
                 }
+            });
+
+            box.bind("shown.bs.modal", function () {
+                box.find("btn-primary:first").focus();
             });
         }
 
@@ -216,16 +220,16 @@
                 message: "¿Está seguro que desea salir sin guardar?",
                 buttons: {
                     success: {
+                        label: "No, deseo continuar en el formulario",
+                        className: "btn-primary"
+                    },
+                    main: {
                         label: "Sí, estoy seguro",
                         className: "btn-primary",
                         callback: function () {
                             location.href = "/Default.aspx";
                         }
-                    },
-                    main: {
-                        label: "No, deseo continuar en el formulario",
-                        className: "btn-primary"
-                    }
+                    }                    
                 }
             });
         }
@@ -309,7 +313,7 @@
                                 </td>
                                 <td class="style38">
                                     <asp:TextBox ID="txtNombreEmpresa" runat="server" onblur="this.placeholder = 'Escriba el nombre de la empresa aquí'"
-                                        onfocus="this.placeholder = ''" placeholder="Escriba el nombre de la empresa aquí"
+                                        onfocus="this.placeholder = ''" placeholder="Escriba el nombre de la empresa aquí" TabIndex="0"
                                         ToolTip="Ejemplo: Intel" Width="290px" MaxLength="60"></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="rfvNombreEmpresa" runat="server" ControlToValidate="txtNombreEmpresa"
                                         ErrorMessage="El nombre de la empresa es un dato requerido, por lo que debe introducir un valor válido."
