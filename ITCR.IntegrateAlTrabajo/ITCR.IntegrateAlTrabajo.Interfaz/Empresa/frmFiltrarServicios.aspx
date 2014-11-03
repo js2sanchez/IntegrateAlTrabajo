@@ -150,6 +150,9 @@
         function serviciosNoEncontrados() {
             bootbox.alert("No hay servicios que cumplan con los criterios de búsqueda específicados.");
         }
+        function criteriosNoSeleccionados() {
+            bootbox.alert("Para efectuar el filtrado de servicios debe seleccionar al menos un criterio de búsqueda.");
+        }
 
     </script>
     <table class="style3">
@@ -220,17 +223,17 @@
                 </td>
             <td class="auto-style6">
                 <asp:CheckBox ID="chk_tipo" runat="server" Text="Tipo de servicio" 
-                    AutoPostBack="True" oncheckedchanged="chk_Busqueda_CheckedChanged"/>
+                    AutoPostBack="True" oncheckedchanged="chk_tipo_activado"/>
             </td>
             <td class="auto-style7">
                 <asp:CheckBox ID="chk_Categoria" runat="server" Text="Categoría de servicio" 
-                    AutoPostBack="True" oncheckedchanged="chk_Busqueda_CheckedChanged" />
+                    AutoPostBack="True" oncheckedchanged="chk_categoria_activado" />
             </td>
             <td class="auto-style8">
                 </td>
             <td class="auto-style12">
                 <asp:CheckBox ID="chk_Provincia" runat="server" Text="Provincia" 
-                    AutoPostBack="True" oncheckedchanged="chk_Busqueda_CheckedChanged" />
+                    AutoPostBack="True" oncheckedchanged="chk_provincia_activado" />
             </td>
             <td class="auto-style10">
                 </td>
@@ -255,8 +258,7 @@
                 </asp:DropDownList>
             </td>
             <td class="auto-style10">
-                <asp:Button ID="btn_buscar" runat="server" Height="34px" Text="Buscar" 
-                    Enabled="False" onclick="btn_buscar_Click" CssClass="Boton" Width="140px" />
+                <asp:Button ID="btn_buscar" runat="server" Height="34px" Text="Buscar" onclick="btn_buscar_Click" CssClass="Boton" Width="140px" />
                 </td>
             <td class="auto-style11">
                 </td>
