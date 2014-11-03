@@ -10,7 +10,7 @@
 namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador {
     
     
-    public partial class frmCambiarEstadoPerfilEmpresa {
+    public partial class frmActualizarOfertasTrabajo {
         
         /// <summary>
         /// ScriptManagerMain control.
@@ -22,57 +22,39 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Administrador {
         protected global::System.Web.UI.ScriptManager ScriptManagerMain;
         
         /// <summary>
-        /// lblActivarDesactivarEstado control.
+        /// lblActualizarOfertasTrabajo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblActivarDesactivarEstado;
+        protected global::System.Web.UI.WebControls.Label lblActualizarOfertasTrabajo;
         
         /// <summary>
-        /// PanelBotonActualizar control.
+        /// lblActualizar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel PanelBotonActualizar;
+        protected global::System.Web.UI.WebControls.Label lblActualizar;
         
         /// <summary>
-        /// btnGuardarEstado control.
+        /// PanelBoton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardarEstado;
+        protected global::System.Web.UI.WebControls.Panel PanelBoton;
         
         /// <summary>
-        /// lblEmpresas control.
+        /// btnActualizarOfertasTrabajo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblEmpresas;
-        
-        /// <summary>
-        /// panelEmpresas control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel panelEmpresas;
-        
-        /// <summary>
-        /// dgPerfilesEmpresas control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DataGrid dgPerfilesEmpresas;
+        protected global::System.Web.UI.WebControls.Button btnActualizarOfertasTrabajo;
     }
 }

@@ -115,6 +115,7 @@
         function custom_alert(msg) {
             var box = bootbox.dialog({
                 closeButton: false,
+                title: "Cambios de estado en los perfiles de usuarios",
                 message: msg,
                 buttons: {
                     success: {

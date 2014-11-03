@@ -67,6 +67,7 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="Administrador\frmActualizarOfertasTrabajo.aspx" />
     <Content Include="Administrador\frmCreditos.aspx" />
     <Content Include="Administrador\frmPerfilEmpresa.aspx" />
     <Content Include="Administrador\frmCambiarEstadoPerfilEmpresa.aspx" />
@@ -171,6 +172,13 @@
     </Compile>
     <Compile Include="Account\Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrador\frmActualizarOfertasTrabajo.aspx.cs">
+      <DependentUpon>frmActualizarOfertasTrabajo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador\frmActualizarOfertasTrabajo.aspx.designer.cs">
+      <DependentUpon>frmActualizarOfertasTrabajo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Administrador\frmCreditos.aspx.cs">
       <DependentUpon>frmCreditos.aspx</DependentUpon>

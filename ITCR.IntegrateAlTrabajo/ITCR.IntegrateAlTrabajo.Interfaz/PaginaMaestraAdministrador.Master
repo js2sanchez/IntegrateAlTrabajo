@@ -56,6 +56,9 @@
                             <asp:MenuItem Text="Empresas" Value="Empresas" 
                                 NavigateUrl="~/Administrador/frmOpinionesEmpresa.aspx"></asp:MenuItem>
                         </asp:MenuItem>
+                        <asp:MenuItem Text="Actualizar ofertas de trabajo" 
+                            Value="Actualizar ofertas de trabajo" 
+                            NavigateUrl="~/Administrador/frmActualizarOfertasTrabajo.aspx"></asp:MenuItem>
                         <asp:MenuItem NavigateUrl="~/Administrador/frmCreditos.aspx" Text="Créditos" 
                             Value="Créditos"></asp:MenuItem>
                         <asp:MenuItem Text="Cerrar sesión" Value="Cerrar sesión" 
