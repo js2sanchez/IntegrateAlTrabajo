@@ -72,12 +72,8 @@
         .style16
         {
             height: 25px;
-            }
-        .style18
-        {
-            width: 25px;
         }
-    </style>
+        </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ScriptManager ID="ScriptManagerMain" runat="server" EnablePageMethods="true"
@@ -150,7 +146,7 @@
                             eliminarFila("<%= dgRequisitos.ClientID %>", index);
                             PageMethods.eliminarRequisito(index, OnSuccess, OnError);
                         }
-                    }                    
+                    }
                 }
             });
         }
@@ -182,6 +178,7 @@
             </td>
             <td class="style13" colspan="5">
                 <asp:ValidationSummary ID="vsOfertaTrabajo" runat="server" ForeColor="#CC0000" ValidationGroup="gvOfertaTrabajo" />
+                <asp:ValidationSummary ID="vsOfertaTrabajo2" runat="server" ForeColor="#CC0000" ValidationGroup="gvOfertaTrabajo2" />
             </td>
             <td class="style4">
                 &nbsp;
@@ -196,30 +193,37 @@
                     <table class="style8">
                         <tr>
                             <td class="style11">
-                                &nbsp;</td>
+                                &nbsp;
+                            </td>
                             <td class="style16">
-                                &nbsp;</td>
+                                &nbsp;
+                            </td>
                             <td class="style15">
-                                &nbsp;</td>
+                                &nbsp;
+                            </td>
                             <td class="style11">
-                                &nbsp;</td>
+                                &nbsp;
+                            </td>
                             <td class="style11">
-                                &nbsp;</td>
+                                &nbsp;
+                            </td>
                         </tr>
                         <tr>
                             <td class="style11">
-                                &nbsp;</td>
+                                &nbsp;
+                            </td>
                             <td class="style16" colspan="3">
-                                &nbsp;<asp:Panel ID="PanelBotones" runat="server" HorizontalAlign="Right">
-                                    <asp:Button ID="btnSalir" runat="server" CssClass="Boton" 
-                                        OnClick="btnSalir_Click" Text="Cancelar" />
+                                <asp:Panel ID="PanelBotones" runat="server" HorizontalAlign="Right">
+                                    <asp:Button ID="btnSalir" runat="server" CssClass="Boton" OnClick="btnSalir_Click"
+                                        Text="Cancelar" />
                                     &nbsp;&nbsp;
-                                    <asp:Button ID="btnActualizar" runat="server" CssClass="Boton" 
-                                        OnClick="btnActualizar_Click" Text="Actualizar oferta de trabajo" />
+                                    <asp:Button ID="btnActualizar" runat="server" CssClass="Boton" OnClick="btnActualizar_Click"
+                                        Text="Actualizar oferta de trabajo" />
                                 </asp:Panel>
                             </td>
                             <td class="style11">
-                                &nbsp;</td>
+                                &nbsp;
+                            </td>
                         </tr>
                         <tr>
                             <td class="style40">
@@ -325,7 +329,8 @@
                         </tr>
                         <tr>
                             <td class="style11">
-                                &nbsp;</td>
+                                &nbsp;
+                            </td>
                             <td class="style16">
                                 <asp:Label ID="Label1" runat="server" Text="Estado"></asp:Label>
                             </td>
@@ -336,7 +341,8 @@
                                 &nbsp;
                             </td>
                             <td class="style11">
-                                &nbsp;</td>
+                                &nbsp;
+                            </td>
                         </tr>
                         <tr>
                             <td class="style40">
@@ -380,7 +386,8 @@
                                         <HeaderStyle BackColor="Navy" Font-Bold="True" Font-Names="Century Gothic" Font-Size="Larger"
                                             ForeColor="White" HorizontalAlign="Center" />
                                         <Columns>
-                                        <asp:BoundColumn DataField="Id_RequisitoOfertaTrabajo" HeaderText="IdRequisito" Visible="false"></asp:BoundColumn>
+                                            <asp:BoundColumn DataField="Id_RequisitoOfertaTrabajo" HeaderText="IdRequisito" Visible="false">
+                                            </asp:BoundColumn>
                                             <asp:BoundColumn DataField="Detalle" HeaderText="Requisito"></asp:BoundColumn>
                                             <asp:TemplateColumn HeaderText="Eliminar">
                                                 <ItemTemplate>
@@ -416,11 +423,14 @@
                         </tr>
                         <tr>
                             <td class="style11" align="right">
-                                &nbsp;</td>
+                                &nbsp;
+                            </td>
                             <td align="right" class="style5" colspan="3">
-                                &nbsp;</td>
+                                &nbsp;
+                            </td>
                             <td align="right" class="style5">
-                                &nbsp;</td>
+                                &nbsp;
+                            </td>
                         </tr>
                     </table>
                 </asp:Panel>

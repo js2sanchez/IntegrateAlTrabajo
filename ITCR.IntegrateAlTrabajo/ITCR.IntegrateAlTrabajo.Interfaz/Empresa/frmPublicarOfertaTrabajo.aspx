@@ -174,7 +174,7 @@
                             eliminarFila("<%= dgRequisitos.ClientID %>", index);
                             PageMethods.eliminarRequisito(index, OnSuccess, OnError);
                         }
-                    }                    
+                    }
                 }
             });
         }
@@ -219,8 +219,7 @@
             </td>
             <td class="style13" colspan="5">
                 <asp:ValidationSummary ID="vsOfertaTrabajo" runat="server" ForeColor="#CC0000" ValidationGroup="gvOfertaTrabajo" />
-                <asp:ValidationSummary ID="vsOfertaTrabajo2" runat="server" ForeColor="#CC0000" 
-                    ValidationGroup="gvOfertaTrabajo2" />
+                <asp:ValidationSummary ID="vsOfertaTrabajo2" runat="server" ForeColor="#CC0000" ValidationGroup="gvOfertaTrabajo2" />
             </td>
             <td class="style4">
                 &nbsp;
