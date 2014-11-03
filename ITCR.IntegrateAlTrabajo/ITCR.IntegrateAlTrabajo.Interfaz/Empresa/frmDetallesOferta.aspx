@@ -120,7 +120,7 @@
         function eliminarOferta(id) {
             bootbox.dialog({
                 closeButton: false,
-                title: false,
+                title: "Eliminar oferta de trabajo",
                 message: "¿Está seguro que desea eliminar esta oferta de trabajo?",
                 buttons: {
                     success: {

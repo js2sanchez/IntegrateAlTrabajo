@@ -129,9 +129,12 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                         n_requisito.Insertar();
                     }
                     OfertaTrabajo.Actualizar();
+
+                    Response.Redirect("/Empresa/frmDetallesOferta.aspx");
+                    /*
                     string script = @"<script type='text/javascript'>
                             retornar();</script>";
-                    ScriptManager.RegisterStartupScript(this, typeof(Page), "Datos de empresa", script, false);
+                    ScriptManager.RegisterStartupScript(this, typeof(Page), "Datos de empresa", script, false);*/
                 }
                 catch
                 {
