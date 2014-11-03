@@ -38,7 +38,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
 
         private void cargarUsuario()
         {
-            Usuario.Id_Usuario = Int16.Parse(Session["Id_usuario"].ToString());
+            Usuario.Id_Usuario = Int16.Parse(Session["Id_Usuario_P"].ToString());
             DataTable TablaUsuario = Usuario.Buscar();
 
             Int16 IdUsuario = 0;

@@ -380,7 +380,8 @@
                                         <HeaderStyle BackColor="Navy" Font-Bold="True" Font-Names="Century Gothic" Font-Size="Larger"
                                             ForeColor="White" HorizontalAlign="Center" />
                                         <Columns>
-                                            <asp:BoundColumn DataField="Req_Oferta" HeaderText="Requisito"></asp:BoundColumn>
+                                        <asp:BoundColumn DataField="Id_RequisitoOfertaTrabajo" HeaderText="IdRequisito" Visible="false"></asp:BoundColumn>
+                                            <asp:BoundColumn DataField="Detalle" HeaderText="Requisito"></asp:BoundColumn>
                                             <asp:TemplateColumn HeaderText="Eliminar">
                                                 <ItemTemplate>
                                                     <asp:ImageButton ID="ibtnEliminar0" runat="server" CommandName="Eliminar" Height="30px"
