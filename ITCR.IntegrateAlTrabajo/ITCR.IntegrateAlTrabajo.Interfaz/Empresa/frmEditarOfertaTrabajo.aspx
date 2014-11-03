@@ -111,7 +111,7 @@
         function endConfirmation() {
             bootbox.dialog({
                 closeButton: false,
-                title: false,
+                title: "Salir sin guardar",
                 message: "¿Está seguro que desea salir sin guardar?",
                 buttons: {
                     success: {
@@ -132,7 +132,7 @@
         function eliminarRequisito(index) {
             bootbox.dialog({
                 closeButton: false,
-                title: false,
+                title: "Eliminar requisito",
                 message: "¿Está seguro que desea eliminar este requisito?",
                 buttons: {
                     success: {
