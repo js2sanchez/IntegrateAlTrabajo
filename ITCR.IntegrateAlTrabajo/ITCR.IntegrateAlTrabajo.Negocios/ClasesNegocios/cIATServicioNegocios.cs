@@ -4,7 +4,7 @@
 // Proyecto: Intégrate al trabajo
 // Descripción: Clase de LOGICA DE NEGOCIOS para tabla 'IATServicio'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: martes 27 de agosto de 2013, 09:45:40 p.m.
+// Fecha: Monday, November 3, 2014, 12:18:15 AM
 ///////////////////////////////////////////////////////////////////////////
 #endregion
 
@@ -15,7 +15,6 @@ using System.Data.SqlTypes;
 using System.Data.SqlClient;
 using ITCR.IntegrateAlTrabajo.Base;
 using ITCR.IntegrateAlTrabajo.Datos;
-//using ITCR.IntegrateAlTrabajo.Negocios.wsSeguridad;
 
 namespace ITCR.IntegrateAlTrabajo.Negocios
 {
@@ -55,6 +54,7 @@ namespace ITCR.IntegrateAlTrabajo.Negocios
 		///		 <LI>FK_IdCategoriaServicio</LI>
 		///		 <LI>FK_IdTipoServicio</LI>
 		///		 <LI>FK_IdPersona</LI>
+		///		 <LI>FK_IdProvincia</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
@@ -65,7 +65,6 @@ namespace ITCR.IntegrateAlTrabajo.Negocios
 		public override bool Insertar()
 		{
 			string operacion;
-			//SeguridadSoapClient wsseg = new SeguridadSoapClient();
 			try
 			{
 				//Construir aqui el string a guardar en la bitacora.
@@ -74,15 +73,14 @@ namespace ITCR.IntegrateAlTrabajo.Negocios
 					+"Descripcion:"+Descripcion.ToString()+";"
 					+"FK_IdCategoriaServicio:"+FK_IdCategoriaServicio.ToString()+";"
 					+"FK_IdTipoServicio:"+FK_IdTipoServicio.ToString()+";"
-					+"FK_IdPersona:"+FK_IdPersona.ToString()+";";
-				//wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.UsoFuncionalidad, _ID_USUARIOBitacora,operacion);
+					+"FK_IdPersona:"+FK_IdPersona.ToString()+";"
+					+"FK_IdProvincia:"+FK_IdProvincia.ToString()+";";
 				return base.Insertar();
 			}
 			catch (Exception ex)
 			{
 				//Construir el string a guardar en la bitácora en caso de error.
 				operacion = "Error Insertar cIATServicio;"+ex.Message;
-				//wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.Error, _ID_USUARIOBitacora,operacion);
 				throw ex;
 			}
 		}
@@ -101,6 +99,7 @@ namespace ITCR.IntegrateAlTrabajo.Negocios
 		///		 <LI>FK_IdCategoriaServicio</LI>
 		///		 <LI>FK_IdTipoServicio</LI>
 		///		 <LI>FK_IdPersona</LI>
+		///		 <LI>FK_IdProvincia</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
@@ -110,7 +109,6 @@ namespace ITCR.IntegrateAlTrabajo.Negocios
 		public override bool Actualizar()
 		{
 			string operacion;
-			//SeguridadSoapClient wsseg = new SeguridadSoapClient();
 			try
 			{
 				//Construir aqui el string a guardar en la bitacora.
@@ -120,15 +118,14 @@ namespace ITCR.IntegrateAlTrabajo.Negocios
 					+"Descripcion:"+Descripcion.ToString()+";"
 					+"FK_IdCategoriaServicio:"+FK_IdCategoriaServicio.ToString()+";"
 					+"FK_IdTipoServicio:"+FK_IdTipoServicio.ToString()+";"
-					+"FK_IdPersona:"+FK_IdPersona.ToString()+";";
-				//wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.UsoFuncionalidad, _ID_USUARIOBitacora,operacion);
+					+"FK_IdPersona:"+FK_IdPersona.ToString()+";"
+					+"FK_IdProvincia:"+FK_IdProvincia.ToString()+";";
 				return base.Actualizar();
 			}
 			catch (Exception ex)
 			{
 				//Construir el string a guardar en la bitácora en caso de error.
 				operacion = "Error Actualizar cIATServicio;"+ex.Message;
-				//wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.Error, _ID_USUARIOBitacora,operacion);
 				throw ex;
 			}
 		}
@@ -151,20 +148,17 @@ namespace ITCR.IntegrateAlTrabajo.Negocios
 		public override bool Eliminar()
 		{
 			string operacion;
-			//SeguridadSoapClient wsseg = new SeguridadSoapClient();
 			try
 			{
 				//Construir aqui el string a guardar en la bitacora.
 				operacion = "Eliminar cIATServicio;"
 					+"Id_Servicio:"+Id_Servicio.ToString()+";";
-				//wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.UsoFuncionalidad, _ID_USUARIOBitacora,operacion);
 				return base.Eliminar();
 			}
 			catch (Exception ex)
 			{
 				//Construir el string a guardar en la bitácora en caso de error.
 				operacion = "Error Eliminar cIATServicio;"+ex.Message;
-				//wsseg.BitacoraRegistrarUso(_COD_APLICACIONBitacora, _COD_FUNCIONALIDADBitacora, _COD_SEDEBitacora, eTipoEventoBitacora.Error, _ID_USUARIOBitacora,operacion);
 				throw ex;
 			}
 		}
@@ -188,6 +182,7 @@ namespace ITCR.IntegrateAlTrabajo.Negocios
 		///		 <LI>FK_IdCategoriaServicio</LI>
 		///		 <LI>FK_IdTipoServicio</LI>
 		///		 <LI>FK_IdPersona</LI>
+		///		 <LI>FK_IdProvincia</LI>
 		/// </UL>
 		/// Llena todas las propiedades que corresponden al campo en tabla con el valor de la fila seleccionada.
 		/// </remarks>
@@ -240,6 +235,7 @@ namespace ITCR.IntegrateAlTrabajo.Negocios
 		///		 <LI>FK_IdCategoriaServicio</LI>
 		///		 <LI>FK_IdTipoServicio</LI>
 		///		 <LI>FK_IdPersona</LI>
+		///		 <LI>FK_IdProvincia</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>

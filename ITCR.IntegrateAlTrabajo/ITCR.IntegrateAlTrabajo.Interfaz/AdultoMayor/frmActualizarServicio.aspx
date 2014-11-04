@@ -108,7 +108,6 @@
         }
         .style38
         {
-            width: 152px;
             height: 30px;
             text-align: left;
         }
@@ -268,18 +267,33 @@
                         </tr>
                         <tr>
                             <td class="style41">
+                                &nbsp;</td>
+                            <td class="style38" colspan="5">
+                                <asp:Panel ID="PanelBotonAgregar" runat="server" HorizontalAlign="Right">
+                                    <asp:Button ID="btnActualizarServicio" runat="server" CssClass="Boton" 
+                                        OnClick="btnActualizarServicio_Click" TabIndex="18" Text="Actualizar" />
+                                </asp:Panel>
+                            </td>
+                            <td class="style33">
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="style41">
                                 &nbsp;
                             </td>
                             <td class="style38">
                                 <asp:Label ID="lblNombre" runat="server" Text="Nombre del servicio"></asp:Label>
                             </td>
                             <td class="style33" colspan="4">
-                                <asp:TextBox ID="txtNombreServicios" runat="server" ToolTip="Ejemplo: Decoración de interiores"
-                                    onblur="this.placeholder = 'Escriba el nombre del servicio que desea ofrecer aquí'"
-                                    onfocus="this.placeholder = ''" placeholder="Escriba el nombre del servicio que desea ofrecer aquí"
-                                    Width="500px"></asp:TextBox>
-                                <asp:RequiredFieldValidator ID="rfvNombreServicio" runat="server" ControlToValidate="txtNombreServicios"
-                                    ErrorMessage="El nombre del servicio es un dato requerido." ForeColor="Red" ValidationGroup="gvServicios">*</asp:RequiredFieldValidator>
+                                <asp:TextBox ID="txtNombreServicios" runat="server" 
+                                    onblur="this.placeholder = 'Escriba el nombre del servicio que desea ofrecer aquí'" 
+                                    onfocus="this.placeholder = ''" 
+                                    placeholder="Escriba el nombre del servicio que desea ofrecer aquí" 
+                                    ToolTip="Ejemplo: Decoración de interiores" Width="500px"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="rfvNombreServicio" runat="server" 
+                                    ControlToValidate="txtNombreServicios" 
+                                    ErrorMessage="El nombre del servicio es un dato requerido." ForeColor="Red" 
+                                    ValidationGroup="gvServicios">*</asp:RequiredFieldValidator>
                             </td>
                             <td class="style33">
                                 &nbsp;
@@ -619,32 +633,6 @@
                                 </asp:Panel>
                             </td>
                             <td class="style32">
-                                &nbsp;
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="style42">
-                                &nbsp;
-                            </td>
-                            <td class="style37">
-                                &nbsp;
-                            </td>
-                            <td class="style27">
-                                &nbsp;
-                            </td>
-                            <td class="style28">
-                                &nbsp;
-                            </td>
-                            <td class="style29">
-                                &nbsp;
-                            </td>
-                            <td class="style45">
-                                <asp:Panel ID="PanelBotonAgregar" runat="server" HorizontalAlign="Right">
-                                    <asp:Button ID="btnActualizarServicio" runat="server" CssClass="Boton" OnClick="btnActualizarServicio_Click"
-                                        Text="Actualizar" TabIndex="18" />
-                                </asp:Panel>
-                            </td>
-                            <td class="style11">
                                 &nbsp;
                             </td>
                         </tr>

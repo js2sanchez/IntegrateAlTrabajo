@@ -4,7 +4,7 @@
 // Proyecto: Intégrate al trabajo
 // Descripción: Clase de acceso a datos para tabla 'IATServicio'
 // Generado por ITCR Gen v2010.0.0.0 
-// Fecha: martes 27 de agosto de 2013, 09:45:40 p.m.
+// Fecha: Monday, November 3, 2014, 12:18:15 AM
 // Dado que esta clase implementa IDispose, las clases derivadas no deben hacerlo.
 ///////////////////////////////////////////////////////////////////////////
 #endregion
@@ -46,6 +46,7 @@ namespace ITCR.IntegrateAlTrabajo.Datos
 		///		 <LI>FK_IdCategoriaServicio</LI>
 		///		 <LI>FK_IdTipoServicio</LI>
 		///		 <LI>FK_IdPersona</LI>
+		///		 <LI>FK_IdProvincia</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
@@ -72,6 +73,7 @@ namespace ITCR.IntegrateAlTrabajo.Datos
 		///		 <LI>FK_IdCategoriaServicio</LI>
 		///		 <LI>FK_IdTipoServicio</LI>
 		///		 <LI>FK_IdPersona</LI>
+		///		 <LI>FK_IdProvincia</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>
@@ -103,6 +105,7 @@ namespace ITCR.IntegrateAlTrabajo.Datos
 			return base.Eliminar();
 		}
 
+
 		/// <summary>
 		/// Propósito: Método SELECT. Este método hace Select de una fila existente en la base de datos, basado en la llave primaria.
 		/// </summary>
@@ -121,6 +124,7 @@ namespace ITCR.IntegrateAlTrabajo.Datos
 		///		 <LI>FK_IdCategoriaServicio</LI>
 		///		 <LI>FK_IdTipoServicio</LI>
 		///		 <LI>FK_IdPersona</LI>
+		///		 <LI>FK_IdProvincia</LI>
 		/// </UL>
 		/// Llena todas las propiedades que corresponden al campo en tabla con el valor de la fila seleccionada.
 		/// </remarks>
@@ -159,6 +163,7 @@ namespace ITCR.IntegrateAlTrabajo.Datos
 		///		 <LI>FK_IdCategoriaServicio</LI>
 		///		 <LI>FK_IdTipoServicio</LI>
 		///		 <LI>FK_IdPersona</LI>
+		///		 <LI>FK_IdProvincia</LI>
 		/// </UL>
 		/// Propiedades actualizadas luego de una llamada exitosa a este método: 
 		/// <UL>

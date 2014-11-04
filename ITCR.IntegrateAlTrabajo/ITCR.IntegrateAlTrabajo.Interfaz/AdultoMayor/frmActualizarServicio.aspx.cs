@@ -359,6 +359,19 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
 
                         Servicio.FK_IdPersona = IdPersona;
 
+                        cIATServicioNegocios Servicio2 = new cIATServicioNegocios(1, "A", 2, "B");
+                        Servicio2.Id_Servicio = Int16.Parse(Session["IdServicio"].ToString());
+
+                        DataTable TablaServicios = Servicio2.Buscar();
+
+                        Int16 IdProvincia = 0;
+
+                        if (TablaServicios.Rows.Count > 0)
+                        {
+                            IdProvincia = Int16.Parse(TablaServicios.Rows[0]["FK_IdProvincia"].ToString());
+                        }
+
+                        Servicio.FK_IdProvincia = IdProvincia; 
                         Servicio.Actualizar();
 
                         Int16 IdServicio = Int16.Parse(Session["IdServicio"].ToString());

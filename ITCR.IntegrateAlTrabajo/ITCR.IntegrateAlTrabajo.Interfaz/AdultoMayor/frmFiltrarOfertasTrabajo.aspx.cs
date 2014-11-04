@@ -124,15 +124,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 cIATOfertaTrabajoNegocios busqueda = new cIATOfertaTrabajoNegocios(1, "A", 2, "B");
                 if (chk_tipo.Checked)
                 {
-                    busqueda.FK_IdTipoOfertaTrabajo = Int16.Parse(drpTipo.SelectedValue);
+                    busqueda.id_TipoTrabajo = Int16.Parse(drpTipo.SelectedValue);
                 }
                 if (chk_Categoria.Checked)
                 {
-                    busqueda.FK_IdCategoriaOfertaTrabajo = Int16.Parse(drpCategoria.SelectedValue);
+                    busqueda.id_CategoriaTrabajo = Int16.Parse(drpCategoria.SelectedValue);
                 }
                 if (chk_Provincia.Checked)
                 {
-                    busqueda.FK_IdProvincia = Int16.Parse(drpprovincia.SelectedValue);
+                    busqueda.id_Provincia = Int16.Parse(drpprovincia.SelectedValue);
                 }
                 DataTable Filtro = busqueda.Buscar_por_Filtrado();
                 if (Filtro.Rows.Count > 0)

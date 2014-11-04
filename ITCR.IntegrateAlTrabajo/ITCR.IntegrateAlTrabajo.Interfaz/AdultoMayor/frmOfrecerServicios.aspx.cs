@@ -195,13 +195,41 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                         DataTable TablaPersona = Persona.Buscar();
 
                         Int16 IdPersona = 0;
+                        Int16 IdDistrito = 0;
 
                         if (TablaPersona.Rows.Count > 0)
                         {
                             IdPersona = Int16.Parse(TablaPersona.Rows[0]["Id_Persona"].ToString());
+                            IdDistrito = Int16.Parse(TablaPersona.Rows[0]["FK_IdDistrito"].ToString());
                         }
 
                         Servicio.FK_IdPersona = IdPersona;
+
+                        cIATDistritoNegocios Distrito = new cIATDistritoNegocios(1, "A", 2, "B");
+                        Distrito.Id_Distrito = IdDistrito;
+
+                        DataTable TablaDistrito = Distrito.Buscar();
+
+                        Int16 IdCanton = 0;
+
+                        if (TablaDistrito.Rows.Count > 0)
+                        {
+                            IdCanton = Int16.Parse(TablaDistrito.Rows[0]["FK_IdCanton"].ToString());
+                        }
+
+                        cIATCantonNegocios Canton = new cIATCantonNegocios(1, "A", 2, "B");
+                        Canton.Id_Canton = IdCanton;
+
+                        DataTable TablaCanton = Canton.Buscar();
+
+                        Int16 IdProvincia = 0;
+
+                        if (TablaCanton.Rows.Count > 0)
+                        {
+                            IdProvincia = Int16.Parse(TablaCanton.Rows[0]["FK_IdProvincia"].ToString());
+                        }
+
+                        Servicio.FK_IdProvincia = IdProvincia;
 
                         Servicio.Insertar();
                         DataTable TablaServicio = Servicio.Buscar();

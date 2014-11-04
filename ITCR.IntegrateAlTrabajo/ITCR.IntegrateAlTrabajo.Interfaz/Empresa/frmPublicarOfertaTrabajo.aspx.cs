@@ -176,6 +176,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor
                 OfertaTrabajo.FK_IdCategoriaOfertaTrabajo = Int16.Parse(drpCategoria.SelectedValue);
                 OfertaTrabajo.FK_IdTipoOfertaTrabajo = Int16.Parse(drpTipo.SelectedValue);
                 OfertaTrabajo.FK_IdEmpresa = IdEmpresa;
+
                 OfertaTrabajo.FK_IdProvincia = encontrarProvincia();
 
                 OfertaTrabajo.Insertar();

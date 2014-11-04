@@ -18,16 +18,16 @@ using System.Data.SqlClient;
 
 namespace ITCR.IntegrateAlTrabajo.Base
 {
-	/// <summary>
-	/// Propósito: Clase de acceso a datos para tabla 'IATOfertaTrabajo'.
-	/// </summary>
-	public class cIATOfertaTrabajoBase : cBDInteraccionBase
-	{
+    /// <summary>
+    /// Propósito: Clase de acceso a datos para tabla 'IATOfertaTrabajo'.
+    /// </summary>
+    public class cIATOfertaTrabajoBase : cBDInteraccionBase
+    {
 
         #region Declaraciones de miembros de la clase
         private SqlBoolean _ind_Activa;
         private SqlDateTime _vencimiento;
-        private SqlInt32 _fK_IdTipoOfertaTrabajo, _fK_IdTipoOfertaTrabajoOld, _fK_IdEmpresa, _fK_IdEmpresaOld, _fK_IdProvincia, _fK_IdProvinciaOld, _fK_IdCategoriaOfertaTrabajo, _fK_IdCategoriaOfertaTrabajoOld, _id_OfertaTrabajo;
+        private SqlInt32 _fK_IdTipoOfertaTrabajo, _fK_IdTipoOfertaTrabajoOld, _fK_IdEmpresa, _fK_IdEmpresaOld, _fK_IdProvincia, _fK_IdProvinciaOld, _fK_IdCategoriaOfertaTrabajo, _fK_IdCategoriaOfertaTrabajoOld, _id_OfertaTrabajo, _id_Provincia, _id_TipoTrabajo, _id_CategoriaTrabajo;
         private SqlString _nom_Puesto, _dsc_OfertaTrabajo, _informacionAdicional;
         #endregion
 
@@ -1471,8 +1471,6 @@ namespace ITCR.IntegrateAlTrabajo.Base
             }
         }
 
-
-        /********************************************/
         public DataTable Buscar_por_Filtrado()
         {
             SqlCommand cmdAEjecutar = new SqlCommand();
@@ -1486,10 +1484,11 @@ namespace ITCR.IntegrateAlTrabajo.Base
 
             try
             {
-                cmdAEjecutar.Parameters.Add(new SqlParameter("@iId_Provincia", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _fK_IdProvincia));
-                cmdAEjecutar.Parameters.Add(new SqlParameter("@iId_TipoTrabajo", SqlDbType.Int, 4, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _fK_IdTipoOfertaTrabajo));
-                cmdAEjecutar.Parameters.Add(new SqlParameter("@iId_CategoriaTrabajo", SqlDbType.Int, 4, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _fK_IdCategoriaOfertaTrabajo));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iId_Provincia", SqlDbType.Int, 4, ParameterDirection.Input, false, 10, 0, "", DataRowVersion.Proposed, _id_Provincia));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iId_TipoTrabajo", SqlDbType.Int, 4, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _id_TipoTrabajo));
+                cmdAEjecutar.Parameters.Add(new SqlParameter("@iId_CategoriaTrabajo", SqlDbType.Int, 4, ParameterDirection.Input, false, 0, 0, "", DataRowVersion.Proposed, _id_CategoriaTrabajo));
                 cmdAEjecutar.Parameters.Add(new SqlParameter("@iCod_Error", SqlDbType.Int, 4, ParameterDirection.Output, true, 10, 0, "", DataRowVersion.Proposed, _codError));
+
                 if (_conexionBDEsCreadaLocal)
                 {
                     // Abre una conexión.
@@ -1532,7 +1531,6 @@ namespace ITCR.IntegrateAlTrabajo.Base
             }
         }
         /*******************************************/
-
 
         #region Declaraciones de propiedades de la clase
         public SqlInt32 Id_OfertaTrabajo
@@ -1760,6 +1758,56 @@ namespace ITCR.IntegrateAlTrabajo.Base
             set
             {
                 _fK_IdProvinciaOld = value;
+            }
+        }
+
+        public SqlInt32 id_Provincia
+        {
+            get
+            {
+                return _id_Provincia;
+            }
+            set
+            {
+                SqlInt32 id_ProvinciaTmp = (SqlInt32)value;
+                if (id_ProvinciaTmp.IsNull)
+                {
+                    throw new ArgumentOutOfRangeException("FK_IdCategoriaServicioOld", "FK_IdCategoriaServicioOld can't be NULL");
+                }
+                _id_Provincia = value;
+            }
+        }
+        public SqlInt32 id_TipoTrabajo
+        {
+            get
+            {
+                return _id_TipoTrabajo;
+            }
+            set
+            {
+                SqlInt32 id_TipoServicioTmp = (SqlInt32)value;
+                if (id_TipoServicioTmp.IsNull)
+                {
+                    throw new ArgumentOutOfRangeException("FK_IdCategoriaServicioOld", "FK_IdCategoriaServicioOld can't be NULL");
+                }
+                _id_TipoTrabajo = value;
+            }
+        }
+
+        public SqlInt32 id_CategoriaTrabajo
+        {
+            get
+            {
+                return _id_CategoriaTrabajo;
+            }
+            set
+            {
+                SqlInt32 id_CategoriaServicioTmp = (SqlInt32)value;
+                if (id_CategoriaServicioTmp.IsNull)
+                {
+                    throw new ArgumentOutOfRangeException("FK_IdCategoriaServicioOld", "FK_IdCategoriaServicioOld can't be NULL");
+                }
+                _id_CategoriaTrabajo = value;
             }
         }
         #endregion

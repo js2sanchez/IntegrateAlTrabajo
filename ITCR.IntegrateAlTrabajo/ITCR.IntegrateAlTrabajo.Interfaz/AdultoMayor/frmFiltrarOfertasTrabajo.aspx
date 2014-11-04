@@ -186,6 +186,7 @@
         function custom_alert(msg) {
             var box = bootbox.dialog({
                 closeButton: false,
+                title: "Ofertas de trabajo",
                 message: msg,
                 buttons: {
                     success: {
@@ -199,11 +200,33 @@
                 box.find("btn-primary:first").focus();
             });
         }
+
         function ofertasNoEncontradas() {
-            custom_alert("No hay ofertas que cumplan con los criterios de búsqueda específicados.");
+            bootbox.dialog({
+                closeButton: false,
+                message: "No hay ofertas de trabajo que cumplan con los criterios de búsqueda específicados.",
+                title: "Ofertas de trabajo",
+                buttons: {
+                    success: {
+                        label: "Aceptar",
+                        className: "btn-primary"
+                    }
+                }
+            });
         }
+
         function criteriosNoSeleccionados() {
-            bootbox.alert("Para efectuar el filtrado de servicios debe seleccionar al menos un criterio de búsqueda.");
+            bootbox.dialog({
+                closeButton: false,
+                message: "Para efectuar el filtrado de las ofertas de trabajo debe seleccionar al menos un criterio de búsqueda.",
+                title: "Ofertas de trabajo",
+                buttons: {
+                    success: {
+                        label: "Aceptar",
+                        className: "btn-primary"
+                    }
+                }
+            });
         }
 
     </script>
@@ -374,4 +397,6 @@
                     </table>
                 </asp:Panel>
             </td>
+        </tr>
+    </table>
 </asp:Content>
