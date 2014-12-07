@@ -2,7 +2,32 @@
     CodeBehind="frmEditarDatosAutenticacionEmpresa.aspx.cs" Inherits="ITCR.IntegrateAlTrabajo.Interfaz.Empresa.frmEditarDatosAutenticacionEmpresa" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
+    <link rel="stylesheet" href="../Styles/bootstrap.min.css" />
     <style type="text/css">
+        body
+        {
+            background: #b6b7bc;
+            font-family: Century Gothic;
+            margin: 0px;
+            padding: 0px;
+            color: #696969;
+        }
+        table
+        {
+            font-family: Century Gothic;
+            font-size: 15px;
+            text-align: justify;
+            border-spacing: 8px;
+            border-collapse: separate;
+        }
+        label
+        {
+            font-weight: normal;
+        }
+        input
+        {
+            font-weight: normal;
+        }
         .style3
         {
             width: 97%;
@@ -46,6 +71,25 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery.maskedinput.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/bootbox.js"></script>
+    <script type="text/javascript">
+        function custom_alert(msg) {
+            bootbox.dialog({
+                closeButton: false,
+                title: "Datos de autenticación",
+                message: msg,
+                buttons: {
+                    success: {
+                        label: "Aceptar",
+                        className: "btn-primary"
+                    }
+                }
+            });
+        }
+    </script>
     <table class="style3">
         <tr>
             <td class="style4">

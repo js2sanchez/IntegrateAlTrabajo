@@ -70,13 +70,27 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.Empresa
                 {
                     if (txtNuevaContraseña.Text.CompareTo(txtConfirmacion.Text) == 0)
                     {
-                        Usuario.Nom_Usuario = txtNombreUsuario.Text;
-                        Session["Nombre_Usuario"] = Usuario.Nom_Usuario;
-                        Usuario.Contrasenna = txtConfirmacion.Text;
-                        Usuario.Indicio_Contrasenna = txtIndicio.Text;
-                        Usuario.Estado = 1;
-                        Usuario.Actualizar();
-                        Response.Redirect("./frmPerfilEmpresa.aspx");
+                        bool valido = true;
+                        if(!(Session["Nombre_Usuario"].ToString().Equals(txtNombreUsuario.Text))){
+                            var disponibilidad = new cIATUsuarioNegocios(1, "A", 2, "B");
+                            disponibilidad.Nom_Usuario = txtNombreUsuario.Text;
+                            valido = disponibilidad.Validar("") == 0;
+                        }
+                        if(valido){
+                            Usuario.Nom_Usuario = txtNombreUsuario.Text;
+                            Session["Nombre_Usuario"] = Usuario.Nom_Usuario;
+                            Usuario.Contrasenna = txtConfirmacion.Text;
+                            Usuario.Indicio_Contrasenna = txtIndicio.Text;
+                            Usuario.Estado = 1;
+                            Usuario.Actualizar();
+                            Response.Redirect("./frmPerfilEmpresa.aspx");
+                        }
+                        else{
+                            string script = @"<script type='text/javascript'>
+                            custom_alert('El nombre de usuario no está disponible.');
+                            </script>";
+                            ScriptManager.RegisterStartupScript(this, typeof(Page), "Autenticación", script, false);
+                        }
                     }
                     else
                     {

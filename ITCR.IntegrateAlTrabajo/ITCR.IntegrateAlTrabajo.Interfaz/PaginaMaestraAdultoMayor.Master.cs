@@ -15,7 +15,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz
             //Comprobar sesion
             if (Session["Nombre_Usuario"] == null)
             {
-                Response.Redirect("/home.aspx");
+                Response.Redirect("~/Default.aspx");
             }
         }
 
@@ -28,7 +28,7 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz
                 FormsAuthentication.SignOut();
                 Session["Nombre_Usuario"] = null;
                 Session.Abandon();
-                Response.Redirect("/home.aspx");
+                Response.Redirect("~/Default.aspx");
             }
         }
     }
