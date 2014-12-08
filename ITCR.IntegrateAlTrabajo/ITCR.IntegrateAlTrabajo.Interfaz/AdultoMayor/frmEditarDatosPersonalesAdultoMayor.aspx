@@ -165,10 +165,10 @@
                                     onfocus="this.placeholder = ''" placeholder="Opcionalmente otro teléfono" ToolTip="Ejemplo: 87721144 (Por favor, no use guiones)"
                                     Width="230px"></asp:TextBox>
                                 <asp:RegularExpressionValidator ID="revCelular" runat="server" ControlToValidate="txtTelefonoCelular"
-                                    ErrorMessage="El número de teléfono secundario introducido es inválido, asegúrese que únicamente contenga símbolos válidos."
+                                    ErrorMessage="El número de teléfono secundario introducido es incorrecto, asegúrese que únicamente contenga símbolos válidos."
                                     ForeColor="Red" ValidationExpression="([0-9]*)" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                 <asp:CustomValidator ID="validarLargoCelular" runat="server" OnServerValidate="validarLargoMovilServer"
-                                    ErrorMessage="El número de teléfono secundario introducido tiene una longitud inválida."
+                                    ErrorMessage="El número de teléfono secundario introducido tiene una longitud incorrecta."
                                     ValidationGroup="gvDatosPersonales" ForeColor="red">*</asp:CustomValidator>
                             </td>
                         </tr>
@@ -193,7 +193,7 @@
                                     ErrorMessage="El correo electrónico es un dato requerido, por lo que debe introducir un valor válido."
                                     ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtCorreoElectronico"
-                                    ErrorMessage="Correo electrónico inválido." ForeColor="Red" ValidationExpression=".+@.+\..+"
+                                    ErrorMessage="Correo electrónico incorrecto." ForeColor="Red" ValidationExpression=".+@.+\..+"
                                     ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                             </td>
                         </tr>
@@ -278,13 +278,13 @@
                                     onfocus="this.placeholder = ''" placeholder="Escriba su teléfono aquí" ToolTip="Ejemplo: 25517722 (Por favor, no use guiones)"
                                     TabIndex="1" Width="230px"></asp:TextBox>
                                 <asp:RegularExpressionValidator ID="revTelefonoHabitacion" runat="server" ControlToValidate="txtTelefonoHabitacion"
-                                    ErrorMessage="El número de teléfono principal introducido es inválido, asegúrese que únicamente contenga símbolos válidos."
+                                    ErrorMessage="El número de teléfono principal introducido es incorrecto, asegúrese que únicamente contenga símbolos válidos."
                                     ForeColor="Red" ValidationExpression="([0-9]*)" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                 <asp:CustomValidator ID="cvTelefonoHabitacion" runat="server" OnServerValidate="validarTelefonosServer"
                                     ClientValidationFunction="validarTelefonosClient" ErrorMessage="El número de teléfono principal es requerido con el fin de contactarle."
                                     ValidationGroup="gvDatosPersonales" ForeColor="red">*</asp:CustomValidator>
                                 <asp:CustomValidator ID="largoHabitacion" runat="server" OnServerValidate="validarLargoHabitacionServer"
-                                    ForeColor="red" ErrorMessage="El teléfono principal tiene una longitud inválida."
+                                    ForeColor="red" ErrorMessage="El teléfono principal tiene una longitud incorrecta."
                                     ValidationGroup="gvDatosPersonales">*</asp:CustomValidator>
                             </td>
                             <td class="style48">

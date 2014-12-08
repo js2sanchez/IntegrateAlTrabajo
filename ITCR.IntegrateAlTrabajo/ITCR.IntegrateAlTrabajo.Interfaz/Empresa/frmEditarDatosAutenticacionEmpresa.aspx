@@ -178,7 +178,7 @@
                                 <asp:RequiredFieldValidator ID="rfvNombreUsuario" runat="server" ControlToValidate="txtNombreUsuario"
                                     ErrorMessage="El nombre de usuario es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvDatosCuenta">*</asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="RegEx_Usuario" runat="server" ControlToValidate="txtNombreUsuario"
-                                    ErrorMessage="El nombre de usuario proporcionado tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red"
+                                    ErrorMessage="El nombre de usuario proporcionado tiene un formato incorrecto, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red"
                                     ValidationExpression="(([0-9A-Za-z]|-|_)*)" ValidationGroup="gvDatosCuenta">*</asp:RegularExpressionValidator>
                             </td>
                             <td class="style5">
@@ -213,7 +213,7 @@
                                 <asp:RequiredFieldValidator ID="rfvContraseña" runat="server" ControlToValidate="txtNuevaContraseña"
                                     ErrorMessage="La contraseña es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvDatosCuenta">*</asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="RegEx_Contrasenna" runat="server" ControlToValidate="txtNuevaContraseña"
-                                    ErrorMessage="La contraseña proporcionada tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red" ValidationExpression="([0-9A-Za-z]*)"
+                                    ErrorMessage="La contraseña proporcionada tiene un formato incorrecto, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red" ValidationExpression="([0-9A-Za-z]*)"
                                     ValidationGroup="gvDatosCuenta">*</asp:RegularExpressionValidator>
                             </td>
                             <td class="style5">
