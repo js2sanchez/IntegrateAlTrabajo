@@ -174,7 +174,6 @@
         }
         .style54
         {
-            width: 2817px;
         }
         .style55
         {
@@ -206,7 +205,6 @@
         }
         .style73
         {
-            width: 335px;
         }
         .style75
         {
@@ -435,19 +433,29 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td class="style73" colspan="5">
+                                        <asp:Label ID="lblDscPaso1" runat="server" 
+                                            Text="Como primer paso para unirse a la bolsa de trabajo, por favor ingrese los datos personales que se le solicitan a continuación:"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td class="style73">
                                         <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
                                     </td>
                                     <td class="style71">
-                                        <asp:TextBox ID="txtNombrePersona" runat="server" onblur="this.placeholder = 'Escriba su nombre aquí'"
-                                            onfocus="this.placeholder = ''" placeholder="Escriba su nombre aquí" ToolTip="Ejemplo: Laura"
-                                            Width="250px" MaxLength="30" TabIndex="1"></asp:TextBox>
-                                        <asp:RequiredFieldValidator ID="rfvNombrePersona" runat="server" ControlToValidate="txtNombrePersona"
-                                            ErrorMessage="El nombre de la persona es un dato requerido, por lo que debe introducir un valor válido."
+                                        <asp:TextBox ID="txtNombrePersona" runat="server" MaxLength="30" 
+                                            onblur="this.placeholder = 'Escriba su nombre aquí'" 
+                                            onfocus="this.placeholder = ''" placeholder="Escriba su nombre aquí" 
+                                            TabIndex="1" ToolTip="Ejemplo: Laura" Width="250px"></asp:TextBox>
+                                        <asp:RequiredFieldValidator ID="rfvNombrePersona" runat="server" 
+                                            ControlToValidate="txtNombrePersona" 
+                                            ErrorMessage="El nombre de la persona es un dato requerido, por lo que debe introducir un valor válido." 
                                             ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RequiredFieldValidator>
-                                        <asp:RegularExpressionValidator ID="RegEx_Nombre" runat="server" ControlToValidate="txtNombrePersona"
-                                            ValidationExpression="([a-zA-ZÀ-ÿ ])*" ErrorMessage="El nombre proporcionado tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos."
-                                            ForeColor="Red" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
+                                        <asp:RegularExpressionValidator ID="RegEx_Nombre" runat="server" 
+                                            ControlToValidate="txtNombrePersona" 
+                                            ErrorMessage="El nombre proporcionado tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos." 
+                                            ForeColor="Red" ValidationExpression="([a-zA-ZÀ-ÿ ])*" 
+                                            ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
                                     </td>
                                     <td class="style70">
                                         &nbsp;
@@ -456,17 +464,24 @@
                                         <asp:Label ID="lblTelefonoHabitacion" runat="server" Text="Teléfono principal"></asp:Label>
                                     </td>
                                     <td class="auto-style13">
-                                        <asp:TextBox ID="txtTelefonoHabitacion" runat="server" Width="250px" onblur="this.placeholder = 'Escriba su teléfono aquí'"
-                                            onfocus="this.placeholder = ''" placeholder="Escriba su teléfono aquí" ToolTip="Ejemplo: 25517722 (Por favor, no use guiones)"
-                                            TabIndex="2" MaxLength="8"></asp:TextBox>
-                                        <asp:RegularExpressionValidator ID="revTelefonoHabitacion" runat="server" ControlToValidate="txtTelefonoHabitacion"
-                                            ErrorMessage="El número de teléfono principal introducido es inválido, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red"
-                                            ValidationExpression="([0-9]*)" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
-                                        <asp:CustomValidator ID="cvTelefonoHabitacion" runat="server" OnServerValidate="validarTelefonosServer"
-                                            ClientValidationFunction="validarTelefonosClient" ErrorMessage="El número de teléfono principal es requerido con el fin de contactarle."
-                                            ValidationGroup="gvDatosPersonales" ForeColor="red">*</asp:CustomValidator>
-                                        <asp:CustomValidator ID="largoHabitacion" runat="server" OnServerValidate="validarLargoHabitacionServer"
-                                            ForeColor="red" ErrorMessage="El teléfono principal tiene una longitud inválida."
+                                        <asp:TextBox ID="txtTelefonoHabitacion" runat="server" MaxLength="8" 
+                                            onblur="this.placeholder = 'Escriba su teléfono aquí'" 
+                                            onfocus="this.placeholder = ''" placeholder="Escriba su teléfono aquí" 
+                                            TabIndex="2" ToolTip="Ejemplo: 25517722 (Por favor, no use guiones)" 
+                                            Width="250px"></asp:TextBox>
+                                        <asp:RegularExpressionValidator ID="revTelefonoHabitacion" runat="server" 
+                                            ControlToValidate="txtTelefonoHabitacion" 
+                                            ErrorMessage="El número de teléfono principal introducido es inválido, asegúrese que únicamente contenga símbolos válidos." 
+                                            ForeColor="Red" ValidationExpression="([0-9]*)" 
+                                            ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
+                                        <asp:CustomValidator ID="cvTelefonoHabitacion" runat="server" 
+                                            ClientValidationFunction="validarTelefonosClient" 
+                                            ErrorMessage="El número de teléfono principal es requerido con el fin de contactarle." 
+                                            ForeColor="red" OnServerValidate="validarTelefonosServer" 
+                                            ValidationGroup="gvDatosPersonales">*</asp:CustomValidator>
+                                        <asp:CustomValidator ID="largoHabitacion" runat="server" 
+                                            ErrorMessage="El teléfono principal tiene una longitud inválida." 
+                                            ForeColor="red" OnServerValidate="validarLargoHabitacionServer" 
                                             ValidationGroup="gvDatosPersonales">*</asp:CustomValidator>
                                     </td>
                                 </tr>
@@ -679,22 +694,36 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td class="style54" colspan="2">
+                                        <asp:Label ID="lblDscPaso2" runat="server" 
+                                            Text="El siguiente nombre de usuario y contraseña se le solicitarán para ingresar a la bolsa de trabajo; se recomienda que los anote por si los olvidara."></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td class="style54">
                                         <asp:Label ID="lblNombreUsuario" runat="server" Text="Nombre de usuario"></asp:Label>
                                     </td>
                                     <td class="style52">
-                                        <asp:TextBox ID="txtNombreUsuario" runat="server" ToolTip="Importante: Debe contener más de 5 caracteres. Únicamente se aceptan letras, números y guiones."
-                                            Width="260px" onblur="this.placeholder = 'Escriba su nombre de usuario aquí'"
-                                            onfocus="this.placeholder = ''" placeholder="Escriba su nombre de usuario aquí" TabIndex="1"
-                                            MaxLength="30"></asp:TextBox>
-                                        <asp:CustomValidator ID="cvValidarUsuario" runat="server" ClientValidationFunction="validarUsuarioClient"
-                                            ErrorMessage="El nombre de usuario debe contener entre 5 a 50 caracteres." ForeColor="red"
-                                            OnServerValidate="validarUsuarioServer" ValidationGroup="gvDatosAutenticacion">*</asp:CustomValidator>
-                                        <asp:RegularExpressionValidator ID="RegEx_Usuario" runat="server" ControlToValidate="txtNombreUsuario"
-                                            ErrorMessage="El nombre de usuario proporcionado es inválido, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red"
-                                            ValidationExpression="(([0-9A-Za-z]|-|_)*)" ValidationGroup="gvDatosAutenticacion">*</asp:RegularExpressionValidator>
-                                        <asp:RequiredFieldValidator ID="rfvNombreUsuario" runat="server" ControlToValidate="txtNombreUsuario"
-                                            ErrorMessage="El nombre de usuario es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvDatosAutenticacion">*</asp:RequiredFieldValidator>
+                                        <asp:TextBox ID="txtNombreUsuario" runat="server" MaxLength="30" 
+                                            onblur="this.placeholder = 'Escriba su nombre de usuario aquí'" 
+                                            onfocus="this.placeholder = ''" placeholder="Escriba su nombre de usuario aquí" 
+                                            TabIndex="1" 
+                                            ToolTip="Importante: Debe contener más de 5 caracteres. Únicamente se aceptan letras, números y guiones." 
+                                            Width="260px"></asp:TextBox>
+                                        <asp:CustomValidator ID="cvValidarUsuario" runat="server" 
+                                            ClientValidationFunction="validarUsuarioClient" 
+                                            ErrorMessage="El nombre de usuario debe contener entre 5 a 50 caracteres." 
+                                            ForeColor="red" OnServerValidate="validarUsuarioServer" 
+                                            ValidationGroup="gvDatosAutenticacion">*</asp:CustomValidator>
+                                        <asp:RegularExpressionValidator ID="RegEx_Usuario" runat="server" 
+                                            ControlToValidate="txtNombreUsuario" 
+                                            ErrorMessage="El nombre de usuario proporcionado es inválido, asegúrese que únicamente contenga símbolos válidos." 
+                                            ForeColor="Red" ValidationExpression="(([0-9A-Za-z]|-|_)*)" 
+                                            ValidationGroup="gvDatosAutenticacion">*</asp:RegularExpressionValidator>
+                                        <asp:RequiredFieldValidator ID="rfvNombreUsuario" runat="server" 
+                                            ControlToValidate="txtNombreUsuario" 
+                                            ErrorMessage="El nombre de usuario es un dato requerido, por lo que debe introducir un valor válido." 
+                                            ForeColor="Red" ValidationGroup="gvDatosAutenticacion">*</asp:RequiredFieldValidator>
                                     </td>
                                 </tr>
                                 <tr>
@@ -783,6 +812,16 @@
                                     <td class="style11">
                                         &nbsp;
                                     </td>
+                                </tr>
+                                <tr>
+                                    <td class="style24" colspan="5">
+                                        <asp:Label ID="lblDscPaso3" runat="server" 
+                                            Text="Los siguientes datos son opcionales. Si usted no cuenta con los mismos presione el botón 'Siguiente' para continuar con el siguiente paso."></asp:Label>
+                                    </td>
+                                    <td class="style20">
+                                        &nbsp;</td>
+                                    <td class="style11">
+                                        &nbsp;</td>
                                 </tr>
                                 <tr>
                                     <td class="style24" colspan="5">
@@ -920,6 +959,12 @@
                                     <td class="style24" colspan="5">
                                         <asp:Label ID="lblExperienciasLaborales" runat="server" Text="Experiencias laborales"
                                             CssClass="Titulo3"></asp:Label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="style24" colspan="5">
+                                        <asp:Label ID="lblDscPaso4" runat="server" 
+                                            Text="Los siguientes datos son opcionales. Si usted no cuenta con los mismos presione el botón 'Siguiente' para continuar con el siguiente paso."></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1085,7 +1130,8 @@
                                                 <tr>
                                                     <td class="style56" colspan="2">
                                                         <asp:Label ID="lblIdiomas" runat="server" 
-                                                            Text="Seleccione los idiomas en los que tenga habilidades escritas, orales, de lectura y/o de escucha. Es importante aclarar que debe marcar únicamente los idiomas que conoce, porque una vez finalizado el registro únicamente podrá agregar nuevos idiomas que aprenda, pero no quitar los ya existentes."></asp:Label>
+                                                            
+                                                            Text="Opcionalmente seleccione los idiomas en los que tenga habilidades escritas, orales, de lectura y/o de escucha. Es importante aclarar que debe marcar únicamente los idiomas que conoce, porque una vez finalizado el registro únicamente podrá agregar nuevos idiomas que aprenda, pero no quitar los ya existentes."></asp:Label>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -1176,6 +1222,8 @@
                                 <tr>
                                     <td class="style24" colspan="5">
                                         &nbsp;
+                                        <asp:Label ID="lblDscPaso6" runat="server" 
+                                            Text="Si desea introduzca un pasatiempo favorito, sino presione el botón 'Siguiente' para continuar."></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>
@@ -1245,20 +1293,9 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="auto-style30">
-                                        &nbsp;
-                                    </td>
-                                    <td class="style25">
-                                        &nbsp;
-                                    </td>
-                                    <td class="style17">
-                                        &nbsp;
-                                    </td>
-                                    <td class="auto-style35">
-                                        &nbsp;
-                                    </td>
-                                    <td class="style11">
-                                        &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <td class="auto-style30" colspan="5">
+                                        <asp:Label ID="Label3" runat="server" 
+                                            Text="Para finalizar el proceso de registro debe seleccionar el cuadro de chequeo que se encuentra al final de los términos y condiciones."></asp:Label>
                                     </td>
                                 </tr>
                                 <tr>

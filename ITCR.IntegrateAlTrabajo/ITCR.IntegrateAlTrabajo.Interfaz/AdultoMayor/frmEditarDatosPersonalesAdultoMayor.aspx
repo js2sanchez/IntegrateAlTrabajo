@@ -37,7 +37,6 @@
         }
         .style32
         {
-            width: 161px;
             height: 25px;
         }
         .style36
@@ -148,6 +147,12 @@
                             </td>
                         </tr>
                         <tr>
+                            <td class="style32" colspan="5">
+                                <asp:Label ID="lblDscDatosPersonales" runat="server" 
+                                    Text="En esta página usted podrá actualizar sus datos personales, en caso de que estos hayan cambiado."></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
                             <td class="style32">
                                 <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
                             </td>
@@ -161,15 +166,20 @@
                                 <asp:Label ID="lblTelefonoCelular" runat="server" Text="Teléfono secundario"></asp:Label>
                             </td>
                             <td class="style6">
-                                <asp:TextBox ID="txtTelefonoCelular" runat="server" MaxLength="8" TabIndex="2" onblur="this.placeholder = 'Opcionalmente otro teléfono'"
-                                    onfocus="this.placeholder = ''" placeholder="Opcionalmente otro teléfono" ToolTip="Ejemplo: 87721144 (Por favor, no use guiones)"
+                                <asp:TextBox ID="txtTelefonoCelular" runat="server" MaxLength="8" 
+                                    onblur="this.placeholder = 'Opcionalmente otro teléfono'" 
+                                    onfocus="this.placeholder = ''" placeholder="Opcionalmente otro teléfono" 
+                                    TabIndex="2" ToolTip="Ejemplo: 87721144 (Por favor, no use guiones)" 
                                     Width="230px"></asp:TextBox>
-                                <asp:RegularExpressionValidator ID="revCelular" runat="server" ControlToValidate="txtTelefonoCelular"
-                                    ErrorMessage="El número de teléfono secundario introducido es inválido, asegúrese que únicamente contenga símbolos válidos."
-                                    ForeColor="Red" ValidationExpression="([0-9]*)" ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
-                                <asp:CustomValidator ID="validarLargoCelular" runat="server" OnServerValidate="validarLargoMovilServer"
-                                    ErrorMessage="El número de teléfono secundario introducido tiene una longitud inválida."
-                                    ValidationGroup="gvDatosPersonales" ForeColor="red">*</asp:CustomValidator>
+                                <asp:RegularExpressionValidator ID="revCelular" runat="server" 
+                                    ControlToValidate="txtTelefonoCelular" 
+                                    ErrorMessage="El número de teléfono secundario introducido es inválido, asegúrese que únicamente contenga símbolos válidos." 
+                                    ForeColor="Red" ValidationExpression="([0-9]*)" 
+                                    ValidationGroup="gvDatosPersonales">*</asp:RegularExpressionValidator>
+                                <asp:CustomValidator ID="validarLargoCelular" runat="server" 
+                                    ErrorMessage="El número de teléfono secundario introducido tiene una longitud inválida." 
+                                    ForeColor="red" OnServerValidate="validarLargoMovilServer" 
+                                    ValidationGroup="gvDatosPersonales">*</asp:CustomValidator>
                             </td>
                         </tr>
                         <tr>

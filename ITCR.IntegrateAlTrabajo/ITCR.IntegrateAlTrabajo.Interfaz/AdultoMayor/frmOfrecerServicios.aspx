@@ -282,6 +282,16 @@
                         </tr>
                         <tr>
                             <td class="style41">
+                                &nbsp;</td>
+                            <td class="style38" colspan="5">
+                                <asp:Label ID="lblDscOfrecerServicios" runat="server" 
+                                    Text="Para ofrecer un servicio y que este pueda ser consultado por empresas o instituciones, ingrese los siguientes datos y después presione el botón 'Crear servicio'."></asp:Label>
+                            </td>
+                            <td class="style33">
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="style41">
                                 &nbsp;
                             </td>
                             <td class="style38">
@@ -295,8 +305,8 @@
                                     ToolTip="Ejemplo: Decoración de interiores" Width="500px"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="rfvNombreServicio" runat="server" 
                                     ControlToValidate="txtNombreServicios" 
-                                    ErrorMessage="El nombre del servicio es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" 
-                                    ValidationGroup="gvServicios">*</asp:RequiredFieldValidator>
+                                    ErrorMessage="El nombre del servicio es un dato requerido, por lo que debe introducir un valor válido." 
+                                    ForeColor="Red" ValidationGroup="gvServicios">*</asp:RequiredFieldValidator>
                             </td>
                             <td class="style33">
                                 &nbsp;

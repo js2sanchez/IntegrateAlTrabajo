@@ -215,6 +215,16 @@
         </tr>
         <tr>
             <td class="style4">
+                &nbsp;</td>
+            <td class="style5" colspan="5">
+                <asp:Label ID="lblDscActualizarFormación" runat="server" 
+                    Text="En esta página usted podrá actualizar sus estudios o agregar nuevos."></asp:Label>
+            </td>
+            <td class="style8">
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td class="style4">
                 &nbsp;
             </td>
             <td class="style5" colspan="5">
