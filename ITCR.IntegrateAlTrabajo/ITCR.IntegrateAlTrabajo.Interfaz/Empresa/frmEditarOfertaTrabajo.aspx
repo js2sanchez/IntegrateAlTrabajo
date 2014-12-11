@@ -356,7 +356,7 @@
                                     onblur="this.placeholder = 'Escriba aquí un requisito para agregar'" onfocus="this.placeholder = ''"
                                     ToolTip="Ejemplo: Excelente dominio del idioma inglés"></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="rfvRequisitos" runat="server" ControlToValidate="txtRequisitos"
-                                    ErrorMessage="El requisito que está intentando agregar es inválido. Haga las correcciones necesarias e inténtelo nuevamente."
+                                    ErrorMessage="El requisito que está intentando agregar es incorrecto. Haga las correcciones necesarias e inténtelo nuevamente."
                                     ForeColor="Red" ValidationGroup="gvOfertaTrabajo2">*</asp:RequiredFieldValidator>
                             </td>
                             <td class="style49">

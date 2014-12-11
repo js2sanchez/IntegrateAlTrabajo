@@ -30,7 +30,7 @@
         input
         {
             font-weight: normal;
-            }
+        }
         p
         {
             margin-bottom: 10px;
@@ -137,23 +137,24 @@
         <tr>
             <td class="style8">
             </td>
-            <td class="style7" bgcolor="#005190">
+            <td class="style7">
+                <asp:Panel ID="Panel2" runat="server" BackColor="#005190" Height="38px" Width="900px">
+                </asp:Panel>
             </td>
             <td class="style8">
             </td>
         </tr>
         <tr>
             <td class="style9">
-                &nbsp;
             </td>
             <td class="style3">
-                <asp:Panel ID="PanelBanner2" runat="server" HorizontalAlign="Center">
-                    <asp:Image ID="imgBanner2" runat="server" Height="200px" ImageUrl="~/Multimedia/banner_autenticacion.jpg"
-                        Width="900px" />
+                <asp:Panel ID="PanelBanner2" runat="server" HorizontalAlign="Center" Style="background-color: White;
+                    display: block; width: 900px;">
+                    <asp:Image ID="imgBanner2" runat="server" Height="200px" ImageUrl="~/Multimedia/banner2.png"
+                        Style="width: 100%; display: block;" />
                 </asp:Panel>
             </td>
             <td class="style9">
-                &nbsp;
             </td>
         </tr>
         <tr>
@@ -186,37 +187,33 @@
                             <td class="style34" bgcolor="White">
                             </td>
                             <td bgcolor="White" class="style21">
-                                <asp:Label ID="lblAcercaBolsaTrabajo" runat="server" Font-Bold="True" Font-Size="18pt"
-                                    ForeColor="#292459" Text="Acerca de la bolsa de trabajo"></asp:Label>
+                                <asp:Label ID="lblRegistrarse" runat="server" Font-Bold="True" Font-Size="24pt" ForeColor="#292459"
+                                    Text="1. Registrarme como:"></asp:Label>
                             </td>
-                            <td class="style22" bgcolor="White">
+                            <td class="style13" bgcolor="White" rowspan="4">
+                                <asp:Image ID="Image1" runat="server" Height="200px" ImageUrl="~/Multimedia/RayaAutenticacion.PNG"
+                                    Style="margin-left: 16px" Width="16px" />
                             </td>
                             <td colspan="2" bgcolor="White" class="style35">
-                                <asp:Label ID="lblIniciarSesion" runat="server" ForeColor="#292459" Text="Ingresar al sistema"
-                                    Font-Bold="True" Font-Size="18pt"></asp:Label>
+                                <asp:Label ID="lblIniciarSesion" runat="server" ForeColor="#292459" Text="2. Ingresar al sistema"
+                                    Font-Bold="True" Font-Size="24pt"></asp:Label>
                             </td>
                             <td class="style34" bgcolor="White">
                             </td>
                         </tr>
                         <tr>
-                            <td class="style14" bgcolor="White" rowspan="5">
+                            <td class="style14" bgcolor="White" rowspan="3">
                                 &nbsp;
                             </td>
-                            <td bgcolor="White" class="style11" rowspan="5">
-                                <p>
-                                    <asp:Label ID="lblTextoAcerca" runat="server" ForeColor="#005190" Text="Tiene como finalidad facilitar el derecho al trabajo de la PAM."></asp:Label>
-                                </p>
-                                <p>
-                                    <asp:Label ID="lblTextoAcerca1" runat="server" ForeColor="#005190" Text="Es un espacio virtual en el que convergen las personas adultas mayores oferentes de productos y servicios en jornada parcial o total, en forma remunerada o voluntaria y las empresas demandantes que se inscriben para contratarlas.
-"></asp:Label>
-                                </p>
-                                <p>
-                                    <asp:Label ID="lblTextoAcerca2" runat="server" ForeColor="#005190" Text="El espacio busca reivindicar los derechos, el protagonismo y los saberes de las personas adultas mayores, así como la responsabilidad social de las empresas para facilitar su inclusión en su entorno inmediato."></asp:Label>
-                                </p>
-                            </td>
-                            <td class="style13" bgcolor="White" rowspan="5">
-                                <asp:Image ID="Image1" runat="server" Height="350px" ImageUrl="~/Multimedia/RayaAutenticacion.PNG"
-                                    Style="margin-left: 16px" Width="16px" />
+                            <td bgcolor="White" class="style11" rowspan="3">
+                                <asp:Panel ID="PanelBotones" runat="server" HorizontalAlign="Right">
+                                    <asp:Button ID="btnPersona" runat="server" CssClass="Boton" Font-Size="Large" OnClick="btnPersona_Click"
+                                        Text="Persona Adulta Mayor" Width="210px" UseSubmitBehavior="False" />
+                                    <br />
+                                    <br />
+                                    <asp:Button ID="btnEmpresa" runat="server" CssClass="Boton" Font-Size="Large" OnClick="btnEmpresa_Click"
+                                        Text="Empresa" Width="210px" UseSubmitBehavior="False" />
+                                </asp:Panel>
                             </td>
                             <td bgcolor="White" class="style30">
                                 <asp:Label ID="lblNombreUsuario" runat="server" Font-Bold="True" ForeColor="#005190"
@@ -237,7 +234,8 @@
                         </tr>
                         <tr>
                             <td>
-                                &nbsp;</td>
+                                &nbsp;
+                            </td>
                             <td bgcolor="White">
                                 <asp:Panel ID="PanelBotonIniciarSesion" runat="server" HorizontalAlign="Right">
                                     &nbsp;&nbsp;
@@ -247,27 +245,54 @@
                             </td>
                         </tr>
                         <tr>
+                            <td bgcolor="White" class="style28">
+                                &nbsp;
+                            </td>
                             <td colspan="2" bgcolor="White" class="style27">
-                                <asp:Label ID="lblRegistrarse" runat="server" Font-Bold="True" Font-Size="18pt" ForeColor="#292459"
-                                    Text="Registrarme como"></asp:Label>
                                 <br />
-                                <br />
-                                <asp:Panel ID="PanelBotones" runat="server" HorizontalAlign="Center">
-                                    <asp:Button ID="btnPersona" runat="server" CssClass="Boton" Font-Size="Large" 
-                                        onclick="btnPersona_Click" Text="Persona Adulta Mayor" Width="210px" />
-                                    <br />
-                                    <br />
-                                    <asp:Button ID="btnEmpresa" runat="server" CssClass="Boton" Font-Size="Large" 
-                                        onclick="btnEmpresa_Click" Text="Empresa" Width="210px" />
-                                </asp:Panel>
+                                <asp:Label ID="lblAcercaBolsaTrabajo" runat="server" Font-Bold="True" Font-Size="24pt"
+                                    ForeColor="#292459" Text="Acerca de la bolsa de trabajo"></asp:Label>
                             </td>
                             <td bgcolor="White" class="style27">
                             </td>
+                            <td bgcolor="White" class="style28">
+                                &nbsp;
+                            </td>
                         </tr>
                         <tr>
-                            <td bgcolor="White" class="style28" colspan="2">
-                                &nbsp;</td>
                             <td bgcolor="White" class="style28">
+                                &nbsp;
+                            </td>
+                            <td rowspan="4" bgcolor="White" class="style28" colspan="4">
+                                <p>
+                                    <asp:Label ID="lblTextoAcerca" runat="server" ForeColor="#005190" Text="Tiene como finalidad facilitar el derecho al trabajo de la PAM."></asp:Label>
+                                </p>
+                                <p>
+                                    <asp:Label ID="lblTextoAcerca1" runat="server" ForeColor="#005190" Text="Es un espacio virtual en el que convergen las personas adultas mayores oferentes de productos y servicios en jornada parcial o total, en forma remunerada o voluntaria y las empresas demandantes que se inscriben para contratarlas.
+"></asp:Label>
+                                </p>
+                                <p>
+                                    <asp:Label ID="lblTextoAcerca2" runat="server" ForeColor="#005190" Text="El espacio busca reivindicar los derechos, el protagonismo y los saberes de las personas adultas mayores, así como la responsabilidad social de las empresas para facilitar su inclusión en su entorno inmediato."></asp:Label>
+                                </p>
+                            </td>
+                            <td bgcolor="White">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="White" class="style28">
+                                &nbsp;
+                            </td>
+                            <td bgcolor="White">
+                                &nbsp;
+                            </td>
+                        </tr>
+                        <tr>
+                            <td bgcolor="White" class="style28">
+                                &nbsp;
+                            </td>
+                            <td bgcolor="White">
+                                &nbsp;
                             </td>
                         </tr>
                     </table>

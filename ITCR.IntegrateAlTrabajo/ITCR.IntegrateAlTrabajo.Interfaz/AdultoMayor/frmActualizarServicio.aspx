@@ -279,6 +279,16 @@
                         </tr>
                         <tr>
                             <td class="style41">
+                                &nbsp;</td>
+                            <td class="style38" colspan="5">
+                                <asp:Label ID="lblDsc" runat="server" 
+                                    Text="Utilice esta página para actualizar los datos de uno de sus servicios ofrecidos."></asp:Label>
+                            </td>
+                            <td class="style33">
+                                &nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td class="style41">
                                 &nbsp;
                             </td>
                             <td class="style38">

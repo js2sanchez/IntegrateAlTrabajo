@@ -171,7 +171,7 @@
                                     ErrorMessage="El correo electrónico de la empresa es un dato requerido, por lo que debe introducir un valor válido." 
                                     ForeColor="Red" ValidationGroup="gvDatosGenerales">*</asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="revEmail" runat="server" 
-                                    ControlToValidate="txtEmail" ErrorMessage="El correo electrónico proporcionado tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos." 
+                                    ControlToValidate="txtEmail" ErrorMessage="El correo electrónico proporcionado tiene un formato incorrecto, asegúrese que únicamente contenga símbolos válidos." 
                                     ForeColor="Red" ValidationExpression=".+@.+\..+" 
                                     ValidationGroup="gvDatosGenerales">*</asp:RegularExpressionValidator>
                             </td>
@@ -230,7 +230,7 @@
                                     ErrorMessage="El teléfono de la empresa es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red"
                                     ValidationGroup="gvDatosGenerales">*</asp:RequiredFieldValidator>
                                 <asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtTelefono"
-                                    ErrorMessage="El número de teléfono introducido es inválido, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red"
+                                    ErrorMessage="El número de teléfono introducido es incorrecto, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red"
                                     ValidationExpression="([26789][0-9]*)" ValidationGroup="gvDatosGenerales">*</asp:RegularExpressionValidator>
                             </td>
                             <td class="style16">

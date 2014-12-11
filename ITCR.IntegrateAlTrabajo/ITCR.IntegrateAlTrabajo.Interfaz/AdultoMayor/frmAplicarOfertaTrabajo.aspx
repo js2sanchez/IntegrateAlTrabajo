@@ -153,6 +153,23 @@
                                         <table class="style14">
                                             <tr>
                                                 <td class="style26">
+                                                    &nbsp;</td>
+                                                <td class="style27">
+                                                    &nbsp;</td>
+                                                <td class="style28">
+                                                    &nbsp;</td>
+                                                <td class="style29">
+                                                    &nbsp;</td>
+                                                <td class="style30">
+                                                    <asp:Panel ID="PanelBotonAplicar0" runat="server" HorizontalAlign="Right">
+                                                        <asp:Button ID="btnAplicarOfertaTrabajo0" runat="server" CssClass="Boton" 
+                                                            onclick="btnAplicarOfertaTrabajo_Click" 
+                                                            Text="Aplicar a esta oferta de trabajo" />
+                                                    </asp:Panel>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="style26">
                                                     <asp:Label ID="lblNombre" runat="server" Text="Nombre"></asp:Label>
                                                     &nbsp;del puesto</td>
                                                 <td class="style27">
@@ -163,8 +180,7 @@
                                                 <td class="style29">
                                                     Empresa</td>
                                                 <td class="style30">
-                                                    <asp:TextBox ID="txtEmpresaPuesto" runat="server" Enabled="False" 
-                                                        Width="250px"></asp:TextBox>
+                                                    <asp:TextBox ID="txtEmpresaPuesto" runat="server" Enabled="False" Width="250px"></asp:TextBox>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -230,34 +246,6 @@
                                                     <asp:TextBox ID="txtInformaciónAdicionalPuesto" runat="server" Enabled="False" 
                                                         Width="250px"></asp:TextBox>
                                                 </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="style26">
-                                                    &nbsp;</td>
-                                                <td class="style27">
-                                                    &nbsp;</td>
-                                                <td class="style28">
-                                                    &nbsp;</td>
-                                                <td class="style29">
-                                                    &nbsp;</td>
-                                                <td class="style30">
-                                                    <asp:Panel ID="PanelBotonAplicar" runat="server" HorizontalAlign="Right">
-                                                        <asp:Button ID="btnAplicarOfertaTrabajo" runat="server" CssClass="Boton" 
-                                                            onclick="btnAplicarOfertaTrabajo_Click" Text="Aplicar a esta oferta de trabajo" />
-                                                    </asp:Panel>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="style26">
-                                                    &nbsp;</td>
-                                                <td class="style27">
-                                                    &nbsp;</td>
-                                                <td class="style28">
-                                                    &nbsp;</td>
-                                                <td class="style29">
-                                                    &nbsp;</td>
-                                                <td class="style30">
-                                                    &nbsp;</td>
                                             </tr>
                                             <tr>
                                                 <td class="style26">

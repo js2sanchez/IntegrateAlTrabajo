@@ -329,7 +329,7 @@
                                     <asp:RequiredFieldValidator ID="rfvEmail" runat="server" ControlToValidate="txtEmail"
                                         ErrorMessage="El correo electrónico de la empresa es un dato requerido, por lo que debe introducir un valor válido."
                                         ForeColor="Red" ValidationGroup="gvDatosGenerales">*</asp:RequiredFieldValidator>
-                                    <asp:RegularExpressionValidator runat="server" ControlToValidate="txtEmail" ErrorMessage="El correo electrónico proporcionado tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos."
+                                    <asp:RegularExpressionValidator runat="server" ControlToValidate="txtEmail" ErrorMessage="El correo electrónico proporcionado tiene un formato incorrecto, asegúrese que únicamente contenga símbolos válidos."
                                         ForeColor="Red" ValidationExpression=".+@.+\..+" ValidationGroup="gvDatosGenerales">*</asp:RegularExpressionValidator>
                                 </td>
                             </tr>
@@ -345,7 +345,7 @@
                                         ErrorMessage="La cédula jurídica es un dato requerido, por lo que debe introducir un valor válido."
                                         ForeColor="Red" ValidationGroup="gvDatosGenerales">*</asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="RegEx_Cedula" runat="server" ControlToValidate="txtCedulaJuridica"
-                                        ValidationExpression="[0-9]*" ErrorMessage="La cédula jurídica proporcionada tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos."
+                                        ValidationExpression="[0-9]*" ErrorMessage="La cédula jurídica proporcionada tiene un formato incorrecto, asegúrese que únicamente contenga símbolos válidos."
                                         ForeColor="Red" ValidationGroup="gvDatosGenerales">*</asp:RegularExpressionValidator>
                                 </td>
                                 <td class="style39">
@@ -390,10 +390,10 @@
                                         ErrorMessage="El teléfono de la empresa es un dato requerido, por lo que debe introducir un valor válido."
                                         ForeColor="Red" ValidationGroup="gvDatosGenerales">*</asp:RequiredFieldValidator>
                                     <asp:CustomValidator ID="cvLen_Telefono" ControlToValidate="txtTelefono" ForeColor="Red"
-                                        OnServerValidate="validarTelefonoServer" ErrorMessage="El largo del teléfono es inválido"
+                                        OnServerValidate="validarTelefonoServer" ErrorMessage="El largo del teléfono es incorrecto"
                                         ValidationGroup="gvDatosGenerales" runat="server">*</asp:CustomValidator>
                                     <asp:RegularExpressionValidator ID="revTelefono" runat="server" ControlToValidate="txtTelefono"
-                                        ErrorMessage="El número de teléfono introducido es inválido." ForeColor="Red"
+                                        ErrorMessage="El número de teléfono introducido es incorrecto." ForeColor="Red"
                                         ValidationExpression="([0-9]*)" ValidationGroup="gvDatosGenerales">*</asp:RegularExpressionValidator>
                                 </td>
                                 <td class="style39">
@@ -457,7 +457,7 @@
                                         ErrorMessage="El nombre de usuario es un dato requerido, por lo que debe introducir un valor válido."
                                         ForeColor="Red" ValidationGroup="gvDatosCuenta">*</asp:RequiredFieldValidator>
                                     <asp:RegularExpressionValidator ID="RegEx_Usuario" runat="server" ControlToValidate="txtNombreUsuario"
-                                        ErrorMessage="El nombre de usuario proporcionado tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos."
+                                        ErrorMessage="El nombre de usuario proporcionado tiene un formato incorrecto, asegúrese que únicamente contenga símbolos válidos."
                                         ForeColor="Red" ValidationExpression="(([0-9A-Za-z]|-|_)*)" ValidationGroup="gvDatosCuenta">*</asp:RegularExpressionValidator>
                                     <asp:CustomValidator ID="cvLen_Usuario" runat="server" ControlToValidate="txtNombreUsuario"
                                         ErrorMessage="El nombre de usuario debe contener entre 5 a 50 caracteres" ForeColor="Red"
@@ -479,7 +479,7 @@
                                         ErrorMessage="La contraseña debe tener al menos 8 caracteres" ForeColor="Red"
                                         OnServerValidate="validarContrasennaServer" ValidationGroup="gvDatosCuenta">*</asp:CustomValidator>
                                     <asp:RegularExpressionValidator ID="RegEx_Contrasenna" runat="server" ControlToValidate="txtContraseña"
-                                        ErrorMessage="La contraseña proporcionada tiene un formato inválido, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red" ValidationExpression="([0-9A-Za-z]*)"
+                                        ErrorMessage="La contraseña proporcionada tiene un formato incorrecto, asegúrese que únicamente contenga símbolos válidos." ForeColor="Red" ValidationExpression="([0-9A-Za-z]*)"
                                         ValidationGroup="gvDatosCuenta">*</asp:RegularExpressionValidator>
                                     <asp:RequiredFieldValidator ID="rfvContraseña" runat="server" ControlToValidate="txtContraseña"
                                         ErrorMessage="La contraseña es un dato requerido, por lo que debe introducir un valor válido." ForeColor="Red" ValidationGroup="gvDatosCuenta">*</asp:RequiredFieldValidator>

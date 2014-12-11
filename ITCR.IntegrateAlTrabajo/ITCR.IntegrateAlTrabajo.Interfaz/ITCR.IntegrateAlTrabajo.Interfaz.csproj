@@ -110,6 +110,7 @@
     <Content Include="js\jquery.js" />
     <Content Include="js\jquery.maskedinput.min.js" />
     <Content Include="js\registropam.js" />
+    <Content Include="Multimedia\banner2.png" />
     <Content Include="Multimedia\banner_adultos_mayores.jpg" />
     <Content Include="Multimedia\banner_autenticacion.jpg" />
     <Content Include="Multimedia\icono-buscar.jpg" />
