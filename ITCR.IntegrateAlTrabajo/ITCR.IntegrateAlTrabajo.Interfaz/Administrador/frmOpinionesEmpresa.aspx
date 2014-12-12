@@ -180,7 +180,7 @@
                                 <ItemTemplate>
                                     <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Center">
                                         <asp:ImageButton ID="ibtnProcesar" runat="server" CommandName="Procesar" Height="30px"
-                                            ImageUrl="~/Multimedia/icono-editar.jpg" Style="text-align: right" ToolTip="Presione este botón para marcar como procesado el comentario o sugerencia"
+                                            ImageUrl="~/Multimedia/icono-editar.png" Style="text-align: right" ToolTip="Presione este botón para marcar como procesado el comentario o sugerencia"
                                             Width="30px" />
                                     </asp:Panel>
                                 </ItemTemplate>
@@ -189,7 +189,7 @@
                                 <ItemTemplate>
                                     <asp:Panel ID="Panel2" runat="server" HorizontalAlign="Center">
                                         <asp:ImageButton ID="ibtnEliminar" runat="server" CommandName="Eliminar" Height="30px"
-                                            ImageUrl="~/Multimedia/icono-eliminar.jpg" ToolTip="Presione este botón para eliminar el comentario o sugerencia"
+                                            ImageUrl="~/Multimedia/icono-eliminar.png" ToolTip="Presione este botón para eliminar el comentario o sugerencia"
                                             Width="30px" />
                                     </asp:Panel>
                                 </ItemTemplate>

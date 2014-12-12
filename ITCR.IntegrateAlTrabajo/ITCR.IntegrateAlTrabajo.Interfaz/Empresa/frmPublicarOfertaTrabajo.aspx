@@ -417,7 +417,7 @@
                                             <asp:TemplateColumn HeaderText="Eliminar">
                                                 <ItemTemplate>
                                                     <asp:ImageButton ID="ibtnEliminar0" runat="server" CommandName="Eliminar" Height="30px"
-                                                        ImageUrl="~/Multimedia/icono-eliminar.jpg" Style="display: block; margin: 0 auto"
+                                                        ImageUrl="~/Multimedia/icono-eliminar.png" Style="display: block; margin: 0 auto"
                                                         ToolTip="Presione este botón para eliminar este requisito" Width="30px" />
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>

@@ -157,7 +157,7 @@
                                 <ItemTemplate>
                                     <asp:Panel ID="Panel1" runat="server" HorizontalAlign="Center">
                                         <asp:ImageButton ID="ibtnVerDetalles" runat="server" CommandName="VerDetalles" Height="30px"
-                                            ImageUrl="~/Multimedia/icono-buscar.jpg" Width="30px" 
+                                            ImageUrl="~/Multimedia/icono-buscar.png" Width="30px" 
                                             
                                             ToolTip="Presione este botón para ver, actualizar y eliminar los datos de este servicio" />
                                     </asp:Panel>

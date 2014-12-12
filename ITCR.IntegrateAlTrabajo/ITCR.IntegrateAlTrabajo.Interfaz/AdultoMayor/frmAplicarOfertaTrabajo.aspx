@@ -35,61 +35,27 @@
         }
         .style3
         {
-            width: 100%;
+            width: 15px;
+            height: 25px;
         }
         .style4
         {
-            width: 15px;
+            height: 25px;
         }
         .style5
         {
+            width: 250px;
+            height: 25px;
         }
         .style6
         {
-            width: 250px;
-        }
-        .style7
-        {
             width: 20px;
-        }
-        .style26
-        {
-            width: 109px;
             height: 25px;
-        }
-        .style27
-        {
-            width: 298px;
-            height: 25px;
-        }
-        .style28
-        {
-            width: 27px;
-            height: 25px;
-        }
-        .style29
-        {
-            width: 117px;
-            height: 25px;
-        }
-        .style30
-        {
-            height: 25px;
-            width: 335px;
-        }
-        .style31
-        {
-            width: 15px;
-            height: 330px;
-        }
-        .style32
-        {
-            height: 330px;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <script type="text/javascript" src="../js/jquery.js"></script>
+ <script type="text/javascript" src="../js/jquery.js"></script>
     <script type="text/javascript" src="../js/jquery.maskedinput.min.js"></script>
     <script type="text/javascript" src="../js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/bootbox.js"></script>  
@@ -111,44 +77,38 @@
             });
         }
     </script>
-    <table class="style3">
+    <table class="nav-justified">
         <tr>
-            <td class="style4">
-                &nbsp;</td>
-            <td class="style5" colspan="2">
-                <asp:Label ID="lblDescripciónOferta" runat="server" Text="Descripción del puesto" 
-                    CssClass="Titulo1"></asp:Label>
-            </td>
-            <td class="style7">
-                &nbsp;</td>
-            <td class="style5">
-                &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td>
-                &nbsp;</td>
+            <td class="style3">
+                </td>
+            <td class="style4" colspan="5">
+                <asp:Label ID="lblDscPuesto" runat="server" CssClass="Titulo1" 
+                    Text="Descripción del puesto"></asp:Label>
+                </td>
+            <td class="style3">
+                </td>
         </tr>
         <tr>
+            <td class="style3">
+                &nbsp;</td>
             <td class="style4">
                 &nbsp;</td>
             <td class="style5">
                 &nbsp;</td>
             <td class="style6">
                 &nbsp;</td>
-            <td class="style7">
+            <td class="style4">
                 &nbsp;</td>
             <td class="style5">
                 &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td>
+            <td class="style3">
                 &nbsp;</td>
         </tr>
         <tr>
-            <td class="style31">
-            </td>
-            <td class="style32" colspan="5">
-                                    <asp:Panel ID="PanelOfertaTrabajo" runat="server" BorderStyle="Solid" 
+            <td class="style3">
+                &nbsp;</td>
+            <td class="style4" colspan="5">
+                <asp:Panel ID="PanelOfertaTrabajo" runat="server" BorderStyle="Solid" 
                                         BorderWidth="2px" Height="327px">
                                         <table class="style14">
                                             <tr>
@@ -260,25 +220,24 @@
                                                     &nbsp;</td>
                                             </tr>
                                         </table>
-                                    </asp:Panel>
-                                </td>
-            <td class="style32">
-            </td>
+                                    </asp:Panel></td>
+            <td class="style3">
+                &nbsp;</td>
         </tr>
         <tr>
+            <td class="style3">
+                &nbsp;</td>
             <td class="style4">
                 &nbsp;</td>
             <td class="style5">
                 &nbsp;</td>
             <td class="style6">
                 &nbsp;</td>
-            <td class="style7">
+            <td class="style4">
                 &nbsp;</td>
             <td class="style5">
                 &nbsp;</td>
-            <td class="style6">
-                &nbsp;</td>
-            <td>
+            <td class="style3">
                 &nbsp;</td>
         </tr>
         </table>

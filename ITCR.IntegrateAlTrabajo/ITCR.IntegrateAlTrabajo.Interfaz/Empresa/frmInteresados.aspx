@@ -118,7 +118,7 @@
                             </asp:BoundColumn>
                             <asp:TemplateColumn HeaderText="Ver Perfil">
                                 <ItemTemplate>
-                                    <asp:ImageButton ID="ibtnDetalles" ImageUrl="~/Multimedia/icono-buscar.jpg" Height="30px" Width="30px" 
+                                    <asp:ImageButton ID="ibtnDetalles" ImageUrl="~/Multimedia/icono-buscar.png" Height="30px" Width="30px" 
                                     Style="display: block; margin: 0 auto;" 
                                     runat="server" CommandName="Detalles"/>
                                 </ItemTemplate>

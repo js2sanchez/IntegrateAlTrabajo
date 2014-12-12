@@ -183,7 +183,7 @@
                                 <asp:Panel ID="PanelEditarDatosPersonales" runat="server" 
                                     HorizontalAlign="Right">
                                     <asp:ImageButton ID="ibtnEditarDatosPersonales" runat="server" Height="50px" tooltip="Presione este botón para actualizar sus datos personales"
-                                        ImageUrl="~/Multimedia/icono-editar.jpg" 
+                                        ImageUrl="~/Multimedia/icono-editar.png" 
                                         onclick="ibtnEditarDatosPersonales_Click1" Width="50px" />
                                 </asp:Panel>
                             </td>
@@ -338,7 +338,7 @@
                             <td class="style37">
                                 <asp:Panel ID="PanelEditarEstudios" runat="server" HorizontalAlign="Right">
                                     <asp:ImageButton ID="ibtnEditarEstudios" runat="server" Height="50px" tooltip="Presione este botón para actualizar su formación académica"
-                                        ImageUrl="~/Multimedia/icono-editar.jpg" 
+                                        ImageUrl="~/Multimedia/icono-editar.png" 
                                         onclick="ibtnEditarDatosPersonales_Click" Width="50px" />
                                 </asp:Panel>
                             </td>
@@ -406,7 +406,7 @@
                                 <asp:Panel ID="PanelBotonEditarExperienciasLaborales" runat="server" 
                                     HorizontalAlign="Right">
                                     <asp:ImageButton ID="ibtnEditarExperienciasLaborales" runat="server" tooltip="Presione este botón para actualizar sus experiencias laborales"
-                                        Height="50px" ImageUrl="~/Multimedia/icono-editar.jpg" 
+                                        Height="50px" ImageUrl="~/Multimedia/icono-editar.png" 
                                         onclick="ibtnEditarExperienciasLaborales_Click" Width="50px" />
                                 </asp:Panel>
                             </td>
@@ -496,7 +496,7 @@
                             <td>
                                 <asp:Panel ID="PanelIdiomas" runat="server" HorizontalAlign="Right">
                                     <asp:ImageButton ID="ibtnEditarIdiomas" runat="server" Height="50px" tooltip="Presione este botón para incluir nuevos idiomas aprendidos a su perfil"
-                                        ImageUrl="~/Multimedia/icono-editar.jpg" onclick="btnEditarIdiomas_Click" 
+                                        ImageUrl="~/Multimedia/icono-editar.png" onclick="btnEditarIdiomas_Click" 
                                         Width="50px" />
                                     <asp:ImageButton ID="ibtnActualizarIdiomas" runat="server" Height="50px" tooltip="Presione este botón para actualizar esta sección con los nuevos idiomas aprendidos"
                                         ImageUrl="~/Multimedia/icono-check.jpg" onclick="btnActualizarIdiomas_Click" 
@@ -570,7 +570,7 @@
                             <td>                                
                                     <asp:Panel ID="PanelPasatiempoFavorito" runat="server" HorizontalAlign="Right">
                                         <asp:ImageButton ID="ibtnEditarPasatiempo" runat="server" Height="50px" tooltip="Presione este botón para hacer cambios a su pasatiempo favorito"
-                                            ImageUrl="~/Multimedia/icono-editar.jpg" onclick="btnEditarPasatiempo_Click" 
+                                            ImageUrl="~/Multimedia/icono-editar.png" onclick="btnEditarPasatiempo_Click" 
                                             Width="50px" />
                                         <asp:ImageButton ID="ibtnActualizarPasatiempo" runat="server" Height="50px" tooltip="Presione este botón para actualizar su pasatiempo favorito"
                                             ImageUrl="~/Multimedia/icono-check.jpg" onclick="btnActualizarPasatiempo_Click" 

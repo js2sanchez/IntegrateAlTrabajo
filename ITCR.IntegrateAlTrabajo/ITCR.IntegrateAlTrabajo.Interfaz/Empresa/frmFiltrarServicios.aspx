@@ -11,12 +11,13 @@
             margin: 0px;
             padding: 0px;
             color: #696969;
+            text-align: left;
         }
         table
         {
             font-family: Century Gothic;
             font-size: 15px;
-            text-align: justify;
+            text-align: center;
             border-spacing: 5px;
             border-collapse: separate;
         }
@@ -60,10 +61,6 @@
             width: 20px;
             height: 25px;
         }
-        .style8
-        {
-            height: 25px;
-        }
         .style9
         {
             width: 162px;
@@ -75,9 +72,6 @@
         .style11
         {
             width: 20px;
-        }
-        .style12
-        {
         }
         .auto-style1
         {
@@ -136,6 +130,41 @@
         {
             width: 250px;
             height: 24px;
+        }
+        .style13
+        {
+            width: 15px;
+            height: 25px;
+            text-align: left;
+        }
+        .style14
+        {
+            width: 250px;
+            height: 25px;
+            text-align: left;
+        }
+        .style15
+        {
+            height: 25px;
+            text-align: left;
+        }
+        .style16
+        {
+            width: 20px;
+            height: 25px;
+            text-align: left;
+        }
+        .style17
+        {
+            width: 232px;
+            height: 25px;
+            text-align: left;
+        }
+        .style18
+        {
+            height: 25px;
+            width: 203px;
+            text-align: left;
         }
     </style>
 </asp:Content>
@@ -211,22 +240,22 @@
             </td>
         </tr>
         <tr>
-            <td class="style4">
+            <td class="style13">
                 &nbsp;
             </td>
-            <td class="style5" colspan="2">
+            <td class="style15" colspan="2">
                 <asp:Label ID="lblRegistroAdultoMayor" runat="server" Text="Filtrar Servicios" CssClass="Titulo1"></asp:Label>
             </td>
-            <td class="style7">
+            <td class="style16">
                 &nbsp;
             </td>
-            <td class="style5">
+            <td class="style15">
                 &nbsp;
             </td>
-            <td class="style6">
+            <td class="style14">
                 &nbsp;
             </td>
-            <td class="style4">
+            <td class="style13">
                 &nbsp;
             </td>
         </tr>
@@ -247,7 +276,7 @@
         <tr>
             <td class="style4">
             </td>
-            <td class="style5" colspan="5">
+            <td class="style15" colspan="5">
                 <asp:Label ID="lbl_titulo" runat="server" Text="Seleccione los criterios de búsqueda con los que desea filtrar los servicios ofrecidos por personas adultas mayores:"></asp:Label>
             </td>
             <td class="style4">
@@ -308,37 +337,37 @@
             </td>
         </tr>
         <tr>
-            <td class="style4">
+            <td class="style13">
                 &nbsp;
             </td>
-            <td class="auto-style2">
+            <td class="style18">
                 &nbsp;
             </td>
-            <td class="auto-style1">
+            <td class="style17">
                 &nbsp;
             </td>
-            <td class="style7">
+            <td class="style16">
                 &nbsp;
             </td>
-            <td class="style5">
+            <td class="style15">
                 &nbsp;
             </td>
-            <td class="style6">
+            <td class="style14">
                 &nbsp;
             </td>
-            <td class="style4">
+            <td class="style13">
                 &nbsp;
             </td>
         </tr>
         <tr>
-            <td class="style4">
+            <td class="style13">
                 &nbsp;
             </td>
-            <td class="style8" colspan="5">
+            <td class="style15" colspan="5">
                 <asp:Panel ID="pnl_resultados" runat="server">
                     <table class="style3">
                         <tr>
-                            <td class="style12">
+                            <td class="text-left">
                                 <asp:Label ID="lbl_resultados" runat="server" Text="Resultados de búsqueda" Visible="False"></asp:Label>
                             </td>
                             <td class="style10">
@@ -355,7 +384,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="style12">
+                            <td class="text-left">
                                 &nbsp;
                             </td>
                             <td class="style10">
@@ -371,12 +400,13 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="style12" colspan="5">
+                            <td class="text-left" colspan="5">
                                 <asp:DataGrid ID="dgResultados" runat="server" AutoGenerateColumns="False" BackColor="WhiteSmoke"
                                     BorderStyle="Solid" CssClass="GridMantenimiento" Font-Names="Century Gothic"
-                                    Font-Size="Smaller" ForeColor="Black" Height="19px" Width="99%" OnItemCommand="dgResultados_ItemCommand">
+                                    Font-Size="Small" ForeColor="Black" Height="19px" Width="99%" 
+                                    OnItemCommand="dgResultados_ItemCommand">
                                     <AlternatingItemStyle BackColor="Gainsboro" />
-                                    <HeaderStyle BackColor="Navy" Font-Bold="True" Font-Names="Century Gothic" Font-Size="Larger"
+                                    <HeaderStyle BackColor="Navy" Font-Bold="True" Font-Names="Century Gothic" Font-Size="Medium"
                                         ForeColor="White" HorizontalAlign="Center" />
                                     <Columns>
                                         <asp:BoundColumn DataField="FK_IdUsuario" HeaderText="Id" Visible="False"></asp:BoundColumn>
@@ -388,13 +418,13 @@
                                         <asp:TemplateColumn HeaderText="Ver detalle del servicio">
                                             <ItemTemplate>
                                                 <asp:ImageButton ID="imgbtn_verservicio" runat="server" CommandName="Servicio" Height="30px"
-                                                    ImageAlign="Right" ImageUrl="~/Multimedia/icono-buscar.jpg" />
+                                                    ImageAlign="Right" ImageUrl="~/Multimedia/icono-buscar.png" />
                                             </ItemTemplate>
                                         </asp:TemplateColumn>
                                         <asp:TemplateColumn HeaderText="Ver perfil de la PAM">
                                             <ItemTemplate>
                                                 <asp:ImageButton ID="imgbtn_verperfil" runat="server" CommandName="Perfil" Height="30px"
-                                                    ImageAlign="Right" ImageUrl="~/Multimedia/icono-buscar.jpg" />
+                                                    ImageAlign="Right" ImageUrl="~/Multimedia/icono-buscar.png" />
                                             </ItemTemplate>
                                         </asp:TemplateColumn>
                                     </Columns>
@@ -402,7 +432,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="style12">
+                            <td class="text-left">
                                 &nbsp;
                             </td>
                             <td class="style10">
@@ -421,30 +451,30 @@
                     </table>
                 </asp:Panel>
             </td>
-            <td class="style4">
+            <td class="style13">
                 &nbsp;
             </td>
         </tr>
         <tr>
-            <td class="style4">
+            <td class="style13">
                 &nbsp;
             </td>
-            <td class="auto-style2">
+            <td class="style18">
                 &nbsp;
             </td>
-            <td class="auto-style1">
+            <td class="style17">
                 &nbsp;
             </td>
-            <td class="style7">
+            <td class="style16">
                 &nbsp;
             </td>
-            <td class="style5">
+            <td class="style15">
                 &nbsp;
             </td>
-            <td class="style6">
+            <td class="style14">
                 &nbsp;
             </td>
-            <td class="style4">
+            <td class="style13">
                 &nbsp;
             </td>
         </tr>

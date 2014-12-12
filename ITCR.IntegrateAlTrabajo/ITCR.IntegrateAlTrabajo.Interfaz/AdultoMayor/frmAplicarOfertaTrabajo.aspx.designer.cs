@@ -13,13 +13,13 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
     public partial class frmAplicarOfertaTrabajo {
         
         /// <summary>
-        /// lblDescripciónOferta control.
+        /// lblDscPuesto control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescripciónOferta;
+        protected global::System.Web.UI.WebControls.Label lblDscPuesto;
         
         /// <summary>
         /// PanelOfertaTrabajo control.

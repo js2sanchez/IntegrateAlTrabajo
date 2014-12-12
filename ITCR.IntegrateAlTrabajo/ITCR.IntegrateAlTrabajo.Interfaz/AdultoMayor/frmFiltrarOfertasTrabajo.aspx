@@ -386,7 +386,7 @@
                                             <asp:TemplateColumn HeaderText="Ver Oferta">
                                                 <ItemTemplate>
                                                     <asp:ImageButton ID="imgbtn_verperfil" runat="server" CommandName="Perfil" Height="30px"
-                                                        ImageAlign="Right" ImageUrl="~/Multimedia/icono-buscar.jpg" />
+                                                        ImageAlign="Right" ImageUrl="~/Multimedia/icono-buscar.png" />
                                                 </ItemTemplate>
                                             </asp:TemplateColumn>
                                         </Columns>

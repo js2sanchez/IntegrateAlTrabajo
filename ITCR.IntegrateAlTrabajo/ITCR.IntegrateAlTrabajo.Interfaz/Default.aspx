@@ -70,16 +70,6 @@
         {
             width: 25px;
         }
-        .style21
-        {
-            width: 445px;
-            height: 55px;
-        }
-        .style22
-        {
-            width: 50px;
-            height: 55px;
-        }
         .style27
         {
             height: 10px;
@@ -101,16 +91,7 @@
         {
             width: 164px;
         }
-        .style34
-        {
-            width: 25px;
-            height: 55px;
-        }
-        .style35
-        {
-            height: 55px;
-        }
-    </style>
+        </style>
 </head>
 <body bgcolor="#cccccc">
     <script type="text/javascript" src="../js/jquery.js"></script>
@@ -168,37 +149,20 @@
                     <table class="style1" bgcolor="White">
                         <tr>
                             <td class="style14" bgcolor="White">
-                                &nbsp;
                             </td>
                             <td bgcolor="White" class="style11">
-                                &nbsp;
-                            </td>
-                            <td class="style13" bgcolor="White">
-                                &nbsp;
-                            </td>
-                            <td colspan="2" bgcolor="White">
-                                &nbsp;
-                            </td>
-                            <td bgcolor="White">
-                                &nbsp;
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="style34" bgcolor="White">
-                            </td>
-                            <td bgcolor="White" class="style21">
-                                <asp:Label ID="lblRegistrarse" runat="server" Font-Bold="True" Font-Size="24pt" ForeColor="#292459"
+                                <asp:Label ID="lblRegistrarse" runat="server" Font-Bold="True" Font-Size="20pt" ForeColor="#292459"
                                     Text="1. Registrarme como:"></asp:Label>
                             </td>
                             <td class="style13" bgcolor="White" rowspan="4">
                                 <asp:Image ID="Image1" runat="server" Height="200px" ImageUrl="~/Multimedia/RayaAutenticacion.PNG"
                                     Style="margin-left: 16px" Width="16px" />
                             </td>
-                            <td colspan="2" bgcolor="White" class="style35">
+                            <td colspan="2" bgcolor="White">
                                 <asp:Label ID="lblIniciarSesion" runat="server" ForeColor="#292459" Text="2. Ingresar al sistema"
-                                    Font-Bold="True" Font-Size="24pt"></asp:Label>
+                                    Font-Bold="True" Font-Size="20pt"></asp:Label>
                             </td>
-                            <td class="style34" bgcolor="White">
+                            <td class="style14" bgcolor="White">
                             </td>
                         </tr>
                         <tr>
@@ -206,7 +170,7 @@
                                 &nbsp;
                             </td>
                             <td bgcolor="White" class="style11" rowspan="3">
-                                <asp:Panel ID="PanelBotones" runat="server" HorizontalAlign="Right">
+                                <asp:Panel ID="PanelBotones" runat="server" HorizontalAlign="Center">
                                     <asp:Button ID="btnPersona" runat="server" CssClass="Boton" Font-Size="Large" OnClick="btnPersona_Click"
                                         Text="Persona Adulta Mayor" Width="210px" UseSubmitBehavior="False" />
                                     <br />
@@ -248,16 +212,11 @@
                             <td bgcolor="White" class="style28">
                                 &nbsp;
                             </td>
-                            <td colspan="2" bgcolor="White" class="style27">
+                            <td colspan="4" bgcolor="White" class="style27">
+                                <asp:Label ID="lblAcercaBolsaTrabajo" runat="server" Font-Bold="True" 
+                                    Font-Size="20pt" ForeColor="#292459" Text="Acerca de la bolsa de trabajo"></asp:Label>
                                 <br />
-                                <asp:Label ID="lblAcercaBolsaTrabajo" runat="server" Font-Bold="True" Font-Size="24pt"
-                                    ForeColor="#292459" Text="Acerca de la bolsa de trabajo"></asp:Label>
-                            </td>
-                            <td bgcolor="White" class="style27">
-                            </td>
-                            <td bgcolor="White" class="style28">
-                                &nbsp;
-                            </td>
+                                &nbsp;</td>
                         </tr>
                         <tr>
                             <td bgcolor="White" class="style28">
@@ -265,15 +224,17 @@
                             </td>
                             <td rowspan="4" bgcolor="White" class="style28" colspan="4">
                                 <p>
-                                    <asp:Label ID="lblTextoAcerca" runat="server" ForeColor="#005190" Text="Tiene como finalidad facilitar el derecho al trabajo de la PAM."></asp:Label>
+                                    <asp:Label ID="lblTextoAcerca" runat="server" ForeColor="#005190" 
+                                        Text="Esta bolsa de trabajo tiene como finalidad facilitar el derecho al trabajo de la Persona Adulta Mayor (PAM)."></asp:Label>
                                 </p>
                                 <p>
-                                    <asp:Label ID="lblTextoAcerca1" runat="server" ForeColor="#005190" Text="Es un espacio virtual en el que convergen las personas adultas mayores oferentes de productos y servicios en jornada parcial o total, en forma remunerada o voluntaria y las empresas demandantes que se inscriben para contratarlas.
+                                    <asp:Label ID="lblTextoAcerca1" runat="server" ForeColor="#005190" Text="Es un espacio virtual en el que convergen las personas adultas mayores oferentes de servicios en jornada parcial o total, en forma remunerada o voluntaria y las empresas demandantes que se inscriben para contratarlas.
 "></asp:Label>
                                 </p>
                                 <p>
                                     <asp:Label ID="lblTextoAcerca2" runat="server" ForeColor="#005190" Text="El espacio busca reivindicar los derechos, el protagonismo y los saberes de las personas adultas mayores, así como la responsabilidad social de las empresas para facilitar su inclusión en su entorno inmediato."></asp:Label>
                                 </p>
+                                <br></br>
                             </td>
                             <td bgcolor="White">
                                 &nbsp;

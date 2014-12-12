@@ -127,7 +127,7 @@
                                 Visible="False"></asp:BoundColumn>
                             <asp:TemplateColumn HeaderText="Ver más detalles">
                                 <ItemTemplate>
-                                    <asp:ImageButton ID="ibtnDetalles" ImageUrl="~/Multimedia/icono-buscar.jpg" 
+                                    <asp:ImageButton ID="ibtnDetalles" ImageUrl="~/Multimedia/icono-buscar.png" 
                                         Height="30px" Width="30px" 
                                     Style="display: block; margin: 0 auto;" 
                                     runat="server" CommandName="Detalles" 

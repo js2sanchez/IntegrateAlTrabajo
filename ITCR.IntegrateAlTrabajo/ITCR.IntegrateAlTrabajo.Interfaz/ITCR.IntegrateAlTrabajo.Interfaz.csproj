@@ -113,10 +113,10 @@
     <Content Include="Multimedia\banner2.png" />
     <Content Include="Multimedia\banner_adultos_mayores.jpg" />
     <Content Include="Multimedia\banner_autenticacion.jpg" />
-    <Content Include="Multimedia\icono-buscar.jpg" />
+    <Content Include="Multimedia\icono-buscar.png" />
     <Content Include="Multimedia\icono-check.jpg" />
-    <Content Include="Multimedia\icono-editar.jpg" />
-    <Content Include="Multimedia\icono-eliminar.jpg" />
+    <Content Include="Multimedia\icono-editar.png" />
+    <Content Include="Multimedia\icono-eliminar.png" />
     <Content Include="Multimedia\Logo.PNG" />
     <Content Include="Multimedia\RayaAutenticacion.PNG" />
     <Content Include="Styles\alertify.bootstrap.css" />

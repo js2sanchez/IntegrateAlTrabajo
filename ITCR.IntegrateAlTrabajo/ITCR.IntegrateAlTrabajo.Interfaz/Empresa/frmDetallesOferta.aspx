@@ -229,7 +229,7 @@
                                 <asp:Panel ID="PanelEditarDatosPersonales" runat="server" 
                                     HorizontalAlign="Right">
                                     &nbsp;<asp:ImageButton ID="ibtnEditarOferta" runat="server" Height="50px" 
-                                        ImageUrl="~/Multimedia/icono-editar.jpg" onclick="ibtnEditarOferta_Click" 
+                                        ImageUrl="~/Multimedia/icono-editar.png" onclick="ibtnEditarOferta_Click" 
                                         ToolTip="Presione este botón para actualizar la oferta de trabajo" 
                                         Width="50px" />
                                 </asp:Panel>
@@ -417,7 +417,7 @@
                             <td>
                                 <asp:Panel ID="Panel2" runat="server" HorizontalAlign="Right">
                                     <asp:ImageButton ID="ibtEliminarOferta" runat="server" Height="50px" 
-                                        ImageUrl="~/Multimedia/icono-eliminar.jpg" Width="50px" 
+                                        ImageUrl="~/Multimedia/icono-eliminar.png" Width="50px" 
                                         onclick="ibtEliminarOferta_Click" 
                                         ToolTip="Presione este botón para eliminar esta oferta de trabajo" />
                                 </asp:Panel>

@@ -130,7 +130,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
         protected global::System.Web.UI.WebControls.Label lblDatosPersonales;
         
         /// <summary>
-
+        /// lblDscPaso1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDscPaso1;
+        
+        /// <summary>
         /// lblNombre control.
         /// </summary>
         /// <remarks>
@@ -644,8 +652,16 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
         protected global::System.Web.UI.WebControls.Label lblDatosAutenticacion;
         
         /// <summary>
+        /// lblDscPaso2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDscPaso2;
+        
+        /// <summary>
         /// lblNombreUsuario control.
-
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
@@ -870,6 +886,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
         protected global::System.Web.UI.WebControls.Label lblEstudios;
         
         /// <summary>
+        /// lblDscPaso3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDscPaso3;
+        
+        /// <summary>
         /// PanelIngresoDatos control.
         /// </summary>
         /// <remarks>
@@ -1077,13 +1102,20 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
         protected global::System.Web.UI.WebControls.Label lblExperienciasLaborales;
         
         /// <summary>
-
+        /// lblDscPaso4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDscPaso4;
+        
+        /// <summary>
         /// PanelIngresoDatos0 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
-
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel PanelIngresoDatos0;
         
@@ -1376,14 +1408,20 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
         protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-
-        /// Panel8 control.
-
+        /// lblDscPaso6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
-
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblDscPaso6;
+        
+        /// <summary>
+        /// Panel8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Panel Panel8;
         
@@ -1487,7 +1525,15 @@ namespace ITCR.IntegrateAlTrabajo.Interfaz.AdultoMayor {
         protected global::System.Web.UI.WebControls.Label lblTerminosCondicionesUso;
         
         /// <summary>
-
+        /// Label3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
+        
+        /// <summary>
         /// PanelTerminosCondiciones control.
         /// </summary>
         /// <remarks>
