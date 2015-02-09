@@ -308,7 +308,7 @@
                                             <asp:TemplateColumn HeaderText="Actualizar">
                                                 <ItemTemplate>
                                                     <asp:ImageButton ID="ibtnEditar" runat="server" CommandName="Editar" Height="30px"
-                                                        ImageUrl="~/Multimedia/icono-editar.jpg" Width="30px" Style="display: block;
+                                                        ImageUrl="~/Multimedia/icono-editar.png" Width="30px" Style="display: block;
                                                         margin: 0 auto" 
                                                         ToolTip="Presione este botón para actualizar esta experiencia laboral" />
                                                 </ItemTemplate>
@@ -316,7 +316,7 @@
                                             <asp:TemplateColumn HeaderText="Eliminar">
                                                 <ItemTemplate>
                                                     <asp:ImageButton ID="ibtnEliminar" runat="server" CommandName="Eliminar" Height="30px"
-                                                        Style="display: block; margin: 0 auto" ImageUrl="~/Multimedia/icono-eliminar.jpg"
+                                                        Style="display: block; margin: 0 auto" ImageUrl="~/Multimedia/icono-eliminar.png"
                                                         Width="30px" 
                                                         ToolTip="Presione este botón para eliminar esta experiencia laboral" />
                                                 </ItemTemplate>

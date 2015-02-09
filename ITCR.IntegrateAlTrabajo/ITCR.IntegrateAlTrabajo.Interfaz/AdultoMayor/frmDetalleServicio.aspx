@@ -219,7 +219,7 @@
                             </td>
                             <td class="style11">
                                 <asp:Panel ID="PanelBotonActualizar" runat="server" HorizontalAlign="Right">
-                                    <asp:ImageButton ID="ibtnEditarServicio" runat="server" Height="50px" ImageUrl="~/Multimedia/icono-editar.jpg"
+                                    <asp:ImageButton ID="ibtnEditarServicio" runat="server" Height="50px" ImageUrl="~/Multimedia/icono-editar.png"
                                         ToolTip="Presione este botón para actualizar los datos del servicio" Width="50px"
                                         OnClick="ibtnEditarServicio_Click" />
                                 </asp:Panel>
@@ -369,8 +369,9 @@
                                     Width="800px"></asp:Label>
                             </td>
                             <td class="style17">
-                                <asp:ImageButton ID="ibtnEliminarServicio" runat="server" Height="50px" ImageUrl="~/Multimedia/icono-eliminar.jpg"
-                                    Width="50px" ToolTip="Presione este botón para eliminar el servicio" OnClick="ibtnEliminarServicio_Click" />
+                                <asp:ImageButton ID="ibtnEliminarServicio" runat="server" Height="50px" ImageUrl="~/Multimedia/icono-eliminar.png"
+                                    Width="50px" ToolTip="Presione este botón para eliminar el servicio" 
+                                    OnClick="ibtnEliminarServicio_Click" />
                             </td>
                             <td class="style18">
                                 &nbsp;

@@ -214,7 +214,8 @@
                 &nbsp;
             </td>
             <td class="style5" colspan="5">
-                <asp:Panel ID="panelAdultosMayores" runat="server">
+                <asp:Panel ID="panelAdultosMayores" runat="server" Height="250px" 
+                    ScrollBars="Auto">
                     <asp:DataGrid ID="dgPerfilesAdultosMayores" runat="server" AutoGenerateColumns="False"
                         BackColor="WhiteSmoke" BorderStyle="Solid" CssClass="GridMantenimiento" Font-Names="Century Gothic"
                         Font-Size="Small" ForeColor="Black" Height="19px" Width="99%" OnItemCommand="dgPerfilesAdultosMayores_ItemCommand"
@@ -248,7 +249,7 @@
                             <asp:TemplateColumn HeaderText="Ver perfil">
                                 <ItemTemplate>
                                     <asp:ImageButton ID="imgbtn_verperfilpersona" runat="server" CommandName="PerfilPersona"
-                                        Height="30px" ImageAlign="Right" ImageUrl="~/Multimedia/icono-buscar.jpg" />
+                                        Height="30px" ImageAlign="Right" ImageUrl="~/Multimedia/icono-buscar.png" />
                                 </ItemTemplate>
                             </asp:TemplateColumn>
                         </Columns>

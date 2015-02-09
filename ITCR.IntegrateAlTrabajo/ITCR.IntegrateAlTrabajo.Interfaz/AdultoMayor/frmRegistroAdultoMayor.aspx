@@ -900,14 +900,14 @@
                                                     <asp:TemplateColumn HeaderText="Editar">
                                                         <ItemTemplate>
                                                             <asp:ImageButton ID="ibtnEditar" runat="server" CommandName="Editar" Height="30px"
-                                                                ImageUrl="~/Multimedia/icono-editar.jpg" Width="30px" Style="display: block;
+                                                                ImageUrl="~/Multimedia/icono-editar.png" Width="30px" Style="display: block;
                                                                 margin: 0 auto" />
                                                         </ItemTemplate>
                                                     </asp:TemplateColumn>
                                                     <asp:TemplateColumn HeaderText="Eliminar">
                                                         <ItemTemplate>
                                                             <asp:ImageButton ID="ibtnEliminar" runat="server" CommandName="Eliminar" Height="30px"
-                                                                ImageUrl="~/Multimedia/icono-eliminar.jpg" Width="30px" Style="display: block;
+                                                                ImageUrl="~/Multimedia/icono-eliminar.png" Width="30px" Style="display: block;
                                                                 margin: 0 auto" />
                                                         </ItemTemplate>
                                                     </asp:TemplateColumn>
@@ -1043,14 +1043,14 @@
                                                     <asp:TemplateColumn HeaderText="Editar">
                                                         <ItemTemplate>
                                                             <asp:ImageButton ID="ibtnEditar" runat="server" CommandName="Editar" Height="30px"
-                                                                Style="display: block; margin: 0 auto" ImageUrl="~/Multimedia/icono-editar.jpg"
+                                                                Style="display: block; margin: 0 auto" ImageUrl="~/Multimedia/icono-editar.png"
                                                                 Width="30px" />
                                                         </ItemTemplate>
                                                     </asp:TemplateColumn>
                                                     <asp:TemplateColumn HeaderText="Eliminar">
                                                         <ItemTemplate>
                                                             <asp:ImageButton ID="ibtnEliminar" runat="server" CommandName="Eliminar" Height="30px"
-                                                                Style="display: block; margin: 0 auto" ImageUrl="~/Multimedia/icono-eliminar.jpg"
+                                                                Style="display: block; margin: 0 auto" ImageUrl="~/Multimedia/icono-eliminar.png"
                                                                 Width="30px" />
                                                         </ItemTemplate>
                                                     </asp:TemplateColumn>

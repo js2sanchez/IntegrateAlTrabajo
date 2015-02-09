@@ -188,7 +188,7 @@
                 &nbsp;
             </td>
             <td class="style11" colspan="5">
-                <asp:Panel ID="panelEmpresas" runat="server">
+                <asp:Panel ID="panelEmpresas" runat="server" Height="250px" ScrollBars="Auto">
                     <asp:DataGrid ID="dgPerfilesEmpresas" runat="server" AutoGenerateColumns="False"
                         OnItemCommand="dgPerfilesEmpresas_ItemCommand"
                         BackColor="WhiteSmoke" BorderStyle="Solid" CssClass="GridMantenimiento" Font-Names="Century Gothic"
@@ -220,7 +220,7 @@
                             <asp:TemplateColumn HeaderText="Ver perfil">
                                 <ItemTemplate>
                                     <asp:ImageButton ID="imgbtn_verperfilempresa" runat="server" CommandName="PerfilEmpresa"
-                                        Height="30px" ImageAlign="Right" ImageUrl="~/Multimedia/icono-buscar.jpg" />
+                                        Height="30px" ImageAlign="Right" ImageUrl="~/Multimedia/icono-buscar.png" />
                                 </ItemTemplate>
                             </asp:TemplateColumn>
                         </Columns>

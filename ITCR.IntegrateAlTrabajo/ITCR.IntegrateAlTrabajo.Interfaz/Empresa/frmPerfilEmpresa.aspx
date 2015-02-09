@@ -220,8 +220,9 @@
                             <td class="style25" colspan="2">
                                 <asp:Panel ID="PanelEditarDatosPersonales" runat="server" HorizontalAlign="Right">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <asp:ImageButton ID="ibtnEditarPerfilEmpresa" runat="server" Height="50px" ImageUrl="~/Multimedia/icono-editar.jpg"
+                                    <asp:ImageButton ID="ibtnEditarPerfilEmpresa" runat="server" Height="50px" ImageUrl="~/Multimedia/icono-editar.png"
                                         OnClick="ibtnEditarPerfilEmpresa_Click" Width="50px" 
+                                        
                                         ToolTip="Presione este botón para actualizar los datos generales de la empresa" />
                                 </asp:Panel>
                             </td>
@@ -321,8 +322,9 @@
                             <td class="style25" colspan="2">
                                 <asp:Panel ID="PanelEditarDatosAutenticacion" runat="server" HorizontalAlign="Right">
                                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    <asp:ImageButton ID="ibtnEditarDatosAutenticacion" runat="server" Height="50px" ImageUrl="~/Multimedia/icono-editar.jpg"
+                                    <asp:ImageButton ID="ibtnEditarDatosAutenticacion" runat="server" Height="50px" ImageUrl="~/Multimedia/icono-editar.png"
                                         OnClick="ibtnEditarDatosAutenticacion_Click" Width="50px" 
+                                        
                                         ToolTip="Presione este botón para actualizar los datos de autenticación de la empresa" />
                                 </asp:Panel>
                             </td>
@@ -417,7 +419,7 @@
                                 &nbsp;&nbsp;&nbsp;                                
                             </td>
                             <td>
-                            <asp:ImageButton ID="ibtnEliminarPerfilEmpresa1" runat="server" Height="50px" ImageUrl="~/Multimedia/icono-eliminar.jpg"
+                            <asp:ImageButton ID="ibtnEliminarPerfilEmpresa1" runat="server" Height="50px" ImageUrl="~/Multimedia/icono-eliminar.png"
                                     OnClick="ibtnEliminarPerfilEmpresa_Click" Width="50px" 
                                     ToolTip="Presione este botón para eliminar el perfil de la empresa" />
                                     &nbsp;
